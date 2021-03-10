@@ -1,0 +1,107 @@
+#http://www.w3.org/ns/org#classification
+
+#http://www.w3.org/ns/org#Organization
+
+#http://www.w3.org/2004/02/skos/core#Concept
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix meemoo: <http://meemoo.be/ns/> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+
+# Node shapes
+
+org:Organization a rdfs:Class, sh:NodeShape ;
+    rdfs:subClassOf  foaf:Agent;
+    owl:equivalentClass foaf:Organization;
+    rdfs:label "Organization"@en;
+    rdfs:label "Organisation"@fr;
+    rdfs:label "Organisatie"@nl;
+    rdfs:comment """Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"""@en;
+    rdfs:comment """Représente un groupe de personnes organisées en communauté où tout autre forme de structure sociale, commerciale ou politique. Le groupe a un but commun ou une raison d'être qui va au-delà de la somme des personnes qui en font partie et peut agir en tant que "Agent". Les organisations sont souvent décomposables en structures hiérarchisées. Il est recommandé que des labels lexicaux SKOS soient utilisés pour nommer l'Organisation. En particulier `skos:prefLabel` pour le nom principal (en général le nom légal), `skos:altLabel` pour les noms alternatifs (marques, sigles, appellations familières) et `skos:notation` pour indiquer un code provenant d'une liste de code."""@fr;  
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
+    sh:property <#classification-warning>, <#prefLabel-violation>, <#altLabel-warning> .
+
+org:OrganizationalUnit a rdfs:Class, sh:NodeShape ;
+    rdfs:subClassOf  org:Organization;
+    rdfs:label "Organisatie-eenheid"@nl;
+    rdfs:label "OrganizationalUnit"@en;
+    rdfs:label "Unité opérationnelle"@fr;
+    rdfs:comment """An Organization such as a University Support Unit which is part of some larger FormalOrganization and only has full recognition within the context of that FormalOrganization, it is not a Legal Entity in its own right. Units can be large and complex containing other Units and even FormalOrganizations. Alternative names: _OU_ _Unit_ _Department_"""@en;
+    rdfs:comment """Une organisation telle que le support informatique d'une université, qui fait partie d'une Organisation Formelle plus importante et qui ne peut être reconnue qu'en tant que membre de cette organisation supérieure, ce n'est pas une entité légale en elle-même. Les unités opérationnelles peuvent être étendues, complexes et inclure elles-mêmes d'autres branches ou Unités Opérationnelles, voire des Organisations Formelles."""@fr;
+    rdfs:comment "Een organisatie zoals een afdeling of dienst die deel uitmaakt van de grotere organisatie en zijn bestaansreden daaraan ontleent. Heeft geen juridische status op zich."@nl;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+meemoo:ContentPartner a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Content Partner"@en ;
+    rdfs:label "Contentpartner"@nl ;
+    rdfs:subClassOf org:Organization .
+
+meemoo:ServiceProvider a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Service Provider"@en ;
+    rdfs:label "Serviceprovider"@nl ;
+    rdfs:subClassOf org:Organization .
+
+meemoo:EducationalOrganization a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Educational Organization"@en ;
+    rdfs:label "Educatieve organisatie"@nl ;
+    rdfs:subClassOf org:Organization .
+
+org:Site a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Site"@en;
+    rdfs:label "Site"@fr;
+    rdfs:comment """An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."""@en;
+    rdfs:comment """Un établissement ou tout autre lieu dans lequel une Organisation est localisé. Beaucoup d'organisations sont dispersées à travers plusieurs sites. Dans la plupart des cas un Site sera un lieu physique. Toutefois, nous n'excluons pas la possibilité de sites non-physiques comme un bureau virtuel avec une boîte postale et un service de secrétariat mutualisé. Des extensions pourraient fournir des sous-classes pour décrire des types de sites particuliers."""@fr;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+
+
+# Property Shapes
+
+<#classification-warning>
+    a sh:PropertyShape ;
+    sh:severity sh:Warning;
+    sh:path org:classification;
+    sh:minCount 1;
+    sh:datatype skos:Concept;
+    sh:name "org:classification not correctly specified"@en;
+    sh:message "org:classification is missing or is no IRI"@en .
+
+<#accountmanager-warning>
+    a sh:PropertyShape ;
+    sh:severity sh:Warning;
+    sh:path meemoo:accountmanager;
+    sh:minCount 1;
+    sh:node schema:Person;
+    sh:name "org:classification not correctly specified"@en;
+    sh:message "org:classification is missing or is no IRI"@en .
+
+<#prefLabel-violation>
+    a sh:PropertyShape;
+    sh:severity sh:Violation;
+    sh:path skos:prefLabel;
+    sh:datatype xsd:string;
+    sh:minCount 1 ;
+    sh:name "prefLabel not correctly specified"@en;
+    sh:message "skos:prefLabel is missing or is no Literal"@en .
+
+<#altLabel-warning>
+    a sh:PropertyShape ;
+    sh:severity sh:Violation;
+    sh:path skos:altLabel;
+    sh:datatype xsd:string;
+    sh:minCount 0;
+    sh:name "title not correctly specified"@en;
+    sh:message "skos:prefLabel is missing or no Literal"@en.
+    
