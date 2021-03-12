@@ -1,0 +1,67 @@
+
+@startuml
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam ArrowColor #Maroon
+skinparam linetype ortho
+    
+class "meemoo:ServiceProvider" as 741dc7f4e1c9b5274f383212bfb29e61
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+741dc7f4e1c9b5274f383212bfb29e61 --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "org:Site" as a182fa44f1b8a7375066b127bce34cd9
+class "schema:PostalAddress" as 040b3bd8114f3bbd9a41594bf0c9ecdb
+a182fa44f1b8a7375066b127bce34cd9 --> 040b3bd8114f3bbd9a41594bf0c9ecdb : org:siteAddress [0..1]
+class "schema:Person" as 9e9cb48c1174c31afed273d1a674e5ba
+9e9cb48c1174c31afed273d1a674e5ba : <b>org:holds</b> :  [1..*]
+class "org:Post" as 758ff8c4e98db8a08647538fbd3197e6
+class "org:Role" as 39c159ee41f4079de76a2f89e3b544e0
+758ff8c4e98db8a08647538fbd3197e6 --> 39c159ee41f4079de76a2f89e3b544e0 : org:role [1..*]
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+758ff8c4e98db8a08647538fbd3197e6 --> 74ac90c9c816d92423aaedea3c4d9dd8 : org:postIn [1..*]
+class "meemoo:EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+eb920d55ab34e13ae15beb57b15693b9 --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "meemoo:ContentPartner" as 77739dd3f071147316defc65f18cf85c
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+77739dd3f071147316defc65f18cf85c --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "org:OrganizationalUnit" as 4f5ff6b45d41fb3a14b5cf318ab0bfa4
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+4f5ff6b45d41fb3a14b5cf318ab0bfa4 --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+4f5ff6b45d41fb3a14b5cf318ab0bfa4 --> 74ac90c9c816d92423aaedea3c4d9dd8 : org:unitOf [1..*]
+class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+class "foaf:Agent" as 3b1fed4016ea3410e7b39f0cf0331513
+74ac90c9c816d92423aaedea3c4d9dd8 --|> 3b1fed4016ea3410e7b39f0cf0331513
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>skos:altLabel</b> : xsd:string [0..*]
+class "skos:Concept" as ffeaf0d3664c31215f614a64f5bb45a5
+74ac90c9c816d92423aaedea3c4d9dd8 --> ffeaf0d3664c31215f614a64f5bb45a5 : org:classification [1..*]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>skos:prefLabel</b> : xsd:string [1..*]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>schema:logo</b> :  [0..1]
+class "org:OrganizationalUnit" as 4f5ff6b45d41fb3a14b5cf318ab0bfa4
+74ac90c9c816d92423aaedea3c4d9dd8 --> 4f5ff6b45d41fb3a14b5cf318ab0bfa4 : org:hasUnit [0..*]
+class "org:Site" as a182fa44f1b8a7375066b127bce34cd9
+74ac90c9c816d92423aaedea3c4d9dd8 --> a182fa44f1b8a7375066b127bce34cd9 : org:hasPrimarySite [0..1]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>foaf:homepage</b> :  [0..1]
+class "schema:Person" as 9e9cb48c1174c31afed273d1a674e5ba
+74ac90c9c816d92423aaedea3c4d9dd8 --> 9e9cb48c1174c31afed273d1a674e5ba : meemoo:accountmanager [1..1]
+class "schema:PostalAddress" as 040b3bd8114f3bbd9a41594bf0c9ecdb
+class "schema:ContactPoint" as 5737d77d36e1661caabe06256eedc2f0
+040b3bd8114f3bbd9a41594bf0c9ecdb --|> 5737d77d36e1661caabe06256eedc2f0
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:postOfficeBoxNumber</b> : xsd:string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:addressCountry</b> :  [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:addressLocality</b> : xsd:string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:addressRegion</b> : xsd:string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:streetAddress</b> : xsd:string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:postalCode</b> : xsd:string [0..*]
+class "org:Role" as 39c159ee41f4079de76a2f89e3b544e0
+class "skos:Concept" as ffeaf0d3664c31215f614a64f5bb45a5
+39c159ee41f4079de76a2f89e3b544e0 --|> ffeaf0d3664c31215f614a64f5bb45a5
+39c159ee41f4079de76a2f89e3b544e0 : <b>skos:prefLabel</b> : xsd:string [1..*]
+
+hide circle
+hide methods
+hide empty members
+@enduml
+    
