@@ -3,8 +3,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
 @prefix cc: <http://creativecommons.org/ns#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -13,8 +11,80 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix meemoo: <http://meemoo.be/ns/> .
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix agr: <http://promsns.org/def/agr#> .
 
-# Node shapes
+#################################################################
+#    Properties
+#################################################################
+org:siteAddress a owl:ObjectProperty, rdf:Property;
+
+    rdfs:label "site Address"@en;
+    rdfs:label "adresse du Site"@fr;
+    rdfs:label "adres van de vestiging"@nl;
+
+    rdfs:domain org:Site;
+
+    rdfs:comment """Indicates an address for the site in a suitable encoding. Use of vCard (using the http://www.w3.org/TR/vcard-rdf/ vocabulary) is encouraged but the range is left open to allow other encodings to be used. The address may include email, telephone, and geo-location information and is not restricted to a physical address. """@en;
+    rdfs:comment """Indique une adresse pour le site dans un encodage approprié. L'usage du vocabulaire vCard ( http://www.w3.org/TR/vcard-rdf/) est encouragé, mais le range est ouvert pour permettre l'utilisation d'autres vocabulaires. L'adresse peut comporter le courriel, le téléphone, et l'information de géolocalisation; et n'est donc pas seulement limitée à une adresse physique. """@fr.
+
+org:role a owl:ObjectProperty, rdf:Property;
+
+    rdfs:label "role"@en;
+    rdfs:label "rôle"@fr;
+    rdfs:label "rol"@nl;
+
+    rdfs:comment """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
+    rdfs:comment """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;
+    rdfs:comment """Rol die de agent vervult als lid van de organisatie."""@nl; 
+
+    rdfs:domain [a owl:Class; owl:unionOf (org:Membership org:Post)];
+    rdfs:range  org:Role; 
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:postIn a owl:ObjectProperty, rdf:Property;
+
+    rdfs:label "post in"@en;
+	  rdfs:label "poste chez"@fr;
+    rdfs:label "positie in"@nl;
+
+    rdfs:comment """Indicates the Organization in which the Post exists."""@en;
+    rdfs:comment """Indicate l'Organisation dans laquelle le Poste existe."""@fr;
+    
+    rdfs:domain org:Post;
+    rdfs:range  org:Organization;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:hasPost a owl:ObjectProperty, rdf:Property;
+
+    rdfs:label "has post"@en;
+	rdfs:label "possède un poste"@fr;
+    rdfs:label "heeft positie"@nl;
+
+    rdfs:comment """Indicates a Post which exists within the Organization."""@en;
+	rdfs:comment """Indicate un Poste qui existe dans l'Organisation."""@fr;
+    rdfs:comment """Verwijst naar een positie in de organisatie."""@nl;
+    
+    rdfs:domain  org:Organization;
+    rdfs:range   org:Post;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+schema:logo a owl:ObjectProperty, rdf:Property.
+foaf:homepage a owl:ObjectProperty, rdf:Property.
+org:classification a owl:ObjectProperty, rdf:Property.
+
+meemoo:hasAccountmanager a owl:ObjectProperty, rdf:Property;
+    rdfs:label "has account manager"@en;
+    rdfs:label "Le Gestionnaire de Comptes "@fr;
+    rdfs:label "heeft account manager"@nl.
+
+meemoo:isAccountManagerOf a owl:ObjectProperty, rdf:Property;
+    rdfs:label "is account manager of"@en;
+    rdfs:label "est le Gestionnaire de Comptes de"@fr;
+    rdfs:label "is account manager van"@nl.
+
+#################################################################
+#   Classes / NodeShapes
+#################################################################
 
 org:Organization a rdfs:Class, sh:NodeShape ;
     rdfs:subClassOf  foaf:Agent;
@@ -25,11 +95,11 @@ org:Organization a rdfs:Class, sh:NodeShape ;
     rdfs:comment """Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"""@en;
     rdfs:comment """Représente un groupe de personnes organisées en communauté où tout autre forme de structure sociale, commerciale ou politique. Le groupe a un but commun ou une raison d'être qui va au-delà de la somme des personnes qui en font partie et peut agir en tant que "Agent". Les organisations sont souvent décomposables en structures hiérarchisées. Il est recommandé que des labels lexicaux SKOS soient utilisés pour nommer l'Organisation. En particulier `skos:prefLabel` pour le nom principal (en général le nom légal), `skos:altLabel` pour les noms alternatifs (marques, sigles, appellations familières) et `skos:notation` pour indiquer un code provenant d'une liste de code."""@fr;  
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
-    sh:property <#prefLabel-violation>, 
-    <#altLabel-warning>, [
+    sh:property <#prefLabel>, <#altLabel>, [
         a sh:PropertyShape ;
         sh:severity sh:Warning;
         sh:path schema:logo;
+        sh:nodeKind sh:IRI;
         sh:minCount 0;
         sh:maxCount 1;
         sh:name "org:classification not correctly specified"@en;
@@ -54,15 +124,6 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:message "org:classification is missing or is no IRI"@en
     ], [
         a sh:PropertyShape ;
-        sh:severity sh:Warning;
-        sh:path meemoo:accountmanager;
-        sh:minCount 1;
-        sh:maxCount 1;
-        sh:class schema:Person;
-        sh:name "meemoo:accountmanager not correctly specified"@en;
-        sh:message "meemoo:accountmanager is missing or is no IRI"@en
-    ], [
-        a sh:PropertyShape ;
         sh:severity sh:Info;
         sh:path org:hasUnit;
         sh:minCount 0;
@@ -77,7 +138,16 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "org:hasPrimarySite not correctly specified"@en;
-        sh:message "org:hasPrimarySite is missing or is no Literal"@en
+        sh:message "org:hasPrimarySite is no org:Site"@en
+    ], [
+        a sh:PropertyShape;
+        sh:severity sh:Info;
+        sh:path dc:isPartOf;
+        sh:class meemoo:CollaborationAgreement;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "dc:isPartOf not correctly specified"@en;
+        sh:message "dc:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
     ] .
 
 org:OrganizationalUnit a rdfs:Class, sh:NodeShape ;
@@ -102,7 +172,8 @@ org:OrganizationalUnit a rdfs:Class, sh:NodeShape ;
 meemoo:ContentPartner a rdfs:Class, sh:NodeShape ;
     rdfs:label "Content Partner"@en ;
     rdfs:label "Contentpartner"@nl ;
-    rdfs:subClassOf org:Organization .
+    rdfs:subClassOf org:Organization;
+    sh:property <#accountManager>.
 
 meemoo:ServiceProvider a rdfs:Class, sh:NodeShape ;
     rdfs:label "Service Provider"@en ;
@@ -113,6 +184,34 @@ meemoo:EducationalOrganization a rdfs:Class, sh:NodeShape ;
     rdfs:label "Educational Organization"@en ;
     rdfs:label "Educatieve organisatie"@nl ;
     rdfs:subClassOf org:Organization .
+
+meemoo:EducationalPartner a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Educational Partner"@en ;
+    rdfs:label "Educatieve partner"@nl ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    sh:property <#accountManager>.
+
+meemoo:EducationalPublisher a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Educational Publisher"@en ;
+    rdfs:label "Educatieve uitgever"@nl ;
+    rdfs:subClassOf meemoo:EducationalOrganization .
+
+meemoo:School a rdfs:Class, sh:NodeShape ;
+    rdfs:label "School"@en ;
+    rdfs:label "School"@nl ;
+    rdfs:subClassOf meemoo:EducationalOrganization .
+
+meemoo:CollaborationAgreement a rdfs:Class, sh:NodeShape ;
+    rdfs:subClassOf agr:Agreement;
+    rdfs:label "Collaboration Agreement"@en;
+    rdfs:label "Samenwerkingsovereenkomst"@nl.
+
+meemoo:ServiceAgreement a rdfs:Class, sh:NodeShape ;
+    rdfs:subClassOf agr:Agreement;
+    rdfs:label "Service Agreement"@en;
+    rdfs:label "Dienstverleningsovereenkomst"@nl.
+
+#Aanbieder = organisatie in avo
 
 org:Site a rdfs:Class, sh:NodeShape ;
     rdfs:label "Site"@en;
@@ -167,7 +266,7 @@ org:Role a owl:Class, rdfs:Class;
     rdfs:comment """Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of `org:Membership`. It is common for roles to be arranged in some taxonomic structure and we use SKOS to represent that. The normal SKOS lexical properties should be used when labelling the Role. Additional descriptive properties for the Role, such as a Salary band, may be added by extension vocabularies."""@en;
     rdfs:comment """Rol die een persoon of agent kan vervullen in een organisatie."""@nl;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
-    sh:property <#prefLabel-violation>.
+    sh:property <#prefLabel>.
 
 # From schema
 
@@ -179,10 +278,41 @@ schema:Person
     sh:severity sh:Warning;
     sh:path org:holds;
     sh:minCount 1;
-    sh:node org:Post;
+    sh:class org:Post;
     sh:name "org:holds not correctly specified"@en;
     sh:message "org:holds is missing or is no IRI"@en 
-  ].
+  ], [
+    a sh:PropertyShape ;
+    sh:path schema:givenName ;
+    sh:datatype xsd:string ;
+    sh:description "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property."@en ;
+    sh:name "givenName" 
+  ], [
+    a sh:PropertyShape ;
+    sh:path schema:familyName ;
+    sh:datatype xsd:string ;
+    sh:description "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property."@en ;
+    sh:name "familyName" 
+  ], [
+    a sh:PropertyShape ;
+    sh:path schema:email ;
+    sh:datatype xsd:string ;
+    sh:description "Email address."@en ;
+    sh:name "email" 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:severity sh:Warning;
+        sh:path meemoo:isAccountManagerOf;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:or (
+            [ sh:class org:ContentPartner ]
+            [ sh:class org:EducationalPartner ]
+        );
+        sh:name "meemoo:isAccountManagerOf not correctly specified"@en;
+        sh:message "A schema:Person can only be meemoo:isAccountManagerOf one org:ContentPartner"@en
+    ].
 
 schema:PostalAddress
   a rdfs:Class ;
@@ -195,8 +325,8 @@ schema:PostalAddress
   sh:property schema:PostalAddress-addressRegion ;
   sh:property schema:PostalAddress-postOfficeBoxNumber ;
   sh:property schema:PostalAddress-postalCode ;
-  sh:property schema:PostalAddress-streetAddress ;
-.
+  sh:property schema:PostalAddress-streetAddress .
+
 schema:PostalAddress-addressCountry
   a sh:PropertyShape ;
   sh:path schema:addressCountry ;
@@ -249,7 +379,7 @@ schema:PostalAddress-streetAddress
 
 # Property Shapes
 
-<#prefLabel-violation>
+<#prefLabel>
     a sh:PropertyShape;
     sh:severity sh:Violation;
     sh:path skos:prefLabel;
@@ -258,7 +388,7 @@ schema:PostalAddress-streetAddress
     sh:name "prefLabel not correctly specified"@en;
     sh:message "skos:prefLabel is missing or is no Literal"@en .
 
-<#altLabel-warning>
+<#altLabel>
     a sh:PropertyShape ;
     sh:severity sh:Violation;
     sh:path skos:altLabel;
@@ -267,3 +397,12 @@ schema:PostalAddress-streetAddress
     sh:name "title not correctly specified"@en;
     sh:message "skos:prefLabel is missing or no Literal"@en.
     
+<#accountManager> 
+    a sh:PropertyShape ;
+    sh:severity sh:Warning;
+    sh:path meemoo:hasAccountmanager;
+    sh:minCount 1;
+    sh:maxCount 1;
+    sh:class schema:Person;
+    sh:name "meemoo:accountmanager not correctly specified"@en;
+    sh:message "meemoo:accountmanager is missing or is no IRI"@en .
