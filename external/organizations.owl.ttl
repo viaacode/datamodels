@@ -353,7 +353,6 @@ org:memberOf  owl:inverseOf org:hasMember .
 org:hasMember owl:inverseOf org:memberOf  .
 
 
-
 org:reportsTo a owl:ObjectProperty, rdf:Property;
 
     rdfs:label "reports to"@en;

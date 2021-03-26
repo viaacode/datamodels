@@ -44,7 +44,7 @@ org:role a owl:ObjectProperty, rdf:Property;
 org:postIn a owl:ObjectProperty, rdf:Property;
 
     rdfs:label "post in"@en;
-	  rdfs:label "poste chez"@fr;
+	rdfs:label "poste chez"@fr;
     rdfs:label "positie in"@nl;
 
     rdfs:comment """Indicates the Organization in which the Post exists."""@en;
@@ -128,6 +128,14 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:path org:hasUnit;
         sh:minCount 0;
         sh:class org:OrganizationalUnit;
+        sh:name "No org:OrganizationalUnit specified"@en;
+        sh:message "org:hasUnit is missing or is no IRI"@en
+    ], [
+        a sh:PropertyShape ;
+        sh:severity sh:Info;
+        sh:path schema:contactPoint;
+        sh:minCount 0;
+        sh:class schema:ContactPoint;
         sh:name "No org:OrganizationalUnit specified"@en;
         sh:message "org:hasUnit is missing or is no IRI"@en
     ], [
@@ -225,7 +233,7 @@ org:Site a rdfs:Class, sh:NodeShape ;
         a sh:PropertyShape;
         sh:severity sh:Violation;
         sh:path org:siteAddress;
-        sh:class schema:PostalAddress;
+        sh:class schema:ContactPoint;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "siteAddress not correctly specified"@en;
@@ -377,8 +385,41 @@ schema:PostalAddress-streetAddress
   sh:name "streetAddress" ;
 .
 
-# Property Shapes
 
+schema:ContactPoint
+  a rdfs:Class ;
+  a sh:NodeShape ;
+  rdfs:comment "A contact point&#x2014;for example, a Customer Complaints department."^^rdf:HTML ;
+  rdfs:label "Contact point" ;
+  rdfs:subClassOf schema:StructuredValue ;
+  sh:property schema:ContactPoint-contactType ;
+  sh:property schema:ContactPoint-email ;
+  sh:property schema:ContactPoint-telephone ;
+.
+
+schema:ContactPoint-contactType
+  a sh:PropertyShape ;
+  sh:path schema:contactType ;
+  sh:datatype xsd:string ;
+  sh:description "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point."^^rdf:HTML ;
+  sh:name "contactType" ;
+.
+schema:ContactPoint-email
+  a sh:PropertyShape ;
+  sh:path schema:email ;
+  sh:datatype xsd:string ;
+  sh:description "Email address."^^rdf:HTML ;
+  sh:name "email" ;
+.
+schema:ContactPoint-telephone
+  a sh:PropertyShape ;
+  sh:path schema:telephone ;
+  sh:datatype xsd:string ;
+  sh:description "The telephone number."^^rdf:HTML ;
+  sh:name "telephone" ;
+.
+
+# Property Shapes
 <#prefLabel>
     a sh:PropertyShape;
     sh:severity sh:Violation;

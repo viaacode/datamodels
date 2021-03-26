@@ -5,100 +5,97 @@ skinparam classFontSize 14
 skinparam componentStyle uml2
 skinparam wrapMessageWidth 100
 skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
     
-legend top left
-xml = http://www.w3.org/XML/1998/namespace
-rdf = http://www.w3.org/1999/02/22-rdf-syntax-ns#
-rdfs = http://www.w3.org/2000/01/rdf-schema#
-xsd = http://www.w3.org/2001/XMLSchema#
-owl = http://www.w3.org/2002/07/owl#
-sh = http://www.w3.org/ns/shacl#
-cc = http://creativecommons.org/ns#
-dc = http://purl.org/dc/elements/1.1/
-dct = http://purl.org/dc/terms/
-schema = https://schema.org/
-org = http://www.w3.org/ns/org#
-skos = http://www.w3.org/2004/02/skos/core#
-meemoo = http://meemoo.be/ns/
-foaf = http://xmlns.com/foaf/0.1/
-agr = http://promsns.org/def/agr#
-endlegend
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-class "foaf:Agent" as 3b1fed4016ea3410e7b39f0cf0331513
-74ac90c9c816d92423aaedea3c4d9dd8 --|> 3b1fed4016ea3410e7b39f0cf0331513
-class "skos:Concept" as ffeaf0d3664c31215f614a64f5bb45a5
-74ac90c9c816d92423aaedea3c4d9dd8 --> ffeaf0d3664c31215f614a64f5bb45a5 : org:classification [1..*]
-class "org:Site" as a182fa44f1b8a7375066b127bce34cd9
-74ac90c9c816d92423aaedea3c4d9dd8 --> a182fa44f1b8a7375066b127bce34cd9 : org:hasPrimarySite [0..1]
-74ac90c9c816d92423aaedea3c4d9dd8 : <b>skos:altLabel</b> : xsd:string [0..*]
-74ac90c9c816d92423aaedea3c4d9dd8 : <b>schema:logo</b> : sh:IRI [0..1]
-class "org:OrganizationalUnit" as 4f5ff6b45d41fb3a14b5cf318ab0bfa4
-74ac90c9c816d92423aaedea3c4d9dd8 --> 4f5ff6b45d41fb3a14b5cf318ab0bfa4 : org:hasUnit [0..*]
-74ac90c9c816d92423aaedea3c4d9dd8 : <b>foaf:homepage</b> : sh:IRI [0..1]
-class "meemoo:CollaborationAgreement" as 4bacf20985b91d8694f51c93c2a4556e
-74ac90c9c816d92423aaedea3c4d9dd8 --> 4bacf20985b91d8694f51c93c2a4556e : dc:isPartOf [0..1]
-74ac90c9c816d92423aaedea3c4d9dd8 : <b>skos:prefLabel</b> : xsd:string [1..*]
-class "org:Post" as 758ff8c4e98db8a08647538fbd3197e6
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-758ff8c4e98db8a08647538fbd3197e6 --> 74ac90c9c816d92423aaedea3c4d9dd8 : org:postIn [1..*]
-class "org:Role" as 39c159ee41f4079de76a2f89e3b544e0
-758ff8c4e98db8a08647538fbd3197e6 --> 39c159ee41f4079de76a2f89e3b544e0 : org:role [1..*]
-class "meemoo:CollaborationAgreement" as 4bacf20985b91d8694f51c93c2a4556e
-class "agr:Agreement" as 7f106dbebc2762bb4aa47d80375ad8f7
-4bacf20985b91d8694f51c93c2a4556e --|> 7f106dbebc2762bb4aa47d80375ad8f7
-class "meemoo:EducationalPublisher" as 2810fa3471b5f9d8f4ffb4122f129865
-class "meemoo:EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
-2810fa3471b5f9d8f4ffb4122f129865 --|> eb920d55ab34e13ae15beb57b15693b9
-class "schema:Person" as 9e9cb48c1174c31afed273d1a674e5ba
-class "org:Post" as 758ff8c4e98db8a08647538fbd3197e6
-9e9cb48c1174c31afed273d1a674e5ba --> 758ff8c4e98db8a08647538fbd3197e6 : org:holds [1..*]
-9e9cb48c1174c31afed273d1a674e5ba : <b>schema:familyName</b> : xsd:string [0..*]
-9e9cb48c1174c31afed273d1a674e5ba : <b>schema:givenName</b> : xsd:string [0..*]
-9e9cb48c1174c31afed273d1a674e5ba : <b>meemoo:isAccountManagerOf</b> :  [0..1]
-9e9cb48c1174c31afed273d1a674e5ba : <b>schema:email</b> : xsd:string [0..*]
-class "meemoo:EducationalPartner" as 5a733f6b777f87d3aeed785dc2d905dd
-class "meemoo:EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
-5a733f6b777f87d3aeed785dc2d905dd --|> eb920d55ab34e13ae15beb57b15693b9
-class "schema:Person" as 9e9cb48c1174c31afed273d1a674e5ba
-5a733f6b777f87d3aeed785dc2d905dd --> 9e9cb48c1174c31afed273d1a674e5ba : meemoo:hasAccountmanager [1..1]
-class "org:Site" as a182fa44f1b8a7375066b127bce34cd9
-class "schema:PostalAddress" as 040b3bd8114f3bbd9a41594bf0c9ecdb
-a182fa44f1b8a7375066b127bce34cd9 --> 040b3bd8114f3bbd9a41594bf0c9ecdb : org:siteAddress [0..1]
-class "org:OrganizationalUnit" as 4f5ff6b45d41fb3a14b5cf318ab0bfa4
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-4f5ff6b45d41fb3a14b5cf318ab0bfa4 --|> 74ac90c9c816d92423aaedea3c4d9dd8
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-4f5ff6b45d41fb3a14b5cf318ab0bfa4 --> 74ac90c9c816d92423aaedea3c4d9dd8 : org:unitOf [1..*]
-class "meemoo:EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-eb920d55ab34e13ae15beb57b15693b9 --|> 74ac90c9c816d92423aaedea3c4d9dd8
-class "meemoo:ServiceProvider" as 741dc7f4e1c9b5274f383212bfb29e61
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-741dc7f4e1c9b5274f383212bfb29e61 --|> 74ac90c9c816d92423aaedea3c4d9dd8
-class "meemoo:ContentPartner" as 77739dd3f071147316defc65f18cf85c
-class "org:Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
-77739dd3f071147316defc65f18cf85c --|> 74ac90c9c816d92423aaedea3c4d9dd8
-class "schema:Person" as 9e9cb48c1174c31afed273d1a674e5ba
-77739dd3f071147316defc65f18cf85c --> 9e9cb48c1174c31afed273d1a674e5ba : meemoo:hasAccountmanager [1..1]
-class "meemoo:ServiceAgreement" as d0f35d685c233721f31ac3e00e8f4814
-class "agr:Agreement" as 7f106dbebc2762bb4aa47d80375ad8f7
-d0f35d685c233721f31ac3e00e8f4814 --|> 7f106dbebc2762bb4aa47d80375ad8f7
-class "org:Role" as 39c159ee41f4079de76a2f89e3b544e0
-class "skos:Concept" as ffeaf0d3664c31215f614a64f5bb45a5
-39c159ee41f4079de76a2f89e3b544e0 --|> ffeaf0d3664c31215f614a64f5bb45a5
-39c159ee41f4079de76a2f89e3b544e0 : <b>skos:prefLabel</b> : xsd:string [1..*]
-class "schema:PostalAddress" as 040b3bd8114f3bbd9a41594bf0c9ecdb
-class "schema:ContactPoint" as 5737d77d36e1661caabe06256eedc2f0
+class "Person" as 9e9cb48c1174c31afed273d1a674e5ba
+9e9cb48c1174c31afed273d1a674e5ba : <b>familyName</b> : string [0..*]
+9e9cb48c1174c31afed273d1a674e5ba : <b>isAccountManagerOf</b> :  [0..1]
+class "Post" as 758ff8c4e98db8a08647538fbd3197e6
+9e9cb48c1174c31afed273d1a674e5ba --> 758ff8c4e98db8a08647538fbd3197e6 : holds [1..*]
+9e9cb48c1174c31afed273d1a674e5ba : <b>email</b> : string [0..*]
+9e9cb48c1174c31afed273d1a674e5ba : <b>givenName</b> : string [0..*]
+class "PostalAddress" as 040b3bd8114f3bbd9a41594bf0c9ecdb
+class "ContactPoint" as 5737d77d36e1661caabe06256eedc2f0
 040b3bd8114f3bbd9a41594bf0c9ecdb --|> 5737d77d36e1661caabe06256eedc2f0
-040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:streetAddress</b> : xsd:string [0..*]
-040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:postOfficeBoxNumber</b> : xsd:string [0..*]
-040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:addressRegion</b> : xsd:string [0..*]
-040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:addressLocality</b> : xsd:string [0..*]
-040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:addressCountry</b> :  [0..*]
-040b3bd8114f3bbd9a41594bf0c9ecdb : <b>schema:postalCode</b> : xsd:string [0..*]
-class "meemoo:School" as b6caba1d832d8f97437174d031b49a10
-class "meemoo:EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>streetAddress</b> : string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>addressCountry</b> :  [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>addressRegion</b> : string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>postOfficeBoxNumber</b> : string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>postalCode</b> : string [0..*]
+040b3bd8114f3bbd9a41594bf0c9ecdb : <b>addressLocality</b> : string [0..*]
+class "OrganizationalUnit" as 4f5ff6b45d41fb3a14b5cf318ab0bfa4
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+4f5ff6b45d41fb3a14b5cf318ab0bfa4 --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+4f5ff6b45d41fb3a14b5cf318ab0bfa4 --> 74ac90c9c816d92423aaedea3c4d9dd8 : unitOf [1..*]
+class "ContentPartner" as 77739dd3f071147316defc65f18cf85c
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+77739dd3f071147316defc65f18cf85c --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "Person" as 9e9cb48c1174c31afed273d1a674e5ba
+77739dd3f071147316defc65f18cf85c --> 9e9cb48c1174c31afed273d1a674e5ba : hasAccountmanager [1..1]
+class "CollaborationAgreement" as 4bacf20985b91d8694f51c93c2a4556e
+class "Agreement" as 7f106dbebc2762bb4aa47d80375ad8f7
+4bacf20985b91d8694f51c93c2a4556e --|> 7f106dbebc2762bb4aa47d80375ad8f7
+class "ContactPoint" as 5737d77d36e1661caabe06256eedc2f0
+class "StructuredValue" as 1514431a7645319af8ec8df6d27eff33
+5737d77d36e1661caabe06256eedc2f0 --|> 1514431a7645319af8ec8df6d27eff33
+5737d77d36e1661caabe06256eedc2f0 : <b>email</b> : string [0..*]
+5737d77d36e1661caabe06256eedc2f0 : <b>contactType</b> : string [0..*]
+5737d77d36e1661caabe06256eedc2f0 : <b>telephone</b> : string [0..*]
+class "EducationalPartner" as 5a733f6b777f87d3aeed785dc2d905dd
+class "EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
+5a733f6b777f87d3aeed785dc2d905dd --|> eb920d55ab34e13ae15beb57b15693b9
+class "Person" as 9e9cb48c1174c31afed273d1a674e5ba
+5a733f6b777f87d3aeed785dc2d905dd --> 9e9cb48c1174c31afed273d1a674e5ba : hasAccountmanager [1..1]
+class "Site" as a182fa44f1b8a7375066b127bce34cd9
+class "ContactPoint" as 5737d77d36e1661caabe06256eedc2f0
+a182fa44f1b8a7375066b127bce34cd9 --> 5737d77d36e1661caabe06256eedc2f0 : siteAddress [0..1]
+class "Post" as 758ff8c4e98db8a08647538fbd3197e6
+class "Role" as 39c159ee41f4079de76a2f89e3b544e0
+758ff8c4e98db8a08647538fbd3197e6 --> 39c159ee41f4079de76a2f89e3b544e0 : role [1..*]
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+758ff8c4e98db8a08647538fbd3197e6 --> 74ac90c9c816d92423aaedea3c4d9dd8 : postIn [1..*]
+class "ServiceProvider" as 741dc7f4e1c9b5274f383212bfb29e61
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+741dc7f4e1c9b5274f383212bfb29e61 --|> 74ac90c9c816d92423aaedea3c4d9dd8
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+class "Agent" as 3b1fed4016ea3410e7b39f0cf0331513
+74ac90c9c816d92423aaedea3c4d9dd8 --|> 3b1fed4016ea3410e7b39f0cf0331513
+class "CollaborationAgreement" as 4bacf20985b91d8694f51c93c2a4556e
+74ac90c9c816d92423aaedea3c4d9dd8 --> 4bacf20985b91d8694f51c93c2a4556e : isPartOf [0..1]
+class "OrganizationalUnit" as 4f5ff6b45d41fb3a14b5cf318ab0bfa4
+74ac90c9c816d92423aaedea3c4d9dd8 --> 4f5ff6b45d41fb3a14b5cf318ab0bfa4 : hasUnit [0..*]
+class "Concept" as ffeaf0d3664c31215f614a64f5bb45a5
+74ac90c9c816d92423aaedea3c4d9dd8 --> ffeaf0d3664c31215f614a64f5bb45a5 : classification [1..*]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>homepage</b> : IRI [0..1]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>logo</b> : IRI [0..1]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>altLabel</b> : string [0..*]
+class "ContactPoint" as 5737d77d36e1661caabe06256eedc2f0
+74ac90c9c816d92423aaedea3c4d9dd8 --> 5737d77d36e1661caabe06256eedc2f0 : contactPoint [0..*]
+class "Site" as a182fa44f1b8a7375066b127bce34cd9
+74ac90c9c816d92423aaedea3c4d9dd8 --> a182fa44f1b8a7375066b127bce34cd9 : hasPrimarySite [0..1]
+74ac90c9c816d92423aaedea3c4d9dd8 : <b>prefLabel</b> : string [1..*]
+class "EducationalPublisher" as 2810fa3471b5f9d8f4ffb4122f129865
+class "EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
+2810fa3471b5f9d8f4ffb4122f129865 --|> eb920d55ab34e13ae15beb57b15693b9
+class "Role" as 39c159ee41f4079de76a2f89e3b544e0
+class "Concept" as ffeaf0d3664c31215f614a64f5bb45a5
+39c159ee41f4079de76a2f89e3b544e0 --|> ffeaf0d3664c31215f614a64f5bb45a5
+39c159ee41f4079de76a2f89e3b544e0 : <b>prefLabel</b> : string [1..*]
+note left of 39c159ee41f4079de76a2f89e3b544e0 #white
+AccountManager
+EducationalEmployee
+end note
+class "ServiceAgreement" as d0f35d685c233721f31ac3e00e8f4814
+class "Agreement" as 7f106dbebc2762bb4aa47d80375ad8f7
+d0f35d685c233721f31ac3e00e8f4814 --|> 7f106dbebc2762bb4aa47d80375ad8f7
+class "School" as b6caba1d832d8f97437174d031b49a10
+class "EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
 b6caba1d832d8f97437174d031b49a10 --|> eb920d55ab34e13ae15beb57b15693b9
+class "EducationalOrganization" as eb920d55ab34e13ae15beb57b15693b9
+class "Organization" as 74ac90c9c816d92423aaedea3c4d9dd8
+eb920d55ab34e13ae15beb57b15693b9 --|> 74ac90c9c816d92423aaedea3c4d9dd8
 
 hide circle
 hide methods
