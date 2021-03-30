@@ -8,6 +8,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix schema: <https://schema.org/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix rov: <http://www.w3.org/ns/regorg#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix meemoo: <http://meemoo.be/ns/> .
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
@@ -72,6 +73,9 @@ schema:logo a owl:ObjectProperty, rdf:Property.
 foaf:homepage a owl:ObjectProperty, rdf:Property.
 org:classification a owl:ObjectProperty, rdf:Property.
 
+dc:description a rdf:Property;
+    rdfs:label "Beschrijving van de organisatie."@nl.
+
 meemoo:hasAccountmanager a owl:ObjectProperty, rdf:Property;
     rdfs:label "has account manager"@en;
     rdfs:label "Le Gestionnaire de Comptes "@fr;
@@ -102,9 +106,20 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:nodeKind sh:IRI;
         sh:minCount 0;
         sh:maxCount 1;
-        sh:name "org:classification not correctly specified"@en;
-        sh:message "org:classification is missing or is no IRI"@en
-    ], [
+        sh:name "schema:logo not correctly specified"@en;
+        sh:message "schema:logo is missing or is no IRI"@en
+    ], 
+    # [
+    #     a sh:PropertyShape ;
+    #     sh:severity sh:Warning;
+    #     sh:path schema:legalName;
+    #     sh:datatype xsd:string;
+    #     sh:minCount 1;
+    #     sh:maxCount 1;
+    #     sh:name "schema:legalName not correctly specified"@en;
+    #     sh:message "schema:legalName is missing or is not a string"@en
+    # ],
+    [
         a sh:PropertyShape ;
         sh:severity sh:Warning;
         sh:path foaf:homepage;
@@ -113,6 +128,15 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:maxCount 1;
         sh:name "foaf:homepage not correctly specified"@en;
         sh:message "foaf:homepage is missing or is no IRI"@en
+    ],[
+        a sh:PropertyShape ;
+        sh:severity sh:Warning;
+        sh:path dc:description;
+        sh:datatype xsd:string;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:name "dc:description not correctly specified"@en;
+        sh:message "dc:description is missing"@en
     ],
     [
         a sh:PropertyShape ;
@@ -156,7 +180,17 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:maxCount 1 ;
         sh:name "dc:isPartOf not correctly specified"@en;
         sh:message "dc:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
-    ] .
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:severity sh:Warning;
+        sh:path meemoo:hasAccountmanager;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class schema:Person;
+        sh:name "meemoo:accountmanager not correctly specified"@en;
+        sh:message "meemoo:accountmanager is missing or is no IRI"@en 
+    ].
 
 org:OrganizationalUnit a rdfs:Class, sh:NodeShape ;
     rdfs:subClassOf  org:Organization;
@@ -420,12 +454,14 @@ schema:ContactPoint-telephone
 .
 
 # Property Shapes
+
 <#prefLabel>
     a sh:PropertyShape;
     sh:severity sh:Violation;
     sh:path skos:prefLabel;
     sh:datatype xsd:string;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:name "prefLabel not correctly specified"@en;
     sh:message "skos:prefLabel is missing or is no Literal"@en .
 
