@@ -10,7 +10,7 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rov: <http://www.w3.org/ns/regorg#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix meemoo: <http://meemoo.be/ns/> .
+@prefix meemoo: <http://data.meemoo.be/ns/> .
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
 @prefix agr: <http://promsns.org/def/agr#> .
 
