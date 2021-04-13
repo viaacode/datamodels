@@ -14,6 +14,7 @@
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
 @prefix agr: <http://promsns.org/def/agr#> .
 
+
 #################################################################
 #    Properties
 #################################################################
@@ -185,7 +186,7 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         a sh:PropertyShape ;
         sh:severity sh:Warning;
         sh:path meemoo:hasAccountmanager;
-        sh:minCount 1;
+        sh:minCount 0;
         sh:maxCount 1;
         sh:class schema:Person;
         sh:name "meemoo:accountmanager not correctly specified"@en;

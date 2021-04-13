@@ -1,30 +1,31 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix mr: <http://data.meemoo.be/ns/terms/roles#> .
 @base <http://data.meemoo.be/ns/terms/roles> .
 
-mt:Roles a skos:ConceptScheme ;
+<> a skos:ConceptScheme ;
   dct:title "Meemoo organization Roles thesaurus" ;
-  skos:hasTopConcept mt:Staff .
+  skos:hasTopConcept <#Staff> .
 
-mt:Staff a org:Role;
+<#Staff> a org:Role;
     skos:prefLabel "Staff"@en ;
     skos:prefLabel "Personnel(le)"@fr;
     skos:prefLabel "Personeel"@nl;
-    skos:topConceptOf mt:RolesThesaurus.
+    skos:topConceptOf <>.
 
-mt:AccountManager a org:Role;
+<#AccountManager> a org:Role;
     skos:prefLabel "Account Manager"@en ;
     skos:prefLabel "Gestionnaire de Comptes"@fr;
     skos:prefLabel "Accountmanager"@nl ;
-    skos:broader mt:Staff ;
-    skos:inScheme mt:RolesThesaurus .
+    skos:broader <#Staff> ;
+    skos:inScheme <> .
 
-mt:EducationalEmployee a org:Role;
+<#EducationalEmployee> a org:Role;
     skos:prefLabel "Account Manager"@en ;
     skos:prefLabel "Gestionnaire de Comptes"@fr;
     skos:prefLabel "Educatief medewerker"@nl ;
-    skos:broader mt:Staff ;
-    skos:inScheme mt:RolesThesaurus .
+    skos:broader <#Staff> ;
+    skos:inScheme <> .
 
 

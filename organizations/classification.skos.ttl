@@ -3,149 +3,186 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @base <http://data.meemoo.be/ns/terms/> .
 
-<#orgclass> a skos:ConceptScheme;
+<orgclass> a skos:ConceptScheme;
     dct:title "Meemoo organization classification thesaurus"@en;
-    skos:hasTopConcept <orgclass#ORG>.
+    skos:hasTopConcept <orgclass/ORG>.
 
-<orgclass#ORG> a skos:Concept;
-    skos:prefLabel "Generieke organisatie"@nl.
+# --- top concept ---
 
-<orgclass#OVH> a skos:Concept;
-    skos:prefLabel "Overheid"@nl.
+<orgclass/ORG> a skos:Concept;
+    skos:narrower 
+    skos:prefLabel "generieke organisatie"@nl.
 
-<orgclass#OND> a skos:Concept;
-    skos:prefLabel "Onderwijs"@nl.
+# --- Algemeen ---
 
-<orgclass#ALG> a skos:Concept;
-    skos:prefLabel "Algemeen"@nl.
+<orgclass/ALG> a skos:Concept;
+skos:broader <orgclass/ORG>;
+    skos:prefLabel "algemeen"@nl.
 
-<orgclass#CUL> a skos:Concept;
-    skos:prefLabel "Cultuur/erfgoed"@nl.
-
-<orgclass#LEV> a skos:Concept;
-    skos:prefLabel "Leverancier"@nl
-
-<orgclass#MED> a skos:Concept;
-    skos:prefLabel "Media"@nl.
-
-<orgclass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel"adviescommissie"@nl.
-
-<orgclass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "commissie Vlaams Parlement"@nl.
-
-<orgclass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "kabinet"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "hoger onderwijs"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "leerplichtonderwijs"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "kerkfabriek"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "landelijke private omroep"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "regionale omroep"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "publieke omroep"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "digitaliseringsbedrijf"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "museum (niet erkend)"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "sectororganisatie"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "educatieve uitgeverij"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "educatieve organisatie"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "kunstenorganisatie"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "erfgoedcel"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "dienstenbedrijf"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "vakvereniging onderwijs"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "volwassenenonderwijs"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "openbare bibliotheek"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "archief"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "erfgoedbibliotheek"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "vakbond"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "kathedrale kerkfabriek"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "technologiebedrijf"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "overheidsdienst"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
-    skos:prefLabel "onderwijskoepel"@nl.
-
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
+<orgclass/ADB> a skos:Concept;
+    skos:broader <orgclass/ALG>; 
     skos:prefLabel "advocatenbureau"@nl.
 
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
+<orgclass/KEF> a skos:Concept;
+    skos:broader <orgclass/ALG>; 
+    skos:prefLabel "kerkfabriek"@nl.
+
+<orgclass/KKF> a skos:Concept;
+    skos:broader <orgclass/ALG>; 
+    skos:prefLabel "kathedrale kerkfabriek"@nl.
+
+# --- Cultuur ---
+
+<orgclass/CUL> a skos:Concept;
+skos:broader <orgclass/ORG>;
+    skos:prefLabel "cultuur/erfgoed"@nl.
+
+<orgclass/KUO> a skos:Concept;
+    skos:broader <orgclass/CUL>; 
+    skos:prefLabel "kunstenorganisatie"@nl.
+
+<orgclass/ERC> a skos:Concept;
+    skos:broader <orgclass/CUL>; 
+    skos:prefLabel "erfgoedcel"@nl.
+
+<orgclass/BIB> a skos:Concept;
+    skos:broader <orgclass/CUL>; 
+    skos:prefLabel "openbare bibliotheek"@nl.
+
+<orgclass/ARCH> a skos:Concept;
+    skos:broader <orgclass/CUL>; 
+    skos:prefLabel "archief"@nl.
+
+<orgclass/ERB> a skos:Concept;
+    skos:broader <orgclass/CUL>; 
+    skos:prefLabel "erfgoedbibliotheek"@nl.
+
+<orgclass/NEM> a skos:Concept;
+    skos:broader <orgclass/CUL>; 
+    skos:prefLabel "Museum (niet erkend)"@nl.
+
+<orgclass/MUS> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Museum (erkend)"@nl.
+
+# --- Leverancier ---
+
+<orgclass/LEV> a skos:Concept;
+skos:broader <orgclass/ORG>;
+    skos:prefLabel "leverancier"@nl.
+
+<orgclass/DIB> a skos:Concept;
+    skos:broader <orgclass/LEV>; 
+    skos:prefLabel "dienstenbedrijf"@nl.
+
+<orgclass/DIG> a skos:Concept;
+    skos:broader <orgclass/LEV>; 
+    skos:prefLabel "digitaliseringsbedrijf"@nl.
+
+<orgclass/TEB> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "technologiebedrijf"@nl.
+
+# --- Media ---
+
+<orgclass/MED> a skos:Concept;
+skos:broader <orgclass/ORG>;
+    skos:prefLabel "Media"@nl.
+
+<orgclass/MEB> a skos:Concept;
+    skos:broader <orgclass/MED>; 
     skos:prefLabel "mediabedrijf"@nl.
 
-<orgClass#> a skos:Concept;
-    skos:broader <orgClass#>; 
+<orgclass/LPO> a skos:Concept;
+    skos:broader <orgclass/MED>; 
+    skos:prefLabel "Landelijke private omroep"@nl.
+
+<orgclass/REO> a skos:Concept;
+    skos:broader <orgclass/MED>; 
+    skos:prefLabel "Regionale omroep"@nl.
+
+<orgclass/PUO> a skos:Concept;
+    skos:broader <orgclass/MED>; 
+    skos:prefLabel "Publieke omroep"@nl.
+
+<orgclass/ADC> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Adviescommissie"@nl.
+
+<orgclass/CVP> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Commissie Vlaams Parlement"@nl.
+
+<orgclass/KAT> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Kabinet"@nl.
+
+<orgclass/HOO> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Hoger onderwijs"@nl.
+
+<orgclass/LEO> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Leerplichtonderwijs"@nl.
+
+
+<orgclass/OVH> a skos:Concept;
+    skos:broader <orgclass/ORG>;
+    skos:prefLabel "Overheid"@nl.
+
+<orgclass/OND> a skos:Concept;
+skos:broader <orgclass/ORG>;
+    skos:prefLabel "Onderwijs"@nl.
+
+
+
+
+
+<orgclass/SEO> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Sectororganisatie"@nl.
+
+<orgclass/EDU> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Educatieve uitgeverij"@nl.
+
+<orgclass/EDO> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "Educatieve organisatie"@nl.
+
+
+
+
+<orgclass/VVO> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "vakvereniging onderwijs"@nl.
+
+<orgclass/VOO> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "volwassenenonderwijs"@nl.
+
+<orgclass/VAB> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "vakbond"@nl.
+
+<orgclass/KKF> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "kathedrale kerkfabriek"@nl.
+
+
+
+<orgclass/OVD> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "overheidsdienst"@nl.
+
+<orgclass/ONK> a skos:Concept;
+    skos:broader <orgclass/>; 
+    skos:prefLabel "onderwijskoepel"@nl.
+
+
+
+<orgclass/MUS> a skos:Concept;
+    skos:broader <orgclass/>; 
     skos:prefLabel "museum (erkend)"@nl.
 
 
