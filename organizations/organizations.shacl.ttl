@@ -14,79 +14,6 @@
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
 @prefix agr: <http://promsns.org/def/agr#> .
 
-
-#################################################################
-#    Properties
-#################################################################
-org:siteAddress a owl:ObjectProperty, rdf:Property;
-
-    rdfs:label "site Address"@en;
-    rdfs:label "adresse du Site"@fr;
-    rdfs:label "adres van de vestiging"@nl;
-
-    rdfs:domain org:Site;
-
-    rdfs:comment """Indicates an address for the site in a suitable encoding. Use of vCard (using the http://www.w3.org/TR/vcard-rdf/ vocabulary) is encouraged but the range is left open to allow other encodings to be used. The address may include email, telephone, and geo-location information and is not restricted to a physical address. """@en;
-    rdfs:comment """Indique une adresse pour le site dans un encodage approprié. L'usage du vocabulaire vCard ( http://www.w3.org/TR/vcard-rdf/) est encouragé, mais le range est ouvert pour permettre l'utilisation d'autres vocabulaires. L'adresse peut comporter le courriel, le téléphone, et l'information de géolocalisation; et n'est donc pas seulement limitée à une adresse physique. """@fr.
-
-org:role a owl:ObjectProperty, rdf:Property;
-
-    rdfs:label "role"@en;
-    rdfs:label "rôle"@fr;
-    rdfs:label "rol"@nl;
-
-    rdfs:comment """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
-    rdfs:comment """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;
-    rdfs:comment """Rol die de agent vervult als lid van de organisatie."""@nl; 
-
-    rdfs:domain [a owl:Class; owl:unionOf (org:Membership org:Post)];
-    rdfs:range  org:Role; 
-    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
-
-org:postIn a owl:ObjectProperty, rdf:Property;
-
-    rdfs:label "post in"@en;
-	rdfs:label "poste chez"@fr;
-    rdfs:label "positie in"@nl;
-
-    rdfs:comment """Indicates the Organization in which the Post exists."""@en;
-    rdfs:comment """Indicate l'Organisation dans laquelle le Poste existe."""@fr;
-    
-    rdfs:domain org:Post;
-    rdfs:range  org:Organization;
-    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
-
-org:hasPost a owl:ObjectProperty, rdf:Property;
-
-    rdfs:label "has post"@en;
-	rdfs:label "possède un poste"@fr;
-    rdfs:label "heeft positie"@nl;
-
-    rdfs:comment """Indicates a Post which exists within the Organization."""@en;
-	rdfs:comment """Indicate un Poste qui existe dans l'Organisation."""@fr;
-    rdfs:comment """Verwijst naar een positie in de organisatie."""@nl;
-    
-    rdfs:domain  org:Organization;
-    rdfs:range   org:Post;
-    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
-
-schema:logo a owl:ObjectProperty, rdf:Property.
-foaf:homepage a owl:ObjectProperty, rdf:Property.
-org:classification a owl:ObjectProperty, rdf:Property.
-
-dc:description a rdf:Property;
-    rdfs:label "Beschrijving van de organisatie."@nl.
-
-meemoo:hasAccountmanager a owl:ObjectProperty, rdf:Property;
-    rdfs:label "has account manager"@en;
-    rdfs:label "Le Gestionnaire de Comptes "@fr;
-    rdfs:label "heeft account manager"@nl.
-
-meemoo:isAccountManagerOf a owl:ObjectProperty, rdf:Property;
-    rdfs:label "is account manager of"@en;
-    rdfs:label "est le Gestionnaire de Comptes de"@fr;
-    rdfs:label "is account manager van"@nl.
-
 #################################################################
 #   Classes / NodeShapes
 #################################################################
@@ -107,27 +34,23 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:nodeKind sh:IRI;
         sh:minCount 0;
         sh:maxCount 1;
-        sh:name "schema:logo not correctly specified"@en;
+        sh:name "logo"@en;
+        sh:name "logo"@fr;
+        sh:name "logo"@nl;
+
+        sh:description "An associated logo."@en;
+        sh:description "Een geassocieerd logo."@nl;
         sh:message "schema:logo is missing or is no IRI"@en
-    ], 
-    # [
-    #     a sh:PropertyShape ;
-    #     sh:severity sh:Warning;
-    #     sh:path schema:legalName;
-    #     sh:datatype xsd:string;
-    #     sh:minCount 1;
-    #     sh:maxCount 1;
-    #     sh:name "schema:legalName not correctly specified"@en;
-    #     sh:message "schema:legalName is missing or is not a string"@en
-    # ],
-    [
+    ], [
         a sh:PropertyShape ;
         sh:severity sh:Warning;
         sh:path foaf:homepage;
         sh:nodeKind sh:IRI;
         sh:minCount 0;
         sh:maxCount 1;
-        sh:name "foaf:homepage not correctly specified"@en;
+        sh:name "homepage"@en;
+        sh:name "website"@nl;
+
         sh:message "foaf:homepage is missing or is no IRI"@en
     ],[
         a sh:PropertyShape ;
@@ -136,7 +59,11 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:datatype xsd:string;
         sh:minCount 0;
         sh:maxCount 1;
-        sh:name "dc:description not correctly specified"@en;
+        sh:name "description"@en;
+        sh:name "omschrijving"@nl;
+        sh:name "la description"@fr;
+        sh:description "Description of the organization."@nl;
+        sh:description "Omschrijving van de organisatie."@nl;
         sh:message "dc:description is missing"@en
     ],
     [
@@ -145,15 +72,15 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:path org:classification;
         sh:minCount 1;
         sh:class skos:Concept;
-        sh:name "org:classification not correctly specified"@en;
-        sh:message "org:classification is missing or is no IRI"@en
+        sh:name "classification"@en;
+        sh:message "org:classification is missing or is no IRI / skos:Concept"@en
     ], [
         a sh:PropertyShape ;
         sh:severity sh:Info;
         sh:path org:hasUnit;
         sh:minCount 0;
         sh:class org:OrganizationalUnit;
-        sh:name "No org:OrganizationalUnit specified"@en;
+        sh:name "has unit"@en;
         sh:message "org:hasUnit is missing or is no IRI"@en
     ], [
         a sh:PropertyShape ;
@@ -161,7 +88,7 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:path schema:contactPoint;
         sh:minCount 0;
         sh:class schema:ContactPoint;
-        sh:name "No org:OrganizationalUnit specified"@en;
+        sh:name "contact point"@en;
         sh:message "org:hasUnit is missing or is no IRI"@en
     ], [
         a sh:PropertyShape;
@@ -170,16 +97,17 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:class org:Site;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:name "org:hasPrimarySite not correctly specified"@en;
+        sh:name "has primary site"@en;
         sh:message "org:hasPrimarySite is no org:Site"@en
-    ], [
+    ], 
+    [
         a sh:PropertyShape;
         sh:severity sh:Info;
         sh:path dc:isPartOf;
         sh:class meemoo:CollaborationAgreement;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:name "dc:isPartOf not correctly specified"@en;
+        sh:name "is part of"@en;
         sh:message "dc:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
     ],
     [
@@ -189,9 +117,26 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:minCount 0;
         sh:maxCount 1;
         sh:class schema:Person;
-        sh:name "meemoo:accountmanager not correctly specified"@en;
-        sh:message "meemoo:accountmanager is missing or is no IRI"@en 
-    ].
+        sh:name "has account manager"@en;
+        sh:name "a gestionnaire de comptes"@fr;
+        sh:name "heeft account manager"@nl;
+        sh:message "meemoo:hasAccountmanager is missing or is no schema:Person"@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:severity sh:Warning;
+        sh:path meemoo:hasPost;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:class org:Post;
+        rdfs:label "has post"@en;
+        rdfs:label "possède un poste"@fr;
+        rdfs:label "heeft positie"@nl;
+
+        rdfs:comment """Indicates a Post which exists within the Organization."""@en;
+        rdfs:comment """Indicate un Poste qui existe dans l'Organisation."""@fr;
+        rdfs:comment """Verwijst naar een positie in de organisatie."""@nl;
+    ] .
 
 org:OrganizationalUnit a rdfs:Class, sh:NodeShape ;
     rdfs:subClassOf  org:Organization;
@@ -271,8 +216,12 @@ org:Site a rdfs:Class, sh:NodeShape ;
         sh:class schema:ContactPoint;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:name "siteAddress not correctly specified"@en;
-        sh:message "skos:prefLabel is missing or is no Literal"@en 
+        sh:name "site Address"@en;
+        sh:name "adresse du Site"@fr;
+        sh:name "adres van de vestiging"@nl;
+        sh:description """Indicates an address for the site in a suitable encoding. Use of vCard (using the http://www.w3.org/TR/vcard-rdf/ vocabulary) is encouraged but the range is left open to allow other encodings to be used. The address may include email, telephone, and geo-location information and is not restricted to a physical address. """@en;
+        sh:description """Indique une adresse pour le site dans un encodage approprié. L'usage du vocabulaire vCard ( http://www.w3.org/TR/vcard-rdf/) est encouragé, mais le range est ouvert pour permettre l'utilisation d'autres vocabulaires. L'adresse peut comporter le courriel, le téléphone, et l'information de géolocalisation; et n'est donc pas seulement limitée à une adresse physique. """@fr;
+        sh:message "org:siteAddress is not unique or does not point to a schema:ContactPoint"@en 
     ].
 
 org:Post a rdfs:Class, sh:NodeShape;
@@ -289,16 +238,27 @@ org:Post a rdfs:Class, sh:NodeShape;
         sh:path org:role;
         sh:minCount 1;
         sh:class org:Role;
-        sh:name "org:role not correctly specified"@en;
-        sh:message "org:role is missing or is no IRI"@en 
+        sh:name "role"@en;
+        sh:name "rôle"@fr;
+        sh:name "rol"@nl;
+
+        sh:description """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
+        sh:description """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;
+        sh:description """Rol die de agent vervult als lid van de organisatie."""@nl; 
+        sh:message "org:role is missing or is no org:Role"@en 
     ], [
         a sh:PropertyShape ;
         sh:severity sh:Warning;
         sh:path org:postIn;
         sh:minCount 1;
         sh:class org:Organization;
-        sh:name "org:postIn not correctly specified"@en;
-        sh:message "org:postIn is missing or is no IRI"@en 
+        sh:name "post in"@en;
+        sh:name "poste chez"@fr;
+        sh:name "positie in"@nl;
+
+        sh:description """Indicates the Organization in which the Post exists."""@en;
+        sh:description """Indicate l'Organisation dans laquelle le Poste existe."""@fr;
+        sh:message "org:postIn is missing or is no org:Organization"@en 
     ] .
     
 org:Role a owl:Class, rdfs:Class;
@@ -353,7 +313,9 @@ schema:Person
             [ sh:class org:ContentPartner ]
             [ sh:class org:EducationalPartner ]
         );
-        sh:name "meemoo:isAccountManagerOf not correctly specified"@en;
+        sh:name "is account manager of"@en;
+        sh:name "est le Gestionnaire de Comptes de"@fr;
+        sh:name "is account manager van"@nl;
         sh:message "A schema:Person can only be meemoo:isAccountManagerOf one org:ContentPartner"@en
     ].
 
@@ -463,7 +425,7 @@ schema:ContactPoint-telephone
     sh:datatype xsd:string;
     sh:minCount 1 ;
     sh:maxCount 1 ;
-    sh:name "prefLabel not correctly specified"@en;
+    sh:name "preferred label"@en;
     sh:message "skos:prefLabel is missing or is no Literal"@en .
 
 <#altLabel>
@@ -472,8 +434,8 @@ schema:ContactPoint-telephone
     sh:path skos:altLabel;
     sh:datatype xsd:string;
     sh:minCount 0;
-    sh:name "title not correctly specified"@en;
-    sh:message "skos:prefLabel is missing or no Literal"@en.
+    sh:name "alternative label"@en;
+    sh:message "skos:altLabel is missing or no Literal"@en.
     
 <#accountManager> 
     a sh:PropertyShape ;
@@ -482,5 +444,7 @@ schema:ContactPoint-telephone
     sh:minCount 1;
     sh:maxCount 1;
     sh:class schema:Person;
-    sh:name "meemoo:accountmanager not correctly specified"@en;
+    sh:name "has account manager"@en;
+    sh:name "a gestionnaire de comptes"@fr;
+    sh:name "heeft account manager"@nl;
     sh:message "meemoo:accountmanager is missing or is no IRI"@en .
