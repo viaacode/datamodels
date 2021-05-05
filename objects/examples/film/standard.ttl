@@ -1,0 +1,144 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix meemoo: <http://data.meemoo.be/ns/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mh: <http://data.meemoo.be/ns/mediahaven> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix eror: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
+@prefix pbcfilm: <https://pbcore.org/pbcore-controlled-vocabularies/instantiationphysical-film-vocabulary/#> .
+
+@base <https://data.meemoo.be/> .
+
+# | folder | Media type | filename                             | PID (Vectracom) | PID (CineNova) | PID (R3Store) |
+# |--------|------------|--------------------------------------|-----------------|----------------|---------------|
+# |        | set        | pid.complex                          | PID             | PID            | PID           |
+# |        | document   | pid_mets.xml                         | PID             | /              | /             |
+# | /dpx   | image      | pid_001_0000001.dpx                  | PID             | /              | /             |
+# | /jpg   | image      | pid_0001.jpg                         | PID             | PID            | (n/a)         |
+# | /pdf   | document   | pid_0001.pdf                         | PID             | PID            | (n/a)         |
+# | mov/   | video      | pid_mezzanine.mov (pid_mezanine.mov) | PID             | PID_mezanine   | PID           |
+# | zip/   | document   | pid_001_zip.zip                      | PID             | PID            | PID           |
+
+
+<pid> a premis:IntellectualEntity;
+    dct:title "Some recorded program"@en;
+    premis:identifier [
+        a meemoo:PID ; 
+        dct:created "2016-12-04" ; 
+        rdf:value "pid"
+    ];
+    #is represented by
+    rel:isr <pid_carrier>, <pid_digitized> .
+
+<pid_carrier> a premis:Representation, meemoo:CarrierRepresentation;
+    rdfs:label "Contents of the analog carrier; the recording"@en;
+    dcterms:format pbcoreip:Film;
+    meemoo:digitizedRepresentation <pid_digitized>.
+
+
+<pid_digitized> a premis:Representation, , meemoo:DigitizedRepresentation;
+    rdfs:label "Digital representation of the Intellectual Entity"@en;
+    # 'has part' the following files
+    rel:isp <dpx/pid_001_0000001.dpx>, <mov/pid_mezzanine.mov>, <zip/pid_001_zip.zip>, <jpg/pid_0001.jpg>, <pdf/pid_0001.pdf>;
+    rel:idc <pid_mets.xml>; # is documented by
+    meemoo:carrierRepresentation <pid_carrier>;
+    meemoo:mezzanine <mov/pid_mezzanine.mov>;
+    meemoo:master <zip/pid_001_zip.zip>.
+
+
+<pid_mets.xml> a premis:File;
+    premis:originalName "pid_mets.xml" ;
+    premis:doc <pid_digitized>; # documents 
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+<dpx/pid_001_0000001.dpx> a premis:File;
+    premis:originalName "name-before-archived.dpx"^^xsd:string ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ];
+    premis:storedAt [ 
+        a premis:StorageLocation ; 
+        rdf:value "/data/objects/files/1.iso" ; 
+        premis:medium storMedium:mag #magnetic tape
+    ] ;
+    rel:isi <zip/pid_001_zip.zip>. # 'is included in' master zip
+
+<jpg/pid_0001.jpg> a premis:File;
+    premis:originalName "name-before archived.jpg" ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+<pdf/pid_0001.pdf> a premis:File;
+    premis:originalName "name-before-archived.jpg"^^xsd:string ;
+    ebucore:hasMimeType "application/pdf";
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ];
+    dct:format <pdfa1bformat> .
+
+<mov/pid_mezzanine.mov> a premis:File;
+    meemoo:isMezzanineOf <pid_digitized>;
+    premis:originalName "name-before-archived.mov"^^xsd:string;
+    dct:format <movformat> ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ];
+    premis:hss <zip/pid_001_zip.zip> . # 'has Source' master
+
+<zip/pid_001_zip.zip> a premis:File;
+    meemoo:isMasterOf <pid_digitized>;
+    premis:originalName "name-before-archived.mov"^^xsd:string; 
+    premis:compositionLevel 1; # contains files
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ];
+    premis:storedAt [ 
+        a premis:StorageLocation ; 
+        rdf:value "/data/objects/files/1.zip" ; 
+        premis:medium storMedium:mag #magnetic tape
+    ] ;
+    rel:iso <mov/pid_mezzanine.mov>. # 'is source of' mezzanine
+
+<mediahaven/pid_browse.mp4> a premis:File;
+    premis:originalName "name-before-archived.mp4"^^xsd:string;
+    dct:format <mp4format> ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ];
+    premis:hss <zip/pid_001_zip.zip> . # 'has Source' master
+
+# Creatie van digitalisatie
+<event1> a evType:mig ;   
+    prov:endedAtTime "2017-11-03T11:46:16+02:00" ;   
+    evRelObjRole:sou <pid_carrier> ;   
+    evRelObjRole:out <pid_digitized>  . 
+
+# Creatie van mezzanine
+<event1> a evType:mig ;   
+    prov:endedAtTime "2017-11-03T11:46:16+02:00" ;   
+    evRelObjRole:sou <zip/pid_001_zip.zip> ;   
+    evRelObjRole:out <mov/pid_mezzanine.mov> . 
+

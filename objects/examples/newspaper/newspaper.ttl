@@ -1,0 +1,141 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix rov: <http://www.w3.org/ns/regorg#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix meemoo: <http://data.meemoo.be/ns/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix eror: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
+@prefix fileType: <http://id.loc.gov/vocabulary/mfiletype/> .
+@prefix pbcaudio: <https://pbcore.org/pbcore-controlled-vocabularies/instantiationphysical-audio-vocabulary/#> .
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> .
+@prefix dctype: <http://purl.org/dc/dcmitype/>.
+
+@base <https://data.meemoo.be/> .
+
+# | folder | Media type | filename              | PID (borndigital) | PID (CineNova) | PID (R3Store) |
+# |--------|------------|-----------------------|-------------------|----------------|---------------|
+# |        | set        | pid.complex           | PID               | PID            | PID           |
+# |        | document   | pid_mets.xml          | pid_mets          | /              | /             |
+# |        | document   | pid_original_mets.xml | pid_original_mets | /              | /             |
+# | /jp2   | image      | pid_0001_jp2.jp2      | pid_0001_jp2      | PID            | (n/a)         |
+# | /tif   | image      | pid_0001_tif.tif      | pid_0001_tif      | PID            | (n/a)         |
+# | /pdf   | document   | pid_pdf.pdf           | pid_pdf           | PID_mezanine   | PID           |
+# | /alto  | document   | pid_0001_alto.xml     | pid_0001_alto     | PID            | PID           |
+
+<pid> a premis:IntellectualEntity;
+    dct:title "Some newspaper edition"@en;
+    premis:identifier [
+        a meemoo:PID ; 
+        dct:created "2016-12-04" ; 
+        rdf:value "pid"
+    ];
+    #is represented by
+    rel:isr <pid_carrier>, <pid_master>, <pid_ocr>, <pid_mezzanine> ;
+    meemoo:mezzanine <pid_mezzanine>;
+    meemoo:master <pid_jp2_master>, <pid_tiff_master>.
+
+# --- Representations ---
+
+<pid_carrier> a premis:Representation, meemoo:CarrierRepresentation;
+    rdfs:label "Contents of the analog carrier; the paper newspaper"@en;
+    dct:format <newspaper>;
+    meemoo:digitizedRepresentation <pid_digitized>.
+
+<pid_ocr> a premis:Representation, meemoo:DigitalRepresentation;
+    rdfs:label "Textual representation"@en;
+    dct:format dctype:Text;
+    meemoo:digitizedRepresentation <pid_digitized>.
+
+<pid_jp2_master> a premis:Representation, meemoo:DigitalRepresentation;
+    rdfs:label "Master in JP2 of the Intellectual Entity"@en;
+    rel:isp <pid_0001_jp2.jp2>, <pid_0002_jp2.jp2>;
+    rel:idc <pid_mets.xml>; # is documented by
+    meemoo:isMasterOf <pid_digitized>;
+    meemoo:carrierRepresentation <pid_carrier>.
+
+<pid_tiff_master> a premis:Representation, meemoo:DigitalRepresentation;
+    rdfs:label "Master in TIFF of the Intellectual Entity"@en;
+    rel:isp <tif/pid_0001_tif.tif>, <tif/pid_0002_tif.tif>;
+    rel:idc <pid_mets.xml>; # is documented by
+    meemoo:isMasterOf <pid_digitized>;
+    meemoo:carrierRepresentation <pid_carrier>.
+
+<pid_mezzanine> a premis:Representation, meemoo:DigitalRepresentation;
+    rdfs:label "Mezzanine of the Intellectual Entity"@en;
+    rel:isp <pdf/pid_pdf.pdf>;
+    rel:idc <pid_mets.xml>; # is documented by
+    meemoo:isMezzanineOf <pid_digitized>;
+    meemoo:carrierRepresentation <pid_carrier>.
+
+# --- Files ---
+
+<pid_0001_jp2.jp2> a premis:File;
+    premis:originalName "name-before-archived.jp2" ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+<pid_0002_jp2.jp2> a premis:File;
+    premis:originalName "name-before-archived.jp2" ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+<tif/pid_0001_tif.tif> a premis:File;
+    premis:originalName "name-before-archived.tiff" ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+<tif/pid_0002_tif.tif> a premis:File;
+    premis:originalName "name-before-archived.tiff" ;
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+<pdf/pid_pdf.pdf> a premis:File;
+    ebucore:hasMimeType "application/pdf";
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ];
+    dct:format <pdfa1bformat> .
+
+<pid_mets.xml> a premis:File;
+    premis:originalName "pid_mets.xml" ;
+    premis:doc <pid_digitized>; # documents 
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ]. 
+
+# Uit elkaar houden met creatie event
+<pid_original_mets.xml> a premis:File;
+    premis:originalName "pid_mets.xml" ;
+    premis:doc <pid_digitized>; # documents 
+    premis:fixity [
+        a crypHashFunc:md5 ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        dct:creator <SP> 
+    ].
