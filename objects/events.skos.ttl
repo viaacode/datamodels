@@ -24,12 +24,12 @@
 # --- van Library of Congress
 
 evType:acc a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "accession" .
 
 evType:fix a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "fixity check" .
-
-
 
 # --- digitalisering PREMIS events
 
@@ -38,6 +38,7 @@ evType:fix a skos:Concept;
 # | 1  | INSPECTION     |     x     | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |
 
 <#inspection> a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "inspection"@en;
     rdfs:subClassOf premis:Event.
 
@@ -45,24 +46,28 @@ evType:fix a skos:Concept;
 # | 2  | IDENTIFICATION |     x     | VIAA SP Agent ID           | VIAA Object ID                     | pid_cdinfo.xml                  | outcome                     | DISK-SHARE-NOEVENTS                   |
 
 <#identification>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "identification"@en;
     rdfs:subClassOf premis:Event.
 
 # | 3  | CLEANING       |           | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |
 
 <#cleaning>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "cleaning"@en;
     rdfs:subClassOf premis:Event.
 
 # | 4  | REPAIR         |           | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |
 
 <#repair>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "repair"@en;
     rdfs:subClassOf premis:Event.
 
 # | 5  | MIGRATION      |     x     | VIAA SP Agent ID           | VIAA Object ID VIAA Object ID      | pid_iso.iso pid_ddrescue.xml    | source outcome              | TAPE-SHARE-EVENTS DISK-SHARE-NOEVENTS |
 
 <#migration>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "migration"@en;
     owl:equivalentClass evType:mig;
     rdfs:subClassOf premis:Event.
@@ -70,6 +75,7 @@ evType:fix a skos:Concept;
 # | 6  | VALIDATION     |     x     | VIAA SP Agent ID           | VIAA Object ID                     | pid_isolyzer.xml                | outcome                     | DISK-SHARE-NOEVENTS                   |
 
 <#validation>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "validation"@en;
     owl:equivalentClass evType:val;
     rdfs:subClassOf premis:Event.
@@ -78,12 +84,14 @@ evType:fix a skos:Concept;
 # | 7  | TRANSCODING    |     x     | VIAA SP Agent ID           | VIAA Object ID VIAA Object ID      | pid_001_mkv.mkv pid_002_mkv.mkv | source source               | TAPE-SHARE-EVENTS TAPE-SHARE-EVENTS   |
 
 <#transcoding>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "transcoding"@en;
     rdfs:subClassOf premis:Event.
 
 # | 8  | QC             |     x     | VIAA SP Agent ID           | VIAA Object ID                     | pid.complex                     | outcome                     | TAPE-SHARE-EVENTS                     |
 
 <#qc>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "quality control"@en;
     rdfs:subClassOf premis:Event.
 
@@ -94,6 +102,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.TRANSCODE              | TRANSCODE              |       |                 | Transcode job is created                                                                                           |
 
 <#transcode>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "transcode"@en;
     skos:broader <#transcoding>;
     mh:name "RECORDS.FLOW.TRANSCODE";
@@ -102,6 +111,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.TRANSCODED             | TRANSCODED             |       | #               | Transcode job is finished                                                                                          |
 
 <#transcoded>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "transcoded"@en;
     skos:broader <#transcoding>;
     mh:name "RECORDS.FLOW.TRANSCODED";
@@ -110,6 +120,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.RETRANSCODE            | RETRANSCODE            |       |                 | Retranscode job is created                                                                                         |
 
 <#retranscode>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "retranscode"@en;
     skos:broader <#transcoding>;
     mh:name "RECORDS.FLOW.RETRANSCODE";
@@ -118,6 +129,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.EXPORT                 | EXPORT                 |       |                 | Export job is created                                                                                              |
 
 <#export>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "export"@en;
     skos:broader evType:exp;
     mh:name "RECORDS.FLOW.EXPORT";
@@ -126,6 +138,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.EXPORTED               | EXPORTED               |       |                 | Export job is finished                                                                                             |
 
 <#exported>  a skos:Concept; 
+    skos:inScheme <>;
     skos:prefLabel "exported"@en;
     skos:broader evType:exp;
     mh:name "RECORDS.FLOW.EXPORTED";
@@ -134,6 +147,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.ARCHIVED               | ARCHIVED               |       | #               | File has successfully acquired the Administative.ArchiveStatus on_disk or on_tape                                  |
 
 <#archived>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "archived"@en;
     skos:broader evType:acc;
     mh:name "RECORDS.FLOW.ARCHIVED";
@@ -143,6 +157,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.SIP_ALREADY_ARCHIVED   | SIP_ALREADY_ARCHIVED   |       |                 | SIP was resubmitted while it is already archived based on the ExternalId                                           |
 
 <#sip_already_archived>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "SIP already archived"@en;
     skos:broader evType:acc;
     mh:name "RECORDS.FLOW.SIP_ALREADY_ARCHIVED";
@@ -151,6 +166,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.SIP_ALREADY_PROCESSING | SIP_ALREADY_PROCESSING |       |                 | SIP was resubmitted while it is already processing based on the ExternalId                                         |
 
 <#sip_already_processing>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "SIP already processing"@en;
     skos:broader evType:acc;
     mh:name "RECORDS.FLOW.SIP_ALREADY_PROCESSING";
@@ -159,6 +175,7 @@ evType:fix a skos:Concept;
 # | FLOW       | RECORDS.FLOW.SIP_DETECTED           | SIP_DETECTED           |       |                 |                                                                                                                    |
 
 <#sip_detected>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "SIP detected"@en;
     skos:broader evType:acc;
     mh:name "RECORDS.FLOW.SIP_DETECTED";
@@ -167,6 +184,7 @@ evType:fix a skos:Concept;
 # | CREATE     | RECORDS.CREATE                      | CREATE                 |       | #               | Record is created                                                                                                  |
 
 <#create>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "create"@en;
     owl:equivalentClass evType:cre;
     mh:name "RECORDS.FLOW.ARCHIVED";
@@ -175,6 +193,7 @@ evType:fix a skos:Concept;
 # | UPDATE     | RECORDS.UPDATE                      | UPDATE                 |       | #               | Metadata of record is updated                                                                                      |
 
 <#update>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "update"@en;
     owl:equivalentClass evType:mem;
     mh:name "RECORDS.UPDATE";
@@ -183,6 +202,7 @@ evType:fix a skos:Concept;
 # | UPDATE     | RECORDS.UPDATE.PUBLISH              | PUBLISH                |       | #               | Record has been published from the ingest space or auto-published                                                  |
 
 <#publish>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "publish"@en;
     owl:equivalentClass evType:mem;
     mh:name "RECORDS.UPDATE.PUBLISH";
@@ -191,6 +211,7 @@ evType:fix a skos:Concept;
 # | DELETE     | RECORDS.DELETE                      | DELETE                 |       |                 | Record is logically deleted                                                                                        |
 
 <#delete>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "delete"@en;
     mh:name "RECORDS.DELETE";
     rdfs:subClassOf premis:Event.
@@ -198,6 +219,7 @@ evType:fix a skos:Concept;
 # | DELETE     | RECORDS.DELETE.UNDELETE             | UNDELETE               |       |                 | Logically deletion of record is undone                                                                             |
 
 <#undelete>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "undelete"@en;
     mh:name "RECORDS.DELETE.UNDELETE";
     rdfs:subClassOf premis:Event.
@@ -205,6 +227,7 @@ evType:fix a skos:Concept;
 # | DELETE     | RECORDS.DELETE.PERMANENTLY_DELETED  |                        | 21.2  |                 | Record is permanently deleted and this delete can no longer be undone, all storage is reclaimed shortly afterwards |
 
 <#permanently_deleted>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "deletion"@en;
     owl:equivalentClass evType:del;
     rdfs:subClassOf premis:Event.
@@ -212,6 +235,7 @@ evType:fix a skos:Concept;
 # | VALIDATION | RECORDS.VALIDATION.VIRUS_CHECK      | VIRUS_CHECK            |       |                 | Virus check is performed                                                                                           |
 
 <#virus_check>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "virus check"@en;
     owl:equivalentClass evType:vir; 
     rdfs:subClassOf premis:Event.
@@ -219,6 +243,7 @@ evType:fix a skos:Concept;
 # | VALIDATION | RECORDS.VALIDATION.MD5_CHECK        | MD5_CHECK              |       |                 | MD5 generated from file is compared with the reference                                                             |
 
 <#md5_check>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "md5 check"@en;
     skos:broader evType:mes; # message digest calculation 
     rdfs:subClassOf premis:Event.
@@ -226,6 +251,7 @@ evType:fix a skos:Concept;
 # | VALIDATION | RECORDS.VALIDATION.VERIFY           | VERIFY                 |       |                 | Fixity of the file will be checked by exporting it   |
 
 <#verify>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "verify"@en;
     skos:broader evType:fix; 
     rdfs:subClassOf premis:Event.
@@ -233,6 +259,7 @@ evType:fix a skos:Concept;
 # | VALIDATION | RECORDS.VALIDATION.VERIFIED         | VERIFIED               |       |                 | Fixity check is finished      |
 
 <#verified>  a skos:Concept;
+    skos:inScheme <>;
     skos:prefLabel "fixity check finished"@en;
     skos:broader evType:fix; 
     rdfs:subClassOf premis:Event.
