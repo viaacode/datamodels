@@ -95,7 +95,7 @@ evType:fix a skos:Concept;
 
 <#transcode>  a skos:Concept;
     skos:prefLabel "transcode"@en;
-    skos:broader <#TRANSCODING>;
+    skos:broader <#transcoding>;
     mh:name "RECORDS.FLOW.TRANSCODE";
     rdfs:subClassOf premis:Event.
 
@@ -103,7 +103,7 @@ evType:fix a skos:Concept;
 
 <#transcoded>  a skos:Concept;
     skos:prefLabel "transcoded"@en;
-    skos:broader <#TRANSCODING>;
+    skos:broader <#transcoding>;
     mh:name "RECORDS.FLOW.TRANSCODED";
     rdfs:subClassOf premis:Event.
 
@@ -111,7 +111,7 @@ evType:fix a skos:Concept;
 
 <#retranscode>  a skos:Concept;
     skos:prefLabel "retranscode"@en;
-    skos:broader <#TRANSCODING>;
+    skos:broader <#transcoding>;
     mh:name "RECORDS.FLOW.RETRANSCODE";
     rdfs:subClassOf premis:Event.
 
