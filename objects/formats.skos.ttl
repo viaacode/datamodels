@@ -1,0 +1,38 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <https://schema.org/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix rov: <http://www.w3.org/ns/regorg#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix meemoo: <http://data.meemoo.be/ns/> .
+@prefix pronom: <http://www.nationalarchives.gov.uk/pronom/fmt/> .
+@prefix pronomx: <http://www.nationalarchives.gov.uk/pronom/x-fmt/> .
+
+@base <http://data.meemoo.be/ns/terms/format> .
+
+<#pdfa1b> a dct:FileFormat ;   
+    rdfs:label "Acrobat PDF/A-1b - Portable Document Format"@en ;   
+    premis:version "1b" ;   
+    premis:note "Some note about PDF/A-1b" ;   
+    skos:exactMatch pronom:354 ;   
+    skos:closeMatch     <http://www.digitalpreservation.gov/formats/fdd/fdd000318> .
+
+
+<#mov> a dct:FileFormat ;
+    rdfs:label "Quicktime"@en ;
+    skos:exactMatch pronom:658 .
+
+<#m4a> a dct:FileFormat ;
+    rdfs:label "Apple Lossless Audio Codec"@en ;
+    skos:exactMatch pronom:596 .
+
+<#zip> a dct:FileFormat ;
+    rdfs:label "Zip"@en ;
+    skos:exactMatch pronomx:263 .
