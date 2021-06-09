@@ -10,8 +10,14 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix eror: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
 @prefix pbcfilm: <https://pbcore.org/pbcore-controlled-vocabularies/instantiationphysical-film-vocabulary/#> .
+@prefix pbcig: <http://pbcore.org/pbcore-controlled-vocabularies/instantiationgenerations-vocabulary/#> .
+@prefix crypHashFunc: <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix storMedium: <http://id.loc.gov/vocabulary/preservation/storageMedium/> .
+@prefix evt: <http://id.loc.gov/vocabulary/preservation/eventType> .
 
 @base <https://data.meemoo.be/> .
 
@@ -26,6 +32,10 @@
 # | zip/   | document   | pid_001_zip.zip                      | PID             | PID            | PID           |
 
 
+########################
+# Intellectual entities
+########################
+
 <pid> a premis:IntellectualEntity;
     dct:title "Some recorded program"@en;
     premis:identifier [
@@ -33,28 +43,53 @@
         dct:created "2016-12-04" ; 
         rdf:value "pid"
     ];
-    #is represented by
-    rel:isr <pid_carrier>, <pid_digitized> .
+    meemoo:master <pid_master>;
+    meemoo:mezzanine <pid_mezzanine>;
+    meemoo:accesscopy <pid_lowres>;
+    meemoo:carrier <pid_carrier>.
 
-<pid_carrier> a premis:Representation, meemoo:CarrierRepresentation;
+########################
+# Representations
+########################
+
+<pid_master> a premis:Representation, meemoo:DigitalRepresentation;
+    meemoo:isMasterOf <pid>;
+    rdfs:label "Master representation of the Intellectual Entity"@en;
+    rel:rep <pid>; #represents
+    rel:isp <zip/pid_001_zip.zip>.
+
+<pid_mezzanine> a premis:Representation, meemoo:DigitalRepresentation;
+    meemoo:isMezzanineOf <pid>;
+    rdfs:label "Mezzanine representation of the Intellectual Entity"@en;
+    rel:rep <pid>; #represents
+    rel:isp <mov/pid_mezzanine.mov>.
+
+
+
+<pid_reelphoto> a premis:Representation, meemoo:DigitalRepresentation;
+    rdfs:label "Reelphoto representation of the carrier"@en;
+    rel:rep <pid_carrier>; #represent
+    rel:isp <jpg/pid_0001.jpg>, <pdf/pid_0001.pdf>.
+
+<pid_lowres> a premis:Representation, meemoo:DigitalRepresentation;
+    rdfs:label "Accesscopy representation of the Intellectual Entity"@en;
+    rel:rep <pid>; #represents
+    rel:isp <mov/pid_mezzanine.mov>.
+
+<pid_carrier> a premis:Representation, meemoo:PhysicalRepresentation;
+    rel:isr <pid_reelphoto> ; #is represented by
+    rel:rep <pid>; #represents
     rdfs:label "Contents of the analog carrier; the recording"@en;
-    dcterms:format pbcoreip:Film;
-    meemoo:digitizedRepresentation <pid_digitized>.
+    premis:medium pbcfilm:Film; #magnetic tape
 
 
-<pid_digitized> a premis:Representation, , meemoo:DigitizedRepresentation;
-    rdfs:label "Digital representation of the Intellectual Entity"@en;
-    # 'has part' the following files
-    rel:isp <dpx/pid_001_0000001.dpx>, <mov/pid_mezzanine.mov>, <zip/pid_001_zip.zip>, <jpg/pid_0001.jpg>, <pdf/pid_0001.pdf>;
-    rel:idc <pid_mets.xml>; # is documented by
-    meemoo:carrierRepresentation <pid_carrier>;
-    meemoo:mezzanine <mov/pid_mezzanine.mov>;
-    meemoo:master <zip/pid_001_zip.zip>.
-
+########################
+# Files
+########################
 
 <pid_mets.xml> a premis:File;
     premis:originalName "pid_mets.xml" ;
-    premis:doc <pid_digitized>; # documents 
+    premis:doc <pid_master>, <pid_mezzanine>, <pid_reelphoto>; # documents 
     premis:fixity [
         a crypHashFunc:md5 ;   
         rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
@@ -73,6 +108,7 @@
         rdf:value "/data/objects/files/1.iso" ; 
         premis:medium storMedium:mag #magnetic tape
     ] ;
+    dct:format <zipFormat>;
     rel:isi <zip/pid_001_zip.zip>. # 'is included in' master zip
 
 <jpg/pid_0001.jpg> a premis:File;
@@ -94,7 +130,6 @@
     dct:format <pdfa1bformat> .
 
 <mov/pid_mezzanine.mov> a premis:File;
-    meemoo:isMezzanineOf <pid_digitized>;
     premis:originalName "name-before-archived.mov"^^xsd:string;
     dct:format <movformat> ;
     premis:fixity [
@@ -131,14 +166,16 @@
     premis:hss <zip/pid_001_zip.zip> . # 'has Source' master
 
 # Creatie van digitalisatie
-<event1> a evType:mig ;   
+<event1> a evt:mig ;   
+    dct:title "Digitization";
     prov:endedAtTime "2017-11-03T11:46:16+02:00" ;   
-    evRelObjRole:sou <pid_carrier> ;   
-    evRelObjRole:out <pid_digitized>  . 
+    eror:sou <pid_carrier> ;   
+    eror:out <pid_master>  . 
 
 # Creatie van mezzanine
-<event1> a evType:mig ;   
+<event1> a evt:mig ;
+    dct:title "Mezzanine"; 
     prov:endedAtTime "2017-11-03T11:46:16+02:00" ;   
-    evRelObjRole:sou <zip/pid_001_zip.zip> ;   
-    evRelObjRole:out <mov/pid_mezzanine.mov> . 
+    eror:sou <pid_master> ;   
+    eror:out <pid_mezzanine> . 
 

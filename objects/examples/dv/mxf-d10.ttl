@@ -48,7 +48,7 @@
     meemoo:digitizedRepresentation <pid_digitized>.
 
 
-<pid_digitized> a premis:Representation, meemoo:DigitizedRepresentation;
+<pid_digitized> a premis:Representation, meemoo:DigitalRepresentation;
     rdfs:label "Digital representation of the Intellectual Entity"@en;
     rel:isp <pid_dv_001.dv>;
     meemoo:carrierRepresentation <pid_carrier>;

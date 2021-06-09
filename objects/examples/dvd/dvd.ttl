@@ -52,7 +52,7 @@
     meemoo:digitizedRepresentation <pid_digitized>.
 
 
-<pid_digitized> a premis:Representation, meemoo:DigitizedRepresentation;
+<pid_digitized> a premis:Representation, meemoo:DigitalRepresentation;
     rdfs:label "Digital representation of the Intellectual Entity"@en;
     # 'has part' the following files
     rel:isp <iso/pid_iso.iso>, <mkv/pid_001_mkv.mkv>, <mkv/pid_002_mkv.mkv>, <mkv/pid_003_mkv.mkv>;

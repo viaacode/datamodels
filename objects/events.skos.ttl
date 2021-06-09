@@ -95,6 +95,13 @@ evType:fix a skos:Concept;
     skos:prefLabel "quality control"@en;
     rdfs:subClassOf premis:Event.
 
+# | 9  | BAKING         |           | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |  
+
+<#baking>  a skos:Concept;
+    skos:inScheme <>;
+    skos:prefLabel "baking"@en;
+    rdfs:subClassOf premis:Event.
+
 # --- mediahaven PREMIS events
 
 # |   Family   |                 Name                |       Legacy Name      | Since | Metadata Update |                                                     Description                                                    |

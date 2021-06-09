@@ -45,7 +45,7 @@
     meemoo:digitizedRepresentation <pid_digitized>.
 
 
-<pid_digitized> a premis:Representation, meemoo:DigitizedRepresentation;
+<pid_digitized> a premis:Representation, meemoo:DigitalRepresentation;
     rdfs:label "Digital representation of the Intellectual Entity"@en;
     rel:isp <pid_01.wavpid_xx.wav>;
     rel:idc <pid_mets.xml>; # is documented by
@@ -53,7 +53,7 @@
     meemoo:mezzanine <pid_01.wavpid_xx.wav>;
     meemoo:master <pid_01.wavpid_xx.wav>.
 
-<pid_01.wavpid_xx.wav> a premis:File;
+<wav/pid_01.wavpid_xx.wav> a premis:File;
     meemoo:isMezzanineOf <pid_digitized>;
     premis:originalName "name-before-archived.wav" ;
     premis:fixity [
@@ -63,7 +63,7 @@
     ];
     premis:storedAt [ 
         a premis:StorageLocation ; 
-        rdf:value "/data/objects/files/1.iso" ; 
+        rdf:value "/data/objects/files/1.wav" ; 
         premis:medium storMedium:mag #magnetic tape
     ].
 

@@ -50,7 +50,7 @@
     meemoo:digitizedRepresentation <pid_digitized>.
 
 
-<pid_digitized> a premis:Representation, meemoo:DigitizedRepresentation;
+<pid_digitized> a premis:Representation, meemoo:DigitalRepresentation;
     rdfs:label "Digital representation of the Intellectual Entity"@en;
     rel:isp <pid_dv_001.dv>;
     meemoo:carrierRepresentation <pid_carrier>;
@@ -64,7 +64,7 @@
     rel:idc <dv/pid_dv_001_dvanalyzer.xml>, <dv/pid_dv_001_mediainfo.xml>; # is documented by
     premis:fixity [
         a crypHashFunc:md5 ;   
-        rdf:value "258622b1688250cb619f3c9ccaefb7eb" ;   
+        rdf:value "258622b1688250cb619f3c9ccaefb7eb";
         dct:creator <SP> 
     ]. 
 
