@@ -190,18 +190,18 @@ evType:fix a skos:Concept;
 
 # | CREATE     | RECORDS.CREATE                      | CREATE                 |       | #               | Record is created                                                                                                  |
 
-<#create>  a skos:Concept;
+<#creation>  a skos:Concept;
     skos:inScheme <>;
     skos:prefLabel "create"@en;
     owl:equivalentClass evType:cre;
-    mh:name "RECORDS.FLOW.ARCHIVED";
+    mh:name "RECORDS.CREATE";
     rdfs:subClassOf premis:Event.
 
 # | UPDATE     | RECORDS.UPDATE                      | UPDATE                 |       | #               | Metadata of record is updated                                                                                      |
 
-<#update>  a skos:Concept;
+<#metadata_update>  a skos:Concept;
     skos:inScheme <>;
-    skos:prefLabel "update"@en;
+    skos:prefLabel "metadata update"@en;
     owl:equivalentClass evType:mem;
     mh:name "RECORDS.UPDATE";
     rdfs:subClassOf premis:Event.
@@ -236,6 +236,7 @@ evType:fix a skos:Concept;
 <#permanently_deleted>  a skos:Concept;
     skos:inScheme <>;
     skos:prefLabel "deletion"@en;
+    mh:name "RECORDS.DELETE.PERMANENTLY_DELETED";
     owl:equivalentClass evType:del;
     rdfs:subClassOf premis:Event.
 
@@ -244,6 +245,7 @@ evType:fix a skos:Concept;
 <#virus_check>  a skos:Concept;
     skos:inScheme <>;
     skos:prefLabel "virus check"@en;
+    mh:name "RECORDS.VALIDATION.VIRUS_CHECK";
     owl:equivalentClass evType:vir; 
     rdfs:subClassOf premis:Event.
 
@@ -252,6 +254,7 @@ evType:fix a skos:Concept;
 <#md5_check>  a skos:Concept;
     skos:inScheme <>;
     skos:prefLabel "md5 check"@en;
+    mh:name "RECORDS.VALIDATION.MD5_CHECK";
     skos:broader evType:mes; # message digest calculation 
     rdfs:subClassOf premis:Event.
 
@@ -260,6 +263,7 @@ evType:fix a skos:Concept;
 <#verify>  a skos:Concept;
     skos:inScheme <>;
     skos:prefLabel "verify"@en;
+    mh:name "RECORDS.VALIDATION.VERIFY";
     skos:broader evType:fix; 
     rdfs:subClassOf premis:Event.
                                                               
@@ -268,6 +272,7 @@ evType:fix a skos:Concept;
 <#verified>  a skos:Concept;
     skos:inScheme <>;
     skos:prefLabel "fixity check finished"@en;
+    mh:name "RECORDS.VALIDATION.VERIFIED";
     skos:broader evType:fix; 
     rdfs:subClassOf premis:Event.
 
