@@ -1,14 +1,14 @@
 {
   "@context": "https://raw.githubusercontent.com/viaacode/datamodels/main/events/context.jsonld",
-  "@id": "meemoo:1de1f888-fbf7-47e5-987e-5e5bc72ac2c5",
+  "@id": "https://data.meemoo.be/1de1f888-fbf7-47e5-987e-5e5bc72ac2c5",
   "@type": [
     "Event",
     "eventType:identification"
   ],
   "dateTime": "2021-03-16T16:09",
-  "implementer": "meemoo:OR-vx06453",
+  "implementer": "https://data.meemoo.be/OR-vx06453",
   "instrument": "DROID",
-  "source": "meemoo:object001",
+  "source": "https://data.meemoo.be/object001",
   "outcomeStatus": "out:suc",
   "outcomeNote": "positive identification"
 }
