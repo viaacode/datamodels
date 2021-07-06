@@ -1,40 +1,9 @@
 {
-  "@context": {
-    "meemoo": "https://data.meemoo.be/",
-    "premis": "http://www.loc.gov/premis/rdf/v3/",
-    "prov": "http://www.w3.org/ns/prov#",
-    "dct": "http://purl.org/dc/terms/",
-    "out": "http://id.loc.gov/vocabulary/preservation/eventOutcome/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "Event": "premis:Event",
-    "implementer": {
-      "@id": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp",
-      "@type": "@id"
-    },
-    "instrument": {
-      "@id": "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe"
-    },
-    "outcomeStatus": {
-      "@id": "premis:outcome",
-      "@type": "@id"
-    },
-    "outcomeNote": {
-      "@id": "premis:outcomeNote"
-    },
-    "source": {
-      "@id": "http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou",
-      "@type": "@id"
-    },
-    "result": {
-      "@id": "http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out",
-      "@type": "@id"
-    },
-    "dateTime": { "@id": "prov:endedAttime", "@type": "xsd:dateTime" }
-  },
+  "@context": "https://raw.githubusercontent.com/viaacode/datamodels/main/events/context.jsonld",
   "@id": "meemoo:1de1f888-fbf7-47e5-987e-5e5bc72ac2c5",
   "@type": [
     "Event",
-    "migration"
+    "eventType:migration"
   ],
   "dateTime": "2021-03-16T16:09",
   "implementer": "meemoo:OR-vx06453",
