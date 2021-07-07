@@ -1,10 +1,12 @@
 # import Organization, Person from "./organizations.graphql"
-# import Coverage, Audience from "./dublincore.graphql"
+# import Coverage, Audience, Concept from "./general.graphql"
 
 scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
 scalar EDTFDatetime @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
 scalar ISO8601Datetime @specifiedBy(url: "https://www.iso.org/iso-8601-date-and-time-format.html")
 scalar LanguageTag @specifiedBy(url: "https://tools.ietf.org/html/rfc5646.txt")
+
+union Agent = Organization | Person
 
 interface Object {
     id: ID!
@@ -23,14 +25,14 @@ type IntellectualEntity implements Object {
     
     abstract: String
     accessRights: String
-    accrualMethod: IRI
-    accrualPeriodicity: IRI
-    accrualPolicy: IRI
+    accrualMethod: Concept
+    accrualPeriodicity: Concept
+    accrualPolicy: Concept
     alternativeTitle: [String]
     audience: [Audience]
     available: ISO8601Datetime!
     bibliographicCitation: String
-    conformsTo: IRI
+    conformsTo: Concept
     contributor: [Person]
     coverage: Coverage
     created: EDTFDatetime
@@ -45,22 +47,22 @@ type IntellectualEntity implements Object {
     issued: EDTFDatetime
 
     language: LanguageTag
-    license: IRI
+    license: Concept
     mediator: Organization
 
     modified: ISO8601Datetime
     provenance: String
     publisher: Organization
 
-    rights: IRI
+    rights: Concept
     rightsHolder: Organization
     source: Organization
     spatial: String
-    subject: IRI
+    subject: Concept
 
     temporal: EDTFDatetime
     title: String
-    type: [IRI]
+    type: [Concept]
     valid: String
 }
 
@@ -70,7 +72,7 @@ interface Representation implements Object {
     represents: IntellectualEntity!
     label: String
     description: String
-    types: [IRI]
+    types: [Concept]
 }
 
 type PhysicalRepresentation implements Representation {
@@ -78,14 +80,14 @@ type PhysicalRepresentation implements Representation {
     includes: [File]
     label: String
     description: String
-    medium: IRI
+    medium: Concept
 }
 
 type DigitalRepresentation implements Representation {
     represents: IntellectualEntity!
     label: String
     description: String
-    types: [IRI]
+    types: [Concept]
     isMasterOf: IntellectualEntity
     isMezzanineOf: IntellectualEntity
     isAccesscopyOf: IntellectualEntity
@@ -99,20 +101,20 @@ type File implements Object {
     fixity: Fixity
     storedAt: StorageMedium
     mediatype: String
-    format: IRI
+    format: Concept
 }
 
 type StorageLocation {
-    medium: IRI!
+    medium: Concept!
     value: String!
 }
 
 type Fixity {
-    creator: IRI
+    creator: Agent
     checksum: String
 }
 
 type ContextualIdentifier {
-    context: String!
+    context: Concept!
     id: ID!
 }

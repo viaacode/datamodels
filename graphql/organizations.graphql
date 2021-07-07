@@ -1,16 +1,47 @@
+scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
+
 type Organization {
-    label: String 
+    id: ID!
+    label: String!
     altLabel: String
     homepage: String 
+    logo: IRI
+    description: String
     accountManager: Person
+    classification: Concept
+    units: [OrganizationalUnit]
+    contactPoint: [ContactPoint]
+    primarySite: Site
+    sites: [Site]
+    posts: [Post]
+}
+
+type Post {
+    role: Concept
+    postIn: [Organization]!
 }
 
 type Person {
     givenName: String 
     familyName: String 
     email: String
+    holds: [Post]
+    accountManagerOf: [Organization]
 }
 
-type Location {
-    
+type Site {
+    address: PostalAddress
+}
+
+type ContactPoint {
+
+}
+
+type PostalAddress extends ContactPoint {
+ addressCountry: String
+  addressLocality: String
+  addressRegion:String
+  postOfficeBoxNumber: String
+  postalCode: String
+  streetAddress: String 
 }

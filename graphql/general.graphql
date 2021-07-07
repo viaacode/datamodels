@@ -1,5 +1,9 @@
 union Coverage = Location | Period | Jurisdiction
 
+type Concept {
+    id: ID!
+    label: String!
+}
 
 type Audience {
     educationLevel: IRI
