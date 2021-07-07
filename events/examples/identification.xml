@@ -1,32 +1,35 @@
-<premis:event>
-    <premis:eventIdentifier>
-        <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-        <premis:eventIdentifierValue>1de1f888-fbf7-47e5-987e-5e5bc72ac2c5</premis:eventIdentifierValue>
-    </premis:eventIdentifier>
-    <premis:eventType>format identification</premis:eventType>
-    <premis:eventDateTime>2014-04-16T22:22:22</premis:eventDateTime>
-    <premis:eventDetailInformation>
-        <premis:eventDetail>program="droid"</premis:eventDetail>
-    </premis:eventDetailInformation>
-    <premis:eventOutcomeInformation>
-        <premis:eventOutcome>SUCCESS</premis:eventOutcome>
-        <premis:eventOutcomeDetail>
-            <premis:eventOutcomeDetailNote>positive identification</premis:eventOutcomeDetailNote>
-        </premis:eventOutcomeDetail>
-    </premis:eventOutcomeInformation>
-    <premis:linkingAgentIdentifier>
-        <premis:linkingAgentIdentifierType>URI</premis:linkingAgentIdentifierType>
-        <premis:linkingAgentIdentifierValue>https://data.meemoo.be/OR-vx06453</premis:linkingAgentIdentifierValue>
-        <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
-    </premis:linkingAgentIdentifier>
-    <premis:linkingAgentIdentifier>
-        <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>
-        <premis:linkingAgentIdentifierValue>DROID</premis:linkingAgentIdentifierValue>
-        <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe">executing program</premis:linkingAgentRole>
-    </premis:linkingAgentIdentifier>
-    <premis:linkingObjectIdentifier>
-        <premis:linkingObjectIdentifierType>URI</premis:linkingObjectIdentifierType>
-        <premis:linkingObjectIdentifierValue>https://data.meemoo.be/object001</premis:linkingObjectIdentifierValue>
-        <premis:linkingObjectRole authority="eventRelatedObjectRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
-    </premis:linkingObjectIdentifier>
-</premis:event>
+<?xml version="1.0" encoding="UTF-8"?>
+<premis:premis xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd" version="3.0">
+    <premis:event>
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>1de1f888-fbf7-47e5-987e-5e5bc72ac2c5</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>format identification</premis:eventType>
+        <premis:eventDateTime>2014-04-16T22:22:22</premis:eventDateTime>
+        <premis:eventDetailInformation>
+            <premis:eventDetail>program="droid"</premis:eventDetail>
+        </premis:eventDetailInformation>
+        <premis:eventOutcomeInformation>
+            <premis:eventOutcome>SUCCESS</premis:eventOutcome>
+            <premis:eventOutcomeDetail>
+                <premis:eventOutcomeDetailNote>positive identification</premis:eventOutcomeDetailNote>
+            </premis:eventOutcomeDetail>
+        </premis:eventOutcomeInformation>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>URI</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>https://data.meemoo.be/OR-vx06453</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>local</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>DROID</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole authority="eventRelatedAgentRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe">executing program</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>URI</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>https://data.meemoo.be/object001</premis:linkingObjectIdentifierValue>
+            <premis:linkingObjectRole authority="eventRelatedObjectRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+        </premis:linkingObjectIdentifier>
+    </premis:event>
+</premis:premis>
