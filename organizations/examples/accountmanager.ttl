@@ -1,0 +1,17 @@
+@prefix meemoo: <http://meemoo.be/ns/> .
+@prefix meemooth: <http://meemoo.be/ns/terms/> .
+@base <http://data.meemoo.be/> .
+
+<people/johndoe> a schema:Person;
+    schema:givenName "John";
+    schema:familyName "Doe";
+    schema:email "john.doe@meemoo.be";
+    meemoo:isAccountManagerOf <organizations/cp>.
+
+<posts/am-cp> a org:Post;
+    org:role meemooth:AccountManager;
+    org:postIn <organizations/meemoo>.
+
+<organizations/cp> a meemoo:ContentPartner;
+    meemoo:hasAccountManager <people/johndoe> .
+
