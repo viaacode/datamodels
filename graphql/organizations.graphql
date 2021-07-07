@@ -1,0 +1,16 @@
+type Organization {
+    label: String 
+    altLabel: String
+    homepage: String 
+    accountManager: Person
+}
+
+type Person {
+    givenName: String 
+    familyName: String 
+    email: String
+}
+
+type Location {
+    
+}

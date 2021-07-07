@@ -1,0 +1,118 @@
+# import Organization, Person from "./organizations.graphql"
+# import Coverage, Audience from "./dublincore.graphql"
+
+scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
+scalar EDTFDatetime @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
+scalar ISO8601Datetime @specifiedBy(url: "https://www.iso.org/iso-8601-date-and-time-format.html")
+scalar LanguageTag @specifiedBy(url: "https://tools.ietf.org/html/rfc5646.txt")
+
+interface Object {
+    id: ID!
+    contextualIds: [ContextualIdentifier]
+}
+
+type IntellectualEntity implements Object {
+    id: ID!
+    contextualIds: [ContextualIdentifier]
+    isPartOf: IntellectualEntity
+    hasParts: [IntellectualEntity]
+    representations: [Representation]
+    mezzanine: DigitalRepresentation
+    accesscopy: DigitalRepresentation
+    master: DigitalRepresentation
+    
+    abstract: String
+    accessRights: String
+    accrualMethod: IRI
+    accrualPeriodicity: IRI
+    accrualPolicy: IRI
+    alternativeTitle: [String]
+    audience: [Audience]
+    available: ISO8601Datetime!
+    bibliographicCitation: String
+    conformsTo: IRI
+    contributor: [Person]
+    coverage: Coverage
+    created: EDTFDatetime
+    creator: [Person]
+
+    dateCopyrighted:EDTFDatetime
+
+    description: String!
+
+    instructionalMethod: String
+
+    issued: EDTFDatetime
+
+    language: LanguageTag
+    license: IRI
+    mediator: Organization
+
+    modified: ISO8601Datetime
+    provenance: String
+    publisher: Organization
+
+    rights: IRI
+    rightsHolder: Organization
+    source: Organization
+    spatial: String
+    subject: IRI
+
+    temporal: EDTFDatetime
+    title: String
+    type: [IRI]
+    valid: String
+}
+
+interface Representation implements Object {
+    id: ID!
+    contextualIds: [Identifier]
+    represents: IntellectualEntity!
+    label: String
+    description: String
+    types: [IRI]
+}
+
+type PhysicalRepresentation implements Representation {
+    represents: IntellectualEntity!
+    includes: [File]
+    label: String
+    description: String
+    medium: IRI
+}
+
+type DigitalRepresentation implements Representation {
+    represents: IntellectualEntity!
+    label: String
+    description: String
+    types: [IRI]
+    isMasterOf: IntellectualEntity
+    isMezzanineOf: IntellectualEntity
+    isAccesscopyOf: IntellectualEntity
+    includes: [File]
+}
+
+type File implements Object {
+    id: ID!
+    contextualIds: [ContextualIdentifier]
+    isIncludedIn: Representation
+    fixity: Fixity
+    storedAt: StorageMedium
+    mediatype: String
+    format: IRI
+}
+
+type StorageLocation {
+    medium: IRI!
+    value: String!
+}
+
+type Fixity {
+    creator: IRI
+    checksum: String
+}
+
+type ContextualIdentifier {
+    context: String!
+    id: ID!
+}

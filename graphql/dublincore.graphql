@@ -1,0 +1,18 @@
+union Coverage = Location | Period | Jurisdiction
+
+
+type Audience {
+    educationLevel: IRI
+}
+
+type Location {
+
+}
+
+type Period {
+
+}
+
+type Jurisdiction {
+    
+}
