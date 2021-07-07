@@ -30,7 +30,6 @@
             <premis:linkingObjectIdentifierType>URI</premis:linkingObjectIdentifierType>
             <premis:linkingObjectIdentifierValue>
                 https://data.meemoo.be/0c4sj3824f_001_mkv.mkv
-                <null
             </premis:linkingObjectIdentifierValue>
             <premis:linkingObjectRole authority="eventRelatedObjectRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
         </premis:linkingObjectIdentifier>
@@ -38,7 +37,6 @@
             <premis:linkingObjectIdentifierType>URI</premis:linkingObjectIdentifierType>
             <premis:linkingObjectIdentifierValue>
                 https://data.meemoo.be/0c4sj3824f.mov
-                <null
             </premis:linkingObjectIdentifierValue>
             <premis:linkingObjectRole authority="eventRelatedObjectRole" authorityURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole" valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
         </premis:linkingObjectIdentifier>
