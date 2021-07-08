@@ -76,14 +76,18 @@ interface Representation implements Object {
 }
 
 type PhysicalRepresentation implements Representation {
+    id: ID!
+    contextualIds: [Identifier]
     represents: IntellectualEntity!
-    includes: [File]
     label: String
     description: String
+    types: [Concept]
     medium: Concept
 }
 
 type DigitalRepresentation implements Representation {
+    id: ID!
+    contextualIds: [Identifier]
     represents: IntellectualEntity!
     label: String
     description: String
