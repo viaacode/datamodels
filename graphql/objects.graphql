@@ -85,7 +85,42 @@ type PhysicalRepresentation implements Representation {
     medium: Concept
 }
 
-type DigitalRepresentation implements Representation {
+interface DigitalRepresentation implements Representation {
+    id: ID!
+    contextualIds: [Identifier]
+    represents: IntellectualEntity!
+    label: String
+    description: String
+    types: [Concept]
+    isMasterOf: IntellectualEntity
+    isMezzanineOf: IntellectualEntity
+    isAccesscopyOf: IntellectualEntity
+    includes: [MediaResource]
+}
+
+interface File implements Object {
+    id: ID!
+    contextualIds: [ContextualIdentifier]
+    isIncludedIn: Representation
+    fixity: Fixity
+    storedAt: StorageMedium
+    mediatype: String
+    format: Concept
+}
+
+type MediaResource implements File {
+    id: ID!
+    contextualIds: [ContextualIdentifier]
+    isIncludedIn: Representation
+    fixity: Fixity
+    storedAt: StorageMedium
+    mediatype: String
+    format: Concept
+    hasCaptioning: File
+    hasMediaFragment: MediaFragment
+}
+
+type MediaFragment implements DigitalRepresentation {
     id: ID!
     contextualIds: [Identifier]
     represents: IntellectualEntity!
@@ -96,16 +131,7 @@ type DigitalRepresentation implements Representation {
     isMezzanineOf: IntellectualEntity
     isAccesscopyOf: IntellectualEntity
     includes: [File]
-}
-
-type File implements Object {
-    id: ID!
-    contextualIds: [ContextualIdentifier]
-    isIncludedIn: Representation
-    fixity: Fixity
-    storedAt: StorageMedium
-    mediatype: String
-    format: Concept
+    isMediaFragmentOf: File
 }
 
 type StorageLocation {
