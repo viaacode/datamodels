@@ -1,47 +1,71 @@
 scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
 
-type Organization {
-    id: ID!
-    label: String!
-    altLabel: String
-    homepage: String 
-    logo: IRI
-    description: String
-    accountManager: Person
-    classification: Concept
-    units: [OrganizationalUnit]
-    contactPoint: [ContactPoint]
-    primarySite: Site
-    sites: [Site]
-    posts: [Post]
+interface Organization {
+  id: ID!
+  label: String!
+  altLabel: String
+  homepage: String
+  logo: IRI
+  description: String
+  accountManager: Person
+  classification: Concept
+  units: [OrganizationalUnit]
+  contactPoint: [ContactPoint]
+  primarySite: Site
+  sites: [Site]
+  posts: [Post]
+}
+
+type OrganizationalUnit implements Organization {
+  id: ID!
+  label: String!
+  altLabel: String
+  homepage: String
+  logo: IRI
+  description: String
+  accountManager: Person
+  classification: Concept
+  units: [OrganizationalUnit]
+  contactPoint: [ContactPoint]
+  primarySite: Site
+  sites: [Site]
+  posts: [Post]
+  unitOf: Organization!
 }
 
 type Post {
-    role: Concept
-    postIn: [Organization]!
+  id: ID!
+  role: Concept
+  postIn: [Organization]!
 }
 
 type Person {
-    givenName: String 
-    familyName: String 
-    email: String
-    holds: [Post]
-    accountManagerOf: [Organization]
+  id: ID!
+  givenName: String
+  familyName: String
+  email: String
+  holds: [Post]
+  accountManagerOf: [Organization]
 }
 
 type Site {
-    address: PostalAddress
+  id: ID!
+  address: PostalAddress
 }
 
-type ContactPoint {
-
+interface ContactPoint {
+  id: ID!
+  contactType: String!
+  email: String
+  telephone: String
 }
 
-type PostalAddress extends ContactPoint {
- addressCountry: String
+type PostalAddress implements ContactPoint {
+  id: ID!
+  addressCountry: String
   addressLocality: String
-  addressRegion:String
+  addressRegion: String
   postOfficeBoxNumber: String
   postalCode: String
-  streetAddress: String 
+  streetAddress: String
 }

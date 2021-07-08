@@ -3,148 +3,149 @@
 
 scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
 scalar EDTFDatetime @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
-scalar ISO8601Datetime @specifiedBy(url: "https://www.iso.org/iso-8601-date-and-time-format.html")
+scalar ISO8601Datetime
+  @specifiedBy(url: "https://www.iso.org/iso-8601-date-and-time-format.html")
 scalar LanguageTag @specifiedBy(url: "https://tools.ietf.org/html/rfc5646.txt")
 
 union Agent = Organization | Person
 
 interface Object {
-    id: ID!
-    contextualIds: [ContextualIdentifier]
+  id: ID!
+  contextualIds: [ContextualIdentifier]
 }
 
 type IntellectualEntity implements Object {
-    id: ID!
-    contextualIds: [ContextualIdentifier]
-    isPartOf: IntellectualEntity
-    hasParts: [IntellectualEntity]
-    representations: [Representation]
-    mezzanine: DigitalRepresentation
-    accesscopy: DigitalRepresentation
-    master: DigitalRepresentation
-    
-    abstract: String
-    accessRights: String
-    accrualMethod: Concept
-    accrualPeriodicity: Concept
-    accrualPolicy: Concept
-    alternativeTitle: [String]
-    audience: [Audience]
-    available: ISO8601Datetime!
-    bibliographicCitation: String
-    conformsTo: Concept
-    contributor: [Person]
-    coverage: Coverage
-    created: EDTFDatetime
-    creator: [Person]
+  id: ID!
+  contextualIds: [ContextualIdentifier]
+  isPartOf: IntellectualEntity
+  hasParts: [IntellectualEntity]
+  representations: [Representation]
+  mezzanine: DigitalRepresentation
+  accesscopy: DigitalRepresentation
+  master: DigitalRepresentation
 
-    dateCopyrighted:EDTFDatetime
+  abstract: String
+  accessRights: String
+  accrualMethod: Concept
+  accrualPeriodicity: Concept
+  accrualPolicy: Concept
+  alternativeTitle: [String]
+  audience: [Audience]
+  available: ISO8601Datetime!
+  bibliographicCitation: String
+  conformsTo: Concept
+  contributor: [Person]
+  coverage: Coverage
+  created: EDTFDatetime
+  creator: [Person]
 
-    description: String!
+  dateCopyrighted: EDTFDatetime
 
-    instructionalMethod: String
+  description: String!
 
-    issued: EDTFDatetime
+  instructionalMethod: String
 
-    language: LanguageTag
-    license: Concept
-    mediator: Organization
+  issued: EDTFDatetime
 
-    modified: ISO8601Datetime
-    provenance: String
-    publisher: Organization
+  language: LanguageTag
+  license: Concept
+  mediator: Organization
 
-    rights: Concept
-    rightsHolder: Organization
-    source: Organization
-    spatial: String
-    subject: Concept
+  modified: ISO8601Datetime
+  provenance: String
+  publisher: Organization
 
-    temporal: EDTFDatetime
-    title: String
-    type: [Concept]
-    valid: String
+  rights: Concept
+  rightsHolder: Organization
+  source: Organization
+  spatial: String
+  subject: Concept
+
+  temporal: EDTFDatetime
+  title: String
+  type: [Concept]
+  valid: String
 }
 
 interface Representation implements Object {
-    id: ID!
-    contextualIds: [Identifier]
-    represents: IntellectualEntity!
-    label: String
-    description: String
-    types: [Concept]
+  id: ID!
+  contextualIds: [Identifier]
+  represents: IntellectualEntity!
+  label: String
+  description: String
+  types: [Concept]
 }
 
 type PhysicalRepresentation implements Representation {
-    id: ID!
-    contextualIds: [Identifier]
-    represents: IntellectualEntity!
-    label: String
-    description: String
-    types: [Concept]
-    medium: Concept
+  id: ID!
+  contextualIds: [Identifier]
+  represents: IntellectualEntity!
+  label: String
+  description: String
+  types: [Concept]
+  medium: Concept
 }
 
 interface DigitalRepresentation implements Representation {
-    id: ID!
-    contextualIds: [Identifier]
-    represents: IntellectualEntity!
-    label: String
-    description: String
-    types: [Concept]
-    isMasterOf: IntellectualEntity
-    isMezzanineOf: IntellectualEntity
-    isAccesscopyOf: IntellectualEntity
-    includes: [MediaResource]
+  id: ID!
+  contextualIds: [Identifier]
+  represents: IntellectualEntity!
+  label: String
+  description: String
+  types: [Concept]
+  isMasterOf: IntellectualEntity
+  isMezzanineOf: IntellectualEntity
+  isAccesscopyOf: IntellectualEntity
+  includes: [MediaResource]
 }
 
 interface File implements Object {
-    id: ID!
-    contextualIds: [ContextualIdentifier]
-    isIncludedIn: Representation
-    fixity: Fixity
-    storedAt: StorageMedium
-    mediatype: String
-    format: Concept
+  id: ID!
+  contextualIds: [ContextualIdentifier]
+  isIncludedIn: Representation
+  fixity: Fixity
+  storedAt: StorageMedium
+  mediatype: String
+  format: Concept
 }
 
 type MediaResource implements File {
-    id: ID!
-    contextualIds: [ContextualIdentifier]
-    isIncludedIn: Representation
-    fixity: Fixity
-    storedAt: StorageMedium
-    mediatype: String
-    format: Concept
-    hasCaptioning: File
-    hasMediaFragment: MediaFragment
+  id: ID!
+  contextualIds: [ContextualIdentifier]
+  isIncludedIn: Representation
+  fixity: Fixity
+  storedAt: StorageMedium
+  mediatype: String
+  format: Concept
+  hasCaptioning: File
+  hasMediaFragment: MediaFragment
 }
 
 type MediaFragment implements DigitalRepresentation {
-    id: ID!
-    contextualIds: [Identifier]
-    represents: IntellectualEntity!
-    label: String
-    description: String
-    types: [Concept]
-    isMasterOf: IntellectualEntity
-    isMezzanineOf: IntellectualEntity
-    isAccesscopyOf: IntellectualEntity
-    includes: [File]
-    isMediaFragmentOf: File
+  id: ID!
+  contextualIds: [Identifier]
+  represents: IntellectualEntity!
+  label: String
+  description: String
+  types: [Concept]
+  isMasterOf: IntellectualEntity
+  isMezzanineOf: IntellectualEntity
+  isAccesscopyOf: IntellectualEntity
+  includes: [File]
+  isMediaFragmentOf: File
 }
 
 type StorageLocation {
-    medium: Concept!
-    value: String!
+  medium: Concept!
+  value: String!
 }
 
 type Fixity {
-    creator: Agent
-    checksum: String
+  creator: Agent
+  checksum: String
 }
 
 type ContextualIdentifier {
-    context: Concept!
-    id: ID!
+  context: Concept!
+  id: ID!
 }
