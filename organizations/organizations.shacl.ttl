@@ -89,6 +89,7 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:minCount 0;
         sh:class schema:ContactPoint;
         sh:name "contact point"@en;
+        sh:name "contactinfo"@nl;
         sh:message "org:hasUnit is missing or is no IRI"@en
     ], [
         a sh:PropertyShape;
@@ -98,6 +99,7 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "has primary site"@en;
+        sh:name "heeft primaire vestiging"@nl;
         sh:message "org:hasPrimarySite is no org:Site"@en
     ], 
     [
@@ -108,6 +110,7 @@ org:Organization a rdfs:Class, sh:NodeShape ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "is part of"@en;
+        sh:name "is deel van"@nl;
         sh:message "dc:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
     ],
     [
@@ -153,7 +156,8 @@ org:OrganizationalUnit a rdfs:Class, sh:NodeShape ;
         sh:path org:unitOf;
         sh:minCount 1;
         sh:class org:Organization;
-        sh:name "No org:unitOf specified"@en;
+        sh:name "unit of"@en;
+        sh:name "organisatie-eenheid van"@en;
         sh:message "org:unitOf is missing or is no IRI"@en
     ].
 
@@ -166,6 +170,11 @@ meemoo:ContentPartner a rdfs:Class, sh:NodeShape ;
 meemoo:ServiceProvider a rdfs:Class, sh:NodeShape ;
     rdfs:label "Service Provider"@en ;
     rdfs:label "Serviceprovider"@nl ;
+    rdfs:subClassOf org:Organization .
+
+meemoo:ServiceConsumer a rdfs:Class, sh:NodeShape ;
+    rdfs:label "Service Consumer"@en ;
+    rdfs:label "Dienstenafnemer"@nl ;
     rdfs:subClassOf org:Organization .
 
 meemoo:EducationalOrganization a rdfs:Class, sh:NodeShape ;
@@ -181,7 +190,7 @@ meemoo:EducationalPartner a rdfs:Class, sh:NodeShape ;
 
 meemoo:EducationalPublisher a rdfs:Class, sh:NodeShape ;
     rdfs:label "Educational Publisher"@en ;
-    rdfs:label "Educatieve uitgever"@nl ;
+    rdfs:label "Educatieve uitgeverij"@nl ;
     rdfs:subClassOf meemoo:EducationalOrganization .
 
 meemoo:School a rdfs:Class, sh:NodeShape ;
@@ -282,26 +291,30 @@ schema:Person
     sh:path org:holds;
     sh:minCount 1;
     sh:class org:Post;
-    sh:name "org:holds not correctly specified"@en;
+    sh:name "holds"@en;
+    sh:name "heeft positie"@nl;
     sh:message "org:holds is missing or is no IRI"@en 
   ], [
     a sh:PropertyShape ;
     sh:path schema:givenName ;
     sh:datatype xsd:string ;
     sh:description "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property."@en ;
-    sh:name "givenName" 
+    sh:name "given name"@en;
+    sh:name "voornaam"@nl
   ], [
     a sh:PropertyShape ;
     sh:path schema:familyName ;
     sh:datatype xsd:string ;
     sh:description "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property."@en ;
-    sh:name "familyName" 
+    sh:name "family name"@en;
+    sh:name "familienaam"@nl;
   ], [
     a sh:PropertyShape ;
     sh:path schema:email ;
     sh:datatype xsd:string ;
     sh:description "Email address."@en ;
-    sh:name "email" 
+    sh:name "email"@en;
+    sh:name "email"@nl;
     ],
     [
         a sh:PropertyShape ;
@@ -323,7 +336,8 @@ schema:PostalAddress
   a rdfs:Class ;
   a sh:NodeShape ;
   rdfs:comment "The mailing address."^^rdf:HTML ;
-  rdfs:label "Postal address" ;
+  rdfs:label "Postadres"@nl ;
+  rdfs:label "Postal address"@en ;
   rdfs:subClassOf schema:ContactPoint ;
   sh:property schema:PostalAddress-addressCountry ;
   sh:property schema:PostalAddress-addressLocality ;
@@ -336,7 +350,8 @@ schema:PostalAddress-addressCountry
   a sh:PropertyShape ;
   sh:path schema:addressCountry ;
   sh:description "The country. For example, USA. You can also provide the two-letter <a href=\"http://en.wikipedia.org/wiki/ISO_3166-1\">ISO 3166-1 alpha-2 country code</a>."^^rdf:HTML ;
-  sh:name "addressCountry" ;
+  sh:name "country"@en ;
+  sh:name "land"@nl;
   sh:or (
       [
         sh:class schema:Country ;
@@ -387,7 +402,8 @@ schema:ContactPoint
   a rdfs:Class ;
   a sh:NodeShape ;
   rdfs:comment "A contact point&#x2014;for example, a Customer Complaints department."^^rdf:HTML ;
-  rdfs:label "Contact point" ;
+  rdfs:label "Contact point"@en ;
+  
   rdfs:subClassOf schema:StructuredValue ;
   sh:property schema:ContactPoint-contactType ;
   sh:property schema:ContactPoint-email ;
@@ -399,21 +415,24 @@ schema:ContactPoint-contactType
   sh:path schema:contactType ;
   sh:datatype xsd:string ;
   sh:description "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point."^^rdf:HTML ;
-  sh:name "contactType" ;
+  sh:name "contact type"@en ;
+  sh:name "contacttype"@nl ;
 .
 schema:ContactPoint-email
   a sh:PropertyShape ;
   sh:path schema:email ;
   sh:datatype xsd:string ;
   sh:description "Email address."^^rdf:HTML ;
-  sh:name "email" ;
+  sh:name "email"@en ;
+  sh:name "email"@nl ;
 .
 schema:ContactPoint-telephone
   a sh:PropertyShape ;
   sh:path schema:telephone ;
   sh:datatype xsd:string ;
   sh:description "The telephone number."^^rdf:HTML ;
-  sh:name "telephone" ;
+  sh:name "telephone"@en ;
+  sh:name "telefoonnummer"@nl ;
 .
 
 # Property Shapes
@@ -426,6 +445,7 @@ schema:ContactPoint-telephone
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:name "preferred label"@en;
+    sh:name "voorkeursnaam"@nl;
     sh:message "skos:prefLabel is missing or is no Literal"@en .
 
 <#altLabel>
@@ -435,6 +455,7 @@ schema:ContactPoint-telephone
     sh:datatype xsd:string;
     sh:minCount 0;
     sh:name "alternative label"@en;
+    sh:name "alternatieve naam"@nl;
     sh:message "skos:altLabel is missing or no Literal"@en.
     
 <#accountManager> 
