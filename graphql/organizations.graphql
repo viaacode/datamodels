@@ -3,110 +3,110 @@ schema {
 }
 
 type QueryType {
-    Organization: Organization
+    Organization(iri: ID, orderBy: ID): Organization @iri(prefix : "org")
+    School(iri: ID, orderBy: ID) : Organization @iri(prefix : "meemoons", localname: "School")
+    ContentPartner(iri: ID, orderBy: ID) : Organization @iri(prefix : "meemoons", localname: "ContentPartner")
 }
 
 interface IOrganization {
-  id: ID!
-  label: String!
-  altLabel: String
-  homepage: String
-  logo: Logo
-  description: String
-  accountManager: Person
-  classification: Concept
-  units: [OrganizationalUnit]
-  contactPoint: [ContactPoint]
-  primarySite: Site
-  sites: [Site]
-  posts: [Post]
+  label: String                                  
+  altLabel: String                                
+  mam_label: String                               
+  homepage: String                                
+  description: String                             
+  logo: Logo                                      
+  overlay: Boolean                                
+  accountManager: Person                          
+  classification(id: ID, label:String): Concept   
+  units: [OrganizationalUnit]                     
+  contactPoint: [ContactPoint]                   
+  primarySite: Site                               
+  sites: [Site]                                   
+  posts: [Post]                                   
 }
 
-type Organization implements IOrganization @iri(namespace : "http://www.w3.org/ns/org#")  {
-  id: ID! 
-  label: String! @iri(namespace : "http://www.w3.org/2004/02/skos/core#", localname: "prefLabel")
-  altLabel: String @iri(namespace : "http://www.w3.org/2004/02/skos/core#")
-  homepage: String @iri(namespace : "http://xmlns.com/foaf/0.1/")
-  logo: Logo @iri(namespace : "https://schema.org/")
-  description: String @iri(namespace : "http://purl.org/dc/elements/1.1/")
-  accountManager: Person @iri(namespace : "https://data.meemoo.be/ns/")
-  classification: Concept @iri(namespace : "http://www.w3.org/ns/org#")
-  units: [OrganizationalUnit] @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasUnit")
-  contactPoint: [ContactPoint] @iri(namespace : "http://www.w3.org/ns/org#")
-  primarySite: Site @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasPrimarySite")
-  sites: [Site] @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasSite")
-  posts: [Post] @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasPost")
+type Organization implements IOrganization        {
+  label: String                                   @iri(prefix : "skos", localname: "prefLabel")
+  altLabel: String                                @iri(prefix : "skos")
+  mam_label: String                               @iri(prefix : "mh", localname: "label")
+  homepage: String                                @iri(prefix : "foaf")
+  description: String                             @iri(prefix : "dcterms")
+  logo: Logo                                      @iri(prefix : "schema")
+  overlay: Boolean                                @iri(prefix : "meemoons")
+  accountManager: Person                          @iri(prefix : "meemoons")
+  classification(id: ID, label:String): Concept   @iri(prefix : "org")
+  units: [OrganizationalUnit]                     @iri(prefix : "org", localname: "hasUnit")
+  contactPoint: [ContactPoint]                    @iri(prefix : "schema")
+  primarySite: Site                               @iri(prefix : "org", localname: "hasPrimarySite")
+  sites: [Site]                                   @iri(prefix : "org", localname: "hasSite")
+  posts: [Post]                                   @iri(prefix : "org", localname: "hasPost")
 }
 
-type OrganizationalUnit implements IOrganization @iri(namespace : "http://www.w3.org/ns/org#") {
-  id: ID!
-  label: String! @iri(namespace : "http://www.w3.org/2004/02/skos/core#", localname: "prefLabel")
-  altLabel: String @iri(namespace : "http://www.w3.org/2004/02/skos/core#")
-  homepage: String @iri(namespace : "http://xmlns.com/foaf/0.1/")
-  logo: Logo @iri(namespace : "https://schema.org/")
-  description: String @iri(namespace : "http://purl.org/dc/elements/1.1/")
-  accountManager: Person @iri(namespace : "https://data.meemoo.be/ns/")
-  classification: Concept @iri(namespace : "http://www.w3.org/ns/org#")
-  units: [OrganizationalUnit] @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasUnit")
-  contactPoint: [ContactPoint] @iri(namespace : "http://www.w3.org/ns/org#")
-  primarySite: Site @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasPrimarySite")
-  sites: [Site] @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasSite")
-  posts: [Post] @iri(namespace : "http://www.w3.org/ns/org#", localname: "hasPost")
-  unitOf: Organization! @iri(namespace : "http://www.w3.org/ns/org#")
+type OrganizationalUnit implements IOrganization  {
+  label: String                                   @iri(prefix : "skos", localname: "prefLabel")
+  altLabel: String                                @iri(prefix : "skos")
+  mam_label: String                               @iri(prefix : "mh", localname: "label")
+  homepage: String                                @iri(prefix : "foaf")
+  description: String                             @iri(prefix : "dcterms")
+  logo: Logo                                      @iri(prefix : "schema")
+  overlay: Boolean                                @iri(prefix : "meemoons")
+  accountManager: Person                          @iri(prefix : "meemoons")
+  classification(id: ID, label:String): Concept   @iri(prefix : "org")
+  units: [OrganizationalUnit]                     @iri(prefix : "org", localname: "hasUnit")
+  contactPoint: [ContactPoint]                    @iri(prefix : "org")
+  primarySite: Site                               @iri(prefix : "org", localname: "hasPrimarySite")
+  sites: [Site]                                   @iri(prefix : "org", localname: "hasSite")
+  posts: [Post]                                   @iri(prefix : "org", localname: "hasPost")
+  unitOf: Organization!                           @iri(prefix : "org")
 }
 
-type Post @iri(namespace : "http://www.w3.org/ns/org#"){
-  id: ID!
-  role: Concept
-  postIn: [Organization]!
+type Post                                         {
+  role: Concept                                   @iri(prefix : "org")
+  postIn: [Organization]!                         @iri(prefix : "org")
 }
 
-type Logo @iri(namespace : "https://data.meemoo.be/ns/"){
-  id: ID!
+type Logo                                         {
+  type: Concept                                   @iri(prefix : "meemoons", localname: "applicationContext")
+  
 }
 
-type Person @iri(namespace : "https://schema.org/"){
-  id: ID!
-  givenName: String
-  familyName: String
-  email: String
-  holds: [Post]
-  accountManagerOf: [Organization]
+type Person                                       {
+  givenName: String                               @iri(prefix : "schema")
+  familyName: String                              @iri(prefix : "schema")
+  email: String                                   @iri(prefix : "schema")
+  holds: [Post]                                   @iri(prefix : "org")
+  accountManagerOf: [Organization]                @iri(prefix : "meemoons")
 }
 
-type Site @iri(namespace : "http://www.w3.org/ns/org#"){
-  id: ID!
-  address: PostalAddress
+type Site                                         {
+  address: PostalAddress                          @iri(prefix : "org", localname: "siteAddress")
 }
 
 interface IContactPoint {
-  id: ID!
-  contactType: String!
-  email: String
+  contactType: String 
+  email: String 
   telephone: String
 }
 
-type ContactPoint implements IContactPoint  @iri(namespace : "https://schema.org/") {
-  id: ID!
-  contactType: String!
-  email: String
-  telephone: String
+type ContactPoint implements IContactPoint      {
+  contactType: String                           @iri(prefix : "schema")
+  email: String                                 @iri(prefix : "schema")
+  telephone: String                             @iri(prefix : "schema")
 }
 
-type PostalAddress implements IContactPoint @iri(value : "https://schema.org/PostalAddress") {
-  id: ID!
-  contactType: String!
-  email: String
-  telephone: String
-  addressCountry: String
-  addressLocality: String
-  addressRegion: String
-  postOfficeBoxNumber: String
-  postalCode: String
-  streetAddress: String
+type PostalAddress implements IContactPoint     {
+  contactType: String                           @iri(prefix : "schema")
+  email: String                                 @iri(prefix : "schema")
+  telephone: String                             @iri(prefix : "schema")
+  addressCountry: String                        @iri(prefix : "schema", localname: "addressCountry")
+  addressLocality: String                       @iri(prefix : "schema", localname: "addressLocality")
+  addressRegion: String                         @iri(prefix : "schema", localname: "addressRegion")
+  postOfficeBoxNumber: String                   @iri(prefix : "schema", localname: "postOfficeBoxNumber")
+  postalCode: String                            @iri(prefix : "schema", localname: "postalCode")
+  streetAddress: String                         @iri(prefix : "schema", localname: "streetAddress")
 }
 
-type Concept @iri(namespace : "http://www.w3.org/2004/02/skos/core#") {
-    id: ID!
-    label: String!
+type Concept                                    {
+    label: String                               @iri(prefix : "skos", localname: "prefLabel")
+    altLabel: String                            @iri(prefix : "skos")
 }
