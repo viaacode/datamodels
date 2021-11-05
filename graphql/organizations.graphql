@@ -3,12 +3,15 @@ schema {
 }
 
 type QueryType {
-    Organization(iri: ID, orderBy: ID): Organization @iri(prefix : "org")
-    School(iri: ID, orderBy: ID) : Organization @iri(prefix : "meemoons", localname: "School")
-    ContentPartner(iri: ID, orderBy: ID) : Organization @iri(prefix : "meemoons", localname: "ContentPartner")
+    Organization(id: String): Organization @iri(prefix : "org")
+    School(id: String) : Organization @iri(prefix : "meemoons", localname: "School")
+    ContentPartner(id: String) : Organization @iri(prefix : "meemoons", localname: "ContentPartner")
+    Person(givenName: String, familyName: String) : Person @iri(prefix : "schema")
 }
 
 interface IOrganization {
+  iri: ID!
+  id: String!
   label: String                                  
   altLabel: String                                
   mam_label: String                               
@@ -17,7 +20,7 @@ interface IOrganization {
   logo: Logo                                      
   overlay: Boolean                                
   accountManager: Person                          
-  classification(id: ID, label:String): Concept   
+  classification(label:String): Concept   
   units: [OrganizationalUnit]                     
   contactPoint: [ContactPoint]                   
   primarySite: Site                               
@@ -26,6 +29,8 @@ interface IOrganization {
 }
 
 type Organization implements IOrganization        {
+  iri: ID!
+  id: String!                                     @iri(prefix : "schema", localname: "identifier")
   label: String                                   @iri(prefix : "skos", localname: "prefLabel")
   altLabel: String                                @iri(prefix : "skos")
   mam_label: String                               @iri(prefix : "mh", localname: "label")
@@ -34,7 +39,7 @@ type Organization implements IOrganization        {
   logo: Logo                                      @iri(prefix : "schema")
   overlay: Boolean                                @iri(prefix : "meemoons", localname: "requiresOverlay")
   accountManager: Person                          @iri(prefix : "meemoons", localname: "hasAccountManager")
-  classification(id: ID, label:String): Concept   @iri(prefix : "org")
+  classification(label:String): Concept           @iri(prefix : "org")
   units: [OrganizationalUnit]                     @iri(prefix : "org", localname: "hasUnit")
   contactPoint: [ContactPoint]                    @iri(prefix : "schema")
   primarySite: Site                               @iri(prefix : "org", localname: "hasPrimarySite")
@@ -43,6 +48,8 @@ type Organization implements IOrganization        {
 }
 
 type OrganizationalUnit implements IOrganization  {
+  iri: ID!
+  id: String!                                     @iri(prefix : "schema", localname: "identifier")
   label: String                                   @iri(prefix : "skos", localname: "prefLabel")
   altLabel: String                                @iri(prefix : "skos")
   mam_label: String                               @iri(prefix : "mh", localname: "label")
@@ -51,7 +58,7 @@ type OrganizationalUnit implements IOrganization  {
   logo: Logo                                      @iri(prefix : "schema")
   overlay: Boolean                                @iri(prefix : "meemoons")
   accountManager: Person                          @iri(prefix : "meemoons")
-  classification(id: ID, label:String): Concept   @iri(prefix : "org")
+  classification(label:String): Concept           @iri(prefix : "org")
   units: [OrganizationalUnit]                     @iri(prefix : "org", localname: "hasUnit")
   contactPoint: [ContactPoint]                    @iri(prefix : "org")
   primarySite: Site                               @iri(prefix : "org", localname: "hasPrimarySite")
@@ -66,8 +73,8 @@ type Post                                         {
 }
 
 type Logo                                         {
+  iri: ID!  
   type: Concept                                   @iri(prefix : "meemoons", localname: "applicationContext")
-  
 }
 
 type Person                                       {
