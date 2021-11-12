@@ -2,150 +2,143 @@
 # import Coverage, Audience, Concept from "./general.graphql"
 
 scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
-scalar EDTFDatetime @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
-scalar ISO8601Datetime
-  @specifiedBy(url: "https://www.iso.org/iso-8601-date-and-time-format.html")
-scalar LanguageTag @specifiedBy(url: "https://tools.ietf.org/html/rfc5646.txt")
+scalar EDTF @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
+scalar ISO8601 @specifiedBy(url: "https://www.iso.org/standard/70907.html")
+scalar ISO639_3 @specifiedBy(url: "https://www.iso.org/standard/39534.html")
+scalar IETFBCP47 @specifiedBy(url: "https://www.rfc-editor.org/info/bcp47")
 
 union Agent = Organization | Person
 
 interface Object {
   id: ID!
-  contextualIds: [ContextualIdentifier]
+  name: String
+  description: String
 }
 
 type IntellectualEntity implements Object {
   id: ID!
-  contextualIds: [ContextualIdentifier]
+  name: String
+  description: String
+  
+  localIdentifier: [LocalIdentifier]
   isPartOf: IntellectualEntity
   hasParts: [IntellectualEntity]
+  relationship: [IntellectualEntity]
+
+  maintainer: Organization
+  copyrightHolder: Agent
+
+  author: [Role]
+  publisher: [Role]
+  actor: [Role]
+  contributor: [Role]
+
+  partOfEpisode: [Episode]
+  spatialCoverage: [Place]
+  category: [String]
+
   representations: [Representation]
-  mezzanine: DigitalRepresentation
   accesscopy: DigitalRepresentation
-  master: DigitalRepresentation
 
+  duration: String
+  dateCreated: EDTF
+  datePublished: EDTF
   abstract: String
-  accessRights: String
-  accrualMethod: Concept
-  accrualPeriodicity: Concept
-  accrualPolicy: Concept
-  alternativeTitle: [String]
-  audience: [Audience]
-  available: ISO8601Datetime!
-  bibliographicCitation: String
-  conformsTo: Concept
-  contributor: [Person]
-  coverage: Coverage
-  created: EDTFDatetime
-  creator: [Person]
+  genre: String
+  temporalCoverage: String
+  keywords: String
+  inLanguage: ISO639_3
+  available: ISO8601
 
-  dateCopyrighted: EDTFDatetime
-
-  description: String!
-
-  instructionalMethod: String
-
-  issued: EDTFDatetime
-
-  language: LanguageTag
   license: Concept
-  mediator: Organization
+  additionalType: Concept
 
-  modified: ISO8601Datetime
-  provenance: String
-  publisher: Organization
+  film_base: String
+  film_imageOrSound: String
+  film_colorOrBW: Boolean
+  film_containsEmbeddedCaption: Boolean
+  film_embeddedCaptionLanguage:  IETFBCP47
 
-  rights: Concept
-  rightsHolder: Organization
-  source: Organization
-  spatial: String
-  subject: Concept
-
-  temporal: EDTFDatetime
-  title: String
-  type: [Concept]
-  valid: String
+  copyrightNotice: string
+  copyrightYear: Number
+  creditText: String
 }
 
 interface Representation implements Object {
   id: ID!
-  contextualIds: [Identifier]
-  represents: IntellectualEntity!
-  label: String
+  name: String
   description: String
-  types: [Concept]
+
+  represents: IntellectualEntity!
 }
 
 type PhysicalRepresentation implements Representation {
   id: ID!
-  contextualIds: [Identifier]
-  represents: IntellectualEntity!
-  label: String
+  name: String
   description: String
-  types: [Concept]
-  medium: Concept
+
+  represents: IntellectualEntity!
+
+  format: String
+  medium: String
 }
 
-interface DigitalRepresentation implements Representation {
+type DigitalRepresentation implements Representation {
   id: ID!
-  contextualIds: [Identifier]
-  represents: IntellectualEntity!
-  label: String
+  name: String
   description: String
-  types: [Concept]
-  isMasterOf: IntellectualEntity
-  isMezzanineOf: IntellectualEntity
-  isAccesscopyOf: IntellectualEntity
-  includes: [MediaResource]
+
+  represents: IntellectualEntity!
+  includes: [File]
+
+  transcript: String
+  caption: String
+  dateCreated: EDTF
+  copyrightNotice: String
+  copyrightYear: Number
+  creditText: String
 }
 
 interface File implements Object {
   id: ID!
-  contextualIds: [ContextualIdentifier]
+  name: String
+  description: String
+
   isIncludedIn: Representation
-  fixity: Fixity
-  storedAt: StorageMedium
   mediatype: String
-  format: Concept
 }
 
 type MediaResource implements File {
   id: ID!
-  contextualIds: [ContextualIdentifier]
-  isIncludedIn: Representation
-  fixity: Fixity
-  storedAt: StorageMedium
-  mediatype: String
-  format: Concept
-  hasCaptioning: File
-  hasMediaFragment: MediaFragment
-}
-
-type MediaFragment implements DigitalRepresentation {
-  id: ID!
-  contextualIds: [Identifier]
-  represents: IntellectualEntity!
-  label: String
+  name: String
   description: String
-  types: [Concept]
-  isMasterOf: IntellectualEntity
-  isMezzanineOf: IntellectualEntity
-  isAccesscopyOf: IntellectualEntity
-  includes: [File]
-  isMediaFragmentOf: File
+
+  isIncludedIn: Representation
+  mediatype: String
+
+  hasCaptioning: File
+  hasMediaFragment: [MediaFragment]
 }
 
-type StorageLocation {
-  medium: Concept!
-  value: String!
-}
-
-type Fixity {
-  creator: Agent
-  checksum: String
-}
-
-type ContextualIdentifier {
-  context: Concept!
+type MediaFragment implements Representation {
   id: ID!
+  name: String
+  description: String
+  represents: IntellectualEntity!
+
+  transcript: String
+  caption: String
+  dateCreated: EDTF
+
+  isMediaFragmentOf: MediaResource
+}
+
+type LocalIdentifier {
+  additionalType: Concept!
+  id: ID!
+}
+
+type Concept                                    {
+    label: String                              
+    altLabel: String                         
 }
