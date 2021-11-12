@@ -1,11 +1,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix org: <http://www.w3.org/ns/org#> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@base <https://data.meemoo.be/ns/terms/organizationtypes> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://data.meemoo.be/terms/org/types> .
 
 <> a skos:ConceptScheme;
-    dct:title "Meemoo organization classification thesaurus"@en;
-    skos:hasTopConcept <GEN>.
+    rdfs:label "Meemoo organization classification thesaurus"@en;
+    rdfs:label "Meemoo lijst organisatietypes"@nl;
+    skos:hasTopConcept <#GEN>.
 
 # --- top concept ---
 
@@ -49,42 +50,42 @@
     skos:broader <#GEN>;
     skos:inScheme <>;
     skos:narrower <#kunstenorganisatie>, <#erfgoedcel>, <#openbare_bibliotheek>, <#archief>, <#erfgoedbibliotheek>, <#museum_(niet_erkend)>, <#museum_(erkend)>;
-    skos:prefLabel "cultuur/erfgoed"@nl.
+    skos:prefLabel "Cultuur/erfgoed"@nl.
 
 <#kunstenorganisatie> a skos:Concept;
     skos:broader <#CUL>; 
     skos:inScheme <>;
-    skos:prefLabel "kunstenorganisatie"@nl.
+    skos:prefLabel "Kunstenorganisatie"@nl.
 
 <#erfgoedcel> a skos:Concept;
     skos:broader <#CUL>; 
     skos:inScheme <>;
-    skos:prefLabel "erfgoedcel"@nl.
+    skos:prefLabel "Erfgoedcel"@nl.
 
 <#openbare_bibliotheek> a skos:Concept;
     skos:broader <#CUL>; 
     skos:inScheme <>;
-    skos:prefLabel "openbare bibliotheek"@nl.
+    skos:prefLabel "Openbare bibliotheek"@nl.
 
 <#archief> a skos:Concept;
     skos:broader <#CUL>; 
     skos:inScheme <>;
-    skos:prefLabel "archief"@nl.
+    skos:prefLabel "Archief"@nl.
 
 <#erfgoedbibliotheek> a skos:Concept;
     skos:broader <#CUL>; 
     skos:inScheme <>;
-    skos:prefLabel "erfgoedbibliotheek"@nl.
+    skos:prefLabel "Erfgoedbibliotheek"@nl.
 
 <#museum_(niet_erkend)> a skos:Concept;
     skos:broader <#CUL>; 
     skos:inScheme <>;
-    skos:prefLabel "museum (niet erkend)"@nl.
+    skos:prefLabel "Museum (niet erkend)"@nl.
 
 <#museum_(erkend)> a skos:Concept;
     skos:broader <#CUL>;
     skos:inScheme <>;
-    skos:prefLabel "museum (erkend)"@nl.
+    skos:prefLabel "Museum (erkend)"@nl.
 
 # --- Leverancier ---
 
