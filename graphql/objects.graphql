@@ -1,7 +1,5 @@
 # import Organization, Person from "./organizations.graphql"
-# import Coverage, Audience, Concept from "./general.graphql"
 
-scalar IRI @specifiedBy(url: "https://tools.ietf.org/html/rfc3987")
 scalar EDTF @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
 scalar ISO8601 @specifiedBy(url: "https://www.iso.org/standard/70907.html")
 scalar ISO639_3 @specifiedBy(url: "https://www.iso.org/standard/39534.html")
@@ -12,12 +10,14 @@ union Agent = Organization | Person
 interface Object {
   id: ID!
   name: String
+  alternateName: String
   description: String
 }
 
 type IntellectualEntity implements Object {
   id: ID!
   name: String
+  alternateName: String
   description: String
   
   localIdentifier: [LocalIdentifier]
@@ -33,9 +33,10 @@ type IntellectualEntity implements Object {
   actor: [Role]
   contributor: [Role]
 
-  partOfEpisode: [Episode]
-  spatialCoverage: [Place]
-  category: [String]
+  partOfEpisode: [Object]
+  partOfSeason: [Object]
+  partOfSeries: [Object]
+  spatialCoverage: [Object]
 
   representations: [Representation]
   accesscopy: DigitalRepresentation
@@ -59,7 +60,7 @@ type IntellectualEntity implements Object {
   film_containsEmbeddedCaption: Boolean
   film_embeddedCaptionLanguage:  IETFBCP47
 
-  copyrightNotice: string
+  copyrightNotice: String
   copyrightYear: Number
   creditText: String
 }
@@ -67,6 +68,7 @@ type IntellectualEntity implements Object {
 interface Representation implements Object {
   id: ID!
   name: String
+  alternateName: String
   description: String
 
   represents: IntellectualEntity!
@@ -75,6 +77,7 @@ interface Representation implements Object {
 type PhysicalRepresentation implements Representation {
   id: ID!
   name: String
+  alternateName: String
   description: String
 
   represents: IntellectualEntity!
@@ -86,6 +89,7 @@ type PhysicalRepresentation implements Representation {
 type DigitalRepresentation implements Representation {
   id: ID!
   name: String
+  alternateName: String
   description: String
 
   represents: IntellectualEntity!
@@ -102,6 +106,7 @@ type DigitalRepresentation implements Representation {
 interface File implements Object {
   id: ID!
   name: String
+  alternateName: String
   description: String
 
   isIncludedIn: Representation
@@ -111,6 +116,7 @@ interface File implements Object {
 type MediaResource implements File {
   id: ID!
   name: String
+  alternateName: String
   description: String
 
   isIncludedIn: Representation
@@ -123,6 +129,7 @@ type MediaResource implements File {
 type MediaFragment implements Representation {
   id: ID!
   name: String
+  alternateName: String
   description: String
   represents: IntellectualEntity!
 
@@ -138,7 +145,7 @@ type LocalIdentifier {
   id: ID!
 }
 
-type Concept                                    {
-    label: String                              
-    altLabel: String                         
+type Concept  {
+  label: String                              
+  altLabel: String                         
 }
