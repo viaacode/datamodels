@@ -33,6 +33,7 @@ type IntellectualEntity implements Object {
   actor: [Role]
   contributor: [Role]
 
+  partOfArchive: [Object]
   partOfEpisode: [Object]
   partOfSeason: [Object]
   partOfSeries: [Object]
