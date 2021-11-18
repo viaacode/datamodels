@@ -55,12 +55,6 @@ type IntellectualEntity implements Object {
   license: Concept
   additionalType: Concept
 
-  film_base: String
-  film_imageOrSound: String
-  film_colorOrBW: Boolean
-  film_containsEmbeddedCaption: Boolean
-  film_embeddedCaptionLanguage:  IETFBCP47
-
   copyrightNotice: String
   copyrightYear: Number
   creditText: String
@@ -85,6 +79,7 @@ type PhysicalRepresentation implements Representation {
 
   format: String
   medium: String
+  film_base: String
 }
 
 type DigitalRepresentation implements Representation {
@@ -102,6 +97,11 @@ type DigitalRepresentation implements Representation {
   copyrightNotice: String
   copyrightYear: Number
   creditText: String
+
+  film_imageOrSound: String
+  film_colorOrBW: Boolean
+  film_containsEmbeddedCaption: Boolean
+  film_embeddedCaptionLanguage:  IETFBCP47
 }
 
 interface File implements Object {
