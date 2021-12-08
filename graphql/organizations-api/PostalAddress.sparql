@@ -1,0 +1,37 @@
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX meemoo: <https://meemoo.be/ns/org#>
+PREFIX schema: <https://schema.org/>
+
+CONSTRUCT {
+  ?iri :iri  ?iri;
+  :contact_type ?contact_type;
+  :email ?email;
+  :telephone ?telephone;
+  :country ?country;
+  :locality ?locality;
+  :region ?region;
+  :post_office_box_number ?post_office_box_number;
+  :postal_code ?postal_code;
+  :street ?street                                   
+}
+FROM <https://data.meemoo.be/graphs/organizations>
+WHERE
+{
+  { ?iri a schema:PostalAddress }
+  OPTIONAL { ?iri schema:contactType ?contact_type }
+  OPTIONAL { ?iri schema:email ?email }
+  OPTIONAL { ?iri schema:telephone ?telephone }
+  OPTIONAL { ?iri schema:addressCountry ?country }
+  OPTIONAL { ?iri schema:addressLocality ?locality }
+  OPTIONAL { ?iri schema:addressRegion ?region }
+  OPTIONAL { ?iri schema:postOfficeBoxNumber ?post_office_box_number }
+  OPTIONAL { ?iri schema:postalCode ?postal_code }
+  OPTIONAL { ?iri schema:streetAddress ?street }
+  
+  {{#if iri}}
+  VALUES ?iri { {{join " " (as-iriref iri)}} }
+  {{/if}}
+}

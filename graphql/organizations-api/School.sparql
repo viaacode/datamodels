@@ -1,0 +1,55 @@
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX meemoo: <https://meemoo.be/ns/org#>
+PREFIX schema: <https://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mh:  <https://meemoo.be/ns/mh#> 
+
+CONSTRUCT {
+  ?iri :iri   ?iri;
+  :id         ?id;
+  :label      ?label;
+  :alt_label  ?alt_label ;                                               
+  :mam_label  ?mam_label;                           
+  :homepage   ?homepage;                             
+  :description ?description;                            
+  :logo         ?logo;                                   
+  :overlay      ?overlay;                              
+  :account_manager ?account_manager;                         
+  :classification   ?classification;
+  :units     ?unit;                
+  :contact_point ?contact_point;                    
+  :primary_site  ?primary_site;                          
+  :sites ?site;                                  
+  :posts ?post;  
+}
+FROM <https://data.meemoo.be/graphs/organizations>
+WHERE
+{
+  { ?iri a meemoo:School; schema:identifier ?id }
+  OPTIONAL { ?iri skos:prefLabel ?label }
+  OPTIONAL { ?iri skos:altLabel ?alt_label }
+  OPTIONAL { ?iri mh:label ?mam_label }
+  OPTIONAL { ?iri foaf:homepage ?homepage }
+  OPTIONAL { ?iri dcterms:description ?description }
+  OPTIONAL { ?iri schema:logo ?logo }
+  OPTIONAL { ?iri meemoo:requiresOverlay ?overlay }
+  OPTIONAL { ?iri meemoo:hasAccountManager ?account_manager }
+  OPTIONAL { ?iri org:classification ?classification }
+  OPTIONAL { ?iri org:hasUnit ?unit }
+  OPTIONAL { ?iri schema:contactPoint ?contact }
+  OPTIONAL { ?iri org:hasPrimarySite ?primary_site }
+  OPTIONAL { ?iri org:hasSite ?site }
+  OPTIONAL { ?iri org:hasPost ?post }
+
+
+  {{#if iri}}
+  VALUES ?iri { {{join " " (as-iriref iri)}} }
+  {{/if}}
+
+  {{#if id}}
+    ?iri schema:identifier "{{id}}" .
+  {{/if}}
+}

@@ -1,0 +1,21 @@
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX dcterms: <>
+
+CONSTRUCT {
+  ?iri :iri   ?iri;
+  :post_in    ?org;
+    :role    ?role;
+}
+FROM <https://data.meemoo.be/graphs/organizations>
+WHERE
+{
+  { ?iri a org:Post; org:postIn ?org }
+  OPTIONAL { ?iri org:role ?role }
+  
+
+  {{#if iri}}
+  VALUES ?iri { {{join " " (as-iriref iri)}} }
+  {{/if}}
+}

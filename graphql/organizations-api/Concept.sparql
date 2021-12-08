@@ -1,0 +1,23 @@
+PREFIX : <https://github.com/dbcls/grasp/ns/>
+PREFIX org: <http://www.w3.org/ns/org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+CONSTRUCT {
+  ?iri :iri   ?iri;
+  :label      ?label;
+  :alt_label  ?alt_label ;                                               
+}
+FROM <https://data.meemoo.be/graphs/organizations>
+WHERE
+{
+  { ?iri a skos:Concept }
+  UNION
+  { ?iri a org:Role }
+  
+  OPTIONAL { ?iri skos:prefLabel ?label }
+  OPTIONAL { ?iri skos:altLabel ?alt_label }
+  
+  {{#if iri}}
+  VALUES ?iri { {{join " " (as-iriref iri)}} }
+  {{/if}}
+}
