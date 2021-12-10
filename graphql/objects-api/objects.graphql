@@ -4,75 +4,76 @@ scalar EDTF @specifiedBy(url: "https://www.loc.gov/standards/datetime/")
 scalar ISO8601 @specifiedBy(url: "https://www.iso.org/standard/70907.html")
 scalar ISO639_3 @specifiedBy(url: "https://www.iso.org/standard/39534.html")
 scalar IETFBCP47 @specifiedBy(url: "https://www.rfc-editor.org/info/bcp47")
+scalar ISO8601Duration @specifiedBy(url: "https://www.iso.org/standard/70907.html")
 
 union Agent = Organization | Person
 
 interface Object {
   id: ID!
   name: String
-  alternateName: String
+  alternate_name: String
   description: String
 }
 
 type IntellectualEntity implements Object {
   id: ID!
   name: String
-  alternateName: String
+  alternate_name: String
   description: String
   
-  localIdentifier: [LocalIdentifier]
-  isPartOf: IntellectualEntity
-  hasParts: [IntellectualEntity]
+  local_identifier: [LocalIdentifier]
+  is_part_of: IntellectualEntity
+  has_parts: [IntellectualEntity]
   relationship: [IntellectualEntity]
 
   maintainer: Organization
-  copyrightHolder: Agent
+  copyright_holder: Agent
 
   author: [Role]
   publisher: [Role]
   actor: [Role]
   contributor: [Role]
 
-  partOfArchive: [Object]
-  partOfEpisode: [Object]
-  partOfSeason: [Object]
-  partOfSeries: [Object]
-  spatialCoverage: [Object]
+  part_of_archive: [Object]
+  part_of_episode: [Object]
+  part_of_season: [Object]
+  part_of_series: [Object]
+  spatial_coverage: [Object]
 
-  representations: [Representation]
-  accesscopy: DigitalRepresentation
+  carrier: PhysicalRepresentation
+  accesscopy: MediaResource
 
-  duration: String
-  dateCreated: EDTF
-  datePublished: EDTF
+  duration: ISO8601Duration
+  date_created: EDTF
+  date_published: EDTF
   abstract: String
   genre: String
-  temporalCoverage: String
-  keywords: String
-  inLanguage: ISO639_3
+  temporal_coverage: String
+  keywords: [String]
+  in_language: ISO639_3
   available: ISO8601
 
-  license: Concept
-  additionalType: Concept
+  license: [Concept]
+  object_type: String
 
-  copyrightNotice: String
-  copyrightYear: Number
-  creditText: String
+  copyright_notice: String
+  copyright_year: Number
+  credit_text: String
 }
 
 interface Representation implements Object {
   id: ID!
   name: String
-  alternateName: String
+  alternate_name: String
   description: String
 
   represents: IntellectualEntity!
 }
 
-type PhysicalRepresentation implements Representation {
+type PhysicalRepresentation implements Representation & Object {
   id: ID!
   name: String
-  alternateName: String
+  alternate_name: String
   description: String
 
   represents: IntellectualEntity!
@@ -82,71 +83,62 @@ type PhysicalRepresentation implements Representation {
   film_base: String
 }
 
-type DigitalRepresentation implements Representation {
+# Collapses File & DigitalRepresentation from datamodel
+type MediaResource implements Representation & Object {
   id: ID!
   name: String
-  alternateName: String
+  alternate_name: String
   description: String
 
   represents: IntellectualEntity!
-  includes: [File]
 
+  mediatype: String
   transcript: String
   caption: String
-  dateCreated: EDTF
-  copyrightNotice: String
-  copyrightYear: Number
-  creditText: String
 
-  film_imageOrSound: String
-  film_colorOrBW: Boolean
-  film_containsEmbeddedCaption: Boolean
-  film_embeddedCaptionLanguage:  IETFBCP47
+  has_captioning: File
+  has_media_fragment: [MediaFragment]
 }
 
-interface File implements Object {
+type MediaFragment implements Representation & Object {
   id: ID!
   name: String
-  alternateName: String
+  alternate_name: String
   description: String
 
-  isIncludedIn: Representation
-  mediatype: String
-}
-
-type MediaResource implements File {
-  id: ID!
-  name: String
-  alternateName: String
-  description: String
-
-  isIncludedIn: Representation
-  mediatype: String
-
-  hasCaptioning: File
-  hasMediaFragment: [MediaFragment]
-}
-
-type MediaFragment implements Representation {
-  id: ID!
-  name: String
-  alternateName: String
-  description: String
   represents: IntellectualEntity!
 
   transcript: String
   caption: String
-  dateCreated: EDTF
+  date_created: EDTF
 
-  isMediaFragmentOf: MediaResource
+  is_media_fragment_of: MediaResource
 }
 
 type LocalIdentifier {
-  additionalType: Concept!
+  additional_type: Concept!
   id: ID!
 }
 
 type Concept  {
   label: String                              
-  altLabel: String                         
+  alt_label: String                         
 }
+
+# --- from organisations api
+type Organization {
+  id: ID!
+  label: String
+  alt_label: String
+  mam_label: String
+  homepage: String
+  description: String
+  logo: String
+}
+
+type Person {
+  id: ID!
+  given_name: String
+  family_name: String
+  email: String
+)
