@@ -7,138 +7,159 @@ scalar IETFBCP47 @specifiedBy(url: "https://www.rfc-editor.org/info/bcp47")
 scalar ISO8601Duration @specifiedBy(url: "https://www.iso.org/standard/70907.html")
 
 union Agent = Organization | Person
+union Resource = MediaResource | PhysicalRepresentation
 
 interface Object {
-  id: ID!
-  name: String
-  alternate_name: String
-  description: String
+  iri: ID!
+  type: [String]
+  schema_name: String
+  schema_alternate_name: String
+  schema_description: String
 }
 
 type IntellectualEntity implements Object {
-  id: ID!
-  name: String
-  alternate_name: String
-  description: String
-  
-  local_identifier: [LocalIdentifier]
-  is_part_of: IntellectualEntity
-  has_parts: [IntellectualEntity]
-  relationship: [IntellectualEntity]
+  iri: ID!
+  type: [String]
+  schema_name: String
+  schema_alternate_name: String
+  schema_description: String
+  schema_identifier: String
 
-  maintainer: Organization
-  copyright_holder: Agent
+  premis_identifier: [LocalIdentifier]
+  premis_is_part_of: IntellectualEntity
+  premis_has_part: [IntellectualEntity]
+  premis_relationship: [Object]
 
-  author: [Role]
-  publisher: [Role]
-  actor: [Role]
-  contributor: [Role]
+  schema_maintainer: Organization
+  schema_copyright_holder: Agent
 
-  part_of_archive: [Object]
-  part_of_episode: [Object]
-  part_of_season: [Object]
-  part_of_series: [Object]
-  spatial_coverage: [Object]
+  schema_author: [Role]
+  schema_publisher: [Role]
+  schema_actor: [Role]
+  schema_contributor: [Role]
 
-  carrier: PhysicalRepresentation
-  accesscopy: MediaResource
+  schema_part_of_archive: [Object]
+  schema_part_of_episode: [Object]
+  schema_part_of_season: [Object]
+  schema_part_of_series: [Object]
+  schema_spatial_coverage: [Object]
 
-  duration: ISO8601Duration
-  date_created: EDTF
-  date_published: EDTF
-  abstract: String
-  genre: String
-  temporal_coverage: String
-  keywords: [String]
-  in_language: ISO639_3
-  available: ISO8601
+  premis_is_represented_by: [Resource]
+  meemoo_accesscopy: MediaResource
 
-  license: [Concept]
-  object_type: String
+  schema_duration: ISO8601Duration
+  schema_date_created: EDTF
+  schema_date_published: EDTF
+  schema_abstract: String
+  schema_genre: String
+  schema_temporal_coverage: String
+  schema_keywords: [String]
+  schema_in_language: ISO639_3
+  dcterms_available: ISO8601
 
-  copyright_notice: String
-  copyright_year: Number
-  credit_text: String
+  ebu_object_type: String
+
+  schema_license: [Concept]
+
+  schema_copyright_notice: String
+  schema_copyright_year: Number
+  schema_credit_text: String
 }
 
-interface Representation implements Object {
-  id: ID!
-  name: String
-  alternate_name: String
-  description: String
+type Role {
+  schema_roleName: String
+  schema_author: String
+  schema_publisher: String
+  schema_actor: String
+  schema_contributor: String
+} 
 
-  represents: IntellectualEntity!
+interface Representation implements Object {
+  iri: ID!
+  type: [String]
+  schema_name: String
+  schema_alternate_name: String
+  schema_description: String
+
+  premis_represents: IntellectualEntity!
+
+  dcterms_format: String
 }
 
 type PhysicalRepresentation implements Representation & Object {
-  id: ID!
-  name: String
-  alternate_name: String
-  description: String
+  iri: ID!
+  type: [String]
+  schema_name: String
+  schema_alternate_name: String
+  schema_description: String
 
-  represents: IntellectualEntity!
+  premis_represents: IntellectualEntity!
 
-  format: String
-  medium: String
-  film_base: String
+  dcterms_format: String
+  dcterms_medium: String
+  meemoofilm_base: String
 }
 
 # Collapses File & DigitalRepresentation from datamodel
 type MediaResource implements Representation & Object {
-  id: ID!
-  name: String
-  alternate_name: String
-  description: String
+  iri: ID!
+  type: [String]
+  schema_name: String
+  schema_alternate_name: String
+  schema_description: String
 
-  represents: IntellectualEntity!
+  premis_represents: IntellectualEntity!
 
-  mediatype: String
-  transcript: String
-  caption: String
+  dcterms_format: String
+  schema_transcript: String
+  schema_caption: String
 
-  has_captioning: File
-  has_media_fragment: [MediaFragment]
+  meemoofilm_has_captioning: File
+  ebu_has_media_fragment: [MediaFragment]
 }
 
 type MediaFragment implements Representation & Object {
-  id: ID!
-  name: String
-  alternate_name: String
-  description: String
+  iri: ID!
+  type: [String]
+  schema_name: String
+  schema_alternate_name: String
+  schema_description: String
 
-  represents: IntellectualEntity!
+  premis_represents: IntellectualEntity!
 
-  transcript: String
-  caption: String
-  date_created: EDTF
+  dcterms_format: String
+  schema_transcript: String
+  schema_caption: String
+  schema_date_created: EDTF
 
-  is_media_fragment_of: MediaResource
+  ebu_is_media_fragment_of: MediaResource
 }
 
 type LocalIdentifier {
-  additional_type: Concept!
-  id: ID!
+  iri: ID!
+  schema_additional_type: Concept!
 }
 
 type Concept  {
-  label: String                              
-  alt_label: String                         
+  iri: ID!
+  skos_pref_label: String                              
+  skos_alt_label: String                         
 }
 
 # --- from organisations api
 type Organization {
-  id: ID!
-  label: String
-  alt_label: String
-  mam_label: String
-  homepage: String
-  description: String
-  logo: String
+  iri: ID!
+  skos_pref_label: String                              
+  skos_alt_label: String      
+  mh_label: String
+  foaf_homepage: String
+  dcterms_description: String
+  schema_logo: String
 }
 
 type Person {
-  id: ID!
-  given_name: String
-  family_name: String
-  email: String
+  iri: ID!
+  foaf_given_name: String
+  foaf_family_name: String
+  schema_email: String
 )
