@@ -57,7 +57,7 @@ type IntellectualEntity implements Object {
   schema_in_language: ISO639_3
   dcterms_available: ISO8601
 
-  ebu_object_type: String
+  ebucore_object_type: String
 
   schema_license: [Concept]
 
@@ -97,10 +97,10 @@ type PhysicalRepresentation implements Representation & Object {
 
   dcterms_format: String
   dcterms_medium: String
-  meemoofilm_base: String
+  film_base: String
 }
 
-# Collapses File & DigitalRepresentation from datamodel
+# Collapses File & DigitalRepresentation from datamodel for simplicfication
 type MediaResource implements Representation & Object {
   iri: ID!
   type: [String]
@@ -114,8 +114,13 @@ type MediaResource implements Representation & Object {
   schema_transcript: String
   schema_caption: String
 
-  meemoofilm_has_captioning: File
-  ebu_has_media_fragment: [MediaFragment]
+  film_color_or_bw: String,
+  film_contains_embedded_caption: Boolean,
+  film_embedded_caption_language: ISO639_3,
+  film_image_or_sound: Boolean,
+  
+  ebucore_has_media_fragment: [MediaFragment]
+  ebucore_has_captioning: MediaResource
 }
 
 type MediaFragment implements Representation & Object {
@@ -132,10 +137,10 @@ type MediaFragment implements Representation & Object {
   schema_caption: String
   schema_date_created: EDTF
 
-  ebu_is_media_fragment_of: MediaResource
+  ebucore_is_media_fragment_of: MediaResource
 }
 
-type LocalIdentifier {
+type LocalIdentifier implements Object {
   iri: ID!
   schema_additional_type: Concept!
 }
