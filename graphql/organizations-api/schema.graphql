@@ -1,4 +1,4 @@
-directive @grasp(service: String, template: String) on OBJECT
+directive @grasp(endpoint: String, sparql: String) on OBJECT
 
 type Query {
   organizations(iri: String, id: String): [Organization]
@@ -27,7 +27,7 @@ interface IOrganization {
 }
 
 type Organization implements IOrganization
-  @grasp(service: "meemoo", template: "Organization.sparql") {
+  @grasp(endpoint: "meemoo", sparql: "Organization.sparql") {
   iri: ID!
   id: String!
   label: String
@@ -47,7 +47,7 @@ type Organization implements IOrganization
 }
 
 type School implements IOrganization
-  @grasp(service: "meemoo", template: "School.sparql") {
+  @grasp(endpoint: "meemoo", sparql: "School.sparql") {
   iri: ID!
   id: String!
   label: String
@@ -67,7 +67,7 @@ type School implements IOrganization
 }
 
 type ContentPartner implements IOrganization
-  @grasp(service: "meemoo", template: "ContentPartner.sparql") {
+  @grasp(endpoint: "meemoo", sparql: "ContentPartner.sparql") {
   iri: ID!
   id: String!
   label: String
@@ -87,7 +87,7 @@ type ContentPartner implements IOrganization
 }
 
 type OrganizationalUnit implements IOrganization
-  @grasp(service: "meemoo", template: "OrganizationalUnit.sparql") {
+  @grasp(endpoint: "meemoo", sparql: "OrganizationalUnit.sparql") {
   iri: ID!
   id: String!
   label: String
@@ -107,18 +107,18 @@ type OrganizationalUnit implements IOrganization
   unit_of: Organization!
 }
 
-type Post @grasp(service: "meemoo", template: "Post.sparql") {
+type Post @grasp(endpoint: "meemoo", sparql: "Post.sparql") {
   iri: ID!
   role: Concept
   post_in: [Organization]!
 }
 
-type Logo @grasp(service: "meemoo", template: "Logo.sparql") {
+type Logo @grasp(endpoint: "meemoo", sparql: "Logo.sparql") {
   iri: ID!
   type: Concept
 }
 
-type Person @grasp(service: "meemoo", template: "Person.sparql") {
+type Person @grasp(endpoint: "meemoo", sparql: "Person.sparql") {
   iri: ID!
   given_name: String
   family_name: String
@@ -127,7 +127,7 @@ type Person @grasp(service: "meemoo", template: "Person.sparql") {
   account_manager_of: [Organization]
 }
 
-type Site @grasp(service: "meemoo", template: "Site.sparql") {
+type Site @grasp(endpoint: "meemoo", sparql: "Site.sparql") {
   iri: ID!
   address: PostalAddress
 }
@@ -140,7 +140,7 @@ interface IContactPoint {
 }
 
 type ContactPoint implements IContactPoint
-  @grasp(service: "meemoo", template: "ContactPoint.sparql") {
+  @grasp(endpoint: "meemoo", sparql: "ContactPoint.sparql") {
   iri: ID!
   contact_type: String
   email: String
@@ -148,7 +148,7 @@ type ContactPoint implements IContactPoint
 }
 
 type PostalAddress implements IContactPoint
-  @grasp(service: "meemoo", template: "PostalAddress.sparql") {
+  @grasp(endpoint: "meemoo", sparql: "PostalAddress.sparql") {
   iri: ID!
   contact_type: String
   email: String
@@ -161,7 +161,7 @@ type PostalAddress implements IContactPoint
   street: String
 }
 
-type Concept @grasp(service: "meemoo", template: "Concept.sparql") {
+type Concept @grasp(endpoint: "meemoo", sparql: "Concept.sparql") {
   iri: ID!
   label: String
   alt_label: String

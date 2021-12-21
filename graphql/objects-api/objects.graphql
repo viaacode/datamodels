@@ -100,7 +100,7 @@ type PhysicalRepresentation implements Representation & Object {
   film_base: String
 }
 
-# Collapses File & DigitalRepresentation from datamodel for simplicfication
+# Collapses File & DigitalRepresentation from datamodel for simplification
 type MediaResource implements Representation & Object {
   iri: ID!
   type: [String]
