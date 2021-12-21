@@ -10,7 +10,7 @@ CONSTRUCT {
 FROM <https://data.meemoo.be/graphs/organizations>
 WHERE
 {
-  { ?iri meemoo:applicationContext ?concept }
+  { ?x schema:logo ?iri }
   OPTIONAL { ?iri skos:prefLabel ?label }
   OPTIONAL { ?iri skos:altLabel ?alt_label }
   
