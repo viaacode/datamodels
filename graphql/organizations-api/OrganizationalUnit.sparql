@@ -1,7 +1,11 @@
 PREFIX : <https://github.com/dbcls/grasp/ns/>
 PREFIX org: <http://www.w3.org/ns/org#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX dcterms: <>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX meemoo: <https://meemoo.be/ns/org#>
+PREFIX schema: <https://schema.org/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX mh:  <https://meemoo.be/ns/mh#> 
 
 CONSTRUCT {
   ?iri :iri   ?iri;
@@ -12,7 +16,8 @@ CONSTRUCT {
   :homepage   ?homepage;                             
   :description ?description;                            
   :logo         ?logo;                                   
-  :overlay      ?overlay;                              
+  :overlay      ?overlay;
+  :bzt      ?bzt;                                 
   :account_manager ?account_manager;                         
   :classification   ?classification;
   :units     ?unit;                
@@ -32,7 +37,8 @@ WHERE
   OPTIONAL { ?iri foaf:homepage ?homepage }
   OPTIONAL { ?iri dcterms:description ?description }
   OPTIONAL { ?iri schema:logo ?logo }
-  OPTIONAL { ?iri meemoo:requiresOverlay ?overlay }
+  OPTIONAL { ?iri meemoo:allowsOverlay ?overlay }
+  OPTIONAL { ?iri meemoo:allowsBZT ?bzt }
   OPTIONAL { ?iri meemoo:hasAccountManager ?account_manager }
   OPTIONAL { ?iri org:classification ?classification }
   OPTIONAL { ?iri org:hasUnit ?unit }

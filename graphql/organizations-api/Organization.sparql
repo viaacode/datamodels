@@ -16,7 +16,8 @@ CONSTRUCT {
   :homepage   ?homepage;                             
   :description ?description;                            
   :logo         ?logo;                                   
-  :overlay      ?overlay;                              
+  :overlay      ?overlay;
+  :bzt      ?bzt;                               
   :account_manager ?account_manager;                         
   :classification   ?classification;
   :units     ?unit;                
@@ -35,7 +36,8 @@ WHERE
   OPTIONAL { ?iri foaf:homepage ?homepage }
   OPTIONAL { ?iri dcterms:description ?description }
   OPTIONAL { ?iri schema:logo ?logo }
-  OPTIONAL { ?iri meemoo:requiresOverlay ?overlay }
+  OPTIONAL { ?iri meemoo:allowsOverlay ?overlay }
+  OPTIONAL { ?iri meemoo:allowsBZT ?bzt }
   OPTIONAL { ?iri meemoo:hasAccountManager ?account_manager }
   OPTIONAL { ?iri org:classification ?classification }
   OPTIONAL { ?iri org:hasUnit ?unit }
