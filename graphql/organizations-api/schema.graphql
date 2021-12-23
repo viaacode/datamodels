@@ -17,6 +17,7 @@ interface IOrganization {
   description: String
   logo: Logo
   overlay: Boolean
+  bzt: Boolean
   account_manager: Person
   classification(label: String): Concept
   units: [OrganizationalUnit]
@@ -37,6 +38,7 @@ type Organization implements IOrganization
   description: String
   logo: Logo
   overlay: Boolean
+  bzt: Boolean
   account_manager: Person
   classification(label: String): Concept
   units: [OrganizationalUnit]
@@ -57,6 +59,7 @@ type School implements IOrganization
   description: String
   logo: Logo
   overlay: Boolean
+  bzt: Boolean
   account_manager: Person
   classification(label: String): Concept
   units: [OrganizationalUnit]
@@ -77,6 +80,7 @@ type ContentPartner implements IOrganization
   description: String
   logo: Logo
   overlay: Boolean
+  bzt: Boolean
   account_manager: Person
   classification(label: String): Concept
   units: [OrganizationalUnit]
@@ -97,6 +101,7 @@ type OrganizationalUnit implements IOrganization
   description: String
   logo: Logo
   overlay: Boolean
+  bzt: Boolean
   account_manager: Person
   classification(label: String): Concept
   units: [OrganizationalUnit]
