@@ -46,8 +46,8 @@ pipeline {
                 }
             }
         }
-
-        stage('Make configmap organisations) {
+     
+        stage('Make configmap organisations') {
             when {
                 not {
                     buildingTag()
