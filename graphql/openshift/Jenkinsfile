@@ -97,6 +97,7 @@ pipeline {
                 }
             }
         }
+        }
         stage('Deploy QAS') {
             when {
                 anyOf { branch 'master'; branch 'main' }
@@ -114,6 +115,7 @@ pipeline {
                     jiraSendDeploymentInfo site: "${JIRA_URL}", environmentId: 'qas', environmentName: 'qas', environmentType: 'staging'
                 }
             }
+          }
         }
         stage('Deploy PRD') {
             when {
@@ -138,14 +140,8 @@ pipeline {
             }
         }
         
-        
-        
-        
-        
-        
-
-
-    }
+      }
+    }//end stages
     post {
         success {
             script {
