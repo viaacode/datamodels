@@ -46,7 +46,6 @@ pipeline {
                 }
             }
         }
-     
         stage('Make configmap organisations') {
             when {
                 not {
@@ -62,17 +61,9 @@ pipeline {
                         oc create configmap --from-file=. organizations-api-${VERSION} || echo "configmap exists for version: ${VERSION} update version to create updates"
                         '''
                     }
-                   }
-                  container('npm') {
-
-
-                }
+                  }
             }
         }// end stage org api config
-
-      
-      
-      
         stage('Deploy INT') {
             when {
                 anyOf {
@@ -87,7 +78,8 @@ pipeline {
                         oc set volumes deployment/grasp-int --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${VERSION}
                       '''
                 }
-            }
+              }
+            }//end steps
             post {
                 always {
                     script {
@@ -96,8 +88,8 @@ pipeline {
                     jiraSendDeploymentInfo site: "${JIRA_URL}", environmentId: 'int', environmentName: 'int', environmentType: 'testing'
                 }
             }
-        }
-        }
+          }//end stage
+        
         stage('Deploy QAS') {
             when {
                 anyOf { branch 'master'; branch 'main' }
@@ -109,13 +101,14 @@ pipeline {
                       oc set volumes deployment/grasp-qas --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${VERSION}
                     '''
                 }
-            }
+              }
+            }//end setps
             post {
                 always {
                     jiraSendDeploymentInfo site: "${JIRA_URL}", environmentId: 'qas', environmentName: 'qas', environmentType: 'staging'
                 }
             }
-          }
+          
         }
         stage('Deploy PRD') {
             when {
@@ -128,7 +121,8 @@ pipeline {
                     oc set volumes deployment/grasp-int --prd --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${VERSION}
                   '''
                 }
-            }
+              }
+            }//end setps
             post {
                 always {
                     script {
@@ -139,8 +133,6 @@ pipeline {
                 }
             }
         }
-        
-      }
     }//end stages
     post {
         success {
