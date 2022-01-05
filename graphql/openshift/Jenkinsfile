@@ -118,7 +118,7 @@ pipeline {
                 container('oc') {
                  script {
                   sh '''#!/bin/bash
-                    oc set volumes deployment/grasp-int --prd --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
+                    oc set volumes deployment/grasp-prd --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
                   '''
                 }
               }
