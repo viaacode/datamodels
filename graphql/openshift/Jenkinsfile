@@ -58,7 +58,7 @@ pipeline {
                         sh '''#!/bin/bash
                         oc project metadata-mgm
                         cd graphql/organizations-api/
-                        oc create configmap --from-file=. organizations-api-${VERSION} || echo "configmap exists for version: ${VERSION} update version to create updates"
+                        oc create configmap --from-file=. organizations-api-${GIT_SHORT_COMMIT} || echo "configmap exists for version: ${VERSION} update version to create updates"
                         '''
                     }
                   }
@@ -75,7 +75,7 @@ pipeline {
                 container('oc') {
                    script {
                       sh '''#!/bin/bash
-                        oc set volumes deployment/grasp-int --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${VERSION}
+                        oc set volumes deployment/grasp-int --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
                       '''
                 }
               }
@@ -98,7 +98,7 @@ pipeline {
                 container('oc') {
                    script {
                     sh '''#!/bin/bash
-                      oc set volumes deployment/grasp-qas --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${VERSION}
+                      oc set volumes deployment/grasp-qas --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
                     '''
                 }
               }
@@ -118,7 +118,7 @@ pipeline {
                 container('oc') {
                  script {
                   sh '''#!/bin/bash
-                    oc set volumes deployment/grasp-int --prd --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${VERSION}
+                    oc set volumes deployment/grasp-int --prd --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
                   '''
                 }
               }
