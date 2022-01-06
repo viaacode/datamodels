@@ -1,0 +1,178 @@
+pipeline {
+    agent {
+        kubernetes {
+            defaultContainer 'oc'
+            yaml """\
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          labels:
+            component: builder
+            lang: sparql
+            app: grasp
+        spec:
+          containers:
+          - name: oc
+            image: image-registry.openshift-image-registry.svc:5000/ci-cd/py:3.7
+            command:
+            - cat
+            tty: true
+            imagePullPolicy: Always
+
+        """.stripIndent()
+        }
+    }
+    options {
+        timeout(time: 45, unit: 'MINUTES')
+        disableConcurrentBuilds()
+    }
+    environment {
+        OC_PROJECT = 'metadata-mgm'       
+        OC_URL = 'https://c113-e.private.eu-de.containers.cloud.ibm.com:30227'
+        JIRA_URL = 'meemoo.atlassian.net'
+        APP_NAME = 'grasp'
+        BRANCH_NAME= 'main'
+    }
+
+    stages {
+        stage('Calculate extra ENV vars') {
+            steps {
+                script {
+                    env.GIT_SHORT_COMMIT = sh(script: "printf \$(git rev-parse --short ${GIT_COMMIT})", returnStdout: true)
+                    env.VERSION = sh(script: 'git describe --tags || echo latest', returnStdout: true)
+                    // The name used for the build config based on the image tag
+                    // Replace '.' with '_' as '.' is not allowed.
+                    env.BUILD_CONFIG_NAME = sh(script: 'echo "${VERSION}" | sed -r "s/\\./\\-/g"', returnStdout: true)
+                }
+            }
+        }
+        stage('Make configmap organisations') {
+            when {
+                not {
+                    buildingTag()
+                }
+            }
+            steps {
+                container('oc') {
+                    script {
+                        sh '''#!/bin/bash
+                        oc project metadata-mgm
+                        cd graphql/organizations-api/
+                        oc create configmap --from-file=. organizations-api-${GIT_SHORT_COMMIT} || echo "configmap exists for version: ${VERSION} update version to create updates"
+                        '''
+                    }
+                  }
+            }
+        }// end stage org api config
+        stage('Deploy INT') {
+            when {
+                anyOf {
+                    changeRequest target: 'master'
+                    changeRequest target: 'main'
+                }
+            }
+            steps {
+                container('oc') {
+                   script {
+                      sh '''#!/bin/bash
+                        oc set volumes deployment/grasp-int --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
+                      '''
+                }
+              }
+            }//end steps
+            post {
+                always {
+                    script {
+                        env.BRANCH_NAME = env.CHANGE_BRANCH
+                    }
+                    jiraSendDeploymentInfo site: "${JIRA_URL}", environmentId: 'int', environmentName: 'int', environmentType: 'testing'
+                }
+            }
+          }//end stage
+        
+        stage('Deploy QAS') {
+            when {
+                anyOf { branch 'master'; branch 'main' }
+            }
+            steps {
+                container('oc') {
+                   script {
+                    sh '''#!/bin/bash
+                      oc set volumes deployment/grasp-qas --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
+                    '''
+                }
+              }
+            }//end setps
+            post {
+                always {
+                    jiraSendDeploymentInfo site: "${JIRA_URL}", environmentId: 'qas', environmentName: 'qas', environmentType: 'staging'
+                }
+            }
+          
+        }
+        stage('Deploy PRD') {
+            when {
+                buildingTag()
+            }
+            steps {
+                container('oc') {
+                 script {
+                  sh '''#!/bin/bash
+                    oc set volumes deployment/grasp-prd --add --overwrite=true --name=org-api --mount-path=/app/organizations-api -t configmap --configmap-name=organizations-api-${GIT_SHORT_COMMIT}
+                  '''
+                }
+              }
+            }//end setps
+            post {
+                always {
+                    script {
+                        previous_tag = sh(script: 'git describe --abbrev=0 --tags `git rev-list --tags --skip=1 --max-count=1`', returnStdout: true).trim()
+                        echo getAllCommitsBetweenTags(previous_tag, env.TAG_NAME)
+                    }
+                    jiraSendDeploymentInfo site: "${JIRA_URL}", environmentId: 'prd', environmentName: 'prd', environmentType: 'production'
+                }
+            }
+        }
+    }//end stages
+    post {
+        success {
+            script {
+                if (env.BRANCH_NAME.startsWith('PR')) {
+                    setGitHubBuildStatus('Build', 'SUCCESS')
+                }
+            }
+        }
+        failure {
+            script {
+                if (env.BRANCH_NAME.startsWith('PR')) {
+                    setGitHubBuildStatus('Build', 'FAILURE')
+                }
+            }
+        }
+
+    }
+}
+
+
+void setGitHubBuildStatus(String message, String state) {
+    step([
+        $class: 'GitHubCommitStatusSetter',
+        reposSource: [$class: 'ManuallyEnteredRepositorySource', url: "${GIT_URL}"],
+        commitShaSource: [$class: 'ManuallyEnteredShaSource', sha: "${GIT_COMMIT}"],
+        errorHandlers: [[$class: 'ChangingBuildStatusErrorHandler', result: 'UNSTABLE']],
+        statusResultSource: [ $class: 'ConditionalStatusResultSource', results: [[$class: 'AnyBuildResult', message: message, state: state]] ]
+    ])
+}
+
+void getAllCommitsBetweenTags(String from, String to) {
+    commit_messages = sh(script: "git log ${from}...${to} --merges --format=%b", returnStdout: true)
+
+    return commit_messages
+}
+
+
+
+
+
+
+
