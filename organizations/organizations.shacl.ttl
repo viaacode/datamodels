@@ -14,6 +14,14 @@
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
 @prefix agr: <http://promsns.org/def/agr#> .
 
+<> dct:author [
+  schema:name "Miel Vander Sande";
+  schema:email "miel.vandersande@meemoo.be"
+];
+dct:title "Datamodel Organisaties"@nl.
+
+
+
 #################################################################
 #   Classes / NodeShapes
 #################################################################
