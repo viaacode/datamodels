@@ -10,7 +10,7 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rov: <http://www.w3.org/ns/regorg#>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix meemoo: <https://data.meemoo.be/ns/> .
+@prefix meemoo: <https://data.hetarchief.be/ns/organisatie#> .
 @prefix foaf:       <http://xmlns.com/foaf/0.1/> .
 @prefix agr: <http://promsns.org/def/agr#> .
 
@@ -18,8 +18,12 @@
   schema:name "Miel Vander Sande";
   schema:email "miel.vandersande@meemoo.be"
 ];
-dct:title "Datamodel Organisaties"@nl.
-
+dct:title "Datamodel Organisaties"@nl;
+dct:created "2022-01-07";
+dct:modified "2022-01-07";
+dct:description """
+Datamodel voor het beschrijven van organisaties.
+"""@nl.
 
 
 #################################################################

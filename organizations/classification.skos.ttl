@@ -1,7 +1,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://data.meemoo.be/terms/org/types> .
+@base <https://data.hetarchief.be/id/organisatie-type> .
 
 <> a skos:ConceptScheme;
     rdfs:label "Meemoo organization classification thesaurus"@en;
