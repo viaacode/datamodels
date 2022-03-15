@@ -35,52 +35,53 @@
 
 meemoo:OrganizationShape a sh:NodeShape ;
     sh:targetClass org:Organization ;
-    sh:property <#prefLabel>, <#altLabel>, [
-        a sh:PropertyShape ;
-        sh:severity sh:Warning ;
+    sh:property meemoo:prefLabelShape, meemoo:altLabelShape, [
         sh:path schema:logo ;
-        sh:nodeKind sh:IRI ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+
+        
         sh:name "logo"@en ;
         sh:name "logo"@fr ;
         sh:name "logo"@nl ;
-
         sh:description "An associated logo."@en;
         sh:description "Een geassocieerd logo."@nl;
+        
+        sh:severity sh:Warning ;
         sh:message "schema:logo is missing or is no IRI"@en
     ], [
-        a sh:PropertyShape ;
-        sh:severity sh:Warning ;
         sh:path foaf:homepage ;
-        sh:nodeKind sh:IRI ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        
         sh:name "homepage"@en ;
         sh:name "website"@nl ;
-
+        
+        sh:severity sh:Warning ;
         sh:message "foaf:homepage is missing or is no IRI"@en
     ],[
-        a sh:PropertyShape ;
-        sh:severity sh:Warning ;
-        sh:path dc:description ;
-        sh:datatype xsd:string ;
+        sh:path dct:description ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        
         sh:name "description"@en ;
         sh:name "omschrijving"@nl ;
         sh:name "la description"@fr ;
         sh:description "Description of the organization."@nl ;
         sh:description "Omschrijving van de organisatie."@nl ;
-        sh:message "dc:description is missing"@en
+
+        sh:severity sh:Warning ;
+        sh:message "dct:description is missing"@en
     ],
     [
-        a sh:PropertyShape ;
-        sh:severity sh:Warning ;
         sh:path org:classification ;
         sh:minCount 1 ;
         sh:class skos:Concept ;
         sh:name "classification"@en ;
+        sh:severity sh:Warning ;
         sh:message "org:classification is missing or is no IRI / skos:Concept"@en
     ], [
         a sh:PropertyShape ;
@@ -113,13 +114,13 @@ meemoo:OrganizationShape a sh:NodeShape ;
     [
         a sh:PropertyShape ;
         sh:severity sh:Info ;
-        sh:path dc:isPartOf ;
+        sh:path dct:isPartOf ;
         sh:class meemoo:CollaborationAgreement ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "is part of"@en ;
         sh:name "is deel van"@nl ;
-        sh:message "dc:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
+        sh:message "dct:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
     ],
     [
         a sh:PropertyShape ;
