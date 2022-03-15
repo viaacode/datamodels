@@ -307,9 +307,11 @@ meemoo:ContactPointShape  a sh:NodeShape ;
 
 meemoo:PostalAddress-addressCountryShape a sh:PropertyShape ;
   sh:path schema:addressCountry ;
+  
   sh:description "The country. For example, USA. You can also provide the two-letter <a href=\"http://en.wikipedia.org/wiki/ISO_3166-1\">ISO 3166-1 alpha-2 country code</a>."^^rdf:HTML ;
   sh:name "country"@en ;
   sh:name "land"@nl ;
+  
   sh:or (
       [
         sh:class schema:Country ;
@@ -322,36 +324,42 @@ meemoo:PostalAddress-addressCountryShape a sh:PropertyShape ;
 meemoo:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
   sh:path schema:addressLocality ;
   sh:datatype xsd:string ;
+  
   sh:description "The locality in which the street address is, and which is in the region. For example, Mountain View."^^rdf:HTML ;
   sh:name "addressLocality" .
 
 meemoo:PostalAddress-addressRegionShape  a sh:PropertyShape ;
   sh:path schema:addressRegion ;
   sh:datatype xsd:string ;
+  
   sh:description "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href=\"https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country\">Administrative division</a>"^^rdf:HTML ;
   sh:name "addressRegion" .
 
 meemoo:PostalAddress-postOfficeBoxNumberShape  a sh:PropertyShape ;
   sh:path schema:postOfficeBoxNumber ;
   sh:datatype xsd:string ;
+  
   sh:description "The post office box number for PO box addresses."^^rdf:HTML ;
   sh:name "postOfficeBoxNumber" .
 
 meemoo:PostalAddress-postalCodeShape a sh:PropertyShape ;
   sh:path schema:postalCode ;
   sh:datatype xsd:string ;
+
   sh:description "The postal code. For example, 94043."^^rdf:HTML ;
   sh:name "postalCode" .
 
 meemoo:PostalAddress-streetAddressShape  a sh:PropertyShape ;
   sh:path schema:streetAddress ;
   sh:datatype xsd:string ;
+  
   sh:description "The street address. For example, 1600 Amphitheatre Pkwy."^^rdf:HTML ;
   sh:name "streetAddress" .
 
 meemoo:ContactPoint-contactTypeShape  a sh:PropertyShape ;
   sh:path schema:contactType ;
   sh:datatype xsd:string ;
+  
   sh:description "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point."^^rdf:HTML ;
   sh:name "contact type"@en ;
   sh:name "contacttype"@nl .
@@ -359,6 +367,7 @@ meemoo:ContactPoint-contactTypeShape  a sh:PropertyShape ;
 meemoo:ContactPoint-emailShape a sh:PropertyShape ;
   sh:path schema:email ;
   sh:datatype xsd:string ;
+  
   sh:description "Email address."^^rdf:HTML ;
   sh:name "email"@en ;
   sh:name "email"@nl .
@@ -366,36 +375,41 @@ meemoo:ContactPoint-emailShape a sh:PropertyShape ;
 meemoo:ContactPoint-telephoneShape  a sh:PropertyShape ;
   sh:path schema:telephone ;
   sh:datatype xsd:string ;
+  
   sh:description "The telephone number."^^rdf:HTML ;
   sh:name "telephone"@en ;
   sh:name "telefoonnummer"@nl .
 
 meemoo:prefLabelShape  a sh:PropertyShape ;
-    sh:severity sh:Violation ;
     sh:path skos:prefLabel ;
     sh:datatype xsd:string ;
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
+    
     sh:name "preferred label"@en ;
     sh:name "voorkeursnaam"@nl ;
+    
+    sh:severity sh:Violation ;
     sh:message "skos:prefLabel is missing or is no Literal"@en .
 
 meemoo:altLabelShape a sh:PropertyShape ;
-    sh:severity sh:Violation ;
     sh:path skos:altLabel ;
     sh:datatype xsd:string ;
     sh:minCount 0 ;
+
     sh:name "alternative label"@en ;
     sh:name "alternatieve naam"@nl ;
+    
+    sh:severity sh:Violation ;
     sh:message "skos:altLabel is missing or no Literal"@en .
     
-meemoo:accountManagerShape  a sh:PropertyShape ;
-    sh:severity sh:Warning ;
+meemoo:accountManagerShape  a sh:PropertyShape ;    
     sh:path meemoo:hasAccountmanager ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:class schema:Person ;
+    
     sh:name "has account manager"@en ;
     sh:name "a gestionnaire de comptes"@fr ;
     sh:name "heeft account manager"@nl ;
+    
+    sh:severity sh:Warning ;
     sh:message "meemoo:accountmanager is missing or is no IRI"@en .
