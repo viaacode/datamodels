@@ -163,7 +163,7 @@ meemoo:OrganizationalUnitShape a sh:NodeShape ;
     ].
 
 meemoo:ContentPartnerShape a sh:NodeShape ;
-    sh:property <#accountManager> .
+    sh:property meemoo:accountManagerShape .
 
 meemoo:ServiceProviderShape  a sh:NodeShape .
 
@@ -172,7 +172,7 @@ meemoo:ServiceConsumerShape  a sh:NodeShape .
 meemoo:EducationalOrganizationShape  a sh:NodeShape .
 
 meemoo:EducationalPartnerShape  a sh:NodeShape ;
-    sh:property <#accountManager> .
+    sh:property meemoo:accountManagerShape .
 
 meemoo:EducationalPublisherShape  a sh:NodeShape .
 
@@ -231,7 +231,7 @@ meemoo:PostShape a sh:NodeShape;
     ] .
     
 meemoo:RoleShape a sh:NodeShape;
-    sh:property <#prefLabel> .
+    sh:property meemoo:prefLabelShape .
 
 # From schema
 
@@ -291,6 +291,15 @@ meemoo:PostalAddressShape  a sh:NodeShape ;
   sh:property schema:PostalAddress-postalCode ;
   sh:property schema:PostalAddress-streetAddress .
 
+meemoo:ContactPointShape  a sh:NodeShape ;
+  sh:property schema:ContactPoint-contactTypeShape ;
+  sh:property schema:ContactPoint-emailShape ;
+  sh:property schema:ContactPoint-telephoneShape .
+
+##########################
+#     PropertyShapes     #
+##########################
+
 meemoo:PostalAddress-addressCountryShape a sh:PropertyShape ;
   sh:path schema:addressCountry ;
   sh:description "The country. For example, USA. You can also provide the two-letter <a href=\"http://en.wikipedia.org/wiki/ISO_3166-1\">ISO 3166-1 alpha-2 country code</a>."^^rdf:HTML ;
@@ -335,11 +344,6 @@ meemoo:PostalAddress-streetAddressShape  a sh:PropertyShape ;
   sh:description "The street address. For example, 1600 Amphitheatre Pkwy."^^rdf:HTML ;
   sh:name "streetAddress" .
 
-meemoo:ContactPointShape  a sh:NodeShape ;
-  sh:property schema:ContactPoint-contactTypeShape ;
-  sh:property schema:ContactPoint-emailShape ;
-  sh:property schema:ContactPoint-telephoneShape .
-
 meemoo:ContactPoint-contactTypeShape  a sh:PropertyShape ;
   sh:path schema:contactType ;
   sh:datatype xsd:string ;
@@ -360,8 +364,6 @@ meemoo:ContactPoint-telephoneShape  a sh:PropertyShape ;
   sh:description "The telephone number."^^rdf:HTML ;
   sh:name "telephone"@en ;
   sh:name "telefoonnummer"@nl .
-
-# Property Shapes
 
 meemoo:prefLabelShape  a sh:PropertyShape ;
     sh:severity sh:Violation ;
