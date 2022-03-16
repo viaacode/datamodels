@@ -1,5 +1,6 @@
 @prefix agr: <http://promsns.org/def/agr#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
 @prefix meemoo: <https://data.hetarchief.be/ns/organisatie#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -16,22 +17,47 @@
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
     ] ;
+    dct:title     "Data model Organizations"@en ;
+    dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2022-03-14" ;
+    dct:modified  "2022-03-16" ;
+    dct:description """Data model to describe organizations."""@en ;
+    dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl .
 
-org:Organization    a   rdfs:Class ;
+#####################################
+#              CLASSES              #
+#####################################
+
+#####################################
+#              CLASSES:agr          #
+#####################################
+
+agr:Agreement   a   rdfs:Class ;
+    rdfs:label "Agreement"@en ;
+    rdfs:label "Contrat"@fr ;
+    rdfs:label "Overeenkomst"@nl ;
+    rdfs:isDefinedBy <http://promsns.org/def/agr> .
+
+#####################################
+#            CLASSES:org            #
+#####################################
+
+org:Organization    a   owl:Class,  rdfs:Class ;
     rdfs:subClassOf  foaf:Agent ;
     owl:equivalentClass foaf:Organization ;
+    owl:equivalentClass schema:Organization ;
+    owl:disjointWith schema:Person ;
     rdfs:label "Organization"@en ;
     rdfs:label "Organisation"@fr ;
     rdfs:label "Organisatie"@nl ;
     rdfs:comment """Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"""@en ;
     rdfs:comment """Représente un groupe de personnes organisées en communauté où tout autre forme de structure sociale, commerciale ou politique. Le groupe a un but commun ou une raison d'être qui va au-delà de la somme des personnes qui en font partie et peut agir en tant que "Agent". Les organisations sont souvent décomposables en structures hiérarchisées. Il est recommandé que des labels lexicaux SKOS soient utilisés pour nommer l'Organisation. En particulier `skos:prefLabel` pour le nom principal (en général le nom légal), `skos:altLabel` pour les noms alternatifs (marques, sigles, appellations familières) et `skos:notation` pour indiquer un code provenant d'une liste de code."""@fr ;  
+    rdfs:comment """Stelt een groep personen voor, georganiseerd in een gemeenschap of een andere sociale, commerciële of politieke structuur. De groep heeft een gemeenschappelijk doel of reden van bestaan dat verder gaat dan de som van de mensen die ertoe behoren en kan handelen als `Agent`. De organisaties zijn vaak onder te verdelen in hiërarchische structuren. Het wordt aanbevolen om SKOS labels te gebruiken om de organisatie te benoemen. In het bijzonder `skos:prefLabel` voor de primaire (mogelijks juridisch geldende) naam, `skos:altLabel` voor alternatieve namen (handelsnamen, colloquialismen) en `skos:notation` om een code aan te duiden uit een codelijst."""@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
     
-org:OrganizationalUnit  a   rdfs:Class ;
+org:OrganizationalUnit  a   owl:Class,  rdfs:Class ;
     rdfs:subClassOf  org:Organization ;
     rdfs:label "Organisatie-eenheid"@nl ;
     rdfs:label "OrganizationalUnit"@en ;
@@ -41,63 +67,7 @@ org:OrganizationalUnit  a   rdfs:Class ;
     rdfs:comment "Een organisatie zoals een afdeling of dienst die deel uitmaakt van de grotere organisatie en zijn bestaansreden daaraan ontleent. Heeft geen juridische status op zich."@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
-meemoo:ContentPartner   a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Content Partner"@en ;
-    rdfs:label "Contentpartner"@nl .
-
-meemoo:ServiceProvider  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Service Provider"@en ;
-    rdfs:label "Serviceprovider"@nl .
-
-meemoo:ServiceConsumer  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Service Consumer"@en ;
-    rdfs:label "Dienstenafnemer"@nl .
-
-meemoo:EducationalOrganization  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Educational Organization"@en ;
-    rdfs:label "Educatieve organisatie"@nl .
-
-meemoo:EducationalPartner   a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
-    rdfs:label "Educational Partner"@en ;
-    rdfs:label "Educatieve partner"@nl .
-
-meemoo:EducationalPublisher a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
-    rdfs:label "Educational Publisher"@en ;
-    rdfs:label "Educatieve uitgeverij"@nl .
-
-meemoo:School   a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
-    rdfs:label "School"@en ;
-    rdfs:label "School"@nl .
-    
-meemoo:CollaborationAgreement   a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Collaboration Agreement"@en ;
-    rdfs:label "Samenwerkingsovereenkomst"@nl .
-
-meemoo:ServiceAgreement a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Service Agreement"@en ;
-    rdfs:label "Dienstverleningsovereenkomst"@nl .
-
-#Aanbieder = organisatie in avo
-
-org:Site    a   rdfs:Class ;
-    rdfs:label "Site"@en ;
-    rdfs:label "Site"@fr ;
-    rdfs:label "Vestiging"@nl ;
-    rdfs:comment """An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."""@en ;
-    rdfs:comment """Un établissement ou tout autre lieu dans lequel une Organisation est localisé. Beaucoup d'organisations sont dispersées à travers plusieurs sites. Dans la plupart des cas un Site sera un lieu physique. Toutefois, nous n'excluons pas la possibilité de sites non-physiques comme un bureau virtuel avec une boîte postale et un service de secrétariat mutualisé. Des extensions pourraient fournir des sous-classes pour décrire des types de sites particuliers."""@fr ;
-    rdfs:comment """Een kantoor of ander pand waar een organisatie gevestigd is. Organisaties kunnen over meerdere vestigingen verspreid zijn en vestigingen kunnen op meerdere locaties slaan."""@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
-
-org:Post a rdfs:Class, sh:NodeShape ;
+org:Post a  owl:Class,   rdfs:Class ;
     rdfs:label "Post"@en ;
   	rdfs:label "Poste"@fr ;
     rdfs:label "Positie"@nl ;
@@ -106,27 +76,271 @@ org:Post a rdfs:Class, sh:NodeShape ;
     rdfs:comment """Functie binnen een organisatie, kan bestaan los vd persoon of personen die ze invult."""@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
     
-org:Role    a   owl:Class ,
-                rdfs:Class ;
+org:Role    a   owl:Class,    rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Role"@en ;
     rdfs:label "Rôle"@fr ;
     rdfs:label "Rol"@nl ;
     rdfs:comment """Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of `org:Membership`. It is common for roles to be arranged in some taxonomic structure and we use SKOS to represent that. The normal SKOS lexical properties should be used when labelling the Role. Additional descriptive properties for the Role, such as a Salary band, may be added by extension vocabularies."""@en ;
+    rdfs:comment """Indique le rôle qu'une Personne ou un autre Agent peut avoir dans une Organisation. Les instances de cette classe décrivent le rôle dans l'absolu; pour indiquer une personne ayant ce rôle spécifique dans une Organisation, utilisez une instance de `org:Membership`. Il est courant que les rôles soient organisés dans une sorte de taxonomie, ce qui peut être représenté avec SKOS. Les propriétés de libellés standards de SKOS devraient être utilisées pour libeller le Rôle. D'autres propriétés additionnelles pour ce rôle, comme une fourchette de Salaire peuvent être ajoutées par une extension de ce vocabulaire."""@fr;     
     rdfs:comment """Rol die een persoon of agent kan vervullen in een organisatie."""@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
-# From schema
+org:Site    a   owl:Class,    rdfs:Class ;
+    rdfs:label "Site"@en ;
+    rdfs:label "Site"@fr ;
+    rdfs:label "Vestiging"@nl ;
+    rdfs:comment """An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."""@en ;
+    rdfs:comment """Un établissement ou tout autre lieu dans lequel une Organisation est localisé. Beaucoup d'organisations sont dispersées à travers plusieurs sites. Dans la plupart des cas un Site sera un lieu physique. Toutefois, nous n'excluons pas la possibilité de sites non-physiques comme un bureau virtuel avec une boîte postale et un service de secrétariat mutualisé. Des extensions pourraient fournir des sous-classes pour décrire des types de sites particuliers."""@fr ;
+    rdfs:comment """Een kantoor of ander pand waar een organisatie gevestigd is. Organisaties kunnen over meerdere vestigingen verspreid zijn en vestigingen kunnen op meerdere locaties slaan."""@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
-schema:Person   a   rdfs:Class .
-
-schema:PostalAddress    a   rdfs:Class ;
-  rdfs:subClassOf schema:ContactPoint ;
-  rdfs:comment "The mailing address."^^rdf:HTML ;
-  rdfs:label "Postadres"@nl ;
-  rdfs:label "Postal address"@en .
+#####################################
+#         CLASSES:schema            #
+#####################################
 
 schema:ContactPoint a   rdfs:Class ;
   rdfs:subClassOf schema:StructuredValue ;
-  rdfs:comment "A contact point&#x2014;for example, a Customer Complaints department."^^rdf:HTML ;
-  rdfs:label "Contact point"@en .
+  rdfs:label "ContactPoint"@en ;
+  rdfs:label "Point de contact"@fr ;
+  rdfs:label "Aanspreek-/meldpunt"@nl ;
+  rdfs:comment "A contact point&#x2014;for example, a Customer Complaints department."@en ;
+  rdfs:comment "Un point de contact&#x2014;par exemple, un service des plaintes des clients."@fr ;
+  rdfs:comment "Een aanspreekpunt&#x2014;bijvoorbeeld, een afdeling voor klachten van klanten."@nl ;
+  rdfs:isDefinedBy <https://schema.org/> .
+
+schema:Person   a   rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    owl:equivalentClass foaf:Person ;
+    rdfs:label "Person"@en ;
+    rdfs:label "Personne"@fr ;
+    rdfs:label "Persoon"@nl ;
+    rdfs:comment "A person (alive, dead, undead, or fictional)."@en ;
+    rdfs:comment "Une personne (vivante, morte, non-morte ou fictive)."@fr ;
+    rdfs:comment "Een persoon (levend, dood, ondood, of fictief)."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:PostalAddress    a   rdfs:Class ;
+  rdfs:subClassOf schema:ContactPoint ;
+  rdfs:label "Postal address"@en ;
+  rdfs:label "Adresse postale"@fr ;
+  rdfs:label "Postadres"@nl ;
+  rdfs:comment "The mailing address."@en ;
+  rdfs:comment "L'adresse postale."@fr ;
+  rdfs:comment "Het postadres."@nl ;
+  rdfs:isDefinedBy <https://schema.org/> .
+
+#####################################
+#           CLASSES:meemoo          #
+#####################################
+
+meemoo:CollaborationAgreement   a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Collaboration Agreement"@en ;
+    rdfs:label "Accord de Collaboration"@fr ;
+    rdfs:label "Samenwerkingsovereenkomst"@nl .
+
+meemoo:ContentPartner   a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Content Partner"@en ;
+    rdfs:label "Partenaire de Contenus"@fr ;
+    rdfs:label "Contentpartner"@nl .
+    # `Aanbieder` wordt gebruikt in AVO voor CP
+
+meemoo:EducationalOrganization  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    owl:equivalentClass schema:EducationalOrganization ;
+    rdfs:label "Educational Organization"@en ;
+    rdfs:label "Organisation Éducative"@fr ;
+    rdfs:label "Educatieve organisatie"@nl .
+
+meemoo:EducationalPartner   a   rdfs:Class ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    rdfs:label "Educational Partner"@en ;
+    rdfs:label "Partenaire Éducatif"@fr ;
+    rdfs:label "Educatieve partner"@nl .
+
+meemoo:EducationalPublisher a   rdfs:Class ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    rdfs:label "Educational Publisher"@en ;
+    rdfs:label "Éditeur éducatif"@fr ;
+    rdfs:label "Educatieve uitgeverij"@nl .
+
+meemoo:GovernmentOrganization   a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    owl:equivalentClass schema:GovernmentOrganization ;
+    rdfs:label "Government Organization"@en ;
+    rdfs:label "Organisation Gouvernementale"@fr ;
+    rdfs:label "Overheidsorganisatie"@nl .
+
+meemoo:Logo a   rdfs:Class ;
+    rdfs:label  "Logo"@en ;
+    rdfs:label  "Logo"@fr ;
+    rdfs:label  "Logo"@nl .
+
+meemoo:LogoContext  a   rdfs:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label  "Context of a Logo"@en ;
+    rdfs:label  "Contexte d'un Logo"@fr ;
+    rdfs:label  "Context van een Logo"@en .
+
+meemoo:ManagementAgreement  a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Management Agreement"@en ;
+    rdfs:label "Contrat de Gestion"@fr ;
+    rdfs:label "Beheersovereenkomst"@nl .
+
+meemoo:OrganizationType a   rdfs:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label  "Organization Type"@en ;
+    rdfs:label  "Type de Organisation"@fr ;
+    rdfs:label  "Organisatietype"@en .
+
+meemoo:School   a   rdfs:Class ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    owl:equivalentClass schema:School ;
+    rdfs:label "School"@en ;
+    rdfs:label "École"@fr ;
+    rdfs:label "School"@nl .
+
+meemoo:ServiceAgreement a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Service Agreement"@en ;
+    rdfs:label "Contrat de Service"@fr ;
+    rdfs:label "Dienstverleningsovereenkomst"@nl .
+
+meemoo:ServiceConsumer  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Service Consumer"@en ;
+    rdfs:label "Consomatteur de Services"@fr ;
+    rdfs:label "Dienstenafnemer"@nl .
+
+meemoo:ServiceProvider  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Service Provider"@en ;
+    rdfs:label "Fournisseur de Services" ;
+    rdfs:label "Serviceprovider"@nl .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+#####################################
+#          PROPERTIES:org           #
+#####################################
+
+org:classification a owl:ObjectProperty, rdf:Property;
+    rdfs:domain org:Organization ;
+    rdfs:range  skos:Concept ;  
+    rdfs:label "classification"@en ;
+    rdfs:label "classification"@fr ;
+    rdfs:label "classificatie"@nl ;
+    rdfs:comment """Indicates a classification for this Organization within some classification scheme. Extension vocabularies may wish to specialize this property to have a range corresponding to a specific `skos:ConceptScheme`. This property is under discussion and may be revised or removed - in many cases organizations are best categorized by defining a sub-class hierarchy in an extension vocabulary."""@en ;
+    rdfs:comment """Indique une classification pour cette Organisation dans le cadre d'un schéma de classification. Il est possible de spécialiser cette propriété en utilisant un vocabulaire spécialisé pour que le champ corresponde à un concept spécifique `skos:ConceptScheme`. Cette propriété est en discussion est pourrait être révisée ou supprimée - dans de nombreux cas, les organisations sont mieux catégorisées par une hiérarchie de sous-classe dans un vocabulaire externe."""@fr ;  
+    rdfs:comment """Duidt een classificatie van deze organisatie aan met een classificatieschema. Het is mogelijk om deze eigenschap verder te specificiëren met behulp van een gespecialiseerd vocabularium opdat het veld overeenkomt met een specifiek concept `skos:ConceptScheme`."""@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:hasPost a owl:ObjectProperty, rdf:Property;
+    rdfs:domain  org:Organization;
+    rdfs:range   org:Post;
+    rdfs:label "post"@en;
+	rdfs:label "possède un poste"@fr;
+    rdfs:label "post"@nl;
+    rdfs:comment """Indicates a Post which exists within the Organization."""@en;
+	rdfs:comment """Indique un Poste qui existe dans l'Organisation."""@fr;
+    rdfs:comment """Duidt een post aan die bestaat binnen de organisatie."""@nl;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:hasPrimarySite a owl:ObjectProperty, rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  org:Site ;
+    rdfs:subPropertyOf org:hasSite ;
+    rdfs:label "primary Site"@en ;
+    rdfs:label "site principal"@fr ;
+    rdfs:label "hoofdzetel"@nl ;
+    rdfs:comment """Indicates a primary site for the Organization, this is the default means by which an Organization can be contacted and is not necessarily the formal headquarters."""@en ;
+    rdfs:comment """Indique le site principal d'une Organisation, le moyen par défaut par lequel l'Organisation peut être contactée et pas nécessairement le siège social légal."""@fr ;
+    rdfs:comment """Duidt de hoofdzetel van een organisatie aan, dit is de standaard manier waarop de organisatie gecontacteerd kan worden en niet noodzakelijk de juridische zetel."""@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:hasSite a owl:ObjectProperty, rdf:Property ;
+    rdfs:domain org:Organization;
+    rdfs:range  org:Site;
+    rdfs:label "has site"@en;
+    rdfs:label "a un site"@fr;
+    rdfs:label "heeft een zetel"@nl ;
+    rdfs:comment """Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company). Inverse of `org:siteOf`."""@en ;
+    rdfs:comment """Indique un site sur lequel l'Organisation possède une présence, même indirecte (domiciliation, boite postale). Inverse de `org:siteOf`."""@fr ;
+    rdfs:comment """Duidt de zetel aan waarop de organisatie aanwezig is, zelfs indien indirect (bv. via domiciliëring of postbus). Omgekeerde van `org:siteOf`."""@nl ;    
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:hasUnit a   owl:ObjectProperty, rdf:Property ;
+    rdfs:domain org:FormalOrganization ;
+    rdfs:range  org:OrganizationalUnit ;
+    rdfs:subPropertyOf org:hasSubOrganization ;
+    rdfs:label "has Unit"@en ;
+    rdfs:label "possède une Unité"@fr ;
+    rdfs:label "heeft een eenheid"@nl ;
+    rdfs:comment """Indicates a unit which is part of this Organization, e.g. a Department within a larger FormalOrganization. Inverse of `org:unitOf`."""@en ;
+    rdfs:comment """Indique une Unité qui fait partie d'une Organisation, par exemple un Départment au sein d'une Organisation Formelle plus large. Inverse de `org:unitOf`."""@fr ;
+    rdfs:comment """Duidt een eenheid aan die deel uitmaakt van een organisatie, zoals een departement in een grotere formele organisatie. Is het omgekeerde van `org:unitOf`."""@nl ;    
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:siteAddress a owl:ObjectProperty, rdf:Property ;
+    rdfs:domain org:Site ;
+    #   rdfs:range  vcard:VCard ;
+    rdfs:label "site Address"@en ;
+    rdfs:label "adresse du Site"@fr ;
+    rdfs:label "adres van de zetel"@nl ;
+    rdfs:comment """Indicates an address for the site in a suitable encoding. Use of vCard (using the http://www.w3.org/TR/vcard-rdf/ vocabulary) is encouraged but the range is left open to allow other encodings to be used. The address may include email, telephone, and geo-location information and is not restricted to a physical address."""@en ;
+    rdfs:comment """Indique une adresse pour le site dans un encodage approprié. L'usage du vocabulaire vCard ( http://www.w3.org/TR/vcard-rdf/) est encouragé, mais le range est ouvert pour permettre l'utilisation d'autres vocabulaires. L'adresse peut comporter le courriel, le téléphone, et l'information de géolocalisation; et n'est donc pas seulement limitée à une adresse physique."""@fr ;
+    rdfs:comment """Duidt het adres aan van de zetel in een geschikte encoding. Het gebruik van vCard (met de http://www.w3.org/TR/vcard-rdf/ vocabulary) wordt aangemoedigd, maar de range wordt opgelaten om andere encoding mogelijk te maken. Het adres kan de e-mail, het telefoonnummer, en geo-locatie informatie bevatten. Het is niet beperkt tot een fysiek adres."""@nl;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+#####################################
+#         PROPERTIES:meemoo         #
+#####################################
+
+meemoo:applicationContext   a   rdf:Property ;
+    rdfs:domain meemoo:Logo ;
+    rdfs:range meemoo:LogoContext ;
+    rdfs:label "Context in which a logo is applied"@en ;
+    rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
+    rdfs:label "Context waarin een logo gebruikt wordt"@nl .
+
+meemoo:contains a   rdf:Property ;
+    rdfs:domain agr:Agreement ;
+    rdfs:range org:Organization ;
+    owl:inverseOf meemoo:isPartOf ;
+    rdfs:label "contains"@en ;
+    rdfs:label "contient"@fr ;
+    rdfs:label "bevat"@nl .
+
+meemoo:hasAccountManager    a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  schema:Person ;
+    rdfs:label "has an account manager"@en ;
+    rdfs:label "a un gestionnaire de comptes"@fr ;
+    rdfs:label "heeft een accountmanager"@nl .
+
+meemoo:hasContactPoint  a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  org:ContactPoint ;
+    rdfs:label "has a contact point"@en ;
+    rdfs:label "a un point de contact"@fr ;
+    rdfs:label "heeft een aanspreek-/meldpunt"@nl .
+
+meemoo:hasLogo  a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  meemoo:Logo ;
+    rdfs:label "has a logo"@en ;
+    rdfs:label "a un logo"@fr ;
+    rdfs:label "heeft een logo"@nl .
+
+meemoo:isPartOf a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  agr:Agreement ;
+    owl:inverseOf meemoo:contains ;
+    rdfs:label "is part of"@en ;
+    rdfs:label "fait partie de"@fr ;
+    rdfs:label "is deel van"@nl .
