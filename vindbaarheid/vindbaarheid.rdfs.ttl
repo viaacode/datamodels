@@ -1,0 +1,472 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+#? Maakt verschil tss dct of dcterms uit?
+@prefix dct: <http://purl.org/dc/terms/> .
+
+#? Juiste namespace?
+@prefix meemoo: <http://data.meemoo.be/ns/>  .
+@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+####################
+#      PREMIS      #
+####################
+premis:IntellectualEntity a owl:Class rdfs:Class ;
+    owl:equivalentClass schema:CreativeWork ; #? Juist om te zeggen?
+    rdfs:label "Intellectual entity"@en ;
+    rdfs:comment "set of content that is considered a single intellectual unit for purposes of management and
+      description: for example, a particular book, map, photograph, database, or piece of hardware or
+      software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can
+      include a web page; a web page can include an image. An Intellectual Entity may have one or more digital
+      representations. An Intellectual Entity may also describe an environment, defined as technology
+      supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of
+      software, hardware, or a combination of both."@en .
+
+####################
+#      MEEMOO      #
+####################
+meemoo:DigitalRepresentation a rdfs:Class ;
+    owl:equivalentClass schema:CreativeWork ;
+    rdfs:label "Digital Representation"@en ;
+    #? rdfs:comment?
+    rdfs:comment "Digital representation of an archive object."@en .
+    
+#? LocalIdentifier of PID? Zie: https://github.com/viaacode/datamodels/blob/meta-20-shacl-datamodel-organisaties/objects/examples/dv/mkv-ffv1.ttl#L40
+meemoo:LocalIdentifier a rdfs:Class ; 
+    rdfs:label "Local Identifier"@en ;
+    #? rdfs:comment?
+    rdfs:comment ""@en .
+
+meemoo:PhysicalRepresentation a rdfs:Class ;
+    owl:equivalentClass schema:CreativeWork ;
+    rdfs:label "Physical Representation"@en ;
+    #? rdfs:comment?
+    rdfs:comment "Physical Representation of an archive object."@en .
+
+####################
+#       ORG        #
+####################
+org:Organization    a   owl:Class,  rdfs:Class ;
+    rdfs:subClassOf  foaf:Agent ;
+    owl:equivalentClass foaf:Organization ;
+    owl:equivalentClass schema:Organization ;
+    owl:disjointWith schema:Person ;
+    rdfs:label "Organization"@en ;
+    rdfs:label "Organisation"@fr ;
+    rdfs:label "Organisatie"@nl ;
+    rdfs:comment """Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"""@en ;
+    rdfs:comment """Représente un groupe de personnes organisées en communauté où tout autre forme de structure sociale, commerciale ou politique. Le groupe a un but commun ou une raison d'être qui va au-delà de la somme des personnes qui en font partie et peut agir en tant que "Agent". Les organisations sont souvent décomposables en structures hiérarchisées. Il est recommandé que des labels lexicaux SKOS soient utilisés pour nommer l'Organisation. En particulier `skos:prefLabel` pour le nom principal (en général le nom légal), `skos:altLabel` pour les noms alternatifs (marques, sigles, appellations familières) et `skos:notation` pour indiquer un code provenant d'une liste de code."""@fr ;  
+    rdfs:comment """Stelt een groep personen voor, georganiseerd in een gemeenschap of een andere sociale, commerciële of politieke structuur. De groep heeft een gemeenschappelijk doel of reden van bestaan dat verder gaat dan de som van de mensen die ertoe behoren en kan handelen als `Agent`. De organisaties zijn vaak onder te verdelen in hiërarchische structuren. Het wordt aanbevolen om SKOS labels te gebruiken om de organisatie te benoemen. In het bijzonder `skos:prefLabel` voor de primaire (mogelijks juridisch geldende) naam, `skos:altLabel` voor alternatieve namen (handelsnamen, colloquialismen) en `skos:notation` om een code aan te duiden uit een codelijst."""@nl .
+
+####################
+#      SCHEMA      #
+####################
+schema:ArchiveComponent a rdfs:Class;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:label "Archive Component"@en ;
+    rdfs:comment """An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections."""@en .
+
+schema:CreativeWorkSeason a rdfs:Class;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:label "Creative Work Season"@en ;
+    rdfs:comment """A media season e.g. tv, radio, video game etc."""@en .
+
+schema:CreativeWorkSeries a rdfs:Class;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:label "Creative Work Series"@en ;
+    rdfs:comment """A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games)."""@en .
+
+schema:CreativeWork a rdfs:Class;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Creative Work"@en ;
+    rdfs:comment """The most generic kind of creative work, including books, movies, photographs, software programs, etc."""@en .
+
+schema:Episode a rdfs:Class;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:label "Episode"@en ;
+    rdfs:comment """A media episode (e.g. TV, radio, video game) which can be part of a series or season."""@en .
+
+schema:Event a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Event"@en ;
+    rdfs:comment """An event happening at a certain time and location, such as a concert, lecture, or festival."""@en .
+
+schema:Organization a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Organisation"@en ;
+    rdfs:comment """An organization such as a school, NGO, corporation, club, etc."""@en .
+
+#? Waarom perfomanceRole ipv Role? characterName?
+schema:PerformanceRole a rdfs:Class ;
+    rdfs:subClassOf schema:Role ;
+    rdfs:label "Preformance Role"@en ;
+    rdfs:comment """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en .
+
+schema:Person a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Person"@en ;
+    rdfs:comment """A person (alive, dead, undead, or fictional)."""@en ;
+
+schema:Place a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Place"@en ;
+    rdfs:comment """Entities that have a somewhat fixed, physical extension."""@en .
+
+schema:Role a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Role"@en ;
+    rdfs:comment """Represents additional information about a relationship or property.
+        For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period.
+        Or that a Person's 'actor' role in a Movie was for some particular characterName.
+        Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.
+        """@en .
+    
+schema:Thing a rdfs:Class;
+    rdfs:label "Thing"@en ;
+    rdfs:label "Chose"@fr ;
+    rdfs:label "Ding"@nl ;
+    rdfs:comment """The most generic type of item."""@en ;
+    rdfs:comment """Meest generieke soort van item"""@nl .
+
+####################
+#       SKOS       #
+####################
+skos:Concept a owl:Class rdfs:Class ;
+    rdfs:label "Concept"@en ;
+    rdfs:comment """A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive."""@en .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+#? Hoe literals declaren als range?
+
+####################
+#      PREMIS      #
+####################
+#? comments? Hoe differentiëren met schema properties?
+premis:hasPart a rdf:Property ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:range premis:IntellectualEntity ;
+    owl:equivalentProperty dct:hasPart ;
+    owl:inverseOf premis:isPartOf ;
+    rdfs:label "has part"@en ;
+    rdfs:comment ""@en .
+
+#? premis:identifier of schema:identifier?
+premis:identifier a rdf:Property ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:range meemoo:LocalIdentifier ;
+    rdfs:label "identifier"@en ;
+    rdfs:comment ""@en .
+
+premis:isPartOf a rdf:Property ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:range premis:IntellectualEntity ;
+    owl:equivalentProperty dct:isPartOf ;
+    owl:inverseOf premis:hasPart ;
+    rdfs:label "is part of"@en ;
+    rdfs:comment ""@en .
+
+premis:relationship a rdf:Property ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:range premis:IntellectualEntity ;
+    owl:equivalentProperty dct:relation ;
+    rdfs:label "relationship"@en ;
+    rdfs:comment ""@en .
+
+####################
+#      DCTERMS     #
+####################
+dct:available a rdf:Property ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:label "Date Available"@en ;
+    rdfs:comment "Date that the resource became or will become available."@en .
+
+dct:format a rdf:Property ;
+    #? dct:PhysicalResource?
+    rdfs:domain meemoo:PhysicalRepresentation ;
+    rdfs:label "format"@en ;
+    rdfs:comment "The file format, physical medium, or dimensions of the resource."@en .
+
+dct:medium a rdf:Property ;
+    rdfs:domain meemoo:PhysicalRepresentation ;
+    rdfs:label "medium"@en ;
+    rdfs:comment "The material or physical carrier of the resource"@en .
+
+####################
+#      EBUCORE     #
+####################
+ebu:objectType a rdf:Property #? rdf:Class? https://www.ebu.ch/metadata/ontologies/ebucore/ebucore_ObjectType.html
+    rdf:domain premis:IntellectualEntity ;
+    owl:equivalentProperty dct:type ;
+    rdfs:label "Object type"@en ;
+    rdfs:comment "To specify the type of BusinessObject e.g. and EditorialObject of type programme or clip"@en .
+
+####################
+#      SCHEMA      #
+####################
+schema:abstract a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:abstract ; #?
+    rdfs:label "abstract"@en ;
+    rdfs:comment "An abstract is a short description that summarizes a CreativeWork."@en .
+    
+schema:actor a rdf:Property ;
+    rdfs:domain schema:PerformanceRole ;
+    rdfs:range schema:Person ;
+    rdfs:label "actor"@en ;
+    rdfs:comment "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip."@en .
+
+schema:alternateName a rdf:Property ;
+    rdfs:domain schema:Thing ;
+    owl:equivalentProperty dct:alternative ;
+    rdfs:label "alternate name"@en ;
+    rdfs:comment "An alias for the item"@en ;
+
+schema:author a rdf:Property ;
+    #? rdfs:domain premis:IntellectualEntity, meemoo:DigitalRepresentation, schema:PerformanceRole ;
+    rdfs:domain schema:CreativeWork ;
+    # rdfs:range schema:Person, org:Organization, schema:Role ; #?
+    rdfs:range owl:unionOf (schema:Person org:Organization schema:Role) ;
+    owl:equivalentProperty dct:creator ;
+    rdfs:label "author"@en ;
+    rdfs:comment "The author of this content or rating."@en .
+
+schema:caption a rdf:Property ;
+    # rdfs:domain meemoo:DigitalRepresentation ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:label "caption"@en ;
+    rdfs:comment "The caption for this object."@en .
+
+schema:contributor a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity, schema:PerformanceRole ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range owl:unionOf (schema:Person org:Organization schema:Role) ;
+    owl:equivalentProperty dct:contributor ;
+    rdfs:label "contributor"@en ;
+    rdfs:comment "A secondary contributor to the CreativeWork or Event."@en .
+
+schema:copyrightHolder a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range owl:unionOf (schema:Person org:Organization )
+    owl:equivalentProperty dct:rightsHolder ;
+    rdfs:label "copyright holder"@en ;
+    rdfs:comment "The party holding the legal copyright to the CreativeWork."@en .
+
+schema:copyrightNotice a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:rights ;
+    rdfs:label "copyright notice"@en ;
+    rdfs:comment "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work."@en .
+
+schema:copyrightYear a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:dateCopyrighted ;
+    rdfs:label "copyright year"@en ;
+    rdfs:comment "The year during which the claimed copyright for the CreativeWork was first asserted."@en .
+
+schema:creditText a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:label "credit text"@en ;
+    rdfs:comment "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work." .
+
+schema:dateCreated a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity, meemoo:DigitalRepresentation;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:created ;
+    rdfs:label "date created"@en ;
+    rdfs:comment "The date on which the CreativeWork was created."@en .
+
+schema:datePublished a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:issued ;
+    rdfs:label "date published"@en ;
+    rdfs:comment "Date of first broadcast/publication."@en .
+
+schema:description a rdf:Property ;
+    # rdfs:domain schema:Thing, meemoo:PhysicalRepresentation, meemoo:IntellectualEntity, meemoo:DigitalRepresentation ;
+    rdfs:domain schema:Thing ;
+    owl:equivalentProperty dct:description ;
+    rdfs:label "description"@en ;
+    rdfs:comment "A description of the item."@en .
+
+schema:duration a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:extent ;
+    rdfs:label "duration"@en ;
+    rdfs:comment "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format."@en .
+
+schema:episodeNumber a rdf:Property ;
+    rdfs:domain schema:Episode ;
+    rdfs:label "episode number"@en ;
+    rdfs:comment "Position of the episode within an ordered group of episodes."@en .
+
+schema:familyName a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:label "family name"@en ;
+    rdfs:comment "Family name. In the U.S., the last name of a Person."@en .
+
+schema:givenName a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:label "given name"@en ;
+    rdfs:comment "Given name. In the U.S., the first name of a Person."@en .
+
+schema:genre a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:label "genre"@en ;
+    rdfs:comment "Genre of the creative work, broadcast channel or group."@en .
+
+schema:identifier a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity, meemoo:PhysicalRepresentation, meemoo:DigitalRepresentation;
+    rdfs:domain schema:Thing ;
+    owl:equivalentProperty dct:identifier ;
+    rdfs:label "identifier"@en ;
+    rdfs:comment "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en .
+
+schema:inLanguage a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:label "in language"@en ;
+    rdfs:comment "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en .
+
+schema:isPartOf a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range schema:ArchiveComponent ;
+    rdfs:label "is part of"@en ;
+    rdfs:comment "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of."@en .
+
+schema:keywords a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    owl:equivalentProperty dct:subject ;
+    rdfs:label "keywords"@en ;
+    rdfs:comment "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."@en .
+
+schema:license a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range owl:unionOf (schema:Thing skos:Concept ) ;
+    owl:equivalentProperty dct:accessRights ;
+    rdfs:label "license"@en ;
+    rdfs:comment "A license document that applies to this content, typically indicated by URL."@en .
+
+schema:maintainer a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    #range? 
+    rdfs:label "maintainer"@en ;
+    rdfs:comment "A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact."@en .
+
+schema:name a rdf:Property ; 
+    # rdfs:domain schema:Thing, premis:IntellectualEntity, meemoo:PhysicalRepresentation, meemoo:DigitalRepresentation ;
+    rdfs:domain schema:Thing ;
+    owl:equivalentProperty dct:title ;
+    rdfs:label "name"@en ;
+    rdfs:comment "The name of the item."@en .
+
+schema:partOfEpisode a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ; #? Clip?
+    rdfs:range schema:Episode ;
+    rdfs:label "part of episode"@en ;
+    rdfs:comment "The episode to which this clip belongs."@en . 
+
+schema:partOfSeries a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range schema:CreativeWorkSeries ;
+    rdfs:label "part of series"@en ;
+    rdfs:comment "The series to which this episode or season belongs."@en .
+
+schema:publisher a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity, schema:PerformanceRole ;
+    rdfs:domain schema:CreativeWork ; #? Ook Role als domain?
+    rdfs:range owl:unionOf (schema:Person org:Organization schema:Role) ;
+    owl:equivalentProperty dct:publisher ;
+    rdfs:label "publisher"@en ;
+    rdfs:comment "The publisher of the creative work."@en .
+
+schema:roleName a rdf:Property ;
+    rdfs:domain schema:PerformanceRole ;
+    rdfs:range skos:Concept ;
+    rdfs:label "role name"@en ;
+    rdfs:comment "A role played, performed or filled by a person or organization."@en .
+
+schema:seasonNumber a rdf:Property ;
+    rdfs:domain schema:CreativeWorkSeason ;
+    rdfs:label "season number"@en ;
+    rdfs:comment "Position of the season within an ordered group of seasons."@en .
+
+schema:spatialCoverage a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range schema:Place ;
+    owl:equivalentProperty dct:spatial ;
+    rdfs:label "spatial coverage"@en ;
+    rdfs:comment "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en .
+
+schema:temporalCoverage a rdf:Property ;
+    # rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:label "temporal coverage"@en ;
+    owl:equivalentProperty dct:temporal ;
+    rdfs:comment "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format."@en .
+
+schema:transcript a rdf:Property ;
+    # rdfs:domain meemoo:DigitalRepresentation ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:label "transcript"@en ;
+    rdfs:comment "If this MediaObject is an AudioObject or VideoObject, the transcript of that object."@en .
+
+#? Added props
+#? Nieuwe relaties meenemen of enkel kortste links tussen gevonden entities?
+#? Origine van metadata: https://pav-ontology.github.io/pav/ (createdWith, createdBy, importedFrom)
+#? Role? Waarom stap daartussen? Welke soorten RoleNames zijn er? Gevonden personen hieraan toevoegen of eigen property?
+
+schema:about a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range  schema:Thing ;  
+    rdfs:label "about"@en ;
+    rdfs:comment """The subject matter of the content."""@en .
+
+# schema:creator a rdf:Property ;
+#     rdfs:domain schema:CreativeWork ;
+#     rdfs:range  schema:Person ;  
+#     rdfs:range  schema:Organization ;  
+#     rdfs:label "about"@en ;
+#     rdfs:comment """The subject matter of the content."""@en .
+
+# schema:location a rdf:Property ;
+#     rdfs:domain schema:CreativeWork ;
+#     rdfs:domain schema:Organization ;
+#     rdfs:domain schema:Event ;
+#     rdfs:range  schema:Place ;  
+#     rdfs:label "about"@en ;
+#     rdfs:comment """The subject matter of the content."""@en .
+
+####################
+#       RDF        #
+####################
+rdf:value a rdf:Property ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:label "value"@en ;
+    rdfs:comment "May be used in describing structured values."@en .

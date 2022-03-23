@@ -1,0 +1,492 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix meemoo: <http://data.meemoo.be/ns/>  .
+@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+##############################
+#         NodeShapes         #
+##############################
+
+####################
+#      PREMIS      #
+####################
+premis:IntellectualEntity a rdfs:Class, sh:NodeShape ;
+    #? max en minCount constrains?
+    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    [
+        a sh:PropertyShape ;
+        sh:path premis:identifier ;
+        sh:class meemoo:LocalIdentifier ;
+        #? Aantal mogelijk?
+        sh:maxCount 2 ; #? Warning hierover? Meerdere PropertyShapes uiteen halen voor speciefiekere errors?
+        sh:name "lokale CP ID"@nl ;
+        sh:severity sh:Warning ;
+        sh:message "premis:identifier is not of class meemoo:LocalIdentifier"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:alternateName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "alternate name"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:alternateName is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:partOfEpisode ;
+        sh:class schema:Episode ;
+        sh:maxCount 1 ;
+        sh:name "part of episode"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:partOfEpisode is not of class schema:Episode"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:partOfSeries ;
+        sh:class schema:CreativeWorkSeries ;
+        sh:maxCount 1 ;
+        sh:name "part of series"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:partOfEpisode is not of class schema:Episode"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:ArchiveComponent ;
+        sh:maxCount 1 ;
+        sh:name "is part of"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:duration ;
+        sh:nodeKind sh:Literal ;
+        #? string in ISO 8601 of xsd:dateTime http://books.xmlschemata.org/relaxng/ch19-77049.html
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "duration"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:duration is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        #? string of edtf:? (SPARQL quering & reasoning) https://periodo.github.io/edtf-ontology/
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:dateCreated is not of type string"@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:datePublished ;
+        sh:nodeKind sh:Literal ;
+        #? string of edtf:? (SPARQL quering & reasoning) https://periodo.github.io/edtf-ontology/
+        sh:datatype xsd:string ;
+        sh:maxCount 1;
+        sh:name "date published"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:datePublished is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:author ;
+        sh:class schema:Role ;
+        sh:name "author"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:author is not of class schema:Role"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:publisher ;
+        sh:class schema:Role ;
+        sh:name "publisher"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:publisher is not of class schema:Role"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:contributor ;
+        sh:class schema:Role ;
+        sh:name "contributor"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:contributor is not of class schema:Role"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:abstract ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "abstract"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:abstract is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path ebu:objectType ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "object type"@en ;
+        sh:severity sh:Warning ;
+        sh:message "ebu:objectType is not of type string"@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:genre ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "genre"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:genre is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:spatialCoverage ;
+        sh:class schema:Place ;
+        sh:name "spatial coverage"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:spatialCoverage is not of class schema:Place"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:temporalCoverage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "temporal coverage"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:temporalCoverage is not of type string"@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:keywords ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "keywords"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:keywords is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:inLanguage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1;
+        sh:name "in language"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:inLanguage is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path premis:isPartOf ;
+        sh:class premis:IntellectualEntity ;
+        sh:name "is part of"@en ;
+        sh:severity sh:Warning ;
+        sh:message "premis:isPartOf is not of class premis:IntellectualEntity"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path premis:hasPart ;
+        sh:class premis:IntellectualEntity ;
+        sh:name "has part"@en ;
+        sh:severity sh:Warning ;
+        sh:message "premis:hasPart is not of class premis:IntellectualEntity"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path premis:relationship ;
+        sh:class premis:IntellectualEntity ;
+        sh:name "has relationship"@en ;
+        sh:severity sh:Warning ;
+        sh:message "premis:relationship is not of class premis:IntellectualEntity"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:license ;
+        sh:class schema:Thing ; #? skos:concept ook toevoegen?
+        sh:name "license"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:license is not of class schema:Thing"@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:available ;
+        sh:nodeKind sh:Literal ;
+        #? string in ISO 8601 of xsd:dateTime http://books.xmlschemata.org/relaxng/ch19-77049.html
+        sh:datatype xsd:string ;
+        sh:name "date available"@en ;
+        sh:severity sh:Warning ;
+        sh:message "dct:available is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:copyrightHolder ;
+        sh:or ( #? te gebruiken binnen propertyshape of beter 2 aparte?
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "copyright holder"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:copyrightHolder is not of class schema:Person or org:Organization"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:copyrightNotice ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "copyright notice"@en ;
+        sh:severity sh:Warning ;
+        sh:message "dct:copyrightNotice is not of type string"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:copyrightYear ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:positiveInteger ; #? of gewoon int beter?
+        sh:name "copyright year"@en ;
+        sh:severity sh:Warning ;
+        sh:message "dct:copyrightYear is not of type positiveInteger"@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:creditText ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "credit text"@en ;
+        sh:severity sh:Warning ;
+        sh:message "dct:creditText is not of type string"@en ;
+    ],
+    #? voorstel
+    [
+        a sh:PropertyShape ;
+        sh:path schema:about ;
+        sh:class schema:Thing ; 
+        sh:name "about"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:about is not of class schema:Thing"@en ;
+    ] .
+
+####################
+#      MEEMOO      #
+####################
+meemoo:PhysicalRepresentation a rdfs:Class, sh:NodeShape ;
+    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "format"@en ;
+        sh:severity sh:Warning ;
+        sh:message "dct:format is missing or not of type string "@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:medium ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:name "medium"@en ;
+        sh:severity sh:Warning ;
+        sh:message "dct:medium is not of type string "@en ;
+    ] .
+
+meemoo:DigitalRepresentation a rdfs:Class, sh:NodeShape ;
+    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:transcript ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "transcription"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:transcript is not of type string "@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:caption ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "caption"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:caption is not of type string "@en ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        #? string of edtf:? (SPARQL quering & reasoning) https://periodo.github.io/edtf-ontology/
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:dateCreated is not of type string "@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:author ;
+        sh:class schema:Role ;
+        sh:name "author"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:author is not of class schema:Role"@en ;
+    ] .
+
+meemoo:LocalIdentifier a rdfs:Class, sh:NodeShape ;
+    sh:property 
+    [
+        #? property voor unique?
+        a sh:PropertyShape ;
+        sh:path rdf:value ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "value"@en ;
+        sh:severity sh:Warning ;
+        sh:message "rdf:value is missing or not of type string"@en ;
+    ] .
+
+####################
+#      SCHEMA      #
+####################
+#? PerformanceRole of Role?
+schema:PerformanceRole a rdfs:Class, sh:NodeShape ;
+    sh:property
+    [
+        a sh:PropertyShape ;
+        sh:path schema:author ;
+        sh:or ( #?
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "author"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:author is not of class schema:Person or org:Organization"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:contributor ;
+        sh:or ( #?
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "contributor"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:contributor is not of class schema:Person or org:Organization"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:publisher ;
+        sh:or ( #?
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "publisher"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:publisher is not of class schema:Person or org:Organization"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:actor ;
+        sh:class schema:Person ;
+        sh:name "actor"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:actor is not of class schema:Person"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:roleName ;
+        sh:or ( #?
+            [   
+                sh:nodeKind sh:Literal ;
+                sh:datatype xsd:string ; 
+            ]
+            [sh:class skos:Concept ]
+        ) ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:name "role name"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en ;
+    ] .
+
+schema:Person a rdfs:Class, sh:NodeShape ;
+    sh:property meemoo:nameShape,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:givenName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "given name"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:givenName is not of type string "@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:familyName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "family name"@en ;
+        sh:severity sh:Warning ;
+        sh:message "schema:familyName is not of type string "@en ;
+    ] .
+
+#################################
+#         PropertyShapes        #
+#################################
+meemoo:identifierShape a sh:PropertyShape ;
+    sh:path schema:identifier ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "identifier"@en ;
+    sh:severity sh:Warning ;
+    sh:message "schema:identifier is missing or not of type string "@en .
+    
+meemoo:nameShape a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "name"@en ;
+    sh:severity sh:Warning ;
+    sh:message "schema:name is missing or not of type string "@en .
+
+meemoo:descriptionShape a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "description"@en ;
+    sh:severity sh:Warning ;
+    sh:message "schema:description is missing or not of type string "@en .
