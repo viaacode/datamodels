@@ -6,8 +6,9 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -21,10 +22,25 @@
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2022-03-16" ;
+    dct:modified  "2022-03-28" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl .
+
+#####################################
+#      1)CLASSES                    #
+#        1.1)agr                    #
+#        1.2)foaf                   #
+#        1.3)meemoo                 #
+#        1.4)org                    #
+#        1.5)schema                 #
+#      2)PROPERTIES                 #
+#        2.1)dct                    #
+#        2.2)foaf                   #
+#        2.3)meemoo                 #
+#        2.4)schema                 #
+#        2.5)skos                   #
+#####################################
 
 #####################################
 #              CLASSES              #
@@ -39,6 +55,125 @@ agr:Agreement   a   rdfs:Class ;
     rdfs:label "Contrat"@fr ;
     rdfs:label "Overeenkomst"@nl ;
     rdfs:isDefinedBy <http://promsns.org/def/agr> .
+
+#####################################
+#             CLASSES:foaf          #
+#####################################
+
+foaf:Agent a    owl:Class, rdfs:Class ;
+    owl:equivalentClass <http://purl.org/dc/terms/Agent>;
+    rdfs:label "Agent"@en ;
+    rdfs:label "Agent/exécutant"@fr ;
+    rdfs:label "Agens/uitvoerder"@nl ;
+    rdfs:comment "An agent (eg. person, group, software or physical artifact)."@en ;
+    rdfs:comment "Un exécutant (par exemple une personne, un groupe, du software ou un objet physique)."@fr ;
+    rdfs:comment "Een uitvoerder (bv. een persoon, een groep, software of een fysiek object)."@nl ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+#####################################
+#           CLASSES:meemoo          #
+#####################################
+
+meemoo:CollaborationAgreement   a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Collaboration Agreement"@en ;
+    rdfs:label "Accord de Collaboration"@fr ;
+    rdfs:label "Samenwerkingsovereenkomst"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:ContentPartner   a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Content Partner"@en ;
+    rdfs:label "Partenaire de Contenus"@fr ;
+    rdfs:label "Contentpartner"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    # `Aanbieder` wordt gebruikt in AVO voor CP
+
+meemoo:EducationalOrganization  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    owl:equivalentClass schema:EducationalOrganization ;
+    rdfs:label "Educational Organization"@en ;
+    rdfs:label "Organisation Éducative"@fr ;
+    rdfs:label "Educatieve organisatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:EducationalPartner   a   rdfs:Class ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    rdfs:label "Educational Partner"@en ;
+    rdfs:label "Partenaire Éducatif"@fr ;
+    rdfs:label "Educatieve partner"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:EducationalPublisher a   rdfs:Class ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    rdfs:label "Educational Publisher"@en ;
+    rdfs:label "Éditeur éducatif"@fr ;
+    rdfs:label "Educatieve uitgeverij"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:GovernmentOrganization   a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    owl:equivalentClass schema:GovernmentOrganization ;
+    rdfs:label "Government Organization"@en ;
+    rdfs:label "Organisation Gouvernementale"@fr ;
+    rdfs:label "Overheidsorganisatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:Logo a   rdfs:Class ;
+    rdfs:label  "Logo"@en ;
+    rdfs:label  "Logo"@fr ;
+    rdfs:label  "Logo"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:LogoContext  a   rdfs:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label  "Context of a Logo"@en ;
+    rdfs:label  "Contexte d'un Logo"@fr ;
+    rdfs:label  "Context van een Logo"@en ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:ManagementAgreement  a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Management Agreement"@en ;
+    rdfs:label "Contrat de Gestion"@fr ;
+    rdfs:label "Beheersovereenkomst"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:OrganizationType a   rdfs:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label  "Organization Type"@en ;
+    rdfs:label  "Type de Organisation"@fr ;
+    rdfs:label  "Organisatietype"@en ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:School   a   rdfs:Class ;
+    rdfs:subClassOf meemoo:EducationalOrganization ;
+    owl:equivalentClass schema:School ;
+    rdfs:label "School"@en ;
+    rdfs:label "École"@fr ;
+    rdfs:label "School"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:ServiceAgreement a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Service Agreement"@en ;
+    rdfs:label "Contrat de Service"@fr ;
+    rdfs:label "Dienstverleningsovereenkomst"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:ServiceConsumer  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Service Consumer"@en ;
+    rdfs:label "Consomatteur de Services"@fr ;
+    rdfs:label "Dienstenafnemer"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:ServiceProvider  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Service Provider"@en ;
+    rdfs:label "Fournisseur de Services" ;
+    rdfs:label "Serviceprovider"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 #####################################
 #            CLASSES:org            #
@@ -131,99 +266,103 @@ schema:PostalAddress    a   rdfs:Class ;
   rdfs:isDefinedBy <https://schema.org/> .
 
 #####################################
-#           CLASSES:meemoo          #
-#####################################
-
-meemoo:CollaborationAgreement   a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Collaboration Agreement"@en ;
-    rdfs:label "Accord de Collaboration"@fr ;
-    rdfs:label "Samenwerkingsovereenkomst"@nl .
-
-meemoo:ContentPartner   a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Content Partner"@en ;
-    rdfs:label "Partenaire de Contenus"@fr ;
-    rdfs:label "Contentpartner"@nl .
-    # `Aanbieder` wordt gebruikt in AVO voor CP
-
-meemoo:EducationalOrganization  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    owl:equivalentClass schema:EducationalOrganization ;
-    rdfs:label "Educational Organization"@en ;
-    rdfs:label "Organisation Éducative"@fr ;
-    rdfs:label "Educatieve organisatie"@nl .
-
-meemoo:EducationalPartner   a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
-    rdfs:label "Educational Partner"@en ;
-    rdfs:label "Partenaire Éducatif"@fr ;
-    rdfs:label "Educatieve partner"@nl .
-
-meemoo:EducationalPublisher a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
-    rdfs:label "Educational Publisher"@en ;
-    rdfs:label "Éditeur éducatif"@fr ;
-    rdfs:label "Educatieve uitgeverij"@nl .
-
-meemoo:GovernmentOrganization   a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    owl:equivalentClass schema:GovernmentOrganization ;
-    rdfs:label "Government Organization"@en ;
-    rdfs:label "Organisation Gouvernementale"@fr ;
-    rdfs:label "Overheidsorganisatie"@nl .
-
-meemoo:Logo a   rdfs:Class ;
-    rdfs:label  "Logo"@en ;
-    rdfs:label  "Logo"@fr ;
-    rdfs:label  "Logo"@nl .
-
-meemoo:LogoContext  a   rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label  "Context of a Logo"@en ;
-    rdfs:label  "Contexte d'un Logo"@fr ;
-    rdfs:label  "Context van een Logo"@en .
-
-meemoo:ManagementAgreement  a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Management Agreement"@en ;
-    rdfs:label "Contrat de Gestion"@fr ;
-    rdfs:label "Beheersovereenkomst"@nl .
-
-meemoo:OrganizationType a   rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label  "Organization Type"@en ;
-    rdfs:label  "Type de Organisation"@fr ;
-    rdfs:label  "Organisatietype"@en .
-
-meemoo:School   a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
-    owl:equivalentClass schema:School ;
-    rdfs:label "School"@en ;
-    rdfs:label "École"@fr ;
-    rdfs:label "School"@nl .
-
-meemoo:ServiceAgreement a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Service Agreement"@en ;
-    rdfs:label "Contrat de Service"@fr ;
-    rdfs:label "Dienstverleningsovereenkomst"@nl .
-
-meemoo:ServiceConsumer  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Service Consumer"@en ;
-    rdfs:label "Consomatteur de Services"@fr ;
-    rdfs:label "Dienstenafnemer"@nl .
-
-meemoo:ServiceProvider  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    rdfs:label "Service Provider"@en ;
-    rdfs:label "Fournisseur de Services" ;
-    rdfs:label "Serviceprovider"@nl .
-
-#####################################
 #             PROPERTIES            #
 #####################################
+
+#####################################
+#           PROPERTIES:dct          #
+#####################################
+
+dct:description a   rdfs:Property ;
+    rdfs:label "Description"@en ;
+    rdfs:label "Description"@fr ;
+    rdfs:label "Beschrijving"@nl ;
+    rdfs:comment "An account of the resource."@en ;
+    rdfs:comment "Un compte rendu de la ressource."@fr ;
+    rdfs:comment "Een verslag van de resource"@nl ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+#####################################
+#          PROPERTIES:foaf          #
+#####################################
+
+foaf:homepage   a   rdf:Property ;
+    rdfs:domain owl:Thing ;
+    rdfs:range foaf:Document ;
+    rdfs:label "Homepage"@en ;
+    rdfs:label "Page d'accueil"@fr ;
+    rdfs:label "Homepagina"@nl ;
+    rdfs:comment "A homepage for some thing. "@en ;
+    rdfs:comment "Une page d'accueil pour quelque chose"@fr ;
+    rdfs:comment "Een homepagina van/voor iets"@nl ;
+    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
+
+#####################################
+#         PROPERTIES:meemoo         #
+#####################################
+
+meemoo:isAccountManagerOf a   rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range org:Organization ;
+    owl:inverseOf meemoo:hasAccountManager ;
+    rdfs:label "Is account manager of"@en ;
+    rdfs:label "Est gestionairre de comptes de"@fr ;
+    rdfs:label "Is account manager van"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:applicationContext   a   rdf:Property ;
+    rdfs:domain meemoo:Logo ;
+    rdfs:range meemoo:LogoContext ;
+    rdfs:label "Context in which a logo is applied"@en ;
+    rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
+    rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:contains a   rdf:Property ;
+    rdfs:domain agr:Agreement ;
+    rdfs:range org:Organization ;
+    owl:inverseOf meemoo:isPartOf ;
+    owl:equivalentProperty schema:hasPart ;
+    rdfs:label "contains"@en ;
+    rdfs:label "contient"@fr ;
+    rdfs:label "bevat"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:hasAccountManager    a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  schema:Person ;
+    owl:inverseOf meemoo:isAccountManagerOf ;
+    rdfs:label "has an account manager"@en ;
+    rdfs:label "a un gestionnaire de comptes"@fr ;
+    rdfs:label "heeft een accountmanager"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:hasContactPoint  a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  org:ContactPoint ;
+    rdfs:label "has a contact point"@en ;
+    rdfs:label "a un point de contact"@fr ;
+    rdfs:label "heeft een aanspreek-/meldpunt"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:hasLogo  a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  meemoo:Logo ;
+    rdfs:label "has a logo"@en ;
+    rdfs:label "a un logo"@fr ;
+    rdfs:label "heeft een logo"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+
+meemoo:isPartOf a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  agr:Agreement ;
+    owl:inverseOf meemoo:contains ;
+    owl:equivalentProperty schema:isPartOf ;
+    owl:equivalentProperty dct:isPartOf ;
+    rdfs:label "is part of"@en ;
+    rdfs:label "fait partie de"@fr ;
+    rdfs:label "is deel van"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 #####################################
 #          PROPERTIES:org           #
@@ -242,13 +381,14 @@ org:classification a owl:ObjectProperty, rdf:Property;
 
 org:hasPost a owl:ObjectProperty, rdf:Property;
     rdfs:domain  org:Organization;
-    rdfs:range   org:Post;
-    rdfs:label "post"@en;
-	rdfs:label "possède un poste"@fr;
-    rdfs:label "post"@nl;
+    rdfs:range   org:Post ;
+    owl:inverseOf org:postIn ;
+    rdfs:label "post"@en ;
+	rdfs:label "possède un poste"@fr ;
+    rdfs:label "positie"@nl ;
     rdfs:comment """Indicates a Post which exists within the Organization."""@en;
 	rdfs:comment """Indique un Poste qui existe dans l'Organisation."""@fr;
-    rdfs:comment """Duidt een post aan die bestaat binnen de organisatie."""@nl;
+    rdfs:comment """Duidt een positie aan die bestaat binnen de organisatie."""@nl;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:hasPrimarySite a owl:ObjectProperty, rdf:Property ;
@@ -286,6 +426,46 @@ org:hasUnit a   owl:ObjectProperty, rdf:Property ;
     rdfs:comment """Duidt een eenheid aan die deel uitmaakt van een organisatie, zoals een departement in een grotere formele organisatie. Is het omgekeerde van `org:unitOf`."""@nl ;    
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
+org:heldBy a owl:ObjectProperty, rdf:Property;
+    rdfs:domain  org:Post;
+    rdfs:range foaf:Agent;
+    owl:inverseOf org:holds ;
+    rdfs:label "held by"@en ;
+  	rdfs:label "occupé par"@fr ;
+    rdfs:label "bezet door"@nl ;
+    rdfs:comment """Indicates an Agent which holds a Post."""@en ;
+    rdfs:comment """Indique un Agent qui occupe le Poste."""@fr ;
+    rdfs:comment  """Duidt een Agent aan die een positie heeft."""@nl ;
+    # Corrected 2014-01-25
+    # rdfs:subPropertyOf org:hasMember;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:holds a owl:ObjectProperty, rdf:Property ;
+    rdfs:domain foaf:Agent ;
+    rdfs:range  org:Post ;
+    owl:inverseOf org:heldBy ;
+    rdfs:label "holds"@en ;
+  	rdfs:label "occupe"@fr ;
+    rdfs:label "heeft positie"@nl ;
+    rdfs:comment """Indicates a Post held by some Agent."""@en ;
+    rdfs:comment """Indicate un Poste occupé par un Agent."""@fr ;
+    rdfs:comment """Duidt een positie aan die bezet wordt door een Agent."""@nl ;
+    # Corrected 2014-01-25
+    # rdfs:subPropertyOf org:memberOf;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:postIn a owl:ObjectProperty, rdf:Property ;
+    rdfs:domain org:Post;
+    rdfs:range  org:Organization;
+    owl:inverseOf org:hasPost ;
+    rdfs:label "post in"@en;
+	rdfs:label "poste chez"@fr;
+    rdfs:label "positie in"@nl;
+    rdfs:comment """Indicates the Organization in which the Post exists."""@en ;
+    rdfs:comment """Indicate l'Organisation dans laquelle le Poste existe."""@fr ;
+    rdfs:comment """Duidt de organisatie aan waarbij de positie bestaat."""@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
 org:siteAddress a owl:ObjectProperty, rdf:Property ;
     rdfs:domain org:Site ;
     #   rdfs:range  vcard:VCard ;
@@ -298,49 +478,154 @@ org:siteAddress a owl:ObjectProperty, rdf:Property ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 #####################################
-#         PROPERTIES:meemoo         #
+#         PROPERTIES:schema         #
 #####################################
 
-meemoo:applicationContext   a   rdf:Property ;
-    rdfs:domain meemoo:Logo ;
-    rdfs:range meemoo:LogoContext ;
-    rdfs:label "Context in which a logo is applied"@en ;
-    rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
-    rdfs:label "Context waarin een logo gebruikt wordt"@nl .
+schema:addressCountry   a   rdf:Property ;
+    schema:domainIncludes schema:DefinedRegion,
+        schema:GeoCoordinates,
+        schema:GeoShape,
+        schema:PostalAddress ;
+    schema:rangeIncludes schema:Country,
+        schema:Text ;
+    rdfs:label "addressCountry"@en ;
+    rdfs:label "partie de l'adresse concernant le pays"@fr ;
+    rdfs:label "deel van het adres met betrekking tot het land"@nl ;
+    rdfs:comment "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1)."@en ;
+    rdfs:comment "Le pays."@fr ;
+    rdfs:comment "Het land."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
 
-meemoo:contains a   rdf:Property ;
-    rdfs:domain agr:Agreement ;
-    rdfs:range org:Organization ;
-    owl:inverseOf meemoo:isPartOf ;
-    rdfs:label "contains"@en ;
-    rdfs:label "contient"@fr ;
-    rdfs:label "bevat"@nl .
+schema:addressLocality  a   rdf:Property ;
+    schema:domainIncludes schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "addressLocality"@en ;
+    rdfs:label "localitéAdresse"@fr ;
+    rdfs:label "adresPlaats"@nl ;
+    rdfs:comment "The locality in which the street address is, and which is in the region. For example, Mountain View."@en ;
+    rdfs:comment "La localité dans laquelle se trouve l'adresse de rue, et qui se trouve dans la région."@fr ;
+    rdfs:comment "De plaats waar het straatadres zich bevindt, en de plaats van de regio."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+    
+schema:addressRegion    a   rdf:Property ;
+    schema:domainIncludes schema:DefinedRegion,
+        schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "addressRegion"@en ;
+    rdfs:label "addressRegion"@fr ;
+    rdfs:label "addressRegion"@nl ;
+    rdfs:comment "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country)."@en ;
+    rdfs:comment "La région dans laquelle se trouve la localité, et qui se trouve dans le pays. Par exemple, la Californie ou [une autre division administrative appropriée de premier niveau](https://fr.wikipedia.org/wiki/Liste_des_subdivisions_par_pays)."@fr ;
+    rdfs:comment "De regio waarin de plaats zich bevindt, en die in het land ligt. Bijvoorbeeld, Californië of een ander geschikte [administratieve afdeling van het eerste niveau](https://nl.wikipedia.org/wiki/Bestuurslagen_per_land)."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
 
-meemoo:hasAccountManager    a   rdf:Property ;
-    rdfs:domain org:Organization ;
-    rdfs:range  schema:Person ;
-    rdfs:label "has an account manager"@en ;
-    rdfs:label "a un gestionnaire de comptes"@fr ;
-    rdfs:label "heeft een accountmanager"@nl .
+schema:contactType  a   rdf:Property ;
+    schema:domainIncludes schema:ContactPoint ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "contactType"@en ;
+    rdfs:label "typePointContact"@fr ;
+    rdfs:label "contactType"@nl ;
+    rdfs:comment "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point."@en ;
+    rdfs:comment "Une personne ou une organisation peut avoir différents points de contact, à des fins différentes. Par exemple, un point de contact pour les ventes, un point de contact pour les relations publiques, etc. Cette propriété est utilisée pour spécifier le type de point de contact."@fr ;
+    rdfs:comment "Een persoon of organisatie kan verschillende contactpunten hebben, voor verschillende doeleinden. Bijvoorbeeld een verkoopcontactpunt, een PR-contactpunt enzovoort. Deze eigenschap wordt gebruikt om het soort contactpunt te specificeren."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
 
-meemoo:hasContactPoint  a   rdf:Property ;
-    rdfs:domain org:Organization ;
-    rdfs:range  org:ContactPoint ;
-    rdfs:label "has a contact point"@en ;
-    rdfs:label "a un point de contact"@fr ;
-    rdfs:label "heeft een aanspreek-/meldpunt"@nl .
+schema:email    a   rdf:Property ;
+    rdfs:domain schema:ContactPoint ;
+    rdfs:domain schema:Organization ;
+    rdfs:domain schema:Person ;
+    rdfs:range  xsd:string ;
+    rdfs:label "Email address"@en ;
+    rdfs:label "Adresse e-mail"@fr ;
+    rdfs:label "E-mailadres"@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
 
-meemoo:hasLogo  a   rdf:Property ;
-    rdfs:domain org:Organization ;
-    rdfs:range  meemoo:Logo ;
-    rdfs:label "has a logo"@en ;
-    rdfs:label "a un logo"@fr ;
-    rdfs:label "heeft een logo"@nl .
+schema:familyName   a   rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range  xsd:string ;
+    rdfs:label "Family name."@en ;
+    rdfs:label "Nom de famille."@fr ;
+    rdfs:label "Familienaam/achternaam."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
 
-meemoo:isPartOf a   rdf:Property ;
-    rdfs:domain org:Organization ;
-    rdfs:range  agr:Agreement ;
-    owl:inverseOf meemoo:contains ;
-    rdfs:label "is part of"@en ;
-    rdfs:label "fait partie de"@fr ;
-    rdfs:label "is deel van"@nl .
+schema:givenName    a   rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range  xsd:string ;
+    rdfs:label "Given name"@en ;
+    rdfs:label "Prénom"@fr ;
+    rdfs:label "Voornaam"@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:name a   rdf:Property ;
+    rdfs:domain schema:Thing ;
+    rdfs:range  xsd:string ;
+    rdfs:label "The name of the item."@en ;
+    rdfs:label "Le nom de la chose."@fr ;
+    rdfs:label "De naam van het ding."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:postalCode   a   rdf:Property ;
+    schema:domainIncludes schema:DefinedRegion,
+        schema:GeoCoordinates,
+        schema:GeoShape,
+        schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "postalCode"@en ;
+    rdfs:label "codePostale"@fr ;
+    rdfs:label "postCode"@nl ;
+    rdfs:comment "The postal code. For example, 94043."@en ;
+    rdfs:comment "Le code postale."@fr ;
+    rdfs:comment "De postcode."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+    
+schema:postOfficeBoxNumber  a   rdf:Property ;
+    schema:domainIncludes schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "postOfficeBoxNumber"@en ;
+    rdfs:label "numéroBoîtePostale"@fr ;
+    rdfs:label "postbusnummer"@nl ;
+    rdfs:comment "The post office box number for PO box addresses."@en ;
+    rdfs:comment "Le numéro de la boîte postale pour les adresses de type boîte postale."@fr ;
+    rdfs:comment "Het postbusnummer voor postbusadressen."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:streetAddress    a   rdf:Property ;
+    schema:domainIncludes schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "streetAddress"@en ;
+    rdfs:label "adresseDeRue"@fr ;
+    rdfs:label "straatAdres"@nl ;
+    rdfs:comment "The street address. For example, 1600 Amphitheatre Pkwy."@en ;
+    rdfs:comment "L'adresse de rue."@fr ;
+    rdfs:comment "Het adres van de straat."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+    
+schema:telephone a rdf:Property ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "telephone"@en ;
+    rdfs:label "téléphone"@fr ;
+    rdfs:label "telefoon"@nl ;
+    rdfs:comment "The telephone number."@en ;
+    rdfs:comment "Le numéro de téléphone."@fr ;
+    rdfs:comment "Het telefoonnummer."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+#####################################
+#         PROPERTIES:skos           #
+#####################################
+
+skos:altLabel  a   rdf:Property ;
+    rdfs:label "alternative label"@en ;
+    rdfs:label "label alternatif"@fr ;
+    rdfs:label "alternatief label"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> .
+
+skos:prefLabel  a   rdf:Property ;
+    rdfs:label "preferred label"@en ;
+    rdfs:label "label préféré"@fr ;
+    rdfs:label "voorkeurslabel"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> .
