@@ -27,7 +27,7 @@
     dct:title     "Modèle SHACL Organisations"@fr ;
     dct:title     "SHACL-model Organisaties"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2022-03-16" ;
+    dct:modified  "2022-03-28" ;
     dct:description """SHACL model to validate/describe organisations."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des organisations."""@fr ;
     dct:description """SHACL-model voor het valideren/beschrijven van organisaties."""@nl .
@@ -53,12 +53,13 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:description "Un logo associé."@fr ;
                 sh:description "Een geassocieerd logo."@nl ;
                 
-                sh:severity sh:Warning ;
-                sh:message "schema:logo is missing or is no IRI"@en ;
-                sh:message "schema:logo est absent ou n'est pas un IRI"@fr ;
-                sh:message "schema:logo ontbreekt of is geen IRI"@nl
+                sh:severity sh:Violation ;
+                sh:message "schema:logo is missing or its Object is no meemoo:logo"@en ;
+                sh:message "schema:logo est absent ou son Object n'est pas un meemoo:logo"@fr ;
+                sh:message "schema:logo ontbreekt of zijn Object is geen meemoo:logo"@nl
              ], [
                 sh:path foaf:homepage ;
+                # vraag: moet een minCount 0 expliciet aangegeven worden?
                 sh:minCount 0 ;
                 sh:maxCount 1 ;
                 sh:nodeKind sh:IRI ;
@@ -68,9 +69,9 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:name "homepagina"@nl ;
                 
                 sh:severity sh:Warning ;
-                sh:message "foaf:homepage is missing or is no IRI"@en ;
-                sh:message "foaf:homepage est absent ou n'est pas un IRI"@fr ;
-                sh:message "foaf:homepage ontbreekt of is geen IRI"@nl
+                sh:message "foaf:homepage occurs more than once or its object is no IRI"@en ;
+                sh:message "foaf:homepage apparaît plus d'une seule fois ou son Object n'est pas un IRI"@fr ;
+                sh:message "foaf:homepage komt meer dan eens voor of zijn Object is geen IRI"@nl
              ],[
                 sh:path dct:description ;
                 sh:minCount 0 ;
@@ -86,33 +87,61 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:description "Beschrijving van de organisatie."@nl ;
 
                 sh:severity sh:Warning ;
-                sh:message "dct:description is missing or is not of type String"@en
+                sh:message "dct:description is not of type String or occurs more than once"@en ;
+                sh:message "dct:description n'est pas de type String ou apparaît plus d'une seule fois"@fr ;
+                sh:message "dct:description is niet van het type String of komt meer dan eens voor"@nl
              ], [
                 sh:path org:classification ;
                 sh:minCount 1 ;
-                sh:class skos:Concept ;
+                sh:class meemoo:OrganizationType ;
+
                 sh:name "classification"@en ;
-                sh:severity sh:Warning ;
-                sh:message "org:classification is missing or is no IRI / skos:Concept"@en
+                sh:name "classification"@fr ;
+                sh:name "classificatie"@nl ;
+
+                sh:severity sh:Violation ;
+                sh:message "org:classification is missing or its Object is no meemoo:OrganizationType"@en ;
+                sh:message "org:classification est absent ou son Object n'est pas un meemoo:OrganizationType"@fr ;
+                sh:message "org:classification ontbreekt of zijn Object is geen meemoo:OrganizationType"@nl
              ], [
                 sh:path org:hasUnit ;
                 sh:minCount 0 ;
                 sh:class org:OrganizationalUnit ;
-              
-                sh:name "has unit"@en ;
+
+                sh:name "has Unit"@en ;
+                sh:name "possède une Unité"@fr ;
+                sh:name "heeft een eenheid"@nl ;
                 
                 sh:severity sh:Info ;
-                sh:message "org:hasUnit is missing or is no IRI"@en
+                sh:message "The Object of org:hasUnit is no org:OrganizationalUnit"@en ;
+                sh:message "L'Object de org:hasUnit n'est pas un org:OrganizationalUnit"@fr ;
+                sh:message "Het Object van org:hasUnit is geen org:OrganizationalUnit"@nl ;
              ], [
                 sh:path schema:contactPoint ;
                 sh:minCount 0 ;
                 sh:class schema:ContactPoint ;
                 
                 sh:name "contact point"@en ;
-                sh:name "contactinfo"@nl ;
+                sh:name "point de contact"@fr ;
+                sh:name "aanspreekpunt"@nl ;
                 
                 sh:severity sh:Info ;
-                sh:message "org:hasUnit is missing or is no IRI"@en
+                sh:message "org:contactPoint is no schema:ContactPoint"@en ;
+                sh:message "org:contactPoint n'est pas un schema:ContactPoint"@fr ;
+                sh:message "org:contactPoint is geen schema:ContactPoint"@nl
+             ], [
+                sh:path org:hasSite ;
+                sh:minCount 0 ;
+                sh:class org:Site ;
+                
+                sh:name "has site"@en ;
+                sh:name "a un site"@fr ;
+                sh:name "heeft vestiging"@nl ;
+                
+                sh:severity sh:Warning ;
+                sh:message "org:hasSite occurs more than once or its Object is no org:Site"@en ;
+                sh:message "org:hasSite apparaît plus d'une seule fois ou son Object n'est pas un org:Site"@fr ;
+                sh:message "org:hasSite komt meer dan eens voor of zijn Object is geen org:Site"@nl
              ], [
                 sh:path org:hasPrimarySite ;
                 sh:minCount 0 ;
@@ -120,21 +149,30 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:class org:Site ;
                 
                 sh:name "has primary site"@en ;
+                sh:name "a un site principal"@fr ;
                 sh:name "heeft primaire vestiging"@nl ;
                 
-                sh:severity sh:Violation ;
-                sh:message "org:hasPrimarySite is no org:Site"@en
+                sh:severity sh:Warning ;
+                sh:message "org:hasPrimarySite occurs more than once or its Object is no org:Site"@en ;
+                sh:message "org:hasPrimarySite apparaît plus d'une seule fois ou son Object n'est pas un org:Site"@fr ;
+                sh:message "org:hasPrimarySite komt meer dan eens voor of zijn Object is geen org:Site"@nl
              ], [
-                sh:path dct:isPartOf ;
+                # vraag: volstaat het om nog een meemoo:isPartOf te definiëren met een nieuwe sh:class om bv. deel uit te maken van een andere agreement?
+                # aangezien meemoo:isPartOf slaat op agr:Agreement en niet specifiek op meemoo:CollaborationAgreement?
+                sh:path meemoo:isPartOf ;
                 sh:minCount 0 ;
+                # vraag: kan een org van meerdere SWO's deel uitmaken?
                 sh:maxCount 1 ;
                 sh:class meemoo:CollaborationAgreement ;
                 
                 sh:name "is part of"@en ;
-                sh:name "is deel van"@nl ;
+                sh:name "fait partie de"@fr ;
+                sh:name "maakt deel uit van"@nl ;
                 
                 sh:severity sh:Info ;
-                sh:message "dct:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
+                sh:message "meemoo:isPartOf occurs more than once or its Object is no meemoo:CollaborationAgreement"@en ;
+                sh:message "meemoo:isPartOf apparaît plus d'une seule fois ou son Object n'est pas un meemoo:CollaborationAgreement"@fr ;
+                sh:message "meemoo:isPartOf komt meer dan eens voor of zijn Object is geen meemoo:CollaborationAgreement"@nl 
               ], [
                 sh:path meemoo:hasAccountmanager ;
                 sh:minCount 0 ;
@@ -146,7 +184,9 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:name "heeft account manager"@nl ;
 
                 sh:severity sh:Warning ;
-                sh:message "meemoo:hasAccountmanager is missing or is no schema:Person"@en 
+                sh:message "meemoo:hasAccountmanager occurs more than once or its Object is no schema:Person"@en ;
+                sh:message "meemoo:hasAccountmanager apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr ;
+                sh:message "meemoo:hasAccountmanager komt meer dan eens voor of zijn Object is geen schema:Person"@nl 
               ], [
                 sh:path org:hasPost ;
                 sh:minCount 0 ;
@@ -158,47 +198,60 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:name "heeft positie"@nl ;
                 sh:description """Indicates a Post which exists within the Organization."""@en ;
                 sh:description """Indicate un Poste qui existe dans l'Organisation."""@fr ;
-                sh:description """Verwijst naar een positie in de organisatie."""@nl ;
+                sh:description """Verwijst naar een positie binnen de organisatie."""@nl ;
 
                 sh:severity sh:Warning ;
+                sh:message "org:hasPost occurs more than once or its Object is no org:Post"@en ;
+                sh:message "org:hasPost apparaît plus d'une seule fois ou son Object n'est pas un org:Post"@fr ;
+                sh:message "org:hasPost komt meer dan eens voor of zijn Object is geen org:Post"@nl ;
               ] .
 
 meemoo:OrganizationalUnitShape a sh:NodeShape ;
+    sh:targetClass org:OrganizationalUnit ;
     sh:property [
         sh:path org:unitOf ;
         sh:minCount 1 ;
         sh:class org:Organization ;
         
         sh:name "unit of"@en ;
-        sh:name "organisatie-eenheid van"@en ;
+
+        sh:name "organisatie-eenheid van"@nl ;
         
-        sh:severity sh:Warning ;
+        sh:severity sh:Violation ;
         sh:message "org:unitOf is missing or is no IRI"@en
     ].
 
 meemoo:ContentPartnerShape a sh:NodeShape ;
+    sh:targetClass meemoo:ContentPartner ;
     sh:property meemoo:accountManagerShape .
 
-meemoo:ServiceProviderShape  a sh:NodeShape .
+meemoo:ServiceProviderShape  a sh:NodeShape ;
+    sh:targetClass meemoo:ServiceProvider .
 
-meemoo:ServiceConsumerShape  a sh:NodeShape .
+meemoo:ServiceConsumerShape  a sh:NodeShape ;
+    sh:targetClass meemoo:ServiceConsumer .
 
-meemoo:EducationalOrganizationShape  a sh:NodeShape .
+meemoo:EducationalOrganizationShape  a sh:NodeShape ;
+    sh:targetClass meemoo:EducationalOrganization .
 
 meemoo:EducationalPartnerShape  a sh:NodeShape ;
+    sh:targetClass meemoo:EducationalPartner ;
     sh:property meemoo:accountManagerShape .
 
-meemoo:EducationalPublisherShape  a sh:NodeShape .
+meemoo:EducationalPublisherShape  a sh:NodeShape ;
+    sh:targetClass meemoo:EducationalPublisher .
 
-meemoo:SchoolShape a sh:NodeShape .
+meemoo:SchoolShape a sh:NodeShape ;
+    sh:targetClass meemoo:School .
 
-meemoo:CollaborationAgreementShape a sh:NodeShape .
+meemoo:CollaborationAgreementShape a sh:NodeShape ;
+    sh:targetClass meemoo:CollaborationAgreement .
 
-meemoo:ServiceAgreementShape a sh:NodeShape .
-
-#Aanbieder = organisatie in avo
+meemoo:ServiceAgreementShape a sh:NodeShape ;
+    sh:targetClass meemoo:ServiceAgreement .
 
 meemoo:SiteShape  a  sh:NodeShape ;
+    sh:targetClass org:Site ;
     sh:property [
         sh:path org:siteAddress;
         sh:minCount 0 ;
@@ -216,6 +269,7 @@ meemoo:SiteShape  a  sh:NodeShape ;
     ].
 
 meemoo:PostShape a sh:NodeShape;
+    sh:targetClass org:Post ;
     sh:property [        
         sh:path org:role ;
         sh:minCount 1 ;
@@ -246,9 +300,11 @@ meemoo:PostShape a sh:NodeShape;
     ] .
     
 meemoo:RoleShape a sh:NodeShape;
-    sh:property meemoo:prefLabelShape .
+  sh:targetClass org:Role ;
+  sh:property meemoo:prefLabelShape .
 
 meemoo:PersonShape a sh:NodeShape ;
+  sh:targetClass schema:Person ;
   sh:property [    
     sh:path org:holds ;
     sh:minCount 1 ;
@@ -296,6 +352,7 @@ meemoo:PersonShape a sh:NodeShape ;
     ] .
 
 meemoo:PostalAddressShape  a sh:NodeShape ;
+  sh:targetClass schema:PostalAddress ;
   sh:property schema:PostalAddress-addressCountry ;
   sh:property schema:PostalAddress-addressLocality ;
   sh:property schema:PostalAddress-addressRegion ;
@@ -304,6 +361,7 @@ meemoo:PostalAddressShape  a sh:NodeShape ;
   sh:property schema:PostalAddress-streetAddress .
 
 meemoo:ContactPointShape  a sh:NodeShape ;
+  sh:targetClass schema:ContactPoint ;
   sh:property schema:ContactPoint-contactTypeShape ;
   sh:property schema:ContactPoint-emailShape ;
   sh:property schema:ContactPoint-telephoneShape .
