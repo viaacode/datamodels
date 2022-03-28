@@ -23,9 +23,13 @@
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
     ] ;
+    dct:title     "SHACL Model Organisations"@en ;
+    dct:title     "Modèle SHACL Organisations"@fr ;
     dct:title     "SHACL-model Organisaties"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2022-03-14" ;
+    dct:modified  "2022-03-16" ;
+    dct:description """SHACL model to validate/describe organisations."""@en ;
+    dct:description """Modèle SHACL pour valider/décrire des organisations."""@fr ;
     dct:description """SHACL-model voor het valideren/beschrijven van organisaties."""@nl .
 
 
@@ -35,125 +39,129 @@
 
 meemoo:OrganizationShape a sh:NodeShape ;
     sh:targetClass org:Organization ;
-    sh:property meemoo:prefLabelShape, meemoo:altLabelShape, [
-        sh:path schema:logo ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:nodeKind sh:IRI ;
+    sh:property meemoo:prefLabelShape, 
+                meemoo:altLabelShape, 
+             [
+                sh:path meemoo:hasLogo ;
+                sh:minCount 1 ;
+                sh:class meemoo:logo ;
 
-        
-        sh:name "logo"@en ;
-        sh:name "logo"@fr ;
-        sh:name "logo"@nl ;
-        sh:description "An associated logo."@en;
-        sh:description "Een geassocieerd logo."@nl;
-        
-        sh:severity sh:Warning ;
-        sh:message "schema:logo is missing or is no IRI"@en
-    ], [
-        sh:path foaf:homepage ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:nodeKind sh:IRI ;
-        
-        sh:name "homepage"@en ;
-        sh:name "website"@nl ;
-        
-        sh:severity sh:Warning ;
-        sh:message "foaf:homepage is missing or is no IRI"@en
-    ],[
-        sh:path dct:description ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:datatype xsd:string ;
-        
-        sh:name "description"@en ;
-        sh:name "omschrijving"@nl ;
-        sh:name "la description"@fr ;
-        sh:description "Description of the organization."@nl ;
-        sh:description "Omschrijving van de organisatie."@nl ;
+                sh:name "logo"@en ;
+                sh:name "logo"@fr ;
+                sh:name "logo"@nl ;
+                sh:description "An associated logo."@en ;
+                sh:description "Un logo associé."@fr ;
+                sh:description "Een geassocieerd logo."@nl ;
+                
+                sh:severity sh:Warning ;
+                sh:message "schema:logo is missing or is no IRI"@en ;
+                sh:message "schema:logo est absent ou n'est pas un IRI"@fr ;
+                sh:message "schema:logo ontbreekt of is geen IRI"@nl
+             ], [
+                sh:path foaf:homepage ;
+                sh:minCount 0 ;
+                sh:maxCount 1 ;
+                sh:nodeKind sh:IRI ;
+                
+                sh:name "homepage"@en ;
+                sh:name "page d'accueil"@fr ;
+                sh:name "homepagina"@nl ;
+                
+                sh:severity sh:Warning ;
+                sh:message "foaf:homepage is missing or is no IRI"@en ;
+                sh:message "foaf:homepage est absent ou n'est pas un IRI"@fr ;
+                sh:message "foaf:homepage ontbreekt of is geen IRI"@nl
+             ],[
+                sh:path dct:description ;
+                sh:minCount 0 ;
+                sh:maxCount 1 ;
+                sh:datatype xsd:string ;
+                
+                sh:name "description"@en ;
+                sh:name "description"@fr ;
+                sh:name "beschrijving"@nl ;
+                
+                sh:description "Description of the organization."@en ;
+                sh:description "Description de l'organization."@fr ;
+                sh:description "Beschrijving van de organisatie."@nl ;
 
-        sh:severity sh:Warning ;
-        sh:message "dct:description is missing"@en
-    ],
-    [
-        sh:path org:classification ;
-        sh:minCount 1 ;
-        sh:class skos:Concept ;
-        sh:name "classification"@en ;
-        sh:severity sh:Warning ;
-        sh:message "org:classification is missing or is no IRI / skos:Concept"@en
-    ], [
-        sh:path org:hasUnit ;
-        sh:minCount 0 ;
-        sh:class org:OrganizationalUnit ;
-      
-        sh:name "has unit"@en ;
-        
-        sh:severity sh:Info ;
-        sh:message "org:hasUnit is missing or is no IRI"@en
-    ], [
-        sh:path schema:contactPoint ;
-        sh:minCount 0 ;
-        sh:class schema:ContactPoint ;
-        
-        sh:name "contact point"@en ;
-        sh:name "contactinfo"@nl ;
-        
-        sh:severity sh:Info ;
-        sh:message "org:hasUnit is missing or is no IRI"@en
-    ], [
-        sh:path org:hasPrimarySite ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:class org:Site ;
-        
-        sh:name "has primary site"@en ;
-        sh:name "heeft primaire vestiging"@nl ;
-        
-        sh:severity sh:Violation ;
-        sh:message "org:hasPrimarySite is no org:Site"@en
-    ], 
-    [
-        sh:path dct:isPartOf ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:class meemoo:CollaborationAgreement ;
-        
-        sh:name "is part of"@en ;
-        sh:name "is deel van"@nl ;
-        
-        sh:severity sh:Info ;
-        sh:message "dct:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
-    ],
-    [
-        sh:path meemoo:hasAccountmanager ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:class schema:Person ;
+                sh:severity sh:Warning ;
+                sh:message "dct:description is missing or is not of type String"@en
+             ], [
+                sh:path org:classification ;
+                sh:minCount 1 ;
+                sh:class skos:Concept ;
+                sh:name "classification"@en ;
+                sh:severity sh:Warning ;
+                sh:message "org:classification is missing or is no IRI / skos:Concept"@en
+             ], [
+                sh:path org:hasUnit ;
+                sh:minCount 0 ;
+                sh:class org:OrganizationalUnit ;
+              
+                sh:name "has unit"@en ;
+                
+                sh:severity sh:Info ;
+                sh:message "org:hasUnit is missing or is no IRI"@en
+             ], [
+                sh:path schema:contactPoint ;
+                sh:minCount 0 ;
+                sh:class schema:ContactPoint ;
+                
+                sh:name "contact point"@en ;
+                sh:name "contactinfo"@nl ;
+                
+                sh:severity sh:Info ;
+                sh:message "org:hasUnit is missing or is no IRI"@en
+             ], [
+                sh:path org:hasPrimarySite ;
+                sh:minCount 0 ;
+                sh:maxCount 1 ;
+                sh:class org:Site ;
+                
+                sh:name "has primary site"@en ;
+                sh:name "heeft primaire vestiging"@nl ;
+                
+                sh:severity sh:Violation ;
+                sh:message "org:hasPrimarySite is no org:Site"@en
+             ], [
+                sh:path dct:isPartOf ;
+                sh:minCount 0 ;
+                sh:maxCount 1 ;
+                sh:class meemoo:CollaborationAgreement ;
+                
+                sh:name "is part of"@en ;
+                sh:name "is deel van"@nl ;
+                
+                sh:severity sh:Info ;
+                sh:message "dct:isPartOf is missing or is no meemoo:CollaborationAgreement"@en
+              ], [
+                sh:path meemoo:hasAccountmanager ;
+                sh:minCount 0 ;
+                sh:maxCount 1 ;
+                sh:class schema:Person ;
 
-        sh:name "has account manager"@en ;
-        sh:name "a gestionnaire de comptes"@fr ;
-        sh:name "heeft account manager"@nl ;
+                sh:name "has account manager"@en ;
+                sh:name "a gestionnaire de comptes"@fr ;
+                sh:name "heeft account manager"@nl ;
 
-        sh:severity sh:Warning ;
-        sh:message "meemoo:hasAccountmanager is missing or is no schema:Person"@en 
-    ],
-    [
-        sh:path org:hasPost ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:class org:Post ;
+                sh:severity sh:Warning ;
+                sh:message "meemoo:hasAccountmanager is missing or is no schema:Person"@en 
+              ], [
+                sh:path org:hasPost ;
+                sh:minCount 0 ;
+                sh:maxCount 1 ;
+                sh:class org:Post ;
 
-        sh:name "has post"@en ;
-        sh:name "possède un poste"@fr ;
-        sh:name "heeft positie"@nl ;
-        sh:description """Indicates a Post which exists within the Organization."""@en ;
-        sh:description """Indicate un Poste qui existe dans l'Organisation."""@fr ;
-        sh:description """Verwijst naar een positie in de organisatie."""@nl ;
+                sh:name "has post"@en ;
+                sh:name "possède un poste"@fr ;
+                sh:name "heeft positie"@nl ;
+                sh:description """Indicates a Post which exists within the Organization."""@en ;
+                sh:description """Indicate un Poste qui existe dans l'Organisation."""@fr ;
+                sh:description """Verwijst naar een positie in de organisatie."""@nl ;
 
-        sh:severity sh:Warning ;
-    ] .
+                sh:severity sh:Warning ;
+              ] .
 
 meemoo:OrganizationalUnitShape a sh:NodeShape ;
     sh:property [
@@ -266,7 +274,6 @@ meemoo:PersonShape a sh:NodeShape ;
     sh:name "family name"@en ;
     sh:name "familienaam"@nl ;
   ], [
-    a sh:PropertyShape ;
     sh:path schema:email ;
     sh:datatype xsd:string ;
     sh:description "Email address."@en ;
