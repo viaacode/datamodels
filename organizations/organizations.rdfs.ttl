@@ -478,6 +478,18 @@ org:siteAddress a owl:ObjectProperty, rdf:Property ;
     rdfs:comment """Duidt het adres aan van de zetel in een geschikte encoding. Het gebruik van vCard (met de http://www.w3.org/TR/vcard-rdf/ vocabulary) wordt aangemoedigd, maar de range wordt opgelaten om andere encoding mogelijk te maken. Het adres kan de e-mail, het telefoonnummer, en geo-locatie informatie bevatten. Het is niet beperkt tot een fysiek adres."""@nl;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
+org:unitOf a owl:ObjectProperty, rdf:Property ;
+    rdfs:subPropertyOf org:subOrganizationOf ;
+    rdfs:domain org:OrganizationalUnit ; 
+    rdfs:range  org:FormalOrganization ; 
+    rdfs:label "unit Of"@en ;
+    rdfs:label "unité de"@fr ;
+    rdfs:label "eenheid van"@nl ;
+    rdfs:comment """Indicates an Organization of which this Unit is a part, e.g. a Department within a larger FormalOrganization. This is the inverse of `org:hasUnit`."""@en ;
+    rdfs:comment """Indique l'Organisation dont cette Organisation ou Unité fait partie, par exemple un Départment au sein d'une Organisation Formelle plus large. Inverse de `org:hasUnit`."""@fr ;    
+    rdfs:comment """Duidt de Organisatie aan waarvan deze Organisatie of eenheid deel uitmaakt, bv. een departement binnen een grotere formele Organisatie. Omgekeerde van `org:hasUnit`."""@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
 #####################################
 #         PROPERTIES:schema         #
 #####################################
