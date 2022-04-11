@@ -339,14 +339,6 @@ meemoo:hasAccountManager    a   rdf:Property ;
     rdfs:label "heeft een accountmanager"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:hasContactPoint  a   rdf:Property ;
-    rdfs:domain org:Organization ;
-    rdfs:range  org:ContactPoint ;
-    rdfs:label "has a contact point"@en ;
-    rdfs:label "a un point de contact"@fr ;
-    rdfs:label "heeft een aanspreek-/meldpunt"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
-
 meemoo:hasLogo  a   rdf:Property ;
     rdfs:domain org:Organization ;
     rdfs:range  meemoo:Logo ;
@@ -533,6 +525,7 @@ schema:addressRegion    a   rdf:Property ;
     rdfs:comment "De regio waarin de plaats zich bevindt, en die in het land ligt. Bijvoorbeeld, Californië of een ander geschikte [administratieve afdeling van het eerste niveau](https://nl.wikipedia.org/wiki/Bestuurslagen_per_land)."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+#TODO SHACL domein organization range contact point toevoegen
 schema:contactPoint a   rdf:Property ;
     schema:domainIncludes schema:HealthInsurancePlan,
         schema:Organization,
@@ -541,6 +534,10 @@ schema:contactPoint a   rdf:Property ;
     rdfs:label "contactPoint"@en ;
     rdfs:label "pointDeContact"@fr ;
     rdfs:label "aanspreekpunt"@nl ;
+    # labels van verwijderd meemoo:hasContactPoint
+    # rdfs:label "has a contact point"@en ;
+    # rdfs:label "a un point de contact"@fr ;
+    # rdfs:label "heeft een aanspreek-/meldpunt"@nl ; 
     rdfs:comment "A contact point for a person or organization."@en ;
     rdfs:comment "Un point de contact pour une personne ou une organisation."@fr ;
     rdfs:comment "Een aanspreekpunt voor een persoon of een organisatie."@nl ;
