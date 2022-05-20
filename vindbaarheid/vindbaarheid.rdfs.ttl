@@ -40,6 +40,7 @@
 #      PREMIS      #
 ####################
 premis:IntellectualEntity a owl:Class, rdfs:Class ;
+    rdfs:subClassOf premis:Object ;
     owl:equivalentClass schema:CreativeWork ;
     rdfs:label "Intellectual entity"@en ;
     rdfs:label "Intellectueel entiteit"@nl ;
@@ -57,7 +58,7 @@ premis:IntellectualEntity a owl:Class, rdfs:Class ;
 #      MEEMOO      #
 ####################
 meemoo:DigitalRepresentation a rdfs:Class ;
-    owl:equivalentClass schema:CreativeWork ; #Ev. nog aanpassen
+    rdfs:subClassOf premis:Representation ;
     rdfs:label "Digital Representation"@en ;
     rdfs:label "Digitale Representatie"@nl ;
     rdfs:label "Représentation numérique"@fr ;
@@ -74,7 +75,7 @@ meemoo:LocalIdentifier a rdfs:Class ;
     rdfs:comment ""@en .
 
 meemoo:PhysicalRepresentation a rdfs:Class ;
-    owl:equivalentClass schema:CreativeWork ; #Ev. nog aanpassen
+    rdfs:subClassOf premis:Representation ;
     rdfs:label "Physical Representation"@en ;
     rdfs:label "Fysieke Representatie"@nl ;
     rdfs:label "Représentation physique"@fr ;
@@ -292,9 +293,9 @@ dct:medium a rdf:Property ;
 ####################
 #      EBUCORE     #
 ####################
-ebu:objectType a rdf:Property ; #? rdf:Class? https://www.ebu.ch/metadata/ontologies/ebucore/ebucore_ObjectType.html
+ebu:hasObjectType a rdf:Property ; 
     rdf:domain premis:IntellectualEntity ;
-    rdfs:range xsd:string ;
+    rdfs:range  [ owl:unionOf(xsd:string ebu:ObjectType rdfs:Resource) ] ;
     owl:equivalentProperty dct:type ;
     rdfs:label "Object type"@en ;
     rdfs:label "Object type"@nl ;
@@ -338,12 +339,9 @@ schema:alternateName a rdf:Property ;
     rdfs:comment "Een alias voor het item"@nl ;
     rdfs:comment "Un alias pour l'élément"@fr .
 
-_:x0 a owl:class ;
-    owl:unionOf(schema:Person org:Organization schema:Role) .
-
 schema:author a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range _:x0 ;
+    rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:creator ;
     rdfs:label "author"@en ;
     rdfs:label "auteur"@nl ;
@@ -363,7 +361,7 @@ schema:caption a rdf:Property ;
 
 schema:contributor a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range _:x0 ;
+    rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:contributor ;
     rdfs:label "contributor"@en ;
     rdfs:label "bijdrager"@nl ;
@@ -374,7 +372,7 @@ schema:contributor a rdf:Property ;
 
 schema:copyrightHolder a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range _:x0 ;
+    rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:rightsHolder ;
     rdfs:label "copyright holder"@en ;
     rdfs:label "auteurrechthebbende"@nl ;
@@ -534,12 +532,9 @@ schema:keywords a rdf:Property ;
     rdfs:comment "Trefwoorden of tags die gebruikt worden om een item te beschrijven. Meerdere tekstuele invoeringen in een trefwoordenlijst worden meestal gescheiden door komma's, of door het herhaling van de eigenschap."@nl ;
     rdfs:comment "Mots-clés ou mots-clés utilisés pour décrire un élément. Des entrées textuelles multiples dans une liste de mots-clés sont généralement séparées par des virgules, ou par répétition de la propriété."@fr .
 
-_:x1 a owl:class ;
-    owl:unionOf (schema:Thing skos:Concept ) .
-
 schema:license a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range _:x1 ;
+    rdfs:range [ owl:unionOf(schema:Thing skos:Concept) ] ;
     owl:equivalentProperty dct:accessRights ;
     rdfs:label "license"@en ;
     rdfs:label "licentie"@nl ;
