@@ -6,7 +6,6 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix meemoo: <https://data.hetarchief.be/ns/algemeen/>  .
-@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -229,20 +228,6 @@ dct:medium a rdf:Property ;
     rdfs:comment "The material or physical carrier of the resource"@en ;
     rdfs:comment "Het materiaal of fysieke vervoer van de bron"@nl ;
     rdfs:comment "Le support physique ou le matériel de la ressource"@fr .
-
-####################
-#      EBUCORE     #
-####################
-ebu:hasObjectType a rdf:Property ; 
-    rdf:domain premis:IntellectualEntity ;
-    rdfs:range  [ owl:unionOf(xsd:string ebu:ObjectType rdfs:Resource) ] ;
-    owl:equivalentProperty dct:type ;
-    rdfs:label "Object type"@en ;
-    rdfs:label "Object type"@nl ;
-    rdfs:label "Type d'objet"@fr ;
-    rdfs:comment "To specify the type of BusinessObject e.g. and EditorialObject of type programme or clip"@en ;
-    rdfs:comment "Om het type BusinessObject te specificeren, bijv. een EditorialObject van het type programma of clip"@nl ;
-    rdfs:comment "Pour spécifier le type d'objet BusinessObject, par exemple un EditorialObject de type programme ou clip"@fr .
 
 ####################
 #      SCHEMA      #
