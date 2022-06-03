@@ -35,35 +35,6 @@
 #####################################
 
 ####################
-#      MEEMOO      #
-####################
-meemoo:DigitalRepresentation a rdfs:Class ;
-    rdfs:subClassOf premis:Representation ;
-    rdfs:label "Digital Representation"@en ;
-    rdfs:label "Digitale Representatie"@nl ;
-    rdfs:label "Représentation numérique"@fr ;
-    rdfs:comment "Digital representation of of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture.."@en ;
-    rdfs:comment "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analog AV carrier, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
-    rdfs:comment "Représentation numérique d'un entité intellectuelle archivée, tel qu'un contenu analogique, un canvas, ou un objet physique comme une sculpture."@fr .
-    
-meemoo:LocalIdentifier a rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label "Local Identifier"@en ;
-    rdfs:label "Lokale identifier"@nl ;
-    rdfs:label "Identifiant local"@fr ;
-    #? rdfs:comment?
-    rdfs:comment ""@en .
-
-meemoo:PhysicalRepresentation a rdfs:Class ;
-    rdfs:subClassOf premis:Representation ;
-    rdfs:label "Physical Representation"@en ;
-    rdfs:label "Fysieke Representatie"@nl ;
-    rdfs:label "Représentation physique"@fr ;
-    rdfs:comment "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
-    rdfs:comment "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analog AV carrier, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
-    rdfs:comment "Représentation physique d'un entité intellectuelle archivée, tel qu'un contenu analogique, un canvas, ou un objet physique comme une sculpture."@fr .
-
-####################
 #      SCHEMA      #
 ####################
 schema:ArchiveComponent a rdfs:Class;
