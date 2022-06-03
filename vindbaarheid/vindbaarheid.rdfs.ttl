@@ -2,7 +2,6 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
-@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -35,24 +34,6 @@
 #####################################
 #              CLASSES              #
 #####################################
-
-####################
-#      PREMIS      #
-####################
-premis:IntellectualEntity a owl:Class, rdfs:Class ;
-    rdfs:subClassOf premis:Object ;
-    owl:equivalentClass schema:CreativeWork ;
-    rdfs:label "Intellectual entity"@en ;
-    rdfs:label "Intellectueel entiteit"@nl ;
-    rdfs:label "Entité intellectuelle"@fr ;
-    rdfs:comment """set of content that is considered a single intellectual unit for purposes of management and
-      description."""@en ;
-    rdfs:comment """set van inhoud die beschouwd wordt als een enkele intellectuele eenheid voor doeleinden van management en
-      beschrijving."""@nl ;
-    rdfs:comment """ensemble de contenu qui est considéré comme une unité intellectuelle pour les
-        objectifs de gestion et de description.
-        """@fr .
-
 
 ####################
 #      MEEMOO      #
@@ -219,47 +200,6 @@ skos:Concept a owl:Class, rdfs:Class ;
 #####################################
 #             PROPERTIES            #
 #####################################
-
-####################
-#      PREMIS      #
-####################
-premis:hasPart a rdf:Property ;
-    rdfs:domain premis:Object ;
-    rdfs:range premis:Object ;
-    owl:equivalentProperty dct:hasPart ;
-    owl:inverseOf premis:isPartOf ;
-    rdfs:label "has part"@en ;
-    rdfs:label "heeft onderdeel"@nl ;
-    rdfs:label "a partie"@fr ;
-    rdfs:comment ""@en .
-
-
-premis:identifier a rdf:Property ;
-    rdfs:domain premis:IntellectualEntity ;
-    rdfs:range meemoo:LocalIdentifier ;
-    rdfs:label "identifier"@en ;
-    rdfs:label "identifier"@nl ;
-    rdfs:label "identifiant"@fr ;
-    rdfs:comment ""@en .
-
-premis:isPartOf a rdf:Property ;
-    rdfs:domain premis:IntellectualEntity ;
-    rdfs:range premis:IntellectualEntity ;
-    owl:equivalentProperty dct:isPartOf ;
-    owl:inverseOf premis:hasPart ;
-    rdfs:label "is part of"@en ;
-    rdfs:label "is onderdeel van"@nl ;
-    rdfs:label "est une partie de"@fr ;
-    rdfs:comment ""@en .
-
-premis:relationship a rdf:Property ;
-    rdfs:domain premis:Object ;
-    rdfs:range premis:Object ;
-    owl:equivalentProperty dct:relation ;
-    rdfs:label "relationship"@en ;
-    rdfs:label "relatie"@nl ;
-    rdfs:label "relation"@fr ;
-    rdfs:comment ""@en .
 
 ####################
 #      DCTERMS     #
