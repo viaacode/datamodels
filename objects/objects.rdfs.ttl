@@ -561,6 +561,16 @@ ebucore:hasMediaFragment  a rdf:Property ;
   owl:equivalentProperty ma:hasFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
+ebucore:hasObjectType  a rdf:Property ;
+  rdfs:label "Object/asset type"@en ;
+  rdfs:label "Type d'object/actif"@fr ;
+  rdfs:label "Object-/activatype"@nl ;
+  rdfs:comment """To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."""@en ;
+  rdfs:comment """Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."""@fr ;
+  rdfs:comment """Om een ObjectType te definiëren voor een BusinessObject (bv. book, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."""@nl ;
+  rdfs:range xsd:anyURI, ebucore:ObjectType, xsd:string ;
+  rdfs:domain ebucore:EditorialObject .
+
 ebucore:isMediaFragmentOf  a rdf:Property ;
   rdfs:range ebucore:MediaResource ;
   rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to."@en ;
