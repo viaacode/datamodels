@@ -1,6 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix meemoo: <https://data.hetarchief.be/ns/organisatie#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organisations#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -29,7 +29,7 @@
     dct:title     "Modèle SHACL Organisations"@fr ;
     dct:title     "SHACL-model Organisaties"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2022-03-30" ;
+    dct:modified  "2022-06-16" ;
     dct:description """SHACL model to validate/describe organisations."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des organisations."""@fr ;
     dct:description """SHACL-model voor het valideren/beschrijven van organisaties."""@nl .
@@ -39,14 +39,14 @@
 #     NodeShapes     #
 ######################
 
-meemoo:OrganizationShape a sh:NodeShape ;
+haOrg:OrganizationShape a sh:NodeShape ;
   sh:targetClass org:Organization ;
-  sh:property meemoo:prefLabelShape, 
-              meemoo:altLabelShape, 
+  sh:property haOrg:prefLabelShape, 
+              haOrg:altLabelShape, 
               [
-                sh:path meemoo:hasLogo ;
+                sh:path haOrg:hasLogo ;
                 sh:minCount 1 ;
-                sh:class meemoo:Logo ;
+                sh:class haOrg:Logo ;
 
                 sh:name "logo"@en ;
                 sh:name "logo"@fr ;
@@ -56,9 +56,9 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:description "Elke Organisatie heeft minstens één geassocieerd logo nodig."@nl ;
                 
                 sh:severity sh:Violation ;
-                sh:message "meemoo:hasLogo is missing or its Object is no meemoo:logo"@en ;
-                sh:message "meemoo:hasLogo est absent ou son Object n'est pas un meemoo:logo"@fr ;
-                sh:message "meemoo:hasLogo ontbreekt of zijn Object is geen meemoo:logo"@nl
+                sh:message "haOrg:hasLogo is missing or its Object is no haOrg:logo"@en ;
+                sh:message "haOrg:hasLogo est absent ou son Object n'est pas un haOrg:logo"@fr ;
+                sh:message "haOrg:hasLogo ontbreekt of zijn Object is geen haOrg:logo"@nl
               ], 
               [
                 sh:path foaf:homepage ;
@@ -99,7 +99,7 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 # vraag: op dit moment lijken de organisaties in INT geen classificatie te hebben; is dit iets dat nog moet worden toegevoegd aan de data/ETL?
                 # lijkt me wel dat elke organisatie er idealiter minstens 1 heeft
                 # sh:minCount 1 ;
-                sh:class meemoo:OrganizationType ;
+                sh:class haOrg:OrganizationType ;
 
                 sh:name "classification"@en ;
                 sh:name "classification"@fr ;
@@ -107,9 +107,9 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:description "Elke Organisatie moet behoren tot minstens 1 organisatietype."@nl ;
 
                 sh:severity sh:Violation ;
-                sh:message "org:classification is missing or its Object is no meemoo:OrganizationType"@en ;
-                sh:message "org:classification est absent ou son Object n'est pas un meemoo:OrganizationType"@fr ;
-                sh:message "org:classification ontbreekt of zijn Object is geen meemoo:OrganizationType"@nl
+                sh:message "org:classification is missing or its Object is no haOrg:OrganizationType"@en ;
+                sh:message "org:classification est absent ou son Object n'est pas un haOrg:OrganizationType"@fr ;
+                sh:message "org:classification ontbreekt of zijn Object is geen haOrg:OrganizationType"@nl
               ],
               [
                 sh:path org:hasUnit ;
@@ -169,11 +169,11 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:message "org:hasPrimarySite komt meer dan eens voor of zijn Object is geen org:Site"@nl
               ],
               [
-                # vraag: volstaat het om nog een meemoo:isPartOf te definiëren met een nieuwe sh:class om bv. deel uit te maken van een andere agreement?
-                # aangezien meemoo:isPartOf slaat op agr:Agreement en niet specifiek op meemoo:CollaborationAgreement?
-                sh:path meemoo:isPartOf ;
+                # vraag: volstaat het om nog een haOrg:isPartOf te definiëren met een nieuwe sh:class om bv. deel uit te maken van een andere agreement?
+                # aangezien haOrg:isPartOf slaat op agr:Agreement en niet specifiek op haOrg:CollaborationAgreement?
+                sh:path haOrg:isPartOf ;
                 sh:maxCount 1 ;
-                sh:class meemoo:CollaborationAgreement ;
+                sh:class haOrg:CollaborationAgreement ;
                 
                 sh:name "is part of"@en ;
                 sh:name "fait partie de"@fr ;
@@ -181,12 +181,12 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:description "Elke Organisatie kan van maximum 1 samenwerkingsovereenkomst deel uitmaken."@nl ;
                 
                 sh:severity sh:Info ;
-                sh:message "meemoo:isPartOf occurs more than once or its Object is no meemoo:CollaborationAgreement"@en ;
-                sh:message "meemoo:isPartOf apparaît plus d'une seule fois ou son Object n'est pas un meemoo:CollaborationAgreement"@fr ;
-                sh:message "meemoo:isPartOf komt meer dan eens voor of zijn Object is geen meemoo:CollaborationAgreement"@nl 
+                sh:message "haOrg:isPartOf occurs more than once or its Object is no haOrg:CollaborationAgreement"@en ;
+                sh:message "haOrg:isPartOf apparaît plus d'une seule fois ou son Object n'est pas un haOrg:CollaborationAgreement"@fr ;
+                sh:message "haOrg:isPartOf komt meer dan eens voor of zijn Object is geen haOrg:CollaborationAgreement"@nl 
               ],
               [
-                sh:path meemoo:hasAccountmanager ;
+                sh:path haOrg:hasAccountmanager ;
                 sh:maxCount 1 ;
                 sh:class schema:Person ;
 
@@ -196,9 +196,9 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:description "Elke Organisatie kan maximum 1 accountmanager hebben. Deze accountmanager moet een persoon zijn."@nl ;
 
                 sh:severity sh:Warning ;
-                sh:message "meemoo:hasAccountmanager occurs more than once or its Object is no schema:Person"@en ;
-                sh:message "meemoo:hasAccountmanager apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr ;
-                sh:message "meemoo:hasAccountmanager komt meer dan eens voor of zijn Object is geen schema:Person"@nl 
+                sh:message "haOrg:hasAccountmanager occurs more than once or its Object is no schema:Person"@en ;
+                sh:message "haOrg:hasAccountmanager apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr ;
+                sh:message "haOrg:hasAccountmanager komt meer dan eens voor of zijn Object is geen schema:Person"@nl 
               ],
               [
                 sh:path org:hasPost ;
@@ -218,7 +218,7 @@ meemoo:OrganizationShape a sh:NodeShape ;
                 sh:message "org:hasPost ontbreekt of zijn Object is geen org:Post"@nl ;
               ] .
 
-meemoo:OrganizationalUnitShape a sh:NodeShape ;
+haOrg:OrganizationalUnitShape a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
                 sh:path org:unitOf ;
@@ -236,36 +236,36 @@ meemoo:OrganizationalUnitShape a sh:NodeShape ;
                 sh:message "org:unitOf ontbreekt of zijn Object is geen org:Organization."@nl 
               ] .
 
-meemoo:ContentPartnerShape a sh:NodeShape ;
-  sh:targetClass meemoo:ContentPartner ;
-  sh:property meemoo:accountManagerShape .
+haOrg:ContentPartnerShape a sh:NodeShape ;
+  sh:targetClass haOrg:ContentPartner ;
+  sh:property haOrg:accountManagerShape .
 
-meemoo:ServiceProviderShape  a sh:NodeShape ;
-  sh:targetClass meemoo:ServiceProvider .
+haOrg:ServiceProviderShape  a sh:NodeShape ;
+  sh:targetClass haOrg:ServiceProvider .
 
-meemoo:ServiceConsumerShape  a sh:NodeShape ;
-  sh:targetClass meemoo:ServiceConsumer .
+haOrg:ServiceConsumerShape  a sh:NodeShape ;
+  sh:targetClass haOrg:ServiceConsumer .
 
-meemoo:EducationalOrganizationShape  a sh:NodeShape ;
-  sh:targetClass meemoo:EducationalOrganization .
+haOrg:EducationalOrganizationShape  a sh:NodeShape ;
+  sh:targetClass haOrg:EducationalOrganization .
 
-meemoo:EducationalPartnerShape  a sh:NodeShape ;
-  sh:targetClass meemoo:EducationalPartner ;
-  sh:property meemoo:accountManagerShape .
+haOrg:EducationalPartnerShape  a sh:NodeShape ;
+  sh:targetClass haOrg:EducationalPartner ;
+  sh:property haOrg:accountManagerShape .
 
-meemoo:EducationalPublisherShape  a sh:NodeShape ;
-  sh:targetClass meemoo:EducationalPublisher .
+haOrg:EducationalPublisherShape  a sh:NodeShape ;
+  sh:targetClass haOrg:EducationalPublisher .
 
-meemoo:SchoolShape a sh:NodeShape ;
-  sh:targetClass meemoo:School .
+haOrg:SchoolShape a sh:NodeShape ;
+  sh:targetClass haOrg:School .
 
-meemoo:CollaborationAgreementShape a sh:NodeShape ;
-  sh:targetClass meemoo:CollaborationAgreement .
+haOrg:CollaborationAgreementShape a sh:NodeShape ;
+  sh:targetClass haOrg:CollaborationAgreement .
 
-meemoo:ServiceAgreementShape a sh:NodeShape ;
-  sh:targetClass meemoo:ServiceAgreement .
+haOrg:ServiceAgreementShape a sh:NodeShape ;
+  sh:targetClass haOrg:ServiceAgreement .
 
-meemoo:SiteShape  a  sh:NodeShape ;
+haOrg:SiteShape  a  sh:NodeShape ;
   sh:targetClass org:Site ;
   sh:property [
                 sh:path org:siteAddress ;
@@ -284,7 +284,7 @@ meemoo:SiteShape  a  sh:NodeShape ;
                 sh:message "org:siteAddress komt meer dan eens voor of zijn Object is geen schema:PostalAddress"@nl 
               ] .
 
-meemoo:PostShape a sh:NodeShape;
+haOrg:PostShape a sh:NodeShape;
   sh:targetClass org:Post ;
   sh:property [        
                 sh:path org:role ;
@@ -321,11 +321,11 @@ meemoo:PostShape a sh:NodeShape;
                 sh:message "org:postIn ontbreekt of zijn Object is geen org:Organization"@nl 
               ] .
     
-meemoo:RoleShape a sh:NodeShape;
+haOrg:RoleShape a sh:NodeShape;
   sh:targetClass org:Role ;
-  sh:property meemoo:prefLabelShape .
+  sh:property haOrg:prefLabelShape .
 
-meemoo:PersonShape a sh:NodeShape ;
+haOrg:PersonShape a sh:NodeShape ;
   sh:targetClass schema:Person ;
   sh:property [    
                 sh:path org:holds ;
@@ -368,39 +368,39 @@ meemoo:PersonShape a sh:NodeShape ;
                 sh:name "email"@nl ;
               ],
               [
-                sh:path meemoo:isAccountManagerOf ;
+                sh:path haOrg:isAccountManagerOf ;
                 sh:or (
-                        [ sh:class meemoo:ContentPartner ]
-                        [ sh:class meemoo:EducationalPartner ]
+                        [ sh:class haOrg:ContentPartner ]
+                        [ sh:class haOrg:EducationalPartner ]
                       ) ;
                 sh:name "is account manager of"@en ;
                 sh:name "est le Gestionnaire de Comptes de"@fr ;
                 sh:name "is account manager van"@nl ;
     
                 sh:severity sh:Warning ;
-                sh:message "The Object of meemoo:isAccountManagerOf is neither meemoo:ContentPartner nor meemoo:EducationalPartner."@en
+                sh:message "The Object of haOrg:isAccountManagerOf is neither haOrg:ContentPartner nor haOrg:EducationalPartner."@en
               ] .
 
-meemoo:PostalAddressShape  a sh:NodeShape ;
+haOrg:PostalAddressShape  a sh:NodeShape ;
   sh:targetClass schema:PostalAddress ;
-  sh:property meemoo:PostalAddress-addressCountryShape ;
-  sh:property meemoo:PostalAddress-addressLocalityShape ;
-  sh:property meemoo:PostalAddress-addressRegionShape ;
-  sh:property meemoo:PostalAddress-postOfficeBoxNumberShape ;
-  sh:property meemoo:PostalAddress-postalCodeShape ;
-  sh:property meemoo:PostalAddress-streetAddressShape .
+  sh:property haOrg:PostalAddress-addressCountryShape ;
+  sh:property haOrg:PostalAddress-addressLocalityShape ;
+  sh:property haOrg:PostalAddress-addressRegionShape ;
+  sh:property haOrg:PostalAddress-postOfficeBoxNumberShape ;
+  sh:property haOrg:PostalAddress-postalCodeShape ;
+  sh:property haOrg:PostalAddress-streetAddressShape .
 
-meemoo:ContactPointShape  a sh:NodeShape ;
+haOrg:ContactPointShape  a sh:NodeShape ;
   sh:targetClass schema:ContactPoint ;
   sh:property schema:ContactPoint-contactTypeShape ;
   sh:property schema:ContactPoint-emailShape ;
   sh:property schema:ContactPoint-telephoneShape .
 
-meemoo:LogoShape  a sh:NodeShape ;
-  sh:targetClass meemoo:Logo ;
+haOrg:LogoShape  a sh:NodeShape ;
+  sh:targetClass haOrg:Logo ;
   sh:property [
-                sh:path   meemoo:applicationContext ;
-                sh:class  meemoo:LogoContext ;
+                sh:path   haOrg:applicationContext ;
+                sh:class  haOrg:LogoContext ;
 
                 sh:name "Context in which a logo is applied"@en ;
                 sh:name "Contexte dans lequel un logo est utilisé"@fr ;
@@ -408,19 +408,19 @@ meemoo:LogoShape  a sh:NodeShape ;
                 sh:description "Een logo kan een of meerdere applicatiecontexten hebben waarbij het gebruikt wordt."@nl ;
 
                 sh:severity sh:Info ;
-                sh:message "The Object of meemoo:applicationContext is no meemoo:LogoContext."@en ;
-                sh:message "L'Object de meemoo:applicationContext n'est pas un meemoo:LogoContext."@fr ;
-                sh:message "Het Object van meemoo:applicationContext is geen meemoo:LogoContext."@nl 
+                sh:message "The Object of haOrg:applicationContext is no haOrg:LogoContext."@en ;
+                sh:message "L'Object de haOrg:applicationContext n'est pas un haOrg:LogoContext."@fr ;
+                sh:message "Het Object van haOrg:applicationContext is geen haOrg:LogoContext."@nl 
               ] .
 
-meemoo:LogoContextShape a sh:NodeShape ;
-  sh:targetClass meemoo:LogoContext .        
+haOrg:LogoContextShape a sh:NodeShape ;
+  sh:targetClass haOrg:LogoContext .        
 
 ##########################
 #     PropertyShapes     #
 ##########################
 
-meemoo:PostalAddress-addressCountryShape a sh:PropertyShape ;
+haOrg:PostalAddress-addressCountryShape a sh:PropertyShape ;
   sh:path schema:addressCountry ;
   
   sh:name "country"@en ;
@@ -434,65 +434,65 @@ meemoo:PostalAddress-addressCountryShape a sh:PropertyShape ;
   
   sh:severity sh:Info ;
   sh:message "The Object of schema:addressCountry is neither schema:Country nor xsd:string."@en ;
-                sh:message "L'Object de meemoo:applicationContext n'est pas un meemoo:LogoContext."@fr ;
-                sh:message "Het Object van meemoo:applicationContext is geen meemoo:LogoContext."@nl.
+                sh:message "L'Object de haOrg:applicationContext n'est pas un haOrg:LogoContext."@fr ;
+                sh:message "Het Object van haOrg:applicationContext is geen haOrg:LogoContext."@nl.
 
-meemoo:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
+haOrg:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
   sh:path schema:addressLocality ;
   sh:datatype xsd:string ;
   
   sh:description "The locality in which the street address is, and which is in the region. For example, Mountain View." ;
   sh:name "addressLocality" .
 
-meemoo:PostalAddress-addressRegionShape  a sh:PropertyShape ;
+haOrg:PostalAddress-addressRegionShape  a sh:PropertyShape ;
   sh:path schema:addressRegion ;
   sh:datatype xsd:string ;
   
   sh:description "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href=\"https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country\">Administrative division</a>" ;
   sh:name "addressRegion" .
 
-meemoo:PostalAddress-postOfficeBoxNumberShape  a sh:PropertyShape ;
+haOrg:PostalAddress-postOfficeBoxNumberShape  a sh:PropertyShape ;
   sh:path schema:postOfficeBoxNumber ;
   sh:datatype xsd:string ;
   
   sh:description "The post office box number for PO box addresses." ;
   sh:name "postOfficeBoxNumber" .
 
-meemoo:PostalAddress-postalCodeShape a sh:PropertyShape ;
+haOrg:PostalAddress-postalCodeShape a sh:PropertyShape ;
   sh:path schema:postalCode ;
   sh:datatype xsd:string ;
 
   sh:description "The postal code. For example, 94043." ;
   sh:name "postalCode" .
 
-meemoo:PostalAddress-streetAddressShape  a sh:PropertyShape ;
+haOrg:PostalAddress-streetAddressShape  a sh:PropertyShape ;
   sh:path schema:streetAddress ;
   sh:datatype xsd:string ;
   
   sh:name "streetAddress" .
 
-meemoo:ContactPoint-contactTypeShape  a sh:PropertyShape ;
+haOrg:ContactPoint-contactTypeShape  a sh:PropertyShape ;
   sh:path schema:contactType ;
   sh:datatype xsd:string ;
   
   sh:name "contact type"@en ;
   sh:name "contacttype"@nl .
 
-meemoo:ContactPoint-emailShape a sh:PropertyShape ;
+haOrg:ContactPoint-emailShape a sh:PropertyShape ;
   sh:path schema:email ;
   sh:datatype xsd:string ;
   
   sh:name "email"@en ;
   sh:name "email"@nl .
 
-meemoo:ContactPoint-telephoneShape  a sh:PropertyShape ;
+haOrg:ContactPoint-telephoneShape  a sh:PropertyShape ;
   sh:path schema:telephone ;
   sh:datatype xsd:string ;
   
   sh:name "telephone"@en ;
   sh:name "telefoonnummer"@nl .
 
-meemoo:prefLabelShape  a sh:PropertyShape ;
+haOrg:prefLabelShape  a sh:PropertyShape ;
   sh:path skos:prefLabel ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
@@ -508,7 +508,7 @@ meemoo:prefLabelShape  a sh:PropertyShape ;
   sh:message "skos:prefLabel is missing or its Object is no xsd:string."@fr ;
   sh:message "skos:prefLabel is missing or its Object is no xsd:string."@nl .
 
-meemoo:altLabelShape a sh:PropertyShape ;
+haOrg:altLabelShape a sh:PropertyShape ;
   sh:path skos:altLabel ;
   sh:datatype xsd:string ;
 
@@ -519,8 +519,8 @@ meemoo:altLabelShape a sh:PropertyShape ;
   sh:severity sh:Warning ;
   sh:message "skos:altLabel is missing or no Literal"@en .
     
-meemoo:accountManagerShape  a sh:PropertyShape ;    
-  sh:path meemoo:hasAccountManager ;
+haOrg:accountManagerShape  a sh:PropertyShape ;    
+  sh:path haOrg:hasAccountManager ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
   sh:class schema:Person ;
@@ -530,6 +530,6 @@ meemoo:accountManagerShape  a sh:PropertyShape ;
   sh:name "heeft account manager"@nl ;
     
   sh:severity sh:Violation ;
-  sh:message "meemoo:hasAccountManager is missing, occurs more than once or its Object is no schema:Person"@en ;
-  sh:message "meemoo:hasAccountManager est absemt, apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr ;
-  sh:message "meemoo:hasAccountManager ontbreekt, komt meer dan eens voor or its Object is no schema:Person"@nl .
+  sh:message "haOrg:hasAccountManager is missing, occurs more than once or its Object is no schema:Person"@en ;
+  sh:message "haOrg:hasAccountManager est absemt, apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr ;
+  sh:message "haOrg:hasAccountManager ontbreekt, komt meer dan eens voor or its Object is no schema:Person"@nl .
