@@ -1,7 +1,7 @@
 @prefix agr: <http://promsns.org/def/agr#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf:<http://xmlns.com/foaf/0.1/> .
-@prefix meemoo: <https://data.hetarchief.be/ns/organisatie#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organisations#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -76,14 +76,14 @@ foaf:Agent a    owl:Class, rdfs:Class ;
 #           CLASSES:meemoo          #
 #####################################
 
-meemoo:CollaborationAgreement   a   rdfs:Class ;
+haOrg:CollaborationAgreement   a   rdfs:Class ;
     rdfs:subClassOf agr:Agreement ;
     rdfs:label "Collaboration Agreement"@en ;
     rdfs:label "Accord de Collaboration"@fr ;
     rdfs:label "Samenwerkingsovereenkomst"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:ContentPartner   a   rdfs:Class ;
+haOrg:ContentPartner   a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Content Partner"@en ;
     rdfs:label "Partenaire de Contenus"@fr ;
@@ -91,7 +91,7 @@ meemoo:ContentPartner   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
     # `Aanbieder` wordt gebruikt in AVO voor CP
 
-meemoo:EducationalOrganization  a   rdfs:Class ;
+haOrg:EducationalOrganization  a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     owl:equivalentClass schema:EducationalOrganization ;
     rdfs:label "Educational Organization"@en ;
@@ -99,21 +99,21 @@ meemoo:EducationalOrganization  a   rdfs:Class ;
     rdfs:label "Educatieve organisatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:EducationalPartner   a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
+haOrg:EducationalPartner   a   rdfs:Class ;
+    rdfs:subClassOf haOrg:EducationalOrganization ;
     rdfs:label "Educational Partner"@en ;
     rdfs:label "Partenaire Éducatif"@fr ;
     rdfs:label "Educatieve partner"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:EducationalPublisher a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
+haOrg:EducationalPublisher a   rdfs:Class ;
+    rdfs:subClassOf haOrg:EducationalOrganization ;
     rdfs:label "Educational Publisher"@en ;
     rdfs:label "Éditeur éducatif"@fr ;
     rdfs:label "Educatieve uitgeverij"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:GovernmentOrganization   a   rdfs:Class ;
+haOrg:GovernmentOrganization   a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     owl:equivalentClass schema:GovernmentOrganization ;
     rdfs:label "Government Organization"@en ;
@@ -121,56 +121,56 @@ meemoo:GovernmentOrganization   a   rdfs:Class ;
     rdfs:label "Overheidsorganisatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:Logo a   rdfs:Class ;
+haOrg:Logo a   rdfs:Class ;
     rdfs:label  "Logo"@en ;
     rdfs:label  "Logo"@fr ;
     rdfs:label  "Logo"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:LogoContext  a   rdfs:Class ;
+haOrg:LogoContext  a   rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "Context of a Logo"@en ;
     rdfs:label  "Contexte d'un Logo"@fr ;
     rdfs:label  "Context van een Logo"@en ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:ManagementAgreement  a   rdfs:Class ;
+haOrg:ManagementAgreement  a   rdfs:Class ;
     rdfs:subClassOf agr:Agreement ;
     rdfs:label "Management Agreement"@en ;
     rdfs:label "Contrat de Gestion"@fr ;
     rdfs:label "Beheersovereenkomst"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:OrganizationType a   rdfs:Class ;
+haOrg:OrganizationType a   rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "Organization Type"@en ;
     rdfs:label  "Type de Organisation"@fr ;
     rdfs:label  "Organisatietype"@en ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:School   a   rdfs:Class ;
-    rdfs:subClassOf meemoo:EducationalOrganization ;
+haOrg:School   a   rdfs:Class ;
+    rdfs:subClassOf haOrg:EducationalOrganization ;
     owl:equivalentClass schema:School ;
     rdfs:label "School"@en ;
     rdfs:label "École"@fr ;
     rdfs:label "School"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:ServiceAgreement a   rdfs:Class ;
+haOrg:ServiceAgreement a   rdfs:Class ;
     rdfs:subClassOf agr:Agreement ;
     rdfs:label "Service Agreement"@en ;
     rdfs:label "Contrat de Service"@fr ;
     rdfs:label "Dienstverleningsovereenkomst"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:ServiceConsumer  a   rdfs:Class ;
+haOrg:ServiceConsumer  a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Service Consumer"@en ;
     rdfs:label "Consomatteur de Services"@fr ;
     rdfs:label "Dienstenafnemer"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:ServiceProvider  a   rdfs:Class ;
+haOrg:ServiceProvider  a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Service Provider"@en ;
     rdfs:label "Fournisseur de Services" ;
@@ -303,54 +303,54 @@ foaf:homepage   a   rdf:Property ;
 #         PROPERTIES:meemoo         #
 #####################################
 
-meemoo:isAccountManagerOf a   rdf:Property ;
+haOrg:isAccountManagerOf a   rdf:Property ;
     rdfs:domain schema:Person ;
     rdfs:range org:Organization ;
-    owl:inverseOf meemoo:hasAccountManager ;
+    owl:inverseOf haOrg:hasAccountManager ;
     rdfs:label "Is account manager of"@en ;
     rdfs:label "Est gestionairre de comptes de"@fr ;
     rdfs:label "Is account manager van"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:applicationContext   a   rdf:Property ;
-    rdfs:domain meemoo:Logo ;
-    rdfs:range meemoo:LogoContext ;
+haOrg:applicationContext   a   rdf:Property ;
+    rdfs:domain haOrg:Logo ;
+    rdfs:range haOrg:LogoContext ;
     rdfs:label "Context in which a logo is applied"@en ;
     rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
     rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:contains a   rdf:Property ;
+haOrg:contains a   rdf:Property ;
     rdfs:domain agr:Agreement ;
     rdfs:range org:Organization ;
-    owl:inverseOf meemoo:isPartOf ;
+    owl:inverseOf haOrg:isPartOf ;
     owl:equivalentProperty schema:hasPart ;
     rdfs:label "contains"@en ;
     rdfs:label "contient"@fr ;
     rdfs:label "bevat"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:hasAccountManager    a   rdf:Property ;
+haOrg:hasAccountManager    a   rdf:Property ;
     rdfs:domain org:Organization ;
     rdfs:range  schema:Person ;
-    owl:inverseOf meemoo:isAccountManagerOf ;
+    owl:inverseOf haOrg:isAccountManagerOf ;
     rdfs:label "has an account manager"@en ;
     rdfs:label "a un gestionnaire de comptes"@fr ;
     rdfs:label "heeft een accountmanager"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:hasLogo  a   rdf:Property ;
+haOrg:hasLogo  a   rdf:Property ;
     rdfs:domain org:Organization ;
-    rdfs:range  meemoo:Logo ;
+    rdfs:range  haOrg:Logo ;
     rdfs:label "has a logo"@en ;
     rdfs:label "a un logo"@fr ;
     rdfs:label "heeft een logo"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-meemoo:isPartOf a   rdf:Property ;
+haOrg:isPartOf a   rdf:Property ;
     rdfs:domain org:Organization ;
     rdfs:range  agr:Agreement ;
-    owl:inverseOf meemoo:contains ;
+    owl:inverseOf haOrg:contains ;
     owl:equivalentProperty schema:isPartOf ;
     owl:equivalentProperty dct:isPartOf ;
     rdfs:label "is part of"@en ;
@@ -534,7 +534,7 @@ schema:contactPoint a   rdf:Property ;
     rdfs:label "contactPoint"@en ;
     rdfs:label "pointDeContact"@fr ;
     rdfs:label "aanspreekpunt"@nl ;
-    # labels van verwijderd meemoo:hasContactPoint
+    # labels van verwijderd haOrg:hasContactPoint
     # rdfs:label "has a contact point"@en ;
     # rdfs:label "a un point de contact"@fr ;
     # rdfs:label "heeft een aanspreek-/meldpunt"@nl ; 
