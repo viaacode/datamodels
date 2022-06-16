@@ -1,20 +1,17 @@
-@prefix agr: <http://promsns.org/def/agr#> .
 @prefix dc11: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
-@prefix foaf:<http://xmlns.com/foaf/0.1/> .
+@prefix haEnt: <https://data.hetarchief.be/ns/entities#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
-@prefix meemoo: <https://data.hetarchief.be/ns/object#> .
-@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
-@prefix premis_relsubtype: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix schema: <https://schema.org/> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema> .
 
@@ -33,7 +30,7 @@
     dct:title     "Modèle de données Objets"@fr ;
     dct:title     "Datamodel Objecten"@nl ;
     dct:created   "2022-05-16" ;
-    dct:modified  "2022-05-18" ;
+    dct:modified  "2022-06-18" ;
     dct:description """Data model to describe objects."""@en ;
     dct:description """Modèle de données pour décrire des objets."""@fr ;
     dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
@@ -161,7 +158,7 @@ ebucore:PhysicalResource  a rdfs:Class ;
 
 # meemoo classes
 
-meemoo:DigitalRepresentation a rdfs:Class ;
+haEnt:DigitalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
     rdfs:label "Digital representation"@en ;
     rdfs:label "Représentation digitale"@fr ;
@@ -175,7 +172,7 @@ meemoo:DigitalRepresentation a rdfs:Class ;
 # ebucore gebruikt bv. ook mimetypes ipv. fileformat (denk ik)
 # oplossing: aparte klasse, maar wel equivalente klassen oplijsten?
 # voordeel van mimetypes ipv. fileformats te gebruiken, is dat je voc wel meteen vaststaat?
-meemoo:FileFormat a rdfs:Class ;
+haEnt:FileFormat a rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     owl:equivalentClass dct:format ;
     rdfs:label "File format"@en ;
@@ -183,7 +180,7 @@ meemoo:FileFormat a rdfs:Class ;
     rdfs:label "Bestandsformaat"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:Identifier a rdfs:Class ;
+haEnt:Identifier a rdfs:Class ;
     rdfs:subClassOf premis:Identifier ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Physical representation"@en ;
@@ -191,7 +188,7 @@ meemoo:Identifier a rdfs:Class ;
     rdfs:label "Fysieke representatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:PhysicalRepresentation a rdfs:Class ;
+haEnt:PhysicalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
     rdfs:label "Physical representation"@en ;
     rdfs:label "Représentation physique"@fr ;
@@ -202,14 +199,14 @@ meemoo:PhysicalRepresentation a rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
 # vraag: is er nood aan deze klasse bij ons als je bv. ebucore:PhysicalResource hebt?
-meemoo:PhysicalMedium a rdfs:Class ;
+haEnt:PhysicalMedium a rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Physical medium"@en ;
     rdfs:label "Support matériel/physique"@fr ;
     rdfs:label "Fysiek medium"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:RepresentationType  a   rdfs:Class ;
+haEnt:RepresentationType  a   rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "Type of a representation"@en ;
     rdfs:label  "Type d'une representation"@fr ;
@@ -217,7 +214,7 @@ meemoo:RepresentationType  a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
 # vraag: kan deze niet samengenomen worden met PhysicalMedium?
-meemoo:StorageMedium  a   rdfs:Class ;
+haEnt:StorageMedium  a   rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "Storage medium"@en ;
     rdfs:label  "Support de stockage"@fr ;
@@ -240,7 +237,7 @@ premis:fixity a owl:ObjectProperty ;
   rdfs:range premis:Fixity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
-# vraag: mag deze gebruikt worden met onze klasse meemoo:Identifier (die dan een skos:concept is met een voc?)
+# vraag: mag deze gebruikt worden met onze klasse haEnt:Identifier (die dan een skos:concept is met een voc?)
 premis:identifier a owl:ObjectProperty ;
   rdfs:label "has identifier"@en ;
   rdfs:label "a identifiant"@fr ;
@@ -297,7 +294,7 @@ premis:storedAt a owl:ObjectProperty ;
 
 # premis relationship subtypes
 
-premis_relsubtype:doc a owl:ObjectProperty ;
+rel:doc a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "documents"@en ;
   rdfs:label "généralise"@fr ;
@@ -307,7 +304,7 @@ premis_relsubtype:doc a owl:ObjectProperty ;
   rdfs:comment "Een relatie tussen informatie over een omgevingsobject en het omgevingsobject zelf. Bijvoorbeeld, een gebruikershandleiding heeft een 'documents'-relatie met de Open Office-softwareapplicatie. Heeft een wederkerige relatie met isDocumentedIn."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:gen a owl:ObjectProperty ;
+rel:gen a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "generalizes"@en ;
   rdfs:label "généralise"@fr ;
@@ -317,7 +314,7 @@ premis_relsubtype:gen a owl:ObjectProperty ;
   rdfs:comment "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object een algemenere beschrijving is dan de meer specifieke verwante omgeving. Heeft een wederkerige relatie met specializes."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:hsp a owl:ObjectProperty ;
+rel:hsp a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "has Part"@en ;
   rdfs:label "a partie"@fr ;
@@ -327,7 +324,7 @@ premis_relsubtype:hsp a owl:ObjectProperty ;
   rdfs:comment "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:hsr a owl:ObjectProperty ;
+rel:hsr a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "has Root"@en ;
   rdfs:label "est à la base de"@fr ;
@@ -337,7 +334,7 @@ premis_relsubtype:hsr a owl:ObjectProperty ;
   rdfs:comment "Alleen voor een representatie (representation) is het gerelateerde object het bestand (file) dat als eerste moet worden verwerkt om de representatie (representation) te kunnen renderen. Dit impliceert dat een samengesteld object (d.w.z. een object dat uit meerdere bestanden (file) bestaat) vereist dat één bestand (file) als eerste als root/basis wordt verwerkt om het te renderen."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:hss a owl:ObjectProperty ;
+rel:hss a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "has Source"@en ;
   rdfs:label "a une source"@fr ;
@@ -347,7 +344,7 @@ premis_relsubtype:hss a owl:ObjectProperty ;
   rdfs:comment "Een relatie waarbij het object is afgeleid van het verwante object als resultaat van een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat gecodeerd is in het WordStar-formaat, heeft dat Wordstar-bestand als zijn bron. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met isSourceOf."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:idc a owl:ObjectProperty ;
+rel:idc a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Documented In"@en ;
   rdfs:label "est documenté dans"@fr ;
@@ -357,7 +354,7 @@ premis_relsubtype:idc a owl:ObjectProperty ;
   rdfs:comment "Een relatie tussen een omgevingsobject en de informatie die het documenteert. Heeft een wederkerige relatie met documents."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:inc a owl:ObjectProperty ;
+rel:inc a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "includes"@en ;
   rdfs:label "inclut"@fr ;
@@ -367,7 +364,7 @@ premis_relsubtype:inc a owl:ObjectProperty ;
   rdfs:comment "Een relatie waarbij het beschreven object het object bevat waarnaar wordt verwezen, wanneer objecten verschillende objectcategorieën hebben. Bijvoorbeeld, een representatie (representation) bevat bestanden (files). Heeft een wederkerige relatie met isIncludedIn."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:irq a owl:ObjectProperty ;
+rel:irq a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Required by"@en ;
   rdfs:label "est requis par"@fr ;
@@ -377,7 +374,7 @@ premis_relsubtype:irq a owl:ObjectProperty ;
   rdfs:comment "De relatie van een omgevingsobject tot een bestand (file) of representatie (representation), waarbij de omgeving door de andere objecten vereist wordt om te renderen of uit te voeren. Heeft een wederkerige relatie met requires."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:isi a owl:ObjectProperty ;
+rel:isi a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Included in"@en ;
   rdfs:label "est inclus dans"@fr ;
@@ -388,7 +385,7 @@ premis_relsubtype:isi a owl:ObjectProperty ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 # vraag: verschil met has root? Lijkt gelijkaardig
-premis_relsubtype:iso a owl:ObjectProperty ;
+rel:iso a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Source of"@en ;
   rdfs:label "est à la source de"@fr ;
@@ -398,7 +395,7 @@ premis_relsubtype:iso a owl:ObjectProperty ;
   rdfs:comment "Het gerelateerde object is een versie van het bronobject gemaakt door een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat is gecodeerd in het WordStar-formaat, het Wordstar-bestand heeft een 'isSourceOf'-relatie met het HTML-bestand. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met hasSource."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:isp a owl:ObjectProperty ;
+rel:isp a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Part Of"@en ;
   rdfs:label "fait partie de"@fr ;
@@ -408,7 +405,7 @@ premis_relsubtype:isp a owl:ObjectProperty ;
   rdfs:comment "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:isr a owl:ObjectProperty ;
+rel:isr a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Represented by"@en ;
   rdfs:label "est représenté par"@fr ;
@@ -418,7 +415,7 @@ premis_relsubtype:isr a owl:ObjectProperty ;
   rdfs:comment "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:iss a owl:ObjectProperty ;
+rel:iss a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "is Superseded by"@en ;
   rdfs:label "a été remplacé par"@fr ;
@@ -428,7 +425,7 @@ premis_relsubtype:iss a owl:ObjectProperty ;
   rdfs:comment "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object is vervangen door een ander. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met supersedes."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:rep a owl:ObjectProperty ;
+rel:rep a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "represents"@en ;
   rdfs:label "représente"@fr ;
@@ -438,7 +435,7 @@ premis_relsubtype:rep a owl:ObjectProperty ;
   rdfs:comment "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:req a owl:ObjectProperty ;
+rel:req a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "requires"@en ;
   rdfs:label "nécessite"@fr ;
@@ -448,7 +445,7 @@ premis_relsubtype:req a owl:ObjectProperty ;
   rdfs:comment "De relatie van een object tot een ander object, waarbij het een bepaald omgevings- of niet-omgevingsobject nodig heeft om te worden weergegeven of om te worden uitgevoerd. Bijvoorbeeld, een bestand met de opmaak Word 97 vereist MS Word 1997 om het weer te geven. Heeft een wederkerige relatie met isRequiredBy."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:sup a owl:ObjectProperty ;
+rel:sup a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "supersedes"@en ;
   rdfs:label "remplace"@fr ;
@@ -458,7 +455,7 @@ premis_relsubtype:sup a owl:ObjectProperty ;
   rdfs:comment "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object een ander object vervangt. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met isSupersededBy."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
-premis_relsubtype:spe a owl:ObjectProperty ;
+rel:spe a owl:ObjectProperty ;
   rdfs:subPropertyOf premis:relationship ;
   rdfs:label "specializes"@en ;
   rdfs:label "spécialise"@fr ;
@@ -586,49 +583,49 @@ ebucore:isMediaFragmentOf  a rdf:Property ;
 
 # vraag: klopt het om bij die master/mezzanine/accesscopy properties de inverse te definiëren?
 # of is dat niet altijd waar? als iets master is van iets, kan het dan nog een master hebben op zijn beurt bv.?
-meemoo:isMasterOf a rdf:Property;
-  rdfs:subPropertyOf premis_relsubtype:rep ;
-  owl:inverseOf meemoo:hasMaster ;
+haEnt:isMasterOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haEnt:hasMaster ;
   rdfs:label  "is archiving master of"@en ;
   rdfs:label  "est la copie principale de"@fr ;
   rdfs:label  "is archiefmaster van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:hasMaster a rdf:Property;
-  rdfs:subPropertyOf premis_relsubtype:isr ;
-  owl:inverseOf meemoo:isMasterOf ;
+haEnt:hasMaster a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haEnt:isMasterOf ;
   rdfs:label  "has archiving master"@en ;
   rdfs:label  "a copie principale"@fr ;
   rdfs:label  "heeft archiefmaster"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:isMezzanineOf a rdf:Property;
-  rdfs:subPropertyOf premis_relsubtype:rep ;
-  owl:inverseOf meemoo:hasMezzanine ;
+haEnt:isMezzanineOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haEnt:hasMezzanine ;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:hasMezzanine a rdf:Property;
-  rdfs:subPropertyOf premis_relsubtype:isr ;
-  owl:inverseOf meemoo:isMezzanineOf ;
+haEnt:hasMezzanine a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haEnt:isMezzanineOf ;
   rdfs:label  "has mezzanine format"@en ;
   rdfs:label  "a format mezzanine"@fr ;
   rdfs:label  "heeft mezzanineformaat"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:isAccesscopyOf a rdf:Property;
-  rdfs:subPropertyOf premis_relsubtype:rep ;
-  owl:inverseOf meemoo:hasAccesscopy ;
+haEnt:isAccesscopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haEnt:hasAccesscopy ;
   rdfs:label  "is access copy of"@en ;
   rdfs:label  "est copie d'accès de"@fr ;
   rdfs:label  "is toegangskopie van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-meemoo:hasAccesscopy a rdf:Property;
-  rdfs:subPropertyOf premis_relsubtype:isr ;
-  owl:inverseOf meemoo:isAccesscopyOf ;
+haEnt:hasAccesscopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haEnt:isAccesscopyOf ;
   rdfs:label  "has access copy"@en ;
   rdfs:label  "a copie d'accès"@fr ;
   rdfs:label  "heeft toegangskopie"@nl ;
