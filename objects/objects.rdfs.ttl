@@ -16,7 +16,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema> .
 
 
-<https://data.hetarchief.be/ns/object#>  a owl:Ontology;
+<https://data.hetarchief.be/ns/entities#>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haEnt" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/entities#" ;
     dct:author  [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
