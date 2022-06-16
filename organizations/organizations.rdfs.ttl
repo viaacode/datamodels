@@ -11,7 +11,9 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema> .
 
 
-<>  a owl:Ontology;
+<https://data.hetarchief.be/ns/organisations#>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haOrg" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" ;
     dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
@@ -24,7 +26,7 @@
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2022-03-28" ;
+    dct:modified  "2022-06-16" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl .
