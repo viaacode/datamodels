@@ -96,9 +96,6 @@ haOrg:OrganizationShape a sh:NodeShape ;
               ],
               [
                 sh:path org:classification ;
-                # vraag: op dit moment lijken de organisaties in INT geen classificatie te hebben; is dit iets dat nog moet worden toegevoegd aan de data/ETL?
-                # lijkt me wel dat elke organisatie er idealiter minstens 1 heeft
-                # sh:minCount 1 ;
                 sh:class haOrg:OrganizationType ;
 
                 sh:name "classification"@en ;
@@ -185,9 +182,6 @@ haOrg:OrganizationShape a sh:NodeShape ;
               ],
               [
                 sh:path org:hasPost ;
-                # vraag: lijkt mij logisch dat een organisatie minstens 1 positie moet hebben vooraleer het effectief een organisatie is?
-                # in de data uit stardog zit er echter veel zonder Post
-                # sh:minCount 1 ;
                 sh:class org:Post ;
 
                 sh:name "has post. Indicates a Post which exists within the Organization."@en ;
@@ -345,10 +339,7 @@ haOrg:PersonShape a sh:NodeShape ;
               ],
               [
                 sh:path haOrg:isAccountManagerOf ;
-                sh:or (
-                        [ sh:class haOrg:ContentPartner ]
-                        [ sh:class haOrg:EducationalPartner ]
-                      ) ;
+                sh:class org:Organization ;
                 sh:name "is account manager of"@en ;
                 sh:name "est le Gestionnaire de Comptes de"@fr ;
                 sh:name "is account manager van"@nl ;
