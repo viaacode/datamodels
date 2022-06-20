@@ -169,23 +169,6 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:message "org:hasPrimarySite komt meer dan eens voor of zijn Object is geen org:Site"@nl
               ],
               [
-                # vraag: volstaat het om nog een haOrg:isPartOf te definiëren met een nieuwe sh:class om bv. deel uit te maken van een andere agreement?
-                # aangezien haOrg:isPartOf slaat op agr:Agreement en niet specifiek op haOrg:CollaborationAgreement?
-                sh:path haOrg:isPartOf ;
-                sh:maxCount 1 ;
-                sh:class haOrg:CollaborationAgreement ;
-                
-                sh:name "is part of"@en ;
-                sh:name "fait partie de"@fr ;
-                sh:name "maakt deel uit van"@nl ;
-                sh:description "Elke Organisatie kan van maximum 1 samenwerkingsovereenkomst deel uitmaken."@nl ;
-                
-                sh:severity sh:Info ;
-                sh:message "haOrg:isPartOf occurs more than once or its Object is no haOrg:CollaborationAgreement"@en ;
-                sh:message "haOrg:isPartOf apparaît plus d'une seule fois ou son Object n'est pas un haOrg:CollaborationAgreement"@fr ;
-                sh:message "haOrg:isPartOf komt meer dan eens voor of zijn Object is geen haOrg:CollaborationAgreement"@nl 
-              ],
-              [
                 sh:path haOrg:hasAccountmanager ;
                 sh:maxCount 1 ;
                 sh:class schema:Person ;
@@ -258,12 +241,6 @@ haOrg:EducationalPublisherShape  a sh:NodeShape ;
 
 haOrg:SchoolShape a sh:NodeShape ;
   sh:targetClass haOrg:School .
-
-haOrg:CollaborationAgreementShape a sh:NodeShape ;
-  sh:targetClass haOrg:CollaborationAgreement .
-
-haOrg:ServiceAgreementShape a sh:NodeShape ;
-  sh:targetClass haOrg:ServiceAgreement .
 
 haOrg:SiteShape  a  sh:NodeShape ;
   sh:targetClass org:Site ;
