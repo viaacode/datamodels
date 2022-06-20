@@ -246,8 +246,7 @@ haOrg:SiteShape  a  sh:NodeShape ;
   sh:targetClass org:Site ;
   sh:property [
                 sh:path org:siteAddress ;
-                # vraag: in de data komen nu sites voor met meerdere postadressen; is dit iets dat we willen, of zetten we hier een maximum op?
-                # sh:maxCount 1 ;
+                sh:maxCount 1 ;
                 sh:class schema:PostalAddress ;
                 
                 sh:name "site Address"@en ;
