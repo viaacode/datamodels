@@ -103,12 +103,12 @@ haOrg:Logo a   rdfs:Class ;
     rdfs:label  "Logo"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-haOrg:LogoContext  a   rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label  "Context of a Logo"@en ;
-    rdfs:label  "Contexte d'un Logo"@fr ;
-    rdfs:label  "Context van een Logo"@en ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+# haOrg:LogoContext  a   rdfs:Class ;
+#     rdfs:subClassOf skos:Concept ;
+#     rdfs:label  "Context of a Logo"@en ;
+#     rdfs:label  "Contexte d'un Logo"@fr ;
+#     rdfs:label  "Context van een Logo"@en ;
+#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 haOrg:OrganizationType a   rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
@@ -274,13 +274,13 @@ haOrg:isAccountManagerOf a   rdf:Property ;
     rdfs:label "Is account manager van"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-haOrg:applicationContext   a   rdf:Property ;
-    rdfs:domain haOrg:Logo ;
-    rdfs:range haOrg:LogoContext ;
-    rdfs:label "Context in which a logo is applied"@en ;
-    rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
-    rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+# haOrg:applicationContext   a   rdf:Property ;
+#     rdfs:domain haOrg:Logo ;
+#     rdfs:range haOrg:LogoContext ;
+#     rdfs:label "Context in which a logo is applied"@en ;
+#     rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
+#     rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
+#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 haOrg:hasAccountManager    a   rdf:Property ;
     rdfs:domain org:Organization ;

@@ -371,27 +371,7 @@ haOrg:ContactPointShape  a sh:NodeShape ;
   sh:targetClass schema:ContactPoint ;
   sh:property schema:ContactPoint-contactTypeShape ;
   sh:property schema:ContactPoint-emailShape ;
-  sh:property schema:ContactPoint-telephoneShape .
-
-haOrg:LogoShape  a sh:NodeShape ;
-  sh:targetClass haOrg:Logo ;
-  sh:property [
-                sh:path   haOrg:applicationContext ;
-                sh:class  haOrg:LogoContext ;
-
-                sh:name "Context in which a logo is applied"@en ;
-                sh:name "Contexte dans lequel un logo est utilisé"@fr ;
-                sh:name "Context waarbij een logo gebruikt wordt"@nl ;
-                sh:description "Een logo kan een of meerdere applicatiecontexten hebben waarbij het gebruikt wordt."@nl ;
-
-                sh:severity sh:Info ;
-                sh:message "The Object of haOrg:applicationContext is no haOrg:LogoContext."@en ;
-                sh:message "L'Object de haOrg:applicationContext n'est pas un haOrg:LogoContext."@fr ;
-                sh:message "Het Object van haOrg:applicationContext is geen haOrg:LogoContext."@nl 
-              ] .
-
-haOrg:LogoContextShape a sh:NodeShape ;
-  sh:targetClass haOrg:LogoContext .        
+  sh:property schema:ContactPoint-telephoneShape .     
 
 ##########################
 #     PropertyShapes     #
@@ -411,8 +391,8 @@ haOrg:PostalAddress-addressCountryShape a sh:PropertyShape ;
   
   sh:severity sh:Info ;
   sh:message "The Object of schema:addressCountry is neither schema:Country nor xsd:string."@en ;
-                sh:message "L'Object de haOrg:applicationContext n'est pas un haOrg:LogoContext."@fr ;
-                sh:message "Het Object van haOrg:applicationContext is geen haOrg:LogoContext."@nl.
+  sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou xsd:string."@fr ;
+  sh:message "Het Object van schema:addressCountry is geen schema:Country of xsd:string."@nl.
 
 haOrg:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
   sh:path schema:addressLocality ;
