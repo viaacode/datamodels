@@ -1,4 +1,3 @@
-@prefix agr: <http://promsns.org/def/agr#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf:<http://xmlns.com/foaf/0.1/> .
 @prefix haOrg: <https://data.hetarchief.be/ns/organisations#> .
@@ -9,6 +8,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 
 <https://data.hetarchief.be/ns/organisations#>  a owl:Ontology;
@@ -33,11 +33,10 @@
 
 #####################################
 #      1)CLASSES                    #
-#        1.1)agr                    #
-#        1.2)foaf                   #
-#        1.3)meemoo                 #
-#        1.4)org                    #
-#        1.5)schema                 #
+#        1.1)foaf                   #
+#        1.2)meemoo                 #
+#        1.3)org                    #
+#        1.4)schema                 #
 #      2)PROPERTIES                 #
 #        2.1)dct                    #
 #        2.2)foaf                   #
@@ -49,16 +48,6 @@
 #####################################
 #              CLASSES              #
 #####################################
-
-#####################################
-#              CLASSES:agr          #
-#####################################
-
-agr:Agreement   a   rdfs:Class ;
-    rdfs:label "Agreement"@en ;
-    rdfs:label "Contrat"@fr ;
-    rdfs:label "Overeenkomst"@nl ;
-    rdfs:isDefinedBy <http://promsns.org/def/agr> .
 
 #####################################
 #             CLASSES:foaf          #
@@ -77,13 +66,6 @@ foaf:Agent a    owl:Class, rdfs:Class ;
 #####################################
 #           CLASSES:meemoo          #
 #####################################
-
-haOrg:CollaborationAgreement   a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Collaboration Agreement"@en ;
-    rdfs:label "Accord de Collaboration"@fr ;
-    rdfs:label "Samenwerkingsovereenkomst"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 haOrg:ContentPartner   a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
@@ -115,14 +97,6 @@ haOrg:EducationalPublisher a   rdfs:Class ;
     rdfs:label "Educatieve uitgeverij"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-haOrg:GovernmentOrganization   a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    owl:equivalentClass schema:GovernmentOrganization ;
-    rdfs:label "Government Organization"@en ;
-    rdfs:label "Organisation Gouvernementale"@fr ;
-    rdfs:label "Overheidsorganisatie"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
-
 haOrg:Logo a   rdfs:Class ;
     rdfs:label  "Logo"@en ;
     rdfs:label  "Logo"@fr ;
@@ -134,13 +108,6 @@ haOrg:LogoContext  a   rdfs:Class ;
     rdfs:label  "Context of a Logo"@en ;
     rdfs:label  "Contexte d'un Logo"@fr ;
     rdfs:label  "Context van een Logo"@en ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
-
-haOrg:ManagementAgreement  a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Management Agreement"@en ;
-    rdfs:label "Contrat de Gestion"@fr ;
-    rdfs:label "Beheersovereenkomst"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 haOrg:OrganizationType a   rdfs:Class ;
@@ -156,13 +123,6 @@ haOrg:School   a   rdfs:Class ;
     rdfs:label "School"@en ;
     rdfs:label "École"@fr ;
     rdfs:label "School"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
-
-haOrg:ServiceAgreement a   rdfs:Class ;
-    rdfs:subClassOf agr:Agreement ;
-    rdfs:label "Service Agreement"@en ;
-    rdfs:label "Contrat de Service"@fr ;
-    rdfs:label "Dienstverleningsovereenkomst"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 haOrg:ServiceConsumer  a   rdfs:Class ;
@@ -322,16 +282,6 @@ haOrg:applicationContext   a   rdf:Property ;
     rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
-haOrg:contains a   rdf:Property ;
-    rdfs:domain agr:Agreement ;
-    rdfs:range org:Organization ;
-    owl:inverseOf haOrg:isPartOf ;
-    owl:equivalentProperty schema:hasPart ;
-    rdfs:label "contains"@en ;
-    rdfs:label "contient"@fr ;
-    rdfs:label "bevat"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
-
 haOrg:hasAccountManager    a   rdf:Property ;
     rdfs:domain org:Organization ;
     rdfs:range  schema:Person ;
@@ -347,17 +297,6 @@ haOrg:hasLogo  a   rdf:Property ;
     rdfs:label "has a logo"@en ;
     rdfs:label "a un logo"@fr ;
     rdfs:label "heeft een logo"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
-
-haOrg:isPartOf a   rdf:Property ;
-    rdfs:domain org:Organization ;
-    rdfs:range  agr:Agreement ;
-    owl:inverseOf haOrg:contains ;
-    owl:equivalentProperty schema:isPartOf ;
-    owl:equivalentProperty dct:isPartOf ;
-    rdfs:label "is part of"@en ;
-    rdfs:label "fait partie de"@fr ;
-    rdfs:label "is deel van"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
 
 #####################################
