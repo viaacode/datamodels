@@ -1,6 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf:<http://xmlns.com/foaf/0.1/> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organisations#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -11,7 +11,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 
 
-<https://data.hetarchief.be/ns/organisations#>  a owl:Ontology;
+<https://data.hetarchief.be/ns/organization#>  a owl:Ontology;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" ;
     dct:author  [
@@ -33,10 +33,9 @@
 
 #####################################
 #      1)CLASSES                    #
-#        1.1)foaf                   #
-#        1.2)meemoo                 #
-#        1.3)org                    #
-#        1.4)schema                 #
+#        1.1)meemoo                 #
+#        1.2)org                    #
+#        1.3)schema                 #
 #      2)PROPERTIES                 #
 #        2.1)dct                    #
 #        2.2)foaf                   #
@@ -50,20 +49,6 @@
 #####################################
 
 #####################################
-#             CLASSES:foaf          #
-#####################################
-
-foaf:Agent a    owl:Class, rdfs:Class ;
-    owl:equivalentClass <http://purl.org/dc/terms/Agent>;
-    rdfs:label "Agent"@en ;
-    rdfs:label "Agent/exécutant"@fr ;
-    rdfs:label "Agens/uitvoerder"@nl ;
-    rdfs:comment "An agent (eg. person, group, software or physical artifact)."@en ;
-    rdfs:comment "Un exécutant (par exemple une personne, un groupe, du software ou un objet physique)."@fr ;
-    rdfs:comment "Een uitvoerder (bv. een persoon, een groep, software of een fysiek object)."@nl ;
-    rdfs:isDefinedBy <http://xmlns.com/foaf/0.1/> .
-
-#####################################
 #           CLASSES:meemoo          #
 #####################################
 
@@ -72,7 +57,7 @@ haOrg:ContentPartner   a   rdfs:Class ;
     rdfs:label "Content Partner"@en ;
     rdfs:label "Partenaire de Contenus"@fr ;
     rdfs:label "Contentpartner"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
     # `Aanbieder` wordt gebruikt in AVO voor CP
 
 haOrg:EducationalOrganization  a   rdfs:Class ;
@@ -81,41 +66,41 @@ haOrg:EducationalOrganization  a   rdfs:Class ;
     rdfs:label "Educational Organization"@en ;
     rdfs:label "Organisation Éducative"@fr ;
     rdfs:label "Educatieve organisatie"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:EducationalPartner   a   rdfs:Class ;
     rdfs:subClassOf haOrg:EducationalOrganization ;
     rdfs:label "Educational Partner"@en ;
     rdfs:label "Partenaire Éducatif"@fr ;
     rdfs:label "Educatieve partner"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:EducationalPublisher a   rdfs:Class ;
     rdfs:subClassOf haOrg:EducationalOrganization ;
     rdfs:label "Educational Publisher"@en ;
     rdfs:label "Éditeur éducatif"@fr ;
     rdfs:label "Educatieve uitgeverij"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:Logo a   rdfs:Class ;
     rdfs:label  "Logo"@en ;
     rdfs:label  "Logo"@fr ;
     rdfs:label  "Logo"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 # haOrg:LogoContext  a   rdfs:Class ;
 #     rdfs:subClassOf skos:Concept ;
 #     rdfs:label  "Context of a Logo"@en ;
 #     rdfs:label  "Contexte d'un Logo"@fr ;
 #     rdfs:label  "Context van een Logo"@en ;
-#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
-haOrg:OrganizationType a   rdfs:Class ;
+haOrg:OrganizationType a  rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "Organization Type"@en ;
     rdfs:label  "Type de Organisation"@fr ;
-    rdfs:label  "Organisatietype"@en ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:label  "Organisatietype"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:School   a   rdfs:Class ;
     rdfs:subClassOf haOrg:EducationalOrganization ;
@@ -123,21 +108,21 @@ haOrg:School   a   rdfs:Class ;
     rdfs:label "School"@en ;
     rdfs:label "École"@fr ;
     rdfs:label "School"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:ServiceConsumer  a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Service Consumer"@en ;
     rdfs:label "Consomatteur de Services"@fr ;
     rdfs:label "Dienstenafnemer"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:ServiceProvider  a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Service Provider"@en ;
     rdfs:label "Fournisseur de Services" ;
     rdfs:label "Serviceprovider"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 #####################################
 #            CLASSES:org            #
@@ -272,7 +257,7 @@ haOrg:isAccountManagerOf a   rdf:Property ;
     rdfs:label "Is account manager of"@en ;
     rdfs:label "Est gestionairre de comptes de"@fr ;
     rdfs:label "Is account manager van"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 # haOrg:applicationContext   a   rdf:Property ;
 #     rdfs:domain haOrg:Logo ;
@@ -280,7 +265,7 @@ haOrg:isAccountManagerOf a   rdf:Property ;
 #     rdfs:label "Context in which a logo is applied"@en ;
 #     rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
 #     rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
-#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:hasAccountManager    a   rdf:Property ;
     rdfs:domain org:Organization ;
@@ -289,7 +274,7 @@ haOrg:hasAccountManager    a   rdf:Property ;
     rdfs:label "has an account manager"@en ;
     rdfs:label "a un gestionnaire de comptes"@fr ;
     rdfs:label "heeft een accountmanager"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:hasLogo  a   rdf:Property ;
     rdfs:domain org:Organization ;
@@ -297,7 +282,7 @@ haOrg:hasLogo  a   rdf:Property ;
     rdfs:label "has a logo"@en ;
     rdfs:label "a un logo"@fr ;
     rdfs:label "heeft een logo"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organisatie#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 #####################################
 #          PROPERTIES:org           #

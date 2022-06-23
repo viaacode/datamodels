@@ -1,6 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organisations#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,14 +8,6 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-# onderstaande namespaces lijken vooralsnog niet nodig
-# @prefix agr: <http://promsns.org/def/agr#> .
-# @prefix cc: <http://creativecommons.org/ns#> .
-# @prefix owl: <http://www.w3.org/2002/07/owl#> .
-# @prefix rov: <http://www.w3.org/ns/regorg#> .
-
-
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -51,9 +43,9 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "logo"@en ;
                 sh:name "logo"@fr ;
                 sh:name "logo"@nl ;
-                sh:description "Each Organization needs at least one associated logo."@en ;
-                sh:description "Chaque Organisation a besoin d'au moin un logo associé."@fr ;
-                sh:description "Elke Organisatie heeft minstens één geassocieerd logo nodig."@nl ;
+                sh:description "A logo associated with the organization."@en ;
+                sh:description "Un logo associé à l'organisation."@fr ;
+                sh:description "Een logo dat geassocieerd is met de organisatie."@nl ;
                 
                 sh:severity sh:Violation ;
                 sh:message "haOrg:hasLogo is missing or its Object is no haOrg:logo"@en ;
@@ -68,12 +60,12 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "homepage"@en ;
                 sh:name "page d'accueil"@fr ;
                 sh:name "homepagina"@nl ;
-                sh:description "Elke Organisatie kan maximum 1 homepagina hebben. Deze homepagina moet een valide IRI zijn."@nl ;
+                sh:description "De website van de organisatie."@nl ;
                 
                 sh:severity sh:Warning ;
-                sh:message "foaf:homepage occurs more than once or its object is no IRI"@en ;
-                sh:message "foaf:homepage apparaît plus d'une seule fois ou son Object n'est pas un IRI"@fr ;
-                sh:message "foaf:homepage komt meer dan eens voor of zijn Object is geen IRI"@nl
+                sh:message "foaf:homepage occurs more than once or its object is no valid IRI"@en ;
+                sh:message "foaf:homepage apparaît plus d'une seule fois ou son Object n'est pas un IRI valide"@fr ;
+                sh:message "foaf:homepage komt meer dan eens voor of zijn Object is geen valide IRI"@nl
               ],
               [
                 sh:path dct:description ;
@@ -83,7 +75,6 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "description"@en ;
                 sh:name "description"@fr ;
                 sh:name "beschrijving"@nl ;
-                sh:description "Elke Organisatie kan maximum 1 beschrijving hebben. Deze beschrijving moet van het datatype String zijn."@nl ;
                 
                 sh:description "Description of the organization."@en ;
                 sh:description "Description de l'organization."@fr ;
@@ -101,7 +92,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "classification"@en ;
                 sh:name "classification"@fr ;
                 sh:name "classificatie"@nl ;
-                sh:description "Elke Organisatie moet behoren tot minstens 1 organisatietype."@nl ;
+                sh:description "Het type waartoe de organisatie behoort."@nl ;
 
                 sh:severity sh:Violation ;
                 sh:message "org:classification is missing or its Object is no haOrg:OrganizationType"@en ;
@@ -115,7 +106,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "has Unit"@en ;
                 sh:name "possède une Unité"@fr ;
                 sh:name "heeft een eenheid"@nl ;
-                sh:description "Een Organisatie kan een aparte eenheid hebben."@nl ;
+                sh:description "Een aparte eenheid of afdeling van de organisatie."@nl ;
                 
                 sh:severity sh:Info ;
                 sh:message "The Object of org:hasUnit is no org:OrganizationalUnit"@en ;
@@ -143,7 +134,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "has site"@en ;
                 sh:name "a un site"@fr ;
                 sh:name "heeft vestiging"@nl ;
-                sh:description "Een Organisatie kan een vestiging hebben."@nl ;
+                sh:description "Een fysieke of virtuele vestiging van de organisatie."@nl ;
                 
                 sh:severity sh:Warning ;
                 sh:message "org:hasSite occurs more than once or its Object is no org:Site"@en ;
@@ -158,7 +149,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "has primary site"@en ;
                 sh:name "a un site principal"@fr ;
                 sh:name "heeft primaire vestiging"@nl ;
-                sh:description "Elke Organisatie kan maximum 1 primaire vestiging hebben."@nl ;
+                sh:description "De primaire vestiging van de organisatie."@nl ;
                 
                 sh:severity sh:Warning ;
                 sh:message "org:hasPrimarySite occurs more than once or its Object is no org:Site"@en ;
@@ -173,7 +164,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "has account manager"@en ;
                 sh:name "a gestionnaire de comptes"@fr ;
                 sh:name "heeft account manager"@nl ;
-                sh:description "Elke Organisatie kan maximum 1 accountmanager hebben. Deze accountmanager moet een persoon zijn."@nl ;
+                sh:description "De persoon binnen een organisatie die verantwoordelijk is voor het contact met een andere organisatie, bv. een klant."@nl ;
 
                 sh:severity sh:Warning ;
                 sh:message "haOrg:hasAccountmanager occurs more than once or its Object is no schema:Person"@en ;
@@ -187,7 +178,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:name "has post. Indicates a Post which exists within the Organization."@en ;
                 sh:name "possède un poste. Indique un Poste qui existe dans l'Organisation."@fr ;
                 sh:name "heeft positie. Verwijst naar een positie binnen de organisatie."@nl ;
-                sh:description "Elke Organisatie moet minimum 1 positie hebben binnen de Organisatie."@nl ;
+                sh:description "Een positie binnen de Organisatie."@nl ;
 
                 sh:severity sh:Warning ;
                 sh:message "org:hasPost is missing or its Object is no org:Post"@en ;
@@ -205,7 +196,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
                 sh:name "unit of"@en ;
                 sh:name "unité de"@fr ;
                 sh:name "organisatie-eenheid van"@nl ;
-                sh:description "Elke organisatie-eenheid moet deel uitmaken van een Organisatie."@nl ;
+                sh:description "De organisatie waarvan de organisatie-eenheid deel uitmaakt."@nl ;
         
                 sh:severity sh:Violation ;
                 sh:message "org:unitOf is missing or its Object is no org:Organization."@en ;
@@ -246,7 +237,7 @@ haOrg:SiteShape  a  sh:NodeShape ;
                 sh:name "site Address"@en ;
                 sh:name "adresse du Site"@fr ;
                 sh:name "adres van de vestiging"@nl ;
-                sh:description "Elke vestiging mag maximaal 1 adres hebben."@nl ;
+                sh:description "Het adres van de vestiging."@nl ;
         
                 sh:severity sh:Violation;
                 sh:message "org:siteAddress occurs more than once or its Object is no schema:PostalAddress"@en ;
@@ -299,12 +290,15 @@ haOrg:PersonShape a sh:NodeShape ;
   sh:targetClass schema:Person ;
   sh:property [    
                 sh:path org:holds ;
-                # sh:minCount 1 ;
                 sh:class org:Post ;
     
                 sh:name "holds"@en ;
                 sh:name "occupe"@fr ;
                 sh:name "heeft positie"@nl ;
+                
+                sh:description """The post that a person holds in the organization."""@en ;
+                sh:description """Le poste que la personne occupe dans l'organisation."""@fr ;
+                sh:description """De positie die de persoon binnen de organisatie bekleedt."""@nl ;
     
                 sh:severity sh:Violation ;
                 sh:message "org:holds is missing or its Object is no org:Post"@en ;
@@ -316,7 +310,10 @@ haOrg:PersonShape a sh:NodeShape ;
                 sh:minCount 1 ;
                 sh:datatype xsd:string ;
 
-                sh:description "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property."@en ;
+                sh:description "The given name or first name of a person."@en ;
+                sh:description "Le prénom d'une personne."@fr ;
+                sh:description "De voornaam van een persoon."@nl ;
+
                 sh:name "given name"@en ;
                 sh:name "prénom"@fr ;
                 sh:name "voornaam"@nl
@@ -326,7 +323,10 @@ haOrg:PersonShape a sh:NodeShape ;
                 sh:minCount 1 ;
                 sh:datatype xsd:string ;
 
-                sh:description "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property."@en ;
+                sh:description "The family name or last name of a person."@en ;
+                sh:description "Le nom de famille d'une personne."@fr ;
+                sh:description "De achternaam van een persoon."@nl ;
+
                 sh:name "family name"@en ;
                 sh:name "familienaam"@nl ;
               ],
@@ -343,6 +343,10 @@ haOrg:PersonShape a sh:NodeShape ;
                 sh:name "is account manager of"@en ;
                 sh:name "est le Gestionnaire de Comptes de"@fr ;
                 sh:name "is account manager van"@nl ;
+
+                sh:description "The organization for which the person is responsible for."@en ;
+                sh:description "L'organisation pour laquelle la personne est responsable."@fr ;
+                sh:description "De organisatie waarvoor de persoon verantwoordelijk is."@nl ;
     
                 sh:severity sh:Warning ;
                 sh:message "The Object of haOrg:isAccountManagerOf is neither haOrg:ContentPartner nor haOrg:EducationalPartner."@en
@@ -373,11 +377,12 @@ haOrg:PostalAddress-addressCountryShape a sh:PropertyShape ;
   sh:name "country"@en ;
   sh:name "pays"@fr ;
   sh:name "land"@nl ;
+
+  sh:description "The country in which the postal address is located."@en ;
+  sh:description "Le pays dans lequel se trouve l'adresse postale."@fr ;
+  sh:description "Het land waarin het postadres zich bevindt."@nl ;
   
-  sh:or (
-          [ sh:class schema:Country ]
-          [ sh:datatype xsd:string ]
-        ) ; 
+  sh:datatype xsd:string ;
   
   sh:severity sh:Info ;
   sh:message "The Object of schema:addressCountry is neither schema:Country nor xsd:string."@en ;
@@ -388,35 +393,57 @@ haOrg:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
   sh:path schema:addressLocality ;
   sh:datatype xsd:string ;
   
-  sh:description "The locality in which the street address is, and which is in the region. For example, Mountain View." ;
-  sh:name "addressLocality" .
+  sh:description "The locality in which the street address is, and which is in the region. For example, Mountain View."@en ;
+  sh:description "La ville dans laquelle se trouve l'adresse postale, et qui est dans la région. Par exemple, Mountain View."@fr ;
+  sh:description "De stad waarin het straatadres zich bevindt, en deel uitmaakt van de regio. Bijvoorbeeld, Brussel, Oostende, ...."@nl ;
+  sh:name "locality"@en ;
+  sh:name "ville"@fr ;
+  sh:name "gemeente"@nl .
 
 haOrg:PostalAddress-addressRegionShape  a sh:PropertyShape ;
   sh:path schema:addressRegion ;
   sh:datatype xsd:string ;
   
-  sh:description "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href=\"https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country\">Administrative division</a>" ;
-  sh:name "addressRegion" .
+  sh:description "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level <a href=\"https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country\">Administrative division</a>"@en ;
+  sh:description "La région dans laquelle la ville est, et qui est dans le pays. Par exemple, Californie ou une autre division administrative appropriée."@fr ;
+  sh:description "De provincie van het land waarin de stad zich bevindt. Bijvoorbeeld, Oost-Vlaanderen, Limburg, etc."@nl ;
+  sh:name "region"@en;
+  sh:name "provincie"@fr;
+  sh:name "provincie"@nl.
 
 haOrg:PostalAddress-postOfficeBoxNumberShape  a sh:PropertyShape ;
   sh:path schema:postOfficeBoxNumber ;
   sh:datatype xsd:string ;
   
-  sh:description "The post office box number for PO box addresses." ;
-  sh:name "postOfficeBoxNumber" .
+  sh:description "The post office box number for PO box addresses."@en ;
+  sh:description "Le numéro de boîte postale pour les adresses de boîte postale."@fr ;
+  sh:description "Het postbusnummer voor postbusadressen."@nl ;
+  sh:name "post office box number"@en ;
+  sh:name "le numéro de boîte postale"@fr ;
+  sh:name "postbusnummer"@nl .
 
 haOrg:PostalAddress-postalCodeShape a sh:PropertyShape ;
   sh:path schema:postalCode ;
   sh:datatype xsd:string ;
 
-  sh:description "The postal code. For example, 94043." ;
-  sh:name "postalCode" .
+  sh:description "The postal code. For example, 94043."@en ;
+  sh:description "Le code postal. Par exemple, 94043."@fr ;
+  sh:description "De postcode. Bijvoorbeeld, 9400."@nl ;
+  sh:name "postal code"@en ;
+  sh:name "le code postal"@fr ;
+  sh:name "postcode"@nl .
 
 haOrg:PostalAddress-streetAddressShape  a sh:PropertyShape ;
   sh:path schema:streetAddress ;
   sh:datatype xsd:string ;
+
+  sh:description "The street address. For example, 1600 Amphitheatre Parkway."@en ;
+  sh:description "L'adresse postale. Par exemple, 1600 Amphitheatre Parkway."@fr ;
+  sh:description "Het straatadres. Bijvoorbeeld, Kerkstraat 16."@nl ;
   
-  sh:name "streetAddress" .
+  sh:name "address"@en ;
+  sh:name "l'adresse"@fr ;
+  sh:name "adres"@nl .
 
 haOrg:ContactPoint-contactTypeShape  a sh:PropertyShape ;
   sh:path schema:contactType ;
@@ -424,6 +451,7 @@ haOrg:ContactPoint-contactTypeShape  a sh:PropertyShape ;
   
   sh:name "contact type"@en ;
   sh:name "contacttype"@nl .
+
 
 haOrg:ContactPoint-emailShape a sh:PropertyShape ;
   sh:path schema:email ;
@@ -448,7 +476,7 @@ haOrg:prefLabelShape  a sh:PropertyShape ;
   sh:name "preferred label"@en ;
   sh:name "label préféré"@fr ;
   sh:name "voorkeursnaam/-label"@nl ;
-  sh:description "Een voorkeursnaam/-label moet exact eenmaal voorkomen"@nl ;
+  sh:description "De voorkeursnaam/-label van het concept."@nl ;
     
   sh:severity sh:Violation ;
   sh:message "skos:prefLabel is missing or its Object is no xsd:string."@en ;
@@ -458,6 +486,10 @@ haOrg:prefLabelShape  a sh:PropertyShape ;
 haOrg:altLabelShape a sh:PropertyShape ;
   sh:path skos:altLabel ;
   sh:datatype xsd:string ;
+
+  sh:description "The alternative label of the concept."@en ;
+  sh:description "Le label alternatif du concept."@fr ;
+  sh:description "Het alternatieve label van het concept."@nl ;
 
   sh:name "alternative label"@en ;
   sh:name "label alternatif"@fr ;
@@ -475,6 +507,10 @@ haOrg:accountManagerShape  a sh:PropertyShape ;
   sh:name "has account manager"@en ;
   sh:name "a gestionnaire de comptes"@fr ;
   sh:name "heeft account manager"@nl ;
+
+  sh:description "The account manager of the organization."@en ;
+  sh:description "Le gestionnaire de comptes de l'organisation."@fr ;
+  sh:description "De account manager van de organisatie."@nl ;
     
   sh:severity sh:Violation ;
   sh:message "haOrg:hasAccountManager is missing, occurs more than once or its Object is no schema:Person"@en ;
