@@ -120,45 +120,6 @@ prov:Entity a rdfs:Class ;
     rdfs:comment """Een entiteit is een fysiek, digitaal, conceptueel of ander soort ding met een aantal vaste aspecten; entiteiten kunnen reëel of denkbeeldig zijn."""@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .
 
-# ebucore classes
-
-# vraag: maakt dat hardhorende aspect van de oorspronkelijke definitie uit voor onze usecase?
-ebucore:Captioning  a rdfs:Class ;
-  rdfs:comment """To signal the presence of hard of hearing captioning."""@en ;
-  rdfs:comment """Pour signaler la présence du sous-titrage pour malentendants."""@fr ;
-  rdfs:comment """Om de aanwezigheid van ondertiteling voor hard-horenden aan te duiden."""@nl ;
-  rdfs:label "Captioning"@en ;
-  rdfs:label "Sous-titrage"@fr ;
-  rdfs:label "Ondertiteling"@nl ;
-  rdfs:subClassOf ebucore:Track ;
-  rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-
-# vraag: hoe zien wij dat voorbehouden zijn aan AV materiaal van deze klasse?
-# vraag: mogen/moeten we de (oorspronkelijke) rdfs:comment niet nog wat bewerken? Aangezien die in de docs komt.
-# hier is bv. sprake van zaken die volgens mij niet-relevant zijn voor ons doelpubliek (IMF Package? OPL?).
-# maar dan wijzig je dus wel iets aan de oorspronkelijke ontologie of hoe zij het bedoeld hebben?
-# vraag: hoe zien we MediaResource tov. een breder PREMIS object/IE? Is een MediaResource hetzelfde als een file of is dat een representatie?
-ebucore:MediaResource  a rdfs:Class ;
-  rdfs:subClassOf ebucore:Asset ;
-  owl:disjointWith ebucore:BusinessObject ;
-  rdfs:label "Media Resource"@en ;
-  rdfs:label "Ressource média"@fr ;
-  rdfs:label "Mediabron"@nl ;
-  rdfs:comment """The use of MediaResource is reserved to audiovisual content. In a production process, several MediaResources can be edited and assembled to realise an Essence ready for distribution (see IMF package and OPL)."""@en ;
-  rdfs:comment """L'utilisation de MediaResource est réservée aux contenus audiovisuels. Dans un processus de production, plusieurs MediaResources peuvent être éditées et assemblées pour réaliser une Essence prête à être distribuée (voir le IMF package et OPL)."""@fr ;
-  rdfs:comment """Het gebruik van MediaResource is voorbehouden aan audiovisueel materiaal. Tijdens een productieproces kunnen verschillende MediaResources bewerkt en samengesteld worden om een Essence klaar te maken voor verspreiding (zie IMF package en OPL)."""@nl ;
-  rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-
-ebucore:PhysicalResource  a rdfs:Class ;
-  rdfs:comment "To describe a physical resource e.g. a tape."@en ;
-  rdfs:comment "Pour décrire une ressource physique, par exemple une cassette/bande."@fr ;
-  rdfs:comment "Om een fysieke bron te beschrijven, bv. een band/tape."@nl ;
-  rdfs:subClassOf ebucore:MediaResource ;
-  rdfs:label "Physical resource"@en ;
-  rdfs:label "Ressource physique"@fr ;
-  rdfs:label "Fysieke bron"@nl ;
-  rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-
 # meemoo classes
 
 haEnt:DigitalRepresentation a rdfs:Class ;
