@@ -2,7 +2,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
-@prefix haEnt: <https://data.hetarchief.be/ns/entities#> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
@@ -112,6 +112,17 @@ premis:StorageLocation  a owl:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/contentLocationType> .
 
+# vervangt dct:PhysicalMedium
+premis:StorageMedium  a   rdfs:Class ;
+    a owl:Class ;
+    rdfs:label "Storage medium"@en ;
+    rdfs:label "Support de stockage"@fr ;
+    rdfs:label "Opslagmedium"@nl ;
+    rdfs:comment """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
+        DVD)."""@en ;
+    rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> .
+
 # prov-o classes
 
 prov:Entity a rdfs:Class ;
@@ -122,7 +133,7 @@ prov:Entity a rdfs:Class ;
 
 # meemoo classes
 
-haEnt:DigitalRepresentation a rdfs:Class ;
+haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
     rdfs:label "Digital representation"@en ;
     rdfs:label "Représentation digitale"@fr ;
@@ -136,7 +147,7 @@ haEnt:DigitalRepresentation a rdfs:Class ;
 # ebucore gebruikt bv. ook mimetypes ipv. fileformat (denk ik)
 # oplossing: aparte klasse, maar wel equivalente klassen oplijsten?
 # voordeel van mimetypes ipv. fileformats te gebruiken, is dat je voc wel meteen vaststaat?
-haEnt:FileFormat a rdfs:Class ;
+haObj:FileFormat a rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     owl:equivalentClass dct:format ;
     rdfs:label "File format"@en ;
@@ -144,7 +155,7 @@ haEnt:FileFormat a rdfs:Class ;
     rdfs:label "Bestandsformaat"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:Identifier a rdfs:Class ;
+haObj:Identifier a rdfs:Class ;
     rdfs:subClassOf premis:Identifier ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Physical representation"@en ;
@@ -152,7 +163,7 @@ haEnt:Identifier a rdfs:Class ;
     rdfs:label "Fysieke representatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:PhysicalRepresentation a rdfs:Class ;
+haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
     rdfs:label "Physical representation"@en ;
     rdfs:label "Représentation physique"@fr ;
@@ -162,28 +173,13 @@ haEnt:PhysicalRepresentation a rdfs:Class ;
     rdfs:comment "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-# vraag: is er nood aan deze klasse bij ons als je bv. ebucore:PhysicalResource hebt?
-haEnt:PhysicalMedium a rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label "Physical medium"@en ;
-    rdfs:label "Support matériel/physique"@fr ;
-    rdfs:label "Fysiek medium"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
-
-haEnt:RepresentationType  a   rdfs:Class ;
+haObj:RepresentationType  a   rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "Type of a representation"@en ;
     rdfs:label  "Type d'une representation"@fr ;
     rdfs:label  "Representatietype"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-# vraag: kan deze niet samengenomen worden met PhysicalMedium?
-haEnt:StorageMedium  a   rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label  "Storage medium"@en ;
-    rdfs:label  "Support de stockage"@fr ;
-    rdfs:label  "Opslagmedium"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
 # premis properties
 
@@ -201,7 +197,7 @@ premis:fixity a owl:ObjectProperty ;
   rdfs:range premis:Fixity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
-# vraag: mag deze gebruikt worden met onze klasse haEnt:Identifier (die dan een skos:concept is met een voc?)
+# vraag: mag deze gebruikt worden met onze klasse haObj:Identifier (die dan een skos:concept is met een voc?)
 premis:identifier a owl:ObjectProperty ;
   rdfs:label "has identifier"@en ;
   rdfs:label "a identifiant"@fr ;
@@ -547,49 +543,49 @@ ebucore:isMediaFragmentOf  a rdf:Property ;
 
 # vraag: klopt het om bij die master/mezzanine/accesscopy properties de inverse te definiëren?
 # of is dat niet altijd waar? als iets master is van iets, kan het dan nog een master hebben op zijn beurt bv.?
-haEnt:isMasterOf a rdf:Property;
+haObj:isMasterOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haEnt:hasMaster ;
+  owl:inverseOf haObj:hasMaster ;
   rdfs:label  "is archiving master of"@en ;
   rdfs:label  "est la copie principale de"@fr ;
   rdfs:label  "is archiefmaster van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:hasMaster a rdf:Property;
+haObj:hasMaster a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
-  owl:inverseOf haEnt:isMasterOf ;
+  owl:inverseOf haObj:isMasterOf ;
   rdfs:label  "has archiving master"@en ;
   rdfs:label  "a copie principale"@fr ;
   rdfs:label  "heeft archiefmaster"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:isMezzanineOf a rdf:Property;
+haObj:isMezzanineOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haEnt:hasMezzanine ;
+  owl:inverseOf haObj:hasMezzanine ;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:hasMezzanine a rdf:Property;
+haObj:hasMezzanine a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
-  owl:inverseOf haEnt:isMezzanineOf ;
+  owl:inverseOf haObj:isMezzanineOf ;
   rdfs:label  "has mezzanine format"@en ;
   rdfs:label  "a format mezzanine"@fr ;
   rdfs:label  "heeft mezzanineformaat"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:isAccesscopyOf a rdf:Property;
+haObj:isAccesscopyOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haEnt:hasAccesscopy ;
+  owl:inverseOf haObj:hasAccesscopy ;
   rdfs:label  "is access copy of"@en ;
   rdfs:label  "est copie d'accès de"@fr ;
   rdfs:label  "is toegangskopie van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haEnt:hasAccesscopy a rdf:Property;
+haObj:hasAccesscopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
-  owl:inverseOf haEnt:isAccesscopyOf ;
+  owl:inverseOf haObj:isAccesscopyOf ;
   rdfs:label  "has access copy"@en ;
   rdfs:label  "a copie d'accès"@fr ;
   rdfs:label  "heeft toegangskopie"@nl ;
@@ -597,12 +593,3 @@ haEnt:hasAccesscopy a rdf:Property;
 
 # vraag: moet er een property komen om aan te duiden of een resource werd verwijderd uit het archief?
 
-# ma properties
-
-# vraag: hoort deze thuis in dit model, of is dit voor een apart rechten-/licentiemodel met dan bv. de data rond overeenkomsten?
-# vraag: de oorspronkelijke ontologie heeft hier geen rdfs:label, mag er dan zelf een toegevoegd worden door ons?
-ma:hasPolicy a owl:ObjectProperty;
-    rdfs:comment """Corresponds to 'policy' in the Ontology for Media Resources. Subproperties can be used to distinguish different values of 'policy.type'."""@en;
-    rdfs:comment """Correspond à 'policy' dans l'Ontology for Media Resources. Des sous-propriétés peuvent être utilisées pour distinguer différentes valeurs de 'policy.type'."""@fr;
-    rdfs:comment """Komt overeen met 'policy' in de Ontology for Media Resources. Subeigenschappen (subproperties) kunnen gebruikt worden om te differentiëren tussen verschillende waarden van 'policy.type'."""@nl;
-    rdfs:domain ma:MediaResource .
