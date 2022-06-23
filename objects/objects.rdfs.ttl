@@ -17,9 +17,9 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 
 
-<https://data.hetarchief.be/ns/entities#>  a owl:Ontology;
-    vann:preferredNamespacePrefix "haEnt" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/entities#" ;
+<https://data.hetarchief.be/ns/object#>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haObj" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
     dct:author  [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
