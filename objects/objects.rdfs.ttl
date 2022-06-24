@@ -43,7 +43,7 @@
 
 # premis classes
 
-premis:File a owl:Class ;
+premis:File a owl:Class, rdfs:Class ;
   rdfs:label "File"@en ;
   rdfs:label "Fichier"@fr ;
   rdfs:label "Bestand"@nl ;
@@ -54,7 +54,7 @@ premis:File a owl:Class ;
   owl:disjointWith premis:Bitstream, premis:IntellectualEntity, premis:Representation ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
-premis:Fixity a owl:Class ;
+premis:Fixity a owl:Class, rdfs:Class ;
   rdfs:label "Fixity"@en ;
   rdfs:label "Fixité"@fr ;
   rdfs:label "Fixity"@nl ;
@@ -64,7 +64,7 @@ premis:Fixity a owl:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> .
 
-premis:IntellectualEntity a owl:Class ;
+premis:IntellectualEntity a owl:Class, rdfs:Class ;
   rdfs:label "Intellectual entity"@en ;
   rdfs:label "Entité intellectuelle"@fr ;
   rdfs:label "Intellectuele entiteit"@nl ;
@@ -82,7 +82,7 @@ premis:IntellectualEntity a owl:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentFunctionType> .
 
-premis:Object a owl:Class ;
+premis:Object a owl:Class, rdfs:Class ;
   rdfs:label "Object"@en ;
   rdfs:label "Objet"@fr ;
   rdfs:label "Object"@nl ;
@@ -92,7 +92,7 @@ premis:Object a owl:Class ;
   rdfs:subClassOf prov:Entity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
-premis:Representation a owl:Class ;
+premis:Representation a owl:Class, rdfs:Class ;
   rdfs:label "Representation"@en ;
   rdfs:comment """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
       representation is the set of stored digital files and structural metadata needed to provide a complete
@@ -102,7 +102,7 @@ premis:Representation a owl:Class ;
   owl:disjointWith premis:Bitstream, premis:File, premis:IntellectualEntity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
-premis:StorageLocation  a owl:Class ;
+premis:StorageLocation  a owl:Class, rdfs:Class ;
   rdfs:label "Storage location"@en ;
   rdfs:label "Emplacement de stockage"@fr ;
   rdfs:label "Opslagplaats"@nl ;

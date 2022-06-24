@@ -114,8 +114,36 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:description "De intellectuele entiteit waarvan deze representatie de toegangs- of inkijk kopie is."@nl ;
 
     sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:rep ;
+    sh:minCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit die deze representatie representeert."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:inc ;
+    sh:minCount 1 ;
+    sh:class premis:File ;
+
+    sh:description "Een bestand die deel uit maakt van deze representatie"@nl ;
+
+    sh:severity sh:Violation ;
   ].
 
+ haObj:FileShape a sh:NodeShape ;
+  sh:targetClass premis:File ;
+    sh:property [
+        sh:path rel:isi;
+        sh:class haObj:DigitalRepresentation ;
+        sh:minCount 1 ;
+        sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
+    
+        sh:severity sh:Violation ;
+    ].
 
 
   
