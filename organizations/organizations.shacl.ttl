@@ -175,10 +175,13 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:path org:hasPost ;
                 sh:class org:Post ;
 
-                sh:name "has post. Indicates a Post which exists within the Organization."@en ;
-                sh:name "possède un poste. Indique un Poste qui existe dans l'Organisation."@fr ;
-                sh:name "heeft positie. Verwijst naar een positie binnen de organisatie."@nl ;
-                sh:description "Een positie binnen de Organisatie."@nl ;
+                sh:name "has post"@en ;
+                sh:name "possède un poste"@fr ;
+                sh:name "heeft positie"@nl ;
+                
+                sh:description "Indicates a Post which exists within the Organization."@en ;
+                sh:description "Indique un Poste qui existe dans l'Organisation."@fr ;
+                sh:description "Verwijst naar een positie binnen de organisatie."@nl ;
 
                 sh:severity sh:Warning ;
                 sh:message "org:hasPost is missing or its Object is no org:Post"@en ;
