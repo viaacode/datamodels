@@ -1,0 +1,121 @@
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix schema: <https://schema.org/> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+<>  dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+                [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "SHACL Model Objects"@en ;
+    dct:title     "Modèle SHACL Objet"@fr ;
+    dct:title     "SHACL-model Objecten"@nl ;
+    dct:created   "2022-01-07" ;
+    dct:modified  "2022-06-16" ;
+    dct:description """SHACL model to validate/describe the structure of achive objects."""@en ;
+    dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
+    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
+
+haObj:IntellectualEntityShape a sh:NodeShape ;
+  sh:targetClass premis:IntellectualEntity ;
+  sh:property [
+    sh:path rel:hsp ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],[
+    sh:path rel:isp ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:isr ;
+    sh:class premis:Representation ;
+
+    sh:description "Een representatie van de intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasMaster ;
+    sh:maxCount 1 ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:description "De archiefmaster van de intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasMezzanine ;
+    sh:maxCount 1 ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:description "De mezzanine representatie van de intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasAccesscopy ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit. "@nl ;
+
+    sh:severity sh:Violation ;
+  ].
+
+ haObj:DigitalRepresentationShape a sh:NodeShape ;
+  sh:targetClass haObj:DigitalRepresentation ;
+  sh:property  [
+    sh:path haObj:isMasterOf ;
+    sh:minCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isMezzanineOf ;
+    sh:maxCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze representatie de mezzanine is."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isAccesscopyOf ;
+    sh:maxCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze representatie de toegangs- of inkijk kopie is."@nl ;
+
+    sh:severity sh:Violation ;
+  ].
+
+
+
+  
