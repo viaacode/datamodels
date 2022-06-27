@@ -53,10 +53,13 @@
 #####################################
 
 haOrg:ContentPartner   a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
+    rdfs:subClassOf org:Organization ;  
     rdfs:label "Content Partner"@en ;
     rdfs:label "Partenaire de Contenus"@fr ;
     rdfs:label "Contentpartner"@nl ;
+    rdfs:comment """A content partner is an organization that has signed a collaboration agreement with meemoo for the long-term preservation and dissemination of their content."""@en ;
+    rdfs:comment """Een contentpartner is een organisatie dat een samenwerkingovereenkomst heeft ondertekend met meemoo voor de lange-termijn preservatie en ontsluiting van hun materiaal."""@nl ;
+
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
     # `Aanbieder` wordt gebruikt in AVO voor CP
 
@@ -66,6 +69,9 @@ haOrg:EducationalOrganization  a   rdfs:Class ;
     rdfs:label "Educational Organization"@en ;
     rdfs:label "Organisation Éducative"@fr ;
     rdfs:label "Educatieve organisatie"@nl ;
+    rdfs:comment """An educational organization is an organization or company that provides educational services outside the school context."""@en ;
+    rdfs:comment """Une organisation éducative est une organisation ou une entreprise qui fournit des services éducatifs hors du contexte de l'école."""@fr ;
+    rdfs:comment """Een educatieve organisatie is een organisatie of een bedrijf dat educatie en opleiding aanbiedt buiten een schoolcontext."""@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:EducationalPartner   a   rdfs:Class ;
@@ -73,6 +79,8 @@ haOrg:EducationalPartner   a   rdfs:Class ;
     rdfs:label "Educational Partner"@en ;
     rdfs:label "Partenaire Éducatif"@fr ;
     rdfs:label "Educatieve partner"@nl ;
+    rdfs:comment """Een educatieve partner is een organisatie die content aanbiedt op het Archief voor Onderwijs platform en de samenwerkingsovereenkomst educatieve partner heeft ondertekend (vb educatieve uitgeverij, KlasCement, Mediawijs, ed.)."""@nl ;
+
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:EducationalPublisher a   rdfs:Class ;
@@ -80,12 +88,16 @@ haOrg:EducationalPublisher a   rdfs:Class ;
     rdfs:label "Educational Publisher"@en ;
     rdfs:label "Éditeur éducatif"@fr ;
     rdfs:label "Educatieve uitgeverij"@nl ;
+    rdfs:comment """An educational publisher is a company that publishes educational content."""@en ;
+    rdfs:comment """Een educatieve uitgeverij is een bedrijf die educatieve content publiceert."""@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:Logo a   rdfs:Class ;
     rdfs:label  "Logo"@en ;
     rdfs:label  "Logo"@fr ;
     rdfs:label  "Logo"@nl ;
+    rdfs:comment """A logo is a a graphic mark, emblem, or symbol of an organization."""@en ;
+    rdfs:comment """Een logo is een grafisch embleem of symbool van een organisatie."""@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 # haOrg:LogoContext  a   rdfs:Class ;
@@ -100,6 +112,9 @@ haOrg:OrganizationType a  rdfs:Class ;
     rdfs:label  "Organization Type"@en ;
     rdfs:label  "Type de Organisation"@fr ;
     rdfs:label  "Organisatietype"@nl ;
+    rdfs:comment """The type or classification of an organization."""@en ;
+    rdfs:comment """Het type of classificatie van een organisatie."""@nl ;
+
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:School   a   rdfs:Class ;
@@ -108,6 +123,8 @@ haOrg:School   a   rdfs:Class ;
     rdfs:label "School"@en ;
     rdfs:label "École"@fr ;
     rdfs:label "School"@nl ;
+    rdfs:comment """Een door de Vlaamse overheid erkende onderwijsinstelling in het basis, secundair or hoger onderwijs."""@nl;
+
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:ServiceConsumer  a   rdfs:Class ;
@@ -115,13 +132,17 @@ haOrg:ServiceConsumer  a   rdfs:Class ;
     rdfs:label "Service Consumer"@en ;
     rdfs:label "Consomatteur de Services"@fr ;
     rdfs:label "Dienstenafnemer"@nl ;
+    rdfs:comment """Een organisatie die diensten bij meemoo afneemt, met contractuele relatie met meemoo. Het gaat hier niet over een contentpartner, maar ever een private organisatie die digitale opslag doet bij meemoo (bv. Plantentuin Meise)."""@nl;
+
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 haOrg:ServiceProvider  a   rdfs:Class ;
     rdfs:subClassOf org:Organization ;
     rdfs:label "Service Provider"@en ;
     rdfs:label "Fournisseur de Services" ;
-    rdfs:label "Serviceprovider"@nl ;
+    rdfs:label "Dienstenleverancier"@nl ;
+    rdfs:comment """Een organisatie die aan meemoo diensten of goederen levert: kan zowel gaan over IT, digitalisering, ..."""@nl;
+    
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
 
 #####################################
