@@ -357,42 +357,26 @@ haOrg:PersonShape a sh:NodeShape ;
 
 haOrg:PostalAddressShape  a sh:NodeShape ;
   sh:targetClass schema:PostalAddress ;
-  sh:property haOrg:PostalAddress-addressCountryShape ;
-  sh:property haOrg:PostalAddress-addressLocalityShape ;
-  sh:property haOrg:PostalAddress-addressRegionShape ;
-  sh:property haOrg:PostalAddress-postOfficeBoxNumberShape ;
-  sh:property haOrg:PostalAddress-postalCodeShape ;
-  sh:property haOrg:PostalAddress-streetAddressShape .
-
-haOrg:ContactPointShape  a sh:NodeShape ;
-  sh:targetClass schema:ContactPoint ;
-  sh:property schema:ContactPoint-contactTypeShape ;
-  sh:property schema:ContactPoint-emailShape ;
-  sh:property schema:ContactPoint-telephoneShape .     
-
-##########################
-#     PropertyShapes     #
-##########################
-
-haOrg:PostalAddress-addressCountryShape a sh:PropertyShape ;
-  sh:path schema:addressCountry ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path schema:addressCountry ;
   
-  sh:name "country"@en ;
-  sh:name "pays"@fr ;
-  sh:name "land"@nl ;
+    sh:name "country"@en ;
+    sh:name "pays"@fr ;
+    sh:name "land"@nl ;
 
-  sh:description "The country in which the postal address is located."@en ;
-  sh:description "Le pays dans lequel se trouve l'adresse postale."@fr ;
-  sh:description "Het land waarin het postadres zich bevindt."@nl ;
+    sh:description "The country in which the postal address is located."@en ;
+    sh:description "Le pays dans lequel se trouve l'adresse postale."@fr ;
+    sh:description "Het land waarin het postadres zich bevindt."@nl ;
   
-  sh:datatype xsd:string ;
+    sh:datatype xsd:string ;
   
-  sh:severity sh:Info ;
-  sh:message "The Object of schema:addressCountry is neither schema:Country nor xsd:string."@en ;
-  sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou xsd:string."@fr ;
-  sh:message "Het Object van schema:addressCountry is geen schema:Country of xsd:string."@nl.
-
-haOrg:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
+    sh:severity sh:Info ;
+    sh:message "The Object of schema:addressCountry is neither schema:Country nor xsd:string."@en ;
+    sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou xsd:string."@fr ;
+    sh:message "Het Object van schema:addressCountry is geen schema:Country of xsd:string."@nl
+],[   
+  a  sh:PropertyShape ;
   sh:path schema:addressLocality ;
   sh:datatype xsd:string ;
   
@@ -401,9 +385,10 @@ haOrg:PostalAddress-addressLocalityShape  a  sh:PropertyShape ;
   sh:description "De stad waarin het straatadres zich bevindt, en deel uitmaakt van de regio. Bijvoorbeeld, Brussel, Oostende, ...."@nl ;
   sh:name "locality"@en ;
   sh:name "ville"@fr ;
-  sh:name "gemeente"@nl .
+  sh:name "gemeente"@nl 
 
-haOrg:PostalAddress-addressRegionShape  a sh:PropertyShape ;
+],[   
+  a sh:PropertyShape ;
   sh:path schema:addressRegion ;
   sh:datatype xsd:string ;
   
@@ -412,9 +397,9 @@ haOrg:PostalAddress-addressRegionShape  a sh:PropertyShape ;
   sh:description "De provincie van het land waarin de stad zich bevindt. Bijvoorbeeld, Oost-Vlaanderen, Limburg, etc."@nl ;
   sh:name "region"@en;
   sh:name "provincie"@fr;
-  sh:name "provincie"@nl.
+  sh:name "provincie"@nl
 
-haOrg:PostalAddress-postOfficeBoxNumberShape  a sh:PropertyShape ;
+],[   a sh:PropertyShape ;
   sh:path schema:postOfficeBoxNumber ;
   sh:datatype xsd:string ;
   
@@ -423,9 +408,9 @@ haOrg:PostalAddress-postOfficeBoxNumberShape  a sh:PropertyShape ;
   sh:description "Het postbusnummer voor postbusadressen."@nl ;
   sh:name "post office box number"@en ;
   sh:name "le numéro de boîte postale"@fr ;
-  sh:name "postbusnummer"@nl .
+  sh:name "postbusnummer"@nl 
 
-haOrg:PostalAddress-postalCodeShape a sh:PropertyShape ;
+],[  a sh:PropertyShape ;
   sh:path schema:postalCode ;
   sh:datatype xsd:string ;
 
@@ -434,9 +419,9 @@ haOrg:PostalAddress-postalCodeShape a sh:PropertyShape ;
   sh:description "De postcode. Bijvoorbeeld, 9400."@nl ;
   sh:name "postal code"@en ;
   sh:name "le code postal"@fr ;
-  sh:name "postcode"@nl .
+  sh:name "postcode"@nl 
 
-haOrg:PostalAddress-streetAddressShape  a sh:PropertyShape ;
+],[   a sh:PropertyShape ;
   sh:path schema:streetAddress ;
   sh:datatype xsd:string ;
 
@@ -446,29 +431,44 @@ haOrg:PostalAddress-streetAddressShape  a sh:PropertyShape ;
   
   sh:name "address"@en ;
   sh:name "l'adresse"@fr ;
-  sh:name "adres"@nl .
+  sh:name "adres"@nl 
+  ].
 
-haOrg:ContactPoint-contactTypeShape  a sh:PropertyShape ;
-  sh:path schema:contactType ;
-  sh:datatype xsd:string ;
-  
-  sh:name "contact type"@en ;
-  sh:name "contacttype"@nl .
+haOrg:ContactPointShape  a sh:NodeShape ;
+  sh:targetClass schema:ContactPoint ;
+  sh:property [  
+    sh:path schema:contactType ;
+    sh:datatype xsd:string ;
+    
+    sh:name "contact type"@en ;
+    sh:name "contacttype"@nl ;
 
+    sh:description "The type of contact point."@en ;
+    sh:description "Het type contactpunt."@nl ;
+  ],[ 
+    sh:path schema:email ;
+    sh:datatype xsd:string ;
+    
+    sh:name "email"@en ;
+    sh:name "e-mail"@nl ;
 
-haOrg:ContactPoint-emailShape a sh:PropertyShape ;
-  sh:path schema:email ;
-  sh:datatype xsd:string ;
-  
-  sh:name "email"@en ;
-  sh:name "email"@nl .
+    sh:description "The email address."@en ;
+    sh:description "Het e-mail adres."@nl ;
+  ],[ 
+    sh:path schema:telephone ;
+    sh:datatype xsd:string ;
+    
+    sh:name "telephone"@en ;
+    sh:name "telefoonnummer"@nl ; 
 
-haOrg:ContactPoint-telephoneShape  a sh:PropertyShape ;
-  sh:path schema:telephone ;
-  sh:datatype xsd:string ;
-  
-  sh:name "telephone"@en ;
-  sh:name "telefoonnummer"@nl .
+    sh:description "The telephone number."@en ;
+    sh:description "Het telefoonnummer."@nl ;
+  ] .
+
+##########################
+#     PropertyShapes     #
+##########################
+
 
 haOrg:prefLabelShape  a sh:PropertyShape ;
   sh:path skos:prefLabel ;
