@@ -122,16 +122,24 @@ premis:StorageMedium  a   rdfs:Class ;
     rdfs:label "Opslagmedium"@nl ;
     rdfs:comment """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
         DVD)."""@en ;
+    rdfs:comment """Le support physique sur lequel l'Objet est stocké (par exemple, le mécanisme magnétique, le disque dur, le CD-ROM, le DVD)."""@fr ;
+    rdfs:comment """Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."""@nl ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> .
 
-# prov-o classes
-
-prov:Entity a rdfs:Class ;
-    rdfs:comment """An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary."""@en ;
-    rdfs:comment """Une entité est une chose physique, numérique, conceptuelle ou d'un autre type présentant certains aspects fixes ; les entités peuvent être réelles ou imaginaires."""@fr ;
-    rdfs:comment """Een entiteit is een fysiek, digitaal, conceptueel of ander soort ding met een aantal vaste aspecten; entiteiten kunnen reëel of denkbeeldig zijn."""@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .
+# dct classes
+dct:FileFormat dct:description "Examples include the formats defined by the list of Internet Media Types."@en ;
+	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
+	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	a rdfs:Class ;
+	rdfs:comment "A digital resource format."@en ;
+  rdfs:comment "Un format de ressource numérique."@fr ;
+  rdfs:comment "Een formaat van een digitale bron."@nl ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+	rdfs:label "File Format"@en ;
+  rdfs:label "Format de fichier"@fr ;
+  rdfs:label "Bestandsformaat"@nl ;
+	rdfs:subClassOf dct:MediaType .
 
 # meemoo classes
 
@@ -145,24 +153,16 @@ haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:comment "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-# vraag: moet dit een aparte klasse worden? Zaken als dcterms/ebucore/nog andere? hebben een (file)format, maar da's wel geen skos klasse dan
-# ebucore gebruikt bv. ook mimetypes ipv. fileformat (denk ik)
-# oplossing: aparte klasse, maar wel equivalente klassen oplijsten?
-# voordeel van mimetypes ipv. fileformats te gebruiken, is dat je voc wel meteen vaststaat?
-haObj:FileFormat a rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    owl:equivalentClass dct:format ;
-    rdfs:label "File format"@en ;
-    rdfs:label "Format de fichier"@fr ;
-    rdfs:label "Bestandsformaat"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haObj:Identifier a rdfs:Class ;
+haObj:LocalIdentifier a rdfs:Class ;
     rdfs:subClassOf premis:Identifier ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label "Local identifier"@en ;
     rdfs:label "Identifiant local"@fr ;
     rdfs:label "Lokale identificatie"@nl ;
+    rdfs:comment "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
+    rdfs:comment "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'un système externe ou l'identifiant dans le système de registre de collection du partenaire de contenu."@fr ;
+    rdfs:comment "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een extern database of de identificatie in het systeem van registratie van de collectie van de partner van content."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
 haObj:PhysicalRepresentation a rdfs:Class ;
@@ -175,13 +175,21 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:comment "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haObj:RepresentationType  a   rdfs:Class ;
-    rdfs:subClassOf skos:Concept ;
-    rdfs:label  "Type of a representation"@en ;
-    rdfs:label  "Type d'une representation"@fr ;
-    rdfs:label  "Representatietype"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
-
+# dct properties
+dct:format dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+	dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
+	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	a rdf:Property ;
+	rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
+  rdfs:comment "Le format du fichier, le support de stockage ou les dimensions du fichier."@fr ;
+  rdfs:comment "Het bestandsformaat, het opslagmedium of de afmetingen van het bestand."@nl ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+	rdfs:label "Format"@en ;
+  rdfs:label "Format"@fr ;
+  rdfs:label "Formaat"@nl ;
+	rdfs:range dct:MediaTypeOrExtent ;
+	rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
 
 # premis properties
 
@@ -548,6 +556,18 @@ ebucore:isMediaFragmentOf  a rdf:Property ;
   rdfs:label "Bron van het mediafragment"@nl ;
   rdfs:domain ebucore:MediaFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+
+ebucore:hasMimeType
+  a rdf:Property ;
+  rdfs:subPropertyOf ebucore:hasFormat ;
+  rdfs:range ebucore:MimeType, xsd:string ;
+  rdfs:comment "To specify the Mime type of a Resource."@en ;
+  rdfs:comment "Pour spécifier le type MIME d'une ressource."@fr ;
+  rdfs:comment "Om het MIME type van een resource te specificeren."@nl ;
+  rdfs:domain ebucore:MediaResource ;
+  rdfs:label "Mime type"@en ;
+  rdfs:label "Mime type"@nl ;
+  rdfs:label "Mime type"@fr .
 
 # meemoo properties
 

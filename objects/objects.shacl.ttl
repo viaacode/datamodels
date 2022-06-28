@@ -49,6 +49,21 @@ haObj:ObjectShape a sh:NodeShape ;
 haObj:IntellectualEntityShape a sh:NodeShape ;
   sh:targetClass premis:IntellectualEntity ;
   sh:property [
+      a sh:PropertyShape ;
+      sh:path premis:identifier ;
+      sh:class haObj:LocalIdentifier ;
+      sh:name "local identifier"@en ;
+      sh:name "lokale identifier"@nl ;
+      sh:name "identificateur local"@fr ;
+      sh:description "A local identifier for the intellectual entity."@en ;
+      sh:description "Een lokale identifier voor de intellectuele entiteit."@nl ;
+      sh:description "Un identificateur local pour l'entité intellectuelle."@fr ;
+      sh:severity sh:Violation ;
+      sh:message "premis:identifier is not a LocalIdentifier"@en ;
+      sh:message "premis:identifier is niet van de klasse LocalIdentifier"@nl ;
+      sh:message "premis:identifier n'est pas de la classe LocalIdentifier"@fr ;
+  ],
+  [
     sh:path rel:hsp ;
     sh:class premis:IntellectualEntity ;
 
@@ -98,7 +113,17 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:severity sh:Violation ;
   ].
 
- haObj:DigitalRepresentationShape a sh:NodeShape ;
+haObj:PhysicalRepresentationShape a sh:NodeShape ;
+  sh:targetClass haObj:PhysicalRepresentation ;
+  sh:property [
+    sh:path premis:medium;
+    sh:class premis:StorageMedium ;
+    sh:description "Het type opslagmedium."@nl ;
+    
+    sh:severity sh:Violation ;
+  ].
+
+haObj:DigitalRepresentationShape a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
   sh:property  [
     sh:path haObj:isMasterOf ;
@@ -144,6 +169,20 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:description "Een bestand die deel uit maakt van deze representatie"@nl ;
 
     sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:hsr ;
+    sh:class premis:File ;
+
+    sh:description "Het bestand dat eerst verwerkt moet worden."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:hss ;
+    sh:class haObj:PhysicalRepresentation ;
+
+    sh:severity sh:Violation ;
   ].
 
  haObj:FileShape a sh:NodeShape ;
@@ -155,6 +194,12 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
         sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
     
         sh:severity sh:Violation ;
+    ],
+    [
+    sh:path rel:sup ;
+      sh:class premis:File ;
+
+      sh:severity sh:Violation ;
     ],
     [
         sh:path premis:fixity;
@@ -174,14 +219,47 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ],
     [
-        sh:path premis:format;
-        sh:class haObj:FileFormat ;
+        sh:path dct:format;
+        sh:class dct:FileFormat ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+
         sh:description "Het bestandsformaat."@nl ;
+
     
         sh:severity sh:Violation ;
+    ],
+    [
+        sh:path ebucore:hasMimeType;
+        sh:datatype xsd:string;
+
+        sh:maxCount 1 ;
+        sh:name "mime type"@en ;
+        sh:name "mime type"@nl ;
+        sh:name "mime type"@fr ;
+        sh:description "Het MIME type of IANA media type."@nl ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path edm:isNextInSequence ;
+        sh:class premis:File ;
+
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path rel:doc ;
+        sh:class premis:File ;
+
+        sh:severity sh:Violation ;
+    ],
+    [
+      sh:path ebucore:hasMediaFragment ;
+      sh:class haObj:DigitalRepresentation ;
+
+      sh:severity sh:Violation ;
     ].
+
 
 
 haObj:FixityShape a sh:NodeShape ;
@@ -199,7 +277,7 @@ haObj:FixityShape a sh:NodeShape ;
         sh:path dct:creator;
         sh:datatype xsd:string;
         sh:name "maker"@nl;
-        
+
         sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
     
         sh:severity sh:Violation ;
@@ -220,8 +298,26 @@ haObj:StorageLocationShape a sh:NodeShape ;
     [
         sh:path premis:medium;
         sh:class premis:StorageMedium ;
-        sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
+        sh:description "Het type opslagmedium."@nl ;
     
         sh:severity sh:Violation ;
     ].
   
+  <#LocalIdentifierNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:LocalIdentifier ;
+    sh:property 
+    [
+        a sh:PropertyShape ;
+        sh:path rdf:value ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "value"@en ;
+        sh:name "waarde"@nl ;
+        sh:name "valeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "rdf:value is missing or not of type string"@en ;
+        sh:message "rdf:value ontbreekt of is niet van het type string"@nl ;
+        sh:message "rdf:value est manquant ou n'est pas de type string"@fr ;
+    ] .
