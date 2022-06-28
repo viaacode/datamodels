@@ -1,0 +1,323 @@
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix schema: <https://schema.org/> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<>  dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+                [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "SHACL Model Objects"@en ;
+    dct:title     "Modèle SHACL Objet"@fr ;
+    dct:title     "SHACL-model Objecten"@nl ;
+    dct:created   "2022-01-07" ;
+    dct:modified  "2022-06-16" ;
+    dct:description """SHACL model to validate/describe the structure of achive objects."""@en ;
+    dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
+    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
+
+haObj:ObjectShape a sh:NodeShape ;
+  sh:targetClass premis:Object ;
+  sh:property [
+    sh:path premis:relationship ;
+    sh:class premis:Object ;
+
+    sh:description "Een generieke relatie tussen intellectuele entiteiten, files, of representaties."@nl ;
+
+    sh:severity sh:Violation ;
+  ].
+
+haObj:IntellectualEntityShape a sh:NodeShape ;
+  sh:targetClass premis:IntellectualEntity ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path premis:identifier ;
+      sh:class haObj:LocalIdentifier ;
+      sh:name "local identifier"@en ;
+      sh:name "lokale identifier"@nl ;
+      sh:name "identificateur local"@fr ;
+      sh:description "A local identifier for the intellectual entity."@en ;
+      sh:description "Een lokale identifier voor de intellectuele entiteit."@nl ;
+      sh:description "Un identificateur local pour l'entité intellectuelle."@fr ;
+      sh:severity sh:Violation ;
+      sh:message "premis:identifier is not a LocalIdentifier"@en ;
+      sh:message "premis:identifier is niet van de klasse LocalIdentifier"@nl ;
+      sh:message "premis:identifier n'est pas de la classe LocalIdentifier"@fr ;
+  ],
+  [
+    sh:path rel:hsp ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],[
+    sh:path rel:isp ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:isr ;
+    sh:class premis:Representation ;
+
+    sh:description "Een representatie van de intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasMaster ;
+    sh:maxCount 1 ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:description "De archiefmaster van de intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasMezzanine ;
+    sh:maxCount 1 ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:description "De mezzanine representatie van de intellectuele entiteit."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasAccesscopy ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit. "@nl ;
+
+    sh:severity sh:Violation ;
+  ].
+
+haObj:PhysicalRepresentationShape a sh:NodeShape ;
+  sh:targetClass haObj:PhysicalRepresentation ;
+  sh:property [
+    sh:path premis:medium;
+    sh:class premis:StorageMedium ;
+    sh:description "Het type opslagmedium."@nl ;
+    
+    sh:severity sh:Violation ;
+  ].
+
+haObj:DigitalRepresentationShape a sh:NodeShape ;
+  sh:targetClass haObj:DigitalRepresentation ;
+  sh:property  [
+    sh:path haObj:isMasterOf ;
+    sh:minCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isMezzanineOf ;
+    sh:maxCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze representatie de mezzanine is."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isAccesscopyOf ;
+    sh:maxCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit waarvan deze representatie de toegangs- of inkijk kopie is."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:rep ;
+    sh:minCount 1 ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:description "De intellectuele entiteit die deze representatie representeert."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:inc ;
+    sh:minCount 1 ;
+    sh:class premis:File ;
+
+    sh:description "Een bestand die deel uit maakt van deze representatie"@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:hsr ;
+    sh:class premis:File ;
+
+    sh:description "Het bestand dat eerst verwerkt moet worden."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path rel:hss ;
+    sh:class haObj:PhysicalRepresentation ;
+
+    sh:severity sh:Violation ;
+  ].
+
+ haObj:FileShape a sh:NodeShape ;
+  sh:targetClass premis:File ;
+    sh:property [
+        sh:path rel:isi;
+        sh:class haObj:DigitalRepresentation ;
+        sh:minCount 1 ;
+        sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+    sh:path rel:sup ;
+      sh:class premis:File ;
+
+      sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:fixity;
+        sh:class premis:Fixity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:description "De berekende fixity checksum van het bestand."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:storedAt;
+        sh:class premis:StorageLocation ;
+        sh:minCount 1 ;
+        sh:description "De locatie waar het bestand is opgeslagen."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path dct:format;
+        sh:class dct:FileFormat ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:description "Het bestandsformaat."@nl ;
+
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path ebucore:hasMimeType;
+        sh:datatype xsd:string;
+
+        sh:maxCount 1 ;
+        sh:name "mime type"@en ;
+        sh:name "mime type"@nl ;
+        sh:name "mime type"@fr ;
+        sh:description "Het MIME type of IANA media type."@nl ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path edm:isNextInSequence ;
+        sh:class premis:File ;
+
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path rel:doc ;
+        sh:class premis:File ;
+
+        sh:severity sh:Violation ;
+    ],
+    [
+      sh:path ebucore:hasMediaFragment ;
+      sh:class haObj:DigitalRepresentation ;
+
+      sh:severity sh:Violation ;
+    ].
+
+
+
+haObj:FixityShape a sh:NodeShape ;
+  sh:targetClass premis:Fixity ;
+    sh:property [
+        sh:path rdf:value;
+        sh:datatype xsd:string;
+        sh:minCount 1 ;
+        sh:name "fixity checksum"@nl;
+        sh:description "De waarde van de checksum."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path dct:creator;
+        sh:datatype xsd:string;
+        sh:name "maker"@nl;
+
+        sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
+    
+        sh:severity sh:Violation ;
+    ].
+
+haObj:StorageLocationShape a sh:NodeShape ;
+  sh:targetClass premis:StorageLocation ;
+    sh:property [
+        sh:path rdf:value;
+        sh:datatype xsd:string;
+        sh:minCount 1 ;
+        sh:name "opslagpad"@nl ;
+        sh:name "file path"@en ;
+        sh:description "Het pad van de opslaglocatie."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:medium;
+        sh:class premis:StorageMedium ;
+        sh:description "Het type opslagmedium."@nl ;
+    
+        sh:severity sh:Violation ;
+    ].
+  
+  <#LocalIdentifierNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:LocalIdentifier ;
+    sh:property 
+    [
+        a sh:PropertyShape ;
+        sh:path rdf:value ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "value"@en ;
+        sh:name "waarde"@nl ;
+        sh:name "valeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "rdf:value is missing or not of type string"@en ;
+        sh:message "rdf:value ontbreekt of is niet van het type string"@nl ;
+        sh:message "rdf:value est manquant ou n'est pas de type string"@fr ;
+    ] .
