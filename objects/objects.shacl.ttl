@@ -16,6 +16,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -33,6 +34,17 @@
     dct:description """SHACL model to validate/describe the structure of achive objects."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
     dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
+
+haObj:ObjectShape a sh:NodeShape ;
+  sh:targetClass premis:Object ;
+  sh:property [
+    sh:path premis:relationship ;
+    sh:class premis:Object ;
+
+    sh:description "Een generieke relatie tussen intellectuele entiteiten, files, of representaties."@nl ;
+
+    sh:severity sh:Violation ;
+  ].
 
 haObj:IntellectualEntityShape a sh:NodeShape ;
   sh:targetClass premis:IntellectualEntity ;
@@ -143,7 +155,73 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
         sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
     
         sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:fixity;
+        sh:class premis:Fixity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:description "De berekende fixity checksum van het bestand."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:storedAt;
+        sh:class premis:StorageLocation ;
+        sh:minCount 1 ;
+        sh:description "De locatie waar het bestand is opgeslagen."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:format;
+        sh:class haObj:FileFormat ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:description "Het bestandsformaat."@nl ;
+    
+        sh:severity sh:Violation ;
     ].
 
 
+haObj:FixityShape a sh:NodeShape ;
+  sh:targetClass premis:Fixity ;
+    sh:property [
+        sh:path rdf:value;
+        sh:datatype xsd:string;
+        sh:minCount 1 ;
+        sh:name "fixity checksum"@nl;
+        sh:description "De waarde van de checksum."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path dct:creator;
+        sh:datatype xsd:string;
+        sh:name "maker"@nl;
+        
+        sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
+    
+        sh:severity sh:Violation ;
+    ].
+
+haObj:StorageLocationShape a sh:NodeShape ;
+  sh:targetClass premis:StorageLocation ;
+    sh:property [
+        sh:path rdf:value;
+        sh:datatype xsd:string;
+        sh:minCount 1 ;
+        sh:name "opslagpad"@nl ;
+        sh:name "file path"@en ;
+        sh:description "Het pad van de opslaglocatie."@nl ;
+    
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path premis:medium;
+        sh:class premis:StorageMedium ;
+        sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
+    
+        sh:severity sh:Violation ;
+    ].
   

@@ -94,6 +94,8 @@ premis:Object a owl:Class, rdfs:Class ;
 
 premis:Representation a owl:Class, rdfs:Class ;
   rdfs:label "Representation"@en ;
+  rdfs:label "Représentation"@fr ;
+  rdfs:label "Representatie"@nl ;
   rdfs:comment """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
       representation is the set of stored digital files and structural metadata needed to provide a complete
       and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a
@@ -158,9 +160,9 @@ haObj:FileFormat a rdfs:Class ;
 haObj:Identifier a rdfs:Class ;
     rdfs:subClassOf premis:Identifier ;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "Physical representation"@en ;
-    rdfs:label "Représentation physique"@fr ;
-    rdfs:label "Fysieke representatie"@nl ;
+    rdfs:label "Local identifier"@en ;
+    rdfs:label "Identifiant local"@fr ;
+    rdfs:label "Lokale identificatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
 haObj:PhysicalRepresentation a rdfs:Class ;
@@ -250,6 +252,14 @@ premis:storedAt a owl:ObjectProperty ;
    )
   ] ;
   rdfs:range premis:StorageLocation ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
+  premis:medium a owl:ObjectProperty ;
+  rdfs:label "has medium"@en ;
+  rdfs:label "a un support"@fr ;
+  rdfs:label "heeft als medium"@nl ;
+  rdfs:domain <http://www.loc.gov/premis/rdf/v3/StorageLocation> ;
+  rdfs:range <http://www.loc.gov/premis/rdf/v3/StorageMedium> ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 # premis relationship subtypes
