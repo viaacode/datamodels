@@ -150,14 +150,6 @@ schema:Role a rdfs:Class ;
         Ou que le rôle d''acteur' (actor role) d'une personne dans un film correspond à un nom de personnage particulier.
         Ces propriétés peuvent être attachées à un rôle d'entité (entity role), qui est ensuite associée aux entités principales en utilisant des propriétés ordinaires comme 'membre' (member) ou 'acteur' (actor).
         """@fr .
-    
-schema:Thing a rdfs:Class;
-    rdfs:label "Thing"@en ;
-    rdfs:label "Chose"@fr ;
-    rdfs:label "Ding"@nl ;
-    rdfs:comment """The most generic type of item."""@en ;
-    rdfs:comment """Meest generieke soort item"""@nl ;
-    rdfs:comment """Le type d'article le plus générique.."""@fr .
 
 ####################
 #       SKOS       #

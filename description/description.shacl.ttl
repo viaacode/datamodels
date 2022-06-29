@@ -289,9 +289,9 @@
         sh:name "licentie"@nl ;
         sh:name "licence"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:license is not of class schema:Thing"@en ;
-        sh:message "schema:license is niet van de klasse schema:Thing"@nl ;
-        sh:message "schema:license n'est pas de la classe schema:Thing"@fr ;
+        sh:message "schema:license is not of class skos:Concept"@en ;
+        sh:message "schema:license is niet van de klasse skos:Concept"@nl ;
+        sh:message "schema:license n'est pas de la classe skos:Concept"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -326,20 +326,20 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:copyrightNotice ;
+        sh:path schema:copyrightNotice ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "copyright notice"@en ;
         sh:name "copyright melding"@nl ;
         sh:name "notice de copyright"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:copyrightNotice is not of type string"@en ;
-        sh:message "dct:copyrightNotice is niet van het type string"@nl ;
-        sh:message "dct:copyrightNotice n'est pas de type string"@fr ;
+        sh:message "schema:copyrightNotice is not of type string"@en ;
+        sh:message "schema:copyrightNotice is niet van het type string"@nl ;
+        sh:message "schema:copyrightNotice n'est pas de type string"@fr ;
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:copyrightYear ;
+        sh:path schema:copyrightYear ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:integer ;
         sh:name "copyright year"@en ;
@@ -352,29 +352,28 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:creditText ;
+        sh:path schema:creditText ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "credit text"@en ;
         sh:name "credit tekst"@nl ;
         sh:name "texte de crédit"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:creditText is not of type string"@en ;
-        sh:message "dct:creditText is niet van het type string"@nl ;
-        sh:message "dct:creditText n'est pas de type string"@fr ;
+        sh:message "schema:creditText is not of type string"@en ;
+        sh:message "schema:creditText is niet van het type string"@nl ;
+        sh:message "schema:creditText n'est pas de type string"@fr ;
     ],
-    #? voorstel
     [
         a sh:PropertyShape ;
         sh:path schema:about ;
-        sh:class schema:Thing ; 
+        sh:nodeKind sh:IRI ;
         sh:name "about"@en ;
         sh:name "over"@nl ;
         sh:name "sur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:about is not of class schema:Thing"@en ;
-        sh:message "schema:about is niet van de klasse schema:Thing"@nl ;
-        sh:message "schema:about n'est pas de la classe schema:Thing"@fr ;
+        sh:message "schema:about is not an IRI"@en ;
+        sh:message "schema:about is geen IRI"@nl ;
+        sh:message "schema:about n'est pas un IRI"@fr ;
     ] .
 
 ####################
@@ -485,7 +484,7 @@
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:integer ;
         sh:name "season number"@en ;
-        sh:name "seizoen nummer"@nl ;
+        sh:name "seizoensnummer"@nl ;
         sh:name "numéro de saison"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:seasonNumber is not of type integer"@en ;
@@ -497,6 +496,13 @@
     sh:targetClass schema:Episode ;
     sh:property <#identifierShape>, <#nameShape>, <#descriptionShape> .
 
+<#PlaceShape> a sh:NodeShape ; 
+    sh:targetClass schema:Place ;
+    sh:property <#nameShape>, <#descriptionShape> .
+
+<#ArchiveComponentShape> a sh:NodeShape ; 
+    sh:targetClass schema:ArchiveComponent ;
+    sh:property <#nameShape>, <#descriptionShape> .
 
 <#RoleNodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Role ;
