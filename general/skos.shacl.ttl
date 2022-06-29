@@ -1,0 +1,99 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+
+skos:Concept a rdfs:Class , sh:NodeShape ;
+    sh:not [
+        sh:class skos:Collection
+    ] , [
+        sh:class skos:ConceptScheme
+    ] ;
+    sh:property 
+    <#prefLabelShape>,
+    <#altLabelShape>,
+    <#hiddenLabelShape>,
+    [
+	  sh:path skos:related ;
+	  sh:class skos:Concept ;
+	  sh:disjoint skos:broaderTransitive
+    ],
+    [
+        sh:path skos:narrowerTransitive ;
+        sh:class skos:Concept;
+    ] , [
+        sh:path skos:topConceptOf ;
+        sh:class skos:ConceptScheme;
+    ] , [
+        sh:class skos:Concept ;
+        sh:path skos:mappingRelation
+    ] , [
+        sh:class skos:Concept ;
+        sh:path skos:broadMatch
+    ] , [
+        sh:class skos:Concept ;
+        sh:path skos:relatedMatch
+    ] , [
+        sh:class skos:Concept ;
+        sh:path skos:exactMatch
+    ] , [
+        sh:path skos:broader ;
+        sh:class skos:Concept
+    ] , [
+        sh:path skos:related ;
+        sh:class skos:Concept
+    ] , [
+        sh:path skos:closeMatch ;
+        sh:class skos:Concept
+    ] , [
+        sh:path skos:narrower ;
+        sh:class skos:Concept
+    ] , [
+        sh:class skos:Concept ;
+        sh:path skos:semanticRelation
+    ] , [
+        sh:path skos:broaderTransitive ;
+        sh:class skos:Concept
+    ] , [
+        sh:path skos:narrowMatch ;
+        sh:class skos:Concept
+    ] .
+
+skos:ConceptScheme a sh:NodeShape , rdfs:Class ;
+    sh:not [ sh:class skos:Concept ] ;
+    sh:property [
+        sh:path skos:hasTopConcept ;
+        sh:class skos:Concept
+    ] .
+
+skos:Collection a rdfs:Class , sh:NodeShape ;
+    sh:property [
+        sh:path skos:member ;
+        sh:or ( [ sh:class skos:Concept ] [ sh:class skos:Collection ] )
+    ] .
+
+skos:OrderedCollection a rdfs:Class , sh:NodeShape ;
+    sh:class skos:Collection ;
+    sh:property [
+        sh:path skos:memberList ;
+        sh:maxCount 1 ;
+        sh:class rdf:List
+    ] .
+
+<#prefLabelShape> a sh:PropertyShape ;
+        sh:path skos:prefLabel ;
+        sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+        sh:qualifiedMaxCount 1 ;
+        sh:qualifiedValueShape [ sh:datatype xsd:string ];
+        sh:uniqueLang true ;
+        sh:disjoint skos:altLabel , skos:hiddenLabel.
+
+<#altLabelShape> a sh:PropertyShape ;
+	  sh:path skos:altLabel ;
+	  sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+	  sh:disjoint skos:prefLabel , skos:hiddenLabel
+.
+
+<#hiddenLabelShape> a sh:PropertyShape ;
+  sh:targetSubjectsOf skos:hiddenLabel ;
+  sh:path skos:hiddenLabel ;
+  sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) ;
+  sh:disjoint skos:prefLabel , skos:altLabel .
