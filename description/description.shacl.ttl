@@ -1,16 +1,20 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix haDes: <https://data.hetarchief.be/ns/description#>  .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
-@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix meemoo: <http://data.meemoo.be/ns/>  .
-@prefix ebu: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix org: <http://www.w3.org/ns/org#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -38,7 +42,21 @@
 ####################
 <#IntellectualEntityNodeShape> a sh:NodeShape ; 
     sh:targetClass premis:IntellectualEntity ;
-    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:maintainer ;
+        sh:targetClass haOrg:ContentPartner ;
+        sh:minCount 1;
+        sh:maxCount 1;        
+        sh:name "maintainer"@en ;
+        sh:name "beheerder"@nl ;
+        sh:name "mainteneur/responsable"@fr ;
+        sh:severity sh:Violation ;
+        sh:message """The maintainer of the IntellectualEntity must be a ContentPartner."""@en ;
+        sh:message """De beheerder van de IntellectualEntity moet een Contentpartner zijn."""@nl ;
+        sh:message """Le mainteneur de l'IntellectualEntity doit être un ContentPartner."""@fr ;
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:alternateName ;
@@ -186,7 +204,7 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path ebu:objectType ;
+        sh:path ebucore:objectType ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
@@ -194,10 +212,9 @@
         sh:name "object type"@nl ;
         sh:name "type d'objet"@fr ;
         sh:severity sh:Violation ;
-        sh:message "ebu:objectType is not of type string"@en ;
-        sh:message "ebu:objectType is niet van het type string"@nl ;
-        sh:message "ebu:objectType n'est pas de type string"@fr ;
-
+        sh:message "ebucore:objectType is not of type string"@en ;
+        sh:message "ebucore:objectType is niet van het type string"@nl ;
+        sh:message "ebucore:objectType n'est pas de type string"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -272,9 +289,9 @@
         sh:name "licentie"@nl ;
         sh:name "licence"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:license is not of class schema:Thing"@en ;
-        sh:message "schema:license is niet van de klasse schema:Thing"@nl ;
-        sh:message "schema:license n'est pas de la classe schema:Thing"@fr ;
+        sh:message "schema:license is not of class skos:Concept"@en ;
+        sh:message "schema:license is niet van de klasse skos:Concept"@nl ;
+        sh:message "schema:license n'est pas de la classe skos:Concept"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -309,20 +326,20 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:copyrightNotice ;
+        sh:path schema:copyrightNotice ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "copyright notice"@en ;
         sh:name "copyright melding"@nl ;
         sh:name "notice de copyright"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:copyrightNotice is not of type string"@en ;
-        sh:message "dct:copyrightNotice is niet van het type string"@nl ;
-        sh:message "dct:copyrightNotice n'est pas de type string"@fr ;
+        sh:message "schema:copyrightNotice is not of type string"@en ;
+        sh:message "schema:copyrightNotice is niet van het type string"@nl ;
+        sh:message "schema:copyrightNotice n'est pas de type string"@fr ;
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:copyrightYear ;
+        sh:path schema:copyrightYear ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:integer ;
         sh:name "copyright year"@en ;
@@ -335,37 +352,36 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:creditText ;
+        sh:path schema:creditText ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "credit text"@en ;
         sh:name "credit tekst"@nl ;
         sh:name "texte de crédit"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:creditText is not of type string"@en ;
-        sh:message "dct:creditText is niet van het type string"@nl ;
-        sh:message "dct:creditText n'est pas de type string"@fr ;
+        sh:message "schema:creditText is not of type string"@en ;
+        sh:message "schema:creditText is niet van het type string"@nl ;
+        sh:message "schema:creditText n'est pas de type string"@fr ;
     ],
-    #? voorstel
     [
         a sh:PropertyShape ;
         sh:path schema:about ;
-        sh:class schema:Thing ; 
+        sh:nodeKind sh:IRI ;
         sh:name "about"@en ;
         sh:name "over"@nl ;
         sh:name "sur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:about is not of class schema:Thing"@en ;
-        sh:message "schema:about is niet van de klasse schema:Thing"@nl ;
-        sh:message "schema:about n'est pas de la classe schema:Thing"@fr ;
+        sh:message "schema:about is not an IRI"@en ;
+        sh:message "schema:about is geen IRI"@nl ;
+        sh:message "schema:about n'est pas un IRI"@fr ;
     ] .
 
 ####################
-#      MEEMOO      #
+#      haDes      #
 ####################
 <#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
-    sh:targetClass meemoo:PhysicalRepresentation ;
-    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    sh:targetClass haObj:PhysicalRepresentation ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path dct:format ;
@@ -397,8 +413,8 @@
         sh:message "dct:medium n'est pas de type string"@fr ;
     ] .
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
-    sh:targetClass meemoo:DigitalRepresentation ;
-    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    sh:targetClass haObj:DigitalRepresentation ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
@@ -459,16 +475,16 @@
 ####################
 #      SCHEMA      #
 ####################
-<CreativeWorkSeriesShape> a sh:NodeShape ; 
+<#CreativeWorkSeriesShape> a sh:NodeShape ; 
     sh:targetClass schema:CreativeWorkSeries ;
-    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape,
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:seasonNumber ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:integer ;
         sh:name "season number"@en ;
-        sh:name "seizoen nummer"@nl ;
+        sh:name "seizoensnummer"@nl ;
         sh:name "numéro de saison"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:seasonNumber is not of type integer"@en ;
@@ -478,8 +494,15 @@
 
 <#EpisodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Episode ;
-    sh:property meemoo:identifierShape, meemoo:nameShape, meemoo:descriptionShape .
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape> .
 
+<#PlaceShape> a sh:NodeShape ; 
+    sh:targetClass schema:Place ;
+    sh:property <#nameShape>, <#descriptionShape> .
+
+<#ArchiveComponentShape> a sh:NodeShape ; 
+    sh:targetClass schema:ArchiveComponent ;
+    sh:property <#nameShape>, <#descriptionShape> .
 
 <#RoleNodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Role ;
@@ -564,7 +587,7 @@
     ] .
 <#PersonShape> a sh:NodeShape ; 
     sh:targetClass schema:Person ;
-    sh:property meemoo:nameShape,
+    sh:property <#nameShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:givenName ;
@@ -595,7 +618,7 @@
 #################################
 #         PropertyShapes        #
 #################################
-meemoo:identifierShape a sh:PropertyShape ;
+<#identifierShape> a sh:PropertyShape ;
     sh:path schema:identifier ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
@@ -609,7 +632,7 @@ meemoo:identifierShape a sh:PropertyShape ;
     sh:message "schema:identifier ontbreekt of is niet van het type string"@nl ;
     sh:message "schema:identifier est manquant ou n'est pas de type string"@fr .
     
-meemoo:nameShape a sh:PropertyShape ;
+<#nameShape> a sh:PropertyShape ;
     sh:path schema:name ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
@@ -623,7 +646,7 @@ meemoo:nameShape a sh:PropertyShape ;
     sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
     sh:message "schema:name est manquant ou n'est pas de type string"@fr .
 
-meemoo:descriptionShape a sh:PropertyShape ;
+<#descriptionShape> a sh:PropertyShape ;
     sh:path schema:description ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
