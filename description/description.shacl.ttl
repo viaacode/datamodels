@@ -24,9 +24,9 @@
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-    dct:title     "SHACL Model Findability"@en ;
-    dct:title     "Modèle SHACL Trouvabilité"@fr ;
-    dct:title     "SHACL-model Vindbaarheid"@nl ;
+    dct:title     "SHACL Model Description"@en ;
+    dct:title     "Modèle SHACL Description"@fr ;
+    dct:title     "SHACL-model Descriptie"@nl ;
     dct:created   "2022-01-07" ;
     dct:modified  "2022-03-30" ;
     dct:description """SHACL model to validate/describe findability."""@en ;
@@ -46,7 +46,7 @@
     [
         a sh:PropertyShape ;
         sh:path schema:maintainer ;
-        sh:targetClass haOrg:ContentPartner ;
+        sh:class haOrg:ContentPartner ;
         sh:minCount 1;
         sh:maxCount 1;        
         sh:name "maintainer"@en ;

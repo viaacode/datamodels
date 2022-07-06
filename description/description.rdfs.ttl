@@ -21,14 +21,14 @@
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-    dct:title     "Data model Findability"@en ;
-    dct:title     "Modèle de données Trouvabilité"@fr ;
-    dct:title     "Datamodel Vindbaarheid"@nl ;
+    dct:title     "Data model Description"@en ;
+    dct:title     "Modèle de données Description"@fr ;
+    dct:title     "Datamodel Descriptie"@nl ;
     dct:created   "2022-03-23" ;
     dct:modified  "2022-06-28" ;
-    dct:description """Data model to describe Findability of Intellectual Entities."""@en ;
-    dct:description """Modèle de données pour décrire la Trouvabilité des Entités Intellectuelles."""@fr ;
-    dct:description """Datamodel voor het beschrijven van intellectuele entiteiten."""@nl .
+    dct:description """Data model to describe the content of objects."""@en ;
+    dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
+    dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl .
     
 #TODO: Add schema:roleName property skos:Concept
 
@@ -111,15 +111,6 @@ schema:PerformanceRole a rdfs:Class ;
     rdfs:comment """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en ;
     rdfs:comment """Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatervoorstelling, bijvoorbeeld in een film, televisieserie etc."""@nl ;
     rdfs:comment """Un PerformanceRole est un rôle qu'une entité remplit dans le cadre d'une représentation théâtrale, par exemple dans un film, une série télévisée etc."""@fr .
-
-schema:Person a rdfs:Class ;
-    rdfs:subClassOf schema:Thing ;
-    rdfs:label "Person"@en ;
-    rdfs:label "Persoon"@nl ;
-    rdfs:label "Personne"@fr ;
-    rdfs:comment """A person (alive, dead, undead, or fictional)."""@en ;
-    rdfs:comment """Een persoon (levend, dood, ondood of fictief)."""@nl ;
-    rdfs:comment """Une personne (vivante, morte, morte-vivante ou fictive)."""@fr .
 
 schema:Place a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
