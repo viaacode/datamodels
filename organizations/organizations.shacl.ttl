@@ -71,6 +71,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
                 sh:path dct:description ;
                 sh:maxCount 1 ;
                 sh:nodeKind sh:Literal ;
+                sh:datatype xsd:string ;
                 
                 sh:name "description"@en ;
                 sh:name "description"@fr ;
