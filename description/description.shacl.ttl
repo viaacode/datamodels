@@ -615,6 +615,33 @@
         sh:message "schema:familyName n'est pas de type string"@fr ;
     ] .
 
+<#CollectionShape> a sh:NodeShape ; 
+    sh:targetClass schema:Collection ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>, 
+    [
+        a sh:PropertyShape ;
+        sh:path schema:collectionSize ;
+        sh:datatype xsd:integer ;
+        sh:description "The number of items in the Collection."@en ;
+        sh:description "Het aantal items in de collectie."@nl ;
+        sh:description "Le nombre d'éléments dans la collection."@fr ;
+        sh:name "collection size"@en ;
+        sh:name "aantal items"@nl ;
+        sh:name "nombre d'éléments"@fr ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:class premis:IntellectualEntity ;
+        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this collection."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie."@nl ;
+        sh:description "Indique un IntellectualEntity ou CreativeWork qui fait partie de cette collection."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+    ] .
+    
+
 #################################
 #         PropertyShapes        #
 #################################
