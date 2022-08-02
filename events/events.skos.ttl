@@ -15,7 +15,7 @@
 @prefix meemoo: <http://data.meemoo.be/ns/> .
 @prefix mh: <http://data.meemoo.be/ns/mh/> .
 
-@base <http://data.meemoo.be/ns/terms/events> .
+@base <https://data.hetarchief.be/ns/event> .
 
 
 <> a skos:ConceptScheme ;
@@ -25,11 +25,11 @@
 
 evType:acc a skos:Concept;
     skos:inScheme <>;
-    skos:prefLabel "accession" .
+    skos:prefLabel "accession"@en .
 
 evType:fix a skos:Concept;
     skos:inScheme <>;
-    skos:prefLabel "fixity check" .
+    skos:prefLabel "fixity check"@en .
 
 # --- digitalisering PREMIS events
 

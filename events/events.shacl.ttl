@@ -1,58 +1,185 @@
-@prefix meemoo: <http://data.meemoo.be/ns/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix mh: <http://data.meemoo.be/ns/mediahaven> .
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
-@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix evtOutcome: <http://id.loc.gov/vocabulary/preservation/eventOutcome/> .
+@prefix evtObjRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
+@prefix evtAgRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/> .
 @prefix org: <http://www.w3.org/ns/org#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 
+<>  dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+                [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "SHACL Model Events"@en ;
+    dct:title     "SHACL Model Events"@nl ;
+    dct:created   "2022-08-02" ;
+    dct:modified  "2022-08-02" ;
+    dct:description """SHACL model to describe events and data provenance."""@en ;
+    dct:description """SHACL-model om gebeurtenissen en data herkomst te beschrijven."""@nl .
 
-premis:Event a rdfs:Class,
-        sh:NodeShape ;
-    rdfs:label "Event"@en ;
-    rdfs:subClassOf prov:Activity ;
-    sh:description "Action performed within or outside the repository that affects its capability to preserve Objects over the long term."@en ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:property <#outcome>, <#outcomeNote#> .
-
-premis:Object a rdfs:Class, sh:NodeShape;
+<#activityShape> a sh:NodeShape ;
+    sh:targetClass prov:Activity;
     sh:property [
         a sh:PropertyShape ;
+        sh:path prov:startedAtTime;
+        sh:datatype xsd:dateTime ;
+        sh:name "has start date"@en ;
+        sh:name "heeft startdatum"@nl;
+        sh:description """The start date of the activity."""@en ;
+        sh:description """De startdatum van de activiteit."""@nl ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path prov:endedAtTime;
+        sh:datatype xsd:dateTime ;
+        sh:name "has end date"@en ;
+        sh:name "heeft einddatum"@nl;
+        sh:description """The end date of the activity."""@en ;
+        sh:description """De einddatum van de activiteit."""@nl ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path prov:wasAtrributedTo;
+        sh:or ( 
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+           [sh:class premis:SoftwareAgent] 
+           [sh:class premis:HardwareAgent]
+        ) ;
+        sh:class premis:Object ;
+        sh:name "was attributed to"@en ;
+        sh:name "was toegekend aan"@nl;
+        sh:description """The agent that was attributed to the activity."""@en ;
+        sh:description """De agent die toegekend is aan de activiteit."""@nl ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path prov:generated;
+        sh:nodeKind sh:IRI ;
+        sh:name "has generated"@en ;
+        sh:name "heeft gegenereerd"@nl ;
+        sh:description """The generated object."""@en ;
+        sh:description """Het gegenereerde object."""@nl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+    ].
+
+<#eventShape> a sh:NodeShape ;
+    sh:targetClass premis:Event;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path premis:outcome ;
+        sh:class premis:OutcomeStatus ;
+        sh:name "has outcome"@en ;
+        sh:name "heeft uitkomst"@nl ;
+        sh:description """The outcome status of the event."""@en ;
+        sh:description """De uitkomststatus van de gebeurtenis."""@nl ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (evtOutcome:fai evtOutcome:suc evtOutcome:war)
+    ],[
+        a sh:PropertyShape ;
+        sh:datatype xsd:string ;
+        sh:name "has outcome note"@en ;
+        sh:name "heeft uitkomst opmerking"@nl ;
+        sh:description """A note about the outcome of the event."""@en ;
+        sh:description """Een opmerking over de uitkomst van de gebeurtenis."""@nl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:path premis:outcomeNote
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:datatype xsd:string ;
+        sh:name "has note"@en ;
+        sh:name "heeft opmerking"@nl ;
+        sh:description """A note about the event."""@en ;
+        sh:description """Een opmerking over de gebeurtenis."""@nl ;
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:path premis:note
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path evtObjRole:out;
+        sh:class premis:Object ;
+        sh:name "result"@en ;
+        sh:name "resultaat"@nl ;
+        sh:description """The object that was generated by the event."""@en ;
+        sh:description """Het object dat door de gebeurtenis gegenereerd is."""@nl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path evtObjRole:sou;
+        sh:class premis:Object ;
+        sh:name "has source"@en ;
+        sh:name "heeft bron"@nl ;
+        sh:description """The object that was used as a source for the event."""@en ;
+        sh:description """Het object dat als bron gebruikt is voor de gebeurtenis."""@nl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+    ],
+        [
+        a sh:PropertyShape ;
+        sh:path evtAgRole:imp;
+        sh:class org:Organization ;
+        sh:name "implemented by"@en ;
+        sh:name "geimplementeerd door"@nl ;
+        sh:description """The organization that implemented the event."""@en ;
+        sh:description """De organisatie die de gebeurtenis heeft geimplementeerd."""@nl ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path evtAgRole:exe;
+        sh:or (
+            [sh:class premis:SoftwareAgent] 
+            [sh:class premis:HardwareAgent]
+        );
+        sh:name "executed by"@en ;
+        sh:name "uitgevoerd door"@nl ;
+        sh:description """The software that executed the event."""@en ;
+        sh:description """De software of hardware die de gebeurtenis heeft uitgevoerd."""@nl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+    ].
+
+<#objectShape> a sh:NodeShape;
+    sh:targetClass premis:Object;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path prov:wasGeneratedBy ;
         sh:class premis:Event ;
         sh:name "was generated by"@en ;
-        sh:path prov:wasGeneratedBy 
+        sh:name "is gegenereerd door"@nl ;
+        sh:description "The time at which the object was completely created and is available for use."@en ;
+        sh:description "De tijd waarop het object is volledig aangemaakt en beschikbaar is voor gebruik."@nl ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
       ].
 
 
-premis:Agent a rdfs:Class,
-        sh:NodeShape ;
-    rdfs:label "Agent"@en ;
-    rdfs:subClassOf prov:Agent,
-        foaf:Agent ;
-    sh:description """Actor (human, machine, or software) associated with one or more Event and/or Rights
-      statement associated with a digital object."""@en ;
-    sh:nodeKind sh:BlankNodeOrIRI ;
-    sh:property [
-        a sh:PropertyShape ;
-        sh:class premis:Object ;
-        sh:name "has relationship"@en ;
-        sh:path premis:relationship
-      ] .
-
-<#outcome> a sh:PropertyShape ;
-    sh:class premis:OutcomeStatus ;
-    sh:name "has outcome"@en ;
-    sh:path premis:outcome .
-
-<#outcomeNote> a sh:PropertyShape ;
-    sh:datatype rdfs:Literal ;
-    sh:name "has outcome note"@en ;
-    sh:path premis:outcomeNote .
