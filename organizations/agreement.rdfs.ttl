@@ -1,0 +1,74 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix agr: <http://promsns.org/def/agr#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organisation#> .
+@prefix schema: <https://schema.org/> .
+
+# WORK IN PROGRESS - needs review
+
+#####################################
+#              CLASSES:agr          #
+#####################################
+
+agr:Agreement   a   rdfs:Class ;
+    rdfs:label "Agreement"@en ;
+    rdfs:label "Contrat"@fr ;
+    rdfs:label "Overeenkomst"@nl ;
+    rdfs:isDefinedBy <http://promsns.org/def/agr> .
+
+#####################################
+#           CLASSES:meemoo          #
+#####################################
+
+haOrg:GovernmentOrganization   a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    owl:equivalentClass schema:GovernmentOrganization ;
+    rdfs:label "Government Organization"@en ;
+    rdfs:label "Organisation Gouvernementale"@fr ;
+    rdfs:label "Overheidsorganisatie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
+
+haOrg:ServiceAgreement a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Service Agreement"@en ;
+    rdfs:label "Contrat de Service"@fr ;
+    rdfs:label "Dienstverleningsovereenkomst"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
+
+haOrg:ManagementAgreement  a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Management Agreement"@en ;
+    rdfs:label "Contrat de Gestion"@fr ;
+    rdfs:label "Beheersovereenkomst"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
+
+haOrg:CollaborationAgreement   a   rdfs:Class ;
+    rdfs:subClassOf agr:Agreement ;
+    rdfs:label "Collaboration Agreement"@en ;
+    rdfs:label "Accord de Collaboration"@fr ;
+    rdfs:label "Samenwerkingsovereenkomst"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
+
+haOrg:isPartOf a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  agr:Agreement ;
+    owl:inverseOf haOrg:contains ;
+    owl:equivalentProperty schema:isPartOf ;
+    owl:equivalentProperty dct:isPartOf ;
+    rdfs:label "is part of"@en ;
+    rdfs:label "fait partie de"@fr ;
+    rdfs:label "is deel van"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .
+
+haOrg:contains a   rdf:Property ;
+    rdfs:domain agr:Agreement ;
+    rdfs:range org:Organization ;
+    owl:inverseOf haOrg:isPartOf ;
+    owl:equivalentProperty schema:hasPart ;
+    rdfs:label "contains"@en ;
+    rdfs:label "contient"@fr ;
+    rdfs:label "bevat"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization#> .

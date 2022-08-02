@@ -1,0 +1,690 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix haDes: <https://data.hetarchief.be/ns/description#>  .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<>  dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+                [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
+    ] ;
+    dct:title     "SHACL Model Description"@en ;
+    dct:title     "Modèle SHACL Description"@fr ;
+    dct:title     "SHACL-model Descriptie"@nl ;
+    dct:created   "2022-01-07" ;
+    dct:modified  "2022-03-30" ;
+    dct:description """SHACL model to validate/describe findability."""@en ;
+    dct:description """Modèle SHACL pour valider/décrire trouvabilité."""@fr ;
+    dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl .
+
+##############################
+#         NodeShapes         #
+##############################
+
+####################
+#      PREMIS      #
+####################
+<#IntellectualEntityNodeShape> a sh:NodeShape ; 
+    sh:targetClass premis:IntellectualEntity ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:maintainer ;
+        sh:class haOrg:ContentPartner ;
+        sh:minCount 1;
+        sh:maxCount 1;        
+        sh:name "maintainer"@en ;
+        sh:name "beheerder"@nl ;
+        sh:name "mainteneur/responsable"@fr ;
+        sh:severity sh:Violation ;
+        sh:message """The maintainer of the IntellectualEntity must be a ContentPartner."""@en ;
+        sh:message """De beheerder van de IntellectualEntity moet een Contentpartner zijn."""@nl ;
+        sh:message """Le mainteneur de l'IntellectualEntity doit être un ContentPartner."""@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:alternateName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "alternate name"@en ;
+        sh:name "alternatieve naam"@nl ;
+        sh:name "nom alternatif"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:alternateName is not of type string"@en ;
+        sh:message "schema:alternateName is niet van het type string"@nl ;
+        sh:message "schema:alternateName n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:partOfEpisode ;
+        sh:class schema:Episode ;
+        sh:maxCount 1 ;
+        sh:name "part of episode"@en ;
+        sh:name "deel van aflevering"@nl ;
+        sh:name "partie de épisode"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:partOfEpisode is not of class schema:Episode"@en ;
+        sh:message "schema:partOfEpisode is niet van de klasse schema:Episode"@nl ;
+        sh:message "schema:partOfEpisode n'est pas de la classe schema:Episode"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:partOfSeries ;
+        sh:class schema:CreativeWorkSeries ;
+        sh:maxCount 1 ;
+        sh:name "part of series"@en ;
+        sh:name "deel van serie"@nl ;
+        sh:name "partie de série"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:partOfEpisode is not of class schema:CreativeWorkSeries"@en ;
+        sh:message "schema:partOfEpisode is niet van de klasse schema:CreativeWorkSeries"@nl ;
+        sh:message "schema:partOfEpisode n'est pas de la classe schema:CreativeWorkSeries"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:ArchiveComponent ;
+        sh:maxCount 1 ;
+        sh:name "is part of"@en ;
+        sh:name "is een deel van"@nl ;
+        sh:name "est partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent"@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent"@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:duration ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:name "duration"@en ;
+        sh:name "duur"@nl ;
+        sh:name "durée"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:duration is not of type string"@en ;
+        sh:message "schema:duration is niet van het type string"@nl ;
+        sh:message "schema:duration n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype edtf:EDTF-level1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "aangemaakt op"@nl ;
+        sh:name "date de création"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type string"@en ;
+        sh:message "schema:dateCreated is niet van het type string"@nl ;
+        sh:message "schema:dateCreated n'est pas de type string"@fr ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:datePublished ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype edtf:EDTF-level1 ;
+        sh:maxCount 1;
+        sh:name "date published"@en ;
+        sh:name "gepubliceerd op"@nl ;
+        sh:name "date de publication"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:datePublished is not of type string"@en ;
+        sh:message "schema:datePublished is niet van het type string"@nl ;
+        sh:message "schema:datePublished n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:author ;
+        sh:class schema:Role ;
+        sh:name "author"@en ;
+        sh:name "auteur"@nl ;
+        sh:name "auteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:author is not of class schema:Role"@en ;
+        sh:message "schema:author is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:publisher ;
+        sh:class schema:Role ;
+        sh:name "publisher"@en ;
+        sh:name "uitgever"@nl ;
+        sh:name "éditeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:publisher is not of class schema:Role"@en ;
+        sh:message "schema:publisher is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:publisher n'est pas de la classe schema:Role"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:contributor ;
+        sh:class schema:Role ;
+        sh:name "contributor"@en ;
+        sh:name "bijdrager"@nl ;
+        sh:name "contributeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:contributor is not of class schema:Role"@en ;
+        sh:message "schema:contributor is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:contributor n'est pas de la classe schema:Role"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:abstract ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "abstract"@en ;
+        sh:name "samenvatting"@nl ;
+        sh:name "résumé"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:abstract is not of type string"@en ;
+        sh:message "schema:abstract is niet van het type string"@nl ;
+        sh:message "schema:abstract n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path ebucore:objectType ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "object type"@en ;
+        sh:name "object type"@nl ;
+        sh:name "type d'objet"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "ebucore:objectType is not of type string"@en ;
+        sh:message "ebucore:objectType is niet van het type string"@nl ;
+        sh:message "ebucore:objectType n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:genre ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "genre"@en ;
+        sh:name "genre"@nl ;
+        sh:name "genre"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:genre is not of type string"@en ;
+        sh:message "schema:genre is niet van het type string"@nl ;
+        sh:message "schema:genre n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:spatialCoverage ;
+        sh:class schema:Place ;
+        sh:name "spatial coverage"@en ;
+        sh:name "geografische dekking"@nl ;
+        sh:name "coverage spatiale"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:spatialCoverage is not of class schema:Place"@en ;
+        sh:message "schema:spatialCoverage is niet van de klasse schema:Place"@nl ;
+        sh:message "schema:spatialCoverage n'est pas de la classe schema:Place"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:temporalCoverage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "temporal coverage"@en ;
+        sh:name "tijdsdekking"@nl ;
+        sh:name "coverage temporelle"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:temporalCoverage is not of type string"@en ;
+        sh:message "schema:temporalCoverage is niet van het type string"@nl ;
+        sh:message "schema:temporalCoverage n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:keywords ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "keywords"@en ;
+        sh:name "trefwoorden"@nl ;
+        sh:name "mots-clés"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:keywords is not of type string"@en ;
+        sh:message "schema:keywords is niet van het type string"@nl ;
+        sh:message "schema:keywords n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:inLanguage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1;
+        sh:name "in language"@en ;
+        sh:name "in taal"@nl ;
+        sh:name "en langue"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:inLanguage is not of type string"@en ;
+        sh:message "schema:inLanguage is niet van het type string"@nl ;
+        sh:message "schema:inLanguage n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:license ;
+        sh:class skos:Concept ; 
+        sh:name "license"@en ;
+        sh:name "licentie"@nl ;
+        sh:name "licence"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:license is not of class skos:Concept"@en ;
+        sh:message "schema:license is niet van de klasse skos:Concept"@nl ;
+        sh:message "schema:license n'est pas de la classe skos:Concept"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:available ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+#         sh:pattern "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])↵
+# T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?↵
+# (Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?$";
+        sh:name "date available"@en ;
+        sh:name "beschikbaar op"@nl ;
+        sh:name "disponible le"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:available is not of type string"@en ;
+        sh:message "dct:available is niet van het type string"@nl ;
+        sh:message "dct:available n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:copyrightHolder ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "copyright holder"@en ;
+        sh:name "auteur van de copyright"@nl ;
+        sh:name "détenteur de la copyright"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:copyrightHolder is not of class schema:Person or org:Organization"@en ;
+        sh:message "schema:copyrightHolder is niet van de klasse schema:Person of org:Organization"@nl ;
+        sh:message "schema:copyrightHolder n'est pas de la classe schema:Person ou org:Organization"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:copyrightNotice ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "copyright notice"@en ;
+        sh:name "copyright melding"@nl ;
+        sh:name "notice de copyright"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:copyrightNotice is not of type string"@en ;
+        sh:message "schema:copyrightNotice is niet van het type string"@nl ;
+        sh:message "schema:copyrightNotice n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:copyrightYear ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:integer ;
+        sh:name "copyright year"@en ;
+        sh:name "copyright jaar"@nl ;
+        sh:name "année de copyright"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:copyrightYear is not of type integer"@en ;
+        sh:message "dct:copyrightYear is niet van het type integer"@nl ;
+        sh:message "dct:copyrightYear n'est pas de type integer"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:creditText ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "credit text"@en ;
+        sh:name "credit tekst"@nl ;
+        sh:name "texte de crédit"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:creditText is not of type string"@en ;
+        sh:message "schema:creditText is niet van het type string"@nl ;
+        sh:message "schema:creditText n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:about ;
+        sh:nodeKind sh:IRI ;
+        sh:name "about"@en ;
+        sh:name "over"@nl ;
+        sh:name "sur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:about is not an IRI"@en ;
+        sh:message "schema:about is geen IRI"@nl ;
+        sh:message "schema:about n'est pas un IRI"@fr ;
+    ] .
+
+####################
+#      haDes      #
+####################
+<#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:PhysicalRepresentation ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:in ("audio" "video" "film" "papier") ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "format"@en ;
+        sh:name "formaat"@nl ;
+        sh:name "format"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:format is missing or not of type string or value is not in (audio video film papier)"@en ;
+        sh:message "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film papier)"@nl ;
+        sh:message "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film papier)"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path dct:medium ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:name "medium"@en ;
+        sh:name "medium"@nl ;
+        sh:name "médium"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:medium is not of type string "@en ;
+        sh:message "dct:medium is niet van het type string"@nl ;
+        sh:message "dct:medium n'est pas de type string"@fr ;
+    ] .
+<#DigitalRepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:DigitalRepresentation ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:transcript ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "transcription"@en ;
+        sh:name "transcriptie"@nl ;
+        sh:name "transcription"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:transcript is not of type string "@en ;
+        sh:message "schema:transcript is niet van het type string"@nl ;
+        sh:message "schema:transcript n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:caption ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
+        sh:name "caption"@en ;
+        sh:name "onderschrift"@nl ;
+        sh:name "légende"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:caption is not of type string "@en ;
+        sh:message "schema:caption is niet van het type string"@nl ;
+        sh:message "schema:caption n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype edtf:EDTF-level1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "aangemaakt op"@nl ;
+        sh:name "créé le"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type string "@en ;
+        sh:message "schema:dateCreated is niet van het type string"@nl ;
+        sh:message "schema:dateCreated n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:author ;
+        sh:class schema:Role ;
+        sh:name "author"@en ;
+        sh:name "auteur"@nl ;
+        sh:name "auteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:author is not of class schema:Role"@en ;
+        sh:message "schema:author is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
+    ] .
+
+
+####################
+#      SCHEMA      #
+####################
+<#CreativeWorkSeriesShape> a sh:NodeShape ; 
+    sh:targetClass schema:CreativeWorkSeries ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:seasonNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:integer ;
+        sh:name "season number"@en ;
+        sh:name "seizoensnummer"@nl ;
+        sh:name "numéro de saison"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:seasonNumber is not of type integer"@en ;
+        sh:message "schema:seasonNumber is niet van het type integer"@nl ;
+        sh:message "schema:seasonNumber n'est pas de type integer"@fr ;
+    ] .
+
+<#EpisodeShape> a sh:NodeShape ; 
+    sh:targetClass schema:Episode ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape> .
+
+<#PlaceShape> a sh:NodeShape ; 
+    sh:targetClass schema:Place ;
+    sh:property <#nameShape>, <#descriptionShape> .
+
+<#ArchiveComponentShape> a sh:NodeShape ; 
+    sh:targetClass schema:ArchiveComponent ;
+    sh:property <#nameShape>, <#descriptionShape> .
+
+<#RoleNodeShape> a sh:NodeShape ; 
+    sh:targetClass schema:Role ;
+    sh:property
+    [
+        a sh:PropertyShape ;
+        sh:path schema:author ;
+        sh:or ( 
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "author"@en ;
+        sh:name "auteur"@nl ;
+        sh:name "auteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:author is not of class schema:Person or org:Organization"@en ;
+        sh:message "schema:author is niet van de klasse schema:Person of org:Organization"@nl ;
+        sh:message "schema:author n'est pas de la classe schema:Person ou org:Organization"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:contributor ;
+        sh:or ( 
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "contributor"@en ;
+        sh:name "bijdrager"@nl ;
+        sh:name "contributeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:contributor is not of class schema:Person or org:Organization"@en ;
+        sh:message "schema:contributor is niet van de klasse schema:Person of org:Organization"@nl ;
+        sh:message "schema:contributor n'est pas de la classe schema:Person ou org:Organization"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:publisher ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+        ) ;
+        sh:name "publisher"@en ;
+        sh:name "uitgever"@nl ;
+        sh:name "éditeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:publisher is not of class schema:Person or org:Organization"@en ;
+        sh:message "schema:publisher is niet van de klasse schema:Person of org:Organization"@nl ;
+        sh:message "schema:publisher n'est pas de la classe schema:Person ou org:Organization"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:actor ;
+        sh:class schema:Person ;
+        sh:name "actor"@en ;
+        sh:name "acteur"@nl ;
+        sh:name "acteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:actor is not of class schema:Person"@en ;
+        sh:message "schema:actor is niet van de klasse schema:Person"@nl ;
+        sh:message "schema:actor n'est pas de la classe schema:Person"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:roleName ;
+        sh:or ( 
+            [   
+                sh:nodeKind sh:Literal ;
+                sh:datatype xsd:string ; 
+            ]
+            [sh:class skos:Concept ]
+        ) ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:name "role name"@en ;
+        sh:name "rolenaam"@nl ;
+        sh:name "nom de rôle"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en ;
+        sh:message "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
+        sh:message "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr ;
+    ] .
+<#PersonShape> a sh:NodeShape ; 
+    sh:targetClass schema:Person ;
+    sh:property <#nameShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:givenName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "given name"@en ;
+        sh:name "voornaam"@nl ;
+        sh:name "prénom"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:givenName is not of type string "@en ;
+        sh:message "schema:givenName is niet van het type string"@nl ;
+        sh:message "schema:givenName n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:familyName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "family name"@en ;
+        sh:name "achternaam"@nl ;
+        sh:name "nom de famille"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:familyName is not of type string "@en ;
+        sh:message "schema:familyName is niet van het type string"@nl ;
+        sh:message "schema:familyName n'est pas de type string"@fr ;
+    ] .
+
+<#CollectionShape> a sh:NodeShape ; 
+    sh:targetClass schema:Collection ;
+    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>, 
+    [
+        a sh:PropertyShape ;
+        sh:path schema:collectionSize ;
+        sh:datatype xsd:integer ;
+        sh:description "The number of items in the Collection."@en ;
+        sh:description "Het aantal items in de collectie."@nl ;
+        sh:description "Le nombre d'éléments dans la collection."@fr ;
+        sh:name "collection size"@en ;
+        sh:name "aantal items"@nl ;
+        sh:name "nombre d'éléments"@fr ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:class premis:IntellectualEntity ;
+        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this collection."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie."@nl ;
+        sh:description "Indique un IntellectualEntity ou CreativeWork qui fait partie de cette collection."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+    ] .
+    
+
+#################################
+#         PropertyShapes        #
+#################################
+<#identifierShape> a sh:PropertyShape ;
+    sh:path schema:identifier ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "identifier"@en ;
+    sh:name "identifier"@nl ;
+    sh:name "identifier"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:identifier is missing or not of type string "@en ;
+    sh:message "schema:identifier ontbreekt of is niet van het type string"@nl ;
+    sh:message "schema:identifier est manquant ou n'est pas de type string"@fr .
+    
+<#nameShape> a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "name"@en ;
+    sh:name "naam"@nl ;
+    sh:name "nom"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:name is missing or not of type string "@en ;
+    sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+    sh:message "schema:name est manquant ou n'est pas de type string"@fr .
+
+<#descriptionShape> a sh:PropertyShape ;
+    sh:path schema:description ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "description"@en ;
+    sh:name "omschrijving"@nl ;
+    sh:name "description"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:description is missing or not of type string "@en ;
+    sh:message "schema:description ontbreekt of is niet van het type string"@nl ;
+    sh:message "schema:description est manquant ou n'est pas de type string"@fr .
+
+
