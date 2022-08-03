@@ -43,7 +43,7 @@
 
 # prov classes
 prov:Activity
-    a owl:Class ;
+    a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "Activity"@en ;
     rdfs:label "Activité"@fr ;
@@ -54,7 +54,7 @@ prov:Activity
     rdfs:comment "Une activité est quelque chose qui se passe pendant un certain temps et qui agit sur ou avec des entités ; elle peut inclure la consommation, le traitement, la transformation, la modification, le déplacement, l'utilisation ou la génération des entités."@fr.
 
 prov:Agent
-    a owl:Class ;
+    a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "Agent"@en ;
     rdfs:label "Agent"@fr ;
@@ -65,7 +65,7 @@ prov:Agent
     rdfs:comment "Un agent est quelque chose qui porte une forme de responsabilité pour une activité qui se passe, pour l'existence d'une entité ou pour l'activité d'un autre agent. "@fr.
 
 prov:Entity
-    a owl:Class ;
+    a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "Entity"@en ;
     rdfs:label "Entité"@fr ;
@@ -174,7 +174,7 @@ prov:used
 
 # vraag: zijn dit bij ons personen en organisaties uit het organisatiemodel?
 # zo ja, dan dekt de naam 'organisatiemodel' de lading misschien niet zo goed?
-premis:Agent  a owl:Class ;
+premis:Agent  a owl:Class, rdfs:Class ;
   rdfs:label "Agent"@en ;
   rdfs:label "Acteur"@fr ;
   rdfs:label "Agent"@nl ;
@@ -185,31 +185,31 @@ premis:Agent  a owl:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:SoftwareAgent
-  a owl:Class ;
+  a owl:Class, rdfs:Class ;
   rdfs:label "Software agent"@en ;
   rdfs:label "Logiciel acteur"@fr ;
   rdfs:label "Software agent"@nl ;
   rdfs:comment """Software agent (e.g., a computer program) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
   rdfs:comment """Logiciel acteur (e.g., un programme informatique) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
   rdfs:comment """Softwareagent (bijv. Een computerprogramma) dat is gekoppeld aan een of meer evenement- en/of rechtenverklaring die aan een digitaal object is gekoppeld."""@nl ;
-  rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/Agent>, prov:SoftwareAgent ;
-  owl:disjointWith <http://www.loc.gov/premis/rdf/v3/HardwareAgent>, <http://www.loc.gov/premis/rdf/v3/Organization>, <http://www.loc.gov/premis/rdf/v3/Person> ;
+  rdfs:subClassOf premis:Agent, prov:SoftwareAgent ;
+  owl:disjointWith premis:HardwareAgent, premis:Organization, premis:Person ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:HardwareAgent
-  a owl:Class ;
+  a owl:Class, rdfs:Class ;
   rdfs:label "Hardware agent"@en ;
   rdfs:label "Matériel acteur"@fr ;
   rdfs:label "Hardware agent"@nl ;
   rdfs:comment """Hardware agent (e.g., a computer) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
   rdfs:comment """Matériel acteur (e.g., un ordinateur) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
   rdfs:comment """Hardwareagent (bijv. Een computer) dat is gekoppeld aan een of meer evenement- en/of rechtenverklaring die aan een digitaal object is gekoppeld."""@nl ;
-  rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/Agent> ;
+  rdfs:subClassOf premis:Agent ;
   owl:sameAs <http://id.loc.gov/vocabulary/preservation/agentType/har> ;
-  owl:disjointWith <http://www.loc.gov/premis/rdf/v3/Organization>, <http://www.loc.gov/premis/rdf/v3/Person>, <http://www.loc.gov/premis/rdf/v3/SoftwareAgent> ;
+  owl:disjointWith premis:Organization, premis:Person, premis:SoftwareAgent ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
-premis:Event  a owl:Class ;
+premis:Event  a owl:Class, rdfs:Class ;
   rdfs:label "Event"@en ;
   rdfs:label "Événement"@fr ;
   rdfs:label "Gebeurtenis"@nl ;
@@ -220,7 +220,7 @@ premis:Event  a owl:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventType> .
 
-premis:OutcomeStatus  a owl:Class ;
+premis:OutcomeStatus  a owl:Class, rdfs:Class ;
   rdfs:label "Outcome status"@en ;
   rdfs:label "Statut de résultat"@fr ;
   rdfs:label "Uitkomststatus"@nl ;
@@ -237,7 +237,7 @@ premis:endDate  a owl:DatatypeProperty ;
   rdfs:label "date de fin"@en ;
   rdfs:label "einddatum"@en ;
   rdfs:domain [
-    a owl:Class ;
+    a owl:Class, rdfs:Class ;
     owl:unionOf (
      premis:RightsStatus
      premis:Rule
@@ -276,7 +276,7 @@ premis:startDate    a owl:DatatypeProperty ;
   rdfs:label "date de début"@fr ;
   rdfs:label "startdatum"@nl ;
   rdfs:domain [
-    a owl:Class ;
+    a owl:Class, rdfs:Class ;
     owl:unionOf (
      premis:RightsStatus
      premis:Rule
@@ -300,7 +300,7 @@ evtObjRole:sou a owl:ObjectProperty ;
     rdfs:comment "L'objet dans la relation à l'événement décrit et qui existait avant cet événement et qui l'utilisait."@fr;
     rdfs:comment "Het object in de relatie met het geschreven event dat bestond voor dat event en die het gebruikt."@nl.
 
-evtObjRole:out a rdfs:ObjectProperty ;
+evtObjRole:out a owl:ObjectProperty ;
     rdfs:domain premis:Event ;
     rdfs:range premis:Object ;
     rdfs:subPropertyOf prov:generated ;
