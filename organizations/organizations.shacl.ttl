@@ -37,7 +37,6 @@ haOrg:OrganizationShape a sh:NodeShape ;
               haOrg:altLabelShape, 
               [
                 sh:path haOrg:hasLogo ;
-                sh:minCount 1 ;
                 sh:class haOrg:Logo ;
 
                 sh:name "logo"@en ;
