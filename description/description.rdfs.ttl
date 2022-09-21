@@ -504,7 +504,7 @@ schema:seasonNumber a rdf:Property ;
     rdfs:comment "Positie van het seizoen in een geordende groep van seizoenen."@nl ;
     rdfs:comment "Position de la saison dans un groupe ordonné de saisons."@fr .
 
-schema:spatialCoverage a rdf:Property ;
+schema:spatial a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range schema:Place ;
     owl:equivalentProperty dct:spatial ;
@@ -515,7 +515,7 @@ schema:spatialCoverage a rdf:Property ;
     rdfs:comment "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl ;
     rdfs:comment "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr .
 
-schema:temporalCoverage a rdf:Property ;
+schema:temporal a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
     owl:equivalentProperty dct:temporal ;
