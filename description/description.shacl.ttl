@@ -72,35 +72,12 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:partOfEpisode ;
-        sh:class schema:Episode ;
-        sh:maxCount 1 ;
-        sh:name "part of episode"@en ;
-        sh:name "deel van aflevering"@nl ;
-        sh:name "partie de épisode"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:partOfEpisode is not of class schema:Episode"@en ;
-        sh:message "schema:partOfEpisode is niet van de klasse schema:Episode"@nl ;
-        sh:message "schema:partOfEpisode n'est pas de la classe schema:Episode"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:partOfSeries ;
-        sh:class schema:CreativeWorkSeries ;
-        sh:maxCount 1 ;
-        sh:name "part of series"@en ;
-        sh:name "deel van serie"@nl ;
-        sh:name "partie de série"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:partOfEpisode is not of class schema:CreativeWorkSeries"@en ;
-        sh:message "schema:partOfEpisode is niet van de klasse schema:CreativeWorkSeries"@nl ;
-        sh:message "schema:partOfEpisode n'est pas de la classe schema:CreativeWorkSeries"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
         sh:path schema:isPartOf ;
-        sh:class schema:ArchiveComponent ;
-        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class schema:ArchiveComponent ]
+            [ sh:class schema:CreativeWorkSeries ]
+            [ sh:class schema:Episode ]
+        );
         sh:name "is part of"@en ;
         sh:name "is een deel van"@nl ;
         sh:name "est partie de"@fr ;

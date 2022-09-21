@@ -405,7 +405,6 @@ schema:inLanguage a rdf:Property ;
 
 schema:isPartOf a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:ArchiveComponent ;
     rdfs:label "is part of"@en ;
     rdfs:label "is onderdeel van"@nl ;
     rdfs:label "fait partie de"@fr ;
@@ -453,26 +452,6 @@ schema:name a rdf:Property ;
     rdfs:comment "The name of the item."@en ;
     rdfs:comment "De naam van het item."@nl ;
     rdfs:comment "Le nom de l'élément."@fr .
-
-schema:partOfEpisode a rdf:Property ;
-    rdfs:domain schema:CreativeWork ; 
-    rdfs:range schema:Episode ;
-    rdfs:label "part of episode"@en ;
-    rdfs:label "deel van aflevering"@nl ;
-    rdfs:label "partie de l'épisode"@fr ;
-    rdfs:comment "The episode to which this clip belongs."@en ;
-    rdfs:comment "De aflevering waar deze clip toe behoort."@nl ;
-    rdfs:comment "L'épisode à laquelle appartient ce clip."@fr .
-
-schema:partOfSeries a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWorkSeries ;
-    rdfs:label "part of series"@en ;
-    rdfs:label "deel van serie"@nl ;
-    rdfs:label "partie de la série"@fr ;
-    rdfs:comment "The series to which this episode or season belongs."@en ;
-    rdfs:comment "De serie waar deze aflevering of seizoen toe behoort."@nl ;
-    rdfs:comment "La série à laquelle appartient cette saison ou cette épisode."@fr .
 
 schema:publisher a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
