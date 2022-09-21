@@ -234,7 +234,7 @@
         sh:path schema:spatial ;
         sh:class schema:Place ;
         sh:name "spatial"@en ;
-        sh:name "geografisch"@nl ;
+        sh:name "spatiaal"@nl ;
         sh:name "spatial"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:spatialCoverage is not of class schema:Place"@en ;
