@@ -224,7 +224,7 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
 
-        sh:description "Het bestandsformaat."@nl ;
+        sh:description "Het bestandsformaat van het bestand."@nl ;
 
     
         sh:severity sh:Violation ;
@@ -237,11 +237,16 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
         sh:name "mime type"@en ;
         sh:name "mime type"@nl ;
         sh:name "mime type"@fr ;
-        sh:description "Het MIME type of IANA media type."@nl ;
+        sh:description "Het MIME type of IANA media type van het bestand."@nl ;
+        sh:description "The MIME type or IANA media type of the file."@en;
         sh:severity sh:Violation ;
     ],
     [
         sh:path edm:isNextInSequence ;
+        sh:name "next file in sequence"@en ;
+        sh:name "volgende bestand in volgorde"@nl;
+        sh:description "Het bestand dat op dit bestand volgt."@nl;
+        sh:description "The file that follows on this file."@en;
         sh:class premis:File ;
 
         sh:maxCount 1 ;
@@ -249,6 +254,11 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     ],
     [
         sh:path rel:doc ;
+        sh:name "documents"@en ;
+        sh:name "documenteert"@nl;
+        sh:description "Het bestand dat dit bestand beschrijft of documenteert."@nl;
+        sh:description "The file that describes or documents this file."@en;
+
         sh:class premis:File ;
 
         sh:severity sh:Violation ;
@@ -256,6 +266,10 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     [
       sh:path ebucore:hasMediaFragment ;
       sh:class haObj:DigitalRepresentation ;
+      sh:name "has media fragment"@en ;
+      sh:name "heeft media fragment"@nl;
+      sh:description "Een fragment uit dit bestand."@nl;
+      sh:description "A fragment from this file."@en;
 
       sh:severity sh:Violation ;
     ].
@@ -270,15 +284,19 @@ haObj:FixityShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:name "fixity checksum"@nl;
         sh:description "De waarde van de checksum."@nl ;
+        sh:name "fixity checksum"@en;
+        sh:description "The value of the checksum."@en ;        
     
         sh:severity sh:Violation ;
     ],
     [
         sh:path dct:creator;
         sh:datatype xsd:string;
-        sh:name "maker"@nl;
+        sh:name "checksum maker"@nl;
+        sh:name "checksum creator"@en;
 
         sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
+        sh:description "The entity that generated the checksum."@en ;
     
         sh:severity sh:Violation ;
     ].
@@ -292,14 +310,16 @@ haObj:StorageLocationShape a sh:NodeShape ;
         sh:name "opslagpad"@nl ;
         sh:name "file path"@en ;
         sh:description "Het pad van de opslaglocatie."@nl ;
-    
+        sh:description "The file path of the storage location."@en ;
         sh:severity sh:Violation ;
     ],
     [
         sh:path premis:medium;
         sh:class premis:StorageMedium ;
+        sh:name "medium"@nl;
+        sh:name "medium"@en;
         sh:description "Het type opslagmedium."@nl ;
-    
+        sh:description "The type of storage medium."@nl ;
         sh:severity sh:Violation ;
     ].
   
