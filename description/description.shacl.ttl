@@ -208,11 +208,11 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:spatialCoverage ;
+        sh:path schema:spatial ;
         sh:class schema:Place ;
-        sh:name "spatial coverage"@en ;
-        sh:name "geografische dekking"@nl ;
-        sh:name "coverage spatiale"@fr ;
+        sh:name "spatial"@en ;
+        sh:name "spatiaal"@nl ;
+        sh:name "spatial"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:spatialCoverage is not of class schema:Place"@en ;
         sh:message "schema:spatialCoverage is niet van de klasse schema:Place"@nl ;
@@ -220,16 +220,16 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:temporalCoverage ;
+        sh:path schema:temporal ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:name "temporal coverage"@en ;
-        sh:name "tijdsdekking"@nl ;
-        sh:name "coverage temporelle"@fr ;
+        sh:datatype rdf:langString ;
+        sh:name "temporal"@en ;
+        sh:name "temporeel"@nl ;
+        sh:name "temporelle"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:temporalCoverage is not of type string"@en ;
-        sh:message "schema:temporalCoverage is niet van het type string"@nl ;
-        sh:message "schema:temporalCoverage n'est pas de type string"@fr ;
+        sh:message "schema:temporal is not a language string"@en ;
+        sh:message "schema:temporal is niet van het type language string"@nl ;
+        sh:message "schema:temporal n'est pas de type language string"@fr ;
     ],
     [
         a sh:PropertyShape ;
