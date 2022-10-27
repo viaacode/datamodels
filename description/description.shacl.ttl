@@ -14,6 +14,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pav: <http://purl.org/pav/> .
 
 
 <>  dct:author  [
@@ -31,7 +32,8 @@
     dct:modified  "2022-03-30" ;
     dct:description """SHACL model to validate/describe findability."""@en ;
     dct:description """Modèle SHACL pour valider/décrire trouvabilité."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl .
+    dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl ;
+    pav:version "0.0.1" .
 
 ##############################
 #         NodeShapes         #

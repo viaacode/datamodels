@@ -16,6 +16,7 @@
 @prefix evtObjRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
 @prefix evtAgRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix pav: <http://purl.org/pav/> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -30,7 +31,8 @@
     dct:created   "2022-08-02" ;
     dct:modified  "2022-08-02" ;
     dct:description """SHACL model to describe events and data provenance."""@en ;
-    dct:description """SHACL-model om gebeurtenissen en data herkomst te beschrijven."""@nl .
+    dct:description """SHACL-model om gebeurtenissen en data herkomst te beschrijven."""@nl ;
+    pav:version "0.0.1" .
 
 <#activityShape> a sh:NodeShape ;
     sh:targetClass prov:Activity;

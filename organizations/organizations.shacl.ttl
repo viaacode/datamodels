@@ -8,6 +8,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pav: <http://purl.org/pav/> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -24,7 +25,8 @@
     dct:modified  "2022-06-16" ;
     dct:description """SHACL model to validate/describe organisations."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des organisations."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven van organisaties."""@nl .
+    dct:description """SHACL-model voor het valideren/beschrijven van organisaties."""@nl ;
+    pav:version "0.0.1" .
 
 
 ######################

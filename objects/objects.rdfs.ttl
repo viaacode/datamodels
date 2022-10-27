@@ -536,6 +536,15 @@ ebucore:hasMediaFragment  a rdf:Property ;
   owl:equivalentProperty ma:hasFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
+ebucore:isMediaFragmentOf a rdf:Property ;
+  rdfs:range ebucore:MediaResource ;
+  rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en ;
+  rdfs:comment "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
+  rdfs:label "Media fragment source"@en ;
+  rdfs:label "Media fragment bron"@nl ;
+  rdfs:domain ebucore:MediaFragment;
+  rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+
 ebucore:hasObjectType  a rdf:Property ;
   rdfs:label "Object/asset type"@en ;
   rdfs:label "Type d'object/actif"@fr ;

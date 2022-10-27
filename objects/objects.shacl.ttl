@@ -17,6 +17,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pav: <http://purl.org/pav/> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -33,7 +34,8 @@
     dct:modified  "2022-06-16" ;
     dct:description """SHACL model to validate/describe the structure of achive objects."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
+    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl ;
+    pav:version "0.0.1" .
 
 haObj:ObjectShape a sh:NodeShape ;
   sh:targetClass premis:Object ;
@@ -182,23 +184,37 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:path rel:hss ;
     sh:class haObj:PhysicalRepresentation ;
 
+    sh:description "De fysieke drager waarvan deze representatie afkomstig is."@nl ;
+
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path ebucore:isMediaFragmentOf ;
+    sh:class premis:File ;
+
+    sh:name "is media fragment of"@en ;
+    sh:name "is media fragment van"@nl;
+    sh:description "Het bestand waarvan dit een fragment is."@nl;
+    sh:description "The file of which this is a fragment."@en;
+
     sh:severity sh:Violation ;
   ].
 
  haObj:FileShape a sh:NodeShape ;
   sh:targetClass premis:File ;
     sh:property [
-        sh:path rel:isi;
-        sh:class haObj:DigitalRepresentation ;
-        sh:minCount 1 ;
-        sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
-    
-        sh:severity sh:Violation ;
+      sh:path rel:isi;
+      sh:class haObj:DigitalRepresentation ;
+      sh:minCount 1 ;
+      sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
+      sh:description "The representation this file is part of."@en ;
+      sh:severity sh:Violation ;
     ],
     [
-    sh:path rel:sup ;
+      sh:path rel:sup ;
       sh:class premis:File ;
-
+      sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl ;
+      sh:description "The file that replaces or succeeds this file."@nl ;
       sh:severity sh:Violation ;
     ],
     [
