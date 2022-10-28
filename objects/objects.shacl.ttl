@@ -17,7 +17,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix pav: <http://purl.org/pav/> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
@@ -34,8 +33,7 @@
     dct:modified  "2022-06-16" ;
     dct:description """SHACL model to validate/describe the structure of achive objects."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl ;
-    pav:version "0.0.1" .
+    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
 
 haObj:ObjectShape a sh:NodeShape ;
   sh:targetClass premis:Object ;

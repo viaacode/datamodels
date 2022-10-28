@@ -14,6 +14,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <https://schema.org/> .
+@prefix pav: <http://purl.org/pav/> .
 
 
 <https://data.hetarchief.be/ns/event>  a owl:Ontology;
@@ -39,7 +40,8 @@
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole> ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole> ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
-    owl:imports <http://id.loc.gov/vocabulary/preservation/eventType> .
+    owl:imports <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    pav:version "0.0.1" .
 
 # prov classes
 prov:Activity

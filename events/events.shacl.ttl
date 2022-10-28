@@ -31,8 +31,7 @@
     dct:created   "2022-08-02" ;
     dct:modified  "2022-08-02" ;
     dct:description """SHACL model to describe events and data provenance."""@en ;
-    dct:description """SHACL-model om gebeurtenissen en data herkomst te beschrijven."""@nl ;
-    pav:version "0.0.1" .
+    dct:description """SHACL-model om gebeurtenissen en data herkomst te beschrijven."""@nl .
 
 <#activityShape> a sh:NodeShape ;
     sh:targetClass prov:Activity;

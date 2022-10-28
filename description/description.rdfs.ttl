@@ -9,6 +9,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix pav: <http://purl.org/pav/> .
 
 <https://data.hetarchief.be/ns/description#>  a owl:Ontology ;
     vann:preferredNamespacePrefix "haDes" ;
@@ -28,7 +29,8 @@
     dct:modified  "2022-06-28" ;
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
-    dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl .
+    dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
+    pav:version "0.0.1" .
     
 #TODO: Add schema:roleName property skos:Concept
 

@@ -15,6 +15,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
 
 
 <https://data.hetarchief.be/ns/object#>  a owl:Ontology;
@@ -39,7 +40,8 @@
     dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
     owl:imports <http://www.loc.gov/premis/rdf/v3/> ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> ;
-    owl:imports <http://www.w3.org/ns/prov#>.
+    owl:imports <http://www.w3.org/ns/prov#>;
+    pav:version "0.0.1" .
 
 # premis classes
 

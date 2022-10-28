@@ -9,7 +9,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-
+@prefix pav: <http://purl.org/pav/> .
 
 <https://data.hetarchief.be/ns/organization#>  a owl:Ontology;
     vann:preferredNamespacePrefix "haOrg" ;
@@ -29,7 +29,8 @@
     dct:modified  "2022-06-16" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
-    dct:description """Datamodel voor het beschrijven van organisaties."""@nl .
+    dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
+    pav:version "0.0.1" .
 
 #####################################
 #      1)CLASSES                    #

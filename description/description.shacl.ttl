@@ -32,8 +32,7 @@
     dct:modified  "2022-03-30" ;
     dct:description """SHACL model to validate/describe findability."""@en ;
     dct:description """Modèle SHACL pour valider/décrire trouvabilité."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl ;
-    pav:version "0.0.1" .
+    dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl .
 
 ##############################
 #         NodeShapes         #
