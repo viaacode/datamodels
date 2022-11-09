@@ -41,8 +41,12 @@ haObj:ObjectShape a sh:NodeShape ;
     sh:path premis:relationship ;
     sh:class premis:Object ;
 
-    sh:description "Een generieke relatie tussen intellectuele entiteiten, files, of representaties."@nl ;
+    sh:description "Een generieke relatie tussen intellectuele entiteiten, bestanden, of representaties."@nl ;
+    sh:description "A generic relationship between intellectual entities, files, or representations."@en ;
+    sh:description "Une relation générique entre les entités intellectuelles, les fichiers ou les représentations."@fr ;
 
+    sh:message "premis:relationship is not a premis:Object"@en ;
+    sh:message "premis:relationship is niet van de klasse premis:Object"@nl ;
     sh:severity sh:Violation ;
   ].
 
@@ -52,22 +56,28 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
       a sh:PropertyShape ;
       sh:path premis:identifier ;
       sh:class haObj:LocalIdentifier ;
+
       sh:name "local identifier"@en ;
       sh:name "lokale identifier"@nl ;
       sh:name "identificateur local"@fr ;
+
       sh:description "A local identifier for the intellectual entity."@en ;
       sh:description "Een lokale identifier voor de intellectuele entiteit."@nl ;
       sh:description "Un identificateur local pour l'entité intellectuelle."@fr ;
-      sh:severity sh:Violation ;
+      
       sh:message "premis:identifier is not a LocalIdentifier"@en ;
       sh:message "premis:identifier is niet van de klasse LocalIdentifier"@nl ;
       sh:message "premis:identifier n'est pas de la classe LocalIdentifier"@fr ;
+
+      sh:severity sh:Violation ;
   ],
   [
     sh:path rel:hsp ;
     sh:class premis:IntellectualEntity ;
 
     sh:description "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
+    sh:description "An intellectual entity that is part of this intellectual entity."@en ;
+    sh:description "Une entité intellectuelle qui fait partie de cette entité intellectuelle."@fr ;
 
     sh:severity sh:Violation ;
   ],[
@@ -75,6 +85,8 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:class premis:IntellectualEntity ;
 
     sh:description "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
+    sh:description "The intellectual entity of which this intellectual entity is part of."@en ;
+    sh:description "L'entité intellectuelle dont cette entité intellectuelle fait partie de."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -83,6 +95,8 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:class premis:Representation ;
 
     sh:description "Een representatie van de intellectuele entiteit."@nl ;
+    sh:description "A representation of the intellectual entity."@en ;
+    sh:description "Une représentation de l'entité intellectuelle."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -92,6 +106,8 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:description "De archiefmaster van de intellectuele entiteit."@nl ;
+    sh:description "The archive master of the intellectual entity."@en ;
+    sh:description "Le maître des archives de l'entité intellectuelle."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -100,7 +116,9 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:maxCount 1 ;
     sh:class haObj:DigitalRepresentation ;
 
-    sh:description "De mezzanine representatie van de intellectuele entiteit."@nl ;
+    sh:description "De mezzanine kopie van de intellectuele entiteit."@nl ;
+    sh:description "The mezzanine copy of the intellectual entity."@en ;
+    sh:description "La copie mezzanine de l'entité intellectuelle."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -108,7 +126,9 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:path haObj:hasAccesscopy ;
     sh:class haObj:DigitalRepresentation ;
 
-    sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit. "@nl ;
+    sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit."@nl ;
+    sh:description "The access or browse copy of the intellectual entity."@en ;
+    sh:description "L'accès ou la copie de l'entité intellectuelle d'accès."@fr ;
 
     sh:severity sh:Violation ;
   ].
@@ -118,7 +138,10 @@ haObj:PhysicalRepresentationShape a sh:NodeShape ;
   sh:property [
     sh:path premis:medium;
     sh:class premis:StorageMedium ;
-    sh:description "Het type opslagmedium."@nl ;
+
+    sh:description "Het type opslagmedium waarop deze fysieke representatie is opgeslagen."@nl ;
+    sh:description "The type of storage medium on which this physical representation is stored."@en ;
+    sh:description "Le type de milieu de stockage sur lequel cette représentation physique est stockée."@fr ;
     
     sh:severity sh:Violation ;
   ].
@@ -131,6 +154,8 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:class premis:IntellectualEntity ;
 
     sh:description "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
+    sh:description "The intellectual entity of which this representation is the archive master."@en ;
+    sh:description "L'entité intellectuelle dont cette représentation est le maître des archives."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -139,7 +164,9 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:maxCount 1 ;
     sh:class premis:IntellectualEntity ;
 
-    sh:description "De intellectuele entiteit waarvan deze representatie de mezzanine is."@nl ;
+    sh:description "De intellectuele entiteit waarvan deze digitale representatie de mezzanine kopie is."@nl ;
+    sh:description "The intellectual entity of which this digital representation is the mezzanine copy."@en ;
+    sh:description "L'entité intellectuelle dont cette représentation est la copie de mezzanine."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -148,7 +175,9 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:maxCount 1 ;
     sh:class premis:IntellectualEntity ;
 
-    sh:description "De intellectuele entiteit waarvan deze representatie de toegangs- of inkijk kopie is."@nl ;
+    sh:description "De intellectuele entiteit waarvan deze digitale representatie de toegangs- of inkijk kopie is."@nl ;
+    sh:description "The intellectual entity of which this digital representation is the access or browse copy."@en ;
+    sh:description "L'entité intellectuelle dont cette représentation digital est l'accès ou la copie de vue."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -157,7 +186,9 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:minCount 1 ;
     sh:class premis:IntellectualEntity ;
 
-    sh:description "De intellectuele entiteit die deze representatie representeert."@nl ;
+    sh:description "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
+    sh:description "The intellectual entity that represents this digital representation."@en ;
+    sh:description "L'entité intellectuelle qui représente cette représentation digital."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -166,7 +197,9 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:minCount 1 ;
     sh:class premis:File ;
 
-    sh:description "Een bestand die deel uit maakt van deze representatie"@nl ;
+    sh:description "Een bestand die deel uit maakt van deze digitale representatie."@nl ;
+    sh:description "A file that is part of this digital representation."@en ;
+    sh:description "Un fichier qui fait partie de cette représentation digital."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -175,6 +208,8 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:class premis:File ;
 
     sh:description "Het bestand dat eerst verwerkt moet worden."@nl ;
+    sh:description "The file that must be processed first."@en ;
+    sh:description "Le fichier qui doit être traité en premier."@fr ;
 
     sh:severity sh:Violation ;
   ],
@@ -182,7 +217,10 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:path rel:hss ;
     sh:class haObj:PhysicalRepresentation ;
 
-    sh:description "De fysieke drager waarvan deze representatie afkomstig is."@nl ;
+    sh:description "De fysieke drager waarvan deze digitale representatie afkomstig is."@nl ;
+    sh:description "The physical carrier from which this digital representation originates from."@en ;
+    sh:description "Le porteur physique dont vient cette représentation numérique."@fr ;
+
 
     sh:severity sh:Violation ;
   ],
@@ -190,10 +228,9 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:path ebucore:isMediaFragmentOf ;
     sh:class premis:File ;
 
-    sh:name "is media fragment of"@en ;
-    sh:name "is media fragment van"@nl;
     sh:description "Het bestand waarvan dit een fragment is."@nl;
     sh:description "The file of which this is a fragment."@en;
+     sh:description "Le fichier dont il s'agit d'un fragment."@fr;
 
     sh:severity sh:Violation ;
   ].
@@ -204,15 +241,21 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
       sh:path rel:isi;
       sh:class haObj:DigitalRepresentation ;
       sh:minCount 1 ;
-      sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
-      sh:description "The representation this file is part of."@en ;
+
+      sh:description "De digitale representatie waarvan dit bestand deel van uitmaakt."@nl ;
+      sh:description "The digital representation this file is part of."@en ;
+      sh:description "La représentation digital dans ce fichier fait partie."@fr ;
+
       sh:severity sh:Violation ;
     ],
     [
       sh:path rel:sup ;
       sh:class premis:File ;
+
       sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl ;
-      sh:description "The file that replaces or succeeds this file."@nl ;
+      sh:description "The file that replaces or succeeds this file."@en ;
+      sh:description "Le fichier qui remplace ou succède à ce fichier."@fr ;
+
       sh:severity sh:Violation ;
     ],
     [
@@ -220,7 +263,10 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
         sh:class premis:Fixity ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        
         sh:description "De berekende fixity checksum van het bestand."@nl ;
+        sh:description "The calculated fixity checksum of the file."@en ;
+        sh:description "La somme de contrôle de fixité calculée du fichier."@fr ;
     
         sh:severity sh:Violation ;
     ],
@@ -228,7 +274,10 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
         sh:path premis:storedAt;
         sh:class premis:StorageLocation ;
         sh:minCount 1 ;
+
         sh:description "De locatie waar het bestand is opgeslagen."@nl ;
+        sh:description "The location where the file is stored."@en ;
+        sh:description "L'emplacement où le fichier est stocké."@fr ;
     
         sh:severity sh:Violation ;
     ],
@@ -239,6 +288,8 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
         sh:maxCount 1 ;
 
         sh:description "Het bestandsformaat van het bestand."@nl ;
+        sh:description "The file format of the file."@en ;
+        sh:description "Le format de fichier du fichier."@fr ;
 
     
         sh:severity sh:Violation ;
@@ -246,44 +297,58 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     [
         sh:path ebucore:hasMimeType;
         sh:datatype xsd:string;
-
         sh:maxCount 1 ;
+
         sh:name "mime type"@en ;
         sh:name "mime type"@nl ;
         sh:name "mime type"@fr ;
+
         sh:description "Het MIME type of IANA media type van het bestand."@nl ;
         sh:description "The MIME type or IANA media type of the file."@en;
+        sh:description "Le type MIME ou le type de média IANA du fichier."@fr;
+
         sh:severity sh:Violation ;
     ],
     [
         sh:path edm:isNextInSequence ;
+        sh:class premis:File ;
+
         sh:name "next file in sequence"@en ;
         sh:name "volgende bestand in volgorde"@nl;
+        sh:name "fichier suivant dans l'ordre"@fr;
+
         sh:description "Het bestand dat op dit bestand volgt."@nl;
         sh:description "The file that follows on this file."@en;
-        sh:class premis:File ;
+        sh:description "Le fichier qui suit sur ce fichier."@fr;
 
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
     ],
     [
         sh:path rel:doc ;
+        sh:class premis:File ;
+
         sh:name "documents"@en ;
         sh:name "documenteert"@nl;
+        sh:name "document"@fr;
+
         sh:description "Het bestand dat dit bestand beschrijft of documenteert."@nl;
         sh:description "The file that describes or documents this file."@en;
-
-        sh:class premis:File ;
+        sh:description "Le fichier qui décrit ou documente ce fichier."@fr;
 
         sh:severity sh:Violation ;
     ],
     [
       sh:path ebucore:hasMediaFragment ;
       sh:class haObj:DigitalRepresentation ;
+      
       sh:name "has media fragment"@en ;
       sh:name "heeft media fragment"@nl;
+      sh:name "a le fragment des médias"@fr;
+
       sh:description "Een fragment uit dit bestand."@nl;
       sh:description "A fragment from this file."@en;
+      sh:description "Un fragment de ce fichier."@fr;
 
       sh:severity sh:Violation ;
     ].
@@ -297,20 +362,26 @@ haObj:FixityShape a sh:NodeShape ;
         sh:datatype xsd:string;
         sh:minCount 1 ;
         sh:name "fixity checksum"@nl;
-        sh:description "De waarde van de checksum."@nl ;
         sh:name "fixity checksum"@en;
-        sh:description "The value of the checksum."@en ;        
+        sh:name "Vérification de la fixation"@fr;
+
+        sh:description "De waarde van de checksum."@nl ;
+        sh:description "The value of the checksum."@en ; 
+        sh:description "La valeur de la somme de contrôle."@fr ;       
     
         sh:severity sh:Violation ;
     ],
     [
         sh:path dct:creator;
         sh:datatype xsd:string;
+
         sh:name "checksum maker"@nl;
         sh:name "checksum creator"@en;
+        sh:name "Créateur de somme de contrôle"@fr;
 
         sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
         sh:description "The entity that generated the checksum."@en ;
+        sh:description "L'entité qui a généré la somme de contrôle."@fr ;
     
         sh:severity sh:Violation ;
     ].
@@ -321,19 +392,29 @@ haObj:StorageLocationShape a sh:NodeShape ;
         sh:path rdf:value;
         sh:datatype xsd:string;
         sh:minCount 1 ;
+
         sh:name "opslagpad"@nl ;
         sh:name "file path"@en ;
+        sh:name "chemin du fichier"@fr ;
+
         sh:description "Het pad van de opslaglocatie."@nl ;
         sh:description "The file path of the storage location."@en ;
+        sh:description "Le chemin du fichier de l'emplacement de stockage."@fr ;
+
         sh:severity sh:Violation ;
     ],
     [
         sh:path premis:medium;
         sh:class premis:StorageMedium ;
-        sh:name "medium"@nl;
-        sh:name "medium"@en;
+
+        sh:name "opslagmedium"@nl;
+        sh:name "storage medium"@en;
+        sh:name "milieu de stockage"@en;
+
         sh:description "Het type opslagmedium."@nl ;
-        sh:description "The type of storage medium."@nl ;
+        sh:description "The type of storage medium."@en ;
+        sh:description "Le type de milieu de stockage."@fr ;
+
         sh:severity sh:Violation ;
     ].
   
@@ -347,11 +428,17 @@ haObj:StorageLocationShape a sh:NodeShape ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+
         sh:name "value"@en ;
         sh:name "waarde"@nl ;
         sh:name "valeur"@fr ;
-        sh:severity sh:Violation ;
+
+        sh:description "De waarde van deze identifier."@nl;
+        sh:description "The value of this identifier."@en;
+        sh:description "La valeur de cet identifiant."@fr;
+        
         sh:message "rdf:value is missing or not of type string"@en ;
         sh:message "rdf:value ontbreekt of is niet van het type string"@nl ;
         sh:message "rdf:value est manquant ou n'est pas de type string"@fr ;
+        sh:severity sh:Violation ;
     ] .

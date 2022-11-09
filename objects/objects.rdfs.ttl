@@ -247,8 +247,6 @@ premis:size a owl:DatatypeProperty ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   skos:narrowMatch <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize> .
 
-# vraag: je kan dus niet aangeven waar een intellectuele entiteit gestockeerd is?
-# bv. de locatie van het fysieke schilderij?
 premis:storedAt a owl:ObjectProperty ;
   rdfs:label "stored at"@en ;
   rdfs:label "stocké à"@fr ;
@@ -538,15 +536,6 @@ ebucore:hasMediaFragment  a rdf:Property ;
   owl:equivalentProperty ma:hasFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
-ebucore:isMediaFragmentOf a rdf:Property ;
-  rdfs:range ebucore:MediaResource ;
-  rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en ;
-  rdfs:comment "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
-  rdfs:label "Media fragment source"@en ;
-  rdfs:label "Media fragment bron"@nl ;
-  rdfs:domain ebucore:MediaFragment;
-  rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-
 ebucore:hasObjectType  a rdf:Property ;
   rdfs:label "Object/asset type"@en ;
   rdfs:label "Type d'object/actif"@fr ;
@@ -582,8 +571,6 @@ ebucore:hasMimeType
 
 # meemoo properties
 
-# vraag: klopt het om bij die master/mezzanine/accesscopy properties de inverse te definiëren?
-# of is dat niet altijd waar? als iets master is van iets, kan het dan nog een master hebben op zijn beurt bv.?
 haObj:isMasterOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
   owl:inverseOf haObj:hasMaster ;
@@ -600,20 +587,20 @@ haObj:hasMaster a rdf:Property;
   rdfs:label  "heeft archiefmaster"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
-haObj:isMezzanineOf a rdf:Property;
-  rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haObj:hasMezzanine ;
-  rdfs:label  "is mezzanine format of"@en ;
-  rdfs:label  "est format mezzanine de"@fr ;
-  rdfs:label  "is mezzanineformaat van"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
-
 haObj:hasMezzanine a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
   owl:inverseOf haObj:isMezzanineOf ;
   rdfs:label  "has mezzanine format"@en ;
   rdfs:label  "a format mezzanine"@fr ;
   rdfs:label  "heeft mezzanineformaat"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+
+haObj:isMezzanineOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasMezzanine ;
+  rdfs:label  "is mezzanine format of"@en ;
+  rdfs:label  "est format mezzanine de"@fr ;
+  rdfs:label  "is mezzanineformaat van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
 
 haObj:isAccesscopyOf a rdf:Property;
@@ -631,6 +618,4 @@ haObj:hasAccesscopy a rdf:Property;
   rdfs:label  "a copie d'accès"@fr ;
   rdfs:label  "heeft toegangskopie"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
-
-# vraag: moet er een property komen om aan te duiden of een resource werd verwijderd uit het archief?
 
