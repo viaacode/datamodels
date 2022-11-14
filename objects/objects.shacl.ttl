@@ -18,6 +18,8 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+@base <https://data.hetarchief.be/ns/object/shapes> .
+
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
@@ -35,7 +37,7 @@
     dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
     dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
 
-haObj:ObjectShape a sh:NodeShape ;
+<#ObjectShape> a sh:NodeShape ;
   sh:targetClass premis:Object ;
   sh:property [
     sh:path premis:relationship ;
@@ -50,7 +52,7 @@ haObj:ObjectShape a sh:NodeShape ;
     sh:severity sh:Violation ;
   ].
 
-haObj:IntellectualEntityShape a sh:NodeShape ;
+<#IntellectualEntityShape> a sh:NodeShape ;
   sh:targetClass premis:IntellectualEntity ;
   sh:property [
       a sh:PropertyShape ;
@@ -133,7 +135,7 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
     sh:severity sh:Violation ;
   ].
 
-haObj:PhysicalRepresentationShape a sh:NodeShape ;
+<#PhysicalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:PhysicalRepresentation ;
   sh:property [
     sh:path premis:medium;
@@ -146,7 +148,7 @@ haObj:PhysicalRepresentationShape a sh:NodeShape ;
     sh:severity sh:Violation ;
   ].
 
-haObj:DigitalRepresentationShape a sh:NodeShape ;
+<#DigitalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
   sh:property  [
     sh:path haObj:isMasterOf ;
@@ -235,7 +237,7 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
     sh:severity sh:Violation ;
   ].
 
- haObj:FileShape a sh:NodeShape ;
+<#FileShape> a sh:NodeShape ;
   sh:targetClass premis:File ;
     sh:property [
       sh:path rel:isi;
@@ -353,9 +355,7 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
       sh:severity sh:Violation ;
     ].
 
-
-
-haObj:FixityShape a sh:NodeShape ;
+<#FixityShape> a sh:NodeShape ;
   sh:targetClass premis:Fixity ;
     sh:property [
         sh:path rdf:value;
@@ -386,7 +386,7 @@ haObj:FixityShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ].
 
-haObj:StorageLocationShape a sh:NodeShape ;
+<#StorageLocationShape> a sh:NodeShape ;
   sh:targetClass premis:StorageLocation ;
     sh:property [
         sh:path rdf:value;
@@ -418,7 +418,7 @@ haObj:StorageLocationShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ].
   
-  <#LocalIdentifierNodeShape> a sh:NodeShape ; 
+<#LocalIdentifierNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:LocalIdentifier ;
     sh:property 
     [

@@ -11,7 +11,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix pav: <http://purl.org/pav/> .
 
-<https://data.hetarchief.be/ns/description#>  a owl:Ontology ;
+<https://data.hetarchief.be/ns/description>  a owl:Ontology ;
     vann:preferredNamespacePrefix "haDes" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description#" ;
     dct:author  [

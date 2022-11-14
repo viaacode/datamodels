@@ -11,7 +11,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
 
-<https://data.hetarchief.be/ns/organization#>  a owl:Ontology;
+<https://data.hetarchief.be/ns/organization>  a owl:Ontology;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" ;
     dct:author  [

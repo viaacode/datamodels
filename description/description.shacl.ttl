@@ -16,6 +16,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix pav: <http://purl.org/pav/> .
 
+@base <https://data.hetarchief.be/ns/description/shapes> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;

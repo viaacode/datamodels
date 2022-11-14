@@ -10,6 +10,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix pav: <http://purl.org/pav/> .
 
+@base <https://data.hetarchief.be/ns/organization/shapes> .
+
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
@@ -33,7 +35,7 @@
 #     NodeShapes     #
 ######################
 
-haOrg:OrganizationShape a sh:NodeShape ;
+<#OrganizationShape> a sh:NodeShape ;
   sh:targetClass org:Organization ;
   sh:property haOrg:prefLabelShape, 
               haOrg:altLabelShape, 
@@ -209,30 +211,30 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
                 sh:message "org:unitOf ontbreekt of zijn Object is geen org:Organization."@nl 
               ] .
 
-haOrg:ContentPartnerShape a sh:NodeShape ;
+<#ContentPartnerShape> a sh:NodeShape ;
   sh:targetClass haOrg:ContentPartner ;
   sh:property haOrg:accountManagerShape .
 
-haOrg:ServiceProviderShape  a sh:NodeShape ;
+<#ServiceProviderShape>  a sh:NodeShape ;
   sh:targetClass haOrg:ServiceProvider .
 
-haOrg:ServiceConsumerShape  a sh:NodeShape ;
+<#ServiceConsumerShape>  a sh:NodeShape ;
   sh:targetClass haOrg:ServiceConsumer .
 
-haOrg:EducationalOrganizationShape  a sh:NodeShape ;
+<#EducationalOrganizationShape>  a sh:NodeShape ;
   sh:targetClass haOrg:EducationalOrganization .
 
-haOrg:EducationalPartnerShape  a sh:NodeShape ;
+<#EducationalPartnerShape>  a sh:NodeShape ;
   sh:targetClass haOrg:EducationalPartner ;
   sh:property haOrg:accountManagerShape .
 
-haOrg:EducationalPublisherShape  a sh:NodeShape ;
+<#EducationalPublisherShape>  a sh:NodeShape ;
   sh:targetClass haOrg:EducationalPublisher .
 
-haOrg:SchoolShape a sh:NodeShape ;
+<#SchoolShape> a sh:NodeShape ;
   sh:targetClass haOrg:School .
 
-haOrg:SiteShape  a  sh:NodeShape ;
+<#SiteShape>  a  sh:NodeShape ;
   sh:targetClass org:Site ;
   sh:property [
                 sh:path org:siteAddress ;
@@ -250,7 +252,7 @@ haOrg:SiteShape  a  sh:NodeShape ;
                 sh:message "org:siteAddress komt meer dan eens voor of zijn Object is geen schema:PostalAddress"@nl 
               ] .
 
-haOrg:PostShape a sh:NodeShape;
+<#PostShape> a sh:NodeShape;
   sh:targetClass org:Post ;
   sh:property [        
                 sh:path org:role ;
@@ -287,11 +289,11 @@ haOrg:PostShape a sh:NodeShape;
                 sh:message "org:postIn ontbreekt of zijn Object is geen org:Organization"@nl 
               ] .
     
-haOrg:RoleShape a sh:NodeShape;
+<#RoleShape> a sh:NodeShape;
   sh:targetClass org:Role ;
   sh:property haOrg:prefLabelShape .
 
-haOrg:PersonShape a sh:NodeShape ;
+<#PersonShape> a sh:NodeShape ;
   sh:targetClass schema:Person ;
   sh:property [    
                 sh:path org:holds ;
@@ -357,7 +359,7 @@ haOrg:PersonShape a sh:NodeShape ;
                 sh:message "The Object of haOrg:isAccountManagerOf is neither haOrg:ContentPartner nor haOrg:EducationalPartner."@en
               ] .
 
-haOrg:PostalAddressShape  a sh:NodeShape ;
+<#PostalAddressShape>  a sh:NodeShape ;
   sh:targetClass schema:PostalAddress ;
   sh:property [
     a sh:PropertyShape ;
@@ -436,7 +438,7 @@ haOrg:PostalAddressShape  a sh:NodeShape ;
   sh:name "adres"@nl 
   ].
 
-haOrg:ContactPointShape  a sh:NodeShape ;
+<#ContactPointShape>  a sh:NodeShape ;
   sh:targetClass schema:ContactPoint ;
   sh:property [  
     sh:path schema:contactType ;
@@ -472,7 +474,7 @@ haOrg:ContactPointShape  a sh:NodeShape ;
 ##########################
 
 
-haOrg:prefLabelShape  a sh:PropertyShape ;
+<#prefLabelShape>  a sh:PropertyShape ;
   sh:path skos:prefLabel ;
   sh:minCount 1 ;
   sh:maxCount 1 ;
@@ -488,7 +490,7 @@ haOrg:prefLabelShape  a sh:PropertyShape ;
   sh:message "skos:prefLabel is missing or its Object is no xsd:string."@fr ;
   sh:message "skos:prefLabel is missing or its Object is no xsd:string."@nl .
 
-haOrg:altLabelShape a sh:PropertyShape ;
+<#altLabelShape> a sh:PropertyShape ;
   sh:path skos:altLabel ;
   sh:datatype xsd:string ;
 
@@ -503,7 +505,7 @@ haOrg:altLabelShape a sh:PropertyShape ;
   sh:severity sh:Warning ;
   sh:message "skos:altLabel is missing or no Literal"@en .
     
-haOrg:accountManagerShape  a sh:PropertyShape ;    
+<#accountManagerShape>  a sh:PropertyShape ;    
   sh:path haOrg:hasAccountManager ;
   sh:minCount 1 ;
   sh:maxCount 1 ;

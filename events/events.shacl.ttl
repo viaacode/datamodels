@@ -1,6 +1,6 @@
 
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix haEvent: <https://data.hetarchief.be/ns/event#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -17,6 +17,8 @@
 @prefix evtAgRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix pav: <http://purl.org/pav/> .
+
+@base <https://data.hetarchief.be/ns/event/shapes> .
 
 <>  dct:author  [
         schema:name   "Miel Vander Sande" ;
