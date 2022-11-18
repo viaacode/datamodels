@@ -169,6 +169,18 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:schema:creator ;
+        sh:class schema:Role ;
+        sh:name "creator"@en ;
+        sh:name "maker"@nl ;
+        sh:name "créateur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:creator is not of class schema:Role"@en ;
+        sh:message "schema:creator is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:creator n'est pas de la classe schema:Role"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:abstract ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -277,9 +289,9 @@
         sh:path dct:available ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:dateTime ;
-#         sh:pattern "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])↵
-# T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?↵
-# (Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?$";
+        #         sh:pattern "^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])↵
+        # T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?↵
+        # (Z|[+-](?:2[0-3]|[01][0-9]):[0-5][0-9])?$";
         sh:name "date available"@en ;
         sh:name "beschikbaar op"@nl ;
         sh:name "disponible le"@fr ;
@@ -363,6 +375,47 @@
     sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
     [
         a sh:PropertyShape ;
+        sh:path schema:artform ;
+        # skos?
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "artform"@en ;
+        sh:name "kunstvorm"@nl ;
+        sh:name "forme d'art"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:artform is not of type string"@en ;
+        sh:message "schema:artform is niet van het type string"@nl ;
+        sh:message "schema:artform n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:artMedium ;
+        # skos?
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "art medium"@en ;
+        sh:name "kunst medium"@nl ;
+        sh:name "moyen d'art"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:artMedium is not of type string"@en ;
+        sh:message "schema:artMedium is niet van het type string"@nl ;
+        sh:message "schema:artMedium n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:depth ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "depth"@en ;
+        sh:name "diepte"@nl ;
+        sh:name "profondeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:depth is not an IRI"@en ;
+        sh:message "schema:depth is geen IRI"@nl ;
+        sh:message "schema:depth n'est pas un IRI"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -379,6 +432,19 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:height ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "height"@en ;
+        sh:name "hoogte"@nl ;
+        sh:name "hauteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:height is not an IRI"@en ;
+        sh:message "schema:height is geen IRI"@nl ;
+        sh:message "schema:height n'est pas un IRI"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path dct:medium ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -390,6 +456,19 @@
         sh:message "dct:medium is not of type string "@en ;
         sh:message "dct:medium is niet van het type string"@nl ;
         sh:message "dct:medium n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:width ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "width"@en ;
+        sh:name "breedte"@nl ;
+        sh:name "largeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:width is not an IRI"@en ;
+        sh:message "schema:width is geen IRI"@nl ;
+        sh:message "schema:width n'est pas un IRI"@fr ;
     ] .
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
@@ -569,6 +648,32 @@
     sh:property <#nameShape>,
     [
         a sh:PropertyShape ;
+        sh:path schema:birthDate ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype edtf:EDTF-level1 ;
+        sh:name "birth date"@en ;
+        sh:name "geboortedatum"@nl ;
+        sh:name "date de naissance"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:birthDate is not of type edtf:EDTF-level1"@en ;
+        sh:message "schema:birthDate is niet van het type edtf:EDTF-level1"@nl ;
+        sh:message "schema:birthDate n'est pas de type edtf:EDTF-level1"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:deathDate ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype edtf:EDTF-level1 ;
+        sh:name "death date"@en ;
+        sh:name "sterfdatum"@nl ;
+        sh:name "date de décès"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:deathDate is not of type edtf:EDTF-level1"@en ;
+        sh:message "schema:deathDate is niet van het type edtf:EDTF-level1"@nl ;
+        sh:message "schema:deathDate n'est pas de type edtf:EDTF-level1"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:givenName ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -592,6 +697,49 @@
         sh:message "schema:familyName is not of type string "@en ;
         sh:message "schema:familyName is niet van het type string"@nl ;
         sh:message "schema:familyName n'est pas de type string"@fr ;
+    ] .
+
+<#QuantitativeValueShape> a sh:NodeShape ; 
+    sh:targetClass schema:QuantitativeValue ;
+    [
+        a sh:PropertyShape ;
+        sh:path schema:unitCode ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "unit code"@en ;
+        sh:name "eenheidcode"@nl ;
+        sh:name "code d'unité"@fr ;
+        sh:severity sh:Violation ;
+        # Voor afwerken model: 'string' of 'xsd:string' schrijven in de message?
+        sh:message "schema:unitCode is not of type string "@en ;
+        sh:message "schema:unitCode is niet van het type string"@nl ;
+        sh:message "schema:unitCode n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:unitText ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:name "unit text"@en ;
+        sh:name "eenheidstekst"@nl ;
+        sh:name "texte d'unité"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:unitText is not of type string "@en ;
+        sh:message "schema:unitText is niet van het type string"@nl ;
+        sh:message "schema:unitText n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:value ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:float ;
+        sh:name "value"@en ;
+        sh:name "waarde"@nl ;
+        sh:name "valeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:value is not of type float "@en ;
+        sh:message "schema:value is niet van het type float"@nl ;
+        sh:message "schema:value n'est pas de type float"@fr ;
     ] .
 
 <#CollectionShape> a sh:NodeShape ; 
