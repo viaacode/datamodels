@@ -373,6 +373,7 @@
 <#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:PhysicalRepresentation ;
     sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    # Of bij IE?
     [
         a sh:PropertyShape ;
         sh:path schema:artform ;
