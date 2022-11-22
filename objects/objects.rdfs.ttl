@@ -2,7 +2,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
-@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
@@ -20,7 +20,7 @@
 
 <https://data.hetarchief.be/ns/object>  a owl:Ontology;
     vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
     dct:author  [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
@@ -153,7 +153,7 @@ haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:comment "Digital representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
     rdfs:comment "Représentation digitale d'une entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
     rdfs:comment "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 
 haObj:LocalIdentifier a rdfs:Class ;
@@ -165,7 +165,7 @@ haObj:LocalIdentifier a rdfs:Class ;
     rdfs:comment "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
     rdfs:comment "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'un système externe ou l'identifiant dans le système de registre de collection du partenaire de contenu."@fr ;
     rdfs:comment "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een extern database of de identificatie in het systeem van registratie van de collectie van de partner van content."@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
@@ -175,7 +175,7 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:comment "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
     rdfs:comment "Représentation physique d'un entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
     rdfs:comment "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 # dct properties
 dct:format dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
@@ -577,7 +577,7 @@ haObj:isMasterOf a rdf:Property;
   rdfs:label  "is archiving master of"@en ;
   rdfs:label  "est la copie principale de"@fr ;
   rdfs:label  "is archiefmaster van"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:hasMaster a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
@@ -585,7 +585,7 @@ haObj:hasMaster a rdf:Property;
   rdfs:label  "has archiving master"@en ;
   rdfs:label  "a copie principale"@fr ;
   rdfs:label  "heeft archiefmaster"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:hasMezzanine a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
@@ -593,7 +593,7 @@ haObj:hasMezzanine a rdf:Property;
   rdfs:label  "has mezzanine format"@en ;
   rdfs:label  "a format mezzanine"@fr ;
   rdfs:label  "heeft mezzanineformaat"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:isMezzanineOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
@@ -601,7 +601,7 @@ haObj:isMezzanineOf a rdf:Property;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:isAccesscopyOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
@@ -609,7 +609,7 @@ haObj:isAccesscopyOf a rdf:Property;
   rdfs:label  "is access copy of"@en ;
   rdfs:label  "est copie d'accès de"@fr ;
   rdfs:label  "is toegangskopie van"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:hasAccesscopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
@@ -617,5 +617,5 @@ haObj:hasAccesscopy a rdf:Property;
   rdfs:label  "has access copy"@en ;
   rdfs:label  "a copie d'accès"@fr ;
   rdfs:label  "heeft toegangskopie"@nl ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object#> .
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
