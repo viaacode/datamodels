@@ -2,29 +2,29 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix mr: <http://data.meemoo.be/ns/terms/roles#> .
-@base <https://data.hetarchief.be/id/organization-role#> .
+@base <https://data.hetarchief.be/id/organization-role/> .
 
-<> a skos:ConceptScheme ;
+<https://data.hetarchief.be/id/organization-role> a skos:ConceptScheme ;
   skos:prefLabel "Meemoo organization Roles thesaurus" ;
-  skos:hasTopConcept <#Staff> .
+  skos:hasTopConcept <Staff> .
 
-<#Staff> a org:Role, skos:Concept;
+<Staff> a org:Role, skos:Concept;
     skos:prefLabel "Staff"@en ;
     skos:prefLabel "Personnel(le)"@fr;
     skos:prefLabel "Personeel"@nl;
     skos:topConceptOf <>.
 
-<#AccountManager> a org:Role, skos:Concept;
+<AccountManager> a org:Role, skos:Concept;
     skos:prefLabel "Account Manager"@en ;
     skos:prefLabel "Gestionnaire de Comptes"@fr;
     skos:prefLabel "Accountmanager"@nl ;
-    skos:broader <#Staff> ;
+    skos:broader <Staff> ;
     skos:inScheme <> .
 
-<#EducationalEmployee> a org:Role, skos:Concept;
+<EducationalEmployee> a org:Role, skos:Concept;
     skos:prefLabel "Educational employee"@en ;
     skos:prefLabel "Assistante pédagogique"@fr;
     skos:prefLabel "Educatief medewerker"@nl ;
-    skos:broader <#Staff> ;
+    skos:broader <Staff> ;
     skos:inScheme <> .
 
