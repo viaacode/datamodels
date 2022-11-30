@@ -19,6 +19,8 @@
 @prefix tosh: <http://topbraid.org/tosh#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
 
 #Based on: @base <http://publications.europa.eu/ontology/skosShapes> .
 @base <https://data.hetarchief.be/ns/skos/shapes> .
