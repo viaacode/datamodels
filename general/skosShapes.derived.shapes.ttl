@@ -1,0 +1,392 @@
+# baseURI: http://publications.europa.eu/ontology/skosShapes
+# imports: http://datashapes.org/dash
+# imports: http://publications.europa.eu/ontology/shapeview
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/2008/05/skosxl:
+
+@prefix : <http://publications.europa.eu/ontology/skosShapes#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix euvocShapes: <http://publications.europa.eu/ontology/euvoc/euvocShapes#> .
+@prefix euvocShapesUtil: <http://eurovoc.europa.eu/euvocShapesUtil#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skosxl#> .
+@prefix swa: <http://topbraid.org/swa#> .
+@prefix tosh: <http://topbraid.org/tosh#> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#Based on: @base <http://publications.europa.eu/ontology/skosShapes> .
+@base <https://data.hetarchief.be/ns/skos/shapes> .
+<>
+  # rdf:type owl:Ontology ;
+  # rdfs:label "Constraints definitions for SKOS and skosxl:"@en ;
+  # rdfs:label "Définitions de contraintes pour SKOS et skosxl:"@fr ;
+  # rdfs:label "Constraints definities voor SKOS en skosxl:"@nl ;
+  dct:title     "SHACL Model Description"@en ;
+  dct:title     "Modèle SHACL Description"@fr ;
+  dct:title     "SHACL-model Descriptie"@nl ;
+
+  # owl:imports <http://datashapes.org/dash> ;
+  # owl:imports <http://publications.europa.eu/ontology/shapeview> ;
+  # owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  # owl:imports <http://www.w3.org/2008/05/skosxl:> ;
+  # owl:versionInfo "EuVoc 1.1" ;
+.
+
+<Collection>
+  rdf:type sh:Shape ;
+  sh:targetClass skos:Collection ;
+  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property [
+    sh:path skos:member ;
+    sh:or (
+      [ sh:class skos:Concept ]
+      [ sh:class skos:Collection ]
+    ) ;
+    sh:name "member"@en ;
+    sh:name "membre"@fr ;
+    sh:name "lid"@nl ;
+    sh:severity sh:Violation ;
+    ] ;
+.
+<OrderedCollection>
+  rdf:type sh:Shape ;
+  sh:class skos:Collection ;
+  sh:targetClass skos:OrderedCollection ;
+  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property [
+    sh:path skos:memberList ;
+    sh:class rdf:List ;
+    sh:name "member list"@en ;
+    sh:name "liste de membres"@fr ;
+    sh:name "lijst van leden"@nl ;
+    sh:severity sh:Violation ;
+    ] ;
+.
+<Concept>
+  rdf:type sh:Shape ;
+  sh:targetClass skos:Concept ;
+  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property [
+      sh:path skos:broader ;
+      sh:class skos:Concept ;
+      sh:name "broader"@en ;
+      sh:name "plus large"@fr ;
+      sh:name "breder"@nl ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      sh:path skos:broadMatch ;
+      sh:class skos:Concept ;
+      sh:name "broad match"@en ;
+      sh:name "correspondance large"@fr ;
+      sh:name "brede match"@nl ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      sh:path skos:broaderTransitive ;
+      sh:class skos:Concept ;
+      sh:name "broader transitive"@en ;
+      sh:name "plus large transitive"@fr ;
+      sh:name "breder transitief"@nl ;
+      sh:nodeKind sh:IRI ;
+    ] ;
+  sh:property [
+      sh:path skos:closeMatch ;
+      sh:disjoint skos:broadMatch ;
+      sh:disjoint skos:exactMatch ;
+      sh:disjoint skos:narrowMatch ;
+      sh:disjoint skos:relatedMatch ;
+      sh:class skos:Concept ;
+      sh:name "close match"@en ;
+      sh:name "correspondance proche"@fr ;
+      sh:name "nabije match"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:exactMatch ;
+      sh:disjoint skos:broadMatch ;
+      sh:disjoint skos:closeMatch ;
+      sh:disjoint skos:narrowMatch ;
+      sh:disjoint skos:relatedMatch ;
+      sh:class skos:Concept ;
+      sh:name "exact match"@en ;
+      sh:name "correspondance exacte"@fr ;
+      sh:name "exacte overeenkomst"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:inScheme ;
+      sh:class skos:ConceptScheme ;
+      sh:minCount 1 ;
+      sh:name "in scheme"@en ;
+      sh:name "dans le schéma"@fr ;
+      sh:name "in schema"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:mappingRelation ;
+      sh:class skos:Concept ;
+      sh:name "mapping relation"@en ;
+      sh:name "relation de correspondance"@fr ;
+      sh:name "mapping relatie"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:narrower ;
+      sh:class skos:Concept ;
+      sh:name "narrower"@en ;
+      sh:name "plus étroit"@fr ;
+      sh:name "nauwer"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:narrowerTransitive ;
+      sh:class skos:Concept ;
+      sh:name "narrower transitive"@en ;
+      sh:name "plus étroit transitive"@fr ;
+      sh:name "nauwer transitief"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:narrowMatch ;
+      sh:disjoint skos:broadMatch ;
+      sh:disjoint skos:closeMatch ;
+      sh:disjoint skos:exactMatch ;
+      sh:disjoint skos:relatedMatch ;
+      sh:class skos:Concept ;
+      sh:name "narrow match"@en ;
+      sh:name "correspondance étroite"@fr ;
+      sh:name "nauwe match"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+
+  sh:property [
+      sh:path skos:related ;
+      sh:message "S27	skos:related is disjoint with the property skos:broaderTransitive."@en ;
+      sh:message "S27	skos:related est disjoint avec la propriété skos:broaderTransitive."@fr ;
+      sh:message "S27	skos:related is disjunct met de eigenschap skos:broaderTransitive."@nl ;
+      sh:disjoint skos:broader ;
+      sh:disjoint skos:broaderTransitive ;
+      sh:disjoint skos:narrower ;
+      sh:disjoint skos:narrowerTransitive ;
+      sh:name "related"@en ;
+      sh:name "lié"@fr ;
+      sh:name "gerelateerd"@nl ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:relatedMatch ;
+      sh:disjoint skos:broadMatch ;
+      sh:disjoint skos:closeMatch ;
+      sh:disjoint skos:exactMatch ;
+      sh:disjoint skos:narrowMatch ;
+      sh:class skos:Concept ;
+      sh:name "related match"@en ;
+      sh:name "correspondance liée"@fr ;
+      sh:name "gerelateerde match"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:relatedMatch ;
+      sh:disjoint skos:broadMatch ;
+      sh:disjoint skos:closeMatch ;
+      sh:disjoint skos:exactMatch ;
+      sh:disjoint skos:narrowMatch ;
+      sh:name "related match"@en ;
+      sh:name "correspondance liée"@fr ;
+      sh:name "gerelateerde match"@nl ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:semanticRelation ;
+      sh:class skos:Concept ;
+      sh:name "semantic relation"@en ;
+      sh:name "relation sémantique"@fr ;
+      sh:name "semantische relatie"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:scopeNote ;
+      sh:datatype rdf:langString ;
+      sh:name "scope note"@en ;
+      sh:name "note de portée"@fr ;
+      sh:name "scope note"@nl ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skos:topConceptOf ;
+      sh:class skos:ConceptScheme ;
+      sh:name "top concept of"@en ;
+      sh:name "concept supérieur de"@fr ;
+      sh:name "top concept van"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+      sh:path skosxl:prefLabel ;
+      sh:class skosxl:Label ;
+      sh:minCount 1 ;
+      sh:name "pref label"@en ;
+      sh:name "label préféré"@fr ;
+      sh:name "voorkeurslabel"@nl ;
+      sh:severity sh:Violation ;
+    ] ;
+  sh:scopeClass skos:Concept ;
+.
+<ConceptScheme>
+  rdf:type sh:Shape ;
+  sh:targetClass skos:ConceptScheme ;
+  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property [
+      sh:path skos:hasTopConcept ;
+      sh:class skos:Concept ;
+      sh:name "has top concept"@en ;
+      sh:name "a pour concept supérieur"@fr ;
+      sh:name "heeft top concept"@nl ;
+      sh:nodeKind sh:IRI ;
+      sh:severity sh:Violation ;
+    ] ;
+.
+<skosxl:Label>
+  rdf:type sh:Shape ;
+  sh:targetClass skosxl:Label ;
+  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property [
+      sh:path skosxl:literalForm ;
+      sh:datatype rdf:langString ;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "literal form"@en ;
+      sh:name "forme littérale"@fr ;
+      sh:name "letterlijke vorm"@nl ;
+      sh:severity sh:Warning ;
+      sh:severity sh:Violation ;
+    ] ;
+.
+<note>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:note ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "note"@en ;
+  sh:name "note"@fr ;
+  sh:name "note"@nl ;
+.
+<changeNote>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:changeNote ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "change note"@en ;
+  sh:name "note de changement"@fr ;
+  sh:name "wijzigingsnotitie"@nl ;
+.
+<definition>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:definition ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:minCount 1 ;
+  sh:name "definition"@en ;
+  sh:name "définition"@fr ;
+  sh:name "definitie"@nl ;
+  sh:severity sh:Violation ;
+.
+<editorialNote>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:editorialNote ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "editorial note"@en ;
+  sh:name "note éditoriale"@fr ;
+  sh:name "redactionele notitie"@nl ;
+.
+<example>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:example ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "example"@en ;
+  sh:name "exemple"@fr ;
+  sh:name "voorbeeld"@nl ;
+.
+<historyNote>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:historyNote ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "history note"@en ;
+  sh:name "note d'historique"@fr ;
+  sh:name "historische notitie"@nl ;
+.
+<scopeNote>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:scopeNote ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "scope note"@en ;
+  sh:name "note de champ"@fr ;
+  sh:name "scope notitie"@nl ;
+.
+<prefLabel>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:prefLabel ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype rdf:langString ;
+  sh:disjoint skos:altLabel ;
+  sh:disjoint skos:hiddenLabel ;
+  sh:minCount 1 ;
+  sh:name "preferred label"@en ;
+  sh:name "étiquette préférée"@fr ;
+  sh:name "voorkeurslabel"@nl ;
+  sh:uniqueLang "true"^^xsd:boolean ;
+  sh:severity sh:Violation ;
+.
+<altLabel>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:altLabel ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype rdf:langString ;
+  sh:disjoint skos:hiddenLabel ;
+  sh:disjoint skos:prefLabel ;
+  sh:message "skos:prefLabel, skos:altLabel and skos:hiddenLabel must be disjoint"@en ;
+  sh:message "skos:prefLabel, skos:altLabel et skos:hiddenLabel doivent être disjoint"@fr ;
+  sh:message "skos:prefLabel, skos:altLabel en skos:hiddenLabel moeten disjunct zijn"@nl ;
+  sh:name "alternative label"@en ;
+  sh:name "étiquette alternative"@fr ;
+  sh:name "alternatief label"@nl ;
+  sh:severity sh:Violation ;
+.
+<hiddenLabel>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:hiddenLabel ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype rdf:langString ;
+  sh:name "hidden label"@en ;
+  sh:name "étiquette cachée"@fr ;
+  sh:name "verborgen label"@nl ;
+.
+<notation>
+  rdf:type sh:PropertyShape ;
+  sh:path skos:notation ;
+  sh:nodeKind sh:Literal ;
+  sh:datatype xsd:string ;
+  sh:name "notation"@en ;
+  sh:name "notation"@fr ;
+  sh:name "notation"@nl ;
+.
