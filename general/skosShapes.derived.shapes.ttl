@@ -29,9 +29,13 @@
   # rdfs:label "Constraints definitions for SKOS and skosxl:"@en ;
   # rdfs:label "Définitions de contraintes pour SKOS et skosxl:"@fr ;
   # rdfs:label "Constraints definities voor SKOS en skosxl:"@nl ;
+  dct:description "Constraints definitions for SKOS and skosxl:"@en ;
+  dct:description "Définitions de contraintes pour SKOS et skosxl:"@fr ;
+  dct:description "Constraints definities voor SKOS en skosxl:"@nl ;
   dct:title     "SHACL Model Description"@en ;
   dct:title     "Modèle SHACL Description"@fr ;
   dct:title     "SHACL-model Descriptie"@nl ;
+  dct:modified  "2022-11-30" ;
 
   # owl:imports <http://datashapes.org/dash> ;
   # owl:imports <http://publications.europa.eu/ontology/shapeview> ;
