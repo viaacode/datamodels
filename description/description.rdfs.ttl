@@ -275,15 +275,15 @@ schema:author a rdf:Property ;
     rdfs:comment "De auteur van deze inhoud of beoordeling."@nl ;
     rdfs:comment "L'auteur de ce contenu ou de cette évaluation."@fr .
 
-schema:birthDate a rdf:Property ;
-    rdfs:domain schema:Person ;
-    rdfs:range edtf:EDTF-level1 ; 
-    rdfs:label "birth date"@en ;
-    rdfs:label "geboortedatum"@nl ;
-    rdfs:label "date de naissance"@fr ;
-    rdfs:comment "Date of birth"@en ;
-    rdfs:comment "Geboortedatum"@nl ;
-    rdfs:comment "Date de naissance"@fr .
+# schema:birthDate a rdf:Property ;
+#     rdfs:domain schema:Person ;
+#     rdfs:range edtf:EDTF-level1 ; 
+#     rdfs:label "birth date"@en ;
+#     rdfs:label "geboortedatum"@nl ;
+#     rdfs:label "date de naissance"@fr ;
+#     rdfs:comment "Date of birth"@en ;
+#     rdfs:comment "Geboortedatum"@nl ;
+#     rdfs:comment "Date de naissance"@fr .
 
 schema:caption a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -338,16 +338,6 @@ schema:copyrightYear a rdf:Property ;
     rdfs:comment "Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd."@nl ;
     rdfs:comment "L'année durant laquelle le droit d'auteur revendiqué pour l'œuvre créative a été revendiqué pour la première fois."@fr .
 
-schema:creator a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:Person ;
-    rdfs:label "creator"@en ;
-    rdfs:label "maker"@nl ;
-    rdfs:label "créateur"@fr ;
-    rdfs:comment "The creator/author of this CreativeWork."@en ;
-    rdfs:comment "De maker/auteur van dit CreativeWork."@nl ;
-    rdfs:comment "Le créateur/auteur de cette CreativeWork."@fr .
-
 schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
@@ -378,15 +368,15 @@ schema:datePublished a rdf:Property ;
     rdfs:comment "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl ;
     rdfs:comment "La date de la première diffusion ou publication."@fr .
 
-schema:deathDate a rdf:Property ;
-    rdfs:domain schema:Person ;
-    rdfs:range edtf:EDTF-level1 ; 
-    rdfs:label "death date"@en ;
-    rdfs:label "sterfdatum"@nl ;
-    rdfs:label "date de décès"@fr ;
-    rdfs:comment "Date of death."@en ;
-    rdfs:comment "Datum van overlijden."@nl ;
-    rdfs:comment "Date de décès."@fr .
+# schema:deathDate a rdf:Property ;
+#     rdfs:domain schema:Person ;
+#     rdfs:range edtf:EDTF-level1 ; 
+#     rdfs:label "death date"@en ;
+#     rdfs:label "sterfdatum"@nl ;
+#     rdfs:label "date de décès"@fr ;
+#     rdfs:comment "Date of death."@en ;
+#     rdfs:comment "Datum van overlijden."@nl ;
+#     rdfs:comment "Date de décès."@fr .
 
 schema:depth a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -622,7 +612,6 @@ schema:unitText a rdf:Property ;
 
 schema:value a rdf:Property ;
     rdfs:domain schema:QuantitativeValue ;
-    # Integer volgens developer documentation. In de praktijk ook floats?
     rdfs:range xsd:float ;
     rdfs:label "value"@en ;
     rdfs:label "waarde"@nl ;

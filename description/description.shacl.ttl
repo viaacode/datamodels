@@ -169,18 +169,6 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:schema:creator ;
-        sh:class schema:Role ;
-        sh:name "creator"@en ;
-        sh:name "maker"@nl ;
-        sh:name "créateur"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:creator is not of class schema:Role"@en ;
-        sh:message "schema:creator is niet van de klasse schema:Role"@nl ;
-        sh:message "schema:creator n'est pas de la classe schema:Role"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
         sh:path schema:abstract ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -373,11 +361,9 @@
 <#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:PhysicalRepresentation ;
     sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
-    # Of bij IE?
     [
         a sh:PropertyShape ;
         sh:path schema:artform ;
-        # skos?
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "artform"@en ;
@@ -391,7 +377,6 @@
     [
         a sh:PropertyShape ;
         sh:path schema:artMedium ;
-        # skos?
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "art medium"@en ;
@@ -405,7 +390,7 @@
     [
         a sh:PropertyShape ;
         sh:path schema:depth ;
-        sh:nodeKind sh:IRI ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
         sh:name "depth"@en ;
         sh:name "diepte"@nl ;
@@ -434,7 +419,7 @@
     [
         a sh:PropertyShape ;
         sh:path schema:height ;
-        sh:nodeKind sh:IRI ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
         sh:name "height"@en ;
         sh:name "hoogte"@nl ;
@@ -461,7 +446,7 @@
     [
         a sh:PropertyShape ;
         sh:path schema:width ;
-        sh:nodeKind sh:IRI ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
         sh:name "width"@en ;
         sh:name "breedte"@nl ;
@@ -702,6 +687,7 @@
 
 <#QuantitativeValueShape> a sh:NodeShape ; 
     sh:targetClass schema:QuantitativeValue ;
+    sh:property
     [
         a sh:PropertyShape ;
         sh:path schema:unitCode ;
