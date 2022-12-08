@@ -7,7 +7,7 @@ haEvt:Inspection  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 haEvt:Identification  a rdfs:Class ;
   rdfs:subClassOf premis:Event ;
@@ -18,7 +18,7 @@ haEvt:Identification  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Cleaning  a rdfs:Class ;
@@ -30,7 +30,7 @@ haEvt:Cleaning  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Repair  a rdfs:Class ;
@@ -42,7 +42,7 @@ haEvt:Repair  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Editing  a rdfs:Class ;
@@ -54,7 +54,7 @@ haEvt:Editing  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Digitization  a rdfs:Class ;
@@ -66,7 +66,7 @@ haEvt:Digitization  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Migration  a rdfs:Class ;
@@ -78,7 +78,7 @@ haEvt:Migration  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Validation  a rdfs:Class ;
@@ -90,7 +90,7 @@ haEvt:Validation  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Transcoding  a rdfs:Class ;
@@ -102,7 +102,7 @@ haEvt:Transcoding  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:QualityControl  a rdfs:Class ;
@@ -114,7 +114,7 @@ haEvt:QualityControl  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Baking  a rdfs:Class ;
@@ -126,7 +126,7 @@ haEvt:Baking  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Export  a rdfs:Class ;
@@ -138,7 +138,7 @@ haEvt:Export  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:IngestionStart  a rdfs:Class ;
@@ -150,7 +150,7 @@ haEvt:IngestionStart  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:IngestionEnd  a rdfs:Class ;
@@ -162,7 +162,7 @@ haEvt:IngestionEnd  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Creation  a rdfs:Class ;
@@ -174,7 +174,7 @@ haEvt:Creation  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:MetadataUpdate  a rdfs:Class ;
@@ -186,7 +186,7 @@ haEvt:MetadataUpdate  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Publish  a rdfs:Class ;
@@ -198,7 +198,7 @@ haEvt:Publish  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Delete  a rdfs:Class ;
@@ -210,7 +210,7 @@ haEvt:Delete  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:Undelete  a rdfs:Class ;
@@ -222,7 +222,7 @@ haEvt:Undelete  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:PermanentlyDeleted  a rdfs:Class ;
@@ -234,7 +234,7 @@ haEvt:PermanentlyDeleted  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:VirusCheck  a rdfs:Class ;
@@ -246,7 +246,7 @@ haEvt:VirusCheck  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:MD5Check  a rdfs:Class ;
@@ -258,7 +258,7 @@ haEvt:MD5Check  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 
 haEvt:FixityCheck  a rdfs:Class ;
@@ -270,7 +270,7 @@ haEvt:FixityCheck  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .
 
 haEvt:Transcription  a rdfs:Class ;
   rdfs:subClassOf premis:Event ;
@@ -281,4 +281,4 @@ haEvt:Transcription  a rdfs:Class ;
   rdfs:comment ""@en ;
   rdfs:comment ""@fr ;
   rdfs:comment ""@nl ;
-  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events#> .
+  rdfs:isDefinedBy <http://data.hetarchief.be/ns/events/> .

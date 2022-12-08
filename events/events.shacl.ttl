@@ -1,6 +1,6 @@
 
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix haEvent: <https://data.hetarchief.be/ns/event#> .
+@prefix haEvent: <https://data.hetarchief.be/ns/event/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .

@@ -1,5 +1,5 @@
 
-@prefix haOrg: <https://data.hetarchief.be/ns/organisations#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organisations/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .

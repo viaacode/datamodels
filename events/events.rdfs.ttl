@@ -4,7 +4,7 @@
 @prefix evtOutcome: <http://id.loc.gov/vocabulary/preservation/eventOutcome/> .
 @prefix evtType: <http://id.loc.gov/vocabulary/preservation/eventType> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haEvt: <http://data.hetarchief.be/ns/event#> .
+@prefix haEvt: <http://data.hetarchief.be/ns/event/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -19,7 +19,7 @@
 
 <https://data.hetarchief.be/ns/event>  a owl:Ontology;
     vann:preferredNamespacePrefix "haEvt" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events#" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events/" ;
     dct:author  [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
