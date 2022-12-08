@@ -1,22 +1,12 @@
-# baseURI: http://publications.europa.eu/ontology/skosShapes
-# imports: http://datashapes.org/dash
-# imports: http://publications.europa.eu/ontology/shapeview
-# imports: http://www.w3.org/2004/02/skos/core
-# imports: http://www.w3.org/2008/05/skosxl:
-
 @prefix : <http://publications.europa.eu/ontology/skosShapes#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix euvocShapes: <http://publications.europa.eu/ontology/euvoc/euvocShapes#> .
-@prefix euvocShapesUtil: <http://eurovoc.europa.eu/euvocShapesUtil#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skosxl#> .
-@prefix swa: <http://topbraid.org/swa#> .
-@prefix tosh: <http://topbraid.org/tosh#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -24,11 +14,8 @@
 
 #Based on: @base <http://publications.europa.eu/ontology/skosShapes> .
 @base <https://data.hetarchief.be/ns/skos/shapes> .
+
 <>
-  # rdf:type owl:Ontology ;
-  # rdfs:label "Constraints definitions for SKOS and skosxl:"@en ;
-  # rdfs:label "Définitions de contraintes pour SKOS et skosxl:"@fr ;
-  # rdfs:label "Constraints definities voor SKOS en skosxl:"@nl ;
   dct:description "Constraints definitions for SKOS and skosxl:"@en ;
   dct:description "Définitions de contraintes pour SKOS et skosxl:"@fr ;
   dct:description "Constraints definities voor SKOS en skosxl:"@nl ;
@@ -36,18 +23,12 @@
   dct:title     "Modèle SHACL Description"@fr ;
   dct:title     "SHACL-model Descriptie"@nl ;
   dct:modified  "2022-11-30" ;
-
-  # owl:imports <http://datashapes.org/dash> ;
-  # owl:imports <http://publications.europa.eu/ontology/shapeview> ;
-  # owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  # owl:imports <http://www.w3.org/2008/05/skosxl:> ;
-  # owl:versionInfo "EuVoc 1.1" ;
 .
 
-<Collection>
+<#CollectionShape>
   rdf:type sh:Shape ;
   sh:targetClass skos:Collection ;
-  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
     sh:path skos:member ;
     sh:or (
@@ -60,11 +41,11 @@
     sh:severity sh:Violation ;
     ] ;
 .
-<OrderedCollection>
+<#OrderedCollectionShape>
   rdf:type sh:Shape ;
   sh:class skos:Collection ;
   sh:targetClass skos:OrderedCollection ;
-  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
     sh:path skos:memberList ;
     sh:class rdf:List ;
@@ -74,10 +55,10 @@
     sh:severity sh:Violation ;
     ] ;
 .
-<Concept>
+<#ConceptShape>
   rdf:type sh:Shape ;
   sh:targetClass skos:Concept ;
-  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
       sh:path skos:broader ;
       sh:class skos:Concept ;
@@ -253,10 +234,10 @@
     ] ;
   sh:scopeClass skos:Concept ;
 .
-<ConceptScheme>
+<#ConceptSchemeShape>
   rdf:type sh:Shape ;
   sh:targetClass skos:ConceptScheme ;
-  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
     sh:path skos:hasTopConcept ;
     sh:class skos:Concept ;
@@ -267,10 +248,10 @@
     sh:severity sh:Violation ;
     ] ;
 .
-<skosxl:Label>
+<#skosxl:LabelShape>
   rdf:type sh:Shape ;
   sh:targetClass skosxl:Label ;
-  sh:property <note>, <changeNote>, <definition>, <editorialNote>, <example>, <historyNote>, <scopeNote>, <prefLabel>, <altLabel>, <hiddenLabel>, <notation> ;
+  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
     sh:path skosxl:literalForm ;
     sh:datatype rdf:langString ;
@@ -282,7 +263,7 @@
     sh:severity sh:Violation ;
     ] ;
 .
-<note>
+<#noteShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:note ;
   sh:nodeKind sh:Literal ;
@@ -292,7 +273,7 @@
   sh:name "note"@nl ;
   sh:severity sh:Violation ;
 .
-<changeNote>
+<#changeNoteShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:changeNote ;
   sh:nodeKind sh:Literal ;
@@ -303,7 +284,7 @@
   sh:severity sh:Violation ;
   
 .
-<definition>
+<#definitionShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:definition ;
   sh:nodeKind sh:Literal ;
@@ -314,7 +295,7 @@
   sh:name "definitie"@nl ;
   sh:severity sh:Violation ;
 .
-<editorialNote>
+<#editorialNoteShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:editorialNote ;
   sh:nodeKind sh:Literal ;
@@ -324,7 +305,7 @@
   sh:name "redactionele notitie"@nl ;
   sh:severity sh:Violation ;
 .
-<example>
+<#exampleShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:example ;
   sh:nodeKind sh:Literal ;
@@ -334,7 +315,7 @@
   sh:name "voorbeeld"@nl ;
   sh:severity sh:Violation ;
 .
-<historyNote>
+<#historyNoteShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:historyNote ;
   sh:nodeKind sh:Literal ;
@@ -344,7 +325,7 @@
   sh:name "historische notitie"@nl ;
   sh:severity sh:Violation ;
 .
-<scopeNote>
+<#scopeNoteShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:scopeNote ;
   sh:nodeKind sh:Literal ;
@@ -354,7 +335,7 @@
   sh:name "scope notitie"@nl ;
   sh:severity sh:Violation ;
 .
-<prefLabel>
+<#prefLabelShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:prefLabel ;
   sh:nodeKind sh:Literal ;
@@ -368,7 +349,7 @@
   sh:uniqueLang "true"^^xsd:boolean ;
   sh:severity sh:Violation ;
 .
-<altLabel>
+<#altLabelShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:altLabel ;
   sh:nodeKind sh:Literal ;
@@ -383,7 +364,7 @@
   sh:name "alternatief label"@nl ;
   sh:severity sh:Violation ;
 .
-<hiddenLabel>
+<#hiddenLabelShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:hiddenLabel ;
   sh:nodeKind sh:Literal ;
@@ -393,7 +374,7 @@
   sh:name "verborgen label"@nl ;
   sh:severity sh:Violation ;
 .
-<notation>
+<#notationShape>
   rdf:type sh:PropertyShape ;
   sh:path skos:notation ;
   sh:nodeKind sh:Literal ;
