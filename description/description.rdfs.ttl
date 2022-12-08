@@ -249,9 +249,9 @@ schema:artform a rdf:Property ;
     rdfs:label "artform"@en ;
     rdfs:label "vorm"@nl ;
     rdfs:label "forme"@fr ;
-    rdfs:comment "The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc."""@en ;
-    rdfs:comment "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."""@nl ;
-    rdfs:comment "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."""@fr .
+    rdfs:comment "The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc."@en ;
+    rdfs:comment "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl ;
+    rdfs:comment "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr .
 
 schema:artMedium a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
