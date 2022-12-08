@@ -9,6 +9,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix pav: <http://purl.org/pav/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 
 @base <https://data.hetarchief.be/ns/organization/shapes> .
 
@@ -370,6 +371,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
   [    
     sh:path schema:givenName ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:datatype xsd:string ;
 
     sh:name "given name"@en ;
@@ -385,6 +387,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
   [    
     sh:path schema:familyName ;
     sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:datatype xsd:string ;
 
     sh:name "family name"@en ;
@@ -427,7 +430,54 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 
     sh:severity sh:Warning ;
     sh:message "The Object of haOrg:isAccountManagerOf is neither haOrg:ContentPartner nor haOrg:EducationalPartner."@en
-  ] .
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path schema:birthDate ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype edtf:EDTF-level1 ;
+
+    sh:name "birth date"@en ;
+    sh:name "geboortedatum"@nl ;
+    sh:name "date de naissance"@fr ;
+
+    sh:severity sh:Violation ;
+    sh:message "schema:birthDate is not of type edtf:EDTF-level1"@en ;
+    sh:message "schema:birthDate is niet van het type edtf:EDTF-level1"@nl ;
+    sh:message "schema:birthDate n'est pas de type edtf:EDTF-level1"@fr ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path schema:deathDate ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype edtf:EDTF-level1 ;
+
+    sh:name "death date"@en ;
+    sh:name "sterfdatum"@nl ;
+    sh:name "date de décès"@fr ;
+
+    sh:severity sh:Violation ;
+    sh:message "schema:deathDate is not of type edtf:EDTF-level1"@en ;
+    sh:message "schema:deathDate is niet van het type edtf:EDTF-level1"@nl ;
+    sh:message "schema:deathDate n'est pas de type edtf:EDTF-level1"@fr ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+
+    sh:name "name"@en ;
+    sh:name "naam"@nl ;
+    sh:name "nom"@fr ;
+
+    sh:severity sh:Violation ;
+    sh:message "schema:name is missing or not of type string "@en ;
+    sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+    sh:message "schema:name est manquant ou n'est pas de type string"@fr 
+  ].
 
 <#PostalAddressShape>  a sh:NodeShape ;
   sh:targetClass schema:PostalAddress ;

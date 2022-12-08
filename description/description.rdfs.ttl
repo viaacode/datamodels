@@ -275,16 +275,6 @@ schema:author a rdf:Property ;
     rdfs:comment "De auteur van deze inhoud of beoordeling."@nl ;
     rdfs:comment "L'auteur de ce contenu ou de cette évaluation."@fr .
 
-# schema:birthDate a rdf:Property ;
-#     rdfs:domain schema:Person ;
-#     rdfs:range edtf:EDTF-level1 ; 
-#     rdfs:label "birth date"@en ;
-#     rdfs:label "geboortedatum"@nl ;
-#     rdfs:label "date de naissance"@fr ;
-#     rdfs:comment "Date of birth"@en ;
-#     rdfs:comment "Geboortedatum"@nl ;
-#     rdfs:comment "Date de naissance"@fr .
-
 schema:caption a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
@@ -367,16 +357,6 @@ schema:datePublished a rdf:Property ;
     rdfs:comment "Date of first broadcast/publication."@en ;
     rdfs:comment "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl ;
     rdfs:comment "La date de la première diffusion ou publication."@fr .
-
-# schema:deathDate a rdf:Property ;
-#     rdfs:domain schema:Person ;
-#     rdfs:range edtf:EDTF-level1 ; 
-#     rdfs:label "death date"@en ;
-#     rdfs:label "sterfdatum"@nl ;
-#     rdfs:label "date de décès"@fr ;
-#     rdfs:comment "Date of death."@en ;
-#     rdfs:comment "Datum van overlijden."@nl ;
-#     rdfs:comment "Date de décès."@fr .
 
 schema:depth a rdf:Property ;
     rdfs:domain schema:CreativeWork ;

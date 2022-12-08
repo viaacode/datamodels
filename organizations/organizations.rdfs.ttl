@@ -11,6 +11,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
 
+
 <https://data.hetarchief.be/ns/organization>  a owl:Ontology;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" ;
@@ -528,6 +529,26 @@ schema:givenName    a   rdf:Property ;
     rdfs:label "Prénom"@fr ;
     rdfs:label "Voornaam"@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
+
+schema:deathDate a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:date ; 
+    rdfs:label "death date"@en ;
+    rdfs:label "sterfdatum"@nl ;
+    rdfs:label "date de décès"@fr ;
+    rdfs:comment "Date of death."@en ;
+    rdfs:comment "Datum van overlijden."@nl ;
+    rdfs:comment "Date de décès."@fr .
+
+schema:birthDate a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:date ; 
+    rdfs:label "birth date"@en ;
+    rdfs:label "geboortedatum"@nl ;
+    rdfs:label "date de naissance"@fr ;
+    rdfs:comment "Date of birth"@en ;
+    rdfs:comment "Geboortedatum"@nl ;
+    rdfs:comment "Date de naissance"@fr .
 
 schema:name a   rdf:Property ;
     rdfs:domain schema:Thing ;

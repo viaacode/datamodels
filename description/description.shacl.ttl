@@ -629,61 +629,6 @@
         sh:message "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
         sh:message "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr ;
     ] .
-<#PersonShape> a sh:NodeShape ; 
-    sh:targetClass schema:Person ;
-    sh:property <#nameShape>,
-    [
-        a sh:PropertyShape ;
-        sh:path schema:birthDate ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype edtf:EDTF-level1 ;
-        sh:name "birth date"@en ;
-        sh:name "geboortedatum"@nl ;
-        sh:name "date de naissance"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:birthDate is not of type edtf:EDTF-level1"@en ;
-        sh:message "schema:birthDate is niet van het type edtf:EDTF-level1"@nl ;
-        sh:message "schema:birthDate n'est pas de type edtf:EDTF-level1"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:deathDate ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype edtf:EDTF-level1 ;
-        sh:name "death date"@en ;
-        sh:name "sterfdatum"@nl ;
-        sh:name "date de décès"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:deathDate is not of type edtf:EDTF-level1"@en ;
-        sh:message "schema:deathDate is niet van het type edtf:EDTF-level1"@nl ;
-        sh:message "schema:deathDate n'est pas de type edtf:EDTF-level1"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:givenName ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:name "given name"@en ;
-        sh:name "voornaam"@nl ;
-        sh:name "prénom"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:givenName is not of type string "@en ;
-        sh:message "schema:givenName is niet van het type string"@nl ;
-        sh:message "schema:givenName n'est pas de type string"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:familyName ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:name "family name"@en ;
-        sh:name "achternaam"@nl ;
-        sh:name "nom de famille"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:familyName is not of type string "@en ;
-        sh:message "schema:familyName is niet van het type string"@nl ;
-        sh:message "schema:familyName n'est pas de type string"@fr ;
-    ] .
 
 <#QuantitativeValueShape> a sh:NodeShape ; 
     sh:targetClass schema:QuantitativeValue ;
