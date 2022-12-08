@@ -26,7 +26,7 @@
 .
 
 <#CollectionShape>
-  rdf:type sh:Shape ;
+  a sh:NodeShape ;
   sh:targetClass skos:Collection ;
   sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
@@ -42,7 +42,7 @@
     ] ;
 .
 <#OrderedCollectionShape>
-  rdf:type sh:Shape ;
+  a sh:NodeShape ;
   sh:class skos:Collection ;
   sh:targetClass skos:OrderedCollection ;
   sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
@@ -56,7 +56,7 @@
     ] ;
 .
 <#ConceptShape>
-  rdf:type sh:Shape ;
+  a sh:NodeShape ;
   sh:targetClass skos:Concept ;
   sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
@@ -235,7 +235,7 @@
   sh:scopeClass skos:Concept ;
 .
 <#ConceptSchemeShape>
-  rdf:type sh:Shape ;
+  a sh:NodeShape ;
   sh:targetClass skos:ConceptScheme ;
   sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
@@ -249,7 +249,7 @@
     ] ;
 .
 <#skosxl:LabelShape>
-  rdf:type sh:Shape ;
+  a sh:NodeShape ;
   sh:targetClass skosxl:Label ;
   sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
   sh:property [
@@ -264,7 +264,7 @@
     ] ;
 .
 <#noteShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:note ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -274,7 +274,7 @@
   sh:severity sh:Violation ;
 .
 <#changeNoteShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:changeNote ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -285,7 +285,7 @@
   
 .
 <#definitionShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:definition ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -296,7 +296,7 @@
   sh:severity sh:Violation ;
 .
 <#editorialNoteShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:editorialNote ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -306,7 +306,7 @@
   sh:severity sh:Violation ;
 .
 <#exampleShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:example ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -316,7 +316,7 @@
   sh:severity sh:Violation ;
 .
 <#historyNoteShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:historyNote ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -326,7 +326,7 @@
   sh:severity sh:Violation ;
 .
 <#scopeNoteShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:scopeNote ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
@@ -336,7 +336,7 @@
   sh:severity sh:Violation ;
 .
 <#prefLabelShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:prefLabel ;
   sh:nodeKind sh:Literal ;
   sh:datatype rdf:langString ;
@@ -350,7 +350,7 @@
   sh:severity sh:Violation ;
 .
 <#altLabelShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:altLabel ;
   sh:nodeKind sh:Literal ;
   sh:datatype rdf:langString ;
@@ -365,7 +365,7 @@
   sh:severity sh:Violation ;
 .
 <#hiddenLabelShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:hiddenLabel ;
   sh:nodeKind sh:Literal ;
   sh:datatype rdf:langString ;
@@ -375,7 +375,7 @@
   sh:severity sh:Violation ;
 .
 <#notationShape>
-  rdf:type sh:PropertyShape ;
+  a sh:PropertyShape ;
   sh:path skos:notation ;
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
