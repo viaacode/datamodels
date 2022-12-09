@@ -1,0 +1,3 @@
+[submodule "education/common-conceptschemes"]
+	path = education/common-conceptschemes
+	url = https://github.com/i-Learn-SKOS/common-conceptschemes.git
