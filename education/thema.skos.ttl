@@ -1251,9 +1251,9 @@ haOndThema:podiumkunsten a skos:Concept ;
     skos:definition "Dans, muziek, theater, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "podiumkunsten"@nl ;
-    skos:related <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-folk--en-wereldmuziek>,
-        <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-jazz-pop-rock>,
-        <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-klassiek>,
+    skos:related haOndVak:%22instrument%3A-folk--en-wereldmuziek,
+        haOndVak:%22instrument%3A-jazz-pop-rock,
+        haOndVak:%22instrument%3A-klassiek,
         haOndVak:algemene-muziekleer,
         haOndVak:algemene-verbale-vorming,
         haOndVak:artistieke-creatie,
