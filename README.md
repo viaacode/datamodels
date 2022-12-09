@@ -1,9 +1,4 @@
 # Data models for meemoo
 
-https://developer.meemoo.be/docs/metadata/modellen/0.0.1/events.html
-
-https://developer.meemoo.be/docs/metadata/modellen/0.0.1/object.html
-
-https://developer.meemoo.be/docs/metadata/modellen/0.0.1/descriptive.html
-
-https://developer.meemoo.be/docs/metadata/modellen/0.0.1/organization.html
+This repository contains all SHACL, RDFS and SKOS definitions used in the meemoo Knowledge Graph. 
+See generated documentation pages here: https://developer.meemoo.be/docs/metadata/knowledge-graph
