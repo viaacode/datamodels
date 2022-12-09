@@ -114,15 +114,21 @@ prov:wasGeneratedBy
 prov:invalidatedAtTime
     a owl:DatatypeProperty ;
     rdfs:comment "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+    rdfs:comment "Het tijdstip waarop een entiteit ongeldig werd (d.w.z. niet langer bruikbaar)."@nl ;
+    rdfs:comment "Le moment où une entité a été invalidée (c'est-à-dire plus utilisable)."@fr ;
     rdfs:domain prov:Entity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
-    rdfs:label "invalidated at time" ;
+    rdfs:label "invalidated at time"@en ;
+    rdfs:label "ongeldig gemaakt op tijdstip"@nl ;
+    rdfs:label "invalidated à l'heure"@fr ;
     rdfs:range xsd:dateTime .
 
 
 prov:startedAtTime
     a owl:DatatypeProperty ;
     rdfs:comment "The time at which an activity started. See also prov:endedAtTime."@en ;
+    rdfs:comment "Le moment où une activité a commencé.Voir aussi prov:endedAtTime."@fr ;
+    rdfs:comment "Het tijdstip waarop een activiteit begon. Zie ook prov:endedAtTime."@nl ;
     rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "started at time"@en ;
@@ -133,6 +139,8 @@ prov:startedAtTime
 prov:wasAssociatedWith
     a owl:ObjectProperty ;
     rdfs:comment "An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity."@en ;
+    rdfs:comment "Een prov:Agent die enige (niet -gespecificeerde) verantwoordelijkheid had voor het optreden van deze prov:Activity."@nl ;
+    rdfs:comment "Un prov:Agent qui avait une responsabilité (non spécifiée) pour la survenue de cette prov:Activity."@fr ;
     rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "was associated with"@en ;
@@ -147,6 +155,8 @@ prov:wasAssociatedWith
 prov:wasAttributedTo
     a owl:ObjectProperty ;
     rdfs:comment "Attribution is the ascribing of an entity to an agent."@en ;
+    rdfs:comment "Toekenning is het toeschrijven van een entiteit aan een agent."@nl ;
+    rdfs:comment "L'attribution est l'attribution d'une entité à un agent."@fr ;
     rdfs:domain prov:Entity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "was attributed to"@en ;
@@ -161,6 +171,8 @@ prov:wasAttributedTo
 prov:used
     a owl:ObjectProperty ;
     rdfs:comment "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
+    rdfs:comment "Een prov:Entity die door deze prov:Activity werd gebruikt. Bijvoorbeeld: :bakken prov:used :lepel ,:ei, :oven."@nl ;
+    rdfs:comment "Une prov:Entity qui a été utilisée par cette activité. Par exemple , :baking prov:used :cuillère , :œuf , :four."@en ;
     rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "used"@en ;
@@ -174,8 +186,6 @@ prov:used
 
 # premis classes
 
-# vraag: zijn dit bij ons personen en organisaties uit het organisatiemodel?
-# zo ja, dan dekt de naam 'organisatiemodel' de lading misschien niet zo goed?
 premis:Agent  a owl:Class, rdfs:Class ;
   rdfs:label "Agent"@en ;
   rdfs:label "Acteur"@fr ;
@@ -236,8 +246,8 @@ premis:OutcomeStatus  a owl:Class, rdfs:Class ;
 
 premis:endDate  a owl:DatatypeProperty ;
   rdfs:label "end date"@en ;
-  rdfs:label "date de fin"@en ;
-  rdfs:label "einddatum"@en ;
+  rdfs:label "date de fin"@fr ;
+  rdfs:label "einddatum"@nl ;
   rdfs:domain [
     a owl:Class, rdfs:Class ;
     owl:unionOf (
@@ -250,8 +260,8 @@ premis:endDate  a owl:DatatypeProperty ;
 
 premis:note  a owl:DatatypeProperty ;
   rdfs:label "has note"@en ;
-  rdfs:label "a note"@en ;
-  rdfs:label "heeft nota"@en ;
+  rdfs:label "a note"@fr ;
+  rdfs:label "heeft nota"@nl ;
   rdfs:range rdfs:Literal ;
   rdfs:subPropertyOf dct:description ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
@@ -312,9 +322,3 @@ evtObjRole:out a owl:ObjectProperty ;
     rdfs:label "outcome"@en ;
     rdfs:label "résultat"@fr ;
     rdfs:label "uitkomst"@nl.
-
-# meemoo classes
-
-
-
-# meemoo properties
