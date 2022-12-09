@@ -12,14 +12,18 @@
   rdfs:seeAlso <http://www.w3.org/2008/05/skos> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   dc:title "SKOS XL Vocabulary"@en ;
-  dc:contributor "Participants in W3C's Semantic Web Deployment Working Group." ;
+  dc:contributor "Participants in W3C's Semantic Web Deployment Working Group."@en ;
   dc:description "An RDF vocabulary extending SKOS and allowing the description and linking of lexical entities."@en .
 
 skosxl:Label
   rdfs:label "Label"@en ;
+  rdfs:label "Label"@nl ;
+  rdfs:label "Étiquette"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "A special class of lexical entities."@en ;
-  a owl:Class ;
+  skos:definition "Een speciale klasse van lexicale entiteiten."@nl ;
+  skos:definition "Une classe spéciale d'entités lexicales."@fr ;
+  a owl:Class, rdfs:Class ;
   owl:disjointWith skos:Concept, skos:Collection, skos:ConceptScheme ;
   rdfs:subClassOf [
     a owl:Restriction ;
@@ -29,16 +33,24 @@ skosxl:Label
 
 skosxl:literalForm
   rdfs:label "literal form"@en ;
+  rdfs:label "letterlijke vorm"@nl ;
+  rdfs:label "forme littérale"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "The property skosxl:literalForm is used to give the literal form of an skosxl:Label."@en ;
+  skos:definition "De eigenschap skosxl:literalForm wordt gebruikt om de letterlijke vorm van een skosxl:Label te geven."@nl ;
+  skos:definition "La propriété skosxl:literalForm est utilisée pour donner la forme littérale d'une skosxl:Label."@fr ;
   rdfs:comment "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."@en, "The range of skosxl:literalForm is the class of RDF plain literals."@en ;
   a owl:DatatypeProperty, rdf:Property ;
   rdfs:domain skosxl:Label .
 
 skosxl:prefLabel
   rdfs:label "preferred label"@en ;
+  rdfs:label "voorkeurslabel"@nl ;
+  rdfs:label "étiquette préférée"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel."@en ;
+  skos:definition "De eigenschap skosxl:prefLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:prefLabel."@nl ;
+  skos:definition "La propriété skosxl:prefLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:prefLabel."@fr ;
   rdfs:seeAlso skos:prefLabel ;
   a owl:ObjectProperty, rdf:Property ;
   rdfs:range skosxl:Label ;
@@ -46,8 +58,12 @@ skosxl:prefLabel
 
 skosxl:altLabel
   rdfs:label "alternative label"@en ;
+  rdfs:label "alternatief label"@nl ;
+  rdfs:label "étiquette alternative"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "The property skosxl:altLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:altLabel."@en ;
+  skos:definition "De eigenschap skosxl:altLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:altLabel."@nl ;
+  skos:definition "La propriété skosxl:altLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:altLabel."@fr ;
   rdfs:seeAlso skos:altLabel ;
   a owl:ObjectProperty, rdf:Property ;
   rdfs:range skosxl:Label ;
@@ -55,8 +71,12 @@ skosxl:altLabel
 
 skosxl:hiddenLabel
   rdfs:label "hidden label"@en ;
+  rdfs:label "verborgen label"@nl ;
+  rdfs:label "étiquette cachée"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "The property skosxl:hiddenLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:hiddenLabel."@en ;
+  skos:definition "De eigenschap skosxl:hiddenLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:hiddenLabel."@nl ;
+  skos:definition "La propriété skosxl:hiddenLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:hiddenLabel."@fr ;
   rdfs:seeAlso skos:hiddenLabel ;
   a owl:ObjectProperty, rdf:Property ;
   rdfs:range skosxl:Label ;
@@ -64,8 +84,12 @@ skosxl:hiddenLabel
 
 skosxl:labelRelation
   rdfs:label "label relation"@en ;
+  rdfs:label "labelrelatie"@nl ;
+  rdfs:label "relation de l'étiquette"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "The property skosxl:labelRelation is used for representing binary ('direct') relations between instances of the class skosxl:Label."@en ;
+  skos:definition "De eigenschap skosxl:labelRelation wordt gebruikt voor het weergeven van binaire ('directe') relaties tussen instanties van de klasse skosxl:Label."@nl ;
+  skos:definition "La propriété skosxl:labelRelation est utilisée pour représenter les relations binaires («directes») entre les instances de la classe skosxl:Label."@fr ;
   skos:scopeNote "skosxl:labelRelation is not intended to be used directly, but rather as the basis for a design pattern which can be refined for more specific labeling scenarios."@en ;
   a owl:ObjectProperty, owl:SymmetricProperty, rdf:Property ;
   rdfs:domain skosxl:Label ;
