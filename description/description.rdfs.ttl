@@ -10,6 +10,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix pav: <http://purl.org/pav/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+
 
 <https://data.hetarchief.be/ns/description>  a owl:Ontology ;
     vann:preferredNamespacePrefix "haDes" ;
@@ -144,6 +146,15 @@ schema:Role a rdfs:Class ;
         Ces propriétés peuvent être attachées à un rôle d'entité (entity role), qui est ensuite associée aux entités principales en utilisant des propriétés ordinaires comme 'membre' (member) ou 'acteur' (actor).
         """@fr .
 
+schema:QuantitativeValue a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "Quantitative Value"@en ;
+    rdfs:label "Kwantitatieve waarde"@nl ;
+    rdfs:label "Valeur quantitative"@fr ;
+    rdfs:comment """A point value or interval for product characteristics and other purposes."""@en ;
+    rdfs:comment """Een puntwaarde of interval voor producteigenschappen en andere doeleinden."""@nl ;
+    rdfs:comment """Une valeur ponctuelle ou un intervalle pour les caractéristiques d'un produit et d'autres fins."""@fr .
+
 schema:Collection
   a rdfs:Class ;
     rdfs:subClassOf schema:CreativeWork ;
@@ -231,6 +242,27 @@ schema:alternateName a rdf:Property ;
     rdfs:comment "An alias for the item"@en ;
     rdfs:comment "Een alias voor het item"@nl ;
     rdfs:comment "Un alias pour l'élément"@fr .
+
+schema:artform a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range xsd:string ;
+    rdfs:label "artform"@en ;
+    rdfs:label "vorm"@nl ;
+    rdfs:label "forme"@fr ;
+    rdfs:comment "The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc."@en ;
+    rdfs:comment "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl ;
+    rdfs:comment "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr .
+
+schema:artMedium a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:medium ;
+    rdfs:label "art medium"@en ;
+    rdfs:label "kunst medium"@nl ;
+    rdfs:label "moyen d'art"@fr ;
+    rdfs:comment "The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)"@en ;
+    rdfs:comment "Het materiaal dat gebruikt is. (bv. Olie, Aquarel, Acryl, Linoprint, Marmer, Cyanotype, Digitaal, Lithografie, Droogpunt, Intaglio, Pastel, Houtsnede, Potlood, Gemengde media, etc.)"@nl ;
+    rdfs:comment "Le matériau utilisé. (par exemple Huile, Aquarelle, Acrylique, Linoprint, Marbre, Cyanotype, Numérique, Lithographie, Point sec, Intaglio, Pastel, Gravure sur bois, Crayon, Médias mixtes, etc.)"@fr .
 
 schema:author a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -326,6 +358,16 @@ schema:datePublished a rdf:Property ;
     rdfs:comment "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl ;
     rdfs:comment "La date de la première diffusion ou publication."@fr .
 
+schema:depth a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range schema:QuantitativeValue ;
+    rdfs:label "depth"@en ;
+    rdfs:label "diepte"@nl ;
+    rdfs:label "profondeur"@fr ;
+    rdfs:comment "The depth of the item."@en ;
+    rdfs:comment "De diepte van het item."@nl ;
+    rdfs:comment "La profondeur de l'objet."@fr .
+
 schema:description a rdf:Property ;
     rdfs:domain schema:Thing ;
     rdfs:range xsd:string ;
@@ -383,6 +425,16 @@ schema:genre a rdf:Property ;
     rdfs:comment "Genre of the creative work, broadcast channel or group."@en ;
     rdfs:comment "Genre van het CreativeWork, uitzendkanaal of groep."@nl ;
     rdfs:comment "Genre de l'œuvre créative (CreativeWork), de la chaîne de télévision/diffusion ou du groupe."@fr .
+
+schema:height a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range schema:QuantitativeValue ;
+    rdfs:label "height"@en ;
+    rdfs:label "hoogte"@nl ;
+    rdfs:label "hauteur"@fr ;
+    rdfs:comment "The height of the item."@en ;
+    rdfs:comment "De hoogte van het item."@nl ;
+    rdfs:comment "La hauteur de l'objet."@fr .
 
 schema:identifier a rdf:Property ;
     rdfs:domain schema:Thing ;
@@ -516,6 +568,47 @@ schema:transcript a rdf:Property ;
     rdfs:comment "If this MediaObject is an AudioObject or VideoObject, the transcript of that object."@en ;
     rdfs:comment "Als dit MediaObject een AudioObject of VideoObject is, de transcriptie van dat object."@nl ;
     rdfs:comment "Si cet MediaObject est un AudioObject ou VideoObject, la transcription de cet objet."@fr .
+
+schema:unitCode a rdf:Property ;
+    rdfs:domain schema:QuantitativeValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "unit code"@en ;
+    rdfs:label "eenheid code"@nl ;
+    rdfs:label "code d'unité"@fr ;
+    # Hier ook URL naar lijst met codes toevoegen?
+    rdfs:comment "The unit of measurement given using the UN/CEFACT Common Code (3 characters)."@en ;
+    rdfs:comment "De eenheid van de meting, gegeven met behulp van de UN/CEFACT Common Code (3 karakters)."@nl ;
+    rdfs:comment "L'unité de mesure donnée en utilisant le code commun UN/CEFACT (3 caractères)."@fr .
+
+schema:unitText a rdf:Property ;
+    rdfs:domain schema:QuantitativeValue ;
+    rdfs:range xsd:string ;
+    rdfs:label "unit text"@en ;
+    rdfs:label "eenheid tekst"@nl ;
+    rdfs:label "texte d'unité"@fr ;
+    rdfs:comment "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode."@en ;
+    rdfs:comment "Een string of tekst die de eenheid van de meting aangeeft. Handig als je geen standaard eenheidcode kunt geven voor unitCode."@nl ;
+    rdfs:comment "Une chaîne de caractères ou un texte indiquant l'unité de mesure. Utile si vous ne pouvez pas fournir de code d'unité standard pour unitCode."@fr .
+
+schema:value a rdf:Property ;
+    rdfs:domain schema:QuantitativeValue ;
+    rdfs:range xsd:float ;
+    rdfs:label "value"@en ;
+    rdfs:label "waarde"@nl ;
+    rdfs:label "valeur"@fr ;
+    rdfs:comment "The value of the quantitative value."@en ;
+    rdfs:comment "De waarde van de kwantitatieve waarde."@nl ;
+    rdfs:comment "La valeur de la valeur quantitative."@fr .
+
+schema:width a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range schema:QuantitativeValue ;
+    rdfs:label "width"@en ;
+    rdfs:label "breedte"@nl ;
+    rdfs:label "largeur"@fr ;
+    rdfs:comment "The width of the item."@en ;
+    rdfs:comment "De breedte van het item."@nl ;
+    rdfs:comment "La largeur de l'élément."@fr .
 
 
 schema:about a rdf:Property ;
