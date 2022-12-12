@@ -8,6 +8,8 @@ jobs:
     # outputs:
     #   matrix: [${{ steps.ttl.outputs.paths }}]
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
       - name: Get all Turtle files
         id: ttl
         run:  echo "FILES=$(find . -name "*.ttl" -type f -exec printf "'%s',\n" {} + | sed ':a;N;$!ba;s/\n/ /g' | sed 's/,$//' | sed 's/^/[/;s/$/]/')" >> $GITHUB_ENV
