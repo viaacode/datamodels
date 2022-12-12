@@ -7,4 +7,4 @@ jobs:
       - run: echo '${{ github.workspace }}'
       - uses: vemonet/jena-riot-action@v3.14
         with:
-          input: ${{ github.workspace }}/description.rdfs.ttl
+          input: ${{ github.workspace }}/description/description.rdfs.ttl
