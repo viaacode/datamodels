@@ -5,7 +5,7 @@ See generated documentation pages here: https://developer.meemoo.be/docs/metadat
 
 ## Generate docs
 
-You can use [shacl2md] to generate the docs. 
+You can use [shacl2md](https://github.com/viaacode/shacl2md) to generate the datamodel docs. 
 
 ```
 export SHACL2MD_HOME=../shacl2md; bash docs.sh <path to output documentation>
