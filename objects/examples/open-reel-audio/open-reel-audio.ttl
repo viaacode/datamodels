@@ -19,6 +19,7 @@
 @prefix eror: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
 @prefix fileType: <http://id.loc.gov/vocabulary/mfiletype/> .
 @prefix pbcaudio: <https://pbcore.org/pbcore-controlled-vocabularies/instantiationphysical-audio-vocabulary/#> .
+@prefix storMedium: <http://id.loc.gov/vocabulary/preservation/storageMedium/> .
 
 @base <https://data.meemoo.be/> .
 
