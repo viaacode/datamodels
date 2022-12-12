@@ -9,4 +9,4 @@ jobs:
       - run: tree .
       - uses: vemonet/jena-riot-action@v3.14
         with:
-          input: ${{ github.workspace }}/description/description.rdfs.ttl
+          input: description/description.rdfs.ttl
