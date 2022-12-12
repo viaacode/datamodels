@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo '${{ github.workspace }}'
-      # - uses: vemonet/jena-riot-action@v3.14
-      #   with:
-      #     input: /description/description.rdfs.ttl
+      - uses: vemonet/jena-riot-action@v3.14
+        with:
+          input: ${{ github.workspace }}/description.rdfs.ttl
