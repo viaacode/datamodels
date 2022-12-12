@@ -17,9 +17,10 @@ jobs:
       - name: Output results
         run: |
           echo "Found ${{ steps.ttl.outputs.path_count }} file(s) with this extension:"
-          for i in ${{ steps.ttl.outputs.paths }}; do
-          echo $i
-          done
+          echo ${{ steps.ttl.outputs.paths }}
+          # for i in ${{ steps.ttl.outputs.paths }}; do
+          # echo $i
+          # done
 
   validate-all-rdf-files:
     runs-on: ubuntu-latest
