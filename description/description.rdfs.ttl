@@ -48,45 +48,45 @@ schema:ArchiveComponent a rdfs:Class;
     rdfs:label "Archive Component"@en ;
     rdfs:label "Archiefcomponent"@nl ;
     rdfs:label "Composant d'archive"@fr ;
-    rdfs:comment """An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections."""@en ;
-    rdfs:comment """Een immaterieel type dat toegepast moet worden op elke inhoud van het archief, met daarbij een set van eigenschappen die nodig zijn om archiefitems en -collecties te beschrijven."""@nl ;
-    rdfs:comment """Un type intangible à appliquer à tout contenu d'archives, portant avec lui un ensemble de propriétés nécessaires pour la description d'éléments d'archives et de collections."""@fr .
+    skos:definition """An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections."""@en ;
+    skos:definition """Een immaterieel type dat toegepast moet worden op elke inhoud van het archief, met daarbij een set van eigenschappen die nodig zijn om archiefitems en -collecties te beschrijven."""@nl ;
+    skos:definition """Un type intangible à appliquer à tout contenu d'archives, portant avec lui un ensemble de propriétés nécessaires pour la description d'éléments d'archives et de collections."""@fr .
 
 schema:CreativeWorkSeason a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "Creative Work Season"@en ;
     rdfs:label "Creatief Werk Seizoen"@nl ;
     rdfs:label "Saison du travail créatif"@fr ;
-    rdfs:comment """A media season e.g. tv, radio, video game etc."""@en ;
-    rdfs:comment """Een mediaseizoen, bijvoorbeeld tv, radio, videogame etc."""@nl ;
-    rdfs:comment """Une saison médiatique, par exemple tv, radio, jeu vidéo etc."""@fr .
+    skos:definition """A media season e.g. tv, radio, video game etc."""@en ;
+    skos:definition """Een mediaseizoen, bijvoorbeeld tv, radio, videogame etc."""@nl ;
+    skos:definition """Une saison médiatique, par exemple tv, radio, jeu vidéo etc."""@fr .
 
 schema:CreativeWorkSeries a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "Creative Work Series"@en ;
     rdfs:label "Serie van het creatief werk"@nl ;
     rdfs:label "Série du travail créatif"@fr ;
-    rdfs:comment """A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games)."""@en ;
-    rdfs:comment """Een CreativeWorkSeries in schema.org is een groep vergelijkbare items, meestal maar niet altijd van dezelfde soort. CreativeWorkSeries zijn meestal gegroepeerd in een bepaalde volgorde, vaak chronologisch. In tegenstelling tot ItemList, ligt de nadruk van CreativeWorkSeries op gepubliceerd materiaal (bijvoorbeeld boeken en periodieken, of media zoals tv, radio en games)."""@nl ;
-    rdfs:comment """Un CreativeWorkSeries dans schema.org est une série d'objets, typiquement mais pas forcément du même type. CreativeWorkSeries sont généralement organisées dans un certain ordre, souvent chronologique. Contrairement à ItemList, l'importance des CreativeWorkSeries est sur les matériaux publiés (par exemple des livres et des périodiques, ou des médias tels que tv, radio et jeux vidéo)."""@fr .
+    skos:definition """A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games)."""@en ;
+    skos:definition """Een CreativeWorkSeries in schema.org is een groep vergelijkbare items, meestal maar niet altijd van dezelfde soort. CreativeWorkSeries zijn meestal gegroepeerd in een bepaalde volgorde, vaak chronologisch. In tegenstelling tot ItemList, ligt de nadruk van CreativeWorkSeries op gepubliceerd materiaal (bijvoorbeeld boeken en periodieken, of media zoals tv, radio en games)."""@nl ;
+    skos:definition """Un CreativeWorkSeries dans schema.org est une série d'objets, typiquement mais pas forcément du même type. CreativeWorkSeries sont généralement organisées dans un certain ordre, souvent chronologique. Contrairement à ItemList, l'importance des CreativeWorkSeries est sur les matériaux publiés (par exemple des livres et des périodiques, ou des médias tels que tv, radio et jeux vidéo)."""@fr .
 
 schema:CreativeWork a rdfs:Class;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "Creative Work"@en ;
     rdfs:label "Creatief Werk"@nl ;
     rdfs:label "Travail créatif"@fr ;
-    rdfs:comment """The most generic kind of creative work, including books, movies, photographs, software programs, etc."""@en ;
-    rdfs:comment """De meest generieke soort van creatief werk (CreativeWork), zoals boeken, films, foto's, programma's, enz."""@nl ;
-    rdfs:comment """La plus générique des types de travail créatif (CreativeWork), y compris les livres, les films, les photos, les logiciels, etc."""@fr .
+    skos:definition """The most generic kind of creative work, including books, movies, photographs, software programs, etc."""@en ;
+    skos:definition """De meest generieke soort van creatief werk (CreativeWork), zoals boeken, films, foto's, programma's, enz."""@nl ;
+    skos:definition """La plus générique des types de travail créatif (CreativeWork), y compris les livres, les films, les photos, les logiciels, etc."""@fr .
 
 schema:Episode a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "Episode"@en ;
     rdfs:label "Aflevering"@nl ;
     rdfs:label "Épisode"@fr ;
-    rdfs:comment """A media episode (e.g. TV, radio, video game) which can be part of a series or season."""@en ;
-    rdfs:comment """Een media aflevering (bijvoorbeeld tv, radio, videogame) die deel uitmaakt van een serie of seizoen."""@nl ;
-    rdfs:comment """Un épisode médiatique (par exemple tv, radio, jeu vidéo) qui peut faire partie d'une série ou d'une saison."""@fr .
+    skos:definition """A media episode (e.g. TV, radio, video game) which can be part of a series or season."""@en ;
+    skos:definition """Een media aflevering (bijvoorbeeld tv, radio, videogame) die deel uitmaakt van een serie of seizoen."""@nl ;
+    skos:definition """Un épisode médiatique (par exemple tv, radio, jeu vidéo) qui peut faire partie d'une série ou d'une saison."""@fr .
 
 
 schema:Event a rdfs:Class ;
@@ -94,53 +94,53 @@ schema:Event a rdfs:Class ;
     rdfs:label "Event"@en ;
     rdfs:label "Gebeurtenis"@nl ;
     rdfs:label "Événement"@fr ;
-    rdfs:comment """An event happening at a certain time and location, such as a concert, lecture, or festival."""@en ;
-    rdfs:comment """Een gebeurtenis die plaatsvindt op een gegeven moment en locatie, zoals een concert, een lezing of een festival."""@nl ;
-    rdfs:comment """Un événement qui se déroule à un moment et dans un lieu donnés, comme un concert, une conférence ou un festival."""@fr .
+    skos:definition """An event happening at a certain time and location, such as a concert, lecture, or festival."""@en ;
+    skos:definition """Een gebeurtenis die plaatsvindt op een gegeven moment en locatie, zoals een concert, een lezing of een festival."""@nl ;
+    skos:definition """Un événement qui se déroule à un moment et dans un lieu donnés, comme un concert, une conférence ou un festival."""@fr .
 
 schema:Organization a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "Organisation"@en ;
     rdfs:label "Organisatie"@nl ;
     rdfs:label "Organisation"@fr ;
-    rdfs:comment """An organization such as a school, NGO, corporation, club, etc."""@en ;
-    rdfs:comment """Een organisatie zoals een school, NGO, corporatie, club, enz."""@nl ;
-    rdfs:comment """Une organisation telle que une école, une ONG, une société, un club, etc."""@fr .
+    skos:definition """An organization such as a school, NGO, corporation, club, etc."""@en ;
+    skos:definition """Een organisatie zoals een school, NGO, corporatie, club, enz."""@nl ;
+    skos:definition """Une organisation telle que une école, une ONG, une société, un club, etc."""@fr .
 
 schema:PerformanceRole a rdfs:Class ;
     rdfs:subClassOf schema:Role ;
     rdfs:label "Performance Role"@en ;
     rdfs:label "Uitvoeringsrol"@nl ;
     rdfs:label "Rôle de performance"@fr ;
-    rdfs:comment """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en ;
-    rdfs:comment """Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatervoorstelling, bijvoorbeeld in een film, televisieserie etc."""@nl ;
-    rdfs:comment """Un PerformanceRole est un rôle qu'une entité remplit dans le cadre d'une représentation théâtrale, par exemple dans un film, une série télévisée etc."""@fr .
+    skos:definition """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en ;
+    skos:definition """Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatervoorstelling, bijvoorbeeld in een film, televisieserie etc."""@nl ;
+    skos:definition """Un PerformanceRole est un rôle qu'une entité remplit dans le cadre d'une représentation théâtrale, par exemple dans un film, une série télévisée etc."""@fr .
 
 schema:Place a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "Place"@en ;
     rdfs:label "Plaats"@nl ;
     rdfs:label "Lieu"@fr ;
-    rdfs:comment """Entities that have a somewhat fixed, physical extension."""@en ;
-    rdfs:comment """Entiteiten die een enigszins vastliggende, fysieke uitbreiding hebben."""@nl ;
-    rdfs:comment """Entités qui ont une extension physique quelque peu fixée."""@fr .
+    skos:definition """Entities that have a somewhat fixed, physical extension."""@en ;
+    skos:definition """Entiteiten die een enigszins vastliggende, fysieke uitbreiding hebben."""@nl ;
+    skos:definition """Entités qui ont une extension physique quelque peu fixée."""@fr .
 
 schema:Role a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "Role"@en ;
     rdfs:label "Rol"@nl ;
     rdfs:label "Rôle"@fr ;
-    rdfs:comment """Represents additional information about a relationship or property.
+    skos:definition """Represents additional information about a relationship or property.
         For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period.
         Or that a Person's 'actor' role in a Movie was for some particular characterName.
         Such properties can be attached to a Role entity, which is then associated with the main entities using ordinary properties like 'member' or 'actor'.
         """@en ;
-    rdfs:comment """Stelt bijkomende informatie voor over een relatie of eigenschap.
+    skos:definition """Stelt bijkomende informatie voor over een relatie of eigenschap.
         Bijvoorbeeld: een rol kan worden gebruikt om aan te geven dat een 'lid'rol (member role) die een sportteam aan een speler verbond, tijdens een bepaalde periode voorviel.
         Of dat een persoons 'acteur'rol (actor role) in een film voor een bepaalde karakternaam was.
         Deze eigenschappen kunnen worden toegevoegd aan een rolentiteit, die dan geassocieerd wordt met de hoofdentiteiten via normale eigenschappen zoals 'lid' (member) of 'acteur' (actor).
         """@nl ;
-    rdfs:comment """Représente des informations supplémentaires sur une relation ou une propriété.
+    skos:definition """Représente des informations supplémentaires sur une relation ou une propriété.
         Par exemple, un rôle peut être utilisé pour indiquer que une rôle 'membre' (member role) qui lie une équipe sportive à un joueur, a eu lieu durant une période particulière.
         Ou que le rôle d''acteur' (actor role) d'une personne dans un film correspond à un nom de personnage particulier.
         Ces propriétés peuvent être attachées à un rôle d'entité (entity role), qui est ensuite associée aux entités principales en utilisant des propriétés ordinaires comme 'membre' (member) ou 'acteur' (actor).
@@ -151,9 +151,9 @@ schema:QuantitativeValue a rdfs:Class ;
     rdfs:label "Quantitative Value"@en ;
     rdfs:label "Kwantitatieve waarde"@nl ;
     rdfs:label "Valeur quantitative"@fr ;
-    rdfs:comment """A point value or interval for product characteristics and other purposes."""@en ;
-    rdfs:comment """Een puntwaarde of interval voor producteigenschappen en andere doeleinden."""@nl ;
-    rdfs:comment """Une valeur ponctuelle ou un intervalle pour les caractéristiques d'un produit et d'autres fins."""@fr .
+    skos:definition """A point value or interval for product characteristics and other purposes."""@en ;
+    skos:definition """Een puntwaarde of interval voor producteigenschappen en andere doeleinden."""@nl ;
+    skos:definition """Une valeur ponctuelle ou un intervalle pour les caractéristiques d'un produit et d'autres fins."""@fr .
 
 schema:Collection
   a rdfs:Class ;
@@ -161,9 +161,9 @@ schema:Collection
     rdfs:label "Collection"@en ;
     rdfs:label "Collectie"@nl ;
     rdfs:label "Collection"@fr ;
-    rdfs:comment """A collection of items, e.g. creative works or products, typically but not necessarily of the same kind."""@en ;
-    rdfs:comment """Een collectie van items, e.g. creative works of producten, gewoonlijk maar niet altijd van hetzelfde soort."""@nl ;
-    rdfs:comment """Une collection d'articles, par exemple des œuvres créatives ou des produits, généralement mais pas nécessairement de même type."""@fr .
+    skos:definition """A collection of items, e.g. creative works or products, typically but not necessarily of the same kind."""@en ;
+    skos:definition """Een collectie van items, e.g. creative works of producten, gewoonlijk maar niet altijd van hetzelfde soort."""@nl ;
+    skos:definition """Une collection d'articles, par exemple des œuvres créatives ou des produits, généralement mais pas nécessairement de même type."""@fr .
 
 ####################
 #       SKOS       #
@@ -172,9 +172,9 @@ skos:Concept a owl:Class, rdfs:Class ;
     rdfs:label "Concept"@en ;
     rdfs:label "Concept"@nl ;
     rdfs:label "Concept"@fr ;
-    rdfs:comment """A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive."""@en ;
-    rdfs:comment """Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Echter, wat  een gedachte-eenheid is, is subjectief, en deze definitie is eerder suggestief dan beperkend bedoeld."""@nl ;
-    rdfs:comment """Un concept SKOS peut être considéré comme une idée ou une notion, une unité de pensée. Cependant, ce qui constitue une unité de pensée est subjectif, et cette définition se veut suggestive, plutôt que restrictive."""@fr .
+    skos:definition """A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive."""@en ;
+    skos:definition """Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Echter, wat  een gedachte-eenheid is, is subjectief, en deze definitie is eerder suggestief dan beperkend bedoeld."""@nl ;
+    skos:definition """Un concept SKOS peut être considéré comme une idée ou une notion, une unité de pensée. Cependant, ce qui constitue une unité de pensée est subjectif, et cette définition se veut suggestive, plutôt que restrictive."""@fr .
 #####################################
 #             PROPERTIES            #
 #####################################
@@ -186,27 +186,27 @@ dct:available a rdf:Property ;
     rdfs:label "Date Available"@en ;
     rdfs:label "Beschikbaarheidsdatum"@nl ;
     rdfs:label "Date de disponibilité"@fr ;
-    rdfs:comment "Date that the resource became or will become available."@en ;
-    rdfs:comment "Datum waarop de bron beschikbaar is of zal zijn ."@nl ;
-    rdfs:comment "Date à laquelle la ressource devient ou deviendra disponible."@fr .
+    skos:definition "Date that the resource became or will become available."@en ;
+    skos:definition "Datum waarop de bron beschikbaar is of zal zijn ."@nl ;
+    skos:definition "Date à laquelle la ressource devient ou deviendra disponible."@fr .
 
 dct:format a rdf:Property ;
     rdfs:range xsd:string ;
     rdfs:label "format"@en ;
     rdfs:label "formaat"@nl ;
     rdfs:label "format"@fr ;
-    rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
-    rdfs:comment "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl ;
-    rdfs:comment "Le format du fichier, le support physique ou les dimensions de la ressource."@fr .
+    skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
+    skos:definition "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl ;
+    skos:definition "Le format du fichier, le support physique ou les dimensions de la ressource."@fr .
 
 dct:medium a rdf:Property ;
     rdfs:range xsd:string ;
     rdfs:label "medium"@en ;
     rdfs:label "medium"@nl ;
     rdfs:label "médium"@fr ;
-    rdfs:comment "The material or physical carrier of the resource"@en ;
-    rdfs:comment "Het materiaal of fysieke drager van de bron"@nl ;
-    rdfs:comment "Le support matériel ou physique de la ressource"@fr .
+    skos:definition "The material or physical carrier of the resource"@en ;
+    skos:definition "Het materiaal of fysieke drager van de bron"@nl ;
+    skos:definition "Le support matériel ou physique de la ressource"@fr .
 
 ####################
 #      SCHEMA      #
@@ -218,9 +218,9 @@ schema:abstract a rdf:Property ;
     rdfs:label "abstract"@en ;
     rdfs:label "abstract"@nl ;
     rdfs:label "résumé"@fr ;
-    rdfs:comment "An abstract is a short description that summarizes a CreativeWork."@en ;
-    rdfs:comment "Een abstract is een korte beschrijving die een CreativeWork samenvat."@nl ;
-    rdfs:comment "Un résumé est une description courte qui résume un CreativeWork."@fr .
+    skos:definition "An abstract is a short description that summarizes a CreativeWork."@en ;
+    skos:definition "Een abstract is een korte beschrijving die een CreativeWork samenvat."@nl ;
+    skos:definition "Un résumé est une description courte qui résume un CreativeWork."@fr .
     
 schema:actor a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -228,9 +228,9 @@ schema:actor a rdf:Property ;
     rdfs:label "actor"@en ;
     rdfs:label "acteur"@nl ;
     rdfs:label "acteur"@fr ;
-    rdfs:comment "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip."@en ;
-    rdfs:comment "Een acteur, bv. in tv, radio, film, videogames etc. of in een evenement. Acteurs kunnen geassocieerd worden met met individuele items of met een serie, aflevering, clip."@nl ;
-    rdfs:comment "Un acteur, par exemple à la télévision, à la radio, au cinéma, dans les jeux vidéo, etc. ou dans un événement. Les acteurs peuvent être associés à des éléments individuels ou à une série, un épisode, un clip."@fr .
+    skos:definition "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip."@en ;
+    skos:definition "Een acteur, bv. in tv, radio, film, videogames etc. of in een evenement. Acteurs kunnen geassocieerd worden met met individuele items of met een serie, aflevering, clip."@nl ;
+    skos:definition "Un acteur, par exemple à la télévision, à la radio, au cinéma, dans les jeux vidéo, etc. ou dans un événement. Les acteurs peuvent être associés à des éléments individuels ou à une série, un épisode, un clip."@fr .
 
 schema:alternateName a rdf:Property ;
     rdfs:domain schema:Thing ;
@@ -239,9 +239,9 @@ schema:alternateName a rdf:Property ;
     rdfs:label "alternate name"@en ;
     rdfs:label "alternatieve naam"@nl ;
     rdfs:label "nom alternatif"@fr ;
-    rdfs:comment "An alias for the item"@en ;
-    rdfs:comment "Een alias voor het item"@nl ;
-    rdfs:comment "Un alias pour l'élément"@fr .
+    skos:definition "An alias for the item"@en ;
+    skos:definition "Een alias voor het item"@nl ;
+    skos:definition "Un alias pour l'élément"@fr .
 
 schema:artform a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -249,9 +249,9 @@ schema:artform a rdf:Property ;
     rdfs:label "artform"@en ;
     rdfs:label "vorm"@nl ;
     rdfs:label "forme"@fr ;
-    rdfs:comment "The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc."@en ;
-    rdfs:comment "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl ;
-    rdfs:comment "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr .
+    skos:definition "The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc."@en ;
+    skos:definition "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl ;
+    skos:definition "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr .
 
 schema:artMedium a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -260,9 +260,9 @@ schema:artMedium a rdf:Property ;
     rdfs:label "art medium"@en ;
     rdfs:label "kunst medium"@nl ;
     rdfs:label "moyen d'art"@fr ;
-    rdfs:comment "The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)"@en ;
-    rdfs:comment "Het materiaal dat gebruikt is. (bv. Olie, Aquarel, Acryl, Linoprint, Marmer, Cyanotype, Digitaal, Lithografie, Droogpunt, Intaglio, Pastel, Houtsnede, Potlood, Gemengde media, etc.)"@nl ;
-    rdfs:comment "Le matériau utilisé. (par exemple Huile, Aquarelle, Acrylique, Linoprint, Marbre, Cyanotype, Numérique, Lithographie, Point sec, Intaglio, Pastel, Gravure sur bois, Crayon, Médias mixtes, etc.)"@fr .
+    skos:definition "The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)"@en ;
+    skos:definition "Het materiaal dat gebruikt is. (bv. Olie, Aquarel, Acryl, Linoprint, Marmer, Cyanotype, Digitaal, Lithografie, Droogpunt, Intaglio, Pastel, Houtsnede, Potlood, Gemengde media, etc.)"@nl ;
+    skos:definition "Le matériau utilisé. (par exemple Huile, Aquarelle, Acrylique, Linoprint, Marbre, Cyanotype, Numérique, Lithographie, Point sec, Intaglio, Pastel, Gravure sur bois, Crayon, Médias mixtes, etc.)"@fr .
 
 schema:author a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -271,9 +271,9 @@ schema:author a rdf:Property ;
     rdfs:label "author"@en ;
     rdfs:label "auteur"@nl ;
     rdfs:label "auteur"@fr ;
-    rdfs:comment "The author of this content or rating."@en ;
-    rdfs:comment "De auteur van deze inhoud of beoordeling."@nl ;
-    rdfs:comment "L'auteur de ce contenu ou de cette évaluation."@fr .
+    skos:definition "The author of this content or rating."@en ;
+    skos:definition "De auteur van deze inhoud of beoordeling."@nl ;
+    skos:definition "L'auteur de ce contenu ou de cette évaluation."@fr .
 
 schema:caption a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -281,9 +281,9 @@ schema:caption a rdf:Property ;
     rdfs:label "caption"@en ;
     rdfs:label "ondertiteling"@nl ;
     rdfs:label "sous-titrage"@fr ;
-    rdfs:comment "The caption for this object."@en ;
-    rdfs:comment "De ondertiteling voor dit object."@nl ;
-    rdfs:comment "Les sous-titres de cet objet."@fr .
+    skos:definition "The caption for this object."@en ;
+    skos:definition "De ondertiteling voor dit object."@nl ;
+    skos:definition "Les sous-titres de cet objet."@fr .
 
 schema:contributor a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -292,9 +292,9 @@ schema:contributor a rdf:Property ;
     rdfs:label "contributor"@en ;
     rdfs:label "bijdrager"@nl ;
     rdfs:label "contributeur"@fr ;
-    rdfs:comment "A secondary contributor to the CreativeWork or Event."@en ;
-    rdfs:comment "Een tweede bijdrager aan het CreativeWork of Event."@nl ;
-    rdfs:comment "Un contributeur secondaire à la CreativeWork ou à le Event."@fr .
+    skos:definition "A secondary contributor to the CreativeWork or Event."@en ;
+    skos:definition "Een tweede bijdrager aan het CreativeWork of Event."@nl ;
+    skos:definition "Un contributeur secondaire à la CreativeWork ou à le Event."@fr .
 
 schema:copyrightHolder a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -303,9 +303,9 @@ schema:copyrightHolder a rdf:Property ;
     rdfs:label "copyright holder"@en ;
     rdfs:label "auteursrechthouder"@nl ;
     rdfs:label "titulaire du droit d'auteur"@fr ;
-    rdfs:comment "The party holding the legal copyright to the CreativeWork."@en ;
-    rdfs:comment "De partij die de auteursrechten heeft op het CreativeWork."@nl ;
-    rdfs:comment "La partie qui détient le droit d'auteur légal de l'œuvre créative (CreativeWork)."@fr .
+    skos:definition "The party holding the legal copyright to the CreativeWork."@en ;
+    skos:definition "De partij die de auteursrechten heeft op het CreativeWork."@nl ;
+    skos:definition "La partie qui détient le droit d'auteur légal de l'œuvre créative (CreativeWork)."@fr .
 
 schema:copyrightNotice a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -314,9 +314,9 @@ schema:copyrightNotice a rdf:Property ;
     rdfs:label "copyright notice"@en ;
     rdfs:label "auteursrechtvermelding"@nl ;
     rdfs:label "avis de droit d'auteur"@fr ;
-    rdfs:comment "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work."@en ;
-    rdfs:comment "Tekst van een mededeling die geschikt is om de auteursrechtelijke aspecten van dit CreativeWork te beschrijven, idealiter met vermelding van de auteursrechthouder van het werk."@nl ;
-    rdfs:comment "Texte d'une notice appropriée pour décrire les aspects du droit d'auteur de cette CreativeWork, indiquant idéalement le propriétaire du droit d'auteur de l'oeuvre."@fr .
+    skos:definition "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work."@en ;
+    skos:definition "Tekst van een mededeling die geschikt is om de auteursrechtelijke aspecten van dit CreativeWork te beschrijven, idealiter met vermelding van de auteursrechthouder van het werk."@nl ;
+    skos:definition "Texte d'une notice appropriée pour décrire les aspects du droit d'auteur de cette CreativeWork, indiquant idéalement le propriétaire du droit d'auteur de l'oeuvre."@fr .
 
 schema:copyrightYear a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -324,9 +324,9 @@ schema:copyrightYear a rdf:Property ;
     rdfs:label "copyright year"@en ;
     rdfs:label "auteursrechtjaar"@nl ;
     rdfs:label "année des droits d'auteur"@fr ;
-    rdfs:comment "The year during which the claimed copyright for the CreativeWork was first asserted."@en ;
-    rdfs:comment "Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd."@nl ;
-    rdfs:comment "L'année durant laquelle le droit d'auteur revendiqué pour l'œuvre créative a été revendiqué pour la première fois."@fr .
+    skos:definition "The year during which the claimed copyright for the CreativeWork was first asserted."@en ;
+    skos:definition "Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd."@nl ;
+    skos:definition "L'année durant laquelle le droit d'auteur revendiqué pour l'œuvre créative a été revendiqué pour la première fois."@fr .
 
 schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -334,9 +334,9 @@ schema:creditText a rdf:Property ;
     rdfs:label "credit text"@en ;
     rdfs:label "credit tekst"@nl ;
     rdfs:label "texte du crédit"@fr ;
-    rdfs:comment "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work." ;
-    rdfs:comment "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl ;
-    rdfs:comment "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr .
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work." ;
+    skos:definition "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl ;
+    skos:definition "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr .
 
 schema:dateCreated a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -344,9 +344,9 @@ schema:dateCreated a rdf:Property ;
     rdfs:label "date created"@en ;
     rdfs:label "creatiedatum"@nl ;
     rdfs:label "date de création"@fr ;
-    rdfs:comment "The date on which the CreativeWork was created."@en ;
-    rdfs:comment "De datum waarin het CreativeWork werd gemaakt."@nl ;
-    rdfs:comment "La date à laquelle le CreativeWork a été créé."@fr .
+    skos:definition "The date on which the CreativeWork was created."@en ;
+    skos:definition "De datum waarin het CreativeWork werd gemaakt."@nl ;
+    skos:definition "La date à laquelle le CreativeWork a été créé."@fr .
 
 schema:datePublished a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -354,9 +354,9 @@ schema:datePublished a rdf:Property ;
     rdfs:label "date published"@en ;
     rdfs:label "publicatiedatum"@nl ;
     rdfs:label "date de publication"@fr ;
-    rdfs:comment "Date of first broadcast/publication."@en ;
-    rdfs:comment "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl ;
-    rdfs:comment "La date de la première diffusion ou publication."@fr .
+    skos:definition "Date of first broadcast/publication."@en ;
+    skos:definition "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl ;
+    skos:definition "La date de la première diffusion ou publication."@fr .
 
 schema:depth a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -364,9 +364,9 @@ schema:depth a rdf:Property ;
     rdfs:label "depth"@en ;
     rdfs:label "diepte"@nl ;
     rdfs:label "profondeur"@fr ;
-    rdfs:comment "The depth of the item."@en ;
-    rdfs:comment "De diepte van het item."@nl ;
-    rdfs:comment "La profondeur de l'objet."@fr .
+    skos:definition "The depth of the item."@en ;
+    skos:definition "De diepte van het item."@nl ;
+    skos:definition "La profondeur de l'objet."@fr .
 
 schema:description a rdf:Property ;
     rdfs:domain schema:Thing ;
@@ -375,9 +375,9 @@ schema:description a rdf:Property ;
     rdfs:label "description"@en ;
     rdfs:label "beschrijving"@nl ;
     rdfs:label "description"@fr ;
-    rdfs:comment "A description of the item."@en ;
-    rdfs:comment "Een beschrijving van het item."@nl ;
-    rdfs:comment "Une description de l'objet."@fr .
+    skos:definition "A description of the item."@en ;
+    skos:definition "Een beschrijving van het item."@nl ;
+    skos:definition "Une description de l'objet."@fr .
 
 schema:duration a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -385,36 +385,36 @@ schema:duration a rdf:Property ;
     rdfs:label "duration"@en ;
     rdfs:label "duur"@nl ;
     rdfs:label "durée"@fr ;
-    rdfs:comment "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format."@en ;
-    rdfs:comment "De duur van het item (film, opname audio, evenement, enz.) in ISO 8601 datumformaat."@nl ;
-    rdfs:comment "La durée de l'objet (film, enregistrement audio, événement, etc.) au format de date ISO 8601."@fr .
+    skos:definition "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format."@en ;
+    skos:definition "De duur van het item (film, opname audio, evenement, enz.) in ISO 8601 datumformaat."@nl ;
+    skos:definition "La durée de l'objet (film, enregistrement audio, événement, etc.) au format de date ISO 8601."@fr .
 
 schema:episodeNumber a rdf:Property ;
     rdfs:domain schema:Episode ;
     rdfs:label "episode number"@en ;
     rdfs:label "afleveringnummer"@nl ;
     rdfs:label "numéro d'épisode"@fr ;
-    rdfs:comment "Position of the episode within an ordered group of episodes."@en ;
-    rdfs:comment "De positie van de aflevering binnen een geordende groep van afleveringen."@nl ;
-    rdfs:comment "Position de l'épisode dans un groupe d'épisodes ordonnés."@fr .
+    skos:definition "Position of the episode within an ordered group of episodes."@en ;
+    skos:definition "De positie van de aflevering binnen een geordende groep van afleveringen."@nl ;
+    skos:definition "Position de l'épisode dans un groupe d'épisodes ordonnés."@fr .
 
 schema:familyName a rdf:Property ;
     rdfs:domain schema:Person ;
     rdfs:label "family name"@en ;
     rdfs:label "familienaam"@nl ;
     rdfs:label "nom de famille"@fr ;
-    rdfs:comment "Family name. In the U.S., the last name of a Person."@en ;
-    rdfs:comment "Familienaam. In de V.S., de achternaam van een Persoon."@nl ;
-    rdfs:comment "Nom de famille. Aux États-Unis, le dernier nom d'une Personne."@fr .
+    skos:definition "Family name. In the U.S., the last name of a Person."@en ;
+    skos:definition "Familienaam. In de V.S., de achternaam van een Persoon."@nl ;
+    skos:definition "Nom de famille. Aux États-Unis, le dernier nom d'une Personne."@fr .
 
 schema:givenName a rdf:Property ;
     rdfs:domain schema:Person ;
     rdfs:label "given name"@en ;
     rdfs:label "voornaam"@nl ;
     rdfs:label "prénom"@fr ;
-    rdfs:comment "Given name. In the U.S., the first name of a Person."@en ;
-    rdfs:comment "Voornaam. In de V.S., de eerste naam van een Persoon."@nl ;
-    rdfs:comment "Prénom. Aux États-Unis, le premier nom d'une Personne."@fr .
+    skos:definition "Given name. In the U.S., the first name of a Person."@en ;
+    skos:definition "Voornaam. In de V.S., de eerste naam van een Persoon."@nl ;
+    skos:definition "Prénom. Aux États-Unis, le premier nom d'une Personne."@fr .
 
 schema:genre a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -422,9 +422,9 @@ schema:genre a rdf:Property ;
     rdfs:label "genre"@en ;
     rdfs:label "genre"@nl ;
     rdfs:label "genre"@fr ;
-    rdfs:comment "Genre of the creative work, broadcast channel or group."@en ;
-    rdfs:comment "Genre van het CreativeWork, uitzendkanaal of groep."@nl ;
-    rdfs:comment "Genre de l'œuvre créative (CreativeWork), de la chaîne de télévision/diffusion ou du groupe."@fr .
+    skos:definition "Genre of the creative work, broadcast channel or group."@en ;
+    skos:definition "Genre van het CreativeWork, uitzendkanaal of groep."@nl ;
+    skos:definition "Genre de l'œuvre créative (CreativeWork), de la chaîne de télévision/diffusion ou du groupe."@fr .
 
 schema:height a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -432,9 +432,9 @@ schema:height a rdf:Property ;
     rdfs:label "height"@en ;
     rdfs:label "hoogte"@nl ;
     rdfs:label "hauteur"@fr ;
-    rdfs:comment "The height of the item."@en ;
-    rdfs:comment "De hoogte van het item."@nl ;
-    rdfs:comment "La hauteur de l'objet."@fr .
+    skos:definition "The height of the item."@en ;
+    skos:definition "De hoogte van het item."@nl ;
+    skos:definition "La hauteur de l'objet."@fr .
 
 schema:identifier a rdf:Property ;
     rdfs:domain schema:Thing ;
@@ -443,9 +443,9 @@ schema:identifier a rdf:Property ;
     rdfs:label "identifier"@en ;
     rdfs:label "identifier"@nl ;
     rdfs:label "identifiant"@fr ;
-    rdfs:comment "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en ;
-    rdfs:comment "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl ;
-    rdfs:comment "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr .
+    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en ;
+    skos:definition "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl ;
+    skos:definition "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr .
 
 schema:inLanguage a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -453,18 +453,18 @@ schema:inLanguage a rdf:Property ;
     rdfs:label "in language"@en ;
     rdfs:label "in taal"@nl ;
     rdfs:label "en langue"@fr ;
-    rdfs:comment "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en ;
-    rdfs:comment "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl ;
-    rdfs:comment "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr .
+    skos:definition "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en ;
+    skos:definition "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl ;
+    skos:definition "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr .
 
 schema:isPartOf a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:label "is part of"@en ;
     rdfs:label "is onderdeel van"@nl ;
     rdfs:label "fait partie de"@fr ;
-    rdfs:comment "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of."@en ;
-    rdfs:comment "Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is."@nl ;
-    rdfs:comment "Indique un élément ou un CreativeWork qui fait partie de cet élément, ou de ce CreativeWork (dans un certain sens)."@fr .
+    skos:definition "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of."@en ;
+    skos:definition "Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is."@nl ;
+    skos:definition "Indique un élément ou un CreativeWork qui fait partie de cet élément, ou de ce CreativeWork (dans un certain sens)."@fr .
 
 schema:keywords a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -473,9 +473,9 @@ schema:keywords a rdf:Property ;
     rdfs:label "keywords"@en ;
     rdfs:label "trefwoorden"@nl ;
     rdfs:label "mots-clés"@fr ;
-    rdfs:comment "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."@en ;
-    rdfs:comment "Trefwoorden of tags die gebruikt worden om een item te beschrijven. Meerdere tekstuele elementen in een trefwoordenlijst worden meestal gescheiden door komma's, of door het herhaling van de eigenschap (Property)."@nl ;
-    rdfs:comment "Mots-clés ou balises utilisés pour décrire un élément. Des entrées textuelles multiples dans une liste de mots-clés sont généralement séparées par des virgules, ou par répétition de la propriété (Property)."@fr .
+    skos:definition "Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property."@en ;
+    skos:definition "Trefwoorden of tags die gebruikt worden om een item te beschrijven. Meerdere tekstuele elementen in een trefwoordenlijst worden meestal gescheiden door komma's, of door het herhaling van de eigenschap (Property)."@nl ;
+    skos:definition "Mots-clés ou balises utilisés pour décrire un élément. Des entrées textuelles multiples dans une liste de mots-clés sont généralement séparées par des virgules, ou par répétition de la propriété (Property)."@fr .
 
 schema:license a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -484,17 +484,17 @@ schema:license a rdf:Property ;
     rdfs:label "license"@en ;
     rdfs:label "licentie"@nl ;
     rdfs:label "licence"@fr ;
-    rdfs:comment "A license document that applies to this content, typically indicated by URL."@en ;
-    rdfs:comment "Een licentiedocument dat geldig is voor deze inhoud, meestal gekenmerkt door een URL."@nl ;
-    rdfs:comment "Un document de licence qui s'applique à ce contenu, généralement indiqué par une URL."@fr .
+    skos:definition "A license document that applies to this content, typically indicated by URL."@en ;
+    skos:definition "Een licentiedocument dat geldig is voor deze inhoud, meestal gekenmerkt door een URL."@nl ;
+    skos:definition "Un document de licence qui s'applique à ce contenu, généralement indiqué par une URL."@fr .
 
 schema:maintainer a rdf:Property ;
     rdfs:label "maintainer"@en ;
     rdfs:label "beheerder"@nl ;
     rdfs:label "mainteneur/responsable"@fr ;
-    rdfs:comment "A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact."@en ;
-    rdfs:comment "Een beheerder is een Persoon of Organisatie die bijdragen beheert aan, en/of publicatie van, een (meestal complex) artefact."@nl ;
-    rdfs:comment "Un mainteneur est une personne ou une organisation qui gère les contributions à, et/ou la publication de, un (généralement complexe) artefact."@fr .
+    skos:definition "A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact."@en ;
+    skos:definition "Een beheerder is een Persoon of Organisatie die bijdragen beheert aan, en/of publicatie van, een (meestal complex) artefact."@nl ;
+    skos:definition "Un mainteneur est une personne ou une organisation qui gère les contributions à, et/ou la publication de, un (généralement complexe) artefact."@fr .
 
 schema:name a rdf:Property ; 
     rdfs:domain schema:Thing ;
@@ -503,9 +503,9 @@ schema:name a rdf:Property ;
     rdfs:label "name"@en ;
     rdfs:label "naam"@nl ;
     rdfs:label "nom"@fr ;
-    rdfs:comment "The name of the item."@en ;
-    rdfs:comment "De naam van het item."@nl ;
-    rdfs:comment "Le nom de l'élément."@fr .
+    skos:definition "The name of the item."@en ;
+    skos:definition "De naam van het item."@nl ;
+    skos:definition "Le nom de l'élément."@fr .
 
 schema:publisher a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -514,9 +514,9 @@ schema:publisher a rdf:Property ;
     rdfs:label "publisher"@en ;
     rdfs:label "uitgever"@nl ;
     rdfs:label "éditeur"@fr ;
-    rdfs:comment "The publisher of the creative work."@en ;
-    rdfs:comment "De uitgever van het kunstwerk."@nl ;
-    rdfs:comment "L'éditeur du travail créatif."@fr .
+    skos:definition "The publisher of the creative work."@en ;
+    skos:definition "De uitgever van het kunstwerk."@nl ;
+    skos:definition "L'éditeur du travail créatif."@fr .
 
 schema:roleName a rdf:Property ;
     rdfs:domain schema:PerformanceRole ;
@@ -524,18 +524,18 @@ schema:roleName a rdf:Property ;
     rdfs:label "role name"@en ;
     rdfs:label "rolnaam"@nl ;
     rdfs:label "nom du rôle"@fr ;
-    rdfs:comment "A role played, performed or filled by a person or organization."@en ;
-    rdfs:comment "Een rol gespeeld of vertolkt door een persoon of organisatie."@nl ;
-    rdfs:comment "Un rôle joué ou rempli par une personne ou une organisation."@fr .
+    skos:definition "A role played, performed or filled by a person or organization."@en ;
+    skos:definition "Een rol gespeeld of vertolkt door een persoon of organisatie."@nl ;
+    skos:definition "Un rôle joué ou rempli par une personne ou une organisation."@fr .
 
 schema:seasonNumber a rdf:Property ;
     rdfs:domain schema:CreativeWorkSeason ;
     rdfs:label "season number"@en ;
     rdfs:label "seizoen nummer"@nl ;
     rdfs:label "numéro de saison"@fr ;
-    rdfs:comment "Position of the season within an ordered group of seasons."@en ;
-    rdfs:comment "Positie van het seizoen in een geordende groep van seizoenen."@nl ;
-    rdfs:comment "Position de la saison dans un groupe ordonné de saisons."@fr .
+    skos:definition "Position of the season within an ordered group of seasons."@en ;
+    skos:definition "Positie van het seizoen in een geordende groep van seizoenen."@nl ;
+    skos:definition "Position de la saison dans un groupe ordonné de saisons."@fr .
 
 schema:spatial a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -544,9 +544,9 @@ schema:spatial a rdf:Property ;
     rdfs:label "spatial coverage"@en ;
     rdfs:label "geografische dekking; aflijning binnen de ruimte"@nl ;
     rdfs:label "couverture spatiale/géographique"@fr ;
-    rdfs:comment "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en ;
-    rdfs:comment "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl ;
-    rdfs:comment "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr .
+    skos:definition "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en ;
+    skos:definition "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl ;
+    skos:definition "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr .
 
 schema:temporal a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -555,9 +555,9 @@ schema:temporal a rdf:Property ;
     rdfs:label "temporal coverage"@en ;
     rdfs:label "temporele dekking; aflijning binnen de tijd"@nl ;
     rdfs:label "couveerture temporelle"@fr ;
-    rdfs:comment "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format."@en ;
-    rdfs:comment "De dekking in de tijd van een CreativeWork geeft aan oveer welke periode inhoud handelt, bijvoorbeeld als een DateTime of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt."@nl ;
-    rdfs:comment "La couverture temporelle d'un travail créatif (CreativeWork) indique la période à laquelle s'applique le contenu, c'est-à-dire qu'il décrit soit par une date et heure (DateTime), soit par une série de caractères indiquant une période de temps en format ISO 8601."@fr .
+    skos:definition "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format."@en ;
+    skos:definition "De dekking in de tijd van een CreativeWork geeft aan oveer welke periode inhoud handelt, bijvoorbeeld als een DateTime of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt."@nl ;
+    skos:definition "La couverture temporelle d'un travail créatif (CreativeWork) indique la période à laquelle s'applique le contenu, c'est-à-dire qu'il décrit soit par une date et heure (DateTime), soit par une série de caractères indiquant une période de temps en format ISO 8601."@fr .
 
 schema:transcript a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -565,9 +565,9 @@ schema:transcript a rdf:Property ;
     rdfs:label "transcript"@en ;
     rdfs:label "transcriptie"@nl ; 
     rdfs:label "transcription"@fr ;
-    rdfs:comment "If this MediaObject is an AudioObject or VideoObject, the transcript of that object."@en ;
-    rdfs:comment "Als dit MediaObject een AudioObject of VideoObject is, de transcriptie van dat object."@nl ;
-    rdfs:comment "Si cet MediaObject est un AudioObject ou VideoObject, la transcription de cet objet."@fr .
+    skos:definition "If this MediaObject is an AudioObject or VideoObject, the transcript of that object."@en ;
+    skos:definition "Als dit MediaObject een AudioObject of VideoObject is, de transcriptie van dat object."@nl ;
+    skos:definition "Si cet MediaObject est un AudioObject ou VideoObject, la transcription de cet objet."@fr .
 
 schema:unitCode a rdf:Property ;
     rdfs:domain schema:QuantitativeValue ;
@@ -576,9 +576,9 @@ schema:unitCode a rdf:Property ;
     rdfs:label "eenheid code"@nl ;
     rdfs:label "code d'unité"@fr ;
     # Hier ook URL naar lijst met codes toevoegen?
-    rdfs:comment "The unit of measurement given using the UN/CEFACT Common Code (3 characters)."@en ;
-    rdfs:comment "De eenheid van de meting, gegeven met behulp van de UN/CEFACT Common Code (3 karakters)."@nl ;
-    rdfs:comment "L'unité de mesure donnée en utilisant le code commun UN/CEFACT (3 caractères)."@fr .
+    skos:definition "The unit of measurement given using the UN/CEFACT Common Code (3 characters)."@en ;
+    skos:definition "De eenheid van de meting, gegeven met behulp van de UN/CEFACT Common Code (3 karakters)."@nl ;
+    skos:definition "L'unité de mesure donnée en utilisant le code commun UN/CEFACT (3 caractères)."@fr .
 
 schema:unitText a rdf:Property ;
     rdfs:domain schema:QuantitativeValue ;
@@ -586,9 +586,9 @@ schema:unitText a rdf:Property ;
     rdfs:label "unit text"@en ;
     rdfs:label "eenheid tekst"@nl ;
     rdfs:label "texte d'unité"@fr ;
-    rdfs:comment "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode."@en ;
-    rdfs:comment "Een string of tekst die de eenheid van de meting aangeeft. Handig als je geen standaard eenheidcode kunt geven voor unitCode."@nl ;
-    rdfs:comment "Une chaîne de caractères ou un texte indiquant l'unité de mesure. Utile si vous ne pouvez pas fournir de code d'unité standard pour unitCode."@fr .
+    skos:definition "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode."@en ;
+    skos:definition "Een string of tekst die de eenheid van de meting aangeeft. Handig als je geen standaard eenheidcode kunt geven voor unitCode."@nl ;
+    skos:definition "Une chaîne de caractères ou un texte indiquant l'unité de mesure. Utile si vous ne pouvez pas fournir de code d'unité standard pour unitCode."@fr .
 
 schema:value a rdf:Property ;
     rdfs:domain schema:QuantitativeValue ;
@@ -596,9 +596,9 @@ schema:value a rdf:Property ;
     rdfs:label "value"@en ;
     rdfs:label "waarde"@nl ;
     rdfs:label "valeur"@fr ;
-    rdfs:comment "The value of the quantitative value."@en ;
-    rdfs:comment "De waarde van de kwantitatieve waarde."@nl ;
-    rdfs:comment "La valeur de la valeur quantitative."@fr .
+    skos:definition "The value of the quantitative value."@en ;
+    skos:definition "De waarde van de kwantitatieve waarde."@nl ;
+    skos:definition "La valeur de la valeur quantitative."@fr .
 
 schema:width a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
@@ -606,9 +606,9 @@ schema:width a rdf:Property ;
     rdfs:label "width"@en ;
     rdfs:label "breedte"@nl ;
     rdfs:label "largeur"@fr ;
-    rdfs:comment "The width of the item."@en ;
-    rdfs:comment "De breedte van het item."@nl ;
-    rdfs:comment "La largeur de l'élément."@fr .
+    skos:definition "The width of the item."@en ;
+    skos:definition "De breedte van het item."@nl ;
+    skos:definition "La largeur de l'élément."@fr .
 
 
 schema:about a rdf:Property ;
@@ -617,9 +617,9 @@ schema:about a rdf:Property ;
     rdfs:label "about"@en ;
     rdfs:label "over"@nl ;
     rdfs:label "sur"@fr ;
-    rdfs:comment """The subject matter of the content."""@en ;
-    rdfs:comment """Het onderwerp van de inhoud."""@nl ;
-    rdfs:comment """Le sujet du contenu."""@fr .
+    skos:definition """The subject matter of the content."""@en ;
+    skos:definition """Het onderwerp van de inhoud."""@nl ;
+    skos:definition """Le sujet du contenu."""@fr .
 
 ####################
 #       RDF        #
@@ -630,6 +630,6 @@ rdf:value a rdf:Property ;
     rdfs:label "value"@en ;
     rdfs:label "waarde"@nl ;
     rdfs:label "valeur"@fr ;
-    rdfs:comment "May be used in describing structured values."@en ;
-    rdfs:comment "Kan worden gebruikt om gestructureerde waardes te beschrijven."@nl ;
-    rdfs:comment "Peut être utilisé pour décrire des valeurs structurées."@fr .
+    skos:definition "May be used in describing structured values."@en ;
+    skos:definition "Kan worden gebruikt om gestructureerde waardes te beschrijven."@nl ;
+    skos:definition "Peut être utilisé pour décrire des valeurs structurées."@fr .

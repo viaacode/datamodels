@@ -51,9 +51,9 @@ prov:Activity
     rdfs:label "Activité"@fr ;
     rdfs:label "Activiteit"@nl ;
     owl:disjointWith prov:Entity ;
-    rdfs:comment "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en;
-    rdfs:comment "Een activiteit is iets dat zich gedurende een bepaalde periode voordoet en op of met entiteiten handelt;Het kan onder meer consumeren, verwerken, transformeren, wijzigen, verplaatsen, gebruiken of genereren van entiteiten."@nl;
-    rdfs:comment "Une activité est quelque chose qui se passe pendant un certain temps et qui agit sur ou avec des entités ; elle peut inclure la consommation, le traitement, la transformation, la modification, le déplacement, l'utilisation ou la génération des entités."@fr.
+    skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en;
+    skos:definition "Een activiteit is iets dat zich gedurende een bepaalde periode voordoet en op of met entiteiten handelt;Het kan onder meer consumeren, verwerken, transformeren, wijzigen, verplaatsen, gebruiken of genereren van entiteiten."@nl;
+    skos:definition "Une activité est quelque chose qui se passe pendant un certain temps et qui agit sur ou avec des entités ; elle peut inclure la consommation, le traitement, la transformation, la modification, le déplacement, l'utilisation ou la génération des entités."@fr.
 
 prov:Agent
     a owl:Class, rdfs:Class ;
@@ -62,9 +62,9 @@ prov:Agent
     rdfs:label "Agent"@fr ;
     rdfs:label "Agent"@nl ;
     owl:disjointWith prov:InstantaneousEvent ;
-    rdfs:comment "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. "@en;
-    rdfs:comment "Een agent is iets dat een bepaalde vorm van verantwoordelijkheid voor een activiteit neemt, voor de bestaan van een entiteit of voor de activiteit van een andere agent. "@nl;
-    rdfs:comment "Un agent est quelque chose qui porte une forme de responsabilité pour une activité qui se passe, pour l'existence d'une entité ou pour l'activité d'un autre agent. "@fr.
+    skos:definition "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. "@en;
+    skos:definition "Een agent is iets dat een bepaalde vorm van verantwoordelijkheid voor een activiteit neemt, voor de bestaan van een entiteit of voor de activiteit van een andere agent. "@nl;
+    skos:definition "Un agent est quelque chose qui porte une forme de responsabilité pour une activité qui se passe, pour l'existence d'une entité ou pour l'activité d'un autre agent. "@fr.
 
 prov:Entity
     a owl:Class, rdfs:Class ;
@@ -73,9 +73,9 @@ prov:Entity
     rdfs:label "Entité"@fr ;
     rdfs:label "Entiteit"@nl ;
     owl:disjointWith prov:InstantaneousEvent ;
-    rdfs:comment "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en;
-    rdfs:comment "Een entiteit is een fysiek, digitaal, conceptueel of ander soort dingen met sommige vaste aspecten;Entiteiten kunnen echt of denkbeeldig zijn."@nl;
-    rdfs:comment "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr.
+    skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en;
+    skos:definition "Een entiteit is een fysiek, digitaal, conceptueel of ander soort dingen met sommige vaste aspecten;Entiteiten kunnen echt of denkbeeldig zijn."@nl;
+    skos:definition "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr.
 
 # prov properties
 prov:generated
@@ -113,9 +113,9 @@ prov:wasGeneratedBy
 
 prov:invalidatedAtTime
     a owl:DatatypeProperty ;
-    rdfs:comment "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
-    rdfs:comment "Het tijdstip waarop een entiteit ongeldig werd (d.w.z. niet langer bruikbaar)."@nl ;
-    rdfs:comment "Le moment où une entité a été invalidée (c'est-à-dire plus utilisable)."@fr ;
+    skos:definition "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+    skos:definition "Het tijdstip waarop een entiteit ongeldig werd (d.w.z. niet langer bruikbaar)."@nl ;
+    skos:definition "Le moment où une entité a été invalidée (c'est-à-dire plus utilisable)."@fr ;
     rdfs:domain prov:Entity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "invalidated at time"@en ;
@@ -126,9 +126,9 @@ prov:invalidatedAtTime
 
 prov:startedAtTime
     a owl:DatatypeProperty ;
-    rdfs:comment "The time at which an activity started. See also prov:endedAtTime."@en ;
-    rdfs:comment "Le moment où une activité a commencé.Voir aussi prov:endedAtTime."@fr ;
-    rdfs:comment "Het tijdstip waarop een activiteit begon. Zie ook prov:endedAtTime."@nl ;
+    skos:definition "The time at which an activity started. See also prov:endedAtTime."@en ;
+    skos:definition "Le moment où une activité a commencé.Voir aussi prov:endedAtTime."@fr ;
+    skos:definition "Het tijdstip waarop een activiteit begon. Zie ook prov:endedAtTime."@nl ;
     rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "started at time"@en ;
@@ -138,9 +138,9 @@ prov:startedAtTime
 
 prov:wasAssociatedWith
     a owl:ObjectProperty ;
-    rdfs:comment "An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity."@en ;
-    rdfs:comment "Een prov:Agent die enige (niet -gespecificeerde) verantwoordelijkheid had voor het optreden van deze prov:Activity."@nl ;
-    rdfs:comment "Un prov:Agent qui avait une responsabilité (non spécifiée) pour la survenue de cette prov:Activity."@fr ;
+    skos:definition "An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity."@en ;
+    skos:definition "Een prov:Agent die enige (niet -gespecificeerde) verantwoordelijkheid had voor het optreden van deze prov:Activity."@nl ;
+    skos:definition "Un prov:Agent qui avait une responsabilité (non spécifiée) pour la survenue de cette prov:Activity."@fr ;
     rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "was associated with"@en ;
@@ -154,9 +154,9 @@ prov:wasAssociatedWith
 
 prov:wasAttributedTo
     a owl:ObjectProperty ;
-    rdfs:comment "Attribution is the ascribing of an entity to an agent."@en ;
-    rdfs:comment "Toekenning is het toeschrijven van een entiteit aan een agent."@nl ;
-    rdfs:comment "L'attribution est l'attribution d'une entité à un agent."@fr ;
+    skos:definition "Attribution is the ascribing of an entity to an agent."@en ;
+    skos:definition "Toekenning is het toeschrijven van een entiteit aan een agent."@nl ;
+    skos:definition "L'attribution est l'attribution d'une entité à un agent."@fr ;
     rdfs:domain prov:Entity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "was attributed to"@en ;
@@ -170,9 +170,9 @@ prov:wasAttributedTo
 
 prov:used
     a owl:ObjectProperty ;
-    rdfs:comment "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
-    rdfs:comment "Een prov:Entity die door deze prov:Activity werd gebruikt. Bijvoorbeeld: :bakken prov:used :lepel ,:ei, :oven."@nl ;
-    rdfs:comment "Une prov:Entity qui a été utilisée par cette activité. Par exemple , :baking prov:used :cuillère , :œuf , :four."@en ;
+    skos:definition "A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven ."@en ;
+    skos:definition "Een prov:Entity die door deze prov:Activity werd gebruikt. Bijvoorbeeld: :bakken prov:used :lepel ,:ei, :oven."@nl ;
+    skos:definition "Une prov:Entity qui a été utilisée par cette activité. Par exemple , :baking prov:used :cuillère , :œuf , :four."@en ;
     rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:label "used"@en ;
@@ -190,9 +190,9 @@ premis:Agent  a owl:Class, rdfs:Class ;
   rdfs:label "Agent"@en ;
   rdfs:label "Acteur"@fr ;
   rdfs:label "Agent"@nl ;
-  rdfs:comment """Actor (human, machine, or software) associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
-  rdfs:comment """Acteur (humain, machine ou logiciel) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
-  rdfs:comment """Agens (mens, machine of software) geassocieerd met één of meer Events en/of Rights uitdrukkingen geassocieerd met een digitaal object."""@nl ;
+  skos:definition """Actor (human, machine, or software) associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
+  skos:definition """Acteur (humain, machine ou logiciel) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
+  skos:definition """Agens (mens, machine of software) geassocieerd met één of meer Events en/of Rights uitdrukkingen geassocieerd met een digitaal object."""@nl ;
   rdfs:subClassOf prov:Agent, foaf:Agent ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
@@ -201,9 +201,9 @@ premis:SoftwareAgent
   rdfs:label "Software agent"@en ;
   rdfs:label "Logiciel acteur"@fr ;
   rdfs:label "Software agent"@nl ;
-  rdfs:comment """Software agent (e.g., a computer program) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
-  rdfs:comment """Logiciel acteur (e.g., un programme informatique) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
-  rdfs:comment """Softwareagent (bijv. Een computerprogramma) dat is gekoppeld aan een of meer evenement- en/of rechtenverklaring die aan een digitaal object is gekoppeld."""@nl ;
+  skos:definition """Software agent (e.g., a computer program) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
+  skos:definition """Logiciel acteur (e.g., un programme informatique) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
+  skos:definition """Softwareagent (bijv. Een computerprogramma) dat is gekoppeld aan een of meer evenement- en/of rechtenverklaring die aan een digitaal object is gekoppeld."""@nl ;
   rdfs:subClassOf premis:Agent, prov:SoftwareAgent ;
   owl:disjointWith premis:HardwareAgent, premis:Organization, premis:Person ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
@@ -213,9 +213,9 @@ premis:HardwareAgent
   rdfs:label "Hardware agent"@en ;
   rdfs:label "Matériel acteur"@fr ;
   rdfs:label "Hardware agent"@nl ;
-  rdfs:comment """Hardware agent (e.g., a computer) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
-  rdfs:comment """Matériel acteur (e.g., un ordinateur) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
-  rdfs:comment """Hardwareagent (bijv. Een computer) dat is gekoppeld aan een of meer evenement- en/of rechtenverklaring die aan een digitaal object is gekoppeld."""@nl ;
+  skos:definition """Hardware agent (e.g., a computer) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
+  skos:definition """Matériel acteur (e.g., un ordinateur) associé à un ou plusieurs Events et/ou déclarations de Rights associés à un objet numérique/digital."""@fr ;
+  skos:definition """Hardwareagent (bijv. Een computer) dat is gekoppeld aan een of meer evenement- en/of rechtenverklaring die aan een digitaal object is gekoppeld."""@nl ;
   rdfs:subClassOf premis:Agent ;
   owl:sameAs <http://id.loc.gov/vocabulary/preservation/agentType/har> ;
   owl:disjointWith premis:Organization, premis:Person, premis:SoftwareAgent ;
@@ -225,9 +225,9 @@ premis:Event  a owl:Class, rdfs:Class ;
   rdfs:label "Event"@en ;
   rdfs:label "Événement"@fr ;
   rdfs:label "Gebeurtenis"@nl ;
-  rdfs:comment "Action performed within or outside the repository that affects its capability to preserve Objects over the long term."@en ;
-  rdfs:comment "Action réalisée à l'intérieur ou à l'extérieur du dépôt qui affecte sa capacité à préserver des objets sur le long terme."@fr ;
-  rdfs:comment "Handeling uitgevoerd binnen of buiten het archief die het vermogen beïnvloedt om objecten op lange termijn te bewaren."@nl ;
+  skos:definition "Action performed within or outside the repository that affects its capability to preserve Objects over the long term."@en ;
+  skos:definition "Action réalisée à l'intérieur ou à l'extérieur du dépôt qui affecte sa capacité à préserver des objets sur le long terme."@fr ;
+  skos:definition "Handeling uitgevoerd binnen of buiten het archief die het vermogen beïnvloedt om objecten op lange termijn te bewaren."@nl ;
   rdfs:subClassOf prov:Activity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventType> .
@@ -236,9 +236,9 @@ premis:OutcomeStatus  a owl:Class, rdfs:Class ;
   rdfs:label "Outcome status"@en ;
   rdfs:label "Statut de résultat"@fr ;
   rdfs:label "Uitkomststatus"@nl ;
-  rdfs:comment "Overall result of the Event in terms of success, partial success, or failure."@en ;
-  rdfs:comment "Résultat global de l'événement en termes de succès, de succès partiel ou d'échec."@fr ;
-  rdfs:comment "Algemeen resultaat van het Event in termen van succes, gedeeltelijk succes of falen."@nl ;
+  skos:definition "Overall result of the Event in terms of success, partial success, or failure."@en ;
+  skos:definition "Résultat global de l'événement en termes de succès, de succès partiel ou d'échec."@fr ;
+  skos:definition "Algemeen resultaat van het Event in termen van succes, gedeeltelijk succes of falen."@nl ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome> .
 
@@ -308,17 +308,17 @@ evtObjRole:sou a owl:ObjectProperty ;
     rdfs:label "source"@fr;
     rdfs:label "bron"@nl;
     rdfs:subPropertyOf prov:used ;
-    rdfs:comment "The object in relation to the described event that existed prior to that event and was used by it."@en;
-    rdfs:comment "L'objet dans la relation à l'événement décrit et qui existait avant cet événement et qui l'utilisait."@fr;
-    rdfs:comment "Het object in de relatie met het geschreven event dat bestond voor dat event en die het gebruikt."@nl.
+    skos:definition "The object in relation to the described event that existed prior to that event and was used by it."@en;
+    skos:definition "L'objet dans la relation à l'événement décrit et qui existait avant cet événement et qui l'utilisait."@fr;
+    skos:definition "Het object in de relatie met het geschreven event dat bestond voor dat event en die het gebruikt."@nl.
 
 evtObjRole:out a owl:ObjectProperty ;
     rdfs:domain premis:Event ;
     rdfs:range premis:Object ;
     rdfs:subPropertyOf prov:generated ;
-    rdfs:comment "The object in relation to the described event is the outcome of that event."@en ;
-    rdfs:comment "L'objet dans la relation à l'événement décrit est le résultat de cet événement."@fr ;
-    rdfs:comment "Het object in de relatie met het geschreven event is het resultaat van dat event."@nl;
+    skos:definition "The object in relation to the described event is the outcome of that event."@en ;
+    skos:definition "L'objet dans la relation à l'événement décrit est le résultat de cet événement."@fr ;
+    skos:definition "Het object in de relatie met het geschreven event is het resultaat van dat event."@nl;
     rdfs:label "outcome"@en ;
     rdfs:label "résultat"@fr ;
     rdfs:label "uitkomst"@nl.

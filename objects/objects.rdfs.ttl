@@ -49,9 +49,9 @@ premis:File a owl:Class, rdfs:Class ;
   rdfs:label "File"@en ;
   rdfs:label "Fichier"@fr ;
   rdfs:label "Bestand"@nl ;
-  rdfs:comment "Named and ordered sequence of bytes that is known to an operating system."@en ;
-  rdfs:comment "Séquence nommée et ordonnée d'octets/bytes connue par un système d'exploitation."@fr ;
-  rdfs:comment "Genoemde en geordende sequentie van bytes gekend door een besturingssysteem."@nl ;
+  skos:definition "Named and ordered sequence of bytes that is known to an operating system."@en ;
+  skos:definition "Séquence nommée et ordonnée d'octets/bytes connue par un système d'exploitation."@fr ;
+  skos:definition "Genoemde en geordende sequentie van bytes gekend door een besturingssysteem."@nl ;
   rdfs:subClassOf premis:Object ;
   owl:disjointWith premis:Bitstream, premis:IntellectualEntity, premis:Representation ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
@@ -60,9 +60,9 @@ premis:Fixity a owl:Class, rdfs:Class ;
   rdfs:label "Fixity"@en ;
   rdfs:label "Fixité"@fr ;
   rdfs:label "Fixity"@nl ;
-  rdfs:comment """Information used to verify whether an object has been altered in an undocumented or unauthorized way."""@en ;
-  rdfs:comment """Informations utilisées pour vérifier si un objet a été modifié de manière non documentée ou non autorisée."""@fr ;
-  rdfs:comment """Informatie die wordt gebruikt om na te gaan of een object op een ongedocumenteerde of ongeoorloofde manier werd gewijzigd."""@nl ;
+  skos:definition """Information used to verify whether an object has been altered in an undocumented or unauthorized way."""@en ;
+  skos:definition """Informations utilisées pour vérifier si un objet a été modifié de manière non documentée ou non autorisée."""@fr ;
+  skos:definition """Informatie die wordt gebruikt om na te gaan of een object op een ongedocumenteerde of ongeoorloofde manier werd gewijzigd."""@nl ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> .
 
@@ -70,15 +70,15 @@ premis:IntellectualEntity a owl:Class, rdfs:Class ;
   rdfs:label "Intellectual entity"@en ;
   rdfs:label "Entité intellectuelle"@fr ;
   rdfs:label "Intellectuele entiteit"@nl ;
-  rdfs:comment """A set of content that is considered a single intellectual unit for purposes of management and
+  skos:definition """A set of content that is considered a single intellectual unit for purposes of management and
       description: for example, a particular book, map, photograph, database, or piece of hardware or
       software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can
       include a web page; a web page can include an image. An Intellectual Entity may have one or more digital
       representations. An Intellectual Entity may also describe an environment, defined as technology
       supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of
       software, hardware, or a combination of both."""@en ;
-  rdfs:comment """Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description"""@fr ;
-  rdfs:comment """Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."""@nl ;    
+  skos:definition """Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description"""@fr ;
+  skos:definition """Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."""@nl ;    
   rdfs:subClassOf premis:Object ;
   owl:disjointWith premis:Bitstream, premis:File, premis:Representation ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
@@ -88,9 +88,9 @@ premis:Object a owl:Class, rdfs:Class ;
   rdfs:label "Object"@en ;
   rdfs:label "Objet"@fr ;
   rdfs:label "Object"@nl ;
-  rdfs:comment """Discrete unit of information subject to digital preservation. Subclasses of Object are Intellectual Entity, Representation, File and Bitstream."""@en ;
-  rdfs:comment """Unité discrète d'information soumise à la préservation numérique. Les sous-classes d'objet sont le Intellectual Entity (entité intellectuelle), la Representation (représentation), le File (fichier) et le Bitstream (flux binaire)."""@fr ;
-  rdfs:comment """Discrete eenheid van informatie die digitaal moet worden bewaard. Subklassen van Object zijn Intellectual Entity (intellectuele entiteit), Representation (voorstelling/weergave), File (bestand) en Bitstream (bitstream)."""@nl ;
+  skos:definition """Discrete unit of information subject to digital preservation. Subclasses of Object are Intellectual Entity, Representation, File and Bitstream."""@en ;
+  skos:definition """Unité discrète d'information soumise à la préservation numérique. Les sous-classes d'objet sont le Intellectual Entity (entité intellectuelle), la Representation (représentation), le File (fichier) et le Bitstream (flux binaire)."""@fr ;
+  skos:definition """Discrete eenheid van informatie die digitaal moet worden bewaard. Subklassen van Object zijn Intellectual Entity (intellectuele entiteit), Representation (voorstelling/weergave), File (bestand) en Bitstream (bitstream)."""@nl ;
   rdfs:subClassOf prov:Entity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
@@ -98,7 +98,7 @@ premis:Representation a owl:Class, rdfs:Class ;
   rdfs:label "Representation"@en ;
   rdfs:label "Représentation"@fr ;
   rdfs:label "Representatie"@nl ;
-  rdfs:comment """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
+  skos:definition """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
       representation is the set of stored digital files and structural metadata needed to provide a complete
       and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a
       manuscript, video cassette, or printed document."""@en ;
@@ -110,9 +110,9 @@ premis:StorageLocation  a owl:Class, rdfs:Class ;
   rdfs:label "Storage location"@en ;
   rdfs:label "Emplacement de stockage"@fr ;
   rdfs:label "Opslagplaats"@nl ;
-  rdfs:comment """Information needed to retrieve a physical item from its physical storage location or a file from the storage system, or to access a bitstream within a file."""@en ;
-  rdfs:comment """Informations nécessaires pour extraire un élément physique de son emplacement de stockage physique ou un fichier du système de stockage, ou pour accéder à un flux binaire (bitstream) dans un fichier (file)."""@fr ;
-  rdfs:comment """Informatie die nodig is om een fysiek voorwerp van zijn fysieke opslagplaats of een bestand uit het opslagsysteem op te halen, of om toegang te krijgen tot een bitstream binnen een bestand (file)."""@nl ;
+  skos:definition """Information needed to retrieve a physical item from its physical storage location or a file from the storage system, or to access a bitstream within a file."""@en ;
+  skos:definition """Informations nécessaires pour extraire un élément physique de son emplacement de stockage physique ou un fichier du système de stockage, ou pour accéder à un flux binaire (bitstream) dans un fichier (file)."""@fr ;
+  skos:definition """Informatie die nodig is om een fysiek voorwerp van zijn fysieke opslagplaats of een bestand uit het opslagsysteem op te halen, of om toegang te krijgen tot een bitstream binnen een bestand (file)."""@nl ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/contentLocationType> .
 
@@ -122,10 +122,10 @@ premis:StorageMedium  a   rdfs:Class ;
     rdfs:label "Storage medium"@en ;
     rdfs:label "Support de stockage"@fr ;
     rdfs:label "Opslagmedium"@nl ;
-    rdfs:comment """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
+    skos:definition """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
         DVD)."""@en ;
-    rdfs:comment """Le support physique sur lequel l'Objet est stocké (par exemple, le mécanisme magnétique, le disque dur, le CD-ROM, le DVD)."""@fr ;
-    rdfs:comment """Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."""@nl ;
+    skos:definition """Le support physique sur lequel l'Objet est stocké (par exemple, le mécanisme magnétique, le disque dur, le CD-ROM, le DVD)."""@fr ;
+    skos:definition """Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."""@nl ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> .
 
@@ -134,9 +134,9 @@ dct:FileFormat dct:description "Examples include the formats defined by the list
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	a rdfs:Class ;
-	rdfs:comment "A digital resource format."@en ;
-  rdfs:comment "Un format de ressource numérique."@fr ;
-  rdfs:comment "Een formaat van een digitale bron."@nl ;
+	skos:definition "A digital resource format."@en ;
+  skos:definition "Un format de ressource numérique."@fr ;
+  skos:definition "Een formaat van een digitale bron."@nl ;
 	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:label "File Format"@en ;
   rdfs:label "Format de fichier"@fr ;
@@ -150,9 +150,9 @@ haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:label "Digital representation"@en ;
     rdfs:label "Représentation digitale"@fr ;
     rdfs:label "Digitale representatie"@nl ;
-    rdfs:comment "Digital representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
-    rdfs:comment "Représentation digitale d'une entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
-    rdfs:comment "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    skos:definition "Digital representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
+    skos:definition "Représentation digitale d'une entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
+    skos:definition "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 
@@ -162,9 +162,9 @@ haObj:LocalIdentifier a rdfs:Class ;
     rdfs:label "Local identifier"@en ;
     rdfs:label "Identifiant local"@fr ;
     rdfs:label "Lokale identificatie"@nl ;
-    rdfs:comment "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
-    rdfs:comment "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'un système externe ou l'identifiant dans le système de registre de collection du partenaire de contenu."@fr ;
-    rdfs:comment "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een extern database of de identificatie in het systeem van registratie van de collectie van de partner van content."@nl ;
+    skos:definition "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
+    skos:definition "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'un système externe ou l'identifiant dans le système de registre de collection du partenaire de contenu."@fr ;
+    skos:definition "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een extern database of de identificatie in het systeem van registratie van de collectie van de partner van content."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:PhysicalRepresentation a rdfs:Class ;
@@ -172,9 +172,9 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:label "Physical representation"@en ;
     rdfs:label "Représentation physique"@fr ;
     rdfs:label "Fysieke representatie"@nl ;
-    rdfs:comment "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
-    rdfs:comment "Représentation physique d'un entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
-    rdfs:comment "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
+    skos:definition "Représentation physique d'un entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
+    skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 # dct properties
@@ -183,9 +183,9 @@ dct:format dct:description "Examples of dimensions include size and duration. Re
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	a rdf:Property ;
-	rdfs:comment "The file format, physical medium, or dimensions of the resource."@en ;
-  rdfs:comment "Le format du fichier, le support de stockage ou les dimensions du fichier."@fr ;
-  rdfs:comment "Het bestandsformaat, het opslagmedium of de afmetingen van het bestand."@nl ;
+	skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
+  skos:definition "Le format du fichier, le support de stockage ou les dimensions du fichier."@fr ;
+  skos:definition "Het bestandsformaat, het opslagmedium of de afmetingen van het bestand."@nl ;
 	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:label "Format"@en ;
   rdfs:label "Format"@fr ;
@@ -277,9 +277,9 @@ rel:doc a owl:ObjectProperty ;
   rdfs:label "documents"@en ;
   rdfs:label "généralise"@fr ;
   rdfs:label "documenteert"@nl ;
-  rdfs:comment "A relationship between information about an environment object and the environment object itself. For instance, a user manual has a “documents” relationship to the Open Office software application. Has a reciprocal relationship of isDocumentedIn."@en ;
-  rdfs:comment "Une relation entre les informations sur un objet d'environnement et l'objet d'environnement lui-même. Par exemple, un manuel d'utilisation a une relation 'documents' avec l'application logicielle Open Office. A une relation réciproque avec isDocumentedIn."@fr ;
-  rdfs:comment "Een relatie tussen informatie over een omgevingsobject en het omgevingsobject zelf. Bijvoorbeeld, een gebruikershandleiding heeft een 'documents'-relatie met de Open Office-softwareapplicatie. Heeft een wederkerige relatie met isDocumentedIn."@nl ;
+  skos:definition "A relationship between information about an environment object and the environment object itself. For instance, a user manual has a “documents” relationship to the Open Office software application. Has a reciprocal relationship of isDocumentedIn."@en ;
+  skos:definition "Une relation entre les informations sur un objet d'environnement et l'objet d'environnement lui-même. Par exemple, un manuel d'utilisation a une relation 'documents' avec l'application logicielle Open Office. A une relation réciproque avec isDocumentedIn."@fr ;
+  skos:definition "Een relatie tussen informatie over een omgevingsobject en het omgevingsobject zelf. Bijvoorbeeld, een gebruikershandleiding heeft een 'documents'-relatie met de Open Office-softwareapplicatie. Heeft een wederkerige relatie met isDocumentedIn."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:gen a owl:ObjectProperty ;
@@ -287,9 +287,9 @@ rel:gen a owl:ObjectProperty ;
   rdfs:label "generalizes"@en ;
   rdfs:label "généralise"@fr ;
   rdfs:label "veralgemeent"@nl ;
-  rdfs:comment "A relationship between an environment object and another where the described object is a more general description than the more specific related environment. Has a reciprocal relationship of specializes."@en ;
-  rdfs:comment "Une Relation entre un objet d'environnement et un autre objet où l'objet décrit a une description plus générale que l'environnement lié plus spécifique. A une relation réciproque avec specializes."@fr ;
-  rdfs:comment "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object een algemenere beschrijving is dan de meer specifieke verwante omgeving. Heeft een wederkerige relatie met specializes."@nl ;
+  skos:definition "A relationship between an environment object and another where the described object is a more general description than the more specific related environment. Has a reciprocal relationship of specializes."@en ;
+  skos:definition "Une Relation entre un objet d'environnement et un autre objet où l'objet décrit a une description plus générale que l'environnement lié plus spécifique. A une relation réciproque avec specializes."@fr ;
+  skos:definition "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object een algemenere beschrijving is dan de meer specifieke verwante omgeving. Heeft een wederkerige relatie met specializes."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:hsp a owl:ObjectProperty ;
@@ -297,9 +297,9 @@ rel:hsp a owl:ObjectProperty ;
   rdfs:label "has Part"@en ;
   rdfs:label "a partie"@fr ;
   rdfs:label "heeft onderdeel"@nl ;
-  rdfs:comment "The object contains the related object when these are the same object category. For instance, a larger Intellectual Entity has another Intellectual Entity as a part, or a compound file (e.g. archive.tar) contains another file (e.g. text.xml). Has the reciprocal relationship of isPartOf."@en ;
-  rdfs:comment "L'objet contient l'objet lié lorsqu'il s'agit de la même catégorie d'objet. Par exemple, une entité intellectuelle plus grande a une autre entité intellectuelle comme partie, ou un fichier composé (par exemple archive.tar) contient un autre fichier (par exemple text.xml). A une relation réciproque avec isPartOf."@fr ;
-  rdfs:comment "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl ;
+  skos:definition "The object contains the related object when these are the same object category. For instance, a larger Intellectual Entity has another Intellectual Entity as a part, or a compound file (e.g. archive.tar) contains another file (e.g. text.xml). Has the reciprocal relationship of isPartOf."@en ;
+  skos:definition "L'objet contient l'objet lié lorsqu'il s'agit de la même catégorie d'objet. Par exemple, une entité intellectuelle plus grande a une autre entité intellectuelle comme partie, ou un fichier composé (par exemple archive.tar) contient un autre fichier (par exemple text.xml). A une relation réciproque avec isPartOf."@fr ;
+  skos:definition "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:hsr a owl:ObjectProperty ;
@@ -307,9 +307,9 @@ rel:hsr a owl:ObjectProperty ;
   rdfs:label "has Root"@en ;
   rdfs:label "est à la base de"@fr ;
   rdfs:label "ligt aan de basis van"@nl ;
-  rdfs:comment "For a representation only, the related object is the file that must be processed first in order to render the representation. It implies that a compound object (i.e. one made up of multiple files) requires that one file be picked up first as its root to render it."@en ;
-  rdfs:comment "Uniquement pour une représentation (representation), l'objet lié est le fichier (file) qui doit être traité en premier afin de rendre la représentation comme il faut. Cela implique qu'un objet composé (c'est-à-dire composé de plusieurs fichiers (files)) nécessite qu'un fichier (file) soit pris en premier comme racine/base pour le rendre."@fr ;
-  rdfs:comment "Alleen voor een representatie (representation) is het gerelateerde object het bestand (file) dat als eerste moet worden verwerkt om de representatie (representation) te kunnen renderen. Dit impliceert dat een samengesteld object (d.w.z. een object dat uit meerdere bestanden (file) bestaat) vereist dat één bestand (file) als eerste als root/basis wordt verwerkt om het te renderen."@nl ;
+  skos:definition "For a representation only, the related object is the file that must be processed first in order to render the representation. It implies that a compound object (i.e. one made up of multiple files) requires that one file be picked up first as its root to render it."@en ;
+  skos:definition "Uniquement pour une représentation (representation), l'objet lié est le fichier (file) qui doit être traité en premier afin de rendre la représentation comme il faut. Cela implique qu'un objet composé (c'est-à-dire composé de plusieurs fichiers (files)) nécessite qu'un fichier (file) soit pris en premier comme racine/base pour le rendre."@fr ;
+  skos:definition "Alleen voor een representatie (representation) is het gerelateerde object het bestand (file) dat als eerste moet worden verwerkt om de representatie (representation) te kunnen renderen. Dit impliceert dat een samengesteld object (d.w.z. een object dat uit meerdere bestanden (file) bestaat) vereist dat één bestand (file) als eerste als root/basis wordt verwerkt om het te renderen."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:hss a owl:ObjectProperty ;
@@ -317,9 +317,9 @@ rel:hss a owl:ObjectProperty ;
   rdfs:label "has Source"@en ;
   rdfs:label "a une source"@fr ;
   rdfs:label "heeft een bron"@nl ;
-  rdfs:comment "A relationship in which the object is derived from the related object as a result of a transformation. For instance, an HTML file that is the product of a migration from a file encoded in the WordStar format has that Wordstar file as its source. Also applies to the relationship between the original and a disk image. Has a reciprocal relationship of isSourceOf."@en ;
-  rdfs:comment "Une relation dans laquelle l'objet est dérivé de l'objet lié à la suite d'une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar a ce fichier Wordstar comme source. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec isSourceOf."@fr ;
-  rdfs:comment "Een relatie waarbij het object is afgeleid van het verwante object als resultaat van een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat gecodeerd is in het WordStar-formaat, heeft dat Wordstar-bestand als zijn bron. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met isSourceOf."@nl ;
+  skos:definition "A relationship in which the object is derived from the related object as a result of a transformation. For instance, an HTML file that is the product of a migration from a file encoded in the WordStar format has that Wordstar file as its source. Also applies to the relationship between the original and a disk image. Has a reciprocal relationship of isSourceOf."@en ;
+  skos:definition "Une relation dans laquelle l'objet est dérivé de l'objet lié à la suite d'une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar a ce fichier Wordstar comme source. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec isSourceOf."@fr ;
+  skos:definition "Een relatie waarbij het object is afgeleid van het verwante object als resultaat van een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat gecodeerd is in het WordStar-formaat, heeft dat Wordstar-bestand als zijn bron. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met isSourceOf."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:idc a owl:ObjectProperty ;
@@ -327,9 +327,9 @@ rel:idc a owl:ObjectProperty ;
   rdfs:label "is Documented In"@en ;
   rdfs:label "est documenté dans"@fr ;
   rdfs:label "is gedocumenteerd in"@nl ;
-  rdfs:comment "A relationship between an environment object and the information that documents it. Has a reciprocal relationship with documents."@en ;
-  rdfs:comment "Une relation entre un objet d'environnement et les informations qui le documentent. A une relation réciproque avec documents."@fr ;
-  rdfs:comment "Een relatie tussen een omgevingsobject en de informatie die het documenteert. Heeft een wederkerige relatie met documents."@nl ;
+  skos:definition "A relationship between an environment object and the information that documents it. Has a reciprocal relationship with documents."@en ;
+  skos:definition "Une relation entre un objet d'environnement et les informations qui le documentent. A une relation réciproque avec documents."@fr ;
+  skos:definition "Een relatie tussen een omgevingsobject en de informatie die het documenteert. Heeft een wederkerige relatie met documents."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:inc a owl:ObjectProperty ;
@@ -337,9 +337,9 @@ rel:inc a owl:ObjectProperty ;
   rdfs:label "includes"@en ;
   rdfs:label "inclut"@fr ;
   rdfs:label "bevat"@nl ;
-  rdfs:comment "A relationship in which the described object includes the referenced object, when objects have different object categories. For instance, a representation includes files. Has a reciprocal relationship of isIncludedIn."@en ;
-  rdfs:comment "Une relation dans laquelle l'objet décrit inclut l'objet référencé, lorsque les objets ont des catégories d'objets différentes. Par exemple, une représentation (representation) inclut des fichiers (files). A une relation réciproque avec isIncludedIn."@fr ;
-  rdfs:comment "Een relatie waarbij het beschreven object het object bevat waarnaar wordt verwezen, wanneer objecten verschillende objectcategorieën hebben. Bijvoorbeeld, een representatie (representation) bevat bestanden (files). Heeft een wederkerige relatie met isIncludedIn."@nl ;
+  skos:definition "A relationship in which the described object includes the referenced object, when objects have different object categories. For instance, a representation includes files. Has a reciprocal relationship of isIncludedIn."@en ;
+  skos:definition "Une relation dans laquelle l'objet décrit inclut l'objet référencé, lorsque les objets ont des catégories d'objets différentes. Par exemple, une représentation (representation) inclut des fichiers (files). A une relation réciproque avec isIncludedIn."@fr ;
+  skos:definition "Een relatie waarbij het beschreven object het object bevat waarnaar wordt verwezen, wanneer objecten verschillende objectcategorieën hebben. Bijvoorbeeld, een representatie (representation) bevat bestanden (files). Heeft een wederkerige relatie met isIncludedIn."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:irq a owl:ObjectProperty ;
@@ -347,9 +347,9 @@ rel:irq a owl:ObjectProperty ;
   rdfs:label "is Required by"@en ;
   rdfs:label "est requis par"@fr ;
   rdfs:label "wordt vereist door"@nl ;
-  rdfs:comment "The relationship of an environment object to a file or representation, where the environment is required by the other objects to render or run. Has a reciprocal relationship of requires."@en ;
-  rdfs:comment "La relation entre un objet d'environnement et un fichier (file) ou une représentation (representation), lorsque l'environnement est requis par les autres objets pour le rendu ou l'exécution. A une relation réciproque avec requires."@fr ;
-  rdfs:comment "De relatie van een omgevingsobject tot een bestand (file) of representatie (representation), waarbij de omgeving door de andere objecten vereist wordt om te renderen of uit te voeren. Heeft een wederkerige relatie met requires."@nl ;
+  skos:definition "The relationship of an environment object to a file or representation, where the environment is required by the other objects to render or run. Has a reciprocal relationship of requires."@en ;
+  skos:definition "La relation entre un objet d'environnement et un fichier (file) ou une représentation (representation), lorsque l'environnement est requis par les autres objets pour le rendu ou l'exécution. A une relation réciproque avec requires."@fr ;
+  skos:definition "De relatie van een omgevingsobject tot een bestand (file) of representatie (representation), waarbij de omgeving door de andere objecten vereist wordt om te renderen of uit te voeren. Heeft een wederkerige relatie met requires."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:isi a owl:ObjectProperty ;
@@ -357,9 +357,9 @@ rel:isi a owl:ObjectProperty ;
   rdfs:label "is Included in"@en ;
   rdfs:label "est inclus dans"@fr ;
   rdfs:label "is inbegrepen in"@nl ;
-  rdfs:comment "A relationship in which the described object is included in the referenced object, when the objects have different object categories, for instance, a bitstream to a file, a file to a representation. Has a reciprocal relationship of includes."@en ;
-  rdfs:comment "Une relation dans laquelle l'objet décrit est inclus dans l'objet référencé, lorsque les objets ont des catégories d'objets différentes, par exemple, un flux binaire (bitstream) dans un fichier (file), un fichier (file) dans une représentation (representation). A une relation réciproque avec includes."@fr ;
-  rdfs:comment "Een relatie waarbij het beschreven object is inbegrepen in het object waarnaar wordt verwezen, wanneer de objecten verschillende objectcategorieën hebben, bijvoorbeeld een bitstream in een bestand (file), een bestand (file) in een representatie (representation). Heeft een wederkerige relatie met includes."@nl ;
+  skos:definition "A relationship in which the described object is included in the referenced object, when the objects have different object categories, for instance, a bitstream to a file, a file to a representation. Has a reciprocal relationship of includes."@en ;
+  skos:definition "Une relation dans laquelle l'objet décrit est inclus dans l'objet référencé, lorsque les objets ont des catégories d'objets différentes, par exemple, un flux binaire (bitstream) dans un fichier (file), un fichier (file) dans une représentation (representation). A une relation réciproque avec includes."@fr ;
+  skos:definition "Een relatie waarbij het beschreven object is inbegrepen in het object waarnaar wordt verwezen, wanneer de objecten verschillende objectcategorieën hebben, bijvoorbeeld een bitstream in een bestand (file), een bestand (file) in een representatie (representation). Heeft een wederkerige relatie met includes."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 # vraag: verschil met has root? Lijkt gelijkaardig
@@ -368,9 +368,9 @@ rel:iso a owl:ObjectProperty ;
   rdfs:label "is Source of"@en ;
   rdfs:label "est à la source de"@fr ;
   rdfs:label "ligt aan de bron van"@nl ;
-  rdfs:comment "The related object is a version of the source object created by a transformation. For example, an HTML file that is the product of a migration from a file encoded in the WordStar format, the Wordstar file has a “isSourceOf” relationship to the HTML file. Also applies to the relationship between the original and a disk image. Has a reciprocal relationship of hasSource."@en ;
-  rdfs:comment "L'objet lié est une version de l'objet source créée par une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar, le fichier Wordstar a une relation 'isSourceOf' avec le fichier HTML. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec hasSource."@fr ;
-  rdfs:comment "Het gerelateerde object is een versie van het bronobject gemaakt door een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat is gecodeerd in het WordStar-formaat, het Wordstar-bestand heeft een 'isSourceOf'-relatie met het HTML-bestand. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met hasSource."@nl ;
+  skos:definition "The related object is a version of the source object created by a transformation. For example, an HTML file that is the product of a migration from a file encoded in the WordStar format, the Wordstar file has a “isSourceOf” relationship to the HTML file. Also applies to the relationship between the original and a disk image. Has a reciprocal relationship of hasSource."@en ;
+  skos:definition "L'objet lié est une version de l'objet source créée par une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar, le fichier Wordstar a une relation 'isSourceOf' avec le fichier HTML. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec hasSource."@fr ;
+  skos:definition "Het gerelateerde object is een versie van het bronobject gemaakt door een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat is gecodeerd in het WordStar-formaat, het Wordstar-bestand heeft een 'isSourceOf'-relatie met het HTML-bestand. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met hasSource."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:isp a owl:ObjectProperty ;
@@ -378,9 +378,9 @@ rel:isp a owl:ObjectProperty ;
   rdfs:label "is Part Of"@en ;
   rdfs:label "fait partie de"@fr ;
   rdfs:label "maakt onderdeel uit van"@nl ;
-  rdfs:comment "A relationship in which the object is contained in the related object when these are the same object category. For instance a Web page intellectual entity is part of a larger Web site intellectual entity. Has a reciprocal relationship of hasPart."@en ;
-  rdfs:comment "Une relation dans laquelle l'objet est contenu dans l'objet lié lorsque ceux-ci sont de la même catégorie d'objet. Par exemple, une entité intellectuelle de site Web fait partie d'une entité intellectuelle de site Web plus grande. A une relation réciproque avec hasPart."@fr ;
-  rdfs:comment "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl ;
+  skos:definition "A relationship in which the object is contained in the related object when these are the same object category. For instance a Web page intellectual entity is part of a larger Web site intellectual entity. Has a reciprocal relationship of hasPart."@en ;
+  skos:definition "Une relation dans laquelle l'objet est contenu dans l'objet lié lorsque ceux-ci sont de la même catégorie d'objet. Par exemple, une entité intellectuelle de site Web fait partie d'une entité intellectuelle de site Web plus grande. A une relation réciproque avec hasPart."@fr ;
+  skos:definition "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:isr a owl:ObjectProperty ;
@@ -388,9 +388,9 @@ rel:isr a owl:ObjectProperty ;
   rdfs:label "is Represented by"@en ;
   rdfs:label "est représenté par"@fr ;
   rdfs:label "wordt gerepresenteerd door"@nl ;
-  rdfs:comment "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en ;
-  rdfs:comment "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr ;
-  rdfs:comment "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl ;
+  skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en ;
+  skos:definition "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr ;
+  skos:definition "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:iss a owl:ObjectProperty ;
@@ -398,9 +398,9 @@ rel:iss a owl:ObjectProperty ;
   rdfs:label "is Superseded by"@en ;
   rdfs:label "a été remplacé par"@fr ;
   rdfs:label "werd vervangen door"@nl ;
-  rdfs:comment "A relationship between an environment object and another where the described object has been replaced by another. This allows for an audit trail of environments to be maintained. Has a reciprocal relationship of supersedes."@en ;
-  rdfs:comment "Une relation entre un objet d'environnement et un autre objet où l'objet décrit a été remplacé par un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec supersedes."@fr ;
-  rdfs:comment "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object is vervangen door een ander. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met supersedes."@nl ;
+  skos:definition "A relationship between an environment object and another where the described object has been replaced by another. This allows for an audit trail of environments to be maintained. Has a reciprocal relationship of supersedes."@en ;
+  skos:definition "Une relation entre un objet d'environnement et un autre objet où l'objet décrit a été remplacé par un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec supersedes."@fr ;
+  skos:definition "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object is vervangen door een ander. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met supersedes."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:rep a owl:ObjectProperty ;
@@ -408,9 +408,9 @@ rel:rep a owl:ObjectProperty ;
   rdfs:label "represents"@en ;
   rdfs:label "représente"@fr ;
   rdfs:label "representeert"@nl ;
-  rdfs:comment "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en ;
-  rdfs:comment "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr ;
-  rdfs:comment "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl ;
+  skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en ;
+  skos:definition "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr ;
+  skos:definition "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:req a owl:ObjectProperty ;
@@ -418,9 +418,9 @@ rel:req a owl:ObjectProperty ;
   rdfs:label "requires"@en ;
   rdfs:label "nécessite"@fr ;
   rdfs:label "vereist"@nl ;
-  rdfs:comment "The relationship of an object to another object, where it requires a particular environment or non-environment object to be rendered or to be run. For instance, a file of format Word 97, requires MS Word 1997 to render it. Has a reciprocal relationship of isRequiredBy."@en ;
-  rdfs:comment "La relation d'un objet avec un autre objet, lorsqu'il nécessite un environnement particulier ou un objet non lié à l'environnement pour être rendu ou exécuté comme il faut. Par exemple, un fichier au format Word 97 nécessite MS Word 1997 pour être rendu. A une relation réciproque avec isRequiredBy."@fr ;
-  rdfs:comment "De relatie van een object tot een ander object, waarbij het een bepaald omgevings- of niet-omgevingsobject nodig heeft om te worden weergegeven of om te worden uitgevoerd. Bijvoorbeeld, een bestand met de opmaak Word 97 vereist MS Word 1997 om het weer te geven. Heeft een wederkerige relatie met isRequiredBy."@nl ;
+  skos:definition "The relationship of an object to another object, where it requires a particular environment or non-environment object to be rendered or to be run. For instance, a file of format Word 97, requires MS Word 1997 to render it. Has a reciprocal relationship of isRequiredBy."@en ;
+  skos:definition "La relation d'un objet avec un autre objet, lorsqu'il nécessite un environnement particulier ou un objet non lié à l'environnement pour être rendu ou exécuté comme il faut. Par exemple, un fichier au format Word 97 nécessite MS Word 1997 pour être rendu. A une relation réciproque avec isRequiredBy."@fr ;
+  skos:definition "De relatie van een object tot een ander object, waarbij het een bepaald omgevings- of niet-omgevingsobject nodig heeft om te worden weergegeven of om te worden uitgevoerd. Bijvoorbeeld, een bestand met de opmaak Word 97 vereist MS Word 1997 om het weer te geven. Heeft een wederkerige relatie met isRequiredBy."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:sup a owl:ObjectProperty ;
@@ -428,9 +428,9 @@ rel:sup a owl:ObjectProperty ;
   rdfs:label "supersedes"@en ;
   rdfs:label "remplace"@fr ;
   rdfs:label "vervangt"@nl ;
-  rdfs:comment "A relationship between an environment object and another where the described object replaces another. This allows for an audit trail of environments to be maintained. Has a reciprocal relationship of isSupersededBy."@en ;
-  rdfs:comment "Une relation entre un objet d'environnement et un autre objet où l'objet décrit en remplace un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec isSupersededBy."@fr ;
-  rdfs:comment "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object een ander object vervangt. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met isSupersededBy."@nl ;
+  skos:definition "A relationship between an environment object and another where the described object replaces another. This allows for an audit trail of environments to be maintained. Has a reciprocal relationship of isSupersededBy."@en ;
+  skos:definition "Une relation entre un objet d'environnement et un autre objet où l'objet décrit en remplace un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec isSupersededBy."@fr ;
+  skos:definition "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object een ander object vervangt. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met isSupersededBy."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 rel:spe a owl:ObjectProperty ;
@@ -438,9 +438,9 @@ rel:spe a owl:ObjectProperty ;
   rdfs:label "specializes"@en ;
   rdfs:label "spécialise"@fr ;
   rdfs:label "specialiseert"@nl ;
-  rdfs:comment "A relationship between an environment object and another where the described object provides specific characteristics, while the related environment is more generic. Has a reciprocal relationship of generalizes."@en ;
-  rdfs:comment "Une relation entre un objet d'environnement et un autre objet où l'objet décrit fournit des caractéristiques spécifiques, tandis que l'environnement lié est plus générique. A une relation réciproque avec generalizes."@fr ;
-  rdfs:comment "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object specifieke kenmerken vertoont, terwijl de verwante omgeving meer generiek is. Heeft een wederkerige relatie met generalizes."@nl ;
+  skos:definition "A relationship between an environment object and another where the described object provides specific characteristics, while the related environment is more generic. Has a reciprocal relationship of generalizes."@en ;
+  skos:definition "Une relation entre un objet d'environnement et un autre objet où l'objet décrit fournit des caractéristiques spécifiques, tandis que l'environnement lié est plus générique. A une relation réciproque avec generalizes."@fr ;
+  skos:definition "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object specifieke kenmerken vertoont, terwijl de verwante omgeving meer generiek is. Heeft een wederkerige relatie met generalizes."@nl ;
   rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
 
 # seq properties
@@ -450,9 +450,9 @@ seq:directlyFollows  a owl:ObjectProperty ;
   rdfs:label "directly follows"@en ;
   rdfs:label "suit directement"@fr ;
   rdfs:label "volgt direct op"@nl ;
-  rdfs:comment "The intransitive follows relation. For example, Thursday directly follows Wednesday. Directness of precedence depends on the designer conceptualization."@en ;
-  rdfs:comment "La relation intransitive de 'suivre directement'. Par exemple, jeudi suit directement mercredi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr ;
-  rdfs:comment "De intransitieve 'volgt-direct-op' relatie. Bv. donderdag volgt direct op woensdag. De mate van 'directheid' bij het 'volgen-op' hangt af van het ontwerp van de bedenker."@nl ;
+  skos:definition "The intransitive follows relation. For example, Thursday directly follows Wednesday. Directness of precedence depends on the designer conceptualization."@en ;
+  skos:definition "La relation intransitive de 'suivre directement'. Par exemple, jeudi suit directement mercredi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr ;
+  skos:definition "De intransitieve 'volgt-direct-op' relatie. Bv. donderdag volgt direct op woensdag. De mate van 'directheid' bij het 'volgen-op' hangt af van het ontwerp van de bedenker."@nl ;
   rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
   owl:inverseOf seq:directlyPrecedes ;
   rdfs:subPropertyOf seq:follows ;
@@ -463,9 +463,9 @@ seq:directlyPrecedes  a owl:ObjectProperty ;
   rdfs:label "directly precedes"@en ;
   rdfs:label "précède directement"@fr ;
   rdfs:label "gaat direct vooraf aan"@nl ;
-  rdfs:comment "The intransitive precedes relation. For example, Monday directly precedes Tuesday. Directness of precedence depends on the designer conceptualization."@en ;
-  rdfs:comment "La relation intransitive de 'préceder'. Par exemple, lundi précède directement mardi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr ;
-  rdfs:comment "De intransitieve 'gaat-vooraf-aan' relatie. Bv. maandag gaat direct vooraf aan dinsdag. De mate van 'direct-vooraf-gaan-aan' hangt af van het ontwerp van de bedenker."@nl ;
+  skos:definition "The intransitive precedes relation. For example, Monday directly precedes Tuesday. Directness of precedence depends on the designer conceptualization."@en ;
+  skos:definition "La relation intransitive de 'préceder'. Par exemple, lundi précède directement mardi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr ;
+  skos:definition "De intransitieve 'gaat-vooraf-aan' relatie. Bv. maandag gaat direct vooraf aan dinsdag. De mate van 'direct-vooraf-gaan-aan' hangt af van het ontwerp van de bedenker."@nl ;
   rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
   rdfs:subPropertyOf seq:precedes ;
   rdfs:range owl:Thing ;
@@ -475,9 +475,9 @@ seq:follows  a owl:ObjectProperty, owl:TransitiveProperty ;
   rdfs:label "follows"@en ;
   rdfs:label "suit"@fr ;
   rdfs:label "volgt op"@nl ;
-  rdfs:comment """A relation between entities, expressing a 'sequence' schema. E.g. 'year 2000 follows 1999', 'preparing coffee' follows 'deciding what coffee to use', 'II World War follows I World War', etc. It can be used between tasks, processes or time intervals, and subproperties would fit best in order to distinguish the different uses."""@en ;
-  rdfs:comment """Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 2000 suit l'année 1999', 'préparer du café' suit 'décider quel café à utiliser', 'la Seconde Guerre mondiale suit la Première Guerre mondiale', etc. Il peut être utilisé avec des tâches, des processus ou des intervalles de temps, et des sous-propriétés seraient les meilleures adaptées pour distinguer les différentes utilisations."""@fr ;
-  rdfs:comment """Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 2000 volgt op het jaar 1999', 'koffie klaarmaken' volgt op 'beslissen welke koffie te gebruiken', 'WO II volgt op WO I', etc. Het kan gebruikt worden bij taken, processen, of tijdsintervallen, en subeigenschappen (subproperties) zouden het best passen om de verschillende gebruiken te onderscheiden."""@nl ;
+  skos:definition """A relation between entities, expressing a 'sequence' schema. E.g. 'year 2000 follows 1999', 'preparing coffee' follows 'deciding what coffee to use', 'II World War follows I World War', etc. It can be used between tasks, processes or time intervals, and subproperties would fit best in order to distinguish the different uses."""@en ;
+  skos:definition """Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 2000 suit l'année 1999', 'préparer du café' suit 'décider quel café à utiliser', 'la Seconde Guerre mondiale suit la Première Guerre mondiale', etc. Il peut être utilisé avec des tâches, des processus ou des intervalles de temps, et des sous-propriétés seraient les meilleures adaptées pour distinguer les différentes utilisations."""@fr ;
+  skos:definition """Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 2000 volgt op het jaar 1999', 'koffie klaarmaken' volgt op 'beslissen welke koffie te gebruiken', 'WO II volgt op WO I', etc. Het kan gebruikt worden bij taken, processen, of tijdsintervallen, en subeigenschappen (subproperties) zouden het best passen om de verschillende gebruiken te onderscheiden."""@nl ;
   rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
   rdfs:domain owl:Thing ;
   rdfs:range owl:Thing .
@@ -486,9 +486,9 @@ seq:precedes  a owl:ObjectProperty, owl:TransitiveProperty ;
   rdfs:label "precedes"@en ;
   rdfs:label "précède"@fr ;
   rdfs:label "gaat vooraf aan"@nl ;
-  rdfs:comment """A relation between entities, expressing a 'sequence' schema. E.g. 'year 1999 precedes 2000', 'deciding what coffee to use' precedes 'preparing coffee', 'World War II follows World War I', 'in the Milan to Rome autoroute, Bologna precedes Florence', etc. It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc. Subproperties can be defined in order to distinguish the different uses."""@en ;
-  rdfs:comment """Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 1999 précède l'année 2000', 'décider quel café à utiliser' précède 'préparer du café', 'sur l'autoroute de Milan à Rome, Bologne précède Florence', etc. Il peut être utilisé avec des tâches, des processus, des intervalles de temps, des objets dans l'espace, des situations, etc. Des sous-propriétés (subproperties) peuvent être définies pour distinguer les différentes utilisations."""@fr ;
-  rdfs:comment """Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 1999 gaat vooraf aan het jaar 2000', 'beslissen welke koffie te gebruiken' gaat vooraf aan 'koffie klaarmaken', 'op de autoweg van Milaan naar Rome, gaat Bologna vooraf aan Florence', etc. Het kan gebruikt worden bij taken, processen, tijdsintervallen, objecten in de ruimte, situaties, etc. Subeigenschappen (subproperties) kunnen gedefinieerd worden om de verschillende gebruiken te onderscheiden."""@nl ;
+  skos:definition """A relation between entities, expressing a 'sequence' schema. E.g. 'year 1999 precedes 2000', 'deciding what coffee to use' precedes 'preparing coffee', 'World War II follows World War I', 'in the Milan to Rome autoroute, Bologna precedes Florence', etc. It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc. Subproperties can be defined in order to distinguish the different uses."""@en ;
+  skos:definition """Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 1999 précède l'année 2000', 'décider quel café à utiliser' précède 'préparer du café', 'sur l'autoroute de Milan à Rome, Bologne précède Florence', etc. Il peut être utilisé avec des tâches, des processus, des intervalles de temps, des objets dans l'espace, des situations, etc. Des sous-propriétés (subproperties) peuvent être définies pour distinguer les différentes utilisations."""@fr ;
+  skos:definition """Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 1999 gaat vooraf aan het jaar 2000', 'beslissen welke koffie te gebruiken' gaat vooraf aan 'koffie klaarmaken', 'op de autoweg van Milaan naar Rome, gaat Bologna vooraf aan Florence', etc. Het kan gebruikt worden bij taken, processen, tijdsintervallen, objecten in de ruimte, situaties, etc. Subeigenschappen (subproperties) kunnen gedefinieerd worden om de verschillende gebruiken te onderscheiden."""@nl ;
   rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
   owl:inverseOf seq:follows ;
   rdfs:domain owl:Thing ;
@@ -496,26 +496,26 @@ seq:precedes  a owl:ObjectProperty, owl:TransitiveProperty ;
 
 # edm properties
 
-# vraag: edm gebruikt skos:definition voor definities, maar wij baseren ons op rdfs:comment voor bv. de doc
-# is het ok om hun definitie naar rdfs:comment door te kopiëren?
+# vraag: edm gebruikt skos:definition voor definities, maar wij baseren ons op skos:definition voor bv. de doc
+# is het ok om hun definitie naar skos:definition door te kopiëren?
 # vraag: zouden we dit generiek kunnen gebruiken ook voor transcripten bv. van audio?
 edm:isNextInSequence  a owl:ObjectProperty ;
   rdfs:label "Is Next In Sequence Of"@en ;
   rdfs:label "Est le prochain dans la séquence de"@fr ;
   rdfs:label "Is de volgende in de reeks van"@nl ;
   skos:definition "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en ;
-  rdfs:comment "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en ;
-  rdfs:comment "edm:isNextInSequence met en relation deux ressources S et R qui sont des parties ordonnées de la même ressource A, et telles que S vient immédiatement après R dans l'ordre créé par leur appartenance à A."@fr ;
-  rdfs:comment "edm:isNextInSequence relateert twee resources S en R die geordende onderdelen zijn van dezelfde resource A, en wel zodanig dat S onmiddellijk na R komt in de volgorde die ontstaat doordat zij onderdelen zijn van A."@nl ;
+  skos:definition "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en ;
+  skos:definition "edm:isNextInSequence met en relation deux ressources S et R qui sont des parties ordonnées de la même ressource A, et telles que S vient immédiatement après R dans l'ordre créé par leur appartenance à A."@fr ;
+  skos:definition "edm:isNextInSequence relateert twee resources S en R die geordende onderdelen zijn van dezelfde resource A, en wel zodanig dat S onmiddellijk na R komt in de volgorde die ontstaat doordat zij onderdelen zijn van A."@nl ;
   rdfs:subPropertyOf dc11:relation ;
   rdfs:isDefinedBy <http://www.europeana.eu/schemas/edm/> .
 
 # ebucore properties
 
 ebucore:hasCaptioning  a rdf:Property ;
-  rdfs:comment """To signal the presence of Captioning."""@en ;
-  rdfs:comment """Pour signaler la présence du sous-titrage."""@fr ;
-  rdfs:comment """Om de aanwezigheid van ondertiteling aan te duiden."""@nl ;
+  skos:definition """To signal the presence of Captioning."""@en ;
+  skos:definition """Pour signaler la présence du sous-titrage."""@fr ;
+  skos:definition """Om de aanwezigheid van ondertiteling aan te duiden."""@nl ;
   rdfs:label "Captioning"@en ;
   rdfs:label "Sous-titrage"@fr ;
   rdfs:label "Ondertiteling"@nl ;
@@ -525,9 +525,9 @@ ebucore:hasCaptioning  a rdf:Property ;
 
 ebucore:hasMediaFragment  a rdf:Property ;
   rdfs:domain ebucore:MediaResource ;
-  rdfs:comment """To define relation to MediaFragments within a MediaResource."""@en ;
-  rdfs:comment """Pour définir une relation entre des MediaFragments dans une MediaResource."""@fr ;
-  rdfs:comment """Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."""@nl ;
+  skos:definition """To define relation to MediaFragments within a MediaResource."""@en ;
+  skos:definition """Pour définir une relation entre des MediaFragments dans une MediaResource."""@fr ;
+  skos:definition """Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."""@nl ;
   rdfs:label "Fragment"@en ;
   rdfs:label "a un fragment (de média)"@fr ;
   rdfs:label "heeft (media)fragment"@nl ;
@@ -540,17 +540,17 @@ ebucore:hasObjectType  a rdf:Property ;
   rdfs:label "Object/asset type"@en ;
   rdfs:label "Type d'object/actif"@fr ;
   rdfs:label "Object-/activatype"@nl ;
-  rdfs:comment """To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."""@en ;
-  rdfs:comment """Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."""@fr ;
-  rdfs:comment """Om een ObjectType te definiëren voor een BusinessObject (bv. book, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."""@nl ;
+  skos:definition """To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."""@en ;
+  skos:definition """Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."""@fr ;
+  skos:definition """Om een ObjectType te definiëren voor een BusinessObject (bv. book, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."""@nl ;
   rdfs:range xsd:anyURI, ebucore:ObjectType, xsd:string ;
   rdfs:domain ebucore:EditorialObject .
 
 ebucore:isMediaFragmentOf  a rdf:Property ;
   rdfs:range ebucore:MediaResource ;
-  rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to."@en ;
-  rdfs:comment "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr ;
-  rdfs:comment "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
+  skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en ;
+  skos:definition "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr ;
+  skos:definition "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
   rdfs:label "Media fragment source"@en ;
   rdfs:label "Source du fragment de média"@fr ;
   rdfs:label "Bron van het mediafragment"@nl ;
@@ -561,9 +561,9 @@ ebucore:hasMimeType
   a rdf:Property ;
   rdfs:subPropertyOf ebucore:hasFormat ;
   rdfs:range ebucore:MimeType, xsd:string ;
-  rdfs:comment "To specify the Mime type of a Resource."@en ;
-  rdfs:comment "Pour spécifier le type MIME d'une ressource."@fr ;
-  rdfs:comment "Om het MIME type van een resource te specificeren."@nl ;
+  skos:definition "To specify the Mime type of a Resource."@en ;
+  skos:definition "Pour spécifier le type MIME d'une ressource."@fr ;
+  skos:definition "Om het MIME type van een resource te specificeren."@nl ;
   rdfs:domain ebucore:MediaResource ;
   rdfs:label "Mime type"@en ;
   rdfs:label "Mime type"@nl ;
