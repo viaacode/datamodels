@@ -23,6 +23,6 @@
     org:role meemooth:AccountManager;
     org:postIn <organizations/meemoo>.
 
-<organizations/cp> a meemoo:ContentPartner;
+<organizations/cp> a haOrg:ContentPartner;
     haOrg:hasAccountManager <people/johndoe> .
 
