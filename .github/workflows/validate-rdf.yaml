@@ -4,7 +4,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      files: ${{ steps.ttl.outputs.paths }}
+      matrix: ${{ steps.ttl.outputs.paths }}
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
@@ -19,10 +19,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ setup ]
     strategy:
-      files:
-        value: ${{fromJson(needs.setup.outputs.files)}}
+      matrix:
+        value: ${{fromJson(needs.setup.outputs.matrix)}}
     steps:
       - uses: vemonet/jena-riot-action@v3.14
         with:
           input: |
-            "${{ files.value }}"
+            "${{ matrix.value }}"
