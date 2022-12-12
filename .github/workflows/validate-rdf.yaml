@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: vemonet/jena-riot-action@v3.14
         with:
-          input: description/description.rdfs.ttl
+          input: /description/description.rdfs.ttl
