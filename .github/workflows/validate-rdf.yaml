@@ -6,6 +6,18 @@ jobs:
     steps:
       - run: echo '${{ github.workspace }}'
       - uses: actions/checkout@v3
+      - name: Get all Turtle files
+        id: ttl
+        uses: Rishabh510/Path-lister-action@master
+        with:
+          path: "."
+          type: ".ttl"
+      - name: Output results
+        run: |
+          echo "Found ${{ steps.pl.outputs.path_count }} file(s) with this extension:"
+          for i in ${{ steps.pl.outputs.paths }}; do
+          echo $i
+          done
       - run: tree .
       - uses: vemonet/jena-riot-action@v3.14
         with:
