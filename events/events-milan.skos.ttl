@@ -1,3 +1,21 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix evtAgRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/> .
+@prefix evtObjRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
+@prefix evtOutcome: <http://id.loc.gov/vocabulary/preservation/eventOutcome/> .
+@prefix evtType: <http://id.loc.gov/vocabulary/preservation/eventType> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix haEvt: <http://data.hetarchief.be/ns/event/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix pav: <http://purl.org/pav/> .
+
 haEvt:Inspection  a rdfs:Class ;
   rdfs:subClassOf premis:Event ;
   rdfs:subClassOf skos:Concept ;

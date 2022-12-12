@@ -1,5 +1,7 @@
 @prefix meemoo: <http://meemoo.be/ns/> .
 @prefix meemooth: <http://meemoo.be/ns/terms/> .
+@prefix schema: <https://schema.org/> .
+
 @base <http://data.meemoo.be/> .
 
 <people/johndoe> a schema:Person;

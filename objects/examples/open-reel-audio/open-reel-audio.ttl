@@ -41,7 +41,7 @@
 
 <pid_carrier> a premis:Representation, meemoo:CarrierRepresentation;
     rdfs:label "Contents of the analog carrier; the recording"@en;
-    dcterms:format pbcoreip:OpenReelAudiotape;
+    dct:format pbcoreip:OpenReelAudiotape;
     meemoo:digitizedRepresentation <pid_digitized>.
 
 
