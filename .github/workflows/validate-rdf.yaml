@@ -6,6 +6,7 @@ jobs:
     steps:
       - run: echo '${{ github.workspace }}'
       - uses: actions/checkout@v3
+      - run: tree .
       - uses: vemonet/jena-riot-action@v3.14
         with:
           input: ${{ github.workspace }}/description/description.rdfs.ttl
