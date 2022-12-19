@@ -80,7 +80,7 @@
     rel:isr <pid_reelphoto> ; #is represented by
     rel:rep <pid>; #represents
     rdfs:label "Contents of the analog carrier; the recording"@en;
-    premis:medium pbcfilm:Film; #magnetic tape
+    premis:medium pbcfilm:Film . #magnetic tape
 
 
 ########################

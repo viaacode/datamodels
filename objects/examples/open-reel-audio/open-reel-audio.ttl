@@ -19,6 +19,7 @@
 @prefix eror: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
 @prefix fileType: <http://id.loc.gov/vocabulary/mfiletype/> .
 @prefix pbcaudio: <https://pbcore.org/pbcore-controlled-vocabularies/instantiationphysical-audio-vocabulary/#> .
+@prefix storMedium: <http://id.loc.gov/vocabulary/preservation/storageMedium/> .
 
 @base <https://data.meemoo.be/> .
 
@@ -41,7 +42,7 @@
 
 <pid_carrier> a premis:Representation, meemoo:CarrierRepresentation;
     rdfs:label "Contents of the analog carrier; the recording"@en;
-    dcterms:format pbcoreip:OpenReelAudiotape;
+    dct:format pbcaudio:OpenReelAudiotape;
     meemoo:digitizedRepresentation <pid_digitized>.
 
 
