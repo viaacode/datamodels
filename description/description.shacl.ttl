@@ -1,5 +1,4 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/>  .
@@ -180,20 +179,6 @@
         sh:message "schema:abstract is not of type string"@en ;
         sh:message "schema:abstract is niet van het type string"@nl ;
         sh:message "schema:abstract n'est pas de type string"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path ebucore:objectType ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:maxCount 1 ;
-        sh:name "object type"@en ;
-        sh:name "object type"@nl ;
-        sh:name "type d'objet"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "ebucore:objectType is not of type string"@en ;
-        sh:message "ebucore:objectType is niet van het type string"@nl ;
-        sh:message "ebucore:objectType n'est pas de type string"@fr ;
     ],
     [
         a sh:PropertyShape ;
