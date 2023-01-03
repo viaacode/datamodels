@@ -29,11 +29,13 @@
         schema:email  "milan.valadou@meemoo.be"
     ] ;
     dct:title     "SHACL Model Events"@en ;
-    dct:title     "SHACL Model Events"@nl ;
+    dct:title     "SHACL Model Evénements (Events)"@fr ;
+    dct:title     "SHACL Model Gebeurtenissen (Events)"@nl ;
     dct:created   "2022-08-02" ;
-    dct:modified  "2022-08-02" ;
+    dct:modified  "2023-01-03" ;
     dct:description """SHACL model to describe events and data provenance."""@en ;
-    dct:description """SHACL-model om gebeurtenissen en data herkomst te beschrijven."""@nl .
+    dct:description """Modèle SHACL pour décrire les événements et la provenance des données."""@fr ;
+    dct:description """SHACL-model om gebeurtenissen (Events) en dataherkomst te beschrijven."""@nl .
 
 <#activityShape> a sh:NodeShape ;
     sh:targetClass prov:Activity;
@@ -42,22 +44,34 @@
         sh:path prov:startedAtTime;
         sh:datatype xsd:dateTime ;
         sh:name "has start date"@en ;
+        sh:name "a date de début"@fr ;
         sh:name "heeft startdatum"@nl;
         sh:description """The start date of the activity."""@en ;
+        sh:description """La date de début de l'activité."""@fr ;
         sh:description """De startdatum van de activiteit."""@nl ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "prov:startedAtTime is absent, occurs more than once or its value is not of type xsd:dateTime"@en ;
+        sh:message "prov:startedAtTime est absent, apparaît plus d'une fois ou sa valeur n'est pas de type xsd:dateTime"@fr ;
+        sh:message "prov:startedAtTime ontbreekt, komt meer dan eens voor of de waarde is niet van het type xsd:dateTime"@nl ;
     ], 
     [
         a sh:PropertyShape ;
         sh:path prov:endedAtTime;
         sh:datatype xsd:dateTime ;
         sh:name "has end date"@en ;
+        sh:name "a date de fin"@fr ;
         sh:name "heeft einddatum"@nl;
         sh:description """The end date of the activity."""@en ;
+        sh:description """La date de fin de l'activité."""@fr ;
         sh:description """De einddatum van de activiteit."""@nl ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "prov:endedAtTime is absent, occurs more than once or its value is not of type xsd:dateTime"@en ;
+        sh:message "prov:endedAtTime est absent, apparaît plus d'une fois ou sa valeur n'est pas de type xsd:dateTime"@fr ;
+        sh:message "prov:endedAtTime ontbreekt, komt meer dan eens voor of de waarde is niet van het type xsd:dateTime"@nl ;
     ], 
     [
         a sh:PropertyShape ;
@@ -68,24 +82,35 @@
            [sh:class premis:SoftwareAgent] 
            [sh:class premis:HardwareAgent]
         ) ;
-        sh:class premis:Object ;
         sh:name "was attributed to"@en ;
-        sh:name "was toegekend aan"@nl;
+        sh:name "est attribué à"@fr ;
+        sh:name "is toegekend aan"@nl;
         sh:description """The agent that was attributed to the activity."""@en ;
+        sh:description """L'agent qui est attribué à l'activité."""@fr ;
         sh:description """De agent die toegekend is aan de activiteit."""@nl ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "prov:wasAttributedTo is absent, occurs more than once or its value is not an instance of classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@en ;
+        sh:message "prov:wasAttributedTo est absent, apparaît plus d'une fois ou sa valeur n'est pas une instance de classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@fr ;
+        sh:message "prov:endedAtTime ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klassen schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@nl ;
     ],
     [
         a sh:PropertyShape ;
         sh:path prov:generated;
         sh:nodeKind sh:IRI ;
         sh:name "has generated"@en ;
+        sh:name "a généré"@fr ;
         sh:name "heeft gegenereerd"@nl ;
         sh:description """The generated object."""@en ;
+        sh:description """L'objet généré."""@fr ;
         sh:description """Het gegenereerde object."""@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "prov:generated occurs more than once or its value is not an IRI"@en ;
+        sh:message "prov:generated apparaît plus d'une fois ou sa valeur n'est pas un IRI"@fr ;
+        sh:message "prov:generated komt meer dan eens voor of de waarde is geen IRI"@nl ;
     ].
 
 <#eventShape> a sh:NodeShape ;
@@ -95,66 +120,102 @@
         sh:path premis:outcome ;
         sh:class premis:OutcomeStatus ;
         sh:name "has outcome"@en ;
+        sh:name "a résultat"@fr ;
         sh:name "heeft uitkomst"@nl ;
         sh:description """The outcome status of the event."""@en ;
-        sh:description """De uitkomststatus van de gebeurtenis."""@nl ;
+        sh:description """Statut du résultat de l'événement (Event)."""@fr ;
+        sh:description """De uitkomststatus van de gebeurtenis (Event)."""@nl ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:in (evtOutcome:fai evtOutcome:suc evtOutcome:war)
+        sh:in (evtOutcome:fai evtOutcome:suc evtOutcome:war) ;
+        sh:severity sh:Violation ;
+        sh:message "premis:outcome is absent, occurs more than once or its value is not in the list (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@en ;
+        sh:message "premis:outcome est absent, apparaît plus d'une fois ou sa valeur n'est pas dans la liste (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@fr ;
+        sh:message "premis:outcome ontbreekt, komt meer dan eens voor of de waarde maakt geen deel uit van de lijst (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@nl ;
     ],[
         a sh:PropertyShape ;
         sh:datatype xsd:string ;
         sh:name "has outcome note"@en ;
-        sh:name "heeft uitkomst opmerking"@nl ;
+        sh:name "a une note de résultat"@fr ;
+        sh:name "heeft uitkomstopmerking"@nl ;
         sh:description """A note about the outcome of the event."""@en ;
-        sh:description """Een opmerking over de uitkomst van de gebeurtenis."""@nl ;
+        sh:description """Une note sur le résultat de l'événement (Event)."""@fr ;
+        sh:description """Een opmerking over de uitkomst van de gebeurtenis (Event)."""@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:path premis:outcomeNote
+        sh:path premis:outcomeNote;
+        sh:severity sh:Violation ;
+        sh:message "premis:outcomeNote occurs more than once or its value is not of type string"@en ;
+        sh:message "premis:outcomeNote apparaît plus d'une seule fois ou sa valeur n'est pas de type string"@fr ;
+        sh:message "premis:outcomeNote komt meer dan eens voor of de waarde is niet van het type string"@nl ;
     ],
     [
         a sh:PropertyShape ;
         sh:datatype xsd:string ;
         sh:name "has note"@en ;
+        sh:name "a une note"@fr ;
         sh:name "heeft opmerking"@nl ;
         sh:description """A note about the event."""@en ;
-        sh:description """Een opmerking over de gebeurtenis."""@nl ;
+        sh:description """Une note sur l'événement (Event)"""@fr ;
+        sh:description """Een opmerking over de gebeurtenis (Event)."""@nl ;
         sh:minCount 0;
         sh:maxCount 1;
-        sh:path premis:note
+        sh:path premis:note ;
+        sh:severity sh:Violation ;
+        sh:message "premis:note occurs more than once or its value is not of type string"@en ;
+        sh:message "premis:note apparaît plus d'une seule fois ou sa valeur n'est pas de type string"@fr ;
+        sh:message "premis:note komt meer dan eens voor of de waarde is niet van het type string"@nl ;
     ],
     [
         a sh:PropertyShape ;
         sh:path evtObjRole:out;
         sh:class premis:Object ;
         sh:name "result"@en ;
+        sh:name "résultat"@fr ;
         sh:name "resultaat"@nl ;
         sh:description """The object that was generated by the event."""@en ;
-        sh:description """Het object dat door de gebeurtenis gegenereerd is."""@nl ;
+        sh:description """L'objet généré par l'événement (Event)."""@fr ;
+        sh:description """Het object dat door de gebeurtenis (Event) gegenereerd is."""@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "evtObjRole:out occurs more than once or its value is no instance of class premis:Object"@en ;
+        sh:message "evtObjRole:out apparaît plus d'une seule fois ou sa valeur n'est pas une instance de la classe premis:Object"@fr ;
+        sh:message "evtObjRole:out komt meer dan eens voor of de waarde is geen instantie van de klasse premis:Object"@nl ;
     ],
     [
         a sh:PropertyShape ;
         sh:path evtObjRole:sou;
         sh:class premis:Object ;
         sh:name "has source"@en ;
+        sh:name "a une source"@fr ;
         sh:name "heeft bron"@nl ;
         sh:description """The object that was used as a source for the event."""@en ;
-        sh:description """Het object dat als bron gebruikt is voor de gebeurtenis."""@nl ;
+        sh:description """L'object utilisé comme source pour l'événement (Event)"""@fr ;
+        sh:description """Het object dat als bron gebruikt is voor de gebeurtenis (Event)."""@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "evtObjRole:sou occurs more than once or its value is no instance of class premis:Object"@en ;
+        sh:message "evtObjRole:sou apparaît plus d'une seule fois ou sa valeur n'est pas une instance de la classe premis:Object"@fr ;
+        sh:message "evtObjRole:sou komt meer dan eens voor of de waarde is geen instantie van de klasse premis:Object"@nl ;
     ],
         [
         a sh:PropertyShape ;
         sh:path evtAgRole:imp;
         sh:class org:Organization ;
         sh:name "implemented by"@en ;
+        sh:name "implementé par"@fr ;
         sh:name "geimplementeerd door"@nl ;
         sh:description """The organization that implemented the event."""@en ;
-        sh:description """De organisatie die de gebeurtenis heeft geimplementeerd."""@nl ;
+        sh:description """L'organisation qui a implementé l'événement (Event)."""@fr ;
+        sh:description """De organisatie die de gebeurtenis (Event) heeft geimplementeerd."""@nl ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "evtAgRole:imp is absent, occurs more than once or its value is no instance of class org:Organization"@en ;
+        sh:message "evtAgRole:imp est absent, apparaît plus d'une seule fois ou sa valeur n'est pas une instance de la classe org:Organization"@fr ;
+        sh:message "evtAgRole:imp ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klasse org:Organization"@nl ;
     ],
     [
         a sh:PropertyShape ;
@@ -164,11 +225,17 @@
             [sh:class premis:HardwareAgent]
         );
         sh:name "executed by"@en ;
+        sh:name "exécuté par"@fr ;
         sh:name "uitgevoerd door"@nl ;
-        sh:description """The software that executed the event."""@en ;
-        sh:description """De software of hardware die de gebeurtenis heeft uitgevoerd."""@nl ;
+        sh:description """The software or hardware that executed the event."""@en ;
+        sh:description """Le logiciel ou le matériel qui a exécuté l'événement (Event)."""@fr ;
+        sh:description """De software of hardware die de gebeurtenis (Event) heeft uitgevoerd."""@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "evtAgRole:exe occurs more than once or its value is no instance of classes premis:SoftwareAgent/premis:HardwareAgent"@en ;
+        sh:message "evtAgRole:exe apparaît plus d'une seule fois ou sa valeur n'est pas une instance de classes premis:SoftwareAgent/premis:HardwareAgent"@fr ;
+        sh:message "evtAgRole:exe komt meer dan eens voor of de waarde is geen instantie van de klassen premis:SoftwareAgent/premis:HardwareAgent"@nl ;
     ].
 
 <#objectShape> a sh:NodeShape;
@@ -178,11 +245,17 @@
         sh:path prov:wasGeneratedBy ;
         sh:class premis:Event ;
         sh:name "was generated by"@en ;
+        sh:name "généré par"@fr ;
         sh:name "is gegenereerd door"@nl ;
         sh:description "The time at which the object was completely created and is available for use."@en ;
-        sh:description "De tijd waarop het object is volledig aangemaakt en beschikbaar is voor gebruik."@nl ;
+        sh:description "Heure à laquelle l'objet a été complètement créé et est disponible pour utilisation."@fr ;
+        sh:description "De tijd waarop het object volledig is aangemaakt en beschikbaar is voor gebruik."@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "prov:wasGeneratedBy occurs more than once or its value is no instance of premis:Event"@en ;
+        sh:message "prov:wasGeneratedBy apparaît plus d'une seule fois ou sa valeur n'est pas une instance de premis:Event"@fr ;
+        sh:message "prov:wasGeneratedBy komt meer dan eens voor of de waarde is geen instantie van premis:Event"@nl ;
       ].
 
 
