@@ -15,14 +15,18 @@
 #Based on: @base <http://publications.europa.eu/ontology/skosShapes> .
 @base <https://data.hetarchief.be/ns/skos/shapes> .
 
-<>
+<> dct:author  [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
+    ] ;
   dct:description "Constraints definitions for SKOS and skosxl:"@en ;
   dct:description "Définitions de contraintes pour SKOS et skosxl:"@fr ;
   dct:description "Constraints definities voor SKOS en skosxl:"@nl ;
-  dct:title     "SHACL Model Description"@en ;
-  dct:title     "Modèle SHACL Description"@fr ;
-  dct:title     "SHACL-model Descriptie"@nl ;
-  dct:modified  "2022-11-30" ;
+  dct:title     "SHACL Model SKOS"@en ;
+  dct:title     "Modèle SHACL SKOS"@fr ;
+  dct:title     "SHACL-model SKOS"@nl ;
+  dct:created   "2022-11-30" ;
+  dct:modified  "2023-01-03" 
 .
 
 <#CollectionShape>
@@ -72,7 +76,7 @@
       sh:class skos:Concept ;
       sh:name "broad match"@en ;
       sh:name "correspondance large"@fr ;
-      sh:name "brede match"@nl ;
+      sh:name "brede overeenkomst"@nl ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -92,7 +96,7 @@
       sh:class skos:Concept ;
       sh:name "close match"@en ;
       sh:name "correspondance proche"@fr ;
-      sh:name "nabije match"@nl ;
+      sh:name "nabije overeenkomst"@nl ;
       sh:nodeKind sh:IRI ;
       sh:severity sh:Violation ;
     ] ;
@@ -155,7 +159,7 @@
     sh:class skos:Concept ;
     sh:name "narrow match"@en ;
     sh:name "correspondance étroite"@fr ;
-    sh:name "nauwe match"@nl ;
+    sh:name "nauwe overeenkomst"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
     ] ;
@@ -182,7 +186,7 @@
     sh:class skos:Concept ;
     sh:name "related match"@en ;
     sh:name "correspondance liée"@fr ;
-    sh:name "gerelateerde match"@nl ;
+    sh:name "gerelateerde overeenkomst"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
     ] ;
@@ -194,7 +198,7 @@
     sh:disjoint skos:narrowMatch ;
     sh:name "related match"@en ;
     sh:name "correspondance liée"@fr ;
-    sh:name "gerelateerde match"@nl ;
+    sh:name "gerelateerde overeenkomst"@nl ;
     sh:severity sh:Violation ;
     ] ;
   sh:property [
@@ -205,14 +209,6 @@
       sh:name "semantische relatie"@nl ;
       sh:nodeKind sh:IRI ;
       sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-    sh:path skos:scopeNote ;
-    sh:datatype rdf:langString ;
-    sh:name "scope note"@en ;
-    sh:name "note de portée"@fr ;
-    sh:name "scope note"@nl ;
-    sh:severity sh:Violation ;
     ] ;
   sh:property [
     sh:path skos:topConceptOf ;
@@ -242,7 +238,7 @@
     sh:path skos:hasTopConcept ;
     sh:class skos:Concept ;
     sh:name "has top concept"@en ;
-    sh:name "a pour concept supérieur"@fr ;
+    sh:name "a comme concept supérieur"@fr ;
     sh:name "heeft top concept"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
@@ -270,7 +266,7 @@
   sh:datatype xsd:string ;
   sh:name "note"@en ;
   sh:name "note"@fr ;
-  sh:name "note"@nl ;
+  sh:name "notitie"@nl ;
   sh:severity sh:Violation ;
 .
 <#changeNoteShape>
@@ -331,7 +327,7 @@
   sh:nodeKind sh:Literal ;
   sh:datatype xsd:string ;
   sh:name "scope note"@en ;
-  sh:name "note de champ"@fr ;
+  sh:name "note de portée"@fr ;
   sh:name "scope notitie"@nl ;
   sh:severity sh:Violation ;
 .
@@ -381,6 +377,6 @@
   sh:datatype xsd:string ;
   sh:name "notation"@en ;
   sh:name "notation"@fr ;
-  sh:name "notation"@nl ;
+  sh:name "notatie"@nl ;
   sh:severity sh:Violation ;
 .
