@@ -19,7 +19,7 @@ skos:altLabel a rdf:Property,
     rdfs:subPropertyOf rdfs:label ;
     skos:definition "An alternative lexical label for a resource."@en ;
     skos:definition "Un label lexical alternatif pour une ressource."@fr ;
-    skos:definition "Een alternatieve lexical label voor een resource."@nl ;
+    skos:definition "Een alternatief lexicaal label voor een resource."@nl ;
     skos:example "Acronyms, abbreviations, spelling variants, and irregular plural/singular forms may be included among the alternative labels for a concept. Mis-spelled terms are normally included as hidden labels (see skos:hiddenLabel)."@en ;
     skos:example "Les acronymes, abréviations, variantes orthographiques et formes plurielles/singulières irrégulières peuvent être incluses parmi les labels alternatifs pour un concept. Les termes mal orthographiés sont normalement inclus comme labels cachés (voir skos:hiddenLabel)."@fr ;
     skos:example "Acroniemen, afkortingen, spellingvarianten en onregelmatige meervoudsvormen/ enkelvoudsvormen kunnen onder de alternatieve labels voor een concept worden opgenomen. Fout gespelde termen worden normaal gesproken opgenomen als verborgen labels (zie skos:hiddenLabel)."@nl .
@@ -55,7 +55,7 @@ skos:editorialNote a rdf:Property,
     rdfs:subPropertyOf skos:note ;
     skos:definition "A note for an editor, translator or maintainer of the vocabulary."@en ;
     skos:definition "Une note pour un éditeur, traducteur ou responsable de la terminologie."@fr ;
-    skos:definition "Een notitie voor een redacteur, vertaler of beheerder van de vocabulaire."@nl .
+    skos:definition "Een notitie voor een redacteur, vertaler of beheerder van het vocabularium."@nl .
 
 skos:exactMatch a rdf:Property,
         owl:ObjectProperty,
@@ -69,9 +69,9 @@ skos:exactMatch a rdf:Property,
     rdfs:comment "skos:exactMatch is disjunct met elk van de eigenschappen skos:broadMatch en skos:relatedMatch."@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:closeMatch ;
-    skos:definition "skos:exactMatch is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. skos:exactMatch is a transitive property, and is a sub-property of skos:closeMatch."@en ;
-    skos:definition "skos:exactMatch est utilisé pour lier deux concepts, indiquant un haut degré de confiance que les concepts peuvent être utilisés de manière interchangeable dans un large éventail d'applications de recherche d'information. skos:exactMatch est une propriété transitive, et est une sous-propriété de skos:closeMatch."@fr ;
-    skos:definition "skos:exactMatch wordt gebruikt om twee concepten te verbinden, waarbij een hoge mate van vertrouwen wordt uitgedrukt dat de concepten in een brede waaier van informatiezoektoepassingen kunnen worden gebruikt. skos:exactMatch is een transitieve eigenschap en is een sub-eigenschap van skos:closeMatch."@nl .
+    skos:definition "`skos:exactMatch` is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. `skos:exactMatch` is a transitive property, and is a sub-property of `skos:closeMatch`."@en ;
+    skos:definition "`skos:exactMatch` est utilisé pour lier deux concepts, indiquant un haut degré de confiance que les concepts peuvent être utilisés de manière interchangeable dans un large éventail d'applications de recherche d'information. `skos:exactMatch` est une propriété transitive, et est une sous-propriété de `skos:closeMatch`."@fr ;
+    skos:definition "`skos:exactMatch` wordt gebruikt om twee concepten te verbinden, waarbij een hoge mate van vertrouwen wordt uitgedrukt dat de concepten uitwisselbaar in een brede waaier van informatiezoektoepassingen kunnen worden gebruikt. `skos:exactMatch` is een transitieve eigenschap en is een sub-eigenschap van `skos:closeMatch`."@nl .
 
 skos:example a rdf:Property,
         owl:AnnotationProperty ;
@@ -98,13 +98,13 @@ skos:hiddenLabel a rdf:Property,
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf rdfs:label ;
     skos:definition "A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations."@en ;
-    skos:definition "Une étiquette lexical pour une ressource qui doit être cachée lors de la génération d'affichages visuels de la ressource, mais qui doit toujours être accessible aux opérations de recherche de texte libre."@fr ;
+    skos:definition "Une étiquette lexicale pour une ressource qui doit être cachée lors de la génération d'affichages visuels de la ressource, mais qui doit toujours être accessible aux opérations de recherche de texte libre."@fr ;
     skos:definition "Een lexicaal label voor een resource dat verborgen moet worden bij het genereren van visuele weergaven van de resource, maar dat nog steeds toegankelijk moet zijn voor vrije tekst zoekoperaties."@nl .
 
 skos:historyNote a rdf:Property,
         owl:AnnotationProperty ;
     rdfs:label "history note"@en ;
-    rdfs:label "note d'historique"@fr ;
+    rdfs:label "note historique"@fr ;
     rdfs:label "historische notitie"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:note ;
@@ -123,7 +123,7 @@ skos:member a rdf:Property,
             owl:unionOf ( skos:Concept skos:Collection ) ] ;
     skos:definition "Relates a collection to one of its members."@en ;
     skos:definition "Relie une collection à l'un de ses membres."@fr ;
-    skos:definition "Verbindt een collectie met een van zijn leden."@nl .
+    skos:definition "Verbindt een collectie met één van zijn leden."@nl .
 
 skos:memberList a rdf:Property,
         owl:FunctionalProperty,
@@ -175,7 +175,7 @@ skos:prefLabel a rdf:Property,
     rdfs:subPropertyOf rdfs:label ;
     skos:definition "The preferred lexical label for a resource, in a given language."@en ;
     skos:definition "L'étiquette lexical préférée pour une ressource, dans une langue donnée."@fr ;
-    skos:definition "Het voorkeurslexicale label voor een resource, in een gegeven taal."@nl .
+    skos:definition "Het verkozen lexicale label voor een resource, in een gegeven taal."@nl .
 
 skos:relatedMatch a rdf:Property,
         owl:ObjectProperty,
@@ -218,26 +218,26 @@ skos:broadMatch a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "has broader match"@en ;
     rdfs:label "a un match plus large"@fr ;
-    rdfs:label "heeft bredere match"@nl ;
+    rdfs:label "heeft bredere overeenkomst"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:broader,
         skos:mappingRelation ;
     owl:inverseOf skos:narrowMatch ;
-    skos:definition "skos:broadMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en ;
-    skos:definition "skos:broadMatch est utilisé pour indiquer un lien de correspondance hiérarchique entre deux ressources conceptuelles dans des schémas de concepts différents."@fr ;
-    skos:definition "skos:broadMatch wordt gebruikt om een hiërarchische mapping link te geven tussen twee conceptuele resources in verschillende conceptenschema's."@nl .
+    skos:definition "`skos:broadMatch` is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en ;
+    skos:definition "`skos:broadMatch` est utilisé pour indiquer un lien de correspondance hiérarchique entre deux ressources conceptuelles dans des schémas de concepts différents."@fr ;
+    skos:definition "`skos:broadMatch` wordt gebruikt om een hiërarchische mapping link te geven tussen twee conceptuele resources in verschillende conceptenschema's."@nl .
 
 skos:closeMatch a rdf:Property,
         owl:ObjectProperty,
         owl:SymmetricProperty ;
     rdfs:label "has close match"@en ;
     rdfs:label "a un match proche"@fr ;
-    rdfs:label "heeft nauwe match"@nl ;
+    rdfs:label "heeft nauwe overeenkomst"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:mappingRelation ;
-    skos:definition "skos:closeMatch is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of \"compound errors\" when combining mappings across more than two concept schemes, skos:closeMatch is not declared to be a transitive property."@en ;
-    skos:definition "skos:closeMatch est utilisé pour lier deux concepts qui sont suffisamment similaires pour pouvoir être utilisés de manière interchangeable dans certaines applications de recherche d'information. Afin d'éviter la possibilité d'\"erreurs combinées\" lors de l'utilisation de correspondances entre plus de deux schémas de concepts, skos:closeMatch n'est pas déclaré comme une propriété transitive."@fr ;
-    skos:definition "skos:closeMatch wordt gebruikt om twee concepten te linken die voldoende gelijkwaardig zijn dat ze in sommige informatie-uitwisselingsapplicaties kunnen worden gebruikt. Om de mogelijkheid van \"samengestelde fouten\" te vermijden bij het combineren van mappings over meer dan twee conceptenschema's, is skos:closeMatch niet gedefinieerd als een transitieve eigenschap."@nl .
+    skos:definition "`skos:closeMatch` is used to link two concepts that are sufficiently similar that they can be used interchangeably in some information retrieval applications. In order to avoid the possibility of \"compound errors\" when combining mappings across more than two concept schemes, `skos:closeMatch` is not declared to be a transitive property."@en ;
+    skos:definition "`skos:closeMatch` est utilisé pour lier deux concepts qui sont suffisamment similaires pour pouvoir être utilisés de manière interchangeable dans certaines applications de recherche d'information. Afin d'éviter la possibilité d'\"erreurs combinées\" lors de l'utilisation de correspondances entre plus de deux schémas de concepts, `skos:closeMatch` n'est pas déclaré comme une propriété transitive."@fr ;
+    skos:definition "`skos:closeMatch` wordt gebruikt om twee concepten te linken die voldoende gelijkwaardig zijn dat ze in sommige informatie-uitwisselingsapplicaties uitwisselbaar kunnen worden gebruikt. Om de mogelijkheid van \"samengestelde fouten\" te vermijden bij het combineren van mappings over meer dan twee conceptenschema's, is `skos:closeMatch` niet gedefinieerd als een transitieve eigenschap."@nl .
 
 skos:hasTopConcept a rdf:Property,
         owl:ObjectProperty ;
@@ -270,14 +270,14 @@ skos:narrowMatch a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "has narrower match"@en ;
     rdfs:label "a un match plus restreint"@fr ;
-    rdfs:label "heeft nauwere match"@nl ;
+    rdfs:label "heeft nauwere overeenkomst"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:mappingRelation,
         skos:narrower ;
     owl:inverseOf skos:broadMatch ;
-    skos:definition "skos:narrowMatch is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en ;
-    skos:definition "skos:narrowMatch est utilisé pour indiquer un lien de correspondance hiérarchique entre deux ressources conceptuelles dans des schémas de concepts différents."@fr ;
-    skos:definition "skos:narrowMatch wordt gebruikt om een hiërarchische mapping link te geven tussen twee conceptuele resources in verschillende conceptenschema's."@nl .
+    skos:definition "`skos:narrowMatch` is used to state a hierarchical mapping link between two conceptual resources in different concept schemes."@en ;
+    skos:definition "`skos:narrowMatch` est utilisé pour indiquer un lien de correspondance hiérarchique entre deux ressources conceptuelles dans des schémas de concepts différents."@fr ;
+    skos:definition "`skos:narrowMatch` wordt gebruikt om een hiërarchische mapping link te geven tussen twee conceptuele resources in verschillende conceptenschema's."@nl .
 
 skos:related a rdf:Property,
         owl:ObjectProperty,
@@ -305,14 +305,14 @@ skos:topConceptOf a rdf:Property,
     rdfs:subPropertyOf skos:inScheme ;
     owl:inverseOf skos:hasTopConcept ;
     skos:definition "Relates a concept to the concept scheme that it is a top level concept of."@en ;
-    skos:definition "Relie un concept au schéma de concepts auquel il appartient."@fr ;
-    skos:definition "Verbindt een concept met het conceptenschema waarvan het een bovenste niveau concept is."@nl .
+    skos:definition "Associe un concept au schéma de concepts dont il s'agit d'un concept de niveau supérieur."@fr ;
+    skos:definition "Verbindt een concept met het conceptenschema waarvan het een bovenste niveau concept (top concept) is."@nl .
 
 skos:broader a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "has broader"@en ;
     rdfs:label "a un concept plus large"@fr ;
-    rdfs:label "heeft bredere"@nl ;
+    rdfs:label "heeft breder concept"@nl ;
     rdfs:comment "Broader concepts are typically rendered as parents in a concept hierarchy (tree)."@en ;
     rdfs:comment "Les concepts plus larges sont généralement représentés comme des parents dans une hiérarchie de concepts (arbre)."@fr ;
     rdfs:comment "Bredere concepten worden meestal weergegeven als parents in een concept hiërarchie (boom)."@nl ;
@@ -321,7 +321,7 @@ skos:broader a rdf:Property,
     owl:inverseOf skos:narrower ;
     skos:definition "Relates a concept to a concept that is more general in meaning."@en ;
     skos:definition "Relie un concept à un concept qui est plus général dans son sens."@fr ;
-    skos:definition "Verbindt een concept met een concept dat in betekenis meer algemeen is."@nl ;
+    skos:definition "Verbindt een concept met een concept dat in betekenis algemener is."@nl ;
     skos:scopeNote "By convention, skos:broader is only used to assert an immediate (i.e. direct) hierarchical link between two conceptual resources."@en ;
     skos:scopeNote "Par convention, skos:broader est utilisé uniquement pour indiquer un lien hiérarchique direct entre deux ressources conceptuelles."@fr ;
     skos:scopeNote "Volgens conventie wordt skos:broader alleen gebruikt om een directe (dus niet transitieve) hiërarchische link tussen twee conceptuele resources aan te geven."@nl .
@@ -330,14 +330,14 @@ skos:broaderTransitive a rdf:Property,
         owl:ObjectProperty,
         owl:TransitiveProperty ;
     rdfs:label "has broader transitive"@en ;
-    rdfs:label "a un concept plus large transitive"@fr ;
-    rdfs:label "heeft bredere transitive"@nl ;
+    rdfs:label "a un concept plus large (transitive)"@fr ;
+    rdfs:label "heeft breder concept (transitief)"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:semanticRelation ;
     owl:inverseOf skos:narrowerTransitive ;
-    skos:definition "skos:broaderTransitive is a transitive superproperty of skos:broader."@en ;
-    skos:definition "skos:broaderTransitive est une superpropriété transitive de skos:broader."@fr ;
-    skos:definition "skos:broaderTransitive is een transitieve superproperty van skos:broader."@nl ;
+    skos:definition "`skos:broaderTransitive` is a transitive superproperty of `skos:broader`."@en ;
+    skos:definition "`skos:broaderTransitive` est une superpropriété transitive de `skos:broader`."@fr ;
+    skos:definition "`skos:broaderTransitive` is een transitieve superproperty van `skos:broader`."@nl ;
     skos:scopeNote "By convention, skos:broaderTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application."@en ;
     skos:scopeNote "Par convention, skos:broaderTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr ;
     skos:scopeNote "Volgens conventie wordt skos:broaderTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudige queryexpansie-algoritme in een zoekapplicatie."@nl .
@@ -346,10 +346,10 @@ skos:narrower a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "has narrower"@en ;
     rdfs:label "a un concept plus restreint"@fr ;
-    rdfs:label "heeft nauwere"@nl ;
+    rdfs:label "heeft nauwer concept"@nl ;
     rdfs:comment "Narrower concepts are typically rendered as children in a concept hierarchy (tree)."@en ;
     rdfs:comment "Les concepts plus restreints sont généralement représentés comme des enfants dans une hiérarchie de concepts (arbre)."@fr ;
-    rdfs:comment "Nauwere concepten worden meestal weergegeven als kinderen in een concept hiërarchie (boom)."@nl ;
+    rdfs:comment "Nauwere concepten worden meestal weergegeven als kinderen in een concepthiërarchie (boom)."@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:narrowerTransitive ;
     owl:inverseOf skos:broader ;
@@ -364,36 +364,36 @@ skos:narrowerTransitive a rdf:Property,
         owl:ObjectProperty,
         owl:TransitiveProperty ;
     rdfs:label "has narrower transitive"@en ;
-    rdfs:label "a un concept plus restreint transitive"@fr ;
-    rdfs:label "heeft nauwere transitive"@nl ;
+    rdfs:label "a un concept plus restreint (transitive)"@fr ;
+    rdfs:label "heeft nauwer concept (transitief)"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:semanticRelation ;
     owl:inverseOf skos:broaderTransitive ;
-    skos:definition "skos:narrowerTransitive is a transitive superproperty of skos:narrower."@en ;
-    skos:definition "skos:narrowerTransitive est une superpropriété transitive de skos:narrower."@fr ;
-    skos:definition "skos:narrowerTransitive is een transitieve superproperty van skos:narrower."@nl ;
+    skos:definition "`skos:narrowerTransitive` is a transitive superproperty of `skos:narrower`."@en ;
+    skos:definition "`skos:narrowerTransitive` est une superpropriété transitive de `skos:narrower`."@fr ;
+    skos:definition "`skos:narrowerTransitive` is een transitieve superproperty van `skos:narrower`."@nl ;
     skos:scopeNote "By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application."@en ;
     skos:scopeNote "Par convention, skos:narrowerTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr ;
-    skos:scopeNote "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudige queryexpansie-algoritme in een zoekapplicatie."@nl .
+    skos:scopeNote "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudig queryexpansie-algoritme in een zoekapplicatie."@nl .
 
 skos:Collection a owl:Class, rdfs:Class ;
     rdfs:label "Collection"@en ;
     rdfs:label "Collection"@fr ;
-    rdfs:label "Collectie"@nl ;
+    rdfs:label "Verzameling"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     owl:disjointWith skos:Concept,
         skos:ConceptScheme ;
     skos:definition "A meaningful collection of concepts."@en ;
     skos:definition "Une collection de concepts ayant un sens."@fr ;
-    skos:definition "Een betekenisvolle collectie van concepten."@nl ;
+    skos:definition "Een betekenisvolle verzameling van concepten."@nl ;
     skos:scopeNote "Labelled collections can be used where you would like a set of concepts to be displayed under a 'node label' in the hierarchy."@en ;
     skos:scopeNote "Les collections étiquetées peuvent être utilisées pour afficher un ensemble de concepts sous un 'label de nœud' dans la hiérarchie."@fr ;
-    skos:scopeNote "Labelled collections kunnen gebruikt worden waar je een set concepten onder een 'node label' in de hiërarchie wilt weergeven."@nl .
+    skos:scopeNote "Gelabelde verzamelingen kunnen gebruikt worden waar je een set concepten onder een 'node label' in de hiërarchie wilt weergeven."@nl .
 
 skos:ConceptScheme a owl:Class, rdfs:Class ;
     rdfs:label "Concept Scheme"@en ;
     rdfs:label "Schéma de concepts"@fr ;
-    rdfs:label "Conceptscheme"@nl ;
+    rdfs:label "Conceptenschema"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     owl:disjointWith skos:Concept ;
     skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
@@ -401,36 +401,36 @@ skos:ConceptScheme a owl:Class, rdfs:Class ;
     skos:definition "Een set van concepten, eventueel vergezeld van verklaringen over de semantische relaties tussen die concepten."@nl ;
     skos:example "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en ;
     skos:example "Thésaurus, classifications, listes de sujets, taxonomies, 'folksonomies', et d'autres types de vocabulaires contrôlés sont tous des exemples de schémas de concepts. Les schémas de concepts sont aussi intégrés dans les glossaires et les terminologies."@fr ;
-    skos:example "Thesauri, classificaties, onderwerplijsten, taxonomieën, 'folksonomies', en andere soorten gecontroleerde vocabulaires zijn allemaal voorbeelden van conceptscheme. Conceptscheme worden ook ingebed in glossaries en terminologie."@nl ;
+    skos:example "Thesauri, classificaties, onderwerplijsten, taxonomieën, folksonomieën, en andere soorten gecontroleerde vocabularia zijn allemaal voorbeelden van conceptenschema's. Conceptenschema's worden ook ingebed in glossaria en terminologieën."@nl ;
     skos:scopeNote "A concept scheme may be defined to include concepts from different sources."@en ;
     skos:scopeNote "Un schéma de concepts peut être défini pour inclure des concepts provenant de différentes sources."@fr ;
-    skos:scopeNote "Een conceptscheme kan gedefinieerd worden om concepten uit verschillende bronnen te bevatten."@nl .
+    skos:scopeNote "Een conceptenschema kan gedefinieerd worden om concepten uit verschillende bronnen te bevatten."@nl .
 
 skos:mappingRelation a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "is in mapping relation with"@en ;
     rdfs:label "est en relation de correspondance avec"@fr ;
-    rdfs:label "is in mapping relation with"@nl ;
+    rdfs:label "heeft een mappingrelatie met"@nl ;
     rdfs:comment "These concept mapping relations mirror semantic relations, and the data model defined below is similar (with the exception of skos:exactMatch) to the data model defined for semantic relations. A distinct vocabulary is provided for concept mapping relations, to provide a convenient way to differentiate links within a concept scheme from links between concept schemes. However, this pattern of usage is not a formal requirement of the SKOS data model, and relies on informal definitions of best practice."@en ;
     rdfs:comment "Ces relations de correspondance de concepts reflètent les relations sémantiques, et le modèle de données défini ci-dessous est similaire (à l'exception de skos:exactMatch) au modèle de données défini pour les relations sémantiques. Un vocabulaire distinct est fourni pour les relations de correspondance de concepts, pour fournir un moyen pratique de différencier les liens à l'intérieur d'un schéma de concepts des liens entre les schémas de concepts. Cependant, ce modèle d'utilisation n'est pas une exigence formelle du modèle de données SKOS, et repose sur des définitions informelles des meilleures pratiques."@fr ;
-    rdfs:comment "Deze concept mapping relaties spiegelen semantische relaties, en het data model hieronder is vergelijkbaar (met uitzondering van skos:exactMatch) met het data model gedefinieerd voor semantische relaties. Een apart vocabulaire is voorzien voor concept mapping relaties, om een handige manier te bieden om het onderscheid te maken tussen links binnen een concept scheme en links tussen concept schemes. Deze manier van gebruik is echter geen formele vereiste van het SKOS data model, en is afhankelijk van informele definities van best practices."@nl ;
+    rdfs:comment "Deze conceptmappingrelaties spiegelen semantische relaties, en het datamodel hieronder is vergelijkbaar (met uitzondering van skos:exactMatch) met het datamodel gedefinieerd voor semantische relaties. Een apart vocabularium is voorzien voor conceptmappingrelaties, om een handige manier te bieden om het onderscheid te maken tussen links binnen een conceptenschema en links tussen conceptenschema's. Deze manier van gebruik is echter geen formele vereiste van het SKOS datamodel, en is afhankelijk van informele definities van best practices."@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subPropertyOf skos:semanticRelation ;
     skos:definition "Relates two concepts coming, by convention, from different schemes, and that have comparable meanings"@en ;
     skos:definition "Relie deux concepts provenant, par convention, de schémas différents, et qui ont des sens comparables"@fr ;
-    skos:definition "Verbindt twee concepten die, door conventie, uit verschillende schemes komen en vergelijkbare betekenissen hebben"@nl .
+    skos:definition "Verbindt twee concepten die, door conventie, uit verschillende schema's komen en vergelijkbare betekenissen hebben"@nl .
 
 skos:semanticRelation a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "is in semantic relation with"@en ;
     rdfs:label "est en relation sémantique avec"@fr ;
-    rdfs:label "is in semantic relation with"@nl ;
+    rdfs:label "heeft een semantische relatie met"@nl ;
     rdfs:domain skos:Concept ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:range skos:Concept ;
     skos:definition "Links a concept to a concept related by meaning."@en ;
     skos:definition "Liaison d'un concept à un concept lié par sens."@fr ;
-    skos:definition "Verbindt een concept met een concept dat betekeniselijk gerelateerd is."@nl ;
+    skos:definition "Verbindt een concept met een concept dat op basis van de betekenis gerelateerd is."@nl ;
     skos:scopeNote "This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between concepts."@en ;
     skos:scopeNote "Cette propriété ne doit pas être utilisée directement, mais comme super-propriété pour toutes les propriétés désignant une relation de sens entre concepts."@fr ;
     skos:scopeNote "Deze eigenschap moet niet direct gebruikt worden, maar als super-eigenschap voor alle eigenschappen die een betekenisrelatie tussen concepten aanduiden."@nl .
@@ -446,7 +446,7 @@ skos:note a rdf:Property,
     skos:definition "Een algemene notitie, voor eender welk doel."@nl ;
     skos:scopeNote "This property may be used directly, or as a super-property for more specific note types."@en ;
     skos:scopeNote "Cette propriété peut être utilisée directement, ou comme super-propriété pour des types de notes plus spécifiques."@fr ;
-    skos:scopeNote "Deze eigenschap kan direct gebruikt worden, of als super-eigenschap voor meer specifieke notitie types."@nl .
+    skos:scopeNote "Deze eigenschap kan direct gebruikt worden, of als super-eigenschap voor meer specifieke notitietypes."@nl .
 
 skos:Concept a owl:Class, rdfs:Class ;
     rdfs:label "Concept"@en ;
@@ -455,7 +455,7 @@ skos:Concept a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     skos:definition "An idea or notion; a unit of thought."@en ;
     skos:definition "Une idée ou notion; une unité de pensée."@fr ;
-    skos:definition "Een idee of notie; een denkunit."@nl .
+    skos:definition "Een idee of notie; een gedachte-eenheid."@nl .
 
 <http://www.w3.org/2004/02/skos/core> a owl:Ontology ;
     dcterms:contributor "Dave Beckett",
@@ -465,8 +465,8 @@ skos:Concept a owl:Class, rdfs:Class ;
         "Sean Bechhofer" ;
     dcterms:description "An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies."@en ;
     dcterms:description "Un vocabulaire RDF pour décrire la structure et le contenu de schémas de concepts tels que les thésaurus, les schémas de classification, les listes de sujets, les taxonomies, les 'folksonomies', d'autres types de vocabulaires contrôlés, et aussi des schémas de concepts intégrés dans des glossaires et des terminologies."@fr ;
-    dcterms:description "Een RDF vocabulaire voor het beschrijven van de basisstructuur en inhoud van concept schemes zoals thesauri, classificatieschema's, subject heading lijsten, taxonomieën, 'folksonomies', andere soorten gecontroleerde vocabulaires, en ook concept schemes die geïntegreerd zijn in glossaries en terminologieën."@nl ;
+    dcterms:description "Een RDF-vocabularium voor het beschrijven van de basisstructuur en inhoud van conceptenschema's (concept schemes) zoals thesauri, classificatieschema’s, 'subject heading' lijsten, taxonomieën, folksonomieën, andere soorten gecontroleerde vocabularia, alsook conceptenschema's die geïntegreerd zijn in glossaria en terminologieën."@nl ;
     dcterms:title "SKOS Vocabulary"@en ;
     dcterms:title "Vocabulaire SKOS"@fr ;
-    dcterms:title "SKOS Vocabulaire"@nl ;
+    dcterms:title "SKOS Vocabularium"@nl ;
     rdfs:seeAlso <http://www.w3.org/TR/skos-reference/> .
