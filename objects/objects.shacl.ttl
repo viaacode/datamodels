@@ -17,6 +17,8 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
 
 @base <https://data.hetarchief.be/ns/object> .
 
