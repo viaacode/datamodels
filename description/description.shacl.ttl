@@ -30,7 +30,7 @@
     dct:title     "Modèle SHACL Description"@fr ;
     dct:title     "SHACL-model Descriptie"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2022-03-30" ;
+    dct:modified  "2023-01-03" ;
     dct:description """SHACL model to validate/describe findability."""@en ;
     dct:description """Modèle SHACL pour valider/décrire trouvabilité."""@fr ;
     dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl .
@@ -84,9 +84,9 @@
         sh:name "is een deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:isPartOf is not of class schema:ArchiveComponent"@en ;
-        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent"@nl ;
-        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent"@fr ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -98,9 +98,9 @@
         sh:name "duur"@nl ;
         sh:name "durée"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:duration is not of type string"@en ;
-        sh:message "schema:duration is niet van het type string"@nl ;
-        sh:message "schema:duration n'est pas de type string"@fr ;
+        sh:message "schema:duration is not of type xsd:dateTime"@en ;
+        sh:message "schema:duration is niet van het type xsd:dateTime"@nl ;
+        sh:message "schema:duration n'est pas de type xsd:dateTime"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -112,9 +112,9 @@
         sh:name "aangemaakt op"@nl ;
         sh:name "date de création"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type string"@en ;
-        sh:message "schema:dateCreated is niet van het type string"@nl ;
-        sh:message "schema:dateCreated n'est pas de type string"@fr ;
+        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
+        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
 
     ],
     [
@@ -127,9 +127,9 @@
         sh:name "gepubliceerd op"@nl ;
         sh:name "date de publication"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:datePublished is not of type string"@en ;
-        sh:message "schema:datePublished is niet van het type string"@nl ;
-        sh:message "schema:datePublished n'est pas de type string"@fr ;
+        sh:message "schema:datePublished is not of type EDTF-level1"@en ;
+        sh:message "schema:datePublished is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:datePublished n'est pas de type EDTF-level1"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -284,9 +284,9 @@
         sh:name "beschikbaar op"@nl ;
         sh:name "disponible le"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:available is not of type string"@en ;
-        sh:message "dct:available is niet van het type string"@nl ;
-        sh:message "dct:available n'est pas de type string"@fr ;
+        sh:message "dct:available is not of type xsd:dateTime."@en ;
+        sh:message "dct:available is niet van het type xsd:dateTime."@nl ;
+        sh:message "dct:available n'est pas de type xsd:dateTime."@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -296,8 +296,8 @@
            [sh:class org:Organization ]
         ) ;
         sh:name "copyright holder"@en ;
-        sh:name "auteur van de copyright"@nl ;
-        sh:name "détenteur de la copyright"@fr ;
+        sh:name "houder van auteursrecht"@nl ;
+        sh:name "détenteur des droits d'auteur"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:copyrightHolder is not of class schema:Person or org:Organization"@en ;
         sh:message "schema:copyrightHolder is niet van de klasse schema:Person of org:Organization"@nl ;
@@ -309,8 +309,8 @@
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "copyright notice"@en ;
-        sh:name "copyright melding"@nl ;
-        sh:name "notice de copyright"@fr ;
+        sh:name "auteursrechtenmelding"@nl ;
+        sh:name "avis de copyright"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:copyrightNotice is not of type string"@en ;
         sh:message "schema:copyrightNotice is niet van het type string"@nl ;
@@ -335,7 +335,7 @@
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
         sh:name "credit text"@en ;
-        sh:name "credit tekst"@nl ;
+        sh:name "credittekst"@nl ;
         sh:name "texte de crédit"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:creditText is not of type string"@en ;
@@ -396,9 +396,9 @@
         sh:name "diepte"@nl ;
         sh:name "profondeur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:depth is not an IRI"@en ;
-        sh:message "schema:depth is geen IRI"@nl ;
-        sh:message "schema:depth n'est pas un IRI"@fr ;
+        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -425,9 +425,9 @@
         sh:name "hoogte"@nl ;
         sh:name "hauteur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:height is not an IRI"@en ;
-        sh:message "schema:height is geen IRI"@nl ;
-        sh:message "schema:height n'est pas un IRI"@fr ;
+        sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -452,9 +452,9 @@
         sh:name "breedte"@nl ;
         sh:name "largeur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:width is not an IRI"@en ;
-        sh:message "schema:width is geen IRI"@nl ;
-        sh:message "schema:width n'est pas un IRI"@fr ;
+        sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ] .
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
@@ -498,9 +498,9 @@
         sh:name "aangemaakt op"@nl ;
         sh:name "créé le"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type string "@en ;
-        sh:message "schema:dateCreated is niet van het type string"@nl ;
-        sh:message "schema:dateCreated n'est pas de type string"@fr ;
+        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
+        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -687,6 +687,10 @@
         sh:name "collection size"@en ;
         sh:name "aantal items"@nl ;
         sh:name "nombre d'éléments"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:collectionSize is not of type integer"@en ;
+        sh:message "schema:collectionSize is niet van het type integer"@nl ;
+        sh:message "schema:collectionSize n'est pas de type integer"@fr ;
     ] ,
     [
         a sh:PropertyShape ;
@@ -698,6 +702,10 @@
         sh:name "has part"@en ;
         sh:name "is deel van"@nl ;
         sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
+        sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+        sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
     ] .
     
 
