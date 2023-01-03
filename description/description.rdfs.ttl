@@ -28,7 +28,7 @@
     dct:title     "Modèle de données Description"@fr ;
     dct:title     "Datamodel Descriptie"@nl ;
     dct:created   "2022-03-23" ;
-    dct:modified  "2022-06-28" ;
+    dct:modified  "2023-01-03" ;
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
     dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
@@ -119,7 +119,7 @@ schema:PerformanceRole a rdfs:Class ;
     rdfs:label "Uitvoeringsrol"@nl ;
     rdfs:label "Rôle de performance"@fr ;
     skos:definition """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en ;
-    skos:definition """Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatervoorstelling, bijvoorbeeld in een film, televisieserie etc."""@nl ;
+    skos:definition """Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatrale uitvoering, bijvoorbeeld in een film, televisieserie etc."""@nl ;
     skos:definition """Un PerformanceRole est un rôle qu'une entité remplit dans le cadre d'une représentation théâtrale, par exemple dans un film, une série télévisée etc."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
@@ -172,8 +172,8 @@ schema:Collection
     rdfs:label "Collectie"@nl ;
     rdfs:label "Collection"@fr ;
     skos:definition """A collection of items, e.g. creative works or products, typically but not necessarily of the same kind."""@en ;
-    skos:definition """Een collectie van items, e.g. creative works of producten, gewoonlijk maar niet altijd van hetzelfde soort."""@nl ;
-    skos:definition """Une collection d'articles, par exemple des œuvres créatives ou des produits, généralement mais pas nécessairement de même type."""@fr ;
+    skos:definition """Een collectie van items, bv. creatieve werken (creative works) of producten, gewoonlijk maar niet altijd van dezelfde soort."""@nl ;
+    skos:definition """Une collection d'articles, par exemple des œuvres créatives (creative works) ou des produits, généralement mais pas nécessairement de même type."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 ####################
@@ -200,7 +200,7 @@ dct:available a rdf:Property ;
     rdfs:label "Beschikbaarheidsdatum"@nl ;
     rdfs:label "Date de disponibilité"@fr ;
     skos:definition "Date that the resource became or will become available."@en ;
-    skos:definition "Datum waarop de bron beschikbaar is of zal zijn ."@nl ;
+    skos:definition "Datum waarop de bron beschikbaar is of zal zijn."@nl ;
     skos:definition "Date à laquelle la ressource devient ou deviendra disponible."@fr ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
@@ -266,8 +266,8 @@ schema:artform a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
     rdfs:label "artform"@en ;
-    rdfs:label "vorm"@nl ;
-    rdfs:label "forme"@fr ;
+    rdfs:label "kunstvorm"@nl ;
+    rdfs:label "forme artistique"@fr ;
     skos:definition "The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc."@en ;
     skos:definition "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl ;
     skos:definition "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr ;
@@ -279,9 +279,9 @@ schema:artMedium a rdf:Property ;
     owl:equivalentProperty dct:medium ;
     rdfs:label "art medium"@en ;
     rdfs:label "kunst medium"@nl ;
-    rdfs:label "moyen d'art"@fr ;
+    rdfs:label "médium artistique"@fr ;
     skos:definition "The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.)"@en ;
-    skos:definition "Het materiaal dat gebruikt is. (bv. Olie, Aquarel, Acryl, Linoprint, Marmer, Cyanotype, Digitaal, Lithografie, Droogpunt, Intaglio, Pastel, Houtsnede, Potlood, Gemengde media, etc.)"@nl ;
+    skos:definition "Het gebruikte materiaal. (bv. Olie, Aquarel, Acryl, Linoprint, Marmer, Cyanotype, Digitaal, Lithografie, Droogpunt, Intaglio, Pastel, Houtsnede, Potlood, Gemengde media, etc.)"@nl ;
     skos:definition "Le matériau utilisé. (par exemple Huile, Aquarelle, Acrylique, Linoprint, Marbre, Cyanotype, Numérique, Lithographie, Point sec, Intaglio, Pastel, Gravure sur bois, Crayon, Médias mixtes, etc.)"@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
@@ -325,7 +325,7 @@ schema:copyrightHolder a rdf:Property ;
     rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:rightsHolder ;
     rdfs:label "copyright holder"@en ;
-    rdfs:label "auteursrechthouder"@nl ;
+    rdfs:label "auteursrechthebbende"@nl ;
     rdfs:label "titulaire du droit d'auteur"@fr ;
     skos:definition "The party holding the legal copyright to the CreativeWork."@en ;
     skos:definition "De partij die de auteursrechten heeft op het CreativeWork."@nl ;
@@ -340,7 +340,7 @@ schema:copyrightNotice a rdf:Property ;
     rdfs:label "auteursrechtvermelding"@nl ;
     rdfs:label "avis de droit d'auteur"@fr ;
     skos:definition "Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work."@en ;
-    skos:definition "Tekst van een mededeling die geschikt is om de auteursrechtelijke aspecten van dit CreativeWork te beschrijven, idealiter met vermelding van de auteursrechthouder van het werk."@nl ;
+    skos:definition "Tekst van een mededeling die geschikt is om de auteursrechtelijke aspecten van dit CreativeWork te beschrijven, idealiter met vermelding van de auteursrechthebbende van het werk."@nl ;
     skos:definition "Texte d'une notice appropriée pour décrire les aspects du droit d'auteur de cette CreativeWork, indiquant idéalement le propriétaire du droit d'auteur de l'oeuvre."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
@@ -359,7 +359,7 @@ schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
     rdfs:label "credit text"@en ;
-    rdfs:label "credit tekst"@nl ;
+    rdfs:label "credittekst"@nl ;
     rdfs:label "texte du crédit"@fr ;
     skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work." ;
     skos:definition "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl ;
@@ -528,7 +528,7 @@ schema:license a rdf:Property ;
     rdfs:label "licence"@fr ;
     skos:definition "A license document that applies to this content, typically indicated by URL."@en ;
     skos:definition "Een licentiedocument dat geldig is voor deze inhoud, meestal gekenmerkt door een URL."@nl ;
-    skos:definition "Un document de licence qui s'applique à ce contenu, généralement indiqué par une URL."@fr ;
+    skos:definition "Un document de licence qui s'applique à ce contenu, généralement indiqué par URL."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:maintainer a rdf:Property ;
@@ -554,14 +554,13 @@ schema:name a rdf:Property ;
 
 schema:publisher a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
-    rdfs:range _:x0 ;
     owl:equivalentProperty dct:publisher ;
     rdfs:label "publisher"@en ;
     rdfs:label "uitgever"@nl ;
     rdfs:label "éditeur"@fr ;
     skos:definition "The publisher of the creative work."@en ;
-    skos:definition "De uitgever van het kunstwerk."@nl ;
-    skos:definition "L'éditeur du travail créatif."@fr ;
+    skos:definition "De uitgever van het CreativeWork."@nl ;
+    skos:definition "L'éditeur du CreativeWork."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:roleName a rdf:Property ;
@@ -603,10 +602,10 @@ schema:temporal a rdf:Property ;
     owl:equivalentProperty dct:temporal ;
     rdfs:label "temporal coverage"@en ;
     rdfs:label "temporele dekking; aflijning binnen de tijd"@nl ;
-    rdfs:label "couveerture temporelle"@fr ;
-    skos:definition "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a DateTime or as a textual string indicating a time period in ISO 8601 time interval format."@en ;
-    skos:definition "De dekking in de tijd van een CreativeWork geeft aan oveer welke periode inhoud handelt, bijvoorbeeld als een DateTime of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt."@nl ;
-    skos:definition "La couverture temporelle d'un travail créatif (CreativeWork) indique la période à laquelle s'applique le contenu, c'est-à-dire qu'il décrit soit par une date et heure (DateTime), soit par une série de caractères indiquant une période de temps en format ISO 8601."@fr ;
+    rdfs:label "couverture temporelle"@fr ;
+    skos:definition "The temporalCoverage of a CreativeWork indicates the period that the content applies to, i.e. that it describes, either as a `DateTime` or as a textual string indicating a time period in ISO 8601 time interval format."@en ;
+    skos:definition "De dekking in de tijd van een CreativeWork geeft aan over welke periode de inhoud handelt, bijvoorbeeld als een `xsd:dateTime` of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt."@nl ;
+    skos:definition "La couverture temporelle d'un travail créatif (CreativeWork) indique la période à laquelle s'applique le contenu, c'est-à-dire qu'il décrit soit par une date et heure (`DateTime`), soit par une série de caractères indiquant une période de temps en format ISO 8601."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:transcript a rdf:Property ;
@@ -638,9 +637,9 @@ schema:unitText a rdf:Property ;
     rdfs:label "unit text"@en ;
     rdfs:label "eenheid tekst"@nl ;
     rdfs:label "texte d'unité"@fr ;
-    skos:definition "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for unitCode."@en ;
-    skos:definition "Een string of tekst die de eenheid van de meting aangeeft. Handig als je geen standaard eenheidcode kunt geven voor unitCode."@nl ;
-    skos:definition "Une chaîne de caractères ou un texte indiquant l'unité de mesure. Utile si vous ne pouvez pas fournir de code d'unité standard pour unitCode."@fr ;
+    skos:definition "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for `schema:unitCode`."@en ;
+    skos:definition "Een string of tekst die de eenheid van de meting aangeeft. Handig als je geen standaard eenheidcode kunt geven voor `schema:unitCode`."@nl ;
+    skos:definition "Une chaîne de caractères ou un texte indiquant l'unité de mesure. Utile si vous ne pouvez pas fournir de code d'unité standard pour `schema:unitCode`."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:value a rdf:Property ;
