@@ -11,25 +11,30 @@
 @prefix pav: <http://purl.org/pav/> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 
-@base <https://data.hetarchief.be/ns/organization/shapes> .
+@base <https://data.hetarchief.be/ns/organization> .
 
-<>  dct:author  [
+<>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haOrg" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" ;
+    dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
-    ],
-    [
+    ] ,
+                [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
     ] ;
-    dct:title     "SHACL Model Organisations"@en ;
-    dct:title     "Modèle SHACL Organisations"@fr ;
-    dct:title     "SHACL-model Organisaties"@nl ;
-    dct:created   "2022-01-07" ;
-    dct:modified  "2023-01-03" ;
-    dct:description "SHACL model to validate/describe organisations."@en ;
-    dct:description "Modèle SHACL pour valider/décrire des organisations."@fr ;
-    dct:description "SHACL-model voor het valideren/beschrijven van organisaties."@nl .
-    
+    dct:title     "Data model Organizations"@en ;
+    dct:title     "Modèle de données Organisations"@fr ;
+    dct:title     "Datamodel Organisaties"@nl ;
+    dct:created   "2022-03-14" ;
+    dct:modified  "2022-06-16" ;
+    dct:description """Data model to describe organizations."""@en ;
+    dct:description """Modèle de données pour décrire des organisations."""@fr ;
+    dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
+    pav:version "0.0.1" .
+
+
 ######################
 #     NodeShapes     #
 ######################

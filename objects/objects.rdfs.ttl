@@ -18,31 +18,6 @@
 @prefix pav: <http://purl.org/pav/> .
 
 
-<https://data.hetarchief.be/ns/object>  a owl:Ontology;
-    vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
-    dct:author  [
-        schema:name   "Milan Valadou" ;
-        schema:email  "milan.valadou@meemoo.be"
-        
-    ] ,
-                [
-        schema:name   "Miel Vander Sande" ;
-        schema:email  "miel.vandersande@meemoo.be"
-    ] ;
-    dct:title     "Data model Objects"@en ;
-    dct:title     "Modèle de données Objets"@fr ;
-    dct:title     "Datamodel Objecten"@nl ;
-    dct:created   "2022-05-16" ;
-    dct:modified  "2022-12-29" ;
-    dct:description """Data model to describe objects."""@en ;
-    dct:description """Modèle de données pour décrire des objets."""@fr ;
-    dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
-    owl:imports <http://www.loc.gov/premis/rdf/v3/> ;
-    owl:imports <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> ;
-    owl:imports <http://www.w3.org/ns/prov#>;
-    pav:version "0.0.1" .
-
 # premis classes
 
 premis:File a owl:Class, rdfs:Class ;

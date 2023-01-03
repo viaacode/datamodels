@@ -17,32 +17,6 @@
 @prefix pav: <http://purl.org/pav/> .
 
 
-<https://data.hetarchief.be/ns/event>  a owl:Ontology;
-    vann:preferredNamespacePrefix "haEvt" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events/" ;
-    dct:author  [
-        schema:name   "Milan Valadou" ;
-        schema:email  "milan.valadou@meemoo.be"
-    ] ,
-                [
-        schema:name   "Miel Vander Sande" ;
-        schema:email  "miel.vandersande@meemoo.be"
-    ] ;
-    dct:title     "Data model Events"@en ;
-    dct:title     "Modèle de données Events"@fr ;
-    dct:title     "Datamodel Events"@nl ;
-    dct:created   "2022-06-08" ;
-    dct:modified  "2023-01-02" ;
-    dct:description """Data model to describe events."""@en ;
-    dct:description """Modèle de données pour décrire des événements (Events)."""@fr ;
-    dct:description """Datamodel voor het beschrijven van gebeurtenissen (Events)."""@nl ;
-    owl:imports <http://www.loc.gov/premis/rdf/v3/> ;
-    owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole> ;
-    owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole> ;
-    owl:imports <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
-    owl:imports <http://id.loc.gov/vocabulary/preservation/eventType> ;
-    pav:version "0.0.1" .
-
 # prov classes
 prov:Activity
     a owl:Class, rdfs:Class ;

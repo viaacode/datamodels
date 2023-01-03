@@ -13,29 +13,6 @@
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 
 
-<https://data.hetarchief.be/ns/description>  a owl:Ontology ;
-    vann:preferredNamespacePrefix "haDes" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" ;
-    dct:author  [
-        schema:name   "Miel Vander Sande" ;
-        schema:email  "miel.vandersande@meemoo.be"
-    ] ,
-                [
-        schema:name   "Lennert Van de Velde" ;
-        schema:email  "lennert.vandevelde@meemoo.be"
-    ] ;
-    dct:title     "Data model Description"@en ;
-    dct:title     "Modèle de données Description"@fr ;
-    dct:title     "Datamodel Descriptie"@nl ;
-    dct:created   "2022-03-23" ;
-    dct:modified  "2023-01-03" ;
-    dct:description """Data model to describe the content of objects."""@en ;
-    dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
-    dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
-    pav:version "0.0.1" .
-    
-#TODO: Add schema:roleName property skos:Concept
-
 #####################################
 #              CLASSES              #
 #####################################

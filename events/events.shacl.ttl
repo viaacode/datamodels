@@ -18,24 +18,34 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix pav: <http://purl.org/pav/> .
 
-@base <https://data.hetarchief.be/ns/event/shapes> .
+@base <https://data.hetarchief.be/ns/event> .
 
-<>  dct:author  [
-        schema:name   "Miel Vander Sande" ;
-        schema:email  "miel.vandersande@meemoo.be"
-    ] ,
-                [
+<>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haEvt" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events/" ;
+    dct:author  [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
+    ] ,
+    [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
     ] ;
-    dct:title     "SHACL Model Events"@en ;
-    dct:title     "SHACL Model Evénements (Events)"@fr ;
-    dct:title     "SHACL Model Gebeurtenissen (Events)"@nl ;
-    dct:created   "2022-08-02" ;
-    dct:modified  "2023-01-03" ;
-    dct:description """SHACL model to describe events and data provenance."""@en ;
-    dct:description """Modèle SHACL pour décrire les événements et la provenance des données."""@fr ;
-    dct:description """SHACL-model om gebeurtenissen (Events) en dataherkomst te beschrijven."""@nl .
+    dct:title     "Data model Events"@en ;
+    dct:title     "Modèle de données Events"@fr ;
+    dct:title     "Datamodel Events"@nl ;
+    dct:created   "2022-06-08" ;
+    dct:modified  "2022-06-08" ;
+    dct:description """Data model to describe events."""@en ;
+    dct:description """Modèle de données pour décrire des événements."""@fr ;
+    dct:description """Datamodel voor het beschrijven van gebeurtenissen."""@nl ;
+    owl:imports <http://www.loc.gov/premis/rdf/v3/> ;
+    owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole> ;
+    owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole> ;
+    owl:imports <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
+    owl:imports <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    pav:version "0.0.1" .
+
 
 <#activityShape> a sh:NodeShape ;
     sh:targetClass prov:Activity;

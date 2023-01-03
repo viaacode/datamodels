@@ -12,27 +12,6 @@
 @prefix pav: <http://purl.org/pav/> .
 
 
-<https://data.hetarchief.be/ns/organization>  a owl:Ontology;
-    vann:preferredNamespacePrefix "haOrg" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" ;
-    dct:author  [
-        schema:name   "Miel Vander Sande" ;
-        schema:email  "miel.vandersande@meemoo.be"
-    ] ,
-                [
-        schema:name   "Milan Valadou" ;
-        schema:email  "milan.valadou@meemoo.be"
-    ] ;
-    dct:title     "Data model Organizations"@en ;
-    dct:title     "Modèle de données Organisations"@fr ;
-    dct:title     "Datamodel Organisaties"@nl ;
-    dct:created   "2022-03-14" ;
-    dct:modified  "2022-12-28" ;
-    dct:description """Data model to describe organizations."""@en ;
-    dct:description """Modèle de données pour décrire des organisations."""@fr ;
-    dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
-    pav:version "0.0.1" .
-
 #####################################
 #      1)CLASSES                    #
 #        1.1)meemoo                 #

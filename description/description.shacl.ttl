@@ -15,24 +15,28 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix pav: <http://purl.org/pav/> .
 
-@base <https://data.hetarchief.be/ns/description/shapes> .
+@base <https://data.hetarchief.be/ns/description> .
 
-<>  dct:author  [
+<>  a owl:Ontology ;
+    vann:preferredNamespacePrefix "haDes" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" ;
+    dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
     ] ,
-                [
+    [
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-    dct:title     "SHACL Model Description"@en ;
-    dct:title     "Modèle SHACL Description"@fr ;
-    dct:title     "SHACL-model Descriptie"@nl ;
+    dct:title     "Data model Description"@en ;
+    dct:title     "Modèle de données Description"@fr ;
+    dct:title     "Datamodel Descriptie"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2023-01-03" ;
-    dct:description """SHACL model to validate/describe findability."""@en ;
-    dct:description """Modèle SHACL pour valider/décrire trouvabilité."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven van vindbaarheid."""@nl .
+    dct:modified  "2022-06-28" ;
+    dct:description """Data model to describe the content of objects."""@en ;
+    dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
+    dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
+    pav:version "0.0.1" .
 
 ##############################
 #         NodeShapes         #
