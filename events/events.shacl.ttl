@@ -75,7 +75,7 @@
     ], 
     [
         a sh:PropertyShape ;
-        sh:path prov:wasAtrributedTo;
+        sh:path prov:wasAttributedTo;
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
@@ -83,8 +83,8 @@
            [sh:class premis:HardwareAgent]
         ) ;
         sh:name "was attributed to"@en ;
-        sh:name "est attribué à"@fr ;
-        sh:name "is toegekend aan"@nl;
+        sh:name "était attribué à"@fr ;
+        sh:name "was toegekend aan"@nl;
         sh:description """The agent that was attributed to the activity."""@en ;
         sh:description """L'agent qui est attribué à l'activité."""@fr ;
         sh:description """De agent die toegekend is aan de activiteit."""@nl ;
