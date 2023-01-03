@@ -12,26 +12,26 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
-
+@prefix schema: <https://schema.org/> .
 
 #Based on: @base <http://publications.europa.eu/ontology/skosShapes> .
-@base <https://data.hetarchief.be/ns/thesauri> .
+@base <https://data.hetarchief.be/ns/terms> .
 
 <>  a owl:Ontology;
-    vann:preferredNamespacePrefix "haOrg" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" ;
+    vann:preferredNamespacePrefix "haTerm" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/terms/" ;
     dct:author  [
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-    dct:title     "Data model Thesauri"@en ;
-    dct:title     "Modèle de données Thesauri"@fr ;
-    dct:title     "Datamodel Thesauri"@nl ;
+    dct:title     "Data model List of terms"@en ;
+    dct:title     "Modèle de données Listes de termes"@fr ;
+    dct:title     "Datamodel Termenlijst"@nl ;
     dct:created   "2022-03-14" ;
     dct:modified  "2022-06-16" ;
-    dct:description """Data model to describe thesauri."""@en ;
-    dct:description """Modèle de données pour décrire des thesauri."""@fr ;
-    dct:description """Datamodel voor het beschrijven van thesauri."""@nl ;
+    dct:description """Data model to describe structured lists of terms such as thesauri."""@en ;
+    dct:description """Modèle de données pour décrire des listes structurées de termes tels que le thésaure."""@fr ;
+    dct:description """Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."""@nl ;
     pav:version "0.0.1" .
 
 <#CollectionShape>
