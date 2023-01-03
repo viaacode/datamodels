@@ -34,7 +34,7 @@
     dct:title     "Modèle de données Objets"@fr ;
     dct:title     "Datamodel Objecten"@nl ;
     dct:created   "2022-05-16" ;
-    dct:modified  "2022-06-18" ;
+    dct:modified  "2022-12-29" ;
     dct:description """Data model to describe objects."""@en ;
     dct:description """Modèle de données pour décrire des objets."""@fr ;
     dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
@@ -70,14 +70,8 @@ premis:IntellectualEntity a owl:Class, rdfs:Class ;
   rdfs:label "Intellectual entity"@en ;
   rdfs:label "Entité intellectuelle"@fr ;
   rdfs:label "Intellectuele entiteit"@nl ;
-  skos:definition """A set of content that is considered a single intellectual unit for purposes of management and
-      description: for example, a particular book, map, photograph, database, or piece of hardware or
-      software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can
-      include a web page; a web page can include an image. An Intellectual Entity may have one or more digital
-      representations. An Intellectual Entity may also describe an environment, defined as technology
-      supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of
-      software, hardware, or a combination of both."""@en ;
-  skos:definition """Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description"""@fr ;
+  skos:definition """A set of content that is considered a single intellectual unit for purposes of management and description: for example, a particular book, map, photograph, database, or piece of hardware or software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can include a web page; a web page can include an image. An Intellectual Entity may have one or more digital representations. An Intellectual Entity may also describe an environment, defined as technology supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of software, hardware, or a combination of both."""@en ;
+  skos:definition """Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description."""@fr ;
   skos:definition """Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."""@nl ;    
   rdfs:subClassOf premis:Object ;
   owl:disjointWith premis:Bitstream, premis:File, premis:Representation ;
@@ -98,10 +92,9 @@ premis:Representation a owl:Class, rdfs:Class ;
   rdfs:label "Representation"@en ;
   rdfs:label "Représentation"@fr ;
   rdfs:label "Representatie"@nl ;
-  skos:definition """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
-      representation is the set of stored digital files and structural metadata needed to provide a complete
-      and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a
-      manuscript, video cassette, or printed document."""@en ;
+  skos:definition """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital representation is the set of stored digital files and structural metadata needed to provide a complete and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a manuscript, video cassette, or printed document."""@en ;
+  skos:definition """Objet numérique ou physique instanciant ou incarnant une Entité Intellectuelle (Intellectual Entity). Une représentation numérique (Digital Representation) est l'ensemble des fichiers numériques stockés et des métadonnées structurelles nécessaires pour fournir une interprétation complète et raisonnable de l'entité intellectuelle (Intellectual Entity). Une représentation physique (Physical Representation) est un élément tel qu'un manuscrit, une cassette vidéo ou un document imprimé."""@fr ;
+  skos:definition """Digitaal of fysiek object dat een intellectuele entiteit (Intellectual Entity) vormgeeft of belichaamt. Een digitale weergave (Digital Representation) is de set van opgeslagen digitale bestanden en structurele metadata die nodig zijn om een volledige en redelijke weergave van de Intellectuele Entiteit (Intellectual Entity) te bieden. Een fysieke representatie (Physical Representation) is een item zoals een manuscript, videocassette of gedrukt document."""@nl ;
   rdfs:subClassOf premis:Object ;
   owl:disjointWith premis:Bitstream, premis:File, premis:IntellectualEntity ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
@@ -122,9 +115,8 @@ premis:StorageMedium  a   rdfs:Class ;
     rdfs:label "Storage medium"@en ;
     rdfs:label "Support de stockage"@fr ;
     rdfs:label "Opslagmedium"@nl ;
-    skos:definition """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
-        DVD)."""@en ;
-    skos:definition """Le support physique sur lequel l'Objet est stocké (par exemple, le mécanisme magnétique, le disque dur, le CD-ROM, le DVD)."""@fr ;
+    skos:definition """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM, DVD)."""@en ;
+    skos:definition """Le support physique sur lequel l'Objet (Object) est stocké (par exemple, bande magnétique, le disque dur, le CD-ROM, le DVD)."""@fr ;
     skos:definition """Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."""@nl ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> .
@@ -134,13 +126,13 @@ dct:FileFormat dct:description "Examples include the formats defined by the list
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	a rdfs:Class ;
-	skos:definition "A digital resource format."@en ;
-  skos:definition "Un format de ressource numérique."@fr ;
-  skos:definition "Een formaat van een digitale bron."@nl ;
-	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:label "File Format"@en ;
   rdfs:label "Format de fichier"@fr ;
   rdfs:label "Bestandsformaat"@nl ;
+  skos:definition "A digital resource format."@en ;
+  skos:definition "Un format de ressource numérique."@fr ;
+  skos:definition "Een formaat van een digitale bron."@nl ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:subClassOf dct:MediaType .
 
 # meemoo classes
@@ -150,9 +142,9 @@ haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:label "Digital representation"@en ;
     rdfs:label "Représentation digitale"@fr ;
     rdfs:label "Digitale representatie"@nl ;
-    skos:definition "Digital representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
-    skos:definition "Représentation digitale d'une entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
-    skos:definition "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    skos:definition "Digital representation of an archived intellectual entity."@en ;
+    skos:definition "Représentation digitale d'une entité intellectuelle (Intellectual Entity) archivée."@fr ;
+    skos:definition "Digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 
@@ -163,8 +155,8 @@ haObj:LocalIdentifier a rdfs:Class ;
     rdfs:label "Identifiant local"@fr ;
     rdfs:label "Lokale identificatie"@nl ;
     skos:definition "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
-    skos:definition "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'un système externe ou l'identifiant dans le système de registre de collection du partenaire de contenu."@fr ;
-    skos:definition "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een extern database of de identificatie in het systeem van registratie van de collectie van de partner van content."@nl ;
+    skos:definition "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'une base de données externe ou l'identifiant dans le système d'enregistrement de collection du partenaire de contenu."@fr ;
+    skos:definition "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een externe database of de identificatie in het registratiesysteem van de collectie van de contentpartner."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:PhysicalRepresentation a rdfs:Class ;
@@ -173,23 +165,23 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:label "Représentation physique"@fr ;
     rdfs:label "Fysieke representatie"@nl ;
     skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
-    skos:definition "Représentation physique d'un entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
-    skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    skos:definition "Représentation physique d'un entité intellectuelle (Intellectual Entity) archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
+    skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 # dct properties
-dct:format dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+dct:format a rdf:Property ;
+  dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-	a rdf:Property ;
-	skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
-  skos:definition "Le format du fichier, le support de stockage ou les dimensions du fichier."@fr ;
-  skos:definition "Het bestandsformaat, het opslagmedium of de afmetingen van het bestand."@nl ;
-	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:label "Format"@en ;
   rdfs:label "Format"@fr ;
   rdfs:label "Formaat"@nl ;
+  skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
+  skos:definition "Le format du fichier, le support de stockage ou les dimensions du fichier."@fr ;
+  skos:definition "Het bestandsformaat, het opslagmedium of de afmetingen van het bestand."@nl ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:range dct:MediaTypeOrExtent ;
 	rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
 
@@ -510,24 +502,24 @@ edm:isNextInSequence  a owl:ObjectProperty ;
 # ebucore properties
 
 ebucore:hasCaptioning  a rdf:Property ;
-  skos:definition """To signal the presence of Captioning."""@en ;
-  skos:definition """Pour signaler la présence du sous-titrage."""@fr ;
-  skos:definition """Om de aanwezigheid van ondertiteling aan te duiden."""@nl ;
   rdfs:label "Captioning"@en ;
   rdfs:label "Sous-titrage"@fr ;
   rdfs:label "Ondertiteling"@nl ;
+  skos:definition """To signal the presence of Captioning."""@en ;
+  skos:definition """Pour signaler la présence du sous-titrage."""@fr ;
+  skos:definition """Om de aanwezigheid van ondertiteling aan te duiden."""@nl ;
   rdfs:range ebucore:Captioning ;
   rdfs:domain ebucore:Asset ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
 ebucore:hasMediaFragment  a rdf:Property ;
   rdfs:domain ebucore:MediaResource ;
-  skos:definition """To define relation to MediaFragments within a MediaResource."""@en ;
-  skos:definition """Pour définir une relation entre des MediaFragments dans une MediaResource."""@fr ;
-  skos:definition """Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."""@nl ;
   rdfs:label "Fragment"@en ;
   rdfs:label "a un fragment (de média)"@fr ;
   rdfs:label "heeft (media)fragment"@nl ;
+  skos:definition """To define relation to MediaFragments within a MediaResource."""@en ;
+  skos:definition """Pour définir une relation entre des MediaFragments dans une MediaResource."""@fr ;
+  skos:definition """Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."""@nl ;
   owl:inverseOf ebucore:isMediaFragmentOf ;
   rdfs:range ebucore:MediaFragment ;
   owl:equivalentProperty ma:hasFragment ;
@@ -535,22 +527,22 @@ ebucore:hasMediaFragment  a rdf:Property ;
 
 ebucore:hasObjectType  a rdf:Property ;
   rdfs:label "Object/asset type"@en ;
-  rdfs:label "Type d'object/actif"@fr ;
-  rdfs:label "Object-/activatype"@nl ;
+  rdfs:label "Type d'objet/de bien"@fr ;
+  rdfs:label "Type object/activum"@nl ;
   skos:definition """To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."""@en ;
   skos:definition """Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."""@fr ;
-  skos:definition """Om een ObjectType te definiëren voor een BusinessObject (bv. book, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."""@nl ;
+  skos:definition """Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."""@nl ;
   rdfs:range xsd:anyURI, ebucore:ObjectType, xsd:string ;
   rdfs:domain ebucore:EditorialObject .
 
 ebucore:isMediaFragmentOf  a rdf:Property ;
   rdfs:range ebucore:MediaResource ;
+  rdfs:label "Media fragment source"@en ;
+  rdfs:label "Source du fragment de média (MediaFragment)"@fr ;
+  rdfs:label "Bron van het mediafragment (MediaFragment)"@nl ;
   skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en ;
   skos:definition "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr ;
-  skos:definition "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
-  rdfs:label "Media fragment source"@en ;
-  rdfs:label "Source du fragment de média"@fr ;
-  rdfs:label "Bron van het mediafragment"@nl ;
+  skos:definition "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl ;
   rdfs:domain ebucore:MediaFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
@@ -558,13 +550,13 @@ ebucore:hasMimeType
   a rdf:Property ;
   rdfs:subPropertyOf ebucore:hasFormat ;
   rdfs:range ebucore:MimeType, xsd:string ;
+  rdfs:label "Mime type"@en ;
+  rdfs:label "Mime type"@nl ;
+  rdfs:label "Mime type"@fr ;
   skos:definition "To specify the Mime type of a Resource."@en ;
   skos:definition "Pour spécifier le type MIME d'une ressource."@fr ;
   skos:definition "Om het MIME type van een resource te specificeren."@nl ;
-  rdfs:domain ebucore:MediaResource ;
-  rdfs:label "Mime type"@en ;
-  rdfs:label "Mime type"@nl ;
-  rdfs:label "Mime type"@fr .
+  rdfs:domain ebucore:MediaResource .
 
 # meemoo properties
 
