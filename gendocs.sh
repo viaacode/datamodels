@@ -8,7 +8,7 @@ declare -a models
 models[0]='organization=organizations/organizations.shacl.ttl,organizations/organizations.rdfs.ttl'
 models[1]='object=objects/objects.shacl.ttl,objects/objects.rdfs.ttl'
 models[2]='descriptive=description/description.shacl.ttl,description/description.rdfs.ttl'
-models[3]='events=events/events.shacl.ttl,events/events.rdfs.ttl'
+models[3]='events=events/events.shacl.ttl,events/events.rdfs.ttl,objects/objects.rdfs.ttl'
 models[4]='thesauri=general/skos.shacl.ttl,general/skos.rdfs.ttl,general/skos-xl.rdfs.ttl'
 
 for i in $(seq 0 1 $((${#models[@]}-1)))
@@ -24,6 +24,7 @@ do
 done
 
 # Temp. workaround for missing version
+rm -rf $out/0.0.1/thesauri
 mv $out/None/thesauri $out/0.0.1
 rm -rf $out/None
 
