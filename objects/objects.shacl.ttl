@@ -32,10 +32,10 @@
     dct:title     "Modèle SHACL Objet"@fr ;
     dct:title     "SHACL-model Objecten"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2022-06-16" ;
-    dct:description """SHACL model to validate/describe the structure of achive objects."""@en ;
+    dct:modified  "2023-01-03" ;
+    dct:description """SHACL model to validate/describe the structure of archive objects."""@en ;
     dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."""@nl .
+    dct:description """SHACL-model voor het valideren/beschrijven van de structuur van archiefobjecten."""@nl .
 
 <#ObjectShape> a sh:NodeShape ;
   sh:targetClass premis:Object ;
@@ -43,7 +43,7 @@
     sh:path premis:relationship ;
     sh:class premis:Object ;
 
-    sh:description "Een generieke relatie tussen intellectuele entiteiten, bestanden, of representaties."@nl ;
+    sh:description "Een generieke relatie tussen intellectuele entiteiten, bestanden of representaties."@nl ;
     sh:description "A generic relationship between intellectual entities, files, or representations."@en ;
     sh:description "Une relation générique entre les entités intellectuelles, les fichiers ou les représentations."@fr ;
 
@@ -77,7 +77,7 @@
     sh:path rel:hsp ;
     sh:class premis:IntellectualEntity ;
 
-    sh:description "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
+    sh:description "Een intellectuele entiteit die deel uitmaakt van deze intellectuele entiteit."@nl ;
     sh:description "An intellectual entity that is part of this intellectual entity."@en ;
     sh:description "Une entité intellectuelle qui fait partie de cette entité intellectuelle."@fr ;
 
@@ -128,7 +128,7 @@
     sh:path haObj:hasAccesscopy ;
     sh:class haObj:DigitalRepresentation ;
 
-    sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit."@nl ;
+    sh:description "De toegangs- of inkijkkopie van de intellectuele entiteit."@nl ;
     sh:description "The access or browse copy of the intellectual entity."@en ;
     sh:description "L'accès ou la copie de l'entité intellectuelle d'accès."@fr ;
 
@@ -177,7 +177,7 @@
     sh:maxCount 1 ;
     sh:class premis:IntellectualEntity ;
 
-    sh:description "De intellectuele entiteit waarvan deze digitale representatie de toegangs- of inkijk kopie is."@nl ;
+    sh:description "De intellectuele entiteit waarvan deze digitale representatie de toegangs- of inkijkkopie is."@nl ;
     sh:description "The intellectual entity of which this digital representation is the access or browse copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation digital est l'accès ou la copie de vue."@fr ;
 
@@ -199,7 +199,7 @@
     sh:minCount 1 ;
     sh:class premis:File ;
 
-    sh:description "Een bestand die deel uit maakt van deze digitale representatie."@nl ;
+    sh:description "Een bestand dat deel uitmaakt van deze digitale representatie."@nl ;
     sh:description "A file that is part of this digital representation."@en ;
     sh:description "Un fichier qui fait partie de cette représentation digital."@fr ;
 
@@ -244,7 +244,7 @@
       sh:class haObj:DigitalRepresentation ;
       sh:minCount 1 ;
 
-      sh:description "De digitale representatie waarvan dit bestand deel van uitmaakt."@nl ;
+      sh:description "De digitale representatie waarvan dit bestand deel uitmaakt."@nl ;
       sh:description "The digital representation this file is part of."@en ;
       sh:description "La représentation digital dans ce fichier fait partie."@fr ;
 
@@ -254,7 +254,7 @@
       sh:path rel:sup ;
       sh:class premis:File ;
 
-      sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl ;
+      sh:description "Het bestand dat dit bestand vervangt."@nl ;
       sh:description "The file that replaces or succeeds this file."@en ;
       sh:description "Le fichier qui remplace ou succède à ce fichier."@fr ;
 
@@ -277,7 +277,7 @@
         sh:class premis:StorageLocation ;
         sh:minCount 1 ;
 
-        sh:description "De locatie waar het bestand is opgeslagen."@nl ;
+        sh:description "De (fysieke) locatie waar het bestand is opgeslagen."@nl ;
         sh:description "The location where the file is stored."@en ;
         sh:description "L'emplacement où le fichier est stocké."@fr ;
     

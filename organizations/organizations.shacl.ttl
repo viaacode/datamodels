@@ -25,7 +25,7 @@
     dct:title     "Modèle SHACL Organisations"@fr ;
     dct:title     "SHACL-model Organisaties"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2022-06-16" ;
+    dct:modified  "2023-01-03" ;
     dct:description "SHACL model to validate/describe organisations."@en ;
     dct:description "Modèle SHACL pour valider/décrire des organisations."@fr ;
     dct:description "SHACL-model voor het valideren/beschrijven van organisaties."@nl .
@@ -149,7 +149,7 @@
     sh:name "point de contact"@fr ;
     sh:name "aanspreekpunt"@nl ;
 
-    sh:description "Een Organisatie kan een aanspreekpunt hebben."@nl ;
+    sh:description "Een organisatie kan een aanspreekpunt hebben."@nl ;
     sh:description "An organization can have a point of contact."@en ;
     sh:description "Une organisation peut avoir un point de contact."@fr ;
     
@@ -473,6 +473,10 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:name "naam"@nl ;
     sh:name "nom"@fr ;
 
+    sh:description "The first and last name of this person (combined into a single string)."@en ;
+    sh:description "Le prénom et le nom de cette personne (combinés en une seule string)."@fr ;
+    sh:description "De voor- en achternaam van deze persoon (gecombineerd in één string)."@nl ;
+
     sh:severity sh:Violation ;
     sh:message "schema:name is missing or not of type string "@en ;
     sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
@@ -613,7 +617,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     
     sh:name "telephone"@en ;
     sh:name "telefoonnummer"@nl ; 
-    sh:name "numéro de téléphone"@nl ; 
+    sh:name "numéro de téléphone"@fr ; 
 
     sh:description "The telephone number of the contact point."@en ;
     sh:description "Het telefoonnummer van het contactpunt."@nl ;
