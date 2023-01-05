@@ -4,31 +4,35 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix schema: <https://schema.org/> .
 
 #Based on: @base <http://publications.europa.eu/ontology/skosShapes> .
-@base <https://data.hetarchief.be/ns/skos/shapes> .
+@base <https://data.hetarchief.be/ns/terms> .
 
-<> dct:author  [
+<>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haTerm" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/terms/" ;
+    dct:author  [
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-  dct:description "Constraints definitions for SKOS and skosxl:"@en ;
-  dct:description "Définitions de contraintes pour SKOS et skosxl:"@fr ;
-  dct:description "Constraints definities voor SKOS en skosxl:"@nl ;
-  dct:title     "SHACL Model SKOS"@en ;
-  dct:title     "Modèle SHACL SKOS"@fr ;
-  dct:title     "SHACL-model SKOS"@nl ;
-  dct:created   "2022-11-30" ;
-  dct:modified  "2023-01-03" 
-.
+    dct:title     "Data model List of terms"@en ;
+    dct:title     "Modèle de données Listes de termes"@fr ;
+    dct:title     "Datamodel Termenlijst"@nl ;
+    dct:created   "2022-03-14" ;
+    dct:modified  "2022-06-16" ;
+    dct:description """Data model to describe structured lists of terms such as thesauri."""@en ;
+    dct:description """Modèle de données pour décrire des listes structurées de termes tels que le thésaure."""@fr ;
+    dct:description """Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."""@nl ;
+    pav:version "0.0.1" .
 
 <#CollectionShape>
   a sh:NodeShape ;
@@ -77,7 +81,7 @@
       sh:class skos:Concept ;
       sh:name "broad match"@en ;
       sh:name "correspondance large"@fr ;
-      sh:name "brede overeenkomst"@nl ;
+      sh:name "brede match"@nl ;
       sh:nodeKind sh:IRI ;
     ] ;
   sh:property [
@@ -97,7 +101,7 @@
       sh:class skos:Concept ;
       sh:name "close match"@en ;
       sh:name "correspondance proche"@fr ;
-      sh:name "nabije overeenkomst"@nl ;
+      sh:name "nabije match"@nl ;
       sh:nodeKind sh:IRI ;
       sh:severity sh:Violation ;
     ] ;
@@ -160,7 +164,7 @@
     sh:class skos:Concept ;
     sh:name "narrow match"@en ;
     sh:name "correspondance étroite"@fr ;
-    sh:name "nauwe overeenkomst"@nl ;
+    sh:name "nauwe match"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
     ] ;
@@ -187,7 +191,7 @@
     sh:class skos:Concept ;
     sh:name "related match"@en ;
     sh:name "correspondance liée"@fr ;
-    sh:name "gerelateerde overeenkomst"@nl ;
+    sh:name "gerelateerde match"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
     ] ;
@@ -199,7 +203,7 @@
     sh:disjoint skos:narrowMatch ;
     sh:name "related match"@en ;
     sh:name "correspondance liée"@fr ;
-    sh:name "gerelateerde overeenkomst"@nl ;
+    sh:name "gerelateerde match"@nl ;
     sh:severity sh:Violation ;
     ] ;
   sh:property [
@@ -210,6 +214,14 @@
       sh:name "semantische relatie"@nl ;
       sh:nodeKind sh:IRI ;
       sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+    sh:path skos:scopeNote ;
+    sh:datatype rdf:langString ;
+    sh:name "scope note"@en ;
+    sh:name "note de portée"@fr ;
+    sh:name "scope note"@nl ;
+    sh:severity sh:Violation ;
     ] ;
   sh:property [
     sh:path skos:topConceptOf ;
@@ -239,7 +251,7 @@
     sh:path skos:hasTopConcept ;
     sh:class skos:Concept ;
     sh:name "has top concept"@en ;
-    sh:name "a comme concept supérieur"@fr ;
+    sh:name "a pour concept supérieur"@fr ;
     sh:name "heeft top concept"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
@@ -264,17 +276,17 @@
   a sh:PropertyShape ;
   sh:path skos:note ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:name "note"@en ;
   sh:name "note"@fr ;
-  sh:name "notitie"@nl ;
+  sh:name "note"@nl ;
   sh:severity sh:Violation ;
 .
 <#changeNoteShape>
   a sh:PropertyShape ;
   sh:path skos:changeNote ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:name "change note"@en ;
   sh:name "note de changement"@fr ;
   sh:name "wijzigingsnotitie"@nl ;
@@ -285,7 +297,7 @@
   a sh:PropertyShape ;
   sh:path skos:definition ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:minCount 1 ;
   sh:name "definition"@en ;
   sh:name "définition"@fr ;
@@ -296,7 +308,7 @@
   a sh:PropertyShape ;
   sh:path skos:editorialNote ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:name "editorial note"@en ;
   sh:name "note éditoriale"@fr ;
   sh:name "redactionele notitie"@nl ;
@@ -306,7 +318,7 @@
   a sh:PropertyShape ;
   sh:path skos:example ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:name "example"@en ;
   sh:name "exemple"@fr ;
   sh:name "voorbeeld"@nl ;
@@ -316,7 +328,7 @@
   a sh:PropertyShape ;
   sh:path skos:historyNote ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:name "history note"@en ;
   sh:name "note d'historique"@fr ;
   sh:name "historische notitie"@nl ;
@@ -326,9 +338,9 @@
   a sh:PropertyShape ;
   sh:path skos:scopeNote ;
   sh:nodeKind sh:Literal ;
-  sh:datatype xsd:string ;
+  sh:datatype rdf:langString ;
   sh:name "scope note"@en ;
-  sh:name "note de portée"@fr ;
+  sh:name "note de champ"@fr ;
   sh:name "scope notitie"@nl ;
   sh:severity sh:Violation ;
 .
@@ -378,6 +390,6 @@
   sh:datatype xsd:string ;
   sh:name "notation"@en ;
   sh:name "notation"@fr ;
-  sh:name "notatie"@nl ;
+  sh:name "notation"@nl ;
   sh:severity sh:Violation ;
 .

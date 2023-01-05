@@ -17,25 +17,35 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
 
-@base <https://data.hetarchief.be/ns/object/shapes> .
+@base <https://data.hetarchief.be/ns/object> .
 
-<>  dct:author  [
-        schema:name   "Miel Vander Sande" ;
-        schema:email  "miel.vandersande@meemoo.be"
-    ] ,
-                [
+<>  a owl:Ontology;
+    vann:preferredNamespacePrefix "haObj" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
+    dct:author  [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
+        
+    ] ,
+                [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
     ] ;
-    dct:title     "SHACL Model Objects"@en ;
-    dct:title     "Modèle SHACL Objet"@fr ;
-    dct:title     "SHACL-model Objecten"@nl ;
-    dct:created   "2022-01-07" ;
-    dct:modified  "2023-01-03" ;
-    dct:description """SHACL model to validate/describe the structure of archive objects."""@en ;
-    dct:description """Modèle SHACL pour valider/décrire des objets."""@fr ;
-    dct:description """SHACL-model voor het valideren/beschrijven van de structuur van archiefobjecten."""@nl .
+    dct:title     "Data model Objects"@en ;
+    dct:title     "Modèle de données Objets"@fr ;
+    dct:title     "Datamodel Objecten"@nl ;
+    dct:created   "2022-05-16" ;
+    dct:modified  "2022-06-18" ;
+    dct:description """Data model to describe objects."""@en ;
+    dct:description """Modèle de données pour décrire des objets."""@fr ;
+    dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
+    owl:imports <http://www.loc.gov/premis/rdf/v3/> ;
+    owl:imports <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> ;
+    owl:imports <http://www.w3.org/ns/prov#>;
+    pav:version "0.0.1" .
 
 <#ObjectShape> a sh:NodeShape ;
   sh:targetClass premis:Object ;
