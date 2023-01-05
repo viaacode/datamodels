@@ -1,0 +1,69 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+dct:FileFormat dct:description "Examples include the formats defined by the list of Internet Media Types."@en ;
+	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
+	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	a rdfs:Class ;
+	rdfs:label "File Format"@en ;
+    rdfs:label "Format de fichier"@fr ;
+    rdfs:label "Bestandsformaat"@nl ;
+    skos:definition "A digital resource format."@en ;
+    skos:definition "Un format de ressource numérique."@fr ;
+    skos:definition "Een formaat van een digitale bron."@nl ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+	rdfs:subClassOf dct:MediaType .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+dct:available a rdf:Property ;
+    rdfs:label "Date Available"@en ;
+    rdfs:label "Beschikbaarheidsdatum"@nl ;
+    rdfs:label "Date de disponibilité"@fr ;
+    skos:definition "Date that the resource became or will become available."@en ;
+    skos:definition "Datum waarop de bron beschikbaar is of zal zijn."@nl ;
+    skos:definition "Date à laquelle la ressource devient ou deviendra disponible."@fr ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+dct:description a   rdfs:Property ;
+    rdfs:label "Description"@en ;
+    rdfs:label "Description"@fr ;
+    rdfs:label "Beschrijving"@nl ;
+    skos:definition "An account of the resource."@en ;
+    skos:definition "Un compte rendu de la ressource."@fr ;
+    skos:definition "Een verslag van de resource"@nl ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+dct:format a rdf:Property ;
+  dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+	dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
+	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+	rdfs:label "Format"@en ;
+  rdfs:label "Format"@fr ;
+  rdfs:label "Formaat"@nl ;
+  skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
+  skos:definition "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl ;
+  skos:definition "Le format du fichier, le support physique ou les dimensions de la ressource."@fr ;
+	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+	rdfs:range dct:MediaTypeOrExtent ;
+	rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> .
+
+dct:medium a rdf:Property ;
+    rdfs:range xsd:string ;
+    rdfs:label "medium"@en ;
+    rdfs:label "medium"@nl ;
+    rdfs:label "médium"@fr ;
+    skos:definition "The material or physical carrier of the resource"@en ;
+    skos:definition "Het materiaal of fysieke drager van de bron"@nl ;
+    skos:definition "Le support matériel ou physique de la ressource"@fr ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
