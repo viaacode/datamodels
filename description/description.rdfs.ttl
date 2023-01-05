@@ -559,8 +559,8 @@ schema:publisher a rdf:Property ;
     rdfs:label "uitgever"@nl ;
     rdfs:label "éditeur"@fr ;
     skos:definition "The publisher of the creative work."@en ;
-    skos:definition "De uitgever van het CreativeWork."@nl ;
-    skos:definition "L'éditeur du CreativeWork."@fr ;
+    skos:definition "De uitgever van het creatief werk."@nl ;
+    skos:definition "L'éditeur du travail créatif."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:roleName a rdf:Property ;
