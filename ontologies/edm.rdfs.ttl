@@ -1,0 +1,19 @@
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+edm:isNextInSequence  a owl:ObjectProperty ;
+  rdfs:label "Is Next In Sequence Of"@en ;
+  rdfs:label "Est le prochain dans la séquence de"@fr ;
+  rdfs:label "Is de volgende in de reeks van"@nl ;
+  skos:definition "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en ;
+  skos:definition "edm:isNextInSequence met en relation deux ressources S et R qui sont des parties ordonnées de la même ressource A, et telles que S vient immédiatement après R dans l'ordre créé par leur appartenance à A."@fr ;
+  skos:definition "edm:isNextInSequence relateert twee resources S en R die geordende onderdelen zijn van dezelfde resource A, en wel zodanig dat S onmiddellijk na R komt in de volgorde die ontstaat doordat zij onderdelen zijn van A."@nl ;
+  rdfs:subPropertyOf dc11:relation ;
+  rdfs:isDefinedBy <http://www.europeana.eu/schemas/edm/> .
