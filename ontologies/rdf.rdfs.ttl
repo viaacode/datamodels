@@ -1,0 +1,19 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+rdf:value a rdf:Property ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range xsd:string ;
+    rdfs:label "value"@en ;
+    rdfs:label "waarde"@nl ;
+    rdfs:label "valeur"@fr ;
+    skos:definition "May be used in describing structured values."@en ;
+    skos:definition "Kan worden gebruikt om gestructureerde waardes te beschrijven."@nl ;
+    skos:definition "Peut être utilisé pour décrire des valeurs structurées."@fr ;
+    rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
