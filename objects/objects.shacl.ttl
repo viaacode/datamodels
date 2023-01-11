@@ -371,7 +371,35 @@
       sh:description "Un fragment de ce fichier."@fr;
 
       sh:severity sh:Violation ;
-    ].
+    ],
+    [
+      a sh:PropertyShape;
+      sh:path premis:size ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:nonNegativeInteger ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+
+      sh:description "De grootte van dit bestand."@nl;
+      sh:description "The size of this file."@en;
+      sh:description "La taille de ce fichier."@fr;
+            
+      sh:message "premis:size is missing or not of type nonNegativeInteger"@en ;
+    ] ,
+    [
+      a sh:PropertyShape;
+      sh:path premis:originalName ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:string ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+
+      sh:description "The original name of this file."@en;
+      sh:description "De oorspronkelijke naam van dit bestand."@nl;
+      sh:description "Le nom d'origine de ce fichier."@fr;
+            
+      sh:message "premis:originalName is missing or not of type string"@en ;
+    ] .
 
 <#FixityShape> a sh:NodeShape ;
   sh:targetClass premis:Fixity ;
