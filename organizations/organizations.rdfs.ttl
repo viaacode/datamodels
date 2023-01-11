@@ -612,25 +612,3 @@ schema:telephone a rdf:Property ;
     skos:definition "Le numéro de téléphone."@fr ;
     skos:definition "Het telefoonnummer."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
-
-#####################################
-#         PROPERTIES:skos           #
-#####################################
-
-skos:altLabel  a   rdf:Property ;
-    rdfs:label "alternative label"@en ;
-    rdfs:label "label alternatif"@fr ;
-    rdfs:label "alternatief label"@nl ;
-    skos:definition "An alternative label for the concept."@en ;
-    skos:definition "Un label alternatif pour le concept."@fr ;
-    skos:definition "Een alternatief label voor het concept."@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> .
-
-skos:prefLabel  a   rdf:Property ;
-    rdfs:label "preferred label"@en ;
-    rdfs:label "label préféré"@fr ;
-    rdfs:label "voorkeurslabel"@nl ;
-    skos:definition "A preferred label for the concept."@en ;
-    skos:definition "Un label préféré pour le concept."@fr ;
-    skos:definition "Een voorkeurslabel voor het concept."@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core#> .

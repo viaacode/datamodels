@@ -5,9 +5,9 @@ out=$1
 parent="Knowledge Graph"
 
 declare -a models
-models[0]='organization=organizations/organizations.shacl.ttl,organizations/organizations.rdfs.ttl'
+models[0]='organization=organizations/organizations.shacl.ttl,organizations/organizations.rdfs.ttl,general/skos.rdfs.ttl'
 models[1]='object=objects/objects.shacl.ttl,objects/objects.rdfs.ttl'
-models[2]='descriptive=description/description.shacl.ttl,description/description.rdfs.ttl,objects/objects.rdfs.ttl'
+models[2]='descriptive=description/description.shacl.ttl,description/description.rdfs.ttl,objects/objects.rdfs.ttl,general/skos.rdfs.ttl'
 models[3]='events=events/events.shacl.ttl,events/events.rdfs.ttl,objects/objects.rdfs.ttl'
 models[4]='terms=general/terms.shacl.ttl,general/skos.rdfs.ttl,general/skos-xl.rdfs.ttl'
 
