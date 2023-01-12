@@ -42,7 +42,7 @@
     dct:title     "Modèle de données Objets"@fr ;
     dct:title     "Datamodel Objecten"@nl ;
     dct:created   "2022-05-16" ;
-    dct:modified  "2023-01-05" ;
+    dct:modified  "2023-01-12" ;
     dct:description """Data model to describe objects."""@en ;
     dct:description """Modèle de données pour décrire des objets."""@fr ;
     dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
@@ -58,9 +58,9 @@
 
 haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
-    rdfs:label "Digital representation"@en ;
-    rdfs:label "Représentation digitale"@fr ;
-    rdfs:label "Digitale representatie"@nl ;
+    rdfs:label "digital representation"@en ;
+    rdfs:label "représentation digitale"@fr ;
+    rdfs:label "digitale representatie"@nl ;
     skos:definition "Digital representation of an archived intellectual entity."@en ;
     skos:definition "Représentation digitale d'une entité intellectuelle (Intellectual Entity) archivée."@fr ;
     skos:definition "Digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl ;
@@ -69,9 +69,9 @@ haObj:DigitalRepresentation a rdfs:Class ;
 haObj:LocalIdentifier a rdfs:Class ;
     rdfs:subClassOf premis:Identifier ;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "Local identifier"@en ;
-    rdfs:label "Identifiant local"@fr ;
-    rdfs:label "Lokale identificatie"@nl ;
+    rdfs:label "local identifier"@en ;
+    rdfs:label "identifiant local"@fr ;
+    rdfs:label "lokale identificatie"@nl ;
     skos:definition "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
     skos:definition "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'une base de données externe ou l'identifiant dans le système d'enregistrement de collection du partenaire de contenu."@fr ;
     skos:definition "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een externe database of de identificatie in het registratiesysteem van de collectie van de contentpartner."@nl ;
@@ -79,9 +79,9 @@ haObj:LocalIdentifier a rdfs:Class ;
 
 haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
-    rdfs:label "Physical representation"@en ;
-    rdfs:label "Représentation physique"@fr ;
-    rdfs:label "Fysieke representatie"@nl ;
+    rdfs:label "physical representation"@en ;
+    rdfs:label "représentation physique"@fr ;
+    rdfs:label "fysieke representatie"@nl ;
     skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
     skos:definition "Représentation physique d'un entité intellectuelle (Intellectual Entity) archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
     skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
