@@ -52,7 +52,7 @@
 ####################
 <#IntellectualEntityNodeShape> a sh:NodeShape ; 
     sh:targetClass premis:IntellectualEntity ;
-    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:maintainer ;
@@ -354,7 +354,7 @@
 ####################
 <#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:PhysicalRepresentation ;
-    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:artform ;
@@ -452,7 +452,7 @@
     ] .
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
@@ -515,7 +515,7 @@
 ####################
 <#CreativeWorkSeriesShape> a sh:NodeShape ; 
     sh:targetClass schema:CreativeWorkSeries ;
-    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:seasonNumber ;
@@ -532,15 +532,15 @@
 
 <#EpisodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Episode ;
-    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape> .
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape> .
 
 <#PlaceShape> a sh:NodeShape ; 
     sh:targetClass schema:Place ;
-    sh:property <#nameShape>, <#descriptionShape> .
+    sh:property <#NameShape>, <#DescriptionShape> .
 
 <#ArchiveComponentShape> a sh:NodeShape ; 
     sh:targetClass schema:ArchiveComponent ;
-    sh:property <#nameShape>, <#descriptionShape> .
+    sh:property <#NameShape>, <#DescriptionShape> .
 
 <#RoleNodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Role ;
@@ -670,7 +670,7 @@
 
 <#CollectionShape> a sh:NodeShape ; 
     sh:targetClass schema:Collection ;
-    sh:property <#identifierShape>, <#nameShape>, <#descriptionShape>, 
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, 
     [
         a sh:PropertyShape ;
         sh:path schema:collectionSize ;
