@@ -1,0 +1,157 @@
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+haOrg:ContentPartner   a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;  
+    rdfs:label "content partner"@en ;
+    rdfs:label "partenaire de contenus"@fr ;
+    rdfs:label "contentpartner"@nl ;
+    skos:definition """A content partner is an organization that has signed a collaboration agreement with meemoo for the long-term preservation and dissemination of their content."""@en ;
+    skos:definition """Un partenaire de contenu est une organisation qui a signé une convention de collaboration avec meemoo pour la préservation à long terme et la diffusion de leur contenu."""@fr ;
+    skos:definition """Een contentpartner is een organisatie die een samenwerkingovereenkomst heeft ondertekend met meemoo voor de langetermijnpreservatie en ontsluiting van hun materiaal."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+    # `Aanbieder` wordt gebruikt in AVO voor CP
+
+haOrg:EducationalOrganization  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    owl:equivalentClass schema:EducationalOrganization ;
+    rdfs:label "educational organization"@en ;
+    rdfs:label "organisation éducative"@fr ;
+    rdfs:label "educatieve organisatie"@nl ;
+    skos:definition """An educational organization is an organization or company that provides educational services outside the school context."""@en ;
+    skos:definition """Une organisation éducative est une organisation ou une entreprise qui fournit des services éducatifs hors du contexte scolaire."""@fr ;
+    skos:definition """Een educatieve organisatie is een organisatie of een bedrijf dat educatie en opleiding aanbiedt buiten een schoolcontext."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:EducationalPartner   a   rdfs:Class ;
+    rdfs:subClassOf haOrg:EducationalOrganization ;
+    rdfs:label "educational partner"@en ;
+    rdfs:label "partenaire éducatif"@fr ;
+    rdfs:label "educatieve partner"@nl ;
+    skos:definition """An educational partner is an organization that provides content on the 'Archief voor Onderwijs' platform and has signed the 'educational partner' collaboration agreement with meemoo (e.g. an educational publisher, KlasCement, Mediawijs, etc.)."""@en ;
+    skos:definition """Un partenaire éducatif est une organisation qui fournit du contenu sur la plateforme 'Archief voor Onderwijs' et a signé avec meemoo l'accord de collaboration 'partenaire éducatif' (par exemple, un éditeur scolaire, KlasCement, Mediawijs, etc.)."""@fr ;
+    skos:definition """Een educatieve partner is een organisatie die content aanbiedt op het 'Archief voor Onderwijs'-platform en met meemoo de samenwerkingsovereenkomst 'educatieve partner' heeft ondertekend (bv. een educatieve uitgeverij, KlasCement, Mediawijs, enz.)."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:EducationalPublisher a   rdfs:Class ;
+    rdfs:subClassOf haOrg:EducationalOrganization ;
+    rdfs:label "educational publisher"@en ;
+    rdfs:label "éditeur éducatif"@fr ;
+    rdfs:label "educatieve uitgeverij"@nl ;
+    skos:definition """An educational publisher is a company that publishes educational content."""@en ;
+    skos:definition """Un éditeur scolaire est une entreprise qui publie des contenus pédagogiques."""@fr ;
+    skos:definition """Een educatieve uitgeverij is een bedrijf dat educatieve content publiceert."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:Logo a   rdfs:Class ;
+    rdfs:label  "logo"@en ;
+    rdfs:label  "logo"@fr ;
+    rdfs:label  "logo"@nl ;
+    skos:definition """A logo is a graphic mark, emblem, or symbol of an organization."""@en ;
+    skos:definition """Un logo est une marque, un emblème ou un symbole graphique d'une organisation."""@fr ;
+    skos:definition """Een logo is een grafisch teken, embleem of symbool van een organisatie."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+# haOrg:LogoContext  a   rdfs:Class ;
+#     rdfs:subClassOf skos:Concept ;
+#     rdfs:label  "Context of a Logo"@en ;
+#     rdfs:label  "Contexte d'un Logo"@fr ;
+#     rdfs:label  "Context van een Logo"@en ;
+#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:OrganizationType a  rdfs:Class ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label  "organization type"@en ;
+    rdfs:label  "type de organisation"@fr ;
+    rdfs:label  "organisatietype"@nl ;
+    skos:definition """The type or classification of an organization."""@en ;
+    skos:definition """Le type ou la classification d'une organisation."""@fr ;
+    skos:definition """Het type of de classificatie van een organisatie."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:School   a   rdfs:Class ;
+    rdfs:subClassOf haOrg:EducationalOrganization ;
+    owl:equivalentClass schema:School ;
+    rdfs:label "school"@en ;
+    rdfs:label "école"@fr ;
+    rdfs:label "school"@nl ;
+    skos:definition """A school is an educational institution (recognized by the Flemish government) in primary, secondary or higher education."""@en ;
+    skos:definition """Une école est une institution éducative (reconnue par le gouvernement flamand) dans l'enseignement primaire, secondaire ou supérieur."""@fr ;
+    skos:definition """Een door-de-Vlaamse-overheid-erkende onderwijsinstelling in het basis, secundair of hoger onderwijs."""@nl;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:ServiceConsumer  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "service consumer"@en ;
+    rdfs:label "consomatteur de services"@fr ;
+    rdfs:label "dienstenafnemer"@nl ;
+    skos:definition """An organization that consumes services from meemoo, with a contractual relationship with meemoo. This is not a content partner, but a private organization that stores digital content at meemoo (e.g. Plantentuin Meise)."""@en ;
+    skos:definition """Une organisation qui consomme des services de meemoo, avec une relation contractuelle avec meemoo. Ce n'est pas un partenaire de contenu, mais une organisation privée qui stocke du contenu numérique chez meemoo (par exemple Plantentuin Meise)."""@fr ;
+    skos:definition """Een organisatie die diensten bij meemoo afneemt, met contractuele relatie met meemoo. Het gaat hier niet over een contentpartner, maar over een particuliere organisatie die digitale opslag doet bij meemoo (bv. Plantentuin Meise)."""@nl;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:ServiceProvider  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "service provider"@en ;
+    rdfs:label "fournisseur de services"@fr ;
+    rdfs:label "dienstenleverancier"@nl ;
+    skos:definition """An organization that provides services or goods to meemoo, for example related to IT, digitization, etc."""@en ;
+    skos:definition """Une organisation qui fournit des services ou des biens à meemoo, par exemple dans le domaine de l'informatique, de la numérisation, etc."""@fr ;
+    skos:definition """Een organisatie die aan meemoo diensten of goederen levert, bijvoorbeeld op het gebied van IT, digitalisering, enz."""@nl;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+haOrg:isAccountManagerOf a   rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range org:Organization ;
+    owl:inverseOf haOrg:hasAccountManager ;
+    rdfs:label "is account manager of"@en ;
+    rdfs:label "est gestionnaire de comptes de"@fr ;
+    rdfs:label "is account manager van"@nl ;
+    skos:definition "An organization that a person is the account manager of."@en ;
+    skos:definition "Une organisation dont une personne est le gestionnaire de comptes."@fr ;
+    skos:definition "Een organisatie waarvan een persoon de accountmanager is."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+# haOrg:applicationContext   a   rdf:Property ;
+#     rdfs:domain haOrg:Logo ;
+#     rdfs:range haOrg:LogoContext ;
+#     rdfs:label "Context in which a logo is applied"@en ;
+#     rdfs:label "Contexte dans lequel un logo est utilisé"@fr ;
+#     rdfs:label "Context waarin een logo gebruikt wordt"@nl ;
+#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:hasAccountManager    a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  schema:Person ;
+    owl:inverseOf haOrg:isAccountManagerOf ;
+    rdfs:label "has an account manager"@en ;
+    rdfs:label "a un gestionnaire de comptes"@fr ;
+    rdfs:label "heeft een accountmanager"@nl ;
+    skos:definition "A person that is the account manager of an organization."@en ;
+    skos:definition "Une personne qui est le gestionnaire de comptes d'une organisation."@fr ;
+    skos:definition "Een persoon die de accountmanager is van een organisatie."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:hasLogo  a   rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range  haOrg:Logo ;
+    rdfs:label "has a logo"@en ;
+    rdfs:label "a un logo"@fr ;
+    rdfs:label "heeft een logo"@nl ;
+    skos:definition "A logo for an organization."@en ;
+    skos:definition "Un logo pour une organisation."@fr ;
+    skos:definition "Een logo voor een organisatie."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
