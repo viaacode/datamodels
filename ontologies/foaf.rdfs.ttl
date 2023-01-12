@@ -11,9 +11,9 @@
 foaf:homepage   a   rdf:Property ;
     rdfs:domain owl:Thing ;
     rdfs:range foaf:Document ;
-    rdfs:label "Homepage"@en ;
-    rdfs:label "Page d'accueil"@fr ;
-    rdfs:label "Homepagina"@nl ;
+    rdfs:label "homepage"@en ;
+    rdfs:label "page d'accueil"@fr ;
+    rdfs:label "homepagina"@nl ;
     skos:definition "A homepage for some thing. "@en ;
     skos:definition "Une page d'accueil pour quelque chose"@fr ;
     skos:definition "Een homepagina van/voor iets"@nl ;
