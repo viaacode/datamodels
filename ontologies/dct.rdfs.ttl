@@ -12,9 +12,9 @@ dct:FileFormat dct:description "Examples include the formats defined by the list
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	a rdfs:Class ;
-	rdfs:label "File Format"@en ;
-    rdfs:label "Format de fichier"@fr ;
-    rdfs:label "Bestandsformaat"@nl ;
+	rdfs:label "file format"@en ;
+    rdfs:label "format de fichier"@fr ;
+    rdfs:label "bestandsformaat"@nl ;
     skos:definition "A digital resource format."@en ;
     skos:definition "Un format de ressource numérique."@fr ;
     skos:definition "Een formaat van een digitale bron."@nl ;
@@ -26,18 +26,18 @@ dct:FileFormat dct:description "Examples include the formats defined by the list
 #####################################
 
 dct:available a rdf:Property ;
-    rdfs:label "Date Available"@en ;
-    rdfs:label "Beschikbaarheidsdatum"@nl ;
-    rdfs:label "Date de disponibilité"@fr ;
+    rdfs:label "date available"@en ;
+    rdfs:label "beschikbaarheidsdatum"@nl ;
+    rdfs:label "date de disponibilité"@fr ;
     skos:definition "Date that the resource became or will become available."@en ;
     skos:definition "Datum waarop de bron beschikbaar is of zal zijn."@nl ;
     skos:definition "Date à laquelle la ressource devient ou deviendra disponible."@fr ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 dct:description a   rdfs:Property ;
-    rdfs:label "Description"@en ;
-    rdfs:label "Description"@fr ;
-    rdfs:label "Beschrijving"@nl ;
+    rdfs:label "description"@en ;
+    rdfs:label "description"@fr ;
+    rdfs:label "beschrijving"@nl ;
     skos:definition "An account of the resource."@en ;
     skos:definition "Un compte rendu de la ressource."@fr ;
     skos:definition "Een verslag van de resource"@nl ;
@@ -48,9 +48,9 @@ dct:format a rdf:Property ;
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	dct:modified "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-	rdfs:label "Format"@en ;
-  rdfs:label "Format"@fr ;
-  rdfs:label "Formaat"@nl ;
+	rdfs:label "format"@en ;
+  rdfs:label "format"@fr ;
+  rdfs:label "formaat"@nl ;
   skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
   skos:definition "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl ;
   skos:definition "Le format du fichier, le support physique ou les dimensions de la ressource."@fr ;
