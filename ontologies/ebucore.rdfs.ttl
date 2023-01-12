@@ -11,9 +11,9 @@
 #####################################
 
 ebucore:hasCaptioning  a rdf:Property ;
-  rdfs:label "Captioning"@en ;
-  rdfs:label "Sous-titrage"@fr ;
-  rdfs:label "Ondertiteling"@nl ;
+  rdfs:label "captioning"@en ;
+  rdfs:label "sous-titrage"@fr ;
+  rdfs:label "ondertiteling"@nl ;
   skos:definition """To signal the presence of Captioning."""@en ;
   skos:definition """Pour signaler la présence du sous-titrage."""@fr ;
   skos:definition """Om de aanwezigheid van ondertiteling aan te duiden."""@nl ;
@@ -23,7 +23,7 @@ ebucore:hasCaptioning  a rdf:Property ;
 
 ebucore:hasMediaFragment  a rdf:Property ;
   rdfs:domain ebucore:MediaResource ;
-  rdfs:label "Fragment"@en ;
+  rdfs:label "fragment"@en ;
   rdfs:label "a un fragment (de média)"@fr ;
   rdfs:label "heeft (media)fragment"@nl ;
   skos:definition """To define relation to MediaFragments within a MediaResource."""@en ;
@@ -38,9 +38,9 @@ ebucore:hasMimeType
   a rdf:Property ;
   rdfs:subPropertyOf ebucore:hasFormat ;
   rdfs:range ebucore:MimeType, xsd:string ;
-  rdfs:label "Mime type"@en ;
-  rdfs:label "Mime type"@nl ;
-  rdfs:label "Mime type"@fr ;
+  rdfs:label "mime type"@en ;
+  rdfs:label "mime type"@nl ;
+  rdfs:label "mime type"@fr ;
   skos:definition "To specify the Mime type of a Resource."@en ;
   skos:definition "Pour spécifier le type MIME d'une ressource."@fr ;
   skos:definition "Om het MIME type van een resource te specificeren."@nl ;
@@ -48,9 +48,9 @@ ebucore:hasMimeType
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
 ebucore:hasObjectType  a rdf:Property ;
-  rdfs:label "Object/asset type"@en ;
-  rdfs:label "Type d'objet/de bien"@fr ;
-  rdfs:label "Type object/activum"@nl ;
+  rdfs:label "object/asset type"@en ;
+  rdfs:label "type d'objet/de bien"@fr ;
+  rdfs:label "type object/activum"@nl ;
   skos:definition """To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."""@en ;
   skos:definition """Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."""@fr ;
   skos:definition """Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."""@nl ;
@@ -60,9 +60,9 @@ ebucore:hasObjectType  a rdf:Property ;
 
 ebucore:isMediaFragmentOf  a rdf:Property ;
   rdfs:range ebucore:MediaResource ;
-  rdfs:label "Media fragment source"@en ;
-  rdfs:label "Source du fragment de média (MediaFragment)"@fr ;
-  rdfs:label "Bron van het mediafragment (MediaFragment)"@nl ;
+  rdfs:label "media fragment source"@en ;
+  rdfs:label "source du fragment de média (MediaFragment)"@fr ;
+  rdfs:label "bron van het mediafragment (MediaFragment)"@nl ;
   skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en ;
   skos:definition "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr ;
   skos:definition "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl ;
