@@ -178,6 +178,7 @@
     ] ;
   sh:property [
     sh:path skos:related ;
+    sh:class skos:Concept ;
     sh:message "S27	skos:related is disjoint with the property skos:broaderTransitive."@en ;
     sh:message "S27	skos:related est disjoint avec la propriété skos:broaderTransitive."@fr ;
     sh:message "S27	skos:related is disjunct met de eigenschap skos:broaderTransitive."@nl ;
@@ -201,17 +202,6 @@
     sh:name "correspondance liée"@fr ;
     sh:name "gerelateerde match"@nl ;
     sh:nodeKind sh:IRI ;
-    sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-    sh:path skos:relatedMatch ;
-    sh:disjoint skos:broadMatch ;
-    sh:disjoint skos:closeMatch ;
-    sh:disjoint skos:exactMatch ;
-    sh:disjoint skos:narrowMatch ;
-    sh:name "related match"@en ;
-    sh:name "correspondance liée"@fr ;
-    sh:name "gerelateerde match"@nl ;
     sh:severity sh:Violation ;
     ] ;
   sh:property [
