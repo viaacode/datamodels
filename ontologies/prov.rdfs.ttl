@@ -1,0 +1,153 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+prov:Activity
+    a owl:Class, rdfs:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:label "activity"@en ;
+    rdfs:label "activité"@fr ;
+    rdfs:label "activiteit"@nl ;
+    owl:disjointWith prov:Entity ;
+    skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en;
+    skos:definition "Une activité est quelque chose qui se passe pendant un certain temps et qui agit sur/avec des entités. Cela peut inclure la consommation, le traitement, la transformation, la modification, le déplacement, l'utilisation ou la génération d'entités."@fr;
+    skos:definition "Een activiteit is iets dat zich gedurende een bepaalde periode voordoet en op/met entiteiten handelt. Het kan onder meer volgende zaken inhouden: consumeren, verwerken, transformeren, wijzigen, verplaatsen, gebruiken of genereren van entiteiten."@nl.
+
+prov:Agent
+    a owl:Class, rdfs:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:label "agent"@en ;
+    rdfs:label "agent"@fr ;
+    rdfs:label "agent"@nl ;
+    owl:disjointWith prov:InstantaneousEvent ;
+    skos:definition "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. "@en;
+    skos:definition "Un agent est quelque chose qui porte une forme de responsabilité pour une activité qui se passe, pour l'existence d'une entité ou pour l'activité d'un autre agent. "@fr;
+    skos:definition "Een agent is iets dat een bepaalde vorm van verantwoordelijkheid voor een activiteit neemt, voor het bestaan van een entiteit of voor de activiteit van een andere agent. "@nl.
+
+prov:Entity
+    a owl:Class, rdfs:Class ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:label "entity"@en ;
+    rdfs:label "entité"@fr ;
+    rdfs:label "entiteit"@nl ;
+    owl:disjointWith prov:InstantaneousEvent ;
+    skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en;
+    skos:definition "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr;
+    skos:definition "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl.
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+prov:generated
+    a owl:ObjectProperty ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:label "generated"@en ;
+    rdfs:label "a généré"@fr ;
+    rdfs:label "genereerde"@nl ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:influenced ;
+    owl:inverseOf prov:wasGeneratedBy .
+
+prov:generatedAtTime
+    a owl:DatatypeProperty ;
+    rdfs:domain prov:Entity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:label "generated at time"@en ;
+    rdfs:label "a généré au moment"@fr ;
+    rdfs:label "genereerde op tijdstip"@nl ;
+    rdfs:range xsd:dateTime .
+
+prov:invalidatedAtTime
+    a owl:DatatypeProperty ;
+    rdfs:label "invalidated at time"@en ;
+    rdfs:label "invalidé au moment"@fr ;
+    rdfs:label "ongeldig gemaakt op tijdstip"@nl ;
+    skos:definition "The time at which an entity was invalidated (i.e., no longer usable)."@en ;
+    skos:definition "Le moment où une entité a été invalidée (c'est-à-dire n'est plus utilisable)."@fr ;
+    skos:definition "Het tijdstip waarop een entiteit ongeldig werd gemaakt (d.w.z. niet langer bruikbaar)."@nl ;
+    rdfs:domain prov:Entity ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:startedAtTime
+    a owl:DatatypeProperty ;
+    rdfs:label "started at time"@en ;
+    rdfs:label "démarré à l'heure"@fr ;
+    rdfs:label "gestart op tijdstip"@nl ;
+    skos:definition "The time at which an activity started. See also `prov:endedAtTime`."@en ;
+    skos:definition "Le moment où une activité a commencé. Voir aussi `prov:endedAtTime`."@fr ;
+    skos:definition "Het tijdstip waarop een activiteit begon. Zie ook `prov:endedAtTime`."@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:range xsd:dateTime ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:used
+    a owl:ObjectProperty ;
+    rdfs:label "used"@en ;
+    rdfs:label "a utilisé"@fr ;
+    rdfs:label "gebruikte"@nl ;
+    skos:definition "A `prov:Entity` that was used by this `prov:Activity`. For example, `:baking prov:used :spoon, :egg, :oven .`"@en ;
+    skos:definition "Une `prov:Entity` qui a été utilisée par cette `prov:Activity`. Par exemple , `:baking prov:used :cuillère , :œuf , :four.`"@fr ;
+    skos:definition "Een `prov:Entity` die door deze `prov:Activity` werd gebruikt. Bijvoorbeeld: `:bakken prov:used :lepel ,:ei, :oven.`"@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (prov:qualifiedUsage
+        prov:entity
+    ) .
+
+prov:wasAssociatedWith
+    a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    rdfs:label "was associated with"@en ;
+    rdfs:label "a été associé à"@fr ;
+    rdfs:label "is geassocieerd met"@nl ;
+    skos:definition "An `prov:Agent` that had some (unspecified) responsibility for the occurrence of this `prov:Activity`."@en ;
+    skos:definition "Un `prov:Agent` qui avait une responsabilité (non spécifiée) avant la survenue de cette `prov:Activity`."@fr ;
+    skos:definition "Een `prov:Agent` die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze `prov:Activity`."@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:range prov:Agent ;
+    owl:propertyChainAxiom (prov:qualifiedAssociation
+        prov:agent
+    );
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+prov:wasAttributedTo
+    a owl:ObjectProperty ;
+    rdfs:label "was attributed to"@en ;
+    rdfs:label "a été attribué à"@fr ;
+    rdfs:label "is toegekend aan"@nl ;
+    skos:definition "Attribution is the ascribing of an entity to an agent."@en ;
+    skos:definition "Attribution est l'attribution d'une entité à un agent."@fr ;
+    skos:definition "Toekenning is het toekennen van een entiteit aan een agent."@nl ;
+    rdfs:domain prov:Entity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Agent ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (prov:qualifiedAttribution
+        prov:agent
+    ) .
+
+prov:wasGeneratedBy
+    a owl:ObjectProperty ;
+    rdfs:domain prov:Entity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:label "was generated by"@en ;
+    rdfs:label "a été généré par"@fr ;
+    rdfs:label "is gegenereerd door"@nl ;
+    rdfs:range prov:Activity ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (prov:qualifiedGeneration
+        prov:activity
+    ) .
+

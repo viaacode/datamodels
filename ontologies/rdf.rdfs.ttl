@@ -1,0 +1,33 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+rdf:List a rdfs:Class ;
+	rdfs:subClassOf rdfs:Resource ;
+    rdfs:label "list"@en ;
+    rdfs:label "liste"@fr ;
+    rdfs:label "lijst"@nl ;
+	skos:definition "The class of RDF Lists."@en ;
+    skos:definition "La classe des listes RDF."@fr ;
+    skos:definition "De klasse van RDF-lijsten."@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+rdf:value a rdf:Property ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range xsd:string ;
+    rdfs:label "value"@en ;
+    rdfs:label "valeur"@fr ;
+    rdfs:label "waarde"@nl ;
+    skos:definition "May be used in describing structured values."@en ;
+    skos:definition "Peut être utilisé pour décrire des valeurs structurées."@fr ;
+    skos:definition "Kan worden gebruikt om gestructureerde waardes te beschrijven."@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

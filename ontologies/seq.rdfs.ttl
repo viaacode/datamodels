@@ -1,0 +1,59 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# vraag: deze laten vallen ten voordele van edm-equivalenten? Deze hieronder lijken wel algemener inzetbaar?
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+seq:directlyFollows  a owl:ObjectProperty ;
+  rdfs:label "directly follows"@en ;
+  rdfs:label "suit directement"@fr ;
+  rdfs:label "volgt direct op"@nl ;
+  skos:definition "The intransitive follows relation. For example, Thursday directly follows Wednesday. Directness of precedence depends on the designer conceptualization."@en ;
+  skos:definition "La relation intransitive de 'suivre directement'. Par exemple, jeudi suit directement mercredi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr ;
+  skos:definition "De intransitieve 'volgt-direct-op' relatie. Bv. donderdag volgt direct op woensdag. De mate van 'directheid' bij het 'volgen-op' hangt af van het ontwerp van de bedenker."@nl ;
+  rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+  owl:inverseOf seq:directlyPrecedes ;
+  rdfs:subPropertyOf seq:follows ;
+  rdfs:range owl:Thing ;
+  rdfs:domain owl:Thing .
+
+seq:directlyPrecedes  a owl:ObjectProperty ;
+  rdfs:label "directly precedes"@en ;
+  rdfs:label "précède directement"@fr ;
+  rdfs:label "gaat direct vooraf aan"@nl ;
+  skos:definition "The intransitive precedes relation. For example, Monday directly precedes Tuesday. Directness of precedence depends on the designer conceptualization."@en ;
+  skos:definition "La relation intransitive de 'préceder'. Par exemple, lundi précède directement mardi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr ;
+  skos:definition "De intransitieve 'gaat-vooraf-aan' relatie. Bv. maandag gaat direct vooraf aan dinsdag. De mate van 'direct-vooraf-gaan-aan' hangt af van het ontwerp van de bedenker."@nl ;
+  rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+  rdfs:subPropertyOf seq:precedes ;
+  rdfs:range owl:Thing ;
+  rdfs:domain owl:Thing .
+
+seq:follows  a owl:ObjectProperty, owl:TransitiveProperty ;
+  rdfs:label "follows"@en ;
+  rdfs:label "suit"@fr ;
+  rdfs:label "volgt op"@nl ;
+  skos:definition """A relation between entities, expressing a 'sequence' schema. E.g. 'year 2000 follows 1999', 'preparing coffee' follows 'deciding what coffee to use', 'II World War follows I World War', etc. It can be used between tasks, processes or time intervals, and subproperties would fit best in order to distinguish the different uses."""@en ;
+  skos:definition """Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 2000 suit l'année 1999', 'préparer du café' suit 'décider quel café à utiliser', 'la Seconde Guerre mondiale suit la Première Guerre mondiale', etc. Il peut être utilisé avec des tâches, des processus ou des intervalles de temps, et des sous-propriétés seraient les meilleures adaptées pour distinguer les différentes utilisations."""@fr ;
+  skos:definition """Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 2000 volgt op het jaar 1999', 'koffie klaarmaken' volgt op 'beslissen welke koffie te gebruiken', 'WO II volgt op WO I', etc. Het kan gebruikt worden bij taken, processen, of tijdsintervallen, en subeigenschappen (subproperties) zouden het best passen om de verschillende gebruiken te onderscheiden."""@nl ;
+  rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+  rdfs:domain owl:Thing ;
+  rdfs:range owl:Thing .
+
+seq:precedes  a owl:ObjectProperty, owl:TransitiveProperty ;
+  rdfs:label "precedes"@en ;
+  rdfs:label "précède"@fr ;
+  rdfs:label "gaat vooraf aan"@nl ;
+  skos:definition """A relation between entities, expressing a 'sequence' schema. E.g. 'year 1999 precedes 2000', 'deciding what coffee to use' precedes 'preparing coffee', 'World War II follows World War I', 'in the Milan to Rome autoroute, Bologna precedes Florence', etc. It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc. Subproperties can be defined in order to distinguish the different uses."""@en ;
+  skos:definition """Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 1999 précède l'année 2000', 'décider quel café à utiliser' précède 'préparer du café', 'sur l'autoroute de Milan à Rome, Bologne précède Florence', etc. Il peut être utilisé avec des tâches, des processus, des intervalles de temps, des objets dans l'espace, des situations, etc. Des sous-propriétés (subproperties) peuvent être définies pour distinguer les différentes utilisations."""@fr ;
+  skos:definition """Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 1999 gaat vooraf aan het jaar 2000', 'beslissen welke koffie te gebruiken' gaat vooraf aan 'koffie klaarmaken', 'op de autoweg van Milaan naar Rome, gaat Bologna vooraf aan Florence', etc. Het kan gebruikt worden bij taken, processen, tijdsintervallen, objecten in de ruimte, situaties, etc. Subeigenschappen (subproperties) kunnen gedefinieerd worden om de verschillende gebruiken te onderscheiden."""@nl ;
+  rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+  owl:inverseOf seq:follows ;
+  rdfs:domain owl:Thing ;
+  rdfs:range owl:Thing .

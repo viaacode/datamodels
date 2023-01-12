@@ -15,10 +15,14 @@
   dc:contributor "Participants in W3C's Semantic Web Deployment Working Group."@en ;
   dc:description "An RDF vocabulary extending SKOS and allowing the description and linking of lexical entities."@en .
 
+#####################################
+#              CLASSES              #
+#####################################
+
 skosxl:Label
-  rdfs:label "Label"@en ;
-  rdfs:label "Label"@nl ;
-  rdfs:label "Étiquette"@fr ;
+  rdfs:label "label"@en ;
+  rdfs:label "label"@nl ;
+  rdfs:label "étiquette"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "A special class of lexical entities."@en ;
   skos:definition "Een speciale klasse van lexicale entiteiten."@nl ;
@@ -30,6 +34,10 @@ skosxl:Label
     owl:onProperty skosxl:literalForm ;
     owl:cardinality "1"^^xsd:nonNegativeInteger
   ] .
+
+#####################################
+#             PROPERTIES            #
+#####################################
 
 skosxl:literalForm
   rdfs:label "literal form"@en ;

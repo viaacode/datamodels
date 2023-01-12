@@ -4,6 +4,80 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
+<http://www.w3.org/2004/02/skos/core> a owl:Ontology ;
+    dcterms:contributor "Dave Beckett",
+        "Nikki Rogers",
+        "Participants in W3C's Semantic Web Deployment Working Group."@en ;
+    dcterms:creator "Alistair Miles",
+        "Sean Bechhofer" ;
+    dcterms:description "An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies."@en ;
+    dcterms:description "Un vocabulaire RDF pour décrire la structure et le contenu de schémas de concepts tels que les thésaurus, les schémas de classification, les listes de sujets, les taxonomies, les 'folksonomies', d'autres types de vocabulaires contrôlés, et aussi des schémas de concepts intégrés dans des glossaires et des terminologies."@fr ;
+    dcterms:description "Een RDF-vocabularium voor het beschrijven van de basisstructuur en inhoud van conceptenschema's (concept schemes) zoals thesauri, classificatieschema’s, 'subject heading' lijsten, taxonomieën, folksonomieën, andere soorten gecontroleerde vocabularia, alsook conceptenschema's die geïntegreerd zijn in glossaria en terminologieën."@nl ;
+    dcterms:title "SKOS Vocabulary"@en ;
+    dcterms:title "Vocabulaire SKOS"@fr ;
+    dcterms:title "SKOS Vocabularium"@nl ;
+    rdfs:seeAlso <http://www.w3.org/TR/skos-reference/> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+skos:Concept a owl:Class, rdfs:Class ;
+    rdfs:label "concept"@en ;
+    rdfs:label "concept"@fr ;
+    rdfs:label "concept"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    skos:definition """A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive."""@en ;
+    skos:definition """Un concept SKOS peut être considéré comme une idée ou une notion, une unité de pensée. Cependant, ce qui constitue une unité de pensée est subjectif, et cette définition se veut suggestive, plutôt que restrictive."""@fr ;
+    skos:definition """Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Echter, wat  een gedachte-eenheid is, is subjectief, en deze definitie is eerder suggestief dan beperkend bedoeld."""@nl .
+
+skos:OrderedCollection a owl:Class, rdfs:Class ;
+    rdfs:label "ordered collection"@en ;
+    rdfs:label "collection ordonnée"@fr ;
+    rdfs:label "geordende collectie"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    rdfs:subClassOf skos:Collection ;
+    skos:definition "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en ;
+    skos:definition "Une collection ordonnée de concepts, où le regroupement et l'ordre sont significatifs."@fr ;
+    skos:definition "Een geordende collectie van concepten, waar zowel de groepering als de volgorde betekenisvol zijn."@nl ;
+    skos:scopeNote "Ordered collections can be used where you would like a set of concepts to be displayed in a specific order, and optionally under a 'node label'."@en ;
+    skos:scopeNote "Les collections ordonnées peuvent être utilisées lorsque vous souhaitez afficher un ensemble de concepts dans un ordre spécifique, et éventuellement sous une \"étiquette de nœud\"."@fr ;
+    skos:scopeNote "Geordende collecties kunnen worden gebruikt waar je een set van concepten wilt weergeven in een specifieke volgorde, en optioneel onder een 'knooppuntlabel'."@nl .
+
+skos:Collection a owl:Class, rdfs:Class ;
+    rdfs:label "collection"@en ;
+    rdfs:label "collection"@fr ;
+    rdfs:label "verzameling"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    owl:disjointWith skos:Concept,
+        skos:ConceptScheme ;
+    skos:definition "A meaningful collection of concepts."@en ;
+    skos:definition "Une collection de concepts ayant un sens."@fr ;
+    skos:definition "Een betekenisvolle verzameling van concepten."@nl ;
+    skos:scopeNote "Labelled collections can be used where you would like a set of concepts to be displayed under a 'node label' in the hierarchy."@en ;
+    skos:scopeNote "Les collections étiquetées peuvent être utilisées pour afficher un ensemble de concepts sous un 'label de nœud' dans la hiérarchie."@fr ;
+    skos:scopeNote "Gelabelde verzamelingen kunnen gebruikt worden waar je een set concepten onder een 'node label' in de hiërarchie wilt weergeven."@nl .
+
+skos:ConceptScheme a owl:Class, rdfs:Class ;
+    rdfs:label "concept scheme"@en ;
+    rdfs:label "schéma de concepts"@fr ;
+    rdfs:label "conceptenschema"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    owl:disjointWith skos:Concept ;
+    skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
+    skos:definition "Un ensemble de concepts, éventuellement accompagné de déclarations sur les relations sémantiques entre ces concepts."@fr ;
+    skos:definition "Een set van concepten, eventueel vergezeld van verklaringen over de semantische relaties tussen die concepten."@nl ;
+    skos:example "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en ;
+    skos:example "Thésaurus, classifications, listes de sujets, taxonomies, 'folksonomies', et d'autres types de vocabulaires contrôlés sont tous des exemples de schémas de concepts. Les schémas de concepts sont aussi intégrés dans les glossaires et les terminologies."@fr ;
+    skos:example "Thesauri, classificaties, onderwerplijsten, taxonomieën, folksonomieën, en andere soorten gecontroleerde vocabularia zijn allemaal voorbeelden van conceptenschema's. Conceptenschema's worden ook ingebed in glossaria en terminologieën."@nl ;
+    skos:scopeNote "A concept scheme may be defined to include concepts from different sources."@en ;
+    skos:scopeNote "Un schéma de concepts peut être défini pour inclure des concepts provenant de différentes sources."@fr ;
+    skos:scopeNote "Een conceptenschema kan gedefinieerd worden om concepten uit verschillende bronnen te bevatten."@nl .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
 skos:altLabel a rdf:Property,
         owl:AnnotationProperty ;
     rdfs:label "alternative label"@en ;
@@ -201,19 +275,6 @@ skos:scopeNote a rdf:Property,
     skos:definition "Une note qui aide à clarifier le sens et/ou l'utilisation d'un concept."@fr ;
     skos:definition "Een notitie die helpt om de betekenis en/of het gebruik van een concept te verduidelijken."@nl .
 
-skos:OrderedCollection a owl:Class, rdfs:Class ;
-    rdfs:label "Ordered Collection"@en ;
-    rdfs:label "Collection ordonnée"@fr ;
-    rdfs:label "Geordende collectie"@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:subClassOf skos:Collection ;
-    skos:definition "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en ;
-    skos:definition "Une collection ordonnée de concepts, où le regroupement et l'ordre sont significatifs."@fr ;
-    skos:definition "Een geordende collectie van concepten, waar zowel de groepering als de volgorde betekenisvol zijn."@nl ;
-    skos:scopeNote "Ordered collections can be used where you would like a set of concepts to be displayed in a specific order, and optionally under a 'node label'."@en ;
-    skos:scopeNote "Les collections ordonnées peuvent être utilisées lorsque vous souhaitez afficher un ensemble de concepts dans un ordre spécifique, et éventuellement sous une \"étiquette de nœud\"."@fr ;
-    skos:scopeNote "Geordende collecties kunnen worden gebruikt waar je een set van concepten wilt weergeven in een specifieke volgorde, en optioneel onder een 'knooppuntlabel'."@nl .
-
 skos:broadMatch a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "has broader match"@en ;
@@ -376,36 +437,6 @@ skos:narrowerTransitive a rdf:Property,
     skos:scopeNote "Par convention, skos:narrowerTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr ;
     skos:scopeNote "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudig queryexpansie-algoritme in een zoekapplicatie."@nl .
 
-skos:Collection a owl:Class, rdfs:Class ;
-    rdfs:label "Collection"@en ;
-    rdfs:label "Collection"@fr ;
-    rdfs:label "Verzameling"@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    owl:disjointWith skos:Concept,
-        skos:ConceptScheme ;
-    skos:definition "A meaningful collection of concepts."@en ;
-    skos:definition "Une collection de concepts ayant un sens."@fr ;
-    skos:definition "Een betekenisvolle verzameling van concepten."@nl ;
-    skos:scopeNote "Labelled collections can be used where you would like a set of concepts to be displayed under a 'node label' in the hierarchy."@en ;
-    skos:scopeNote "Les collections étiquetées peuvent être utilisées pour afficher un ensemble de concepts sous un 'label de nœud' dans la hiérarchie."@fr ;
-    skos:scopeNote "Gelabelde verzamelingen kunnen gebruikt worden waar je een set concepten onder een 'node label' in de hiërarchie wilt weergeven."@nl .
-
-skos:ConceptScheme a owl:Class, rdfs:Class ;
-    rdfs:label "Concept Scheme"@en ;
-    rdfs:label "Schéma de concepts"@fr ;
-    rdfs:label "Conceptenschema"@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    owl:disjointWith skos:Concept ;
-    skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;
-    skos:definition "Un ensemble de concepts, éventuellement accompagné de déclarations sur les relations sémantiques entre ces concepts."@fr ;
-    skos:definition "Een set van concepten, eventueel vergezeld van verklaringen over de semantische relaties tussen die concepten."@nl ;
-    skos:example "Thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', and other types of controlled vocabulary are all examples of concept schemes. Concept schemes are also embedded in glossaries and terminologies."@en ;
-    skos:example "Thésaurus, classifications, listes de sujets, taxonomies, 'folksonomies', et d'autres types de vocabulaires contrôlés sont tous des exemples de schémas de concepts. Les schémas de concepts sont aussi intégrés dans les glossaires et les terminologies."@fr ;
-    skos:example "Thesauri, classificaties, onderwerplijsten, taxonomieën, folksonomieën, en andere soorten gecontroleerde vocabularia zijn allemaal voorbeelden van conceptenschema's. Conceptenschema's worden ook ingebed in glossaria en terminologieën."@nl ;
-    skos:scopeNote "A concept scheme may be defined to include concepts from different sources."@en ;
-    skos:scopeNote "Un schéma de concepts peut être défini pour inclure des concepts provenant de différentes sources."@fr ;
-    skos:scopeNote "Een conceptenschema kan gedefinieerd worden om concepten uit verschillende bronnen te bevatten."@nl .
-
 skos:mappingRelation a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "is in mapping relation with"@en ;
@@ -446,27 +477,4 @@ skos:note a rdf:Property,
     skos:definition "Een algemene notitie, voor eender welk doel."@nl ;
     skos:scopeNote "This property may be used directly, or as a super-property for more specific note types."@en ;
     skos:scopeNote "Cette propriété peut être utilisée directement, ou comme super-propriété pour des types de notes plus spécifiques."@fr ;
-    skos:scopeNote "Deze eigenschap kan direct gebruikt worden, of als super-eigenschap voor meer specifieke notitietypes."@nl .
-
-skos:Concept a owl:Class, rdfs:Class ;
-    rdfs:label "Concept"@en ;
-    rdfs:label "Concept"@fr ;
-    rdfs:label "Concept"@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    skos:definition "An idea or notion; a unit of thought."@en ;
-    skos:definition "Une idée ou notion; une unité de pensée."@fr ;
-    skos:definition "Een idee of notie; een gedachte-eenheid."@nl .
-
-<http://www.w3.org/2004/02/skos/core> a owl:Ontology ;
-    dcterms:contributor "Dave Beckett",
-        "Nikki Rogers",
-        "Participants in W3C's Semantic Web Deployment Working Group."@en ;
-    dcterms:creator "Alistair Miles",
-        "Sean Bechhofer" ;
-    dcterms:description "An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies."@en ;
-    dcterms:description "Un vocabulaire RDF pour décrire la structure et le contenu de schémas de concepts tels que les thésaurus, les schémas de classification, les listes de sujets, les taxonomies, les 'folksonomies', d'autres types de vocabulaires contrôlés, et aussi des schémas de concepts intégrés dans des glossaires et des terminologies."@fr ;
-    dcterms:description "Een RDF-vocabularium voor het beschrijven van de basisstructuur en inhoud van conceptenschema's (concept schemes) zoals thesauri, classificatieschema’s, 'subject heading' lijsten, taxonomieën, folksonomieën, andere soorten gecontroleerde vocabularia, alsook conceptenschema's die geïntegreerd zijn in glossaria en terminologieën."@nl ;
-    dcterms:title "SKOS Vocabulary"@en ;
-    dcterms:title "Vocabulaire SKOS"@fr ;
-    dcterms:title "SKOS Vocabularium"@nl ;
-    rdfs:seeAlso <http://www.w3.org/TR/skos-reference/> .
+    skos:scopeNote "Deze eigenschap kan direct gebruikt worden, of als super-eigenschap voor meer specifieke notitietypes."@nl .    

@@ -30,15 +30,19 @@
         schema:email  "milan.valadou@meemoo.be"
         
     ] ,
-                [
+    [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+    [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
     dct:title     "Data model Objects"@en ;
     dct:title     "Modèle de données Objets"@fr ;
     dct:title     "Datamodel Objecten"@nl ;
     dct:created   "2022-05-16" ;
-    dct:modified  "2022-06-18" ;
+    dct:modified  "2023-01-12" ;
     dct:description """Data model to describe objects."""@en ;
     dct:description """Modèle de données pour décrire des objets."""@fr ;
     dct:description """Datamodel voor het beschrijven van objecten."""@nl ;
@@ -46,6 +50,10 @@
     owl:imports <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> ;
     owl:imports <http://www.w3.org/ns/prov#>;
     pav:version "0.0.1" .
+
+#####################################
+#               SHAPES              #
+#####################################
 
 <#ObjectShape> a sh:NodeShape ;
   sh:targetClass premis:Object ;
@@ -373,7 +381,7 @@
         sh:minCount 1 ;
         sh:name "fixity checksum"@nl;
         sh:name "fixity checksum"@en;
-        sh:name "Vérification de la fixation"@fr;
+        sh:name "vérification de la fixation"@fr;
 
         sh:description "De waarde van de checksum."@nl ;
         sh:description "The value of the checksum."@en ; 
@@ -387,7 +395,7 @@
 
         sh:name "checksum maker"@nl;
         sh:name "checksum creator"@en;
-        sh:name "Créateur de somme de contrôle"@fr;
+        sh:name "créateur de somme de contrôle"@fr;
 
         sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
         sh:description "The entity that generated the checksum."@en ;

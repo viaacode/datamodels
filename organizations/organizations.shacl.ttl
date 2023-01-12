@@ -2,6 +2,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -11,7 +12,6 @@
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 @base <https://data.hetarchief.be/ns/organization> .
 
@@ -25,17 +25,24 @@
                 [
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
+    ] ,
+    [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
     dct:title     "Data model Organizations"@en ;
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2022-06-16" ;
+    dct:modified  "2023-01-12" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
     pav:version "0.0.1" .
 
+#####################################
+#               SHAPES              #
+#####################################
 
 ######################
 #     NodeShapes     #

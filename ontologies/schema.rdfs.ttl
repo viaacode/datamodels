@@ -1,36 +1,62 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
+@prefix foaf:<http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #####################################
 #              CLASSES              #
 #####################################
 
-####################
-#      SCHEMA      #
-####################
 schema:ArchiveComponent a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
-    rdfs:label "Archive Component"@en ;
-    rdfs:label "Archiefcomponent"@nl ;
-    rdfs:label "Composant d'archive"@fr ;
+    rdfs:label "archive component"@en ;
+    rdfs:label "archiefcomponent"@nl ;
+    rdfs:label "composant d'archive"@fr ;
     skos:definition """An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections."""@en ;
     skos:definition """Een immaterieel type dat toegepast moet worden op elke inhoud van het archief, met daarbij een set van eigenschappen die nodig zijn om archiefitems en -collecties te beschrijven."""@nl ;
     skos:definition """Un type intangible à appliquer à tout contenu d'archives, portant avec lui un ensemble de propriétés nécessaires pour la description d'éléments d'archives et de collections."""@fr  ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:Collection
+  a rdfs:Class ;
+    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:label "collection"@en ;
+    rdfs:label "collectie"@nl ;
+    rdfs:label "collection"@fr ;
+    skos:definition """A collection of items, e.g. creative works or products, typically but not necessarily of the same kind."""@en ;
+    skos:definition """Een collectie van items, bv. creatieve werken (creative works) of producten, gewoonlijk maar niet altijd van dezelfde soort."""@nl ;
+    skos:definition """Une collection d'articles, par exemple des œuvres créatives (creative works) ou des produits, généralement mais pas nécessairement de même type."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:ContactPoint a   rdfs:Class ;
+  rdfs:subClassOf schema:StructuredValue ;
+  rdfs:label "contactPoint"@en ;
+  rdfs:label "point de contact"@fr ;
+  rdfs:label "aanspreek-/meldpunt"@nl ;
+  skos:definition "A contact point, for example a Customer Complaints department."@en ;
+  skos:definition "Un point de contact, par exemple un département des plaintes clients."@fr ;
+  skos:definition "Een aanspreekpunt, zoals een afdeling voor klachten van klanten."@nl ;
+  rdfs:isDefinedBy <https://schema.org/> .
+
+schema:CreativeWork a rdfs:Class;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "creative work"@en ;
+    rdfs:label "creatief werk"@nl ;
+    rdfs:label "travail créatif"@fr ;
+    skos:definition """The most generic kind of creative work, including books, movies, photographs, software programs, etc."""@en ;
+    skos:definition """De meest generieke soort van creatief werk (CreativeWork), zoals boeken, films, foto's, programma's, enz."""@nl ;
+    skos:definition """La plus générique des types de travail créatif (CreativeWork), y compris les livres, les films, les photos, les logiciels, etc."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:CreativeWorkSeason a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
-    rdfs:label "Creative Work Season"@en ;
-    rdfs:label "Creatief Werk Seizoen"@nl ;
+    rdfs:label "creative work season"@en ;
+    rdfs:label "creatief werk seizoen"@nl ;
     rdfs:label "Saison du travail créatif"@fr ;
     skos:definition """A media season e.g. tv, radio, video game etc."""@en ;
     skos:definition """Een mediaseizoen, bijvoorbeeld tv, radio, videogame etc."""@nl ;
@@ -39,29 +65,19 @@ schema:CreativeWorkSeason a rdfs:Class;
 
 schema:CreativeWorkSeries a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
-    rdfs:label "Creative Work Series"@en ;
-    rdfs:label "Serie van het creatief werk"@nl ;
-    rdfs:label "Série du travail créatif"@fr ;
+    rdfs:label "creative work series"@en ;
+    rdfs:label "serie van het creatief werk"@nl ;
+    rdfs:label "série du travail créatif"@fr ;
     skos:definition """A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games)."""@en ;
     skos:definition """Een CreativeWorkSeries in schema.org is een groep vergelijkbare items, meestal maar niet altijd van dezelfde soort. CreativeWorkSeries zijn meestal gegroepeerd in een bepaalde volgorde, vaak chronologisch. In tegenstelling tot ItemList, ligt de nadruk van CreativeWorkSeries op gepubliceerd materiaal (bijvoorbeeld boeken en periodieken, of media zoals tv, radio en games)."""@nl ;
     skos:definition """Un CreativeWorkSeries dans schema.org est une série d'objets, typiquement mais pas forcément du même type. CreativeWorkSeries sont généralement organisées dans un certain ordre, souvent chronologique. Contrairement à ItemList, l'importance des CreativeWorkSeries est sur les matériaux publiés (par exemple des livres et des périodiques, ou des médias tels que tv, radio et jeux vidéo)."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
-schema:CreativeWork a rdfs:Class;
-    rdfs:subClassOf schema:Thing ;
-    rdfs:label "Creative Work"@en ;
-    rdfs:label "Creatief Werk"@nl ;
-    rdfs:label "Travail créatif"@fr ;
-    skos:definition """The most generic kind of creative work, including books, movies, photographs, software programs, etc."""@en ;
-    skos:definition """De meest generieke soort van creatief werk (CreativeWork), zoals boeken, films, foto's, programma's, enz."""@nl ;
-    skos:definition """La plus générique des types de travail créatif (CreativeWork), y compris les livres, les films, les photos, les logiciels, etc."""@fr ;
-    rdfs:isDefinedBy <https://schema.org/> .
-
 schema:Episode a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
-    rdfs:label "Episode"@en ;
-    rdfs:label "Aflevering"@nl ;
-    rdfs:label "Épisode"@fr ;
+    rdfs:label "episode"@en ;
+    rdfs:label "aflevering"@nl ;
+    rdfs:label "épisode"@fr ;
     skos:definition """A media episode (e.g. TV, radio, video game) which can be part of a series or season."""@en ;
     skos:definition """Een media aflevering (bijvoorbeeld tv, radio, videogame) die deel uitmaakt van een serie of seizoen."""@nl ;
     skos:definition """Un épisode médiatique (par exemple tv, radio, jeu vidéo) qui peut faire partie d'une série ou d'une saison."""@fr ;
@@ -69,9 +85,9 @@ schema:Episode a rdfs:Class;
 
 schema:Event a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
-    rdfs:label "Event"@en ;
-    rdfs:label "Gebeurtenis"@nl ;
-    rdfs:label "Événement"@fr ;
+    rdfs:label "event"@en ;
+    rdfs:label "gebeurtenis"@nl ;
+    rdfs:label "événement"@fr ;
     skos:definition """An event happening at a certain time and location, such as a concert, lecture, or festival."""@en ;
     skos:definition """Een gebeurtenis die plaatsvindt op een gegeven moment en locatie, zoals een concert, een lezing of een festival."""@nl ;
     skos:definition """Un événement qui se déroule à un moment et dans un lieu donnés, comme un concert, une conférence ou un festival."""@fr ;
@@ -79,9 +95,9 @@ schema:Event a rdfs:Class ;
 
 schema:Organization a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
-    rdfs:label "Organisation"@en ;
-    rdfs:label "Organisatie"@nl ;
-    rdfs:label "Organisation"@fr ;
+    rdfs:label "organisation"@en ;
+    rdfs:label "organisatie"@nl ;
+    rdfs:label "organisation"@fr ;
     skos:definition """An organization such as a school, NGO, corporation, club, etc."""@en ;
     skos:definition """Een organisatie zoals een school, NGO, corporatie, club, enz."""@nl ;
     skos:definition """Une organisation telle que une école, une ONG, une société, un club, etc."""@fr ;
@@ -89,29 +105,60 @@ schema:Organization a rdfs:Class ;
 
 schema:PerformanceRole a rdfs:Class ;
     rdfs:subClassOf schema:Role ;
-    rdfs:label "Performance Role"@en ;
-    rdfs:label "Uitvoeringsrol"@nl ;
-    rdfs:label "Rôle de performance"@fr ;
+    rdfs:label "performance role"@en ;
+    rdfs:label "uitvoeringsrol"@nl ;
+    rdfs:label "rôle de performance"@fr ;
     skos:definition """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en ;
     skos:definition """Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatrale uitvoering, bijvoorbeeld in een film, televisieserie etc."""@nl ;
     skos:definition """Un PerformanceRole est un rôle qu'une entité remplit dans le cadre d'une représentation théâtrale, par exemple dans un film, une série télévisée etc."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:Person   a   rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    owl:equivalentClass foaf:Person ;
+    rdfs:label "person"@en ;
+    rdfs:label "personne"@fr ;
+    rdfs:label "persoon"@nl ;
+    skos:definition "A person (alive, dead, undead, or fictional)."@en ;
+    skos:definition "Une personne (vivante, morte, non-morte ou fictive)."@fr ;
+    skos:definition "Een persoon (levend, dood, ondood, of fictief)."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:Place a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
-    rdfs:label "Place"@en ;
-    rdfs:label "Plaats"@nl ;
-    rdfs:label "Lieu"@fr ;
+    rdfs:label "place"@en ;
+    rdfs:label "plaats"@nl ;
+    rdfs:label "lieu"@fr ;
     skos:definition """Entities that have a somewhat fixed, physical extension."""@en ;
     skos:definition """Entiteiten die een enigszins vastliggende, fysieke uitbreiding hebben."""@nl ;
     skos:definition """Entités qui ont une extension physique quelque peu fixée."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:PostalAddress    a   rdfs:Class ;
+  rdfs:subClassOf schema:ContactPoint ;
+  rdfs:label "postal address"@en ;
+  rdfs:label "adresse postale"@fr ;
+  rdfs:label "postadres"@nl ;
+  skos:definition "The mailing address."@en ;
+  skos:definition "L'adresse postale."@fr ;
+  skos:definition "Het postadres."@nl ;
+  rdfs:isDefinedBy <https://schema.org/> .
+
+schema:QuantitativeValue a rdfs:Class ;
+    rdfs:subClassOf schema:Thing ;
+    rdfs:label "quantitative Value"@en ;
+    rdfs:label "kwantitatieve waarde"@nl ;
+    rdfs:label "valeur quantitative"@fr ;
+    skos:definition """A point value or interval for product characteristics and other purposes."""@en ;
+    skos:definition """Een puntwaarde of interval voor producteigenschappen en andere doeleinden."""@nl ;
+    skos:definition """Une valeur ponctuelle ou un intervalle pour les caractéristiques d'un produit et d'autres fins."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:Role a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
-    rdfs:label "Role"@en ;
-    rdfs:label "Rol"@nl ;
-    rdfs:label "Rôle"@fr ;
+    rdfs:label "role"@en ;
+    rdfs:label "rol"@nl ;
+    rdfs:label "rôle"@fr ;
     skos:definition """Represents additional information about a relationship or property.
         For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period.
         Or that a Person's 'actor' role in a Movie was for some particular characterName.
@@ -129,66 +176,21 @@ schema:Role a rdfs:Class ;
         """@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
-schema:QuantitativeValue a rdfs:Class ;
-    rdfs:subClassOf schema:Thing ;
-    rdfs:label "Quantitative Value"@en ;
-    rdfs:label "Kwantitatieve waarde"@nl ;
-    rdfs:label "Valeur quantitative"@fr ;
-    skos:definition """A point value or interval for product characteristics and other purposes."""@en ;
-    skos:definition """Een puntwaarde of interval voor producteigenschappen en andere doeleinden."""@nl ;
-    skos:definition """Une valeur ponctuelle ou un intervalle pour les caractéristiques d'un produit et d'autres fins."""@fr ;
-    rdfs:isDefinedBy <https://schema.org/> .
-
-schema:Collection
-  a rdfs:Class ;
-    rdfs:subClassOf schema:CreativeWork ;
-    rdfs:label "Collection"@en ;
-    rdfs:label "Collectie"@nl ;
-    rdfs:label "Collection"@fr ;
-    skos:definition """A collection of items, e.g. creative works or products, typically but not necessarily of the same kind."""@en ;
-    skos:definition """Een collectie van items, bv. creatieve werken (creative works) of producten, gewoonlijk maar niet altijd van dezelfde soort."""@nl ;
-    skos:definition """Une collection d'articles, par exemple des œuvres créatives (creative works) ou des produits, généralement mais pas nécessairement de même type."""@fr ;
-    rdfs:isDefinedBy <https://schema.org/> .
-
 #####################################
 #             PROPERTIES            #
 #####################################
 
-####################
-#      DCTERMS     #
-####################
-dct:available a rdf:Property ;
-    rdfs:label "Date Available"@en ;
-    rdfs:label "Beschikbaarheidsdatum"@nl ;
-    rdfs:label "Date de disponibilité"@fr ;
-    skos:definition "Date that the resource became or will become available."@en ;
-    skos:definition "Datum waarop de bron beschikbaar is of zal zijn."@nl ;
-    skos:definition "Date à laquelle la ressource devient ou deviendra disponible."@fr ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+schema:about a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range  schema:Thing ;  
+    rdfs:label "about"@en ;
+    rdfs:label "over"@nl ;
+    rdfs:label "sur"@fr ;
+    skos:definition """The subject matter of the content."""@en ;
+    skos:definition """Het onderwerp van de inhoud."""@nl ;
+    skos:definition """Le sujet du contenu."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
 
-dct:format a rdf:Property ;
-    rdfs:range xsd:string ;
-    rdfs:label "format"@en ;
-    rdfs:label "formaat"@nl ;
-    rdfs:label "format"@fr ;
-    skos:definition "The file format, physical medium, or dimensions of the resource."@en ;
-    skos:definition "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl ;
-    skos:definition "Le format du fichier, le support physique ou les dimensions de la ressource."@fr ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
-
-dct:medium a rdf:Property ;
-    rdfs:range xsd:string ;
-    rdfs:label "medium"@en ;
-    rdfs:label "medium"@nl ;
-    rdfs:label "médium"@fr ;
-    skos:definition "The material or physical carrier of the resource"@en ;
-    skos:definition "Het materiaal of fysieke drager van de bron"@nl ;
-    skos:definition "Le support matériel ou physique de la ressource"@fr ;
-    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
-
-####################
-#      SCHEMA      #
-####################
 schema:abstract a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
@@ -200,7 +202,7 @@ schema:abstract a rdf:Property ;
     skos:definition "Een abstract is een korte beschrijving die een CreativeWork samenvat."@nl ;
     skos:definition "Un résumé est une description courte qui résume un CreativeWork."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
-    
+
 schema:actor a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range schema:Person ;
@@ -210,6 +212,44 @@ schema:actor a rdf:Property ;
     skos:definition "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip."@en ;
     skos:definition "Een acteur, bv. in tv, radio, film, videogames etc. of in een evenement. Acteurs kunnen geassocieerd worden met met individuele items of met een serie, aflevering, clip."@nl ;
     skos:definition "Un acteur, par exemple à la télévision, à la radio, au cinéma, dans les jeux vidéo, etc. ou dans un événement. Les acteurs peuvent être associés à des éléments individuels ou à une série, un épisode, un clip."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:addressCountry   a   rdf:Property ;
+    schema:domainIncludes schema:DefinedRegion,
+        schema:GeoCoordinates,
+        schema:GeoShape,
+        schema:PostalAddress ;
+    schema:rangeIncludes schema:Country,
+        schema:Text ;
+    rdfs:label "addressCountry"@en ;
+    rdfs:label "partie de l'adresse concernant le pays"@fr ;
+    rdfs:label "deel van het adres met betrekking tot het land"@nl ;
+    skos:definition "The country. For example, USA. You can also provide the two-letter [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1)."@en ;
+    skos:definition "Le pays."@fr ;
+    skos:definition "Het land."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:addressLocality  a   rdf:Property ;
+    schema:domainIncludes schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "addressLocality"@en ;
+    rdfs:label "localitéAdresse"@fr ;
+    rdfs:label "adresPlaats"@nl ;
+    skos:definition "The locality in which the street address is, and which is in the region. For example, Mountain View."@en ;
+    skos:definition "La localité dans laquelle se trouve l'adresse de rue, et qui se trouve dans la région."@fr ;
+    skos:definition "De plaats waar het straatadres zich bevindt, en de plaats van de regio."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+    
+schema:addressRegion    a   rdf:Property ;
+    schema:domainIncludes schema:DefinedRegion,
+        schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "addressRegion"@en ;
+    rdfs:label "addresseRegion"@fr ;
+    rdfs:label "adresRegio"@nl ;
+    skos:definition "The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country)."@en ;
+    skos:definition "La région dans laquelle se trouve la localité, et qui se trouve dans le pays. Par exemple, la Californie ou [une autre division administrative appropriée de premier niveau](https://fr.wikipedia.org/wiki/Liste_des_subdivisions_par_pays)."@fr ;
+    skos:definition "De regio waarin de plaats zich bevindt, en die in het land ligt. Bijvoorbeeld, Californië of een ander geschikte [administratieve afdeling van het eerste niveau](https://nl.wikipedia.org/wiki/Bestuurslagen_per_land)."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:alternateName a rdf:Property ;
@@ -259,6 +299,17 @@ schema:author a rdf:Property ;
     skos:definition "L'auteur de ce contenu ou de cette évaluation."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:birthDate a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:date ; 
+    rdfs:label "birth date"@en ;
+    rdfs:label "date de naissance"@fr ;
+    rdfs:label "geboortedatum"@nl ;
+    skos:definition "Date of birth"@en ;
+    skos:definition "Date de naissance"@fr ;
+    skos:definition "Geboortedatum"@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:caption a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range xsd:string ;
@@ -268,6 +319,35 @@ schema:caption a rdf:Property ;
     skos:definition "The caption for this object."@en ;
     skos:definition "De ondertiteling voor dit object."@nl ;
     skos:definition "Les sous-titres de cet objet."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+#TODO SHACL domein organization range contact point toevoegen
+schema:contactPoint a   rdf:Property ;
+    schema:domainIncludes schema:HealthInsurancePlan,
+        schema:Organization,
+        schema:Person ;
+    schema:rangeIncludes schema:ContactPoint ;
+    rdfs:label "contactPoint"@en ;
+    rdfs:label "pointDeContact"@fr ;
+    rdfs:label "aanspreekpunt"@nl ;
+    # labels van verwijderd haOrg:hasContactPoint
+    # rdfs:label "has a contact point"@en ;
+    # rdfs:label "a un point de contact"@fr ;
+    # rdfs:label "heeft een aanspreek-/meldpunt"@nl ; 
+    skos:definition "A contact point for a person or organization."@en ;
+    skos:definition "Un point de contact pour une personne ou une organisation."@fr ;
+    skos:definition "Een aanspreekpunt voor een persoon of een organisatie."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+    
+schema:contactType  a   rdf:Property ;
+    schema:domainIncludes schema:ContactPoint ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "contactType"@en ;
+    rdfs:label "typePointContact"@fr ;
+    rdfs:label "contactType"@nl ;
+    skos:definition "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point."@en ;
+    skos:definition "Une personne ou une organisation peut avoir différents points de contact, à des fins différentes. Par exemple, un point de contact pour les ventes, un point de contact pour les relations publiques, etc. Cette propriété est utilisée pour spécifier le type de point de contact."@fr ;
+    skos:definition "Een persoon of organisatie kan verschillende contactpunten hebben, voor verschillende doeleinden. Bijvoorbeeld een verkoopcontactpunt, een PR-contactpunt enzovoort. Deze eigenschap wordt gebruikt om het soort contactpunt te specificeren."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:contributor a rdf:Property ;
@@ -350,6 +430,17 @@ schema:datePublished a rdf:Property ;
     skos:definition "La date de la première diffusion ou publication."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:deathDate a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:range xsd:date ; 
+    rdfs:label "death date"@en ;
+    rdfs:label "date de décès"@fr ;
+    rdfs:label "sterfdatum"@nl ;
+    skos:definition "Date of death."@en ;
+    skos:definition "Date de décès."@fr ;
+    skos:definition "Datum van overlijden."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:depth a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range schema:QuantitativeValue ;
@@ -384,6 +475,19 @@ schema:duration a rdf:Property ;
     skos:definition "La durée de l'objet (film, enregistrement audio, événement, etc.) au format de date ISO 8601."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:email    a   rdf:Property ;
+    rdfs:domain schema:ContactPoint ;
+    rdfs:domain schema:Organization ;
+    rdfs:domain schema:Person ;
+    rdfs:range  xsd:string ;
+    rdfs:label "email address"@en ;
+    rdfs:label "adresse e-mail"@fr ;
+    rdfs:label "e-mailadres"@nl ;
+    skos:definition "Email address."@en ;
+    skos:definition "Adresse e-mail."@fr ;
+    skos:definition "E-mailadres."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:episodeNumber a rdf:Property ;
     rdfs:domain schema:Episode ;
     rdfs:label "episode number"@en ;
@@ -396,22 +500,13 @@ schema:episodeNumber a rdf:Property ;
 
 schema:familyName a rdf:Property ;
     rdfs:domain schema:Person ;
+    rdfs:range  xsd:string ;
     rdfs:label "family name"@en ;
     rdfs:label "familienaam"@nl ;
     rdfs:label "nom de famille"@fr ;
     skos:definition "Family name. In the U.S., the last name of a Person."@en ;
     skos:definition "Familienaam. In de V.S., de achternaam van een Persoon."@nl ;
     skos:definition "Nom de famille. Aux États-Unis, le dernier nom d'une Personne."@fr ;
-    rdfs:isDefinedBy <https://schema.org/> .
-
-schema:givenName a rdf:Property ;
-    rdfs:domain schema:Person ;
-    rdfs:label "given name"@en ;
-    rdfs:label "voornaam"@nl ;
-    rdfs:label "prénom"@fr ;
-    skos:definition "Given name. In the U.S., the first name of a Person."@en ;
-    skos:definition "Voornaam. In de V.S., de eerste naam van een Persoon."@nl ;
-    skos:definition "Prénom. Aux États-Unis, le premier nom d'une Personne."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:genre a rdf:Property ;
@@ -423,6 +518,16 @@ schema:genre a rdf:Property ;
     skos:definition "Genre of the creative work, broadcast channel or group."@en ;
     skos:definition "Genre van het CreativeWork, uitzendkanaal of groep."@nl ;
     skos:definition "Genre de l'œuvre créative (CreativeWork), de la chaîne de télévision/diffusion ou du groupe."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:givenName a rdf:Property ;
+    rdfs:domain schema:Person ;
+    rdfs:label "given name"@en ;
+    rdfs:label "voornaam"@nl ;
+    rdfs:label "prénom"@fr ;
+    skos:definition "Given name. In the U.S., the first name of a Person."@en ;
+    skos:definition "Voornaam. In de V.S., de eerste naam van een Persoon."@nl ;
+    skos:definition "Prénom. Aux États-Unis, le premier nom d'une Personne."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:height a rdf:Property ;
@@ -511,7 +616,32 @@ schema:name a rdf:Property ;
     rdfs:label "nom"@fr ;
     skos:definition "The name of the item."@en ;
     skos:definition "De naam van het item."@nl ;
-    skos:definition "Le nom de l'élément."@fr ;
+    skos:definition "Le nom de l'article."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:postalCode   a   rdf:Property ;
+    schema:domainIncludes schema:DefinedRegion,
+        schema:GeoCoordinates,
+        schema:GeoShape,
+        schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "postalCode"@en ;
+    rdfs:label "codePostale"@fr ;
+    rdfs:label "postCode"@nl ;
+    skos:definition "The postal code. For example, 94043."@en ;
+    skos:definition "Le code postale."@fr ;
+    skos:definition "De postcode."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+    
+schema:postOfficeBoxNumber  a   rdf:Property ;
+    schema:domainIncludes schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "postOfficeBoxNumber"@en ;
+    rdfs:label "numéroBoîtePostale"@fr ;
+    rdfs:label "postbusnummer"@nl ;
+    skos:definition "The post office box number for PO box addresses."@en ;
+    skos:definition "Le numéro de la boîte postale pour les adresses de type boîte postale."@fr ;
+    skos:definition "Het postbusnummer voor postbusadressen."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:publisher a rdf:Property ;
@@ -556,6 +686,31 @@ schema:spatial a rdf:Property ;
     skos:definition "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en ;
     skos:definition "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl ;
     skos:definition "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:streetAddress    a   rdf:Property ;
+    schema:domainIncludes schema:PostalAddress ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "streetAddress"@en ;
+    rdfs:label "adresseDeRue"@fr ;
+    rdfs:label "straatAdres"@nl ;
+    skos:definition "The street address. For example, 1600 Amphitheatre Pkwy."@en ;
+    skos:definition "L'adresse de rue."@fr ;
+    skos:definition "Het adres van de straat."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:telephone a rdf:Property ;
+    schema:domainIncludes schema:ContactPoint,
+        schema:Organization,
+        schema:Person,
+        schema:Place ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:label "telephone"@en ;
+    rdfs:label "téléphone"@fr ;
+    rdfs:label "telefoon"@nl ;
+    skos:definition "The telephone number."@en ;
+    skos:definition "Le numéro de téléphone."@fr ;
+    skos:definition "Het telefoonnummer."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:temporal a rdf:Property ;
@@ -625,28 +780,3 @@ schema:width a rdf:Property ;
     skos:definition "De breedte van het item."@nl ;
     skos:definition "La largeur de l'élément."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
-
-schema:about a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range  schema:Thing ;  
-    rdfs:label "about"@en ;
-    rdfs:label "over"@nl ;
-    rdfs:label "sur"@fr ;
-    skos:definition """The subject matter of the content."""@en ;
-    skos:definition """Het onderwerp van de inhoud."""@nl ;
-    skos:definition """Le sujet du contenu."""@fr ;
-    rdfs:isDefinedBy <https://schema.org/> .
-
-####################
-#       RDF        #
-####################
-rdf:value a rdf:Property ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:range xsd:string ;
-    rdfs:label "value"@en ;
-    rdfs:label "waarde"@nl ;
-    rdfs:label "valeur"@fr ;
-    skos:definition "May be used in describing structured values."@en ;
-    skos:definition "Kan worden gebruikt om gestructureerde waardes te beschrijven."@nl ;
-    skos:definition "Peut être utilisé pour décrire des valeurs structurées."@fr ;
-    rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
