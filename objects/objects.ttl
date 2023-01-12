@@ -469,7 +469,7 @@ haObj:isMezzanineOf a rdf:Property;
         sh:minCount 1 ;
         sh:name "fixity checksum"@nl;
         sh:name "fixity checksum"@en;
-        sh:name "Vérification de la fixation"@fr;
+        sh:name "vérification de la fixation"@fr;
 
         sh:description "De waarde van de checksum."@nl ;
         sh:description "The value of the checksum."@en ; 
@@ -483,7 +483,7 @@ haObj:isMezzanineOf a rdf:Property;
 
         sh:name "checksum maker"@nl;
         sh:name "checksum creator"@en;
-        sh:name "Créateur de somme de contrôle"@fr;
+        sh:name "créateur de somme de contrôle"@fr;
 
         sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
         sh:description "The entity that generated the checksum."@en ;
