@@ -37,7 +37,7 @@
     dct:title     "Modèle de données Description"@fr ;
     dct:title     "Datamodel Descriptie"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2023-01-05" ;
+    dct:modified  "2023-01-12" ;
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
     dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
@@ -706,7 +706,7 @@
 #################################
 #         PropertyShapes        #
 #################################
-<#identifierShape> a sh:PropertyShape ;
+<#IdentifierShape> a sh:PropertyShape ;
     sh:path schema:identifier ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
@@ -720,7 +720,7 @@
     sh:message "schema:identifier ontbreekt of is niet van het type string"@nl ;
     sh:message "schema:identifier est manquant ou n'est pas de type string"@fr .
     
-<#nameShape> a sh:PropertyShape ;
+<#NameShape> a sh:PropertyShape ;
     sh:path schema:name ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
@@ -734,7 +734,7 @@
     sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
     sh:message "schema:name est manquant ou n'est pas de type string"@fr .
 
-<#descriptionShape> a sh:PropertyShape ;
+<#DescriptionShape> a sh:PropertyShape ;
     sh:path schema:description ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
