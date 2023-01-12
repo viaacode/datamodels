@@ -1,0 +1,93 @@
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#####################################
+#              CLASSES              #
+#####################################
+
+haObj:DigitalRepresentation a rdfs:Class ;
+    rdfs:subClassOf premis:Representation ;
+    rdfs:label "digital representation"@en ;
+    rdfs:label "représentation digitale"@fr ;
+    rdfs:label "digitale representatie"@nl ;
+    skos:definition "Digital representation of an archived intellectual entity."@en ;
+    skos:definition "Représentation digitale d'une entité intellectuelle (Intellectual Entity) archivée."@fr ;
+    skos:definition "Digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:LocalIdentifier a rdfs:Class ;
+    rdfs:subClassOf premis:Identifier ;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "local identifier"@en ;
+    rdfs:label "identifiant local"@fr ;
+    rdfs:label "lokale identificatie"@nl ;
+    skos:definition "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en ;
+    skos:definition "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'une base de données externe ou l'identifiant dans le système d'enregistrement de collection du partenaire de contenu."@fr ;
+    skos:definition "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een externe database of de identificatie in het registratiesysteem van de collectie van de contentpartner."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:PhysicalRepresentation a rdfs:Class ;
+    rdfs:subClassOf premis:Representation ;
+    rdfs:label "physical representation"@en ;
+    rdfs:label "représentation physique"@fr ;
+    rdfs:label "fysieke representatie"@nl ;
+    skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
+    skos:definition "Représentation physique d'un entité intellectuelle (Intellectual Entity) archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
+    skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+#####################################
+#             PROPERTIES            #
+#####################################
+
+haObj:hasAccesscopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isAccesscopyOf ;
+  rdfs:label  "has access copy"@en ;
+  rdfs:label  "a copie d'accès"@fr ;
+  rdfs:label  "heeft toegangskopie"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:hasMaster a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isMasterOf ;
+  rdfs:label  "has archiving master"@en ;
+  rdfs:label  "a copie principale"@fr ;
+  rdfs:label  "heeft archiefmaster"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:hasMezzanine a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isMezzanineOf ;
+  rdfs:label  "has mezzanine format"@en ;
+  rdfs:label  "a format mezzanine"@fr ;
+  rdfs:label  "heeft mezzanineformaat"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isAccesscopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasAccesscopy ;
+  rdfs:label  "is access copy of"@en ;
+  rdfs:label  "est copie d'accès de"@fr ;
+  rdfs:label  "is toegangskopie van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isMasterOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasMaster ;
+  rdfs:label  "is archiving master of"@en ;
+  rdfs:label  "est la copie principale de"@fr ;
+  rdfs:label  "is archiefmaster van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isMezzanineOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasMezzanine ;
+  rdfs:label  "is mezzanine format of"@en ;
+  rdfs:label  "est format mezzanine de"@fr ;
+  rdfs:label  "is mezzanineformaat van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
