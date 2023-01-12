@@ -15,9 +15,9 @@
 #####################################
 
 premis:Agent  a owl:Class, rdfs:Class ;
-  rdfs:label "Agent"@en ;
-  rdfs:label "Acteur"@fr ;
-  rdfs:label "Agent"@nl ;
+  rdfs:label "agent"@en ;
+  rdfs:label "acteur"@fr ;
+  rdfs:label "agent"@nl ;
   skos:definition """Actor (human, machine, or software) associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
   skos:definition """Acteur (humain, machine ou logiciel) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."""@fr ;
   skos:definition """Agens (mens, machine of software) geassocieerd met één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."""@nl ;
@@ -25,9 +25,9 @@ premis:Agent  a owl:Class, rdfs:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:File a owl:Class, rdfs:Class ;
-  rdfs:label "File"@en ;
-  rdfs:label "Fichier"@fr ;
-  rdfs:label "Bestand"@nl ;
+  rdfs:label "file"@en ;
+  rdfs:label "fichier"@fr ;
+  rdfs:label "bestand"@nl ;
   skos:definition "Named and ordered sequence of bytes that is known to an operating system."@en ;
   skos:definition "Séquence nommée et ordonnée d'octets/bytes connue par un système d'exploitation."@fr ;
   skos:definition "Genoemde en geordende sequentie van bytes gekend door een besturingssysteem."@nl ;
@@ -36,9 +36,9 @@ premis:File a owl:Class, rdfs:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:Fixity a owl:Class, rdfs:Class ;
-  rdfs:label "Fixity"@en ;
-  rdfs:label "Fixité"@fr ;
-  rdfs:label "Fixity"@nl ;
+  rdfs:label "fixity"@en ;
+  rdfs:label "fixité"@fr ;
+  rdfs:label "fixity"@nl ;
   skos:definition """Information used to verify whether an object has been altered in an undocumented or unauthorized way."""@en ;
   skos:definition """Informations utilisées pour vérifier si un objet a été modifié de manière non documentée ou non autorisée."""@fr ;
   skos:definition """Informatie die wordt gebruikt om na te gaan of een object op een ongedocumenteerde of ongeoorloofde manier werd gewijzigd."""@nl ;
@@ -46,9 +46,9 @@ premis:Fixity a owl:Class, rdfs:Class ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> .
 
 premis:Event  a owl:Class, rdfs:Class ;
-  rdfs:label "Event"@en ;
-  rdfs:label "Événement"@fr ;
-  rdfs:label "Gebeurtenis"@nl ;
+  rdfs:label "event"@en ;
+  rdfs:label "événement"@fr ;
+  rdfs:label "gebeurtenis"@nl ;
   skos:definition "Action performed within or outside the repository that affects its capability to preserve Objects over the long term."@en ;
   skos:definition "Action réalisée à l'intérieur ou à l'extérieur du dépôt qui affecte sa capacité à préserver des objets sur le long terme."@fr ;
   skos:definition "Handeling uitgevoerd binnen of buiten het archief die het vermogen beïnvloedt om objecten op lange termijn te bewaren."@nl ;
@@ -58,9 +58,9 @@ premis:Event  a owl:Class, rdfs:Class ;
 
 premis:HardwareAgent
   a owl:Class, rdfs:Class ;
-  rdfs:label "Hardware agent"@en ;
-  rdfs:label "Matériel acteur"@fr ;
-  rdfs:label "Hardware agent"@nl ;
+  rdfs:label "hardware agent"@en ;
+  rdfs:label "matériel acteur"@fr ;
+  rdfs:label "hardware agent"@nl ;
   skos:definition """Hardware agent (e.g., a computer) that is associated with one or more Events and/or Rights statement associated with a digital object."""@en ;
   skos:definition """Agent matériel (par ex. un ordinateur) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."""@fr ;
   skos:definition """Hardwareagent (bv. een computer) die gekoppeld is aan één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."""@nl ;
@@ -70,9 +70,9 @@ premis:HardwareAgent
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:IntellectualEntity a owl:Class, rdfs:Class ;
-  rdfs:label "Intellectual entity"@en ;
-  rdfs:label "Entité intellectuelle"@fr ;
-  rdfs:label "Intellectuele entiteit"@nl ;
+  rdfs:label "intellectual entity"@en ;
+  rdfs:label "entité intellectuelle"@fr ;
+  rdfs:label "intellectuele entiteit"@nl ;
   skos:definition """A set of content that is considered a single intellectual unit for purposes of management and description: for example, a particular book, map, photograph, database, or piece of hardware or software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can include a web page; a web page can include an image. An Intellectual Entity may have one or more digital representations. An Intellectual Entity may also describe an environment, defined as technology supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of software, hardware, or a combination of both."""@en ;
   skos:definition """Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description."""@fr ;
   skos:definition """Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."""@nl ;    
@@ -82,9 +82,9 @@ premis:IntellectualEntity a owl:Class, rdfs:Class ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentFunctionType> .
 
 premis:Object a owl:Class, rdfs:Class ;
-  rdfs:label "Object"@en ;
-  rdfs:label "Objet"@fr ;
-  rdfs:label "Object"@nl ;
+  rdfs:label "object"@en ;
+  rdfs:label "objet"@fr ;
+  rdfs:label "object"@nl ;
   skos:definition """Discrete unit of information subject to digital preservation. Subclasses of Object are Intellectual Entity, Representation, File and Bitstream."""@en ;
   skos:definition """Unité discrète d'information soumise à la préservation numérique. Les sous-classes d'objet sont le Intellectual Entity (entité intellectuelle), la Representation (représentation), le File (fichier) et le Bitstream (flux binaire)."""@fr ;
   skos:definition """Discrete eenheid van informatie die digitaal moet worden bewaard. Subklassen van Object zijn Intellectual Entity (intellectuele entiteit), Representation (voorstelling/weergave), File (bestand) en Bitstream (bitstream)."""@nl ;
@@ -92,9 +92,9 @@ premis:Object a owl:Class, rdfs:Class ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:OutcomeStatus  a owl:Class, rdfs:Class ;
-  rdfs:label "Outcome status"@en ;
-  rdfs:label "Statut de résultat"@fr ;
-  rdfs:label "Uitkomststatus"@nl ;
+  rdfs:label "outcome status"@en ;
+  rdfs:label "statut de résultat"@fr ;
+  rdfs:label "uitkomststatus"@nl ;
   skos:definition "Overall result of the Event in terms of success, partial success, or failure."@en ;
   skos:definition "Résultat global de l'événement en termes de succès, de succès partiel ou d'échec."@fr ;
   skos:definition "Algemeen resultaat van het Event in termen van succes, gedeeltelijk succes of falen."@nl ;
@@ -102,9 +102,9 @@ premis:OutcomeStatus  a owl:Class, rdfs:Class ;
   rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome> .
 
 premis:Representation a owl:Class, rdfs:Class ;
-  rdfs:label "Representation"@en ;
-  rdfs:label "Représentation"@fr ;
-  rdfs:label "Representatie"@nl ;
+  rdfs:label "representation"@en ;
+  rdfs:label "représentation"@fr ;
+  rdfs:label "representatie"@nl ;
   skos:definition """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital representation is the set of stored digital files and structural metadata needed to provide a complete and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a manuscript, video cassette, or printed document."""@en ;
   skos:definition """Objet numérique ou physique instanciant ou incarnant une Entité Intellectuelle (Intellectual Entity). Une représentation numérique (Digital Representation) est l'ensemble des fichiers numériques stockés et des métadonnées structurelles nécessaires pour fournir une interprétation complète et raisonnable de l'entité intellectuelle (Intellectual Entity). Une représentation physique (Physical Representation) est un élément tel qu'un manuscrit, une cassette vidéo ou un document imprimé."""@fr ;
   skos:definition """Digitaal of fysiek object dat een intellectuele entiteit (Intellectual Entity) vormgeeft of belichaamt. Een digitale weergave (Digital Representation) is de set van opgeslagen digitale bestanden en structurele metadata die nodig zijn om een volledige en redelijke weergave van de Intellectuele Entiteit (Intellectual Entity) te bieden. Een fysieke representatie (Physical Representation) is een item zoals een manuscript, videocassette of gedrukt document."""@nl ;
@@ -114,9 +114,9 @@ premis:Representation a owl:Class, rdfs:Class ;
 
 premis:SoftwareAgent
   a owl:Class, rdfs:Class ;
-  rdfs:label "Software agent"@en ;
-  rdfs:label "Logiciel acteur"@fr ;
-  rdfs:label "Software agent"@nl ;
+  rdfs:label "software agent"@en ;
+  rdfs:label "logiciel acteur"@fr ;
+  rdfs:label "software agent"@nl ;
   skos:definition """Software agent (e.g., a computer program) that is associated with one or more Event and/or Rights statement associated with a digital object."""@en ;
   skos:definition """Agent logiciel (par ex. un programme informatique) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."""@fr ;
   skos:definition """Softwareagent (bv. een computerprogramma) die gekoppeld is aan één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."""@nl ;
@@ -125,9 +125,9 @@ premis:SoftwareAgent
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:StorageLocation  a owl:Class, rdfs:Class ;
-  rdfs:label "Storage location"@en ;
-  rdfs:label "Emplacement de stockage"@fr ;
-  rdfs:label "Opslagplaats"@nl ;
+  rdfs:label "storage location"@en ;
+  rdfs:label "emplacement de stockage"@fr ;
+  rdfs:label "opslagplaats"@nl ;
   skos:definition """Information needed to retrieve a physical item from its physical storage location or a file from the storage system, or to access a bitstream within a file."""@en ;
   skos:definition """Informations nécessaires pour extraire un élément physique de son emplacement de stockage physique ou un fichier du système de stockage, ou pour accéder à un flux binaire (bitstream) dans un fichier (file)."""@fr ;
   skos:definition """Informatie die nodig is om een fysiek voorwerp van zijn fysieke opslagplaats of een bestand uit het opslagsysteem op te halen, of om toegang te krijgen tot een bitstream binnen een bestand (file)."""@nl ;
@@ -137,9 +137,9 @@ premis:StorageLocation  a owl:Class, rdfs:Class ;
 # vervangt dct:PhysicalMedium
 premis:StorageMedium  a   rdfs:Class ;
     a owl:Class ;
-    rdfs:label "Storage medium"@en ;
-    rdfs:label "Support de stockage"@fr ;
-    rdfs:label "Opslagmedium"@nl ;
+    rdfs:label "storage medium"@en ;
+    rdfs:label "support de stockage"@fr ;
+    rdfs:label "opslagmedium"@nl ;
     skos:definition """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM, DVD)."""@en ;
     skos:definition """Le support physique sur lequel l'Objet (Object) est stocké (par exemple, bande magnétique, le disque dur, le CD-ROM, le DVD)."""@fr ;
     skos:definition """Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."""@nl ;
