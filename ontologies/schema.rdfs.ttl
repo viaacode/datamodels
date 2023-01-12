@@ -105,7 +105,7 @@ schema:Organization a rdfs:Class ;
 
 schema:PerformanceRole a rdfs:Class ;
     rdfs:subClassOf schema:Role ;
-    rdfs:label "performance Role"@en ;
+    rdfs:label "performance role"@en ;
     rdfs:label "uitvoeringsrol"@nl ;
     rdfs:label "rôle de performance"@fr ;
     skos:definition """A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."""@en ;

@@ -77,29 +77,60 @@
   sh:targetClass skos:Concept ;
   sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
-      sh:path skos:broader ;
-      sh:class skos:Concept ;
-      sh:name "broader"@en ;
-      sh:name "plus large"@fr ;
-      sh:name "breder"@nl ;
-      sh:nodeKind sh:IRI ;
+    sh:path skos:broader ;
+    sh:class skos:Concept ;
+    sh:name "broader"@en ;
+    sh:name "plus large"@fr ;
+    sh:name "breder"@nl ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path skos:broadMatch ;
+    sh:class skos:Concept ;
+    sh:name "broad match"@en ;
+    sh:name "correspondance large"@fr ;
+    sh:name "brede match"@nl ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path skos:broaderTransitive ;
+    sh:class skos:Concept ;
+    sh:name "broader transitive"@en ;
+    sh:name "plus large transitive"@fr ;
+    sh:name "breder transitief"@nl ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path skos:narrower ;
+    sh:class skos:Concept ;
+    sh:name "narrower"@en ;
+    sh:name "plus étroit"@fr ;
+    sh:name "nauwer"@nl ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path skos:broadMatch ;
-      sh:class skos:Concept ;
-      sh:name "broad match"@en ;
-      sh:name "correspondance large"@fr ;
-      sh:name "brede match"@nl ;
-      sh:nodeKind sh:IRI ;
-    ] ;
+    sh:path skos:narrowMatch ;
+    sh:disjoint skos:broadMatch ;
+    sh:disjoint skos:closeMatch ;
+    sh:disjoint skos:exactMatch ;
+    sh:disjoint skos:relatedMatch ;
+    sh:class skos:Concept ;
+    sh:name "narrow match"@en ;
+    sh:name "correspondance étroite"@fr ;
+    sh:name "nauwe match"@nl ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] ;
   sh:property [
-      sh:path skos:broaderTransitive ;
-      sh:class skos:Concept ;
-      sh:name "broader transitive"@en ;
-      sh:name "plus large transitive"@fr ;
-      sh:name "breder transitief"@nl ;
-      sh:nodeKind sh:IRI ;
-    ] ;
+    sh:path skos:narrowerTransitive ;
+    sh:class skos:Concept ;
+    sh:name "narrower transitive"@en ;
+    sh:name "plus étroit transitive"@fr ;
+    sh:name "nauwer transitief"@nl ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] ;
   sh:property [
       sh:path skos:closeMatch ;
       sh:disjoint skos:broadMatch ;
@@ -146,37 +177,6 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
-    sh:path skos:narrower ;
-    sh:class skos:Concept ;
-    sh:name "narrower"@en ;
-    sh:name "plus étroit"@fr ;
-    sh:name "nauwer"@nl ;
-    sh:nodeKind sh:IRI ;
-    sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-    sh:path skos:narrowerTransitive ;
-    sh:class skos:Concept ;
-    sh:name "narrower transitive"@en ;
-    sh:name "plus étroit transitive"@fr ;
-    sh:name "nauwer transitief"@nl ;
-    sh:nodeKind sh:IRI ;
-    sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-    sh:path skos:narrowMatch ;
-    sh:disjoint skos:broadMatch ;
-    sh:disjoint skos:closeMatch ;
-    sh:disjoint skos:exactMatch ;
-    sh:disjoint skos:relatedMatch ;
-    sh:class skos:Concept ;
-    sh:name "narrow match"@en ;
-    sh:name "correspondance étroite"@fr ;
-    sh:name "nauwe match"@nl ;
-    sh:nodeKind sh:IRI ;
-    sh:severity sh:Violation ;
-    ] ;
-  sh:property [
     sh:path skos:related ;
     sh:class skos:Concept ;
     sh:message "S27	skos:related is disjoint with the property skos:broaderTransitive."@en ;
@@ -212,14 +212,6 @@
       sh:name "semantische relatie"@nl ;
       sh:nodeKind sh:IRI ;
       sh:severity sh:Violation ;
-    ] ;
-  sh:property [
-    sh:path skos:scopeNote ;
-    sh:datatype rdf:langString ;
-    sh:name "scope note"@en ;
-    sh:name "note de portée"@fr ;
-    sh:name "scope note"@nl ;
-    sh:severity sh:Violation ;
     ] ;
   sh:property [
     sh:path skos:topConceptOf ;
