@@ -36,7 +36,7 @@
     dct:title     "Modèle de données Listes de termes"@fr ;
     dct:title     "Datamodel Termenlijst"@nl ;
     dct:created   "2022-07-06" ;
-    dct:modified  "2023-01-05" ;
+    dct:modified  "2023-01-12" ;
     dct:description """Data model to describe structured lists of terms such as thesauri."""@en ;
     dct:description """Modèle de données pour décrire des listes structurées de termes tels que le thésaure."""@fr ;
     dct:description """Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."""@nl ;
@@ -45,7 +45,7 @@
 <#CollectionShape>
   a sh:NodeShape ;
   sh:targetClass skos:Collection ;
-  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skos:member ;
     sh:or (
@@ -56,13 +56,13 @@
     sh:name "membre"@fr ;
     sh:name "lid"@nl ;
     sh:severity sh:Violation ;
-    ] ;
-.
+    ] .
+    
 <#OrderedCollectionShape>
   a sh:NodeShape ;
   sh:class skos:Collection ;
   sh:targetClass skos:OrderedCollection ;
-  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skos:memberList ;
     sh:class rdf:List ;
@@ -70,12 +70,12 @@
     sh:name "liste de membres"@fr ;
     sh:name "lijst van leden"@nl ;
     sh:severity sh:Violation ;
-    ] ;
-.
+    ] .
+
 <#ConceptShape>
   a sh:NodeShape ;
   sh:targetClass skos:Concept ;
-  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
       sh:path skos:broader ;
       sh:class skos:Concept ;
@@ -249,12 +249,12 @@
     sh:name "voorkeurslabel"@nl ;
     sh:severity sh:Violation ;
     ] ;
-  sh:scopeClass skos:Concept ;
-.
+  sh:scopeClass skos:Concept .
+
 <#ConceptSchemeShape>
   a sh:NodeShape ;
   sh:targetClass skos:ConceptScheme ;
-  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skos:hasTopConcept ;
     sh:class skos:Concept ;
@@ -263,12 +263,12 @@
     sh:name "heeft top concept"@nl ;
     sh:nodeKind sh:IRI ;
     sh:severity sh:Violation ;
-    ] ;
-.
-<#skosxl:LabelShape>
+    ] .
+
+<#SkosXL:LabelShape>
   a sh:NodeShape ;
   sh:targetClass skosxl:Label ;
-  sh:property <#noteShape>, <#changeNoteShape>, <#definitionShape>, <#editorialNoteShape>, <#exampleShape>, <#historyNoteShape>, <#scopeNoteShape>, <#prefLabelShape>, <#altLabelShape>, <#hiddenLabelShape>, <#notationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skosxl:literalForm ;
     sh:datatype rdf:langString ;
@@ -278,9 +278,9 @@
     sh:name "forme littérale"@fr ;
     sh:name "letterlijke vorm"@nl ;
     sh:severity sh:Violation ;
-    ] ;
-.
-<#noteShape>
+    ] .
+
+<#NoteShape>
   a sh:PropertyShape ;
   sh:path skos:note ;
   sh:nodeKind sh:Literal ;
@@ -288,9 +288,9 @@
   sh:name "note"@en ;
   sh:name "note"@fr ;
   sh:name "note"@nl ;
-  sh:severity sh:Violation ;
-.
-<#changeNoteShape>
+  sh:severity sh:Violation .
+
+<#ChangeNoteShape>
   a sh:PropertyShape ;
   sh:path skos:changeNote ;
   sh:nodeKind sh:Literal ;
@@ -298,10 +298,9 @@
   sh:name "change note"@en ;
   sh:name "note de changement"@fr ;
   sh:name "wijzigingsnotitie"@nl ;
-  sh:severity sh:Violation ;
-  
-.
-<#definitionShape>
+  sh:severity sh:Violation .
+
+<#DefinitionShape>
   a sh:PropertyShape ;
   sh:path skos:definition ;
   sh:nodeKind sh:Literal ;
@@ -310,9 +309,9 @@
   sh:name "definition"@en ;
   sh:name "définition"@fr ;
   sh:name "definitie"@nl ;
-  sh:severity sh:Violation ;
-.
-<#editorialNoteShape>
+  sh:severity sh:Violation .
+
+<#EditorialNoteShape>
   a sh:PropertyShape ;
   sh:path skos:editorialNote ;
   sh:nodeKind sh:Literal ;
@@ -320,9 +319,9 @@
   sh:name "editorial note"@en ;
   sh:name "note éditoriale"@fr ;
   sh:name "redactionele notitie"@nl ;
-  sh:severity sh:Violation ;
-.
-<#exampleShape>
+  sh:severity sh:Violation .
+
+<#ExampleShape>
   a sh:PropertyShape ;
   sh:path skos:example ;
   sh:nodeKind sh:Literal ;
@@ -330,9 +329,9 @@
   sh:name "example"@en ;
   sh:name "exemple"@fr ;
   sh:name "voorbeeld"@nl ;
-  sh:severity sh:Violation ;
-.
-<#historyNoteShape>
+  sh:severity sh:Violation .
+
+<#HistoryNoteShape>
   a sh:PropertyShape ;
   sh:path skos:historyNote ;
   sh:nodeKind sh:Literal ;
@@ -340,9 +339,9 @@
   sh:name "history note"@en ;
   sh:name "note d'historique"@fr ;
   sh:name "historische notitie"@nl ;
-  sh:severity sh:Violation ;
-.
-<#scopeNoteShape>
+  sh:severity sh:Violation .
+
+<#ScopeNoteShape>
   a sh:PropertyShape ;
   sh:path skos:scopeNote ;
   sh:nodeKind sh:Literal ;
@@ -350,9 +349,9 @@
   sh:name "scope note"@en ;
   sh:name "note de champ"@fr ;
   sh:name "scope notitie"@nl ;
-  sh:severity sh:Violation ;
-.
-<#prefLabelShape>
+  sh:severity sh:Violation .
+
+<#PrefLabelShape>
   a sh:PropertyShape ;
   sh:path skos:prefLabel ;
   sh:nodeKind sh:Literal ;
@@ -364,9 +363,9 @@
   sh:name "étiquette préférée"@fr ;
   sh:name "voorkeurslabel"@nl ;
   sh:uniqueLang "true"^^xsd:boolean ;
-  sh:severity sh:Violation ;
-.
-<#altLabelShape>
+  sh:severity sh:Violation .
+
+<#AltLabelShape>
   a sh:PropertyShape ;
   sh:path skos:altLabel ;
   sh:nodeKind sh:Literal ;
@@ -379,9 +378,9 @@
   sh:name "alternative label"@en ;
   sh:name "étiquette alternative"@fr ;
   sh:name "alternatief label"@nl ;
-  sh:severity sh:Violation ;
-.
-<#hiddenLabelShape>
+  sh:severity sh:Violation .
+
+<#HiddenLabelShape>
   a sh:PropertyShape ;
   sh:path skos:hiddenLabel ;
   sh:nodeKind sh:Literal ;
@@ -389,9 +388,9 @@
   sh:name "hidden label"@en ;
   sh:name "étiquette cachée"@fr ;
   sh:name "verborgen label"@nl ;
-  sh:severity sh:Violation ;
-.
-<#notationShape>
+  sh:severity sh:Violation .
+
+<#NotationShape>
   a sh:PropertyShape ;
   sh:path skos:notation ;
   sh:nodeKind sh:Literal ;
@@ -399,5 +398,4 @@
   sh:name "notation"@en ;
   sh:name "notation"@fr ;
   sh:name "notation"@nl ;
-  sh:severity sh:Violation ;
-.
+  sh:severity sh:Violation .
