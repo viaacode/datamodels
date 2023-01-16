@@ -253,7 +253,7 @@ premis:size a owl:DatatypeProperty ;
 premis:originalName
   a owl:DatatypeProperty ;
   rdfs:label "has original name"@en ;
-  rdfs:label "a le nom original"@fr ;
+  rdfs:label "porte le nom d'origine"@fr ;
   rdfs:label "heeft originele naam"@nl ;
   rdfs:domain [
     a owl:Class ;
