@@ -250,6 +250,22 @@ premis:size a owl:DatatypeProperty ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
   skos:narrowMatch <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize> .
 
+premis:originalName
+  a owl:DatatypeProperty ;
+  rdfs:label "has original name"@en ;
+  rdfs:label "porte le nom d'origine"@fr ;
+  rdfs:label "heeft originele naam"@nl ;
+  rdfs:domain [
+    a owl:Class ;
+    owl:unionOf (
+     <http://www.loc.gov/premis/rdf/v3/File>
+     <http://www.loc.gov/premis/rdf/v3/IntellectualEntity>
+     <http://www.loc.gov/premis/rdf/v3/Representation>
+   )
+  ] ;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
 premis:startDate    a owl:DatatypeProperty ;
   rdfs:label "start date"@en ;
   rdfs:label "date de début"@fr ;
