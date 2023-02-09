@@ -185,3 +185,15 @@ org:unitOf a owl:ObjectProperty, rdf:Property ;
     skos:definition """Indique l'Organisation dont cette Organisation ou Unité fait partie, par exemple un Départment au sein d'une Organisation Formelle plus large. Inverse de `org:hasUnit`."""@fr ;    
     skos:definition """Duidt de Organisatie aan waarvan deze Organisatie of eenheid deel uitmaakt, bv. een departement binnen een grotere formele Organisatie. Omgekeerde van `org:hasUnit`."""@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:role a owl:ObjectProperty, rdf:Property;
+    rdfs:domain org:Post;
+    rdfs:range  org:Role;
+    rdfs:label "role"@en;
+    rdfs:label "rôle"@fr;
+    rdfs:label "ruolo"@it;
+    rdfs:comment """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
+    rdfs:comment """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;    
+    rdfs:comment """Indica il Role che un Agent ricopre in una relazione di Membership con una Organization"""@it;
+    rdfs:comment "エージェントが組織との構成員関係において担う役割を示します。ポストの保持者が担う役割を示すためにorg:Postで用いることもできます。"@ja;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
