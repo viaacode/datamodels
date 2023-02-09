@@ -6,8 +6,8 @@
 @base <https://data.hetarchief.be/id/organization-type/> .
 
 <https://data.hetarchief.be/id/organization-type> a skos:ConceptScheme;
-    rdfs:label "Meemoo organization classification thesaurus"@en;
-    rdfs:label "Meemoo lijst organisatietypes"@nl;
+    skos:prefLabel "Meemoo organization classification thesaurus"@en;
+    skos:prefLabel "Meemoo lijst organisatietypes"@nl;
     skos:hasTopConcept <GEN>.
 
 # --- top concept ---
