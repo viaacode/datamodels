@@ -12,6 +12,7 @@
     skos:prefLabel "Staff"@en ;
     skos:prefLabel "Personnel(le)"@fr;
     skos:prefLabel "Personeel"@nl;
+    skos:inScheme <> ;
     skos:topConceptOf <>.
 
 <AccountManager> a org:Role ;
