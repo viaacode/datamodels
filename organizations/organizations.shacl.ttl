@@ -199,7 +199,7 @@
     sh:message "occurs more than once or its value is no org:Site"@en 
   ],
   [
-    sh:path haOrg:hasAccountmanager ;
+    sh:path haOrg:hasAccountManager ;
     sh:maxCount 1 ;
     sh:class schema:Person ;
 
