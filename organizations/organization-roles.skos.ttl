@@ -8,20 +8,20 @@
   skos:prefLabel "Meemoo organization Roles thesaurus" ;
   skos:hasTopConcept <Staff> .
 
-<Staff> a org:Role, skos:Concept;
+<Staff> a org:Role ;
     skos:prefLabel "Staff"@en ;
     skos:prefLabel "Personnel(le)"@fr;
     skos:prefLabel "Personeel"@nl;
     skos:topConceptOf <>.
 
-<AccountManager> a org:Role, skos:Concept;
+<AccountManager> a org:Role ;
     skos:prefLabel "Account Manager"@en ;
     skos:prefLabel "Gestionnaire de Comptes"@fr;
     skos:prefLabel "Accountmanager"@nl ;
     skos:broader <Staff> ;
     skos:inScheme <> .
 
-<EducationalEmployee> a org:Role, skos:Concept;
+<EducationalEmployee> a org:Role ;
     skos:prefLabel "Educational employee"@en ;
     skos:prefLabel "Assistante pédagogique"@fr;
     skos:prefLabel "Educatief medewerker"@nl ;
