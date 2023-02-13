@@ -53,7 +53,7 @@ haOrg:EducationalPublisher a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
 haOrg:Logo a   rdfs:Class ;
-    rdfs:subClassOf schema:CreativeWork ;
+    rdfs:subClassOf schema:ImageObject ;
     rdfs:label  "logo"@en ;
     rdfs:label  "logo"@fr ;
     rdfs:label  "logo"@nl ;

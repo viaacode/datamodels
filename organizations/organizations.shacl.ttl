@@ -364,7 +364,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     a sh:PropertyShape ;
     sh:path skos:prefLabel ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:uniqueLang true ;
     sh:datatype rdf:langString ;
       
     sh:name "preferred label"@en ;
@@ -376,8 +376,8 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Le nom / étiquette préféré du rôle."@fr ;
       
     sh:message "skos:prefLabel is missing or its Object is no rdf:langString."@en ;
-    sh:message "skos:prefLabel is missing or its Object is no rdf:langString."@fr ;
-    sh:message "skos:prefLabel is missing or its Object is no rdf:langString."@nl 
+    sh:message "skos:prefLabel  est absent ou son Object n'est pas un rdf:langString."@fr ;
+    sh:message "skos:prefLabel ontbreekt of het object is geen rdf:langString."@nl 
 
   ] .
 
@@ -453,10 +453,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
   [
     a sh:PropertyShape ;
     sh:path haOrg:isAccountManagerOf ;
-    sh:or (
-      [ sh:class haOrg:ContentPartner  ]
-      [ sh:class haOrg:EducationalPartner ]
-    );
+    sh:class org:Organization ;
     sh:maxCount 1 ;
 
     sh:name "is account manager of"@en ;
