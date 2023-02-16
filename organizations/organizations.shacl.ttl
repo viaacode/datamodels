@@ -523,10 +523,11 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
   sh:property [
     a sh:PropertyShape ;
     sh:path schema:addressCountry ;
-    sh:maxCount 1 ;
     sh:or (
-      [ sh:datatype rdf:langString ]
-      [ sh:class schema:Country ]
+      [ sh:datatype rdf:langString ;
+        sh:uniqueLang true ]
+      [ sh:class schema:Country ;
+        sh:maxCount 1 ]
     );
     
     sh:name "country"@en ;
