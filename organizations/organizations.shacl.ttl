@@ -454,7 +454,6 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     a sh:PropertyShape ;
     sh:path haOrg:isAccountManagerOf ;
     sh:class org:Organization ;
-    sh:maxCount 1 ;
 
     sh:name "is account manager of"@en ;
     sh:name "est le Gestionnaire de Comptes de"@fr ;
