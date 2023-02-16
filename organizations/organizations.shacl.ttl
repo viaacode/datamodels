@@ -520,15 +520,29 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 
 <#PostalAddressShape>  a sh:NodeShape ;
   sh:targetClass schema:PostalAddress ;
-  sh:property [
+  sh:or ([
     a sh:PropertyShape ;
+    sh:datatype rdf:langString ;
     sh:path schema:addressCountry ;
-    sh:or (
-      [ sh:datatype rdf:langString ;
-        sh:uniqueLang true ]
-      [ sh:class schema:Country ;
-        sh:maxCount 1 ]
-    );
+    sh:uniqueLang true ;
+
+    sh:name "country"@en ;
+    sh:name "pays"@fr ;
+    sh:name "land"@nl ;
+
+    sh:description "The country in which the postal address is located."@en ;
+    sh:description "Le pays dans lequel se trouve l'adresse postale."@fr ;
+    sh:description "Het land waarin het postadres zich bevindt."@nl ;
+  
+    sh:message "The Object of schema:addressCountry is neither schema:Country nor rdf:langString."@en ;
+    sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou rdf:langString."@fr ;
+    sh:message "Het Object van schema:addressCountry is geen schema:Country of rdf:langString."@nl
+  ] 
+  [
+    a sh:PropertyShape ;
+    sh:class schema:Country ;
+    sh:path schema:addressCountry ;
+    sh:maxCount 1 ;
     
     sh:name "country"@en ;
     sh:name "pays"@fr ;
@@ -541,8 +555,8 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:message "The Object of schema:addressCountry is neither schema:Country nor rdf:langString."@en ;
     sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou rdf:langString."@fr ;
     sh:message "Het Object van schema:addressCountry is geen schema:Country of rdf:langString."@nl
-  ],
-  [   
+  ]);
+  sh:property [   
     a  sh:PropertyShape ;
     sh:path schema:addressLocality ;
     sh:datatype xsd:string ;
