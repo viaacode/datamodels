@@ -18,15 +18,16 @@
 <>  a owl:Ontology;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" ;
-    dct:author  [
+    schema:author  [
+        a schema:Person ;
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
-    ] ,
-                [
+    ] , [
+        a schema:Person ;
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
-    ] ,
-    [
+    ] , [
+        a schema:Person ;
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
@@ -82,6 +83,7 @@
     sh:message "is no langString"@en
   ],
   [
+    a sh:PropertyShape ;
     sh:path haOrg:hasLogo ;
     sh:class haOrg:Logo ;
 
@@ -97,6 +99,7 @@
     sh:message "is no haOrg:Logo"@en ;
   ], 
   [
+    a sh:PropertyShape ;
     sh:path foaf:homepage ;
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI ;
@@ -112,6 +115,7 @@
     sh:message "occurs more than once or its object is no valid IRI"@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path dct:description ;
     sh:maxCount 1 ;
     sh:nodeKind sh:Literal ;
@@ -128,6 +132,7 @@
     sh:message "is not of type xsd:string or occurs more than once"@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path org:classification ;
     sh:class haOrg:OrganizationType ;
 
@@ -142,6 +147,7 @@
     sh:message "is no haOrg:OrganizationType"@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path org:hasUnit ;
     sh:class org:OrganizationalUnit ;
 
@@ -156,6 +162,7 @@
     sh:message "is no org:OrganizationalUnit"@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path schema:contactPoint ;
     sh:class schema:ContactPoint ;
     
@@ -170,6 +177,7 @@
     sh:message "is no schema:ContactPoint"@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path org:hasSite ;
     sh:class org:Site ;
     
@@ -184,6 +192,7 @@
     sh:message "occurs more than once or its Object is no org:Site"@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path org:hasPrimarySite ;
     sh:maxCount 1 ;
     sh:class org:Site ;
@@ -199,7 +208,8 @@
     sh:message "occurs more than once or its value is no org:Site"@en 
   ],
   [
-    sh:path haOrg:hasAccountmanager ;
+    a sh:PropertyShape ;
+    sh:path haOrg:hasAccountManager ;
     sh:maxCount 1 ;
     sh:class schema:Person ;
 
@@ -214,6 +224,7 @@
     sh:message "occurs more than once or its value is no schema:Person"@en 
   ],
   [
+    a sh:PropertyShape ;
     sh:path org:hasPost ;
     sh:class org:Post ;
 
@@ -231,6 +242,7 @@
 haOrg:OrganizationalUnitShape a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path org:unitOf ;
     sh:minCount 1 ;
     sh:class org:Organization ;
@@ -249,6 +261,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 <#ContentPartnerShape> a sh:NodeShape ;
   sh:targetClass haOrg:ContentPartner ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path haOrg:hasAccountManager ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -268,6 +281,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 <#EducationalPartnerShape>  a sh:NodeShape ;
   sh:targetClass haOrg:EducationalPartner ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path haOrg:hasAccountManager ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -287,6 +301,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 <#SiteShape>  a  sh:NodeShape ;
   sh:targetClass org:Site ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path org:siteAddress ;
     sh:maxCount 1 ;
     sh:class schema:PostalAddress ;
@@ -306,7 +321,8 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 
 <#PostShape> a sh:NodeShape;
   sh:targetClass org:Post ;
-  sh:property [        
+  sh:property [    
+    a sh:PropertyShape ;    
     sh:path org:role ;
     sh:minCount 1 ;
     sh:class org:Role ;
@@ -323,7 +339,8 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:message "org:role est absent ou son Object n'est pas un org:Role"@fr ;
     sh:message "org:role ontbreekt of zijn Object is geen org:Role"@nl ;
   ],
-  [                
+  [            
+    a sh:PropertyShape ;    
     sh:path org:postIn ;
     sh:minCount 1 ;
     sh:class org:Organization ;
@@ -347,7 +364,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     a sh:PropertyShape ;
     sh:path skos:prefLabel ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:uniqueLang true ;
     sh:datatype rdf:langString ;
       
     sh:name "preferred label"@en ;
@@ -359,14 +376,15 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Le nom / étiquette préféré du rôle."@fr ;
       
     sh:message "skos:prefLabel is missing or its Object is no rdf:langString."@en ;
-    sh:message "skos:prefLabel is missing or its Object is no rdf:langString."@fr ;
-    sh:message "skos:prefLabel is missing or its Object is no rdf:langString."@nl 
+    sh:message "skos:prefLabel  est absent ou son Object n'est pas un rdf:langString."@fr ;
+    sh:message "skos:prefLabel ontbreekt of het object is geen rdf:langString."@nl 
 
   ] .
 
 <#PersonShape> a sh:NodeShape ;
   sh:targetClass schema:Person ;
   sh:property [    
+    a sh:PropertyShape ;
     sh:path org:holds ;
     sh:class org:Post ;
 
@@ -378,11 +396,12 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Le poste que la personne occupe dans l'organisation."@fr ;
     sh:description "De positie die de persoon binnen de organisatie bekleedt."@nl ;
 
-    sh:message "org:holds is missing or the datatype is no org:Post"@en ;
+    sh:message "org:holds is missing or the object is no org:Post"@en ;
     sh:message "org:holds est absent ou son Object n'est pas un org:Post"@fr ;
-    sh:message "org:holds ontbreekt of het datatype is geen org:Post"@nl
+    sh:message "org:holds ontbreekt of het object is geen org:Post"@nl
   ],
   [    
+    a sh:PropertyShape ;
     sh:path schema:givenName ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -399,6 +418,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:message "schema:givenName is missing or the datatype is no xsd:string."@en ;
   ],
   [    
+    a sh:PropertyShape ;
     sh:path schema:familyName ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
@@ -415,6 +435,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:message "schema:familyName is missing or the datatype is no xsd:string."@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path schema:email ;
     sh:datatype xsd:string ;
 
@@ -430,9 +451,9 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:message "schema:email is missing or the datatype is no xsd:string."@en ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haOrg:isAccountManagerOf ;
     sh:class org:Organization ;
-    sh:maxCount 1 ;
 
     sh:name "is account manager of"@en ;
     sh:name "est le Gestionnaire de Comptes de"@fr ;
@@ -499,12 +520,12 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
 
 <#PostalAddressShape>  a sh:NodeShape ;
   sh:targetClass schema:PostalAddress ;
-  sh:property [
+  sh:or ([
     a sh:PropertyShape ;
-    sh:path schema:addressCountry ;
-    sh:maxCount 1 ;
     sh:datatype rdf:langString ;
-  
+    sh:path schema:addressCountry ;
+    sh:uniqueLang true ;
+
     sh:name "country"@en ;
     sh:name "pays"@fr ;
     sh:name "land"@nl ;
@@ -516,8 +537,26 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:message "The Object of schema:addressCountry is neither schema:Country nor rdf:langString."@en ;
     sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou rdf:langString."@fr ;
     sh:message "Het Object van schema:addressCountry is geen schema:Country of rdf:langString."@nl
-  ],
-  [   
+  ] 
+  [
+    a sh:PropertyShape ;
+    sh:class schema:Country ;
+    sh:path schema:addressCountry ;
+    sh:maxCount 1 ;
+    
+    sh:name "country"@en ;
+    sh:name "pays"@fr ;
+    sh:name "land"@nl ;
+
+    sh:description "The country in which the postal address is located."@en ;
+    sh:description "Le pays dans lequel se trouve l'adresse postale."@fr ;
+    sh:description "Het land waarin het postadres zich bevindt."@nl ;
+  
+    sh:message "The Object of schema:addressCountry is neither schema:Country nor rdf:langString."@en ;
+    sh:message "L'Object de schema:addressCountry n'est pas un schema:Country ou rdf:langString."@fr ;
+    sh:message "Het Object van schema:addressCountry is geen schema:Country of rdf:langString."@nl
+  ]);
+  sh:property [   
     a  sh:PropertyShape ;
     sh:path schema:addressLocality ;
     sh:datatype xsd:string ;
@@ -531,7 +570,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "La ville dans laquelle se trouve l'adresse postale, et qui est dans la région. Par exemple, Mountain View."@fr ;
     sh:description "De stad waarin het straatadres zich bevindt, en deel uitmaakt van de regio. Bijvoorbeeld, Brussel, Oostende, ...."@nl ;
 
-    sh:message "not an xsd:string or occurs more than once."@en ;
+    sh:message "Not an xsd:string or occurs more than once."@en ;
   ],
   [   
     a sh:PropertyShape ;
@@ -547,7 +586,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "La région dans laquelle la ville est, et qui est dans le pays. Par exemple, Californie ou une autre division administrative appropriée."@fr ;
     sh:description "De provincie van het land waarin de stad zich bevindt. Bijvoorbeeld, Oost-Vlaanderen, Limburg, etc."@nl ;
 
-    sh:message "not an xsd:string or occurs more than once."@en ;
+    sh:message "Not an xsd:string or occurs more than once."@en ;
   ],
   [   
     a sh:PropertyShape ;
@@ -563,7 +602,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Le numéro de boîte postale pour les adresses de boîte postale."@fr ;
     sh:description "Het postbusnummer voor postbusadressen."@nl ;
 
-    sh:message "not an xsd:string or occurs more than once."@en ;
+    sh:message "Not an xsd:string or occurs more than once."@en ;
   ],
   [  
     a sh:PropertyShape ;
@@ -579,7 +618,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Le code postal. Par exemple, 94043."@fr ;
     sh:description "De postcode. Bijvoorbeeld, 9400."@nl ;
 
-    sh:message "not an xsd:string or occurs more than once."@en ;
+    sh:message "Not an xsd:string or occurs more than once."@en ;
   ],
   [   
     a sh:PropertyShape ;
@@ -595,12 +634,13 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "L'adresse postale. Par exemple, 1600 Amphitheatre Parkway."@fr ;
     sh:description "Het straatadres. Bijvoorbeeld, Kerkstraat 16."@nl ;
 
-    sh:message "not an xsd:string or occurs more than once."@en ;
+    sh:message "Not an xsd:string or occurs more than once."@en ;
 ].
 
 <#ContactPointShape>  a sh:NodeShape ;
   sh:targetClass schema:ContactPoint ;
   sh:property [  
+    a sh:PropertyShape ;
     sh:path schema:contactType ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
@@ -615,6 +655,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Le type de point de contact."@fr ;
   ],
   [ 
+    a sh:PropertyShape ;
     sh:path schema:email ;
     sh:datatype xsd:string ;
     
@@ -626,6 +667,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:description "Het e-mail adres."@nl ;
     sh:description "L'adresse e-mail."@fr ;
   ],[ 
+    a sh:PropertyShape ;
     sh:path schema:telephone ;
     sh:datatype xsd:string ;
     

@@ -6,13 +6,13 @@
 @base <https://data.hetarchief.be/id/organization-type/> .
 
 <https://data.hetarchief.be/id/organization-type> a skos:ConceptScheme;
-    rdfs:label "Meemoo organization classification thesaurus"@en;
-    rdfs:label "Meemoo lijst organisatietypes"@nl;
+    skos:prefLabel "Meemoo organization classification thesaurus"@en;
+    skos:prefLabel "Meemoo lijst organisatietypes"@nl;
     skos:hasTopConcept <GEN>.
 
 # --- top concept ---
 
-<GEN> a skos:Concept, haOrg:OrganizationType;
+<GEN> a haOrg:OrganizationType, skos:Concept;
     skos:narrower <ALG>, <CUL>, <LEV>, <MED>, <OVH>;
     skos:inScheme <>;
     skos:topConceptOf <>;
@@ -20,122 +20,122 @@
 
 # --- Algemeen ---
 
-<ALG> a skos:Concept, haOrg:OrganizationType;
+<ALG> a haOrg:OrganizationType, skos:Concept;
     skos:broader <GEN>;
     skos:narrower <advocatenbureau>, <kerkfabriek>, <kathedrale_kerkfabriek>, <sectororganisatie>;
     skos:inScheme <>;
     skos:prefLabel "Algemeen"@nl.
 
-<advocatenbureau> a skos:Concept, haOrg:OrganizationType;
+<advocatenbureau> a haOrg:OrganizationType, skos:Concept;
     skos:broader <ALG>; 
     skos:inScheme <>;
     skos:prefLabel "Advocatenbureau"@nl.
 
-<kerkfabriek> a skos:Concept, haOrg:OrganizationType;
+<kerkfabriek> a haOrg:OrganizationType, skos:Concept;
     skos:broader <ALG>; 
     skos:inScheme <>;
     skos:prefLabel "Kerkfabriek"@nl.
 
-<kathedrale_kerkfabriek> a skos:Concept, haOrg:OrganizationType;
+<kathedrale_kerkfabriek> a haOrg:OrganizationType, skos:Concept;
     skos:broader <ALG>; 
     skos:inScheme <>;
     skos:prefLabel "Kathedrale kerkfabriek"@nl.
 
-<sectororganisatie> a skos:Concept, haOrg:OrganizationType;
+<sectororganisatie> a haOrg:OrganizationType, skos:Concept;
     skos:broader <ALG>; 
     skos:inScheme <>;
     skos:prefLabel "Sectororganisatie"@nl.
 
 # --- Cultuur ---
 
-<CUL> a skos:Concept, haOrg:OrganizationType;
+<CUL> a haOrg:OrganizationType, skos:Concept;
     skos:broader <GEN>;
     skos:inScheme <>;
     skos:narrower <kunstenorganisatie>, <erfgoedcel>, <openbare_bibliotheek>, <archief>, <erfgoedbibliotheek>, <museum_(niet_erkend)>, <museum_(erkend)>;
     skos:prefLabel "Cultuur/erfgoed"@nl.
 
-<kunstenorganisatie> a skos:Concept, haOrg:OrganizationType;
+<kunstenorganisatie> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>; 
     skos:inScheme <>;
     skos:prefLabel "Kunstenorganisatie"@nl.
 
-<erfgoedcel> a skos:Concept, haOrg:OrganizationType;
+<erfgoedcel> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>; 
     skos:inScheme <>;
     skos:prefLabel "Erfgoedcel"@nl.
 
-<openbare_bibliotheek> a skos:Concept, haOrg:OrganizationType;
+<openbare_bibliotheek> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>; 
     skos:inScheme <>;
     skos:prefLabel "Openbare bibliotheek"@nl.
 
-<archief> a skos:Concept, haOrg:OrganizationType;
+<archief> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>; 
     skos:inScheme <>;
     skos:prefLabel "Archief"@nl.
 
-<erfgoedbibliotheek> a skos:Concept, haOrg:OrganizationType;
+<erfgoedbibliotheek> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>; 
     skos:inScheme <>;
     skos:prefLabel "Erfgoedbibliotheek"@nl.
 
-<museum_(niet_erkend)> a skos:Concept, haOrg:OrganizationType;
+<museum_(niet_erkend)> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>; 
     skos:inScheme <>;
     skos:prefLabel "Museum (niet erkend)"@nl.
 
-<museum_(erkend)> a skos:Concept, haOrg:OrganizationType;
+<museum_(erkend)> a haOrg:OrganizationType, skos:Concept;
     skos:broader <CUL>;
     skos:inScheme <>;
     skos:prefLabel "Museum (erkend)"@nl.
 
 # --- Leverancier ---
 
-<LEV> a skos:Concept, haOrg:OrganizationType;
+<LEV> a haOrg:OrganizationType, skos:Concept;
     skos:broader <GEN>;
     skos:narrower <dienstenbedrijf>, <digitaliseringsbedrijf>, <technologiebedrijf> ;
     skos:inScheme <>;
     skos:prefLabel "Leverancier"@nl.
 
-<dienstenbedrijf> a skos:Concept, haOrg:OrganizationType;
+<dienstenbedrijf> a haOrg:OrganizationType, skos:Concept;
     skos:broader <LEV>; 
     skos:inScheme <>;
     skos:prefLabel "Dienstenbedrijf"@nl.
 
-<digitaliseringsbedrijf> a skos:Concept, haOrg:OrganizationType;
+<digitaliseringsbedrijf> a haOrg:OrganizationType, skos:Concept;
     skos:broader <LEV>; 
     skos:inScheme <>;
     skos:prefLabel "Digitaliseringsbedrijf"@nl.
 
-<technologiebedrijf> a skos:Concept, haOrg:OrganizationType;
+<technologiebedrijf> a haOrg:OrganizationType, skos:Concept;
     skos:broader <LEV>; 
     skos:inScheme <>;
     skos:prefLabel "Technologiebedrijf"@nl.
 
 # --- Media ---
 
-<MED> a skos:Concept, haOrg:OrganizationType;
+<MED> a haOrg:OrganizationType, skos:Concept;
     skos:broader <GEN>;
     skos:narrower <mediabedrijf>, <landelijke_private_omroep>, <regionale_omroep>, <publieke_omroep> ;
     skos:inScheme <>;
     skos:prefLabel "Media"@nl.
 
-<mediabedrijf> a skos:Concept, haOrg:OrganizationType;
+<mediabedrijf> a haOrg:OrganizationType, skos:Concept;
     skos:broader <MED>; 
     skos:inScheme <>;
     skos:prefLabel "Mediabedrijf"@nl.
 
-<landelijke_private_omroep> a skos:Concept, haOrg:OrganizationType;
+<landelijke_private_omroep> a haOrg:OrganizationType, skos:Concept;
     skos:broader <MED>;
     skos:inScheme <>;
     skos:prefLabel "Landelijke private omroep"@nl.
 
-<regionale_omroep> a skos:Concept, haOrg:OrganizationType;
+<regionale_omroep> a haOrg:OrganizationType, skos:Concept;
     skos:broader <MED>;
     skos:inScheme <>;
     skos:prefLabel "Regionale omroep"@nl.
 
-<publieke_omroep> a skos:Concept, haOrg:OrganizationType;
+<publieke_omroep> a haOrg:OrganizationType, skos:Concept;
     skos:broader <MED>;
     skos:inScheme <>;
     skos:prefLabel "Publieke omroep"@nl.
@@ -143,28 +143,28 @@
 
 # --- Overheid ---
 
-<OVH> a skos:Concept, haOrg:OrganizationType;
+<OVH> a haOrg:OrganizationType, skos:Concept;
     skos:broader <GEN>;
     skos:narrower <adviescommissie>, <commissie_vlaams_parlement>, <kabinet>, <overheidsdienst>;
     skos:inScheme <>;
     skos:prefLabel "Overheid"@nl.
 
-<adviescommissie> a skos:Concept, haOrg:OrganizationType;
+<adviescommissie> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OVH>;
     skos:inScheme <>;
     skos:prefLabel "adviescommissie"@nl.
 
-<commissie_vlaams_parlement> a skos:Concept, haOrg:OrganizationType;
+<commissie_vlaams_parlement> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OVH>;
     skos:inScheme <>;
     skos:prefLabel "Commissie Vlaams Parlement"@nl.
 
-<kabinet> a skos:Concept, haOrg:OrganizationType;
+<kabinet> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OVH>;
     skos:inScheme <>;
     skos:prefLabel "Kabinet"@nl.
 
-<overheidsdienst> a skos:Concept, haOrg:OrganizationType;
+<overheidsdienst> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OVH>;
     skos:inScheme <>;
     skos:prefLabel "Overheidsdienst"@nl.
@@ -172,48 +172,48 @@
 
 # --- Onderwijs ---
 
-<OND> a skos:Concept, haOrg:OrganizationType;
+<OND> a haOrg:OrganizationType, skos:Concept;
     skos:broader <GEN>;
     skos:narrower <hoger_onderwijs>, <leerplichtonderwijs>, <vakbond>, <educatieve_uitgeverij>, <educatieve_organisatie>, <vakvereniging_onderwijs>, <onderwijskoepel>;
     skos:inScheme <>;
     skos:prefLabel "Onderwijs"@nl.
 
-<hoger_onderwijs> a skos:Concept, haOrg:OrganizationType;
+<hoger_onderwijs> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Hoger onderwijs"@nl.
 
-<leerplichtonderwijs> a skos:Concept, haOrg:OrganizationType;
+<leerplichtonderwijs> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Leerplichtonderwijs"@nl.
 
-<vakbond> a skos:Concept, haOrg:OrganizationType;
+<vakbond> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Vakbond"@nl.
 
-<educatieve_uitgeverij> a skos:Concept, haOrg:OrganizationType;
+<educatieve_uitgeverij> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Educatieve uitgeverij"@nl.
 
-<educatieve_organisatie> a skos:Concept, haOrg:OrganizationType;
+<educatieve_organisatie> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Educatieve organisatie"@nl.
 
-<vakvereniging_onderwijs> a skos:Concept, haOrg:OrganizationType;
+<vakvereniging_onderwijs> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Vakvereniging onderwijs"@nl.
 
-<volwassenenonderwijs> a skos:Concept, haOrg:OrganizationType;
+<volwassenenonderwijs> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Volwassenenonderwijs"@nl.
 
-<onderwijskoepel> a skos:Concept, haOrg:OrganizationType;
+<onderwijskoepel> a haOrg:OrganizationType, skos:Concept;
     skos:broader <OND>;
     skos:inScheme <>;
     skos:prefLabel "Onderwijskoepel"@nl.
