@@ -239,7 +239,7 @@
     sh:message "is no org:Post"@en ;
   ] .
 
-haOrg:OrganizationalUnitShape a sh:NodeShape ;
+<#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
     a sh:PropertyShape ;
