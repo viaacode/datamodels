@@ -248,6 +248,9 @@
 <#LogoShape> a sh:NodeShape ;
   sh:targetClass haOrg:Logo .
 
+<#OrganizationTypeShape> a sh:NodeShape ;
+  sh:targetClass haOrg:OrganizationType .
+
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
