@@ -257,6 +257,9 @@
 <#ServiceConsumerShape> a sh:NodeShape ;
   sh:targetClass haOrg:ServiceConsumer .
 
+<#ServiceProviderShape> a sh:NodeShape ;
+  sh:targetClass haOrg:ServiceProvider .
+
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
