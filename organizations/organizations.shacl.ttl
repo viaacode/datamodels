@@ -254,6 +254,9 @@
 <#SchoolShape> a sh:NodeShape ;
   sh:targetClass haOrg:School .
 
+<#ServiceConsumerShape> a sh:NodeShape ;
+  sh:targetClass haOrg:ServiceConsumer .
+
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
