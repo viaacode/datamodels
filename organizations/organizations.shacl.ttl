@@ -251,6 +251,9 @@
 <#OrganizationTypeShape> a sh:NodeShape ;
   sh:targetClass haOrg:OrganizationType .
 
+<#SchoolShape> a sh:NodeShape ;
+  sh:targetClass haOrg:School .
+
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
