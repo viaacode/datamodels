@@ -260,6 +260,9 @@
 <#ServiceProviderShape> a sh:NodeShape ;
   sh:targetClass haOrg:ServiceProvider .
 
+<#FormalOrganizationShape> a sh:NodeShape ;
+  sh:targetClass org:FormalOrganization .
+
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
   sh:property [
