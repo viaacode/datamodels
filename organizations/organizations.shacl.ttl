@@ -242,7 +242,11 @@
 <#EducationalOrganizationShape> a sh:NodeShape ;
   sh:targetClass haOrg:EducationalOrganization .
 
+<#EducationalPublisherShape> a sh:NodeShape ;
+  sh:targetClass haOrg:EducationalPublisher .
 
+<#LogoShape> a sh:NodeShape ;
+  sh:targetClass haOrg:Logo .
 
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
