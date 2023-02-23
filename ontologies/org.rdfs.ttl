@@ -15,9 +15,9 @@ org:FormalOrganization a owl:Class, rdfs:Class;
     rdfs:label "Formal Organization"@en;
     rdfs:label "Organisation Formelle"@fr;
     rdfs:label "Formele Organisatie"@nl;
-    rdfs:comment """An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities. Examples include a Corporation, Charity, Government or Church. Note that this is a super class of `gr:BusinessEntity` and it is recommended to use the GoodRelations vocabulary to denote Business classifications such as DUNS or NAICS."""@en; 
-    rdfs:comment """Une Organisation reconnue, en particulier par les juridictions locales, ayant des droits et des responsabilités. Exemples : entreprises, association à but non-lucratif, collectivité, église. Notez que c'est une super-classe de `gr:BusinessEntity` et qu'il est recommandé d'utiliser le vocabulaire GoodRelations pour indiquer les classifications économiques comme le code NACE."""@fr;     
-    rdfs:comment """Een organisatie dat wordt herkend als een officiele instantie door rechtelijke jurispudentie, met de daarbij behorende verantwoordelijkheden en rechten. Hieronder vallen bijvoorbeeld Bedrijven, liefdadigheidsinstellingen, overheden of kerken. Let op, dit is een superklasse van `gr:BusinessEntity` en het is gebruikelijk om Goodrelations vocabulaire te gebruiken om de klassificatie van de organisatie aan te geven middels DUNS of NAICS."""@it;
+    skos:definition """An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities. Examples include a Corporation, Charity, Government or Church. Note that this is a super class of `gr:BusinessEntity` and it is recommended to use the GoodRelations vocabulary to denote Business classifications such as DUNS or NAICS."""@en; 
+    skos:definition """Une Organisation reconnue, en particulier par les juridictions locales, ayant des droits et des responsabilités. Exemples : entreprises, association à but non-lucratif, collectivité, église. Notez que c'est une super-classe de `gr:BusinessEntity` et qu'il est recommandé d'utiliser le vocabulaire GoodRelations pour indiquer les classifications économiques comme le code NACE."""@fr;     
+    skos:definition """Een organisatie dat wordt herkend als een officiele instantie door rechtelijke jurispudentie, met de daarbij behorende verantwoordelijkheden en rechten. Hieronder vallen bijvoorbeeld Bedrijven, liefdadigheidsinstellingen, overheden of kerken. Let op, dit is een superklasse van `gr:BusinessEntity` en het is gebruikelijk om Goodrelations vocabulaire te gebruiken om de klassificatie van de organisatie aan te geven middels DUNS of NAICS."""@it;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:Organization    a   owl:Class,  rdfs:Class ;
@@ -179,9 +179,9 @@ org:role a owl:ObjectProperty, rdf:Property;
     rdfs:label "role"@en;
     rdfs:label "rôle"@fr;
     rdfs:label "rol"@nl;
-    rdfs:comment """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
-    rdfs:comment """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;    
-    rdfs:comment """Duidt de rol aan die een Agent uitvoert in relatie met een organisatie."""@nl;
+    skos:definition """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
+    skos:definition """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;    
+    skos:definition """Duidt de rol aan die een Agent uitvoert in relatie met een organisatie."""@nl;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:siteAddress a owl:ObjectProperty, rdf:Property ;
