@@ -181,7 +181,7 @@ org:role a owl:ObjectProperty, rdf:Property;
     rdfs:label "rol"@nl;
     rdfs:comment """Indicates the Role that the Agent plays in a Membership relationship with an Organization."""@en;
     rdfs:comment """Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."""@fr;    
-    rdfs:comment """Duidt de rol aan die een Agent uitvoert in relatie met een organisatie."""@it;
+    rdfs:comment """Duidt de rol aan die een Agent uitvoert in relatie met een organisatie."""@nl;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:siteAddress a owl:ObjectProperty, rdf:Property ;
