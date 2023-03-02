@@ -1,0 +1,147 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://id.loc.gov/ontologies/RecordInfo#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <http://purl.org/vocab/changeset/schema#> .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType>
+  a <http://www.loc.gov/mads/rdf/v1#MADSScheme>, skos:ConceptScheme ;
+  ns0:hasMADSSchemeMember <http://id.loc.gov/vocabulary/preservation/relationshipSubType/icw>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/idc>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/cmf>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/irq>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/ent>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/enf>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsi>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/iem>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/doc>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/dpe>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsr>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/iss>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/idp>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/req>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/iso>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/emu>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/cmt>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc>, <http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe> ;
+  ns0:hasBroaderAuthority <http://id.loc.gov/vocabulary/preservation/relationshipType> ;
+  rdfs:label "Relationship Subtype"@en ;
+  rdfs:comment "A specific characterization of the nature of the relationship between this object and one or more other objects." ;
+  ns0:adminMetadata [
+    a <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+    ns1:recordStatus "new"^^xsd:string ;
+    ns1:recordChangeDate "2012-08-01T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ], [
+    a ns1:RecordInfo ;
+    ns1:recordStatus "modified"^^xsd:string ;
+    ns1:recordChangeDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ] ;
+  skos:broader <http://id.loc.gov/vocabulary/preservation/relationshipType> ;
+  skos:changeNote [
+    a <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2012-08-01T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "new"^^xsd:string
+  ], [
+    a ns2:ChangeSet ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "modified"^^xsd:string
+  ] .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/icw>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Compatible With" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/idc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Documented In" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Represented By" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/cmf>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "compressed from" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/irq>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Required By" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/ent>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "encrypted to" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/enf>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "encrypted from" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsi>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "has Sibling" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "has Part" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "represents" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iem>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Emulated By" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/doc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "documents" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/dpe>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "deploys" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsr>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "has Root" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "supersedes" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iss>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Superseded By" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "has Source" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/idp>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Deployed On" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/req>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "requires" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iso>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Source Of" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Part Of" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/emu>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "emulates" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "is Included In" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/cmt>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "compressed to" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "generalizes" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "includes" .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "specializes" .
+
