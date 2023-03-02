@@ -1,0 +1,10 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://id.loc.gov/datatypes/edtf>
+  a <http://www.loc.gov/mads/rdf/v1#MADSScheme>, skos:ConceptScheme ;
+  ns0:hasMADSSchemeMember <http://id.loc.gov/datatypes/edtf/EDTF>, <http://id.loc.gov/datatypes/edtf/EDTF-level0>, <http://id.loc.gov/datatypes/edtf/EDTF-level1>, <http://id.loc.gov/datatypes/edtf/EDTF-level2> ;
+  rdfs:label "Extended Date/Time Format Datatypes Scheme"@en ;
+  rdfs:comment "Extended Date/Time Format Datatypes Scheme collects the three different datatypes, one each pertaining to a EDTF level." .
+
