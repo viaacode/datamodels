@@ -1,0 +1,45 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://id.loc.gov/ontologies/RecordInfo#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <http://purl.org/vocab/changeset/schema#> .
+
+<http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole>
+  a <http://www.loc.gov/mads/rdf/v1#MADSScheme>, skos:ConceptScheme ;
+  ns0:hasMADSSchemeMember <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out>, <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou> ;
+  rdfs:label "Event Related Object Role"@en ;
+  rdfs:comment "The role of the object associated with an event." ;
+  ns0:adminMetadata [
+    a <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+    ns1:recordStatus "new"^^xsd:string ;
+    ns1:recordChangeDate "2012-08-01T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ], [
+    a ns1:RecordInfo ;
+    ns1:recordStatus "modified"^^xsd:string ;
+    ns1:recordChangeDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ] ;
+  skos:changeNote [
+    a <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2012-08-01T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "new"^^xsd:string
+  ], [
+    a ns2:ChangeSet ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "modified"^^xsd:string
+  ] .
+
+<http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "outcome" .
+
+<http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "source" .
+
