@@ -1,0 +1,38 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://id.loc.gov/ontologies/RecordInfo#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <http://purl.org/vocab/changeset/schema#> .
+
+<http://id.loc.gov/vocabulary/preservation/eventOutcome>
+  a <http://www.loc.gov/mads/rdf/v1#MADSScheme>, skos:ConceptScheme ;
+  ns0:hasMADSSchemeMember <http://id.loc.gov/vocabulary/preservation/eventOutcome/war>, <http://id.loc.gov/vocabulary/preservation/eventOutcome/suc>, <http://id.loc.gov/vocabulary/preservation/eventOutcome/fai> ;
+  rdfs:label "Event Outcome"@en ;
+  rdfs:comment "A categorization of the overall result of the Event in terms of success, partial success, or failure." ;
+  ns0:adminMetadata [
+    a <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+    ns1:recordStatus "new"^^xsd:string ;
+    ns1:recordChangeDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ] ;
+  skos:changeNote [
+    a <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "new"^^xsd:string
+  ] .
+
+<http://id.loc.gov/vocabulary/preservation/eventOutcome/war>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "warning" .
+
+<http://id.loc.gov/vocabulary/preservation/eventOutcome/suc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "success" .
+
+<http://id.loc.gov/vocabulary/preservation/eventOutcome/fai>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "fail" .
+
