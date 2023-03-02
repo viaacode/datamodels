@@ -1,0 +1,260 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns1: <http://id.loc.gov/ontologies/RecordInfo#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns2: <http://purl.org/vocab/changeset/schema#> .
+
+<http://id.loc.gov/vocabulary/preservation/eventType>
+  a <http://www.loc.gov/mads/rdf/v1#MADSScheme>, skos:ConceptScheme ;
+  ns0:hasMADSSchemeMember <http://id.loc.gov/vocabulary/preservation/eventType/prt>, <http://id.loc.gov/vocabulary/preservation/eventType/ffa>, <http://id.loc.gov/vocabulary/preservation/eventType/rep>, <http://id.loc.gov/vocabulary/preservation/eventType/der>, <http://id.loc.gov/vocabulary/preservation/eventType/cre>, <http://id.loc.gov/vocabulary/preservation/eventType/mee>, <http://id.loc.gov/vocabulary/preservation/eventType/poa>, <http://id.loc.gov/vocabulary/preservation/eventType/tra>, <http://id.loc.gov/vocabulary/preservation/eventType/mod>, <http://id.loc.gov/vocabulary/preservation/eventType/rec>, <http://id.loc.gov/vocabulary/preservation/eventType/del>, <http://id.loc.gov/vocabulary/preservation/eventType/cop>, <http://id.loc.gov/vocabulary/preservation/eventType/ima>, <http://id.loc.gov/vocabulary/preservation/eventType/enc>, <http://id.loc.gov/vocabulary/preservation/eventType/ips>, <http://id.loc.gov/vocabulary/preservation/eventType/ipm>, <http://id.loc.gov/vocabulary/preservation/eventType/ins>, <http://id.loc.gov/vocabulary/preservation/eventType/dec>, <http://id.loc.gov/vocabulary/preservation/eventType/nor>, <http://id.loc.gov/vocabulary/preservation/eventType/red>, <http://id.loc.gov/vocabulary/preservation/eventType/exp>, <http://id.loc.gov/vocabulary/preservation/eventType/mes>, <http://id.loc.gov/vocabulary/preservation/eventType/dis>, <http://id.loc.gov/vocabulary/preservation/eventType/for>, <http://id.loc.gov/vocabulary/preservation/eventType/app>, <http://id.loc.gov/vocabulary/preservation/eventType/dsg>, <http://id.loc.gov/vocabulary/preservation/eventType/mem>, <http://id.loc.gov/vocabulary/preservation/eventType/ine>, <http://id.loc.gov/vocabulary/preservation/eventType/mig>, <http://id.loc.gov/vocabulary/preservation/eventType/val>, <http://id.loc.gov/vocabulary/preservation/eventType/dig>, <http://id.loc.gov/vocabulary/preservation/eventType/exe>, <http://id.loc.gov/vocabulary/preservation/eventType/ren>, <http://id.loc.gov/vocabulary/preservation/eventType/fil>, <http://id.loc.gov/vocabulary/preservation/eventType/acc>, <http://id.loc.gov/vocabulary/preservation/eventType/dea>, <http://id.loc.gov/vocabulary/preservation/eventType/vir>, <http://id.loc.gov/vocabulary/preservation/eventType/int>, <http://id.loc.gov/vocabulary/preservation/eventType/qua>, <http://id.loc.gov/vocabulary/preservation/eventType/com>, <http://id.loc.gov/vocabulary/preservation/eventType/unq>, <http://id.loc.gov/vocabulary/preservation/eventType/ref>, <http://id.loc.gov/vocabulary/preservation/eventType/dsp>, <http://id.loc.gov/vocabulary/preservation/eventType/pac>, <http://id.loc.gov/vocabulary/preservation/eventType/fix>, <http://id.loc.gov/vocabulary/preservation/eventType/cap>, <http://id.loc.gov/vocabulary/preservation/eventType/ipc>, <http://id.loc.gov/vocabulary/preservation/eventType/ing>, <http://id.loc.gov/vocabulary/preservation/eventType/ext>, <http://id.loc.gov/vocabulary/preservation/eventType/unp> ;
+  ns0:useFor <http://id.loc.gov/vocabulary/preservation/actionsGranted>, <http://id.loc.gov/vocabulary/preservation/environmentPurpose>, <http://id.loc.gov/vocabulary/preservation/inhibitorTarget> ;
+  rdfs:label "Event Type"@en ;
+  rdfs:comment "  Event Types are actions performed within or outside the repository that affect the long term preservation of digital objects." ;
+  ns0:adminMetadata [
+    a <http://id.loc.gov/ontologies/RecordInfo#RecordInfo> ;
+    ns1:recordStatus "new"^^xsd:string ;
+    ns1:recordChangeDate "2010-06-01T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ], [
+    a ns1:RecordInfo ;
+    ns1:recordStatus "modified"^^xsd:string ;
+    ns1:recordChangeDate "2012-06-01T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ], [
+    a ns1:RecordInfo ;
+    ns1:recordStatus "modified"^^xsd:string ;
+    ns1:recordChangeDate "2017-09-07T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ], [
+    a ns1:RecordInfo ;
+    ns1:recordStatus "modified"^^xsd:string ;
+    ns1:recordChangeDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns1:recordContentSource <https://id.loc.gov/vocabulary/preservation/dlc>
+  ] ;
+  skos:changeNote [
+    a <http://purl.org/vocab/changeset/schema#ChangeSet> ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2010-06-01T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "new"^^xsd:string
+  ], [
+    a ns2:ChangeSet ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2012-06-01T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "modified"^^xsd:string
+  ], [
+    a ns2:ChangeSet ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2017-09-07T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "modified"^^xsd:string
+  ], [
+    a ns2:ChangeSet ;
+    ns2:subjectOfChange <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    ns2:creatorName <https://id.loc.gov/vocabulary/preservation/dlc> ;
+    ns2:createdDate "2018-09-24T00:00:01"^^xsd:dateTime ;
+    ns2:changeReason "modified"^^xsd:string
+  ] .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/prt>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "printing" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ffa>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "forensic feature analysis" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/rep>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "replication" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/der>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "decryption" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/cre>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "creation" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/mee>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "metadata extraction" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/poa>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "policy assignment" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/tra>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "transfer" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/mod>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "modification" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/rec>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "recovery" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/del>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "deletion" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/cop>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "compiling" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ima>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "imaging" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/enc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "encryption" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ips>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "information package splitting" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ipm>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "information package merging" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ins>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "ingestion start" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/dec>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "decompression" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/nor>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "normalization" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/red>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "redaction" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/exp>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "exporting" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/mes>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "message digest calculation" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/dis>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "dissemination" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/for>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "format identification" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/app>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "appraisal" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/dsg>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "digital signature generation" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/mem>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "metadata modification" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ine>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "ingestion end" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/mig>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "migration" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/val>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "validation" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/dig>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "digital signature validation" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/exe>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "execution" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ren>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "rendering" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/fil>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "filename change" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/acc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "accession" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/dea>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "deaccession" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/vir>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "virus check" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/int>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "interpreting" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/qua>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "quarantine" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/com>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "compression" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/unq>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "unquarantine" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ref>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "refreshment" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/dsp>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "displaying" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/pac>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "packing" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/fix>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "fixity check" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/cap>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "capture" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ipc>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "information package creation" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ing>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "ingestion" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/ext>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "extraction" .
+
+<http://id.loc.gov/vocabulary/preservation/eventType/unp>
+  a ns0:Authority ;
+  ns0:authoritativeLabel "unpacking" .
+
