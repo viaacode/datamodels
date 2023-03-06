@@ -152,13 +152,24 @@ org:holds a owl:ObjectProperty, rdf:Property ;
     rdfs:range  org:Post ;
     owl:inverseOf org:heldBy ;
     rdfs:label "holds"@en ;
-  	rdfs:label "occupe"@fr ;
+    rdfs:label "occupe"@fr ;
     rdfs:label "heeft positie"@nl ;
     skos:definition """Indicates a Post held by some Agent."""@en ;
     skos:definition """Indicate un Poste occupé par un Agent."""@fr ;
     skos:definition """Duidt een positie aan die ingevuld wordt door een Agent."""@nl ;
     # Corrected 2014-01-25
     # rdfs:subPropertyOf org:memberOf;
+    rdfs:isDefinedBy <http://www.w3.org/ns/org> .
+
+org:identifier a owl:DatatypeProperty, rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:subPropertyOf skos:notation ;
+    rdfs:label "identifier"@en ;
+    rdfs:label "identifiant"@fr ;
+    rdfs:label "ID"@nl ;
+    skos:definition """Gives an identifier, such as a company registration number, that can be used to used to uniquely identify the organization."""@en;
+    skos:definition """Donne un identifiant, comme par exemple le numéro d'enregistrement d'une entreprise, qui peut être utilisé comme identifiant unique pour l'Organisation."""@fr;
+    skos:definition """Geeft een ID, zoals een bedrijfsregistratienummer, dat gebruikt kan worden om de organisatie uniek te identificeren."""@nl;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:postIn a owl:ObjectProperty, rdf:Property ;
