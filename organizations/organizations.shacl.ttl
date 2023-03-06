@@ -237,13 +237,66 @@
     sh:description "Verwijst naar een positie binnen de organisatie."@nl ;
 
     sh:message "is no org:Post"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the organisation."@en ;
+    sh:description "Indique l'identifiant unique de l'organisation."@fr ;
+    sh:description "Verwijst naar de unieke ID van de organisatie."@nl ;
+
+    sh:message "occurs more than once or its object is no xsd:string"@en ;
   ] .
 
 <#EducationalOrganizationShape> a sh:NodeShape ;
-  sh:targetClass haOrg:EducationalOrganization .
+  sh:targetClass haOrg:EducationalOrganization ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the educational organization."@en ;
+    sh:description "Indique l'identifiant unique de l'organisation éducative."@fr ;
+    sh:description "Verwijst naar de unieke ID van de educatieve organisatie."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] .
 
 <#EducationalPublisherShape> a sh:NodeShape ;
-  sh:targetClass haOrg:EducationalPublisher .
+  sh:targetClass haOrg:EducationalPublisher ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the educational publisher."@en ;
+    sh:description "Indique l'identifiant unique de l'éditeur éducatif."@fr ;
+    sh:description "Verwijst naar de unieke ID van de educatieve uitgeverij."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] .
 
 <#LogoShape> a sh:NodeShape ;
   sh:targetClass haOrg:Logo .
@@ -252,13 +305,67 @@
   sh:targetClass haOrg:OrganizationType .
 
 <#SchoolShape> a sh:NodeShape ;
-  sh:targetClass haOrg:School .
+  sh:targetClass haOrg:School ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the school."@en ;
+    sh:description "Indique l'identifiant unique de l'école."@fr ;
+    sh:description "Verwijst naar de unieke ID van de school."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] .
 
 <#ServiceConsumerShape> a sh:NodeShape ;
-  sh:targetClass haOrg:ServiceConsumer .
+  sh:targetClass haOrg:ServiceConsumer ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the service consumer."@en ;
+    sh:description "Indique l'identifiant unique du consomatteur de services."@fr ;
+    sh:description "Verwijst naar de unieke ID van de dienstenafnemer."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] .
 
 <#ServiceProviderShape> a sh:NodeShape ;
-  sh:targetClass haOrg:ServiceProvider .
+  sh:targetClass haOrg:ServiceProvider ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the service provider."@en ;
+    sh:description "Indique l'identifiant unique du fournisseur de services."@fr ;
+    sh:description "Verwijst naar de unieke ID van de dienstenleverancier."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] .
 
 <#FormalOrganizationShape> a sh:NodeShape ;
   sh:targetClass org:FormalOrganization .
@@ -300,7 +407,26 @@
     sh:description "De account manager van de contentpartner."@nl ;
     
     sh:message "is missing, occurs more than once or its object is no schema:Person"@en ;
+  ] ,
+  [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the content partner."@en ;
+    sh:description "Indique l'identifiant unique du partenaire de contenus."@fr ;
+    sh:description "Verwijst naar de unieke ID van de contentpartner."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
+  
 
 <#EducationalPartnerShape>  a sh:NodeShape ;
   sh:targetClass haOrg:EducationalPartner ;
@@ -320,7 +446,26 @@
     sh:description "De account manager van de educatieve partner."@nl ;
       
     sh:message "is missing, occurs more than once or its object is no schema:Person"@en ;
+  ] ,
+  [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the educational partner."@en ;
+    sh:description "Indique l'identifiant unique du partenaire éducatif."@fr ;
+    sh:description "Verwijst naar de unieke ID van de educatieve partner."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
+  
 
 <#SiteShape>  a  sh:NodeShape ;
   sh:targetClass org:Site ;
