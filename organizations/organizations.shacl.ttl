@@ -55,7 +55,7 @@
     a sh:PropertyShape ;
     sh:path skos:prefLabel ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:uniqueLang true ;
     sh:datatype rdf:langString ;
       
     sh:name "preferred label"@en ;
@@ -70,6 +70,7 @@
   ],[ 
     a sh:PropertyShape ;
     sh:path skos:altLabel ;
+    sh:uniqueLang true ;
     sh:datatype rdf:langString ;
 
     sh:description "The alternative label of the organization."@en ;
@@ -117,7 +118,8 @@
   [
     a sh:PropertyShape ;
     sh:path dct:description ;
-    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:uniqueLang true ;
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
     
