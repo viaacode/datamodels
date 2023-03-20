@@ -427,6 +427,23 @@
     sh:description "Verwijst naar de unieke ID van de contentpartner."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] ,
+  [
+    a sh:PropertyShape ;
+    sh:path haOrg:permits ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+    sh:in ("bezoekertool" "overlay") ;
+
+    rdfs:label "geeft toelating voor"@nl ;
+    rdfs:label "gives permission for"@en ;
+    rdfs:label "accorde la permission"@fr ;
+    
+    sh:description "Geeft een bepaalde toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten of te presenteren."@nl;
+    sh:description "Gives a certain admission to disseminate or present the content of which this content partner is the owner."@en;
+    sh:description "Donne une certaine admission pour diffuser ou présenter le contenu dont cette contentpartner est propriétaire."@fr;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
   
 

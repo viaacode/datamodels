@@ -156,3 +156,14 @@ haOrg:hasLogo  a   rdf:Property ;
     skos:definition "Un logo pour une organisation."@fr ;
     skos:definition "Een logo voor een organisatie."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:permits a rdf:Property ;
+    rdfs:domain org:ContentPartner ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "geeft toelating voor"@nl ;
+    rdfs:label "gives permission for"@en ;
+    rdfs:label "accorde la permission"@fr ;
+    skos:definition "Geeft een bepaalde toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten of te presenteren."@nl;
+    skos:definition "Gives a certain admission to disseminate or present the content of which this content partner is the owner."@en;
+    skos:definition "Donne une certaine admission pour diffuser ou présenter le contenu dont cette contentpartner est propriétaire."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
