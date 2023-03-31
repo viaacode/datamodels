@@ -446,18 +446,39 @@
   ] ,
   [
     a sh:PropertyShape ;
-    sh:path haOrg:permits ;
+    sh:path haOrg:allowsBZT ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:in ("bezoekertool" "overlay") ;
+    sh:datatype xsd:boolean ;
 
-    rdfs:label "geeft toelating voor"@nl ;
-    rdfs:label "gives permission for"@en ;
-    rdfs:label "accorde la permission"@fr ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    rdfs:label "laat bezoekertool toe"@nl ;
+    rdfs:label "allows bezoekertool"@en ;
+    rdfs:label "permet le bezoekertool"@fr ;
     
-    sh:description "Geeft een bepaalde toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten of te presenteren."@nl;
-    sh:description "Gives a certain admission to disseminate or present the content of which this content partner is the owner."@en;
-    sh:description "Donne une certaine admission pour diffuser ou présenter le contenu dont cette contentpartner est propriétaire."@fr;
+    sh:description "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten op de Bezoekertool van meemoo."@nl;
+    sh:description "Gives admission to disseminate the content of which this content partner is the owner on the Bezoekertool of meemoo."@en;
+    sh:description "Donne admission pour diffuser le contenu dont cette contentpartner est propriétaire sur le Bezoekertool de meemoo."@fr;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:boolean"@en ;
+  ] ,
+  [
+    a sh:PropertyShape ;
+    sh:path haOrg:allowsOverlay ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:boolean ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    rdfs:label "laat overlay toe"@nl ;
+    rdfs:label "allows overlay"@en ;
+    rdfs:label "permet la superposition"@fr ;
+    
+    sh:description "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te presenteren met een watermerk."@nl;
+    sh:description "Gives admission to present the content of which this content partner is the owner with an overlay."@en;
+    sh:description "Donne admission pour présenter le contenu dont cette contentpartner est propriétaire avec une superposition."@fr;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
