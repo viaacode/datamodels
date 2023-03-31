@@ -480,7 +480,7 @@
     sh:description "Gives admission to present the content of which this content partner is the owner with an overlay."@en;
     sh:description "Donne admission pour présenter le contenu dont cette contentpartner est propriétaire avec une superposition."@fr;
 
-    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+    sh:message "is missing, occurs more than once or its object is no xsd:boolean"@en ;
   ] .
   
 
