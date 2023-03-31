@@ -12,6 +12,7 @@
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
+@prefix mh: <https://data.hetarchief.be/ns/mediahaven/> .
 
 @base <https://data.hetarchief.be/ns/organization> .
 
@@ -82,6 +83,21 @@
     sh:name "alternatieve naam/label"@nl ;
       
     sh:message "is no language string"@en
+  ],
+  [ 
+    a sh:PropertyShape ;
+    sh:path mh:label ;
+    sh:datatype xsd:string ;
+
+    sh:description "The Mediahaven tenant name of the organization."@en ;
+    sh:description "Le nom du locataire Mediahaven de l'organisation."@fr ;
+    sh:description "De Mediahaven tenant naam van de organisatie."@nl ;
+
+    sh:name "tenant name"@en ;
+    sh:name "nom du locataire Mediahaven"@fr ;
+    sh:name "tenant naam"@nl ;
+      
+    sh:message "is no string"@en
   ],
   [
     a sh:PropertyShape ;
