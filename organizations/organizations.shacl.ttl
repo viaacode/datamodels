@@ -453,9 +453,9 @@
     sh:minCount 1 ;
     sh:maxCount 1 ;
 
-    rdfs:label "laat bezoekertool toe"@nl ;
-    rdfs:label "allows bezoekertool"@en ;
-    rdfs:label "permet le bezoekertool"@fr ;
+    sh:name "laat bezoekertool toe"@nl ;
+    sh:name "allows bezoekertool"@en ;
+    sh:name "permet le bezoekertool"@fr ;
     
     sh:description "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten op de Bezoekertool van meemoo."@nl;
     sh:description "Gives admission to disseminate the content of which this content partner is the owner on the Bezoekertool of meemoo."@en;
@@ -472,9 +472,9 @@
     sh:minCount 1 ;
     sh:maxCount 1 ;
 
-    rdfs:label "laat overlay toe"@nl ;
-    rdfs:label "allows overlay"@en ;
-    rdfs:label "permet la superposition"@fr ;
+    sh:name "laat overlay toe"@nl ;
+    sh:name "allows overlay"@en ;
+    sh:name "permet la superposition"@fr ;
     
     sh:description "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te presenteren met een watermerk."@nl;
     sh:description "Gives admission to present the content of which this content partner is the owner with an overlay."@en;
