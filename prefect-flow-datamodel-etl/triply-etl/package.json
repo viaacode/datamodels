@@ -1,0 +1,9 @@
+{
+  "name": "triply-etl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@triplyetl/etl": "^1.0.1-rc.3"
+  }
+}
