@@ -32,7 +32,7 @@
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-    dct:title     "Data model Organizations"@en ;
+    ::title     "Data model Organizations"@en ;
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
@@ -134,7 +134,7 @@
   [
     a sh:PropertyShape ;
     sh:path dct:description ;
-    sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:uniqueLang true ;
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
