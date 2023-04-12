@@ -134,7 +134,6 @@
   [
     a sh:PropertyShape ;
     sh:path dct:description ;
-    sh:maxCount 1 ;
     sh:uniqueLang true ;
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
