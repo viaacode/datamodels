@@ -175,7 +175,7 @@
 
     sh:name "sector"@nl ;
     sh:name "sector"@en ;
-    sh:name "permet la superposition"@fr ;
+    sh:name "secteur"@fr ;
     
     sh:description "De sector waarin de organisatie actief is."@nl;
     sh:description "The sector the organisation is active in."@en;

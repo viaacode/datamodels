@@ -131,7 +131,7 @@ haOrg:sector   a   rdf:Property ;
     rdfs:range rdfs:Literal ;
     rdfs:label "sector"@nl ;
     rdfs:label "sector"@en ;
-    rdfs:label "permet la superposition"@fr ;
+    rdfs:label "secteur"@fr ;
     skos:definition "De sector waarin de organisatie actief is."@nl;
     skos:definition "The sector the organisation is active in."@en;
     skos:definition "Le secteur dans lequel l'organisation est active."@fr;
