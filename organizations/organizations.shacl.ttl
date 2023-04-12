@@ -165,6 +165,25 @@
   ],
   [
     a sh:PropertyShape ;
+    sh:path haOrg:sector ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+
+    sh:name "sector"@nl ;
+    sh:name "sector"@en ;
+    sh:name "secteur"@fr ;
+    
+    sh:description "De sector waarin de organisatie actief is."@nl;
+    sh:description "The sector the organisation is active in."@en;
+    sh:description "Le secteur dans lequel l'organisation est active."@fr;
+
+    sh:message "occurs more than once or its object is no xsd:string"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
     sh:path org:hasUnit ;
     sh:class org:OrganizationalUnit ;
 
