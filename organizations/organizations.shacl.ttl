@@ -32,7 +32,7 @@
         schema:name   "Lennert Van de Velde" ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
-    ::title     "Data model Organizations"@en ;
+    dct:title     "Data model Organizations"@en ;
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
