@@ -75,12 +75,12 @@
   sh:property <#NoteShape>, <#ChangeNoteShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skos:memberList ;
-    sh:class rdf:List ;
     sh:name "member list"@en ;
     sh:name "liste de membres"@fr ;
     sh:name "lijst van leden"@nl ;
     sh:severity sh:Violation ;
-    ] ;
+    sh:node <#ListShape>
+  ] ;
   sh:property [
     sh:path skos:definition ;
     sh:nodeKind sh:Literal ;
@@ -91,6 +91,17 @@
     sh:name "definitie"@nl ;
     sh:severity sh:Violation ;
     ] .
+
+<#ListShape>
+ a sh:NodeShape ;
+ sh:targetClass rdf:List ;
+ sh:property [
+    sh:path ( [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ;
+    sh:or (
+      [ sh:class skos:Concept ]
+      [ sh:class skos:Collection ]
+    ) 
+ ].
 
 <#ConceptShape>
   a sh:NodeShape ;
@@ -199,9 +210,6 @@
   sh:property [
     sh:path skos:related ;
     sh:class skos:Concept ;
-    sh:message "S27	skos:related is disjoint with the property skos:broaderTransitive."@en ;
-    sh:message "S27	skos:related est disjoint avec la propriété skos:broaderTransitive."@fr ;
-    sh:message "S27	skos:related is disjunct met de eigenschap skos:broaderTransitive."@nl ;
     sh:disjoint skos:broader ;
     sh:disjoint skos:broaderTransitive ;
     sh:disjoint skos:narrower ;
@@ -209,7 +217,7 @@
     sh:name "related"@en ;
     sh:name "lié"@fr ;
     sh:name "gerelateerd"@nl ;
-    sh:severity sh:Violation ;
+    sh:severity sh:Warning ;
     ] ;
   sh:property [
     sh:path skos:relatedMatch ;
@@ -245,7 +253,7 @@
   sh:property [
     sh:path skosxl:prefLabel ;
     sh:class skosxl:Label ;
-    sh:minCount 1 ;
+    sh:maxCount 1 ;
     sh:name "pref label"@en ;
     sh:name "label préféré"@fr ;
     sh:name "voorkeurslabel"@nl ;
@@ -374,9 +382,6 @@
   sh:datatype rdf:langString ;
   sh:disjoint skos:hiddenLabel ;
   sh:disjoint skos:prefLabel ;
-  sh:message "skos:prefLabel, skos:altLabel and skos:hiddenLabel must be disjoint"@en ;
-  sh:message "skos:prefLabel, skos:altLabel et skos:hiddenLabel doivent être disjoint"@fr ;
-  sh:message "skos:prefLabel, skos:altLabel en skos:hiddenLabel moeten disjunct zijn"@nl ;
   sh:name "alternative label"@en ;
   sh:name "étiquette alternative"@fr ;
   sh:name "alternatief label"@nl ;
