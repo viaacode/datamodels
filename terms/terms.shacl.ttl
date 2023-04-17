@@ -64,7 +64,7 @@
     sh:name "definition"@en ;
     sh:name "définition"@fr ;
     sh:name "definitie"@nl ;
-    sh:severity sh:Violation .
+    sh:severity sh:Violation ;
     ] .
     
 <#OrderedCollectionShape>
