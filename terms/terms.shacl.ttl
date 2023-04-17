@@ -45,7 +45,7 @@
 <#CollectionShape>
   a sh:NodeShape ;
   sh:targetClass skos:Collection ;
-  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skos:member ;
     sh:or (
@@ -56,6 +56,15 @@
     sh:name "membre"@fr ;
     sh:name "lid"@nl ;
     sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+    sh:nodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 0 ;
+    sh:name "definition"@en ;
+    sh:name "définition"@fr ;
+    sh:name "definitie"@nl ;
+    sh:severity sh:Violation .
     ] .
     
 <#OrderedCollectionShape>
