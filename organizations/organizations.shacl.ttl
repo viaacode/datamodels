@@ -544,6 +544,7 @@
     a sh:PropertyShape ;
     sh:path org:siteOf ;
     sh:maxCount 1 ;
+    sh:minCount 1 ;
     sh:class org:Organization ;
 
     sh:name "site of"@en ;
