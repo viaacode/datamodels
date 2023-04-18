@@ -139,7 +139,7 @@
         sh:description """The outcome status of the event."""@en ;
         sh:description """Statut du résultat de l'événement (Event)."""@fr ;
         sh:description """De uitkomststatus van de gebeurtenis (Event)."""@nl ;
-        sh:minCount 1 ;
+        sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:in (evtOutcome:fai evtOutcome:suc evtOutcome:war) ;
         sh:severity sh:Violation ;
