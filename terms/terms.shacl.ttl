@@ -106,7 +106,7 @@
 <#ConceptShape>
   a sh:NodeShape ;
   sh:targetClass skos:Concept ;
-  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
+  sh:property <#NoteShape>, <#ChangeNoteShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skos:broader ;
     sh:class skos:Concept ;
