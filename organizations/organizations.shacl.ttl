@@ -558,6 +558,23 @@
     sh:description "L'adresse de l'emplacement."@fr ;
 
     sh:message "occurs more than once or its object is no schema:PostalAddress"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path org:siteOf ;
+    sh:maxCount 1 ;
+    sh:minCount 1 ;
+    sh:class org:Organization ;
+
+    sh:name "site of"@en ;
+    sh:name "site de"@fr ;
+    sh:name "vestiging van"@nl ;
+
+    sh:description "De organisatie waarvan deze vestiging deel uitmaakt."@nl ;
+    sh:description "The organization of which this location is part."@en ;
+    sh:description "L'organisation dont cette emplacement fait partie."@fr ;
+
+    sh:message "occurs more than once or its object is no org:Organization"@en ;
   ] .
 
 <#PostShape> a sh:NodeShape;
