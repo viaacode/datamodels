@@ -5,13 +5,16 @@
 @base <https://data.hetarchief.be/id/organization-role/> .
 
 <https://data.hetarchief.be/id/organization-role> a skos:ConceptScheme ;
-  skos:prefLabel "Meemoo organization Roles thesaurus" ;
+  skos:prefLabel "Meemoo organization Roles thesaurus"@en ;
+  skos:prefLabel "Meemoo organisatierollen thesaurus"@nl ;
   skos:hasTopConcept <Staff> .
 
 <Staff> a org:Role, skos:Concept ;
     skos:prefLabel "Staff"@en ;
     skos:prefLabel "Personnel(le)"@fr;
     skos:prefLabel "Personeel"@nl;
+    skos:definition "A person employed by or active in an organization, business, or service."@en;
+    skos:definition "Een persoon in dienst van of actief in een organisatie, bedrijf of service."@nl;
     skos:inScheme <> ;
     skos:topConceptOf <>.
 
@@ -19,6 +22,8 @@
     skos:prefLabel "Account Manager"@en ;
     skos:prefLabel "Gestionnaire de Comptes"@fr;
     skos:prefLabel "Accountmanager"@nl ;
+    skos:definition "A person who is in charge of one or more named customers or to a specified segment of the market."@en;
+    skos:definition "Een persoon die verantwoordelijk is voor een of meer genoemde klanten of aan een bepaald segment van de markt."@nl;
     skos:broader <Staff> ;
     skos:inScheme <> .
 
@@ -26,6 +31,8 @@
     skos:prefLabel "Educational employee"@en ;
     skos:prefLabel "Assistante pédagogique"@fr;
     skos:prefLabel "Educatief medewerker"@nl ;
+    skos:definition "A person responsible for developing an educational programme within an organization."@en;
+    skos:definition "Een persoon die verantwoordelijk is voor het ontwikkelen van een educatief programma binnen een organisatie."@nl;
     skos:broader <Staff> ;
     skos:inScheme <> .
 
