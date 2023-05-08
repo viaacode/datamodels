@@ -8,20 +8,12 @@
 <https://data.hetarchief.be/id/organization-type> a skos:ConceptScheme;
     skos:prefLabel "Meemoo organization classification thesaurus"@en;
     skos:prefLabel "Meemoo lijst organisatietypes"@nl;
-    skos:hasTopConcept <GEN>.
-
-# --- top concept ---
-
-<GEN> a haOrg:OrganizationType, skos:Concept;
-    skos:narrower <ALG>, <CUL>, <LEV>, <MED>, <OVH>;
-    skos:inScheme <>;
-    skos:topConceptOf <>;
-    skos:prefLabel "Generieke organisatie"@nl.
+    skos:hasTopConcept <ALG>, <CUL>, <LEV>, <MED>, <OVH>.
 
 # --- Algemeen ---
 
 <ALG> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <GEN>;
+    skos:topConceptOf <>;
     skos:narrower <advocatenbureau>, <kerkfabriek>, <kathedrale_kerkfabriek>, <sectororganisatie>;
     skos:inScheme <>;
     skos:prefLabel "Algemeen"@nl.
@@ -49,7 +41,7 @@
 # --- Cultuur ---
 
 <CUL> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <GEN>;
+    skos:topConceptOf <>;
     skos:inScheme <>;
     skos:narrower <kunstenorganisatie>, <erfgoedcel>, <openbare_bibliotheek>, <archief>, <erfgoedbibliotheek>, <museum_(niet_erkend)>, <museum_(erkend)>;
     skos:prefLabel "Cultuur/erfgoed"@nl.
@@ -92,7 +84,7 @@
 # --- Leverancier ---
 
 <LEV> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <GEN>;
+    skos:topConceptOf <>;
     skos:narrower <dienstenbedrijf>, <digitaliseringsbedrijf>, <technologiebedrijf> ;
     skos:inScheme <>;
     skos:prefLabel "Leverancier"@nl.
@@ -115,7 +107,7 @@
 # --- Media ---
 
 <MED> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <GEN>;
+    skos:topConceptOf <>;
     skos:narrower <mediabedrijf>, <landelijke_private_omroep>, <regionale_omroep>, <publieke_omroep> ;
     skos:inScheme <>;
     skos:prefLabel "Media"@nl.
@@ -144,7 +136,7 @@
 # --- Overheid ---
 
 <OVH> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <GEN>;
+    skos:topConceptOf <>;
     skos:narrower <adviescommissie>, <commissie_vlaams_parlement>, <kabinet>, <overheidsdienst>;
     skos:inScheme <>;
     skos:prefLabel "Overheid"@nl.
@@ -173,7 +165,7 @@
 # --- Onderwijs ---
 
 <OND> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <GEN>;
+    skos:topConceptOf <>;
     skos:narrower <hoger_onderwijs>, <leerplichtonderwijs>, <vakbond>, <educatieve_uitgeverij>, <educatieve_organisatie>, <vakvereniging_onderwijs>, <onderwijskoepel>;
     skos:inScheme <>;
     skos:prefLabel "Onderwijs"@nl.
