@@ -21,35 +21,14 @@ haOrg:ContentPartner   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
     # `Aanbieder` wordt gebruikt in AVO voor CP
 
-haOrg:EducationalOrganization  a   rdfs:Class ;
-    rdfs:subClassOf org:Organization ;
-    owl:equivalentClass schema:EducationalOrganization ;
-    rdfs:label "educational organization"@en ;
-    rdfs:label "organisation éducative"@fr ;
-    rdfs:label "educatieve organisatie"@nl ;
-    skos:definition """An educational organization is an organization or company that provides educational services outside the school context."""@en ;
-    skos:definition """Une organisation éducative est une organisation ou une entreprise qui fournit des services éducatifs hors du contexte scolaire."""@fr ;
-    skos:definition """Een educatieve organisatie is een organisatie of een bedrijf dat educatie en opleiding aanbiedt buiten een schoolcontext."""@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
-
 haOrg:EducationalPartner   a   rdfs:Class ;
-    rdfs:subClassOf haOrg:EducationalOrganization ;
+    rdfs:subClassOf org:Organization ;  
     rdfs:label "educational partner"@en ;
     rdfs:label "partenaire éducatif"@fr ;
     rdfs:label "educatieve partner"@nl ;
     skos:definition """An educational partner is an organization that provides content on the 'Archief voor Onderwijs' platform and has signed the 'educational partner' collaboration agreement with meemoo (e.g. an educational publisher, KlasCement, Mediawijs, etc.)."""@en ;
     skos:definition """Un partenaire éducatif est une organisation qui fournit du contenu sur la plateforme 'Archief voor Onderwijs' et a signé avec meemoo l'accord de collaboration 'partenaire éducatif' (par exemple, un éditeur scolaire, KlasCement, Mediawijs, etc.)."""@fr ;
     skos:definition """Een educatieve partner is een organisatie die content aanbiedt op het 'Archief voor Onderwijs'-platform en met meemoo de samenwerkingsovereenkomst 'educatieve partner' heeft ondertekend (bv. een educatieve uitgeverij, KlasCement, Mediawijs, enz.)."""@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
-
-haOrg:EducationalPublisher a   rdfs:Class ;
-    rdfs:subClassOf haOrg:EducationalOrganization ;
-    rdfs:label "educational publisher"@en ;
-    rdfs:label "éditeur éducatif"@fr ;
-    rdfs:label "educatieve uitgeverij"@nl ;
-    skos:definition """An educational publisher is a company that publishes educational content."""@en ;
-    skos:definition """Un éditeur scolaire est une entreprise qui publie des contenus pédagogiques."""@fr ;
-    skos:definition """Een educatieve uitgeverij is een bedrijf dat educatieve content publiceert."""@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
 haOrg:Logo a   rdfs:Class ;
@@ -62,13 +41,6 @@ haOrg:Logo a   rdfs:Class ;
     skos:definition """Een logo is een grafisch teken, embleem of symbool van een organisatie."""@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
-# haOrg:LogoContext  a   rdfs:Class ;
-#     rdfs:subClassOf skos:Concept ;
-#     rdfs:label  "Context of a Logo"@en ;
-#     rdfs:label  "Contexte d'un Logo"@fr ;
-#     rdfs:label  "Context van een Logo"@en ;
-#     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
-
 haOrg:OrganizationType a  rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
     rdfs:label  "organization type"@en ;
@@ -77,17 +49,6 @@ haOrg:OrganizationType a  rdfs:Class ;
     skos:definition """The type or classification of an organization."""@en ;
     skos:definition """Le type ou la classification d'une organisation."""@fr ;
     skos:definition """Het type of de classificatie van een organisatie."""@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
-
-haOrg:School   a   rdfs:Class ;
-    rdfs:subClassOf haOrg:EducationalOrganization ;
-    owl:equivalentClass schema:School ;
-    rdfs:label "school"@en ;
-    rdfs:label "école"@fr ;
-    rdfs:label "school"@nl ;
-    skos:definition """A school is an educational institution (recognized by the Flemish government) in primary, secondary or higher education."""@en ;
-    skos:definition """Une école est une institution éducative (reconnue par le gouvernement flamand) dans l'enseignement primaire, secondaire ou supérieur."""@fr ;
-    skos:definition """Een door-de-Vlaamse-overheid-erkende onderwijsinstelling in het basis, secundair of hoger onderwijs."""@nl;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
 haOrg:ServiceConsumer  a   rdfs:Class ;
