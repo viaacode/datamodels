@@ -340,6 +340,27 @@
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
 
+<#DigitizationPartnerShape> a sh:NodeShape ;
+  sh:targetClass haOrg:DigitizationPartner ;
+  sh:property [
+    a sh:PropertyShape ;
+    sh:path org:identifier ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "has identifier"@en ;
+    sh:name "possède un identifiant"@fr ;
+    sh:name "heeft een ID"@nl ;
+    
+    sh:description "Indicates the unique identifier of the digitization partner."@en ;
+    sh:description "Indique l'identifiant unique du partenaire de digitalisation."@fr ;
+    sh:description "Verwijst naar de unieke ID van de digitaliseringspartner."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
+  ] .
+
 <#FormalOrganizationShape> a sh:NodeShape ;
   sh:targetClass org:FormalOrganization .
 
