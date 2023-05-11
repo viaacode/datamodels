@@ -71,6 +71,16 @@ haOrg:ServiceProvider  a   rdfs:Class ;
     skos:definition """Een organisatie die aan meemoo diensten of goederen levert, bijvoorbeeld op het gebied van IT, digitalisering, enz."""@nl;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
+haOrg:DigitizationPartner  a   rdfs:Class ;
+    rdfs:subClassOf org:ServiceProvider ;
+    rdfs:label "digitization partner"@en ;
+    rdfs:label "partenaire de digitalisation"@fr ;
+    rdfs:label "digitaliseringspartner"@nl ;
+    skos:definition """An organization that provides digitisation services to meemoo."""@en ;
+    skos:definition """Une organisation qui fournit des services de digitalisation à meemoo."""@fr ;
+    skos:definition """Een organisatie die aan meemoo digitaliseringsdiensten levert."""@nl;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
 #####################################
 #             PROPERTIES            #
 #####################################
