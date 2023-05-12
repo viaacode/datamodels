@@ -15,8 +15,8 @@
     skos:prefLabel "Personeel"@nl;
     skos:definition "A person employed by or active in an organization, business, or service."@en;
     skos:definition "Een persoon in dienst van of actief in een organisatie, bedrijf of service."@nl;
-    skos:inScheme <> ;
-    skos:topConceptOf <>.
+    skos:inScheme <https://data.hetarchief.be/id/organization-role> ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-role>.
 
 <AccountManager> a org:Role, skos:Concept ;
     skos:prefLabel "Account Manager"@en ;
@@ -25,7 +25,7 @@
     skos:definition "A person who is in charge of one or more named customers or to a specified segment of the market."@en;
     skos:definition "Een persoon die verantwoordelijk is voor een of meer genoemde klanten of aan een bepaald segment van de markt."@nl;
     skos:broader <Staff> ;
-    skos:inScheme <> .
+    skos:inScheme <https://data.hetarchief.be/id/organization-role> .
 
 <EducationalEmployee> a org:Role, skos:Concept ;
     skos:prefLabel "Educational employee"@en ;
@@ -34,5 +34,5 @@
     skos:definition "A person responsible for developing an educational programme within an organization."@en;
     skos:definition "Een persoon die verantwoordelijk is voor het ontwikkelen van een educatief programma binnen een organisatie."@nl;
     skos:broader <Staff> ;
-    skos:inScheme <> .
+    skos:inScheme <https://data.hetarchief.be/id/organization-role> .
 
