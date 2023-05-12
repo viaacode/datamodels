@@ -278,7 +278,6 @@
 <#SkosXL:LabelShape>
   a sh:NodeShape ;
   sh:targetClass skosxl:Label ;
-  sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
     sh:path skosxl:literalForm ;
     sh:datatype rdf:langString ;
