@@ -81,6 +81,16 @@ haOrg:DigitizationPartner  a   rdfs:Class ;
     skos:definition """Een organisatie die aan meemoo digitaliseringsdiensten levert."""@nl;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
+haOrg:ProjectPartner  a   rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "project partner"@en ;
+    rdfs:label "partenaire de projet"@fr ;
+    rdfs:label "projectpartner"@nl ;
+    skos:definition """An organization that collaborates with meemoo's Expertise team on specific projects."""@en ;
+    skos:definition """Une organisation qui collabore avec l'équipe Expertise de meemoo sur des projets spécifiques."""@fr ;
+    skos:definition """Een organisatie die samenwerkt met meemoo's team Expertise aan specifieke projecten."""@nl;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
 #####################################
 #             PROPERTIES            #
 #####################################
