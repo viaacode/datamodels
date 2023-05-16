@@ -144,6 +144,15 @@ schema:PostalAddress    a   rdfs:Class ;
   skos:definition "Het postadres."@nl ;
   rdfs:isDefinedBy <https://schema.org/> .
 
+schema:Country a rdfs:Class ;
+    rdfs:label "country"@en ;
+    rdfs:label "pays"@fr ;
+    rdfs:label "land"@nl ;
+    skos:definition "A country."@en ;
+    skos:definition "Un pays."@fr ;
+    skos:definition "Een land."@nl ;
+    rdfs:subClassOf schema:AdministrativeArea .
+
 schema:QuantitativeValue a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "quantitative Value"@en ;

@@ -86,9 +86,9 @@ haOrg:ProjectPartner  a   rdfs:Class ;
     rdfs:label "project partner"@en ;
     rdfs:label "partenaire de projet"@fr ;
     rdfs:label "projectpartner"@nl ;
-    skos:definition """An organization that collaborates with meemoo on expertise projects."""@en ;
-    skos:definition """Une organisation qui collabore avec meemoo sur des projets d'expertise."""@fr ;
-    skos:definition """Een organisatie die samenwerkt met meemoo aan expertise projecten."""@nl;
+    skos:definition """An organization that collaborates with meemoo on projects formalized in an agreement or decision, such as projects within the Flemish cultural heritage decree, projects funded by the European Union, or other innovation and research projects."""@en;
+    skos:definition """Une organisation qui collabore avec meemoo sur des projets formalisés dans un accord ou une décision, tels que des projets relevant du décret flamand sur le patrimoine culturel, des projets financés par l'Union européenne ou d'autres projets d'innovation et de recherche."""@fr ;
+    skos:definition """Een organisatie die samenwerkt met meemoo aan projecten die geformaliseerd zijn in een overeenkomst of besluit, zoals bijvoorbeeld projecten binnen het Vlaamse cultureelerfgoeddecreet, projecten onder financiering van de Europese Unie, of andere innovatie- en onderzoeksprojecten."""@nl;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
 #####################################
