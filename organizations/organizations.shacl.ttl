@@ -283,11 +283,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the organisation."@en ;
     sh:description "Indique l'identifiant unique de l'organisation."@fr ;
-    sh:description "Verwijst naar de unieke ID van de organisatie."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de organisatie."@nl ;
 
     sh:message "occurs more than once or its object is no xsd:string"@en ;
   ] .
@@ -310,11 +310,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the service consumer."@en ;
     sh:description "Indique l'identifiant unique du consomatteur de services."@fr ;
-    sh:description "Verwijst naar de unieke ID van de dienstenafnemer."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de dienstenafnemer."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
@@ -331,11 +331,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the service provider."@en ;
     sh:description "Indique l'identifiant unique du fournisseur de services."@fr ;
-    sh:description "Verwijst naar de unieke ID van de dienstenleverancier."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de dienstenleverancier."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
@@ -352,11 +352,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the digitization partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire de digitalisation."@fr ;
-    sh:description "Verwijst naar de unieke ID van de digitaliseringspartner."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de digitaliseringspartner."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
@@ -373,11 +373,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the project partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire de project."@fr ;
-    sh:description "Verwijst naar de unieke ID van de projectpartner."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de projectpartner."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
@@ -433,11 +433,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the content partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire de contenus."@fr ;
-    sh:description "Verwijst naar de unieke ID van de contentpartner."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de contentpartner."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] ,
@@ -510,11 +510,11 @@
 
     sh:name "has identifier"@en ;
     sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een ID"@nl ;
+    sh:name "heeft een identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the educational partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire éducatif."@fr ;
-    sh:description "Verwijst naar de unieke ID van de educatieve partner."@nl ;
+    sh:description "Verwijst naar de unieke identificator van de educatieve partner."@nl ;
 
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
