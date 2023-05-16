@@ -86,9 +86,9 @@ haOrg:ProjectPartner  a   rdfs:Class ;
     rdfs:label "project partner"@en ;
     rdfs:label "partenaire de projet"@fr ;
     rdfs:label "projectpartner"@nl ;
-    skos:definition """An organization that collaborates with meemoo's Expertise team on specific projects."""@en ;
-    skos:definition """Une organisation qui collabore avec l'équipe Expertise de meemoo sur des projets spécifiques."""@fr ;
-    skos:definition """Een organisatie die samenwerkt met meemoo's team Expertise aan specifieke projecten."""@nl;
+    skos:definition """An organization that collaborates with meemoo on expertise projects."""@en ;
+    skos:definition """Une organisation qui collabore avec meemoo sur des projets d'expertise."""@fr ;
+    skos:definition """Een organisatie die samenwerkt met meemoo aan expertise projecten."""@nl;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
 #####################################
