@@ -101,6 +101,23 @@
   ],
   [
     a sh:PropertyShape ;
+    sh:path schema:logo ;
+    sh:class haOrg:Logo ;
+
+    sh:maxCount 1 ;
+
+    sh:name "main logo"@en ;
+    sh:name "logo principal"@fr;
+    sh:name "hoofdlogo"@nl ;
+
+    sh:description "Het hoofdlogo van de organisatie."@nl ;
+    sh:description "The main logo of the organization."@en ;
+    sh:description "Le logo principal de l'organisation."@fr ;
+
+    sh:message "occurs more than once or its object is no haOrg:Logo"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
     sh:path haOrg:hasLogo ;
     sh:class haOrg:Logo ;
 
@@ -277,6 +294,7 @@
   [
     a sh:PropertyShape ;
     sh:path org:identifier ;
+    sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
