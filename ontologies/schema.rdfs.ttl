@@ -45,8 +45,14 @@ schema:ContactPoint a   rdfs:Class ;
 
 schema:Country a rdfs:Class ;
     rdfs:label "Country"@en ;
-    rdfs:comment "A country." ;
-    rdfs:subClassOf schema:AdministrativeArea .
+    rdfs:label "Pays"@fr ;
+    rdfs:label "Land"@nl ;
+    rdfs:comment "A country."@en ;
+    rdfs:comment "Un pays."@fr ;
+    rdfs:comment "Een land."@nl ;
+    rdfs:subClassOf schema:AdministrativeArea ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 
 schema:CreativeWork a rdfs:Class;
     rdfs:subClassOf schema:Thing ;
