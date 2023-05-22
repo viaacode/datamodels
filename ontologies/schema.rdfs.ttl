@@ -43,6 +43,11 @@ schema:ContactPoint a   rdfs:Class ;
   skos:definition "Een aanspreekpunt, zoals een afdeling voor klachten van klanten."@nl ;
   rdfs:isDefinedBy <https://schema.org/> .
 
+schema:Country a rdfs:Class ;
+    rdfs:label "Country"@en ;
+    rdfs:comment "A country." ;
+    rdfs:subClassOf :AdministrativeArea .
+
 schema:CreativeWork a rdfs:Class;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "creative work"@en ;

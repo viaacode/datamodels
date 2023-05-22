@@ -400,8 +400,6 @@
     sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
 
-<#FormalOrganizationShape> a sh:NodeShape ;
-  sh:targetClass org:FormalOrganization .
 
 <#OrganizationalUnitShape> a sh:NodeShape ;
   sh:targetClass org:OrganizationalUnit ;
@@ -908,4 +906,24 @@
     sh:description "Le numéro de téléphone du point de contact."@fr ;
 
     sh:message "its object is not of type xsd:string"@en ;
+  ] .
+
+<#CountryShape> a sh:NodeShape ;
+  sh:targetClass schema:Country ;
+  sh:property [  
+    a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:datatype xsd:string ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    
+    sh:name "name"@en ;
+    sh:name "naam"@nl ;
+    sh:name "nom"@fr ;
+
+    sh:description "The name of the country."@en ;
+    sh:description "De naam van het land."@nl ;
+    sh:description "Le nom du pays."@fr ;
+
+    sh:message "is missing, occurs more than once or its object is not of type xsd:string"@en ;
   ] .
