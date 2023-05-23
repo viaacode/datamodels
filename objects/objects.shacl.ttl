@@ -61,12 +61,17 @@
     sh:path premis:relationship ;
     sh:class premis:Object ;
 
+    sh:name "relationship"@en ;
+    sh:name "relatie"@nl ;
+    sh:name "relation"@fr ;
+
     sh:description "Een generieke relatie tussen intellectuele entiteiten, bestanden of representaties."@nl ;
     sh:description "A generic relationship between intellectual entities, files, or representations."@en ;
     sh:description "Une relation générique entre les entités intellectuelles, les fichiers ou les représentations."@fr ;
 
     sh:message "premis:relationship is not a premis:Object"@en ;
     sh:message "premis:relationship is niet van de klasse premis:Object"@nl ;
+    sh:message "premis:relationship n'est pas de la classe premis:Object"@fr ;
     sh:severity sh:Violation ;
   ].
 
@@ -77,79 +82,122 @@
       sh:path premis:identifier ;
       sh:class haObj:LocalIdentifier ;
 
+      sh:minCount 1 ;
+
       sh:name "local identifier"@en ;
       sh:name "lokale identifier"@nl ;
       sh:name "identificateur local"@fr ;
-
+      
       sh:description "A local identifier for the intellectual entity."@en ;
       sh:description "Een lokale identifier voor de intellectuele entiteit."@nl ;
       sh:description "Un identificateur local pour l'entité intellectuelle."@fr ;
       
-      sh:message "premis:identifier is not a LocalIdentifier"@en ;
-      sh:message "premis:identifier is niet van de klasse LocalIdentifier"@nl ;
-      sh:message "premis:identifier n'est pas de la classe LocalIdentifier"@fr ;
-
+      sh:message "premis:identifier is missing or not a LocalIdentifier"@en ;
+      sh:message "premis:identifier ontbreekt of is geen LocalIdentifier"@nl ;
+      sh:message "premis:identifier manque ou n'est pas un LocalIdentifier"@fr ;
       sh:severity sh:Violation ;
   ],
   [
     sh:path rel:hsp ;
     sh:class premis:IntellectualEntity ;
 
+    sh:name "has Part"@en ;
+    sh:name "heeft deel"@nl ;
+    sh:name "a partie"@fr ;
+
     sh:description "Een intellectuele entiteit die deel uitmaakt van deze intellectuele entiteit."@nl ;
     sh:description "An intellectual entity that is part of this intellectual entity."@en ;
     sh:description "Une entité intellectuelle qui fait partie de cette entité intellectuelle."@fr ;
 
+    sh:message "rel:hsp is not a premis:IntellectualEntity"@en ;
+    sh:message "rel:hsp is niet van de klasse premis:IntellectualEntity"@nl ;
+    sh:message "rel:hsp n'est pas de la classe premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],[
     sh:path rel:isp ;
     sh:class premis:IntellectualEntity ;
 
+    sh:name "is Part Of"@en ;
+    sh:name "is deel van"@nl ;
+    sh:name "est partie de"@fr ;
+
     sh:description "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
     sh:description "The intellectual entity of which this intellectual entity is part of."@en ;
     sh:description "L'entité intellectuelle dont cette entité intellectuelle fait partie de."@fr ;
 
+    sh:message "rel:isp is not a premis:IntellectualEntity"@en ;
+    sh:message "rel:isp is niet van de klasse premis:IntellectualEntity"@nl ;
+    sh:message "rel:isp n'est pas de la classe premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path rel:isr ;
     sh:class premis:Representation ;
 
+    sh:minCount 1 ;
+
+    sh:name "is Represented By"@en ;
+    sh:name "wordt gerepresenteerd door"@nl ;
+    sh:name "est représenté par"@fr ;
+
     sh:description "Een representatie van de intellectuele entiteit."@nl ;
     sh:description "A representation of the intellectual entity."@en ;
     sh:description "Une représentation de l'entité intellectuelle."@fr ;
 
+    sh:message "rel:isr is missing or not a premis:Representation"@en ;
+    sh:message "rel:isr ontbreekt of is geen premis:Representation"@nl ;
+    sh:message "rel:isr manque ou n'est pas une premis:Representation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path haObj:hasMaster ;
-    sh:maxCount 1 ;
     sh:class haObj:DigitalRepresentation ;
+
+    sh:name "has Master"@en ;
+    sh:name "heeft master"@nl ;
+    sh:name "a maître"@fr ;
 
     sh:description "De archiefmaster van de intellectuele entiteit."@nl ;
     sh:description "The archive master of the intellectual entity."@en ;
     sh:description "Le maître des archives de l'entité intellectuelle."@fr ;
 
+    sh:message "haObj:hasMaster not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasMaster is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasMaster n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path haObj:hasMezzanine ;
-    sh:maxCount 1 ;
     sh:class haObj:DigitalRepresentation ;
+
+    sh:name "has Mezzanine"@en ;
+    sh:name "heeft mezzanine"@nl ;
+    sh:name "a mezzanine"@fr ;
 
     sh:description "De mezzanine kopie van de intellectuele entiteit."@nl ;
     sh:description "The mezzanine copy of the intellectual entity."@en ;
     sh:description "La copie mezzanine de l'entité intellectuelle."@fr ;
 
+    sh:message "haObj:hasMezzanine not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasMezzanine is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasMezzanine n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path haObj:hasAccesscopy ;
     sh:class haObj:DigitalRepresentation ;
 
+    sh:name "has Access Copy"@en ;
+    sh:name "heeft toegangskopie"@nl ;
+    sh:name "a copie d'accès"@fr ;
+
     sh:description "De toegangs- of inkijkkopie van de intellectuele entiteit."@nl ;
     sh:description "The access or browse copy of the intellectual entity."@en ;
     sh:description "L'accès ou la copie de l'entité intellectuelle d'accès."@fr ;
 
+    sh:message "haObj:hasAccesscopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasAccesscopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasAccesscopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ].
 
@@ -159,10 +207,19 @@
     sh:path premis:medium;
     sh:class premis:StorageMedium ;
 
+    sh:minCount 1 ;
+
+    sh:name "storage medium"@en ;
+    sh:name "opslagmedium"@nl ;
+    sh:name "milieu de stockage"@fr ;
+
     sh:description "Het type opslagmedium waarop deze fysieke representatie is opgeslagen."@nl ;
     sh:description "The type of storage medium on which this physical representation is stored."@en ;
     sh:description "Le type de milieu de stockage sur lequel cette représentation physique est stockée."@fr ;
     
+    sh:message "premis:medium is missing or not a premis:StorageMedium"@en ;
+    sh:message "premis:medium ontbreekt of is geen premis:StorageMedium"@nl ;
+    sh:message "premis:medium manque ou n'est pas une premis:StorageMedium"@fr ;
     sh:severity sh:Violation ;
   ].
 
@@ -170,88 +227,151 @@
   sh:targetClass haObj:DigitalRepresentation ;
   sh:property  [
     sh:path haObj:isMasterOf ;
-    sh:minCount 1 ;
     sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ;
+
+    sh:name "is Master Of"@en ;
+    sh:name "is master van"@nl ;
+    sh:name "est maître de"@fr ;
 
     sh:description "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
     sh:description "The intellectual entity of which this representation is the archive master."@en ;
     sh:description "L'entité intellectuelle dont cette représentation est le maître des archives."@fr ;
 
+    sh:message "haObj:isMasterOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isMasterOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isMasterOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path haObj:isMezzanineOf ;
-    sh:maxCount 1 ;
     sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ;
+
+    sh:name "is Mezzanine Of"@en ;
+    sh:name "is mezzanine van"@nl ;
+    sh:name "est mezzanine de"@fr ;
 
     sh:description "De intellectuele entiteit waarvan deze digitale representatie de mezzanine kopie is."@nl ;
     sh:description "The intellectual entity of which this digital representation is the mezzanine copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation est la copie de mezzanine."@fr ;
 
+    sh:message "haObj:isMezzanineOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isMezzanineOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isMezzanineOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path haObj:isAccesscopyOf ;
-    sh:maxCount 1 ;
     sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ; 
+
+    sh:name "is Access Copy Of"@en ;
+    sh:name "is toegangskopie van"@nl ;
+    sh:name "est copie d'accès de"@fr ;
 
     sh:description "De intellectuele entiteit waarvan deze digitale representatie de toegangs- of inkijkkopie is."@nl ;
     sh:description "The intellectual entity of which this digital representation is the access or browse copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation digital est l'accès ou la copie de vue."@fr ;
 
+    sh:message "haObj:isAccesscopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isAccesscopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isAccesscopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path rel:rep ;
-    sh:minCount 1 ;
     sh:class premis:IntellectualEntity ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "represents"@en ;
+    sh:name "representeert"@nl ;
+    sh:name "représente"@fr ;
 
     sh:description "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
     sh:description "The intellectual entity that represents this digital representation."@en ;
     sh:description "L'entité intellectuelle qui représente cette représentation digital."@fr ;
 
+    sh:message "rel:rep is missing or not a premis:IntellectualEntity"@en ;
+    sh:message "rel:rep ontbreekt of is geen premis:IntellectualEntity"@nl ;
+    sh:message "rel:rep manque ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path rel:inc ;
-    sh:minCount 1 ;
     sh:class premis:File ;
+
+    sh:minCount 1 ;
+
+    sh:name "includes"@en ;
+    sh:name "bevat"@nl ;
+    sh:name "comprend"@fr ;
 
     sh:description "Een bestand dat deel uitmaakt van deze digitale representatie."@nl ;
     sh:description "A file that is part of this digital representation."@en ;
     sh:description "Un fichier qui fait partie de cette représentation digital."@fr ;
 
+    sh:message "rel:inc is missing or not a premis:File"@en ;
+    sh:message "rel:inc ontbreekt of is geen premis:File"@nl ;
+    sh:message "rel:inc manque ou n'est pas une premis:File"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path rel:hsr ;
     sh:class premis:File ;
 
+    sh:minCount 1 ;
+
+    sh:name "has Root"@en ;
+    sh:name "heeft root"@nl ;
+    sh:name "a racine"@fr ;
+
     sh:description "Het bestand dat eerst verwerkt moet worden."@nl ;
     sh:description "The file that must be processed first."@en ;
     sh:description "Le fichier qui doit être traité en premier."@fr ;
 
+    sh:message "rel:hsr is missing or not a premis:File"@en ;
+    sh:message "rel:hsr ontbreekt of is geen premis:File"@nl ;
+    sh:message "rel:hsr manque ou n'est pas une premis:File"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path rel:hss ;
     sh:class haObj:PhysicalRepresentation ;
 
+    sh:name "has Source"@en ;
+    sh:name "heeft bron"@nl ;
+    sh:name "a source"@fr ;
+
     sh:description "De fysieke drager waarvan deze digitale representatie afkomstig is."@nl ;
     sh:description "The physical carrier from which this digital representation originates from."@en ;
     sh:description "Le porteur physique dont vient cette représentation numérique."@fr ;
 
-
+    sh:message "rel:hss is not a haObj:PhysicalRepresentation"@en ;
+    sh:message "rel:hss is geen haObj:PhysicalRepresentation"@nl ;
+    sh:message "rel:hss n'est pas un haObj:PhysicalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
     sh:path ebucore:isMediaFragmentOf ;
     sh:class premis:File ;
 
+    sh:name "is Media Fragment Of"@en ;
+    sh:name "is media fragment van"@nl ;
+    sh:name "est fragment des médias de"@fr ;
+
     sh:description "Het bestand waarvan dit een fragment is."@nl;
     sh:description "The file of which this is a fragment."@en;
-     sh:description "Le fichier dont il s'agit d'un fragment."@fr;
+    sh:description "Le fichier dont il s'agit d'un fragment."@fr;
 
+    sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
+    sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
+    sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
     sh:severity sh:Violation ;
   ].
 
@@ -260,63 +380,104 @@
     sh:property [
       sh:path rel:isi;
       sh:class haObj:DigitalRepresentation ;
+
       sh:minCount 1 ;
+      sh:maxCount 1 ;
+
+      sh:name "is Include In"@en ;
+      sh:name "is opgenomen in"@nl ;
+      sh:name "est inclus dans"@fr ;
 
       sh:description "De digitale representatie waarvan dit bestand deel uitmaakt."@nl ;
       sh:description "The digital representation this file is part of."@en ;
       sh:description "La représentation digital dans ce fichier fait partie."@fr ;
 
+      sh:message "rel:isi is missing or not a haObj:DigitalRepresentation"@en ;
+      sh:message "rel:isi ontbreekt of is geen haObj:DigitalRepresentation"@nl ;
+      sh:message "rel:isi manque ou n'est pas une haObj:DigitalRepresentation"@fr ;
       sh:severity sh:Violation ;
     ],
     [
       sh:path rel:sup ;
       sh:class premis:File ;
 
+      sh:name "supersedes"@en ;
+      sh:name "vervangt"@nl;
+      sh:name "remplace"@fr;
+
       sh:description "Het bestand dat dit bestand vervangt."@nl ;
       sh:description "The file that replaces or succeeds this file."@en ;
       sh:description "Le fichier qui remplace ou succède à ce fichier."@fr ;
 
+      sh:message "rel:sup is not a premis:File"@en ;
+      sh:message "rel:sup is geen premis:File"@nl ;
+      sh:message "rel:sup n'est pas un premis:File"@fr ;
       sh:severity sh:Violation ;
     ],
     [
         sh:path premis:fixity;
         sh:class premis:Fixity ;
+
         sh:minCount 1 ;
         sh:maxCount 1 ;
+
+        sh:name "fixity"@en ;
+        sh:name "fixity"@nl ;
+        sh:name "fixity"@fr ;
         
         sh:description "De berekende fixity checksum van het bestand."@nl ;
         sh:description "The calculated fixity checksum of the file."@en ;
         sh:description "La somme de contrôle de fixité calculée du fichier."@fr ;
-    
+
+        sh:message "premis:fixity is missing or not a premis:Fixity"@en ;
+        sh:message "premis:fixity ontbreekt of is geen premis:Fixity"@nl ;
+        sh:message "premis:fixity manque ou n'est pas une premis:Fixity"@fr ;
         sh:severity sh:Violation ;
     ],
     [
         sh:path premis:storedAt;
         sh:class premis:StorageLocation ;
+
         sh:minCount 1 ;
+
+        sh:name "stored at"@en ;
+        sh:name "opgeslagen op"@nl ;
+        sh:name "stocké à"@fr ;
 
         sh:description "De (fysieke) locatie waar het bestand is opgeslagen."@nl ;
         sh:description "The location where the file is stored."@en ;
         sh:description "L'emplacement où le fichier est stocké."@fr ;
-    
+
+        sh:message "premis:storedAt is missing or not a premis:StorageLocation"@en ;
+        sh:message "premis:storedAt ontbreekt of is geen premis:StorageLocation"@nl ;
+        sh:message "premis:storedAt manque ou n'est pas une premis:StorageLocation"@fr ;
         sh:severity sh:Violation ;
     ],
     [
         sh:path dct:format;
         sh:class dct:FileFormat ;
+
         sh:minCount 1 ;
         sh:maxCount 1 ;
+
+        sh:name "format"@en ;
+        sh:name "formaat"@nl ;
+        sh:name "format"@fr ;
 
         sh:description "Het bestandsformaat van het bestand."@nl ;
         sh:description "The file format of the file."@en ;
         sh:description "Le format de fichier du fichier."@fr ;
-
     
+        sh:message "dct:format is missing or not a dct:FileFormat"@en ;
+        sh:message "dct:format ontbreekt of is geen dct:FileFormat"@nl ;
+        sh:message "dct:format manque ou n'est pas une dct:FileFormat"@fr ;
         sh:severity sh:Violation ;
     ],
     [
         sh:path ebucore:hasMimeType;
         sh:datatype xsd:string;
+
+        sh:minCount 1 ;
         sh:maxCount 1 ;
 
         sh:name "mime type"@en ;
@@ -327,11 +488,16 @@
         sh:description "The MIME type or IANA media type of the file."@en;
         sh:description "Le type MIME ou le type de média IANA du fichier."@fr;
 
+        sh:message "ebucore:hasMimeType is missing, has more than one value or not of type string"@en ;
+        sh:message "ebucore:hasMimeType ontbreekt, heeft meer dan één waarde of is niet van het type string"@nl ;
+        sh:message "ebucore:hasMimeType manque, a plus d'une valeur ou n'est pas de type string"@fr ;
         sh:severity sh:Violation ;
     ],
     [
         sh:path edm:isNextInSequence ;
         sh:class premis:File ;
+
+        sh:maxCount 1 ;
 
         sh:name "next file in sequence"@en ;
         sh:name "volgende bestand in volgorde"@nl;
@@ -341,7 +507,9 @@
         sh:description "The file that follows on this file."@en;
         sh:description "Le fichier qui suit sur ce fichier."@fr;
 
-        sh:maxCount 1 ;
+        sh:message "edm:isNextInSequence has more than one value or is not a premis:File"@en ;
+        sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen premis:File"@nl ;
+        sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un premis:File"@fr ;
         sh:severity sh:Violation ;
     ],
     [
@@ -356,6 +524,9 @@
         sh:description "The file that describes or documents this file."@en;
         sh:description "Le fichier qui décrit ou documente ce fichier."@fr;
 
+        sh:message "rel:doc is not a premis:File"@en ;
+        sh:message "rel:doc is geen premis:File"@nl ;
+        sh:message "rel:doc n'est pas un premis:File"@fr ;
         sh:severity sh:Violation ;
     ],
     [
@@ -370,6 +541,9 @@
       sh:description "A fragment from this file."@en;
       sh:description "Un fragment de ce fichier."@fr;
 
+      sh:message "ebucore:hasMediaFragment is not a haObj:DigitalRepresentation"@en ;
+      sh:message "ebucore:hasMediaFragment is geen haObj:DigitalRepresentation"@nl ;
+      sh:message "ebucore:hasMediaFragment n'est pas un haObj:DigitalRepresentation"@fr ;
       sh:severity sh:Violation ;
     ],
     [
@@ -377,28 +551,36 @@
       sh:path premis:size ;
       sh:nodeKind sh:Literal ;
       sh:datatype xsd:nonNegativeInteger ;
-      sh:minCount 0 ;
+
+      sh:minCount 1 ;
       sh:maxCount 1 ;
 
       sh:description "De grootte van dit bestand."@nl;
       sh:description "The size of this file."@en;
       sh:description "La taille de ce fichier."@fr;
-            
-      sh:message "premis:size is missing or not of type nonNegativeInteger"@en ;
+      
+      sh:message "premis:size is missing, has more than one value or not of type nonNegativeInteger"@en ;
+      sh:message "premis:size ontbreekt, heeft meer dan één waarde of is niet van het type nonNegativeInteger"@nl ;
+      sh:message "premis:size manque, a plus d'une valeur ou n'est pas de type nonNegativeInteger"@fr ;
+      sh:severity sh:Violation ;
     ] ,
     [
       a sh:PropertyShape;
       sh:path premis:originalName ;
       sh:nodeKind sh:Literal ;
       sh:datatype xsd:string ;
-      sh:minCount 0 ;
+
+      sh:minCount 1 ;
       sh:maxCount 1 ;
 
       sh:description "The original name of this file."@en;
       sh:description "De oorspronkelijke naam van dit bestand."@nl;
       sh:description "Le nom d'origine de ce fichier."@fr;
             
-      sh:message "premis:originalName is missing or not of type string"@en ;
+      sh:message "premis:originalName is missing, has more than one value or not of type string"@en ;
+      sh:message "premis:originalName ontbreekt, heeft meer dan één waarde of is niet van het type string"@nl ;
+      sh:message "premis:originalName manque, a plus d'une valeur ou n'est pas de type string"@fr ;
+      sh:severity sh:Violation ;
     ] .
 
 <#FixityShape> a sh:NodeShape ;
@@ -437,6 +619,7 @@
     sh:property [
         sh:path rdf:value;
         sh:datatype xsd:string;
+
         sh:minCount 1 ;
 
         sh:name "opslagpad"@nl ;
@@ -472,6 +655,7 @@
         sh:path rdf:value ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
+        
         sh:minCount 1 ;
         sh:maxCount 1 ;
 
