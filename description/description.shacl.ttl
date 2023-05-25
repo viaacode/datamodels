@@ -316,7 +316,7 @@
         a sh:PropertyShape ;
         sh:path schema:copyrightYear ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:float ;
+        sh:datatype xsd:integer ;
         sh:name "copyright year"@en ;
         sh:name "copyright jaar"@nl ;
         sh:name "année de copyright"@fr ;
