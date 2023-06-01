@@ -494,6 +494,22 @@
     sh:description "Donne admission pour présenter le contenu dont cette contentpartner est propriétaire avec une superposition."@fr;
 
     sh:message "is missing, occurs more than once or its object is no xsd:boolean"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path haOrg:requestForm ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "request form"@en ;
+    sh:name "formulaire de demande"@fr ;
+    sh:name "aanvraagformulier"@nl ;
+
+    sh:description "A link to a form with which a user can request content from the content partner."@en ;
+    sh:description "Un lien vers un formulaire avec lequel un utilisateur peut demander du contenu au partenaire de contenu."@fr ;
+    sh:description "Een link naar een formulier waarmee een gebruiker content kan aanvragen bij de contentpartner."@nl ;
+
+    sh:message "is missing, occurs more than once or its object is no xsd:string"@en ;
   ] .
   
 
