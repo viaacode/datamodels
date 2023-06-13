@@ -366,9 +366,9 @@
         sh:name "kunstvorm"@nl ;
         sh:name "forme d'art"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:artform is not of type string"@en ;
-        sh:message "schema:artform is niet van het type string"@nl ;
-        sh:message "schema:artform n'est pas de type string"@fr ;
+        sh:message "schema:artform is not of type language string"@en ;
+        sh:message "schema:artform is niet van het type language string"@nl ;
+        sh:message "schema:artform n'est pas de type language string"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -379,9 +379,9 @@
         sh:name "kunst medium"@nl ;
         sh:name "moyen d'art"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:artMedium is not of type string"@en ;
-        sh:message "schema:artMedium is niet van het type string"@nl ;
-        sh:message "schema:artMedium n'est pas de type string"@fr ;
+        sh:message "schema:artMedium is not of type language string"@en ;
+        sh:message "schema:artMedium is niet van het type language string"@nl ;
+        sh:message "schema:artMedium n'est pas de type language string"@fr ;
     ],
     [
         a sh:PropertyShape ;
