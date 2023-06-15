@@ -71,7 +71,7 @@
         a sh:PropertyShape ;
         sh:path schema:alternateName ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "alternate name"@en ;
         sh:name "alternatieve naam"@nl ;
         sh:name "nom alternatif"@fr ;
@@ -115,6 +115,7 @@
         sh:path schema:dateCreated ;
         sh:nodeKind sh:Literal ;
         sh:datatype edtf:EDTF-level1 ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "date created"@en ;
         sh:name "aangemaakt op"@nl ;
@@ -179,8 +180,8 @@
         a sh:PropertyShape ;
         sh:path schema:abstract ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:uniqueLang true ;
         sh:name "abstract"@en ;
         sh:name "samenvatting"@nl ;
         sh:name "résumé"@fr ;
@@ -194,6 +195,7 @@
         sh:path schema:genre ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
+        sh:maxCount 1 ;
         sh:name "genre"@en ;
         sh:name "genre"@nl ;
         sh:name "genre"@fr ;
@@ -231,7 +233,7 @@
         a sh:PropertyShape ;
         sh:path schema:keywords ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "keywords"@en ;
         sh:name "trefwoorden"@nl ;
         sh:name "mots-clés"@fr ;
@@ -301,7 +303,7 @@
         a sh:PropertyShape ;
         sh:path schema:copyrightNotice ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "copyright notice"@en ;
         sh:name "auteursrechtenmelding"@nl ;
         sh:name "avis de copyright"@fr ;
@@ -327,7 +329,7 @@
         a sh:PropertyShape ;
         sh:path schema:creditText ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "credit text"@en ;
         sh:name "credittekst"@nl ;
         sh:name "texte de crédit"@fr ;
@@ -359,7 +361,7 @@
         a sh:PropertyShape ;
         sh:path schema:artform ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "artform"@en ;
         sh:name "kunstvorm"@nl ;
         sh:name "forme d'art"@fr ;
@@ -372,7 +374,7 @@
         a sh:PropertyShape ;
         sh:path schema:artMedium ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "art medium"@en ;
         sh:name "kunst medium"@nl ;
         sh:name "moyen d'art"@fr ;
