@@ -199,6 +199,25 @@
     sh:message "haObj:hasAccessCopy is geen haObj:DigitalRepresentation"@nl ;
     sh:message "haObj:hasAccessCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
+  ],
+  [
+    sh:path edm:isNextInSequence ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ;
+
+    sh:name "next intellectual entity in sequence"@en ;
+    sh:name "volgende intellectuele entiteit in volgorde"@nl;
+    sh:name "l'entité intellectuelle suivante dans l'ordre"@fr;
+
+    sh:description "Het intellectuele entiteit dat op dit intellectuele entiteit volgt."@nl;
+    sh:description "The intellectual entity that follows on this intellectual entity."@en;
+    sh:description "L'entité intellectuelle qui suit sur cette entité intellectuelle."@fr;
+
+    sh:message "edm:isNextInSequence has more than one value or is not a premis:File"@en ;
+    sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen premis:File"@nl ;
+    sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un premis:File"@fr ;
+    sh:severity sh:Violation ;
   ].
 
 <#PhysicalRepresentationShape> a sh:NodeShape ;
@@ -372,6 +391,25 @@
     sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
     sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
     sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path edm:isNextInSequence ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:maxCount 1 ;
+
+    sh:name "next digital representation in sequence"@en ;
+    sh:name "volgende digitale representatie in volgorde"@nl;
+    sh:name "la représentation numérique suivante dans l'ordre"@fr;
+
+    sh:description "De digitale representatie dat op deze digitale representatie volgt."@nl;
+    sh:description "The digital representation that follows on this digital representation."@en;
+    sh:description "La représentation numérique qui suit sur cette représentation numérique."@fr;
+
+    sh:message "edm:isNextInSequence has more than one value or is not a haObj:DigitalRepresentation"@en ;
+    sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ].
 
