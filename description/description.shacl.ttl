@@ -771,7 +771,7 @@
 <#NameShape> a sh:PropertyShape ;
     sh:path schema:name ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
+    sh:datatype rdf:langString ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:name "name"@en ;
@@ -785,7 +785,7 @@
 <#DescriptionShape> a sh:PropertyShape ;
     sh:path schema:description ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
+    sh:datatype rdf:langString ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:name "description"@en ;
