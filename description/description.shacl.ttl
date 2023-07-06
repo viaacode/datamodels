@@ -99,20 +99,6 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:duration ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:dateTime ;
-        sh:maxCount 1 ;
-        sh:name "duration"@en ;
-        sh:name "duur"@nl ;
-        sh:name "durée"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:duration is not of type xsd:dateTime"@en ;
-        sh:message "schema:duration is niet van het type xsd:dateTime"@nl ;
-        sh:message "schema:duration n'est pas de type xsd:dateTime"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
         sh:path schema:dateCreated ;
         sh:nodeKind sh:Literal ;
         sh:datatype edtf:EDTF-level1 ;
@@ -453,9 +439,14 @@
         sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
         sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ] .
+
+<#FileNodeShape> a sh:NodeShape ; 
+    sh:targetClass premis:File ;
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>.
+
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
@@ -820,3 +811,15 @@
     sh:message "schema:description est manquant ou n'est pas de type string"@fr .
 
 
+<#DurationShape> a sh:PropertyShape ;
+    sh:path schema:duration ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:dateTime ;
+    sh:maxCount 1 ;
+    sh:name "duration"@en ;
+    sh:name "duur"@nl ;
+    sh:name "durée"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:duration is not of type xsd:dateTime"@en ;
+    sh:message "schema:duration is niet van het type xsd:dateTime"@nl ;
+    sh:message "schema:duration n'est pas de type xsd:dateTime"@fr .
