@@ -653,7 +653,13 @@
   sh:targetClass premis:StorageLocation ;
     sh:property [
         sh:path rdf:value;
-        sh:datatype xsd:string;
+        sh:or ( 
+            [   
+                sh:nodeKind sh:Literal ;
+                sh:datatype xsd:string ; 
+            ]
+            [sh:nodeKind sh:IRI ]
+        ) ;
 
         sh:minCount 1 ;
 
