@@ -790,3 +790,8 @@ schema:width a rdf:Property ;
     skos:definition "De breedte van het item."@nl ;
     skos:definition "La largeur de l'élément."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
+
+schema:thumbnailUrl a rdf:Property ;
+    rdfs:label "thumbnailUrl" ;
+    skos:definition  "A thumbnail image relevant to the Thing." ;
+    rdfs:isDefinedBy <https://schema.org/> .

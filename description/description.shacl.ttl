@@ -486,6 +486,22 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:thumbnailUrl ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:name "thumbnail"@en ;
+        sh:name "miniatuurafbeelding"@nl ;
+        sh:name "image miniature"@fr ;
+        sh:severity sh:Violation ;
+        sh:description "A thumbnail image relevant to the Digital Representation."@en;
+        sh:description "Une image miniature pertinente pour la représentation numérique."@fr;
+        sh:description "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl;
+        sh:message "schema:thumbnailUrl is not an IRI"@en ;
+        sh:message "schema:thumbnailUrl is geen IRI"@nl ;
+        sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:dateCreated ;
         sh:nodeKind sh:Literal ;
         sh:datatype edtf:EDTF-level1 ;
