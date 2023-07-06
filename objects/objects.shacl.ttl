@@ -150,7 +150,7 @@
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasMaster ;
+    sh:path haObj:hasMasterCopy ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:name "has Master"@en ;
@@ -161,13 +161,13 @@
     sh:description "The archive master of the intellectual entity."@en ;
     sh:description "Le maître des archives de l'entité intellectuelle."@fr ;
 
-    sh:message "haObj:hasMaster not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasMaster is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasMaster n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasMasterCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasMasterCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasMezzanine ;
+    sh:path haObj:hasMezzanineCopy ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:name "has Mezzanine"@en ;
@@ -178,13 +178,13 @@
     sh:description "The mezzanine copy of the intellectual entity."@en ;
     sh:description "La copie mezzanine de l'entité intellectuelle."@fr ;
 
-    sh:message "haObj:hasMezzanine not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasMezzanine is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasMezzanine n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:message "haObj:hasMezzanineCopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasMezzanineCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasMezzanineCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasAccesscopy ;
+    sh:path haObj:hasAccessCopy ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:name "has Access Copy"@en ;
@@ -195,9 +195,9 @@
     sh:description "The access or browse copy of the intellectual entity."@en ;
     sh:description "L'accès ou la copie de l'entité intellectuelle d'accès."@fr ;
 
-    sh:message "haObj:hasAccesscopy not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasAccesscopy is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasAccesscopy n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:message "haObj:hasAccessCopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasAccessCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasAccessCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ].
 

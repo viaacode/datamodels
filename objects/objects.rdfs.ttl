@@ -45,7 +45,7 @@ haObj:PhysicalRepresentation a rdfs:Class ;
 #             PROPERTIES            #
 #####################################
 
-haObj:hasAccesscopy a rdf:Property;
+haObj:hasAccessCopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
   owl:inverseOf haObj:isAccesscopyOf ;
   rdfs:label  "has access copy"@en ;
@@ -53,7 +53,7 @@ haObj:hasAccesscopy a rdf:Property;
   rdfs:label  "heeft toegangskopie"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
-haObj:hasMaster a rdf:Property;
+haObj:hasMasterCopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
   owl:inverseOf haObj:isMasterOf ;
   rdfs:label  "has archiving master"@en ;
@@ -61,7 +61,7 @@ haObj:hasMaster a rdf:Property;
   rdfs:label  "heeft archiefmaster"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
-haObj:hasMezzanine a rdf:Property;
+haObj:hasMezzanineCopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
   owl:inverseOf haObj:isMezzanineOf ;
   rdfs:label  "has mezzanine format"@en ;
@@ -71,7 +71,7 @@ haObj:hasMezzanine a rdf:Property;
 
 haObj:isAccesscopyOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haObj:hasAccesscopy ;
+  owl:inverseOf haObj:hasAccessCopy ;
   rdfs:label  "is access copy of"@en ;
   rdfs:label  "est copie d'accès de"@fr ;
   rdfs:label  "is toegangskopie van"@nl ;
@@ -79,7 +79,7 @@ haObj:isAccesscopyOf a rdf:Property;
 
 haObj:isMasterOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haObj:hasMaster ;
+  owl:inverseOf haObj:hasMasterCopy ;
   rdfs:label  "is archiving master of"@en ;
   rdfs:label  "est la copie principale de"@fr ;
   rdfs:label  "is archiefmaster van"@nl ;
@@ -87,7 +87,7 @@ haObj:isMasterOf a rdf:Property;
 
 haObj:isMezzanineOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
-  owl:inverseOf haObj:hasMezzanine ;
+  owl:inverseOf haObj:hasMezzanineCopy ;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
