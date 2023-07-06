@@ -12,6 +12,15 @@
 #              CLASSES              #
 #####################################
 
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing"@en ;
+    rdfs:label "Ding"@nl ;
+    rdfs:label "Chose"@fr ;
+    skos:definition "The most generic type of item."@en ;
+    skos:definition "Le type d'élément le plus générique."@fr ;
+    skos:definition "Het meest generieke type item."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:ArchiveComponent a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "archive component"@en ;

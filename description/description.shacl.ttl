@@ -587,6 +587,10 @@
     sh:targetClass schema:Place ;
     sh:property <#NameShape>, <#DescriptionShape> .
 
+<#ThingShape> a sh:NodeShape ; 
+    sh:targetClass schema:Thing ;
+    sh:property <#NameShape>, <#DescriptionShape> .
+
 <#ArchiveComponentShape> a sh:NodeShape ; 
     sh:targetClass schema:ArchiveComponent ;
     sh:property <#NameShape>, <#DescriptionShape>,
@@ -615,14 +619,15 @@
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "author"@en ;
         sh:name "auteur"@nl ;
         sh:name "auteur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:author is not of class schema:Person or org:Organization"@en ;
-        sh:message "schema:author is niet van de klasse schema:Person of org:Organization"@nl ;
-        sh:message "schema:author n'est pas de la classe schema:Person ou org:Organization"@fr ;
+        sh:message "schema:author is not of class schema:Thing, schema:Person or org:Organization"@en ;
+        sh:message "schema:author is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
+        sh:message "schema:author n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -630,6 +635,7 @@
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "contributor"@en ;
         sh:name "bijdrager"@nl ;
@@ -645,6 +651,7 @@
         sh:or (
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "publisher"@en ;
         sh:name "uitgever"@nl ;
