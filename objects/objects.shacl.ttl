@@ -245,7 +245,7 @@
 <#DigitalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
   sh:property  [
-    sh:path haObj:isMasterOf ;
+    sh:path haObj:isMasterCopyOf ;
     sh:class premis:IntellectualEntity ;
 
     sh:maxCount 1 ;
@@ -258,13 +258,13 @@
     sh:description "The intellectual entity of which this representation is the archive master."@en ;
     sh:description "L'entité intellectuelle dont cette représentation est le maître des archives."@fr ;
 
-    sh:message "haObj:isMasterOf has more than one value or not a premis:IntellectualEntity"@en ;
-    sh:message "haObj:isMasterOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
-    sh:message "haObj:isMasterOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:message "haObj:isMasterCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isMasterCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isMasterCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:isMezzanineOf ;
+    sh:path haObj:isMezzanineCopyOf ;
     sh:class premis:IntellectualEntity ;
 
     sh:maxCount 1 ;
@@ -277,13 +277,13 @@
     sh:description "The intellectual entity of which this digital representation is the mezzanine copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation est la copie de mezzanine."@fr ;
 
-    sh:message "haObj:isMezzanineOf has more than one value or not a premis:IntellectualEntity"@en ;
-    sh:message "haObj:isMezzanineOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
-    sh:message "haObj:isMezzanineOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:message "haObj:isMezzanineCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isMezzanineCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isMezzanineCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:isAccesscopyOf ;
+    sh:path haObj:isAccessCopyOf ;
     sh:class premis:IntellectualEntity ;
 
     sh:maxCount 1 ; 
@@ -296,9 +296,9 @@
     sh:description "The intellectual entity of which this digital representation is the access or browse copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation digital est l'accès ou la copie de vue."@fr ;
 
-    sh:message "haObj:isAccesscopyOf has more than one value or not a premis:IntellectualEntity"@en ;
-    sh:message "haObj:isAccesscopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
-    sh:message "haObj:isAccesscopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:message "haObj:isAccessCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isAccessCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isAccessCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
