@@ -854,3 +854,23 @@ schema:version a rdf:Property ;
     skos:definition "La version du Creativework incarné par une ressource spécifiée."@fr ;
     skos:definition "De versie van het Creative Work dat is belichaamd door een opgegeven item."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
+
+schema:startTime a rdf:Property ;
+    rdfs:label "startTime"@en ;
+    rdfs:label "starttijd"@nl ;
+    rdfs:label "heure de départ"@fr ;
+    skos:definition "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."@en ;
+    skos:definition "De starttijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd die naar verwachting zal beginnen.Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd.Bijv.John schreef een boek van * januari * tot december.Voor media, inclusief audio en video, is dit de tijdoffset van het begin van een clip binnen een groter bestand. \\ n \\ nnote die gebeurtenis gebruikt startdate/enddate in plaats van starttijd/eindtijd, zelfs bij het beschrijven van datums met tijden. Deze situatie kan worden verduidelijkt in toekomstige herzieningen."@nl ;
+    skos:definition "Le début du temps de quelque chose. Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple. John a écrit un livre de * janvier * à décembre.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps du début d'un clip dans un fichier plus grand. \\ n \\ nnote que l'événement utilise StartDate / EndDate au lieu de démarrage / fin de fin, même lors de la description des dates avec les temps. Cette situation peut être clarifiée dans les révisions futures."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:endTime a rdf:Property ;
+    rdfs:label "endTime"@en ;
+    rdfs:label "eindtijd"@nl ;
+    rdfs:label "heure de fin"@fr ;
+    skos:definition """
+    The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+    Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en ;
+    skos:definition """De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. """@nl ;
+    skos:definition """La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .

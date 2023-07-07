@@ -530,7 +530,41 @@
         sh:message "schema:author is not of class schema:Role"@en ;
         sh:message "schema:author is niet van de klasse schema:Role"@nl ;
         sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
-    ] .
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:startTime ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:time ;
+        sh:maxCount 1 ;
+        sh:name "startTime"@en ;
+        sh:name "starttijd"@nl ;
+        sh:name "heure de départ"@fr ;
+        sh:description "Het tijdstip waarop het fragment start."@nl;
+        sh:description "The time at which the fragment starts."@en;
+        sh:description "Le moment où le fragment commence."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:startTime is not of type xsd:time"@en ;
+        sh:message "schema:startTime is niet van het type xsd:time"@nl ;
+        sh:message "schema:startTime n'est pas de type xsd:time"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:endTime ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:time ;
+        sh:maxCount 1 ;
+        sh:name "endTime"@en ;
+        sh:name "eindtijd"@nl ;
+        sh:name "heure de fin"@fr ;
+        sh:description "Het tijdstip waarop het fragment stopt."@nl;
+        sh:description "The time at which the fragment stops."@en;
+        sh:description "Le moment où le fragment s'arrête."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:endTime is not of type xsd:time"@en ;
+        sh:message "schema:endTime is niet van het type xsd:time"@nl ;
+        sh:message "schema:endTime n'est pas de type xsd:time"@fr 
+    ]
 
 
 ####################
