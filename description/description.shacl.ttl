@@ -827,7 +827,7 @@
 <#DurationShape> a sh:PropertyShape ;
     sh:path schema:duration ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:dateTime ;
+    sh:datatype xsd:duration ;
     sh:maxCount 1 ;
     sh:name "duration"@en ;
     sh:name "duur"@nl ;
