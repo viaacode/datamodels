@@ -314,6 +314,19 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path dct:rights ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:name "rights information"@en ;
+        sh:name "rechteninformatie"@nl ;
+        sh:name "informations sur les droits"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:rights is not of type string"@en ;
+        sh:message "dct:rights is niet van het type string"@nl ;
+        sh:message "dct:rights n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:creditText ;
         sh:nodeKind sh:Literal ;
         sh:datatype rdf:langString ;

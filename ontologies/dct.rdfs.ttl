@@ -67,3 +67,18 @@ dct:medium a rdf:Property ;
     skos:definition "Het materiaal of fysieke drager van de bron"@nl ;
     skos:definition "Le support matériel ou physique de la ressource"@fr ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
+
+dct:rights a rdf:Property ;
+  rdfs:range xsd:string ;
+  dct:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.  Recommended practice is to refer to a rights statement with a URI.  If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en ;
+  dct:description "Doorgaans bevat rechteninformatie een verklaring over verschillende eigendomsrechten die verband houden met de bron, inclusief intellectuele eigendomsrechten.Aanbevolen praktijk is om te verwijzen naar een rechtenverklaring met een URI.Als dit niet mogelijk of haalbaar is, kan een letterlijke waarde (naam, label of korte tekst) worden verstrekt."@nl ;
+  dct:description "En règle générale, les informations sur les droits comprennent une déclaration sur les différents droits de propriété associés à la ressource, y compris les droits de propriété intellectuelle.La pratique recommandée est de se référer à une déclaration de droits avec un URI.Si cela n'est pas possible ou possible, une valeur littérale (nom, étiquette ou texte court) peut être fourni."@fr ;
+  dcterms:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+  skos:definition "Information about rights held in and over the resource."@en ;
+  skos:definition "Informatie over rechten in en over de bron."@nl ;
+  skos:definition "Informations sur les droits maintenus dans et au-dessus de la ressource."@fr ;
+  rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+  rdfs:label "Rights"@en ;
+  rdfs:label "Rechten"@nl ;
+  rdfs:label "Droits"@fr ;
+  rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
