@@ -564,7 +564,7 @@
         sh:message "schema:endTime is not of type xsd:time"@en ;
         sh:message "schema:endTime is niet van het type xsd:time"@nl ;
         sh:message "schema:endTime n'est pas de type xsd:time"@fr 
-    ]
+    ] .
 
 
 ####################
