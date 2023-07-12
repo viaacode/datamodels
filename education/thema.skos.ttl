@@ -10,7 +10,7 @@ haOndCol:category a skos:Collection ;
         haOndThema:economie-en-ondernemen,
         haOndThema:geschiedenis,
         haOndThema:kunst,
-        haOndThema:leren-en-onderzoeken,
+        haOndThema:cat-leren-en-onderzoeken,
         haOndThema:levensbeschouwing,
         haOndThema:maatschappij-en-welzijn,
         haOndThema:sport-en-gezondheid,
