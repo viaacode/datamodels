@@ -6,6 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 haOndCol:category a skos:Collection ;
+    skos:prefLabel "categoriëen"@nl ;
     skos:member haOndThema:aardrijkskunde,
         haOndThema:economie-en-ondernemen,
         haOndThema:geschiedenis,
