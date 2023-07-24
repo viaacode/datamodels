@@ -31,14 +31,24 @@ haObj:LocalIdentifier a rdfs:Class ;
     skos:definition "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een externe database of de identificatie in het registratiesysteem van de collectie van de contentpartner."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
-haObj:PhysicalRepresentation a rdfs:Class ;
+haObj:CarrierRepresentation a rdfs:Class ;
     rdfs:subClassOf premis:Representation ;
-    rdfs:label "physical representation"@en ;
-    rdfs:label "représentation physique"@fr ;
-    rdfs:label "fysieke representatie"@nl ;
+    rdfs:label "carrier representation"@en ;
+    rdfs:label "représentation de porteur"@fr ;
+    rdfs:label "drager representatie"@nl ;
     skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
     skos:definition "Représentation physique d'un entité intellectuelle (Intellectual Entity) archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
     skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:PhysicalCarrier a rdfs:Class ;
+    rdfs:subClassOf premis:StorageLocation ;
+    rdfs:label "physical carrier"@en ;
+    rdfs:label "porteur physique"@fr ;
+    rdfs:label "fysieke drager"@nl ;
+    # skos:definition "Physical carrier of an archived intellectual entity, such as a tape, a canvas, or a physical object like a sculpture."@en ;
+    # skos:definition "Porteur physique d'une entité intellectuelle (Intellectual Entity) archivée, par exemple une bande, un canvas, ou un objet physique comme une sculpture."@fr ;
+    # skos:definition "Fysieke drager van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een tape, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 #####################################
@@ -91,4 +101,10 @@ haObj:isMezzanineCopyOf a rdf:Property;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:preservationProblem a rdf:Property;
+  rdfs:label  "preservation problem"@en ;
+  rdfs:label  "problème de préservation"@fr ;
+  rdfs:label  "preservatieprobleem"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
