@@ -5,6 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
 #####################################
 #              CLASSES              #
@@ -18,6 +19,17 @@ haObj:DigitalRepresentation a rdfs:Class ;
     skos:definition "Digital representation of an archived intellectual entity."@en ;
     skos:definition "Représentation digitale d'une entité intellectuelle (Intellectual Entity) archivée."@fr ;
     skos:definition "Digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:FragmentRepresentation a rdfs:Class ;
+    rdfs:subClassOf premis:DigitalRepresentation ;
+    owl:equivalentClass ebucore:MediaFragment ;
+    rdfs:label "fragment representation"@en ;
+    rdfs:label "représentation fragment"@fr ;
+    rdfs:label "fragment representatie"@nl ;
+    skos:definition "A spatial or temporal segment of a file that serves as a partial digital representation of an archived Intellectual Entity."@en ;
+    skos:definition "Een spatiaal of temporeel segment van een bestand die fungeert als een partiële digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl ;
+    skos:definition "Un segment spatial ou temporel d'un fichier qui sert de représentation numérique partielle d'une entité intellectuelle archivée."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:LocalIdentifier a rdfs:Class ;
