@@ -36,9 +36,9 @@ haObj:CarrierRepresentation a rdfs:Class ;
     rdfs:label "carrier representation"@en ;
     rdfs:label "représentation de porteur"@fr ;
     rdfs:label "drager representatie"@nl ;
-    skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en ;
-    skos:definition "Représentation physique d'un entité intellectuelle (Intellectual Entity) archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr ;
-    skos:definition "Fysieke representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    skos:definition "A physical or digital representation of an archived intellectual entity that is stored on a physical carrier such as a video tape, film reel, paper or canvas."@en ;
+    skos:definition "Une représentation physique ou numérique d'une entité intellectuelle (Intellectual Entity) archivée qui est stockée sur un porteur physique tel qu'une bande vidéo, une bobine de film, du papier ou une toile."@fr ;
+    skos:definition "Een fysieke of digitale weergave van een gearchiveerde intellectuele entiteit (Intellectual Entity) die is opgeslagen op een fysieke drager zoals een videoband, filmrol, papier of canvas."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:PhysicalCarrier a rdfs:Class ;
@@ -46,9 +46,9 @@ haObj:PhysicalCarrier a rdfs:Class ;
     rdfs:label "physical carrier"@en ;
     rdfs:label "porteur physique"@fr ;
     rdfs:label "fysieke drager"@nl ;
-    # skos:definition "Physical carrier of an archived intellectual entity, such as a tape, a canvas, or a physical object like a sculpture."@en ;
-    # skos:definition "Porteur physique d'une entité intellectuelle (Intellectual Entity) archivée, par exemple une bande, un canvas, ou un objet physique comme une sculpture."@fr ;
-    # skos:definition "Fysieke drager van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een tape, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    skos:definition "A physical carrier in which data, sound, images, etc., are stored.  For certain categories of material, the physical carrier consists of a storage medium (e.g., tape, film) sometimes encased in a plastic, metal, etc., housing (e.g., cassette, cartridge) that is an integral part of the item."@en ;
+    skos:definition "Un porteur physique dans lequel les données, le son, les images, etc., sont stockées.Pour certaines catégories de matériaux, le support physique se compose d'un support de stockage (par exemple, du ruban adhésif, du film) parfois enfermé dans un boîtier en plastique, en métal, etc., (par exemple, cassette, cartouche) qui fait partie intégrante de l'article."@fr ;
+    skos:definition "Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaalde materiaalcategorieën bestaat de fysieke drager uit een opslagmedium (bijv. tape, film), soms verpakt in een plastic, metalen, enz. behuizing (bijv. cassette, cartridge) die een integraal onderdeel vormt van het item."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 #####################################
