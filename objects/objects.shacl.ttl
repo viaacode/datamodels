@@ -377,23 +377,6 @@
     sh:severity sh:Violation ;
   ],
   [
-    sh:path ebucore:isMediaFragmentOf ;
-    sh:class premis:File ;
-
-    sh:name "is Media Fragment Of"@en ;
-    sh:name "is media fragment van"@nl ;
-    sh:name "est fragment des médias de"@fr ;
-
-    sh:description "Het bestand waarvan dit een fragment is."@nl;
-    sh:description "The file of which this is a fragment."@en;
-    sh:description "Le fichier dont il s'agit d'un fragment."@fr;
-
-    sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
-    sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
-    sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
-    sh:severity sh:Violation ;
-  ],
-  [
     sh:path edm:isNextInSequence ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -412,6 +395,60 @@
     sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ].
+
+<#FragmentRepresentationShape> a sh:NodeShape ;
+  sh:targetClass haObj:FragmentRepresentation ;
+  sh:property  [
+        a sh:PropertyShape ;
+        sh:path schema:startTime ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:time ;
+        sh:maxCount 1 ;
+        sh:name "startTime"@en ;
+        sh:name "starttijd"@nl ;
+        sh:name "heure de départ"@fr ;
+        sh:description "Het tijdstip waarop het fragment start."@nl;
+        sh:description "The time at which the fragment starts."@en;
+        sh:description "Le moment où le fragment commence."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:startTime is not of type xsd:time"@en ;
+        sh:message "schema:startTime is niet van het type xsd:time"@nl ;
+        sh:message "schema:startTime n'est pas de type xsd:time"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:endTime ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:time ;
+        sh:maxCount 1 ;
+        sh:name "endTime"@en ;
+        sh:name "eindtijd"@nl ;
+        sh:name "heure de fin"@fr ;
+        sh:description "Het tijdstip waarop het fragment stopt."@nl;
+        sh:description "The time at which the fragment stops."@en;
+        sh:description "Le moment où le fragment s'arrête."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:endTime is not of type xsd:time"@en ;
+        sh:message "schema:endTime is niet van het type xsd:time"@nl ;
+        sh:message "schema:endTime n'est pas de type xsd:time"@fr 
+    ] ,
+    [
+      sh:path ebucore:isMediaFragmentOf ;
+      sh:class premis:File ;
+
+      sh:name "is Media Fragment Of"@en ;
+      sh:name "is media fragment van"@nl ;
+      sh:name "est fragment des médias de"@fr ;
+
+      sh:description "Het bestand waarvan dit een fragment is."@nl;
+      sh:description "The file of which this is a fragment."@en;
+      sh:description "Le fichier dont il s'agit d'un fragment."@fr;
+
+      sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
+      sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
+      sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
+    ].
 
 <#FileShape> a sh:NodeShape ;
   sh:targetClass premis:File ;
@@ -566,7 +603,7 @@
     ],
     [
       sh:path ebucore:hasMediaFragment ;
-      sh:class haObj:DigitalRepresentation ;
+      sh:class haObj:FragmentRepresentation ;
       
       sh:name "has media fragment"@en ;
       sh:name "heeft media fragment"@nl;
@@ -576,9 +613,9 @@
       sh:description "A fragment from this file."@en;
       sh:description "Un fragment de ce fichier."@fr;
 
-      sh:message "ebucore:hasMediaFragment is not a haObj:DigitalRepresentation"@en ;
-      sh:message "ebucore:hasMediaFragment is geen haObj:DigitalRepresentation"@nl ;
-      sh:message "ebucore:hasMediaFragment n'est pas un haObj:DigitalRepresentation"@fr ;
+      sh:message "ebucore:hasMediaFragment is not a haObj:FragmentRepresentation"@en ;
+      sh:message "ebucore:hasMediaFragment is geen haObj:FragmentRepresentation"@nl ;
+      sh:message "ebucore:hasMediaFragment n'est pas un haObj:FragmentRepresentation"@fr ;
       sh:severity sh:Violation ;
     ],
     [
