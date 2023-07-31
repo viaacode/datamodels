@@ -349,14 +349,7 @@
         sh:message "schema:about is not an IRI"@en ;
         sh:message "schema:about is geen IRI"@nl ;
         sh:message "schema:about n'est pas un IRI"@fr ;
-    ] .
-
-####################
-#      haDes      #
-####################
-<#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
-    sh:targetClass haObj:PhysicalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:artform ;
@@ -385,19 +378,6 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:depth ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:class schema:QuantitativeValue ;
-        sh:name "depth"@en ;
-        sh:name "diepte"@nl ;
-        sh:name "profondeur"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
-        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
-        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -414,6 +394,20 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path dct:medium ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:name "medium"@en ;
+        sh:name "medium"@nl ;
+        sh:name "médium"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:medium is not of type string "@en ;
+        sh:message "dct:medium is niet van het type string"@nl ;
+        sh:message "dct:medium n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:height ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
@@ -427,17 +421,98 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path dct:medium ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:minCount 1 ;
-        sh:name "medium"@en ;
-        sh:name "medium"@nl ;
-        sh:name "médium"@fr ;
+        sh:path schema:depth ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "depth"@en ;
+        sh:name "diepte"@nl ;
+        sh:name "profondeur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:medium is not of type string "@en ;
-        sh:message "dct:medium is niet van het type string"@nl ;
-        sh:message "dct:medium n'est pas de type string"@fr ;
+        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:width ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "width"@en ;
+        sh:name "breedte"@nl ;
+        sh:name "largeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ] .
+
+####################
+#      haDes      #
+####################
+<#PhysicalCarrierNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:PhysicalCarrier ;
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    [
+        sh:path schema:brand ;
+        sh:class schema:Brand ;
+
+        sh:maxCount 1 ;
+
+        sh:name "brand"@en ;
+        sh:name "merk"@nl ;
+        sh:name "marque"@fr ;
+
+        sh:description "Brand of the physical carrier."@en ;
+        sh:description "Merk van de fysieke drager."@nl ;
+        sh:description "Marque du porteur physique."@fr ;
+
+        sh:message "schema:brand has more than one value or not a schema:Brand"@en ;
+        sh:message "schema:brand heeft meer dan één waarde of is geen schema:Brand"@nl ;
+        sh:message "schema:brand a plus d'une valeur ou n'est pas une schema:Brand"@fr ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path haObj:preservationProblem ;
+        sh:class skos:Concept ;
+
+        sh:name "preservation problem"@en ;
+        sh:name "preservatieprobleem"@nl ;
+        sh:name "problème de préservation"@fr ;
+
+        sh:description "Phenomenon-usually under the influence of physical or chemical factors-that may jeopardize the integrity and consultability of the data on the carrier."@en ;
+        sh:description "Fenomeen – doorgaans onder invloed van fysische of chemische factoren – die mogelijks de integriteit en raadpleegbaarheid van de gegevens op de drager in gevaar kan brengen."@nl ;
+        sh:description "Phénomène, habituellement sous l'influence de facteurs physiques ou chimiques - qui peut compromettre l'intégrité et la consultation des données sur le transporteur."@fr ;
+
+        sh:message "haObj:preservationProblem not a skos:Concept"@en ;
+        sh:message "haObj:preservationProblem is geen skos:Concept"@nl ;
+        sh:message "haObj:preservationProblem n'est pas un skos:Concept"@fr ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:height ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "height"@en ;
+        sh:name "hoogte"@nl ;
+        sh:name "hauteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:depth ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "depth"@en ;
+        sh:name "diepte"@nl ;
+        sh:name "profondeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -532,6 +607,9 @@
         sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
     ] .
 
+<#CarrierRepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:CarrierRepresentation ;
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>.
 
 ####################
 #      SCHEMA      #

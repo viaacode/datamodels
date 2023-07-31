@@ -220,27 +220,51 @@
     sh:severity sh:Violation ;
   ].
 
-<#PhysicalRepresentationShape> a sh:NodeShape ;
-  sh:targetClass haObj:PhysicalRepresentation ;
+<#CarrierRepresentationShape> a sh:NodeShape ;
+  sh:targetClass haObj:CarrierRepresentation ;
   sh:property [
-    sh:path premis:medium;
+    sh:path premis:storedAt ;
+    sh:class haObj:PhysicalCarrier ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "stored at"@en ;
+    sh:name "opgeslagen op"@nl ;
+    sh:name "stocké à"@fr ;
+
+    sh:description "De fysieke drager waarop de representatie is opgeslagen."@nl ;
+    sh:description "The pysical carrier where the representation is stored."@en ;
+    sh:description "Le porteur physique où la représentation est stocké."@fr ;
+
+    sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
+    sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+    sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+    sh:severity sh:Violation ;
+  ] .
+
+<#PhysicalCarrierShape> a sh:NodeShape ;
+  sh:targetClass haObj:PhysicalCarrier ;
+  sh:property [
+    sh:path premis:medium ;
     sh:class premis:StorageMedium ;
 
     sh:minCount 1 ;
+    sh:maxCount 1 ;
 
     sh:name "storage medium"@en ;
     sh:name "opslagmedium"@nl ;
     sh:name "milieu de stockage"@fr ;
 
-    sh:description "Het type opslagmedium waarop deze fysieke representatie is opgeslagen."@nl ;
-    sh:description "The type of storage medium on which this physical representation is stored."@en ;
-    sh:description "Le type de milieu de stockage sur lequel cette représentation physique est stockée."@fr ;
-    
-    sh:message "premis:medium is missing or not a premis:StorageMedium"@en ;
-    sh:message "premis:medium ontbreekt of is geen premis:StorageMedium"@nl ;
-    sh:message "premis:medium manque ou n'est pas une premis:StorageMedium"@fr ;
+    sh:description "The type of storage medium of the physical carrier."@en ;
+    sh:description "Het type opslagmedium van de fysieke drager."@nl ;
+    sh:description "Le type de milieu de stockage du porteur physique."@fr ;
+
+    sh:message "premis:medium has more than one value, no value or not a premis:StorageMedium"@en ;
+    sh:message "premis:medium heeft meer dan één of geen waarde of is geen premis:StorageMedium"@nl ;
+    sh:message "premis:medium a plus d'une valeur, pas de valeur ou n'est pas une premis:StorageMedium"@fr ;
     sh:severity sh:Violation ;
-  ].
+  ] .
 
 <#DigitalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
@@ -361,7 +385,7 @@
   ],
   [
     sh:path rel:hss ;
-    sh:class haObj:PhysicalRepresentation ;
+    sh:class haObj:CarrierRepresentation ;
 
     sh:name "has Source"@en ;
     sh:name "heeft bron"@nl ;
@@ -371,9 +395,9 @@
     sh:description "The physical carrier from which this digital representation originates from."@en ;
     sh:description "Le porteur physique dont vient cette représentation numérique."@fr ;
 
-    sh:message "rel:hss is not a haObj:PhysicalRepresentation"@en ;
-    sh:message "rel:hss is geen haObj:PhysicalRepresentation"@nl ;
-    sh:message "rel:hss n'est pas un haObj:PhysicalRepresentation"@fr ;
+    sh:message "rel:hss is not a haObj:CarrierRepresentation"@en ;
+    sh:message "rel:hss is geen haObj:CarrierRepresentation"@nl ;
+    sh:message "rel:hss n'est pas un haObj:CarrierRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
@@ -394,7 +418,7 @@
     sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen haObj:DigitalRepresentation"@nl ;
     sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
-  ].
+  ] .
 
 <#FragmentRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:FragmentRepresentation ;
@@ -716,7 +740,7 @@
 
         sh:name "opslagmedium"@nl;
         sh:name "storage medium"@en;
-        sh:name "milieu de stockage"@en;
+        sh:name "milieu de stockage"@fr;
 
         sh:description "Het type opslagmedium."@nl ;
         sh:description "The type of storage medium."@en ;
