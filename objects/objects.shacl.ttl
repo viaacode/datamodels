@@ -243,45 +243,9 @@
     sh:severity sh:Violation ;
   ] .
 
-<#PhysicalCarrier> a sh:NodeShape ;
+<#PhysicalCarrierShape> a sh:NodeShape ;
   sh:targetClass haObj:PhysicalCarrier ;
   sh:property [
-    sh:path schema:brand ;
-    sh:class schema:Brand ;
-
-    sh:maxCount 1 ;
-
-    sh:name "brand"@en ;
-    sh:name "merk"@nl ;
-    sh:name "marque"@fr ;
-
-    sh:description "Brand of the physical carrier."@en ;
-    sh:description "Merk van de fysieke drager."@nl ;
-    sh:description "Marque du porteur physique."@fr ;
-
-    sh:message "schema:brand has more than one value or not a schema:Brand"@en ;
-    sh:message "schema:brand heeft meer dan één waarde of is geen schema:Brand"@nl ;
-    sh:message "schema:brand a plus d'une valeur ou n'est pas une schema:Brand"@fr ;
-    sh:severity sh:Violation ;
-  ],
-  [
-    sh:path haObj:preservationProblem ;
-    sh:class skos:Concept ;
-
-    sh:name "preservation problem"@en ;
-    sh:name "preservatieprobleem"@nl ;
-    sh:name "problème de préservation"@fr ;
-
-    sh:description "A preservation problem of the physical carrier."@en ;
-    sh:description "Een preservatieprobleem van de fysieke drager."@nl ;
-    sh:description "Un problème de préservation du porteur physique."@fr ;
-
-    sh:message "haObj:preservationProblem not a skos:Concept"@en ;
-    sh:message "haObj:preservationProblem is geen skos:Concept"@nl ;
-    sh:message "haObj:preservationProblem n'est pas un skos:Concept"@fr ;
-    sh:severity sh:Violation ;
-  ],
-  [
     sh:path premis:medium ;
     sh:class premis:StorageMedium ;
 
