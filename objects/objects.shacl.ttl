@@ -220,7 +220,7 @@
     sh:severity sh:Violation ;
   ].
 
-<#CarrierRepresentation> a sh:NodeShape ;
+<#CarrierRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:CarrierRepresentation ;
   sh:property [
     sh:path premis:storedAt ;
