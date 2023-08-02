@@ -633,7 +633,10 @@
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
-        sh:class premis:IntellectualEntity ;
+        sh:or (
+            [ sh:class premis:IntellectualEntity ]
+            [ sh:class schema:CreativeWorkSeries ]
+        );
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
         sh:description "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr ;
@@ -644,7 +647,19 @@
         sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
         sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
         sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
-    ] .
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:CreativeWorkSeries ;
+        sh:name "is part of"@en ;
+        sh:name "is een deel van"@nl ;
+        sh:name "est partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:isPartOf is not of class schema:CreativeWorkSeries."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:CreativeWorkSeries."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:CreativeWorkSeries."@fr ;
+    ].
 
 <#EpisodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Episode ;
@@ -679,7 +694,10 @@
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
-        sh:class premis:IntellectualEntity ;
+        sh:or (
+            [ sh:class premis:IntellectualEntity ]
+            [ sh:class schema:ArchiveComponent ]
+        );
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this archive component."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze archief component."@nl ;
         sh:description "Indique une intellectualité ou un travail créatif qui fait partie de cette composante d'archives."@fr ;
@@ -690,7 +708,19 @@
         sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
         sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
         sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
-    ] .
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:ArchiveComponent  ;
+        sh:name "is part of"@en ;
+        sh:name "is een deel van"@nl ;
+        sh:name "est partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent."@fr ;
+    ].
 
 <#RoleNodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Role ;
