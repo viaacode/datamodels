@@ -287,11 +287,11 @@
 
 <#HardwareAgentShape> a sh:NodeShape;
     sh:targetClass premis:HardwareAgent;
-    sh:property <#modelShape>, <#brandShape>, <#versionShape>, <#serialNumberShape> .
+    sh:property <#NameShape>, <#modelShape>, <#brandShape>, <#versionShape>, <#serialNumberShape> .
 
 <#SoftwareAgentShape> a sh:NodeShape;
     sh:targetClass premis:SoftwareAgent;
-    sh:property <#modelShape>, <#brandShape>, <#versionShape>, <#serialNumberShape> .
+    sh:property <#NameShape>, <#modelShape>, <#brandShape>, <#versionShape>, <#serialNumberShape> .
 
 <#BrandShape> a sh:NodeShape;
     sh:targetClass schema:Brand;
@@ -374,3 +374,17 @@
     sh:maxCount 1 ;
     sh:severity sh:Violation ;
     sh:message "schema:serialNumber occurs more than once or its value is no string"@en .
+
+<#NameShape> a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "name"@en ;
+    sh:name "naam"@nl ;
+    sh:name "nom"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:name is missing or not of type string "@en ;
+    sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+    sh:message "schema:name est manquant ou n'est pas de type string"@fr .
