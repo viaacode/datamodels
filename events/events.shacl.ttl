@@ -234,23 +234,36 @@
     [
         a sh:PropertyShape ;
         sh:path evtAgRole:exe;
-        sh:or (
-            [sh:class premis:SoftwareAgent] 
-            [sh:class premis:HardwareAgent]
-        );
+        sh:class premis:SoftwareAgent;
         sh:name "executed by"@en ;
         sh:name "exécuté par"@fr ;
         sh:name "uitgevoerd door"@nl ;
-        sh:description """The software or hardware that executed the event."""@en ;
-        sh:description """Le logiciel ou le matériel qui a exécuté l'événement (Event)."""@fr ;
-        sh:description """De software of hardware die de gebeurtenis (Event) heeft uitgevoerd."""@nl ;
+        sh:description """The software that executed the event."""@en ;
+        sh:description """Le logiciel qui a exécuté l'événement (Event)."""@fr ;
+        sh:description """De software die de gebeurtenis (Event) heeft uitgevoerd."""@nl ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
-        sh:message "evtAgRole:exe occurs more than once or its value is no instance of classes premis:SoftwareAgent/premis:HardwareAgent"@en ;
-        sh:message "evtAgRole:exe apparaît plus d'une seule fois ou sa valeur n'est pas une instance de classes premis:SoftwareAgent/premis:HardwareAgent"@fr ;
-        sh:message "evtAgRole:exe komt meer dan eens voor of de waarde is geen instantie van de klassen premis:SoftwareAgent/premis:HardwareAgent"@nl ;
-    ].
+        sh:message "evtAgRole:exe occurs more than once or its value is no instance of classes premis:SoftwareAgent"@en ;
+        sh:message "evtAgRole:exe apparaît plus d'une seule fois ou sa valeur n'est pas une instance de classes premis:SoftwareAgent"@fr ;
+        sh:message "evtAgRole:exe komt meer dan eens voor of de waarde is geen instantie van de klassen premis:SoftwareAgent"@nl ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:instrument;
+        sh:class premis:HardwareAgent;
+        sh:name "instrument"@en ;
+        sh:name "instrument"@fr ;
+        sh:name "instrument"@nl ;
+        sh:description """The hardware that was used to execute the event."""@en ;
+        sh:description """Le matériel qui a été utilisé pour exécuter l'événement (Event)."""@fr ;
+        sh:description """De hardware die gebruikt is voor het uitvoeren van de gebeurtenis (Event)."""@nl ;
+        sh:minCount 0 ;
+        sh:severity sh:Violation ;
+        sh:message "schema:instrument's value is no instance of classes premis:HardwareAgent"@en ;
+        sh:message "schema:instrument sa valeur n'est pas une instance de classes premis:HardwareAgent"@fr ;
+        sh:message "schema:instrument's waarde is geen instantie van de klassen premis:HardwareAgent"@nl ;
+    ].    
 
 <#ObjectShape> a sh:NodeShape;
     sh:targetClass premis:Object;
@@ -272,4 +285,106 @@
         sh:message "prov:wasGeneratedBy komt meer dan eens voor of de waarde is geen instantie van premis:Event"@nl ;
       ].
 
+<#HardwareAgentShape> a sh:NodeShape;
+    sh:targetClass premis:HardwareAgent;
+    sh:property <#NameShape>, <#modelShape>, <#brandShape>, <#versionShape>, <#serialNumberShape> .
 
+<#SoftwareAgentShape> a sh:NodeShape;
+    sh:targetClass premis:SoftwareAgent;
+    sh:property <#NameShape>, <#modelShape>, <#brandShape>, <#versionShape>, <#serialNumberShape> .
+
+<#BrandShape> a sh:NodeShape;
+    sh:targetClass schema:Brand;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:name ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "name"@en ;
+        sh:name "naam"@nl ;
+        sh:name "nom"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:name is missing or not of type string "@en ;
+        sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+        sh:message "schema:name est manquant ou n'est pas de type string"@fr ;
+    ] .
+
+<#modelShape> a sh:PropertyShape;
+    a sh:PropertyShape ;
+    sh:path schema:model ;
+    sh:datatype xsd:string ;
+
+    sh:name "model"@en ;
+    sh:name "modèle"@fr ;
+    sh:name "model"@nl ;
+    sh:description "The particular model of the Agent."@en ;
+    sh:description "La modèle particulière de l'agent."@fr ;
+    sh:description "Het specifieke model van de agent."@nl ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:message "schema:model occurs more than once or its value is no string"@en .
+
+<#brandShape>     a sh:PropertyShape ;
+    sh:path schema:brand ;
+    sh:class schema:Brand ;
+    sh:name "brand"@en ;
+    sh:name "marque"@fr ;
+    sh:name "merk"@nl ;
+    sh:description "The particular brand of the Agent."@en ;
+    sh:description "La marque particulière de l'agent."@fr ;
+    sh:description "Het specifieke merk van de agent."@nl ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:message "schema:brand occurs more than once or its value is no instance of schema:Brand"@en .
+
+<#versionShape> a sh:PropertyShape ;
+    sh:path schema:version ;
+    sh:datatype xsd:string ;
+
+    sh:name "version"@en ;
+    sh:name "versie"@nl ;
+    sh:name "version"@fr ;
+
+    sh:description "The agent's version number or version name."@en ;
+    sh:description "Le numéro de version de l'agent ou le nom de la version."@fr ;
+    sh:description "Het versienummer of versienaam van de agent."@nl ;
+
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:message "schema:version occurs more than once or its value is no string"@en .
+
+
+<#serialNumberShape>     a sh:PropertyShape ;
+    sh:path schema:serialNumber ;
+    sh:datatype xsd:string ;
+    
+    sh:name "serialNumber"@en ;
+    sh:name "serienummer"@nl ;
+    sh:name "numéro de série"@fr ;
+
+    sh:description "The serial number or any alphanumeric identifier of a particular agent."@en ;
+    sh:description "Le numéro de série ou tout identifiant alphanumérique d'un agent particulier."@fr ;
+    sh:description "Het serienummer of een alfanumerieke identificatie van een bepaald middel."@nl ;
+    sh:minCount 0 ;
+    sh:maxCount 1 ;
+    sh:severity sh:Violation ;
+    sh:message "schema:serialNumber occurs more than once or its value is no string"@en .
+
+<#NameShape> a sh:PropertyShape ;
+    sh:path schema:name ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:name "name"@en ;
+    sh:name "naam"@nl ;
+    sh:name "nom"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:name is missing or not of type string "@en ;
+    sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+    sh:message "schema:name est manquant ou n'est pas de type string"@fr .

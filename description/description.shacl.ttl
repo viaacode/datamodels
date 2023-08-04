@@ -87,28 +87,15 @@
             [ sh:class schema:ArchiveComponent ]
             [ sh:class schema:CreativeWorkSeries ]
             [ sh:class schema:Episode ]
+            [ sh:class schema:Collection ]
         );
         sh:name "is part of"@en ;
         sh:name "is een deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:isPartOf is not of class schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@en ;
-        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@nl ;
-        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:duration ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:dateTime ;
-        sh:maxCount 1 ;
-        sh:name "duration"@en ;
-        sh:name "duur"@nl ;
-        sh:name "durée"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:duration is not of type xsd:dateTime"@en ;
-        sh:message "schema:duration is niet van het type xsd:dateTime"@nl ;
-        sh:message "schema:duration n'est pas de type xsd:dateTime"@fr ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode or schema:Collection."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode of schema:Collection."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode ou schema:Collection."@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -327,6 +314,19 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path dct:rights ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:name "rights information"@en ;
+        sh:name "rechteninformatie"@nl ;
+        sh:name "informations sur les droits"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "dct:rights is not of type string"@en ;
+        sh:message "dct:rights is niet van het type string"@nl ;
+        sh:message "dct:rights n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:creditText ;
         sh:nodeKind sh:Literal ;
         sh:datatype rdf:langString ;
@@ -349,14 +349,7 @@
         sh:message "schema:about is not an IRI"@en ;
         sh:message "schema:about is geen IRI"@nl ;
         sh:message "schema:about n'est pas un IRI"@fr ;
-    ] .
-
-####################
-#      haDes      #
-####################
-<#PhysicalRepresentationNodeShape> a sh:NodeShape ; 
-    sh:targetClass haObj:PhysicalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:artform ;
@@ -385,19 +378,6 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:depth ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:class schema:QuantitativeValue ;
-        sh:name "depth"@en ;
-        sh:name "diepte"@nl ;
-        sh:name "profondeur"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
-        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
-        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
@@ -411,19 +391,6 @@
         sh:message "dct:format is missing or not of type string or value is not in (audio video film papier)"@en ;
         sh:message "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film papier)"@nl ;
         sh:message "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film papier)"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:height ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:class schema:QuantitativeValue ;
-        sh:name "height"@en ;
-        sh:name "hoogte"@nl ;
-        sh:name "hauteur"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en ;
-        sh:message "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
-        sh:message "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -441,6 +408,32 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:height ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "height"@en ;
+        sh:name "hoogte"@nl ;
+        sh:name "hauteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:depth ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "depth"@en ;
+        sh:name "diepte"@nl ;
+        sh:name "profondeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:width ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
@@ -452,9 +445,96 @@
         sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
         sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
     ] .
+
+####################
+#      haDes      #
+####################
+<#PhysicalCarrierNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:PhysicalCarrier ;
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    [
+        sh:path schema:brand ;
+        sh:class schema:Brand ;
+
+        sh:maxCount 1 ;
+
+        sh:name "brand"@en ;
+        sh:name "merk"@nl ;
+        sh:name "marque"@fr ;
+
+        sh:description "Brand of the physical carrier."@en ;
+        sh:description "Merk van de fysieke drager."@nl ;
+        sh:description "Marque du porteur physique."@fr ;
+
+        sh:message "schema:brand has more than one value or not a schema:Brand"@en ;
+        sh:message "schema:brand heeft meer dan één waarde of is geen schema:Brand"@nl ;
+        sh:message "schema:brand a plus d'une valeur ou n'est pas une schema:Brand"@fr ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path haObj:preservationProblem ;
+        sh:class skos:Concept ;
+
+        sh:name "preservation problem"@en ;
+        sh:name "preservatieprobleem"@nl ;
+        sh:name "problème de préservation"@fr ;
+
+        sh:description "Phenomenon-usually under the influence of physical or chemical factors-that may jeopardize the integrity and consultability of the data on the carrier."@en ;
+        sh:description "Fenomeen – doorgaans onder invloed van fysische of chemische factoren – die mogelijks de integriteit en raadpleegbaarheid van de gegevens op de drager in gevaar kan brengen."@nl ;
+        sh:description "Phénomène, habituellement sous l'influence de facteurs physiques ou chimiques - qui peut compromettre l'intégrité et la consultation des données sur le transporteur."@fr ;
+
+        sh:message "haObj:preservationProblem not a skos:Concept"@en ;
+        sh:message "haObj:preservationProblem is geen skos:Concept"@nl ;
+        sh:message "haObj:preservationProblem n'est pas un skos:Concept"@fr ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:height ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "height"@en ;
+        sh:name "hoogte"@nl ;
+        sh:name "hauteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:depth ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "depth"@en ;
+        sh:name "diepte"@nl ;
+        sh:name "profondeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:width ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class schema:QuantitativeValue ;
+        sh:name "width"@en ;
+        sh:name "breedte"@nl ;
+        sh:name "largeur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en ;
+        sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+        sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
+    ] .
+
+<#FileNodeShape> a sh:NodeShape ; 
+    sh:targetClass premis:File ;
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>.
+
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
@@ -485,6 +565,22 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:thumbnailUrl ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:name "thumbnail"@en ;
+        sh:name "miniatuurafbeelding"@nl ;
+        sh:name "image miniature"@fr ;
+        sh:severity sh:Violation ;
+        sh:description "A thumbnail image relevant to the Digital Representation."@en;
+        sh:description "Une image miniature pertinente pour la représentation numérique."@fr;
+        sh:description "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl;
+        sh:message "schema:thumbnailUrl is not an IRI"@en ;
+        sh:message "schema:thumbnailUrl is geen IRI"@nl ;
+        sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:dateCreated ;
         sh:nodeKind sh:Literal ;
         sh:datatype edtf:EDTF-level1 ;
@@ -511,6 +607,9 @@
         sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
     ] .
 
+<#CarrierRepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:CarrierRepresentation ;
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>.
 
 ####################
 #      SCHEMA      #
@@ -530,19 +629,98 @@
         sh:message "schema:seasonNumber is not of type integer"@en ;
         sh:message "schema:seasonNumber is niet van het type integer"@nl ;
         sh:message "schema:seasonNumber n'est pas de type integer"@fr ;
-    ] .
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:or (
+            [ sh:class premis:IntellectualEntity ]
+            [ sh:class schema:CreativeWorkSeries ]
+        );
+        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
+        sh:description "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
+        sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+        sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:CreativeWorkSeries ;
+        sh:name "is part of"@en ;
+        sh:name "is een deel van"@nl ;
+        sh:name "est partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:isPartOf is not of class schema:CreativeWorkSeries."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:CreativeWorkSeries."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:CreativeWorkSeries."@fr ;
+    ].
 
 <#EpisodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Episode ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape> .
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape> ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:class premis:IntellectualEntity ;
+        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this episode."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze episode."@nl ;
+        sh:description "Indique une intellectualité ou un travail créatif qui fait partie de cette episode."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
+        sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+        sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
+    ] .
 
 <#PlaceShape> a sh:NodeShape ; 
     sh:targetClass schema:Place ;
     sh:property <#NameShape>, <#DescriptionShape> .
 
+<#ThingShape> a sh:NodeShape ; 
+    sh:targetClass schema:Thing ;
+    sh:property <#NameShape>, <#DescriptionShape> .
+
 <#ArchiveComponentShape> a sh:NodeShape ; 
     sh:targetClass schema:ArchiveComponent ;
-    sh:property <#NameShape>, <#DescriptionShape> .
+    sh:property <#NameShape>, <#DescriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:or (
+            [ sh:class premis:IntellectualEntity ]
+            [ sh:class schema:ArchiveComponent ]
+        );
+        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this archive component."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze archief component."@nl ;
+        sh:description "Indique une intellectualité ou un travail créatif qui fait partie de cette composante d'archives."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
+        sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+        sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:ArchiveComponent  ;
+        sh:name "is part of"@en ;
+        sh:name "is een deel van"@nl ;
+        sh:name "est partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent."@fr ;
+    ].
 
 <#RoleNodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Role ;
@@ -553,14 +731,15 @@
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "author"@en ;
         sh:name "auteur"@nl ;
         sh:name "auteur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:author is not of class schema:Person or org:Organization"@en ;
-        sh:message "schema:author is niet van de klasse schema:Person of org:Organization"@nl ;
-        sh:message "schema:author n'est pas de la classe schema:Person ou org:Organization"@fr ;
+        sh:message "schema:author is not of class schema:Thing, schema:Person or org:Organization"@en ;
+        sh:message "schema:author is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
+        sh:message "schema:author n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -568,6 +747,7 @@
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "contributor"@en ;
         sh:name "bijdrager"@nl ;
@@ -583,6 +763,7 @@
         sh:or (
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "publisher"@en ;
         sh:name "uitgever"@nl ;
@@ -725,7 +906,7 @@
 <#NameShape> a sh:PropertyShape ;
     sh:path schema:name ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
+    sh:datatype rdf:langString ;
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:name "name"@en ;
@@ -739,8 +920,8 @@
 <#DescriptionShape> a sh:PropertyShape ;
     sh:path schema:description ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:minCount 1 ;
+    sh:datatype rdf:langString ;
+    sh:minCount 0 ;
     sh:maxCount 1 ;
     sh:name "description"@en ;
     sh:name "omschrijving"@nl ;
@@ -751,3 +932,15 @@
     sh:message "schema:description est manquant ou n'est pas de type string"@fr .
 
 
+<#DurationShape> a sh:PropertyShape ;
+    sh:path schema:duration ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:duration ;
+    sh:maxCount 1 ;
+    sh:name "duration"@en ;
+    sh:name "duur"@nl ;
+    sh:name "durée"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:duration is not of type xsd:dateTime"@en ;
+    sh:message "schema:duration is niet van het type xsd:dateTime"@nl ;
+    sh:message "schema:duration n'est pas de type xsd:dateTime"@fr .

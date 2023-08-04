@@ -150,7 +150,7 @@
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasMaster ;
+    sh:path haObj:hasMasterCopy ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:name "has Master"@en ;
@@ -161,13 +161,13 @@
     sh:description "The archive master of the intellectual entity."@en ;
     sh:description "Le maître des archives de l'entité intellectuelle."@fr ;
 
-    sh:message "haObj:hasMaster not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasMaster is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasMaster n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasMasterCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasMasterCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasMezzanine ;
+    sh:path haObj:hasMezzanineCopy ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:name "has Mezzanine"@en ;
@@ -178,13 +178,13 @@
     sh:description "The mezzanine copy of the intellectual entity."@en ;
     sh:description "La copie mezzanine de l'entité intellectuelle."@fr ;
 
-    sh:message "haObj:hasMezzanine not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasMezzanine is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasMezzanine n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:message "haObj:hasMezzanineCopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasMezzanineCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasMezzanineCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasAccesscopy ;
+    sh:path haObj:hasAccessCopy ;
     sh:class haObj:DigitalRepresentation ;
 
     sh:name "has Access Copy"@en ;
@@ -195,38 +195,81 @@
     sh:description "The access or browse copy of the intellectual entity."@en ;
     sh:description "L'accès ou la copie de l'entité intellectuelle d'accès."@fr ;
 
-    sh:message "haObj:hasAccesscopy not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasAccesscopy is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasAccesscopy n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:message "haObj:hasAccessCopy not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasAccessCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasAccessCopy n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path edm:isNextInSequence ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ;
+
+    sh:name "next intellectual entity in sequence"@en ;
+    sh:name "volgende intellectuele entiteit in volgorde"@nl;
+    sh:name "l'entité intellectuelle suivante dans l'ordre"@fr;
+
+    sh:description "Het intellectuele entiteit dat op dit intellectuele entiteit volgt."@nl;
+    sh:description "The intellectual entity that follows on this intellectual entity."@en;
+    sh:description "L'entité intellectuelle qui suit sur cette entité intellectuelle."@fr;
+
+    sh:message "edm:isNextInSequence has more than one value or is not a premis:File"@en ;
+    sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen premis:File"@nl ;
+    sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un premis:File"@fr ;
     sh:severity sh:Violation ;
   ].
 
-<#PhysicalRepresentationShape> a sh:NodeShape ;
-  sh:targetClass haObj:PhysicalRepresentation ;
+<#CarrierRepresentationShape> a sh:NodeShape ;
+  sh:targetClass haObj:CarrierRepresentation ;
   sh:property [
-    sh:path premis:medium;
+    sh:path premis:storedAt ;
+    sh:class haObj:PhysicalCarrier ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "stored at"@en ;
+    sh:name "opgeslagen op"@nl ;
+    sh:name "stocké à"@fr ;
+
+    sh:description "De fysieke drager waarop de representatie is opgeslagen."@nl ;
+    sh:description "The pysical carrier where the representation is stored."@en ;
+    sh:description "Le porteur physique où la représentation est stocké."@fr ;
+
+    sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
+    sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+    sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+    sh:severity sh:Violation ;
+  ] .
+
+<#PhysicalCarrierShape> a sh:NodeShape ;
+  sh:targetClass haObj:PhysicalCarrier ;
+  sh:property [
+    sh:path premis:medium ;
     sh:class premis:StorageMedium ;
 
     sh:minCount 1 ;
+    sh:maxCount 1 ;
 
     sh:name "storage medium"@en ;
     sh:name "opslagmedium"@nl ;
     sh:name "milieu de stockage"@fr ;
 
-    sh:description "Het type opslagmedium waarop deze fysieke representatie is opgeslagen."@nl ;
-    sh:description "The type of storage medium on which this physical representation is stored."@en ;
-    sh:description "Le type de milieu de stockage sur lequel cette représentation physique est stockée."@fr ;
-    
-    sh:message "premis:medium is missing or not a premis:StorageMedium"@en ;
-    sh:message "premis:medium ontbreekt of is geen premis:StorageMedium"@nl ;
-    sh:message "premis:medium manque ou n'est pas une premis:StorageMedium"@fr ;
+    sh:description "The type of storage medium of the physical carrier."@en ;
+    sh:description "Het type opslagmedium van de fysieke drager."@nl ;
+    sh:description "Le type de milieu de stockage du porteur physique."@fr ;
+
+    sh:message "premis:medium has more than one value, no value or not a premis:StorageMedium"@en ;
+    sh:message "premis:medium heeft meer dan één of geen waarde of is geen premis:StorageMedium"@nl ;
+    sh:message "premis:medium a plus d'une valeur, pas de valeur ou n'est pas une premis:StorageMedium"@fr ;
     sh:severity sh:Violation ;
-  ].
+  ] .
 
 <#DigitalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
   sh:property  [
-    sh:path haObj:isMasterOf ;
+    sh:path haObj:isMasterCopyOf ;
     sh:class premis:IntellectualEntity ;
 
     sh:maxCount 1 ;
@@ -239,13 +282,13 @@
     sh:description "The intellectual entity of which this representation is the archive master."@en ;
     sh:description "L'entité intellectuelle dont cette représentation est le maître des archives."@fr ;
 
-    sh:message "haObj:isMasterOf has more than one value or not a premis:IntellectualEntity"@en ;
-    sh:message "haObj:isMasterOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
-    sh:message "haObj:isMasterOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:message "haObj:isMasterCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isMasterCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isMasterCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:isMezzanineOf ;
+    sh:path haObj:isMezzanineCopyOf ;
     sh:class premis:IntellectualEntity ;
 
     sh:maxCount 1 ;
@@ -258,13 +301,13 @@
     sh:description "The intellectual entity of which this digital representation is the mezzanine copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation est la copie de mezzanine."@fr ;
 
-    sh:message "haObj:isMezzanineOf has more than one value or not a premis:IntellectualEntity"@en ;
-    sh:message "haObj:isMezzanineOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
-    sh:message "haObj:isMezzanineOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:message "haObj:isMezzanineCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isMezzanineCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isMezzanineCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:isAccesscopyOf ;
+    sh:path haObj:isAccessCopyOf ;
     sh:class premis:IntellectualEntity ;
 
     sh:maxCount 1 ; 
@@ -277,9 +320,9 @@
     sh:description "The intellectual entity of which this digital representation is the access or browse copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation digital est l'accès ou la copie de vue."@fr ;
 
-    sh:message "haObj:isAccesscopyOf has more than one value or not a premis:IntellectualEntity"@en ;
-    sh:message "haObj:isAccesscopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
-    sh:message "haObj:isAccesscopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:message "haObj:isAccessCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isAccessCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isAccessCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
@@ -342,7 +385,7 @@
   ],
   [
     sh:path rel:hss ;
-    sh:class haObj:PhysicalRepresentation ;
+    sh:class haObj:CarrierRepresentation ;
 
     sh:name "has Source"@en ;
     sh:name "heeft bron"@nl ;
@@ -352,37 +395,90 @@
     sh:description "The physical carrier from which this digital representation originates from."@en ;
     sh:description "Le porteur physique dont vient cette représentation numérique."@fr ;
 
-    sh:message "rel:hss is not a haObj:PhysicalRepresentation"@en ;
-    sh:message "rel:hss is geen haObj:PhysicalRepresentation"@nl ;
-    sh:message "rel:hss n'est pas un haObj:PhysicalRepresentation"@fr ;
+    sh:message "rel:hss is not a haObj:CarrierRepresentation"@en ;
+    sh:message "rel:hss is geen haObj:CarrierRepresentation"@nl ;
+    sh:message "rel:hss n'est pas un haObj:CarrierRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path ebucore:isMediaFragmentOf ;
-    sh:class premis:File ;
+    sh:path edm:isNextInSequence ;
+    sh:class haObj:DigitalRepresentation ;
 
-    sh:name "is Media Fragment Of"@en ;
-    sh:name "is media fragment van"@nl ;
-    sh:name "est fragment des médias de"@fr ;
+    sh:maxCount 1 ;
 
-    sh:description "Het bestand waarvan dit een fragment is."@nl;
-    sh:description "The file of which this is a fragment."@en;
-    sh:description "Le fichier dont il s'agit d'un fragment."@fr;
+    sh:name "next digital representation in sequence"@en ;
+    sh:name "volgende digitale representatie in volgorde"@nl;
+    sh:name "la représentation numérique suivante dans l'ordre"@fr;
 
-    sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
-    sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
-    sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+    sh:description "De digitale representatie dat op deze digitale representatie volgt."@nl;
+    sh:description "The digital representation that follows on this digital representation."@en;
+    sh:description "La représentation numérique qui suit sur cette représentation numérique."@fr;
+
+    sh:message "edm:isNextInSequence has more than one value or is not a haObj:DigitalRepresentation"@en ;
+    sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
-  ].
+  ] .
+
+<#FragmentRepresentationShape> a sh:NodeShape ;
+  sh:targetClass haObj:FragmentRepresentation ;
+  sh:property  [
+        a sh:PropertyShape ;
+        sh:path schema:startTime ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:time ;
+        sh:maxCount 1 ;
+        sh:name "startTime"@en ;
+        sh:name "starttijd"@nl ;
+        sh:name "heure de départ"@fr ;
+        sh:description "Het tijdstip waarop het fragment start."@nl;
+        sh:description "The time at which the fragment starts."@en;
+        sh:description "Le moment où le fragment commence."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:startTime is not of type xsd:time"@en ;
+        sh:message "schema:startTime is niet van het type xsd:time"@nl ;
+        sh:message "schema:startTime n'est pas de type xsd:time"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:endTime ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:time ;
+        sh:maxCount 1 ;
+        sh:name "endTime"@en ;
+        sh:name "eindtijd"@nl ;
+        sh:name "heure de fin"@fr ;
+        sh:description "Het tijdstip waarop het fragment stopt."@nl;
+        sh:description "The time at which the fragment stops."@en;
+        sh:description "Le moment où le fragment s'arrête."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:endTime is not of type xsd:time"@en ;
+        sh:message "schema:endTime is niet van het type xsd:time"@nl ;
+        sh:message "schema:endTime n'est pas de type xsd:time"@fr 
+    ] ,
+    [
+      sh:path ebucore:isMediaFragmentOf ;
+      sh:class premis:File ;
+
+      sh:name "is Media Fragment Of"@en ;
+      sh:name "is media fragment van"@nl ;
+      sh:name "est fragment des médias de"@fr ;
+
+      sh:description "Het bestand waarvan dit een fragment is."@nl;
+      sh:description "The file of which this is a fragment."@en;
+      sh:description "Le fichier dont il s'agit d'un fragment."@fr;
+
+      sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
+      sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
+      sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
+    ].
 
 <#FileShape> a sh:NodeShape ;
   sh:targetClass premis:File ;
     sh:property [
       sh:path rel:isi;
       sh:class haObj:DigitalRepresentation ;
-
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
 
       sh:name "is Include In"@en ;
       sh:name "is opgenomen in"@nl ;
@@ -531,7 +627,7 @@
     ],
     [
       sh:path ebucore:hasMediaFragment ;
-      sh:class haObj:DigitalRepresentation ;
+      sh:class haObj:FragmentRepresentation ;
       
       sh:name "has media fragment"@en ;
       sh:name "heeft media fragment"@nl;
@@ -541,9 +637,9 @@
       sh:description "A fragment from this file."@en;
       sh:description "Un fragment de ce fichier."@fr;
 
-      sh:message "ebucore:hasMediaFragment is not a haObj:DigitalRepresentation"@en ;
-      sh:message "ebucore:hasMediaFragment is geen haObj:DigitalRepresentation"@nl ;
-      sh:message "ebucore:hasMediaFragment n'est pas un haObj:DigitalRepresentation"@fr ;
+      sh:message "ebucore:hasMediaFragment is not a haObj:FragmentRepresentation"@en ;
+      sh:message "ebucore:hasMediaFragment is geen haObj:FragmentRepresentation"@nl ;
+      sh:message "ebucore:hasMediaFragment n'est pas un haObj:FragmentRepresentation"@fr ;
       sh:severity sh:Violation ;
     ],
     [
@@ -618,7 +714,13 @@
   sh:targetClass premis:StorageLocation ;
     sh:property [
         sh:path rdf:value;
-        sh:datatype xsd:string;
+        sh:or ( 
+            [   
+                sh:nodeKind sh:Literal ;
+                sh:datatype xsd:string ; 
+            ]
+            [sh:nodeKind sh:IRI ]
+        ) ;
 
         sh:minCount 1 ;
 
@@ -638,7 +740,7 @@
 
         sh:name "opslagmedium"@nl;
         sh:name "storage medium"@en;
-        sh:name "milieu de stockage"@en;
+        sh:name "milieu de stockage"@fr;
 
         sh:description "Het type opslagmedium."@nl ;
         sh:description "The type of storage medium."@en ;

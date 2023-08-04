@@ -12,6 +12,15 @@
 #              CLASSES              #
 #####################################
 
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing"@en ;
+    rdfs:label "Ding"@nl ;
+    rdfs:label "Chose"@fr ;
+    skos:definition "The most generic type of item."@en ;
+    skos:definition "Le type d'élément le plus générique."@fr ;
+    skos:definition "Het meest generieke type item."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:ArchiveComponent a rdfs:Class;
     rdfs:subClassOf schema:CreativeWork ;
     rdfs:label "archive component"@en ;
@@ -789,4 +798,79 @@ schema:width a rdf:Property ;
     skos:definition "The width of the item."@en ;
     skos:definition "De breedte van het item."@nl ;
     skos:definition "La largeur de l'élément."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:thumbnailUrl a rdf:Property ;
+    rdfs:label "thumbnailUrl"@en ;
+    rdfs:label "URL miniature"@fr ;
+    rdfs:label "miniatuur-url"@nl ;
+    skos:definition  "A thumbnail image relevant to the Thing."@en ;
+    skos:definition  "Une image miniature pertinente pour la chose."@fr ;
+    skos:definition  "Een miniatuurafbeelding relevant voor het ding."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:instrument a rdf:Property ;
+    rdfs:label "instrument"@en ;
+    rdfs:label "instrument"@nl ;
+    rdfs:label "instrument"@fr ;
+    skos:definition "The object that helped the agent perform the action. E.g. John wrote a book with *a pen*."@en ;
+    skos:definition "L'objet qui a aidé l'agent à effectuer l'action. Par exemple: John a écrit un livre avec *un stylo*."@fr ;
+    skos:definition "Het object dat de agent heeft geholpen de actie uit te voeren. Bijv. John schreef een boek met *een pen*."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:model a rdf:Property ;
+    rdfs:label "model"@en ;
+    rdfs:label "model"@nl ;
+    rdfs:label "modèle"@fr ;
+    skos:definition "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties."@en ;
+    skos:definition "Le modèle du produit.Utilisez avec l'URL d'un produit de produit ou une représentation textuelle de l'identifiant du modèle. L'URL du ProductModel peut provenir d'une source externe.Il est recommandé de fournir en outre des identificateurs de produits solides via les propriétés GTIN8 / GTIN13 / GTIN14 et MPN."@fr ;
+    skos:definition "Het model van het product.Gebruik met de URL van een productmodel of een tekstuele weergave van de model-ID. De URL van het productmodel kan uit een externe bron zijn.Het wordt aanbevolen om bovendien sterke productidentifiers te bieden via de eigenschappen GTIN8/GTIN13/GTIN14 en MPN."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:brand a rdf:Property ;
+    rdfs:label "brand"@en ;
+    rdfs:label "marque"@fr ;
+    rdfs:label "merk"@nl ;
+    skos:definition "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person."@en ;
+    skos:definition "Het merk (en) geassocieerd met een product of service, of het merk (en) dat wordt onderhouden door een organisatie of ondernemer."@nl ;
+    skos:definition "La (s) marque (s) associée à un produit ou à un service, ou la (s) marque (s) entretenue par une organisation ou un homme d'affaires."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:serialNumber a rdf:Property ;
+    rdfs:label "serialNumber"@en ;
+    rdfs:label "serienummer"@nl ;
+    rdfs:label "numéro de série"@fr ;
+    skos:definition "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer."@en ;
+    skos:definition "Het serienummer of een alfanumerieke identificatie van een bepaald product. Wanneer het wordt bevestigd aan een aanbieding, is het een snelkoppeling voor het serienummer van het product dat in het aanbod is opgenomen."@nl ;
+    skos:definition "Le numéro de série ou tout identifiant alphanumérique d'un produit particulier. Lorsqu'il est attaché à une offre, il s'agit d'un raccourci pour le numéro de série du produit inclus dans l'offre."@fr ;
+    rdfs:subPropertyOf schema:identifier ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:version a rdf:Property ;
+    rdfs:label "version"@en ;
+    rdfs:label "versie"@nl ;
+    rdfs:label "version"@fr ;
+    skos:definition "The version of the CreativeWork embodied by a specified resource."@en ;
+    skos:definition "La version du Creativework incarné par une ressource spécifiée."@fr ;
+    skos:definition "De versie van het Creative Work dat is belichaamd door een opgegeven item."@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:startTime a rdf:Property ;
+    rdfs:label "startTime"@en ;
+    rdfs:label "starttijd"@nl ;
+    rdfs:label "heure de départ"@fr ;
+    skos:definition "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."@en ;
+    skos:definition "De starttijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd die naar verwachting zal beginnen.Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd.Bijv.John schreef een boek van * januari * tot december.Voor media, inclusief audio en video, is dit de tijdoffset van het begin van een clip binnen een groter bestand. \\ n \\ nnote die gebeurtenis gebruikt startdate/enddate in plaats van starttijd/eindtijd, zelfs bij het beschrijven van datums met tijden. Deze situatie kan worden verduidelijkt in toekomstige herzieningen."@nl ;
+    skos:definition "Le début du temps de quelque chose. Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple. John a écrit un livre de * janvier * à décembre.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps du début d'un clip dans un fichier plus grand. \\ n \\ nnote que l'événement utilise StartDate / EndDate au lieu de démarrage / fin de fin, même lors de la description des dates avec les temps. Cette situation peut être clarifiée dans les révisions futures."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:endTime a rdf:Property ;
+    rdfs:label "endTime"@en ;
+    rdfs:label "eindtijd"@nl ;
+    rdfs:label "heure de fin"@fr ;
+    skos:definition """
+    The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+    Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en ;
+    skos:definition """De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. """@nl ;
+    skos:definition """La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
