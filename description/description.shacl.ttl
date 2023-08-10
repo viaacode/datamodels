@@ -551,6 +551,20 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:inLanguage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0;
+        sh:name "in language"@en ;
+        sh:name "in taal"@nl ;
+        sh:name "en langue"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:inLanguage is not of type string"@en ;
+        sh:message "schema:inLanguage is niet van het type string"@nl ;
+        sh:message "schema:inLanguage n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:caption ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
