@@ -666,16 +666,16 @@
       sh:nodeKind sh:Literal ;
       sh:datatype xsd:string ;
 
-      sh:minCount 1 ;
+      sh:minCount 0 ;
       sh:maxCount 1 ;
 
       sh:description "The original name of this file."@en;
       sh:description "De oorspronkelijke naam van dit bestand."@nl;
       sh:description "Le nom d'origine de ce fichier."@fr;
             
-      sh:message "premis:originalName is missing, has more than one value or not of type string"@en ;
-      sh:message "premis:originalName ontbreekt, heeft meer dan één waarde of is niet van het type string"@nl ;
-      sh:message "premis:originalName manque, a plus d'une valeur ou n'est pas de type string"@fr ;
+      sh:message "premis:originalName has more than one value or not of type string"@en ;
+      sh:message "premis:originalName heeft meer dan één waarde of is niet van het type string"@nl ;
+      sh:message "premis:originalName a plus d'une valeur ou n'est pas de type string"@fr ;
       sh:severity sh:Violation ;
     ] .
 
