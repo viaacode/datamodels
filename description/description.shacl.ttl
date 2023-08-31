@@ -381,16 +381,16 @@
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
-        sh:in ("audio" "video" "film" "papier") ;
+        sh:in ("audio" "video" "film" "paper") ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "format"@en ;
         sh:name "formaat"@nl ;
         sh:name "format"@fr ;
         sh:severity sh:Violation ;
-        sh:message "dct:format is missing or not of type string or value is not in (audio video film papier)"@en ;
-        sh:message "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film papier)"@nl ;
-        sh:message "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film papier)"@fr ;
+        sh:message "dct:format is missing or not of type string or value is not in (audio video film paper)"@en ;
+        sh:message "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film paper)"@nl ;
+        sh:message "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film paper)"@fr ;
     ],
     [
         a sh:PropertyShape ;
