@@ -1,279 +1,218 @@
+@prefix apf:    <http://jena.hpl.hp.com/ARQ/property#> .
+@prefix fx:     <http://sparql.xyz/facade-x/ns/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
-@prefix evType: <http://id.loc.gov/vocabulary/preservation/eventType/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix cc: <http://creativecommons.org/ns#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix dct: <http://purl.org/dc/terms/> .
-@prefix schema: <https://schema.org/> .
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix rov: <http://www.w3.org/ns/regorg#>.
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix meemoo: <http://data.meemoo.be/ns/> .
-@prefix mh: <http://data.meemoo.be/ns/mh/> .
-
-@base <https://data.hetarchief.be/ns/event> .
-
-
-<> a skos:ConceptScheme ;
-  dct:title "Meemoo PREMIS events thesaurus".
-
-# --- van Library of Congress
-
-evType:acc a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "accession"@en .
-
-evType:fix a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "fixity check"@en .
-
-# --- digitalisering PREMIS events
-
-# | ID | Event name     | mandatory | linkingAgentIdentifierType | premis:linkingObjectIdentifierType | linkingObjectIdentifierValue    | linkingObjectIdentifierRole |                  USE                  |
-# |----|----------------|-----------|----------------------------|------------------------------------|---------------------------------|-----------------------------|:-------------------------------------:|
-# | 1  | INSPECTION     |     x     | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |
-
-<#inspection> a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "inspection"@en;
-    rdfs:subClassOf premis:Event.
-
-
-# | 2  | IDENTIFICATION |     x     | VIAA SP Agent ID           | VIAA Object ID                     | pid_cdinfo.xml                  | outcome                     | DISK-SHARE-NOEVENTS                   |
-
-<#identification>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "identification"@en;
-    rdfs:subClassOf premis:Event.
-
-# | 3  | CLEANING       |           | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |
-
-<#cleaning>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "cleaning"@en;
-    rdfs:subClassOf premis:Event.
-
-# | 4  | REPAIR         |           | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |
-
-<#repair>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "repair"@en;
-    rdfs:subClassOf premis:Event.
-
-# | 5  | MIGRATION      |     x     | VIAA SP Agent ID           | VIAA Object ID VIAA Object ID      | pid_iso.iso pid_ddrescue.xml    | source outcome              | TAPE-SHARE-EVENTS DISK-SHARE-NOEVENTS |
-
-<#migration>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "migration"@en;
-    owl:equivalentClass evType:mig;
-    rdfs:subClassOf premis:Event.
-
-# | 6  | VALIDATION     |     x     | VIAA SP Agent ID           | VIAA Object ID                     | pid_isolyzer.xml                | outcome                     | DISK-SHARE-NOEVENTS                   |
-
-<#validation>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "validation"@en;
-    owl:equivalentClass evType:val;
-    rdfs:subClassOf premis:Event.
-
-
-# | 7  | TRANSCODING    |     x     | VIAA SP Agent ID           | VIAA Object ID VIAA Object ID      | pid_001_mkv.mkv pid_002_mkv.mkv | source source               | TAPE-SHARE-EVENTS TAPE-SHARE-EVENTS   |
-
-<#transcoding>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "transcoding"@en;
-    rdfs:subClassOf premis:Event.
-
-# | 8  | QC             |     x     | VIAA SP Agent ID           | VIAA Object ID                     | pid.complex                     | outcome                     | TAPE-SHARE-EVENTS                     |
-
-<#qc>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "quality control"@en;
-    rdfs:subClassOf premis:Event.
-
-# | 9  | BAKING         |           | VIAA SP Agent ID           | VIAA Carrier ID                    | pid                             | source                      | DISK-SHARE-NOEVENTS                   |  
-
-<#baking>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "baking"@en;
-    rdfs:subClassOf premis:Event.
-
-# --- mediahaven PREMIS events
-
-# |   Family   |                 Name                |       Legacy Name      | Since | Metadata Update |                                                     Description                                                    |
-# |:----------:|:-----------------------------------:|:----------------------:|:-----:|:---------------:|:------------------------------------------------------------------------------------------------------------------:|
-# | FLOW       | RECORDS.FLOW.TRANSCODE              | TRANSCODE              |       |                 | Transcode job is created                                                                                           |
-
-<#transcode>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "transcode"@en;
-    skos:broader <#transcoding>;
-    mh:name "RECORDS.FLOW.TRANSCODE";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.TRANSCODED             | TRANSCODED             |       | #               | Transcode job is finished                                                                                          |
-
-<#transcoded>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "transcoded"@en;
-    skos:broader <#transcoding>;
-    mh:name "RECORDS.FLOW.TRANSCODED";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.RETRANSCODE            | RETRANSCODE            |       |                 | Retranscode job is created                                                                                         |
-
-<#retranscode>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "retranscode"@en;
-    skos:broader <#transcoding>;
-    mh:name "RECORDS.FLOW.RETRANSCODE";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.EXPORT                 | EXPORT                 |       |                 | Export job is created                                                                                              |
-
-<#export>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "export"@en;
-    skos:broader evType:exp;
-    mh:name "RECORDS.FLOW.EXPORT";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.EXPORTED               | EXPORTED               |       |                 | Export job is finished                                                                                             |
-
-<#exported>  a skos:Concept; 
-    skos:inScheme <>;
-    skos:prefLabel "exported"@en;
-    skos:broader evType:exp;
-    mh:name "RECORDS.FLOW.EXPORTED";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.ARCHIVED               | ARCHIVED               |       | #               | File has successfully acquired the Administative.ArchiveStatus on_disk or on_tape                                  |
-
-<#archived>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "archived"@en;
-    skos:broader evType:acc;
-    mh:name "RECORDS.FLOW.ARCHIVED";
-    rdfs:subClassOf premis:Event.
-
-
-# | FLOW       | RECORDS.FLOW.SIP_ALREADY_ARCHIVED   | SIP_ALREADY_ARCHIVED   |       |                 | SIP was resubmitted while it is already archived based on the ExternalId                                           |
-
-<#sip_already_archived>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "SIP already archived"@en;
-    skos:broader evType:acc;
-    mh:name "RECORDS.FLOW.SIP_ALREADY_ARCHIVED";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.SIP_ALREADY_PROCESSING | SIP_ALREADY_PROCESSING |       |                 | SIP was resubmitted while it is already processing based on the ExternalId                                         |
-
-<#sip_already_processing>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "SIP already processing"@en;
-    skos:broader evType:acc;
-    mh:name "RECORDS.FLOW.SIP_ALREADY_PROCESSING";
-    rdfs:subClassOf premis:Event.
-
-# | FLOW       | RECORDS.FLOW.SIP_DETECTED           | SIP_DETECTED           |       |                 |                                                                                                                    |
-
-<#sip_detected>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "SIP detected"@en;
-    skos:broader evType:acc;
-    mh:name "RECORDS.FLOW.SIP_DETECTED";
-    rdfs:subClassOf premis:Event.
-
-# | CREATE     | RECORDS.CREATE                      | CREATE                 |       | #               | Record is created                                                                                                  |
-
-<#creation>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "create"@en;
-    owl:equivalentClass evType:cre;
-    mh:name "RECORDS.CREATE";
-    rdfs:subClassOf premis:Event.
-
-# | UPDATE     | RECORDS.UPDATE                      | UPDATE                 |       | #               | Metadata of record is updated                                                                                      |
-
-<#metadata_update>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "metadata update"@en;
-    owl:equivalentClass evType:mem;
-    mh:name "RECORDS.UPDATE";
-    rdfs:subClassOf premis:Event.
-
-# | UPDATE     | RECORDS.UPDATE.PUBLISH              | PUBLISH                |       | #               | Record has been published from the ingest space or auto-published                                                  |
-
-<#publish>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "publish"@en;
-    owl:equivalentClass evType:mem;
-    mh:name "RECORDS.UPDATE.PUBLISH";
-    rdfs:subClassOf premis:Event.
-
-# | DELETE     | RECORDS.DELETE                      | DELETE                 |       |                 | Record is logically deleted                                                                                        |
-
-<#delete>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "delete"@en;
-    mh:name "RECORDS.DELETE";
-    rdfs:subClassOf premis:Event.
-
-# | DELETE     | RECORDS.DELETE.UNDELETE             | UNDELETE               |       |                 | Logically deletion of record is undone                                                                             |
-
-<#undelete>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "undelete"@en;
-    mh:name "RECORDS.DELETE.UNDELETE";
-    rdfs:subClassOf premis:Event.
-
-# | DELETE     | RECORDS.DELETE.PERMANENTLY_DELETED  |                        | 21.2  |                 | Record is permanently deleted and this delete can no longer be undone, all storage is reclaimed shortly afterwards |
-
-<#permanently_deleted>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "deletion"@en;
-    mh:name "RECORDS.DELETE.PERMANENTLY_DELETED";
-    owl:equivalentClass evType:del;
-    rdfs:subClassOf premis:Event.
-
-# | VALIDATION | RECORDS.VALIDATION.VIRUS_CHECK      | VIRUS_CHECK            |       |                 | Virus check is performed                                                                                           |
-
-<#virus_check>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "virus check"@en;
-    mh:name "RECORDS.VALIDATION.VIRUS_CHECK";
-    owl:equivalentClass evType:vir; 
-    rdfs:subClassOf premis:Event.
-
-# | VALIDATION | RECORDS.VALIDATION.MD5_CHECK        | MD5_CHECK              |       |                 | MD5 generated from file is compared with the reference                                                             |
-
-<#md5_check>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "md5 check"@en;
-    mh:name "RECORDS.VALIDATION.MD5_CHECK";
-    skos:broader evType:mes; # message digest calculation 
-    rdfs:subClassOf premis:Event.
-
-# | VALIDATION | RECORDS.VALIDATION.VERIFY           | VERIFY                 |       |                 | Fixity of the file will be checked by exporting it   |
-
-<#verify>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "verify"@en;
-    mh:name "RECORDS.VALIDATION.VERIFY";
-    skos:broader evType:fix; 
-    rdfs:subClassOf premis:Event.
-                                                              
-# | VALIDATION | RECORDS.VALIDATION.VERIFIED         | VERIFIED               |       |                 | Fixity check is finished      |
-
-<#verified>  a skos:Concept;
-    skos:inScheme <>;
-    skos:prefLabel "fixity check finished"@en;
-    mh:name "RECORDS.VALIDATION.VERIFIED";
-    skos:broader evType:fix; 
-    rdfs:subClassOf premis:Event.
-
-                                                                                     
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix xyz:    <http://sparql.xyz/facade-x/data/> .
+
+<https://data.hetarchief.be/id/event-type/transform>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "Conversion de métadonnées dans un ou plusieurs formats vers un ou plusieurs autres formats."@fr , "Converting metadata in one or more format(s) to another format(s)."@en , "Het omzetten van metadata in één of meerdere formaat//formaten naar een ander formaat/andere formaten."@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "transformation"@fr , "transform"@en , "tranformatie"@nl .
+
+<https://data.hetarchief.be/id/event-type/digitization>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "numérisation"@fr , "digitalisering"@nl ;
+        skos:broader     <https://data.hetarchief.be/id/event-type/migration> , <https://data.hetarchief.be/id/event-type/creation> ;
+        skos:definition  "La conversion d'informations analogiques en informations numériques, pendant laquelle une modification du signal a lieu (c'est-à-dire passage de l'analogique au numérique). "@fr , "The conversion of analog to digital information, whereby the signal is changed (i.e., from analog to digital). "@en , "Het omzetten van analoge naar digitale informatie, waarbij het signaal wordt gewijzigd (i.e. van analoog naar digitaal). "@nl ;
+        skos:example     "digitalisering van filmreel, digitalisering van audiocassettes"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "digitaliseren"@nl , "digitization"@en , "numérisation"@fr .
+
+<https://data.hetarchief.be/id/event-type>
+        rdf:type        skos:ConceptScheme ;
+        skos:prefLabel  "Thesaurus event-types" .
+
+<https://data.hetarchief.be/id/event-type/check_in>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "L'enregistrement qu'un support est arrivé chez une partie et est prêt pour la prochaine étape du processus de numérisation."@fr , "Registering that a carrier has arrived at a party and is ready for the next step in the digitization process."@en , "Het registreren dat een drager is aangekomen bij een partij en klaar is voor de volgende stap in het digitaliseringsproces."@nl ;
+        skos:example     "een drager komt aan bij de dienstenleverancier nadat hij opgehaald werd bij de contentpartner door de Service Provider"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "check-in"@en , "check-in"@nl , "enregistrement"@fr .
+
+<https://data.hetarchief.be/id/event-type/ingest>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "ingestion"@en ;
+        skos:definition  "The process of adding objects to a preservation repository."@en , "Le processus d’ajout d’objets à une archive."@fr , "Het proces van het toevoegen van objecten aan een archief."@nl ;
+        skos:exactmatch  <http://id.loc.gov/vocabulary/preservation/eventType/ing> ;
+        skos:example     "ingest van LTO-tape"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "inname"@nl , "ingest"@en , "ingérer"@fr .
+
+<https://data.hetarchief.be/id/event-type/editing>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "bewerking"@nl ;
+        skos:definition  "Editing the files resulting from the digitization/migration process in order to improve the result. In principle, this event leads to a derived file (mezzanine, browse or preview copy), but sometimes editing actions are also allowed on archive masters."@en , "Le montage des fichiers issus de la numérisation/migration afin d'améliorer le résultat. En principe, cet événement donne lieu à un fichier dérivé (mezzanine ou copie de navigation/affichage), mais parfois les actions de montage sont également autorisées sur les archives maîtres."@fr , "Het bewerken van de bestanden voortkomend uit de digitalisering/migratie om zo het resultaat te verbeteren. Dit event leidt in principe tot een afgeleid bestand (mezzanine, browse- of inkijkkopie), maar soms zijn editeeracties ook toegestaan op archiefmasters."@nl ;
+        skos:example     "het bijstellen van kleur bij film (colour grading, colorisation)"@nl , "synchronisatie van geluid met beeld bij film"@nl , "het beeld en geluid synchroniseren"@nl , "de kop (begin) en staart (einde) afknippen van een bestand om bv. ruis weg te halen"@nl , "een negatief positief maken bij glasplaten en film"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "édition"@fr , "editing"@en , "bewerken"@nl .
+
+<https://data.hetarchief.be/id/event-type/transcription>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "transcriptie"@nl ;
+        skos:broader     <https://data.hetarchief.be/id/event-type/creation> ;
+        skos:definition  "Extraire (par des techniques manuelles ou automatiques) des données textuelles (d'une représentation numérique) du support."@fr , "Het extraheren (door manuele of automatische technieken) van tekstuele data uit (een digitale representatie van) de drager."@nl , "Extracting (by manual or automatic techniques) textual data from (a digital representation of) the carrier."@en ;
+        skos:example     "OCR van de krantenpagina"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "transcriberen"@nl , "transcription"@fr , "transcription"@en .
+
+<https://data.hetarchief.be/id/event-type/compression>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "Processus de cryptage des données pour économiser de l'espace de stockage ou du temps de transmission."@fr , "The process of encoding data to save storage space or transmission time."@en , "Het proces van gegevens coderen om opslagruimte of verzendtijd te besparen."@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "compression"@fr , "compression"@en , "compressie"@nl .
+
+<https://data.hetarchief.be/id/event-type/decompression>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "Le processus d’inversion de la compression."@fr , "Het proces van het omkeren van de compressie."@nl , "The process of reversing the effects of compression."@en ;
+        skos:exactmatch  <http://id.loc.gov/vocabulary/preservation/eventType/dec> ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "décompression"@fr , "decompression"@en , "decompressie"@nl .
+
+<https://data.hetarchief.be/id/event-type/check_out>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "Het registreren dat een drager is vertrokken bij een partij en op weg is naar de volgende partij in het digitaliseringsproces."@nl , "Registering that a carrier has left one party and is on its way to the next party in the digitization process."@en , "L'enregistrement qu'un support a quitté une partie et est en route vers la partie suivante dans le processus de numérisation."@fr ;
+        skos:example     "een drager vertrekt bij de contentpartner naar de dienstenleverancier"@nl , "Een drager vertrekt bij de dienstenleverancier terug naar de contentpartner"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "départ"@fr , "check-out"@en , "check-out"@nl .
+
+<https://data.hetarchief.be/id/event-type/validation>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "Het controleren en vervolgens goed- of afkeuren dat een bestand voldoet aan de gezette technische voorwaarden. Validatie is een 'objectieve controle': iets voldoet of voldoet niet aan de vormeisen/technische voorwaarden."@nl , "Checking and subsequent approval or rejection that a file meets the set technical conditions. Validation is an 'objective check': something meets or does not meet the formal requirements/technical conditions."@en , "La vérification puis la (dés)approbation qu'un fichier répond aux conditions techniques fixées. La validation est un 'contrôle objectif': quelque chose satisfait ou non aux exigences formelles/conditions techniques."@fr ;
+        skos:example     "voldoet een ALTO aan de specificatie"@nl , "het gebruik van mediarapporten bij kranten"@nl , "het gebruik van DVAnalyzer bij DV"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "validatie"@nl , "validation"@fr , "validation"@en ;
+        skos:related     <https://data.hetarchief.be/id/event-type/quality_control> .
+
+<https://data.hetarchief.be/id/event-type/transcoding>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "Converting (usually transcode + rewrap) a file from the digitization/migration chain to a different file format or to the same file format with, for example, a different bit rate. Transcoding mainly occurs during the creation of a mezzanine/browse/preview copy, but can also occur for preservation purposes."@en , "Het omzetten (meestal transcode + rewrap) van een bestand uit de digitaliserings-/migratieketen naar een ander bestandsformaat of naar hetzelfde bestansformaat met bv. een andere bitrate. Transcodering komt vooral voor bij de creatie van een mezzanine/browse-/inkijkkopie, maar kan ook voorkomen omwille van preserveringsdoeleinden."@nl , "La conversion (généralement transcoder + réemballer) d'un fichier de la chaîne de numérisation/migration vers un format de fichier différent ou vers le même format de fichier avec, par exemple, un débit binaire différent. Le transcodage se produit principalement lors de la création d'une copie mezzanine/navigation/affichage, mais peut également se produire à des fins de préservation."@fr ;
+        skos:example     "het omzetten van de archiefmaster (DNG) naar de mezzaninekopie (TIFF)"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "transcoding"@en , "transcodage"@fr , "transcoderen"@nl .
+
+<https://data.hetarchief.be/id/event-type/cleaning>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "opschoning"@nl ;
+        skos:definition  "Het verwijderen van (niet-materiaaleigen) substanties die het originele materiaal (i.e. het te digitaliseren object) niet beïnvloeden of wijzigen. Dit houdt geen wijzigingen in aan het te digitaliseren object."@nl , "The removal of (non-material-specific) substances that do not affect or alter the original material (i.e. the object that is to be digitized)."@en , "L'enlèvement de substances (non-spécifique au matériau) qui n'affectent ni ne modifient le matériau d'origine (c'est-à-dire l'objet à numériser). Cela n'implique aucune modification de l'objet à numériser."@fr ;
+        skos:example     "schoonmaken van een filmreel voor digitalisering"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "nettoyage"@fr , "cleaning"@en , "opschonen"@nl .
+
+<https://data.hetarchief.be/id/event-type/digital_transfer>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "transfert numérique"@fr ;
+        skos:broader     <https://data.hetarchief.be/id/event-type/creation> , <https://data.hetarchief.be/id/event-type/migration> ;
+        skos:definition  "The conversion of digital information on one carrier into digital information on another carrier that can contain a digital signal."@en , "Het omzetten van digitale informatie op een drager naar digitale informatie op een andere drager die een digitaal signaal kan bevatten."@nl , "La conversion d'informations numériques sur un support en informations numériques sur un autre support pouvant contenir un signal numérique."@fr ;
+        skos:example     "de omzetting van digitale betacam"@nl , "de omzetting van DV"@nl , "omzetting van optische schijf naar LTO-tape"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "transfert digital"@fr , "digital transfer"@en , "digitale transfer"@nl .
+
+<https://data.hetarchief.be/id/event-type/transfer>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "overbrenging"@nl , "overdracht"@nl , "overzetten"@nl ;
+        skos:definition  "Transfert des informations numériques d'un support de stockage vers un autre support de stockage."@fr , "Het overzetten van de digitale informatie op één opslagmedium naar een ander opslagmedium."@nl , "Transferring the digital information on one storage medium to another storage medium."@en ;
+        skos:exactmatch  <https://id.loc.gov/vocabulary/preservation/eventType/tra> ;
+        skos:example     "het verplaatsen/overzetten van digitale informatie naar een medium voor ingest, bv. LTO"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "transfert"@fr , "overdragen"@nl , "transfer"@en .
+
+<https://data.hetarchief.be/id/event-type/registration>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "registratie"@nl ;
+        skos:definition  "Collecte de métadonnées de base (c'est-à-dire les métadonnées minimales à pouvoir numériser) sur le transporteur."@fr , "Het verzamelen van basismetadata (i.e. minimale metadata om aan digitalisering te kunnen doen) over de drager."@nl , "Collecting basic metadata (i.e. minimum metadata to be able to digitize) about the carrier."@en ;
+        skos:example     "inhoudelijke en technische registratie film"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "registration"@en , "enregistrement"@fr , "registreren"@nl .
+
+<https://data.hetarchief.be/id/event-type/quality_control>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:definition  "La vérification puis la (dés)approbation qu'un fichier répond aux exigences de contenu. La validation est une 'vérification subjective': il n'y a pas d'ensemble de références fixes, il existe donc une certaine 'plage' dans laquelle quelque chose doit se situer pour être approuvé."@fr , "Checking and subsequent approval or rejection that a file meets the content requirements. Validation is a 'subjective check': there is no fixed reference set, so there is a certain 'range' within which something must fall in order to be approved."@en , "Het controleren en vervolgens goed- of afkeuren dat een bestand voldoet aan de inhoudelijke eisen. Kwaliteitscontrole is een 'subjectieve controle': er is geen vastgestelde referentieset, er is dus een bepaald 'bereik' waarbinnen iets moet vallen om goedgekeurd te worden."@nl ;
+        skos:example     "het luisteren en/of bekijken van audio/filmpjes/... om te beoordelen of het resultaat van de digitalisering/migratie aanvaardbaar is"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "kwaliteitscontrole"@nl , "contrôle de la qualité"@fr , "quality control"@en ;
+        skos:related     <https://data.hetarchief.be/id/event-type/validation> .
+
+<https://data.hetarchief.be/id/event-type/format_identification>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "identificatie"@nl , "format identification"@en , "formaat identificatie"@nl , "identification du format"@fr ;
+        skos:definition  "Déterminer que le porteur est bien celui qu'il prétend être, sur la base des caractéristiques/spécifications."@fr , "Establishing that the carrier is actually of the format type it claims to be, based on its characteristics/specifications."@en , "Het vaststellen dat de drager ook werkelijk degene is die hij claimt te zijn, op basis van de karakteristieken/specificaties."@nl ;
+        skos:example     "controle van de formaatversie (negatief vs. positief) en kleur bij glasplaten"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "identificeren"@nl , "identification"@fr , "identification"@en .
+
+<https://data.hetarchief.be/id/event-type/inspection>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "keuring"@nl ;
+        skos:definition  "Une inspection visuelle et physique (par exemple, regarder, sentir, ouvrir et fermer) d'un support particulier en vue d'identifier les phénomènes qui influencent la numérisation (ou la logistique)."@fr , "Een visuele en materiële inspectie (bv. bekijken, ruiken, eens openen en sluiten) van een bepaalde drager met het oog op het vaststellen van fenomenen die de digitalisering (of logistiek) beïnvloeden."@nl , "A visual and material inspection (e.g. viewing, smelling, opening and closing) of a given carrier with the purpose of identifying phenomena that affect digitization (or logistics)."@en ;
+        skos:example     "Het nakijken door de SP of de drager effectief tot het dragerformaat behoort zoals deze geregistreerd is"@nl , "controle van de staat van de glasplaat"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "inspection"@fr , "inspection"@en , "keuren"@nl .
+
+<https://data.hetarchief.be/id/event-type/baking>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:broader     <https://data.hetarchief.be/id/event-type/repair> ;
+        skos:definition  "Chauffer un support audiovisuel avec une bande magnétisée pendant une certaine période de temps pour remédier à l'adhésivité causée par exemple par 'soft binder syndrome' ou le syndrome du collant ('sticky shed syndrome') (hydrolyse) et pour amener le support dans un meilleur état de numérisation."@fr , "Heating an audiovisual carrier with magnetized tape for a certain period of time to remedy the stickiness caused by e.g. the soft binder syndrome or sticky shed syndrome (hydrolysis) and to bring the carrier into a better digitizable state."@en , "Het voor een bepaalde tijd verhitten van een audiovisuele drager met gemagnetiseerde tape om de kleverigheid veroorzaakt door bv. het soft binder syndrome of sticky shed syndrome (hydrolyse) te remediëren en de drager in een beter digitaliseerbare toestand te brengen."@nl ;
+        skos:example     "Het verhitten van een VHS-tape om een beter digitaliseringsresultaat te verkrijgen"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "cuisson"@fr , "baking"@en , "bakken"@nl .
+
+<https://data.hetarchief.be/id/event-type/calibration>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "kalibratie"@nl ;
+        skos:definition  "Het afstellen van de digitaliseringsapparatuur volgens de gestelde technische eisen."@nl , "Ajuster les équipements de numérisation selon les exigences techniques."@fr , "Adjusting the digitization equipment according to the technical requirements."@en ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:prefLabel   "calibrage"@fr , "calibration"@en , "kalibreren"@nl .
+
+<https://data.hetarchief.be/id/event-type/creation>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "creatie"@nl ;
+        skos:definition  "Creating a digital resource."@en , "Création d'une ressource numérique."@fr , "Het aanmaken van een digitale resource."@nl ;
+        skos:exactmatch  <http://id.loc.gov/vocabulary/preservation/eventType/cre> ;
+        skos:example     "een S3-object"@nl , "een digitaal bestand"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:narrower    <https://data.hetarchief.be/id/event-type/migration> , <https://data.hetarchief.be/id/event-type/digital_transfer> , <https://data.hetarchief.be/id/event-type/transcription> , <https://data.hetarchief.be/id/event-type/digitization> ;
+        skos:prefLabel   "création"@fr , "creëren"@nl , "creation"@en .
+
+<https://data.hetarchief.be/id/event-type/repair>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:altLabel    "herstelling"@nl ;
+        skos:definition  "Het herstellen van de informatiedrager zodat hij in een beter digitaliseerbare/migreerbare toestand komt. Dit houdt mogelijke wijzigingen in aan het te digitaliseren object."@nl , "Restoring the information carrier so that it is in a better digitizable/migrateable state. This includes possible changes to the object that is to be digitized."@en , "La restauration du support d'informations afin qu'il soit dans un meilleur état numérisable/migrable. Cela inclut des éventuelles modifications de l'objet à numériser."@fr ;
+        skos:example     "het aan elkaar zetten van materiaal"@nl , "tandwieltjes herstellen"@nl , "kleppen van cassettes herstellen"@nl , "een tape in een nieuwe huls steken"@nl ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:narrower    <https://data.hetarchief.be/id/event-type/baking> ;
+        skos:prefLabel   "réparation"@fr , "repair"@en , "herstellen"@nl .
+
+<https://data.hetarchief.be/id/event-type/migration>
+        rdf:type         skos:Concept ;
+        rdfs:subClassOf  premis:Event ;
+        skos:broader     <https://data.hetarchief.be/id/event-type/creation> ;
+        skos:definition  "The conversion of one signal to another. "@en , "Het omzetten van een signaal naar een ander signaal. "@nl , "La conversion d'un signal en un autre."@fr ;
+        skos:inScheme    <https://data.hetarchief.be/id/event-type> ;
+        skos:narrower    <https://data.hetarchief.be/id/event-type/digitization> , <https://data.hetarchief.be/id/event-type/digital_transfer> ;
+        skos:prefLabel   "migration"@fr , "migration"@en , "migratie"@nl .
