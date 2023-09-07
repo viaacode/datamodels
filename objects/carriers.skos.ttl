@@ -10,8 +10,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#16mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "16mm film"@en,
-        "16mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "16mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/1InchAudioTape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -20,8 +19,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#1InchAudioTape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "1 inch audio tape"@en,
-        "1\" audio tape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "1\" audio tape"@nl .
 
 <https://data.hetarchief.be/id/carrier/1InchVideotape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -31,8 +29,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#1InchVideotape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "One inch videotape"@en,
-        "1\" videotape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "1\" videotape"@nl .
 
 <https://data.hetarchief.be/id/carrier/22mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -42,8 +39,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#22mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "22mm film"@en,
-        "22mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "22mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/28mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -53,8 +49,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#28mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "28mm film"@en,
-        "28mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "28mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/2InchAudioTape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -63,8 +58,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#2InchAudioTape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "2 inch audio tape"@en,
-        "2\" audio tape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "2\" audio tape"@nl .
 
 <https://data.hetarchief.be/id/carrier/2InchVideotape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -74,8 +68,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#2InchVideotape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Two inch videotape"@en,
-        "2\" videotape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "2\" videotape"@nl .
 
 <https://data.hetarchief.be/id/carrier/35mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -85,8 +78,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#35mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "35mm film"@en,
-        "35mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "35mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/70mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -96,8 +88,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#70mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "70mm film"@en,
-        "70mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "70mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/8Track> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -107,8 +98,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#8Track,https://obsoletemedia.org/8-track/> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "8-track"@en,
-        "8-track"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "8-track"@nl .
 
 <https://data.hetarchief.be/id/carrier/8mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -118,8 +108,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#8mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "8mm film"@en,
-        "8mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "8mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/9andaHalfmmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -129,8 +118,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Super8mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "9.5mm film"@en,
-        "9.5mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "9.5mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/ADAT> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -140,24 +128,21 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "ADAT" ;
     skos:prefLabel "ADAT"@en,
-        "ADAT"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "ADAT"@nl .
 
 <https://data.hetarchief.be/id/carrier/BetacamOxide> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/Betacam> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Betacam Oxide"@en,
-        "Betacam Oxide"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Betacam Oxide"@nl .
 
 <https://data.hetarchief.be/id/carrier/BetacamSP> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/Betacam> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Betacam SP"@en,
-        "Betacam SP"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Betacam SP"@nl .
 
 <https://data.hetarchief.be/id/carrier/BetacamSX> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -167,8 +152,7 @@
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#BetacamSX> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Betacam SX"@en,
-        "Betacam SX"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Betacam SX"@nl .
 
 <https://data.hetarchief.be/id/carrier/Betamax> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -177,8 +161,7 @@
         "Een digitaal videocassetteformaat van ½ inch. Mogelijk ook bekend als Beta. Soorten Betamax omvatten ook Beta Hi-Fi, ED Betamax en Super Betamax."@nl ;
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Betamax> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
-    skos:prefLabel "Betamax"@en ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+    skos:prefLabel "Betamax"@en .
 
 <https://data.hetarchief.be/id/carrier/BluRayDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -188,8 +171,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "BD" ;
     skos:prefLabel "Blu-ray"@en,
-        "Blu-ray"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Blu-ray"@nl .
 
 <https://data.hetarchief.be/id/carrier/CD-R> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -199,8 +181,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "CD-R,CD-WO" ;
     skos:prefLabel "Compact Disc Recordable"@en,
-        "Compact Disc Recordable"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Compact Disc Recordable"@nl .
 
 <https://data.hetarchief.be/id/carrier/CD-RW> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -208,8 +189,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "CD-RW" ;
     skos:prefLabel "Compact Disc ReWritable"@en,
-        "Compact Disc ReWritable"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Compact Disc ReWritable"@nl .
 
 <https://data.hetarchief.be/id/carrier/CDVideo> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -217,8 +197,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "CD-V" ;
     skos:prefLabel "CD-Video"@en,
-        "CD-Video"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "CD-Video"@nl .
 
 <https://data.hetarchief.be/id/carrier/CompactCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -226,8 +205,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "CC" ;
     skos:prefLabel "Compact Cassette"@en,
-        "Compact Cassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Compact Cassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/CompactVideoCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -237,16 +215,14 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "CVC" ;
     skos:prefLabel "Compact Video Cassette"@en,
-        "Compact Video Cassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Compact Video Cassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/D-VHS> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "D-VHS"@en,
-        "D-VHS"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D-VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier/D1> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -257,8 +233,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D1" ;
     skos:prefLabel "D1"@en,
-        "D1"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D1"@nl .
 
 <https://data.hetarchief.be/id/carrier/D2> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -269,8 +244,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D2" ;
     skos:prefLabel "D2"@en,
-        "D2"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D2"@nl .
 
 <https://data.hetarchief.be/id/carrier/D3> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -281,8 +255,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D3" ;
     skos:prefLabel "D3"@en,
-        "D3"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D3"@nl .
 
 <https://data.hetarchief.be/id/carrier/D5> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -293,8 +266,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D5" ;
     skos:prefLabel "D5"@en,
-        "D5"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D5"@nl .
 
 <https://data.hetarchief.be/id/carrier/D6> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -305,8 +277,7 @@
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D6" ;
     skos:prefLabel "D6"@en,
-        "D6"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D6"@nl .
 
 <https://data.hetarchief.be/id/carrier/D9> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -321,8 +292,7 @@ Zoals zoveel producenten, lanceerde JVC een HD-variant onder de naam D9 HD. Er w
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D9" ;
     skos:prefLabel "D9"@en,
-        "D9"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "D9"@nl .
 
 <https://data.hetarchief.be/id/carrier/DCT> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -335,8 +305,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DCT" ;
     skos:prefLabel "DCT"@en,
-        "DCT"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DCT"@nl .
 
 <https://data.hetarchief.be/id/carrier/DV> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -347,24 +316,21 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#MiniDV> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "(Mini-)DV"@en,
-        "(Mini-)DV"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "(Mini-)DV"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCAM34> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DVCAM> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVCAM 34"@en,
-        "DVCAM 35"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCAM 35"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCAM40> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DVCAM> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVCAM 40"@en,
-        "DVCAM 41"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCAM 41"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCPro25> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -372,32 +338,28 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVCPro 25"@en,
-        "DVCPro 25"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCPro 25"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCPro50> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVCPro 50"@en,
-        "DVCPro 50"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCPro 50"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCProHD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVCPro HD"@en,
-        "DVCPro HD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCPro HD"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCProProgressive> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVCPro Progressive"@en,
-        "DVCPro Progressive"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCPro Progressive"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVD+R> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -405,8 +367,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DVD-R" ;
     skos:prefLabel "DVD+R"@en,
-        "DVD+R"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVD+R"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVD+RDL> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -414,8 +375,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DVD+R" ;
     skos:prefLabel "DVD+R DL"@en,
-        "DVD+R DL"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVD+R DL"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVD+RW> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -423,16 +383,14 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DVD-RW" ;
     skos:prefLabel "DVD+RW"@en,
-        "DVD+RW"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVD+RW"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVD-R> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DVD> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "DVD-R"@en,
-        "DVD-R"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVD-R"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVD-RW> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -440,8 +398,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DVD+R DL" ;
     skos:prefLabel "DVD-RW"@en,
-        "DVD-RW"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVD-RW"@nl .
 
 <https://data.hetarchief.be/id/carrier/Digital8> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -450,8 +407,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Digital8> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Digital8"@en,
-        "Digital8"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Digital8"@nl .
 
 <https://data.hetarchief.be/id/carrier/DigitalAudioTape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -461,8 +417,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DAT" ;
     skos:prefLabel "Digital Audio Tape"@en,
-        "Digital Audio Tape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Digital Audio Tape"@nl .
 
 <https://data.hetarchief.be/id/carrier/DigitalBetacam> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -472,8 +427,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DigitalBetacam> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Digital Betacam"@en,
-        "Digital Betacam"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Digital Betacam"@nl .
 
 <https://data.hetarchief.be/id/carrier/DigitalCompactCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -481,8 +435,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "DCC" ;
     skos:prefLabel "Digital Compact Cassette"@en,
-        "Digital Compact Cassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Digital Compact Cassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/Fidelpac> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -491,16 +444,14 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "NAB" ;
     skos:prefLabel "Fidelpac"@en,
-        "Fidelpac"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Fidelpac"@nl .
 
 <https://data.hetarchief.be/id/carrier/GlassPlate> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/PhotographicCarrier> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Glass Plate"@en,
-        "Glasplaat"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Glasplaat"@nl .
 
 <https://data.hetarchief.be/id/carrier/GrundigEN3> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -508,8 +459,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Grundig EN3"@en,
-        "Grundig EN3"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Grundig EN3"@nl .
 
 <https://data.hetarchief.be/id/carrier/HD-DVD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -518,8 +468,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "HD-DVD" ;
     skos:prefLabel "HD DVD"@en,
-        "HD DVD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "HD DVD"@nl .
 
 <https://data.hetarchief.be/id/carrier/HDCAM> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -533,8 +482,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "D11" ;
     skos:prefLabel "HDCAM"@en,
-        "HDCAM"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "HDCAM"@nl .
 
 <https://data.hetarchief.be/id/carrier/HDV> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -544,8 +492,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HDV> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "HDV"@en,
-        "HDV"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "HDV"@nl .
 
 <https://data.hetarchief.be/id/carrier/HalfInchAudioTape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -554,8 +501,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HalfInchAudioTape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "½ inch audio tape"@en,
-        "½\" audio tape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "½\" audio tape"@nl .
 
 <https://data.hetarchief.be/id/carrier/HalfInchVideotape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -566,8 +512,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HalfInchVideotape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "½ inch videotape"@en,
-        "½\" videotape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "½\" videotape"@nl .
 
 <https://data.hetarchief.be/id/carrier/Hi8> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -576,8 +521,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Hi8> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Hi8"@en,
-        "Hi8"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Hi8"@nl .
 
 <https://data.hetarchief.be/id/carrier/LacquerDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -589,8 +533,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#LacquerDisc> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Lacquer disc"@en,
-        "Lakplaat"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Lakplaat"@nl .
 
 <https://data.hetarchief.be/id/carrier/LaserDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -599,8 +542,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#LaserDisc> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "LaserDisc"@en,
-        "LaserDisc"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "LaserDisc"@nl .
 
 <https://data.hetarchief.be/id/carrier/M> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -609,8 +551,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
         "Een analoog videocassetteformaat van ½ inch. De M-cassette was een product van Matsushita en RCA, gelanceerd in 1982. Je herkent ze aan hun grijze kleur en de letter ‘M’. Helaas kende deze drager maar weinig succes."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "M"@en,
-        "M"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "M"@nl .
 
 <https://data.hetarchief.be/id/carrier/MII> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -620,48 +561,42 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#MII> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "MII"@en,
-        "MII"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "MII"@nl .
 
 <https://data.hetarchief.be/id/carrier/Magazine> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/Print> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Magazine"@en,
-        "Tijdschrift"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Tijdschrift"@nl .
 
 <https://data.hetarchief.be/id/carrier/Manuscript> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Manuscript"@en,
-        "Manuscript"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Manuscript"@nl .
 
 <https://data.hetarchief.be/id/carrier/MicroCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Microcassette"@en,
-        "Microcassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Microcassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/MiniCD-R> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/MiniCD> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Mini CD Recordable"@en,
-        "Mini CD Recordable"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Mini CD Recordable"@nl .
 
 <https://data.hetarchief.be/id/carrier/MiniCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Mini-Cassette"@en,
-        "Minicassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Minicassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/MiniDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -670,16 +605,14 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:broader <https://data.hetarchief.be/id/carrier/OpticalAudioDisc> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "MiniDisc"@en,
-        "MiniDisc"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "MiniDisc"@nl .
 
 <https://data.hetarchief.be/id/carrier/Newspaper> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/Print> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Newspaper"@en,
-        "Krant"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Krant"@nl .
 
 <https://data.hetarchief.be/id/carrier/PicoCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -688,8 +621,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Picocassette"@en,
-        "Picocassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Picocassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/QuarterInchAudioTape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -699,8 +631,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#QuarterInchAudioTape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "¼ inch audio tape"@en,
-        "Kwartduims audiotape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Kwartduims audiotape"@nl .
 
 <https://data.hetarchief.be/id/carrier/QuarterInchVideotape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -712,24 +643,21 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#QuarterInchVideotape> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "¼ inch videotape"@en,
-        "¼\" videotape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "¼\" videotape"@nl .
 
 <https://data.hetarchief.be/id/carrier/S-VHS> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "S-VHS"@en,
-        "S-VHS"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "S-VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier/S-VHS-C> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "S-VHS-C"@en,
-        "S-VHS-C"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "S-VHS-C"@nl .
 
 <https://data.hetarchief.be/id/carrier/SANYOV-CORD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -737,16 +665,14 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:definition "A cassette-based 1/2-inch analog videotape format."@en ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "SANYO V-Cord"@en,
-        "SANYO V-Cord"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "SANYO V-Cord"@nl .
 
 <https://data.hetarchief.be/id/carrier/SeparateSoundTrackFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Separate sound track film"@en,
-        "Aparte klankband film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Aparte klankband film"@nl .
 
 <https://data.hetarchief.be/id/carrier/ShellacDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -758,8 +684,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#ShellacDisc> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Shellac disc"@en,
-        "schellakplaat"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "schellakplaat"@nl .
 
 <https://data.hetarchief.be/id/carrier/StandardVCR> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -767,24 +692,21 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "VCR" ;
     skos:prefLabel "standard Video Cassette Recording"@en,
-        "standaard Video Cassette Recording"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "standaard Video Cassette Recording"@nl .
 
 <https://data.hetarchief.be/id/carrier/StandardVHS> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Standard VHS"@en,
-        "Standaard VHS"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Standaard VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier/StenoCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Steno-Cassette"@en,
-        "Stenocassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Stenocassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/Super16mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -794,8 +716,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Super16mmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "super 16mm film"@en,
-        "super 16mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "super 16mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/Super8mmFilm> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -805,8 +726,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#9andaHalfmmFilm> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "super 8mm film"@en,
-        "super 8mm film"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "super 8mm film"@nl .
 
 <https://data.hetarchief.be/id/carrier/SuperAudioCD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -814,8 +734,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "SACD" ;
     skos:prefLabel "Super Audio CD"@en,
-        "Super Audio CD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Super Audio CD"@nl .
 
 <https://data.hetarchief.be/id/carrier/SuperVideoCD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -825,8 +744,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "SVCD" ;
     skos:prefLabel "Super Video CD"@en,
-        "Super Video CD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Super Video CD"@nl .
 
 <https://data.hetarchief.be/id/carrier/SuperVideoRecording> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -834,8 +752,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "SVR" ;
     skos:prefLabel "Super Video Recording"@en,
-        "Super Video Recording"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Super Video Recording"@nl .
 
 <https://data.hetarchief.be/id/carrier/UmaticSP> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -845,8 +762,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
         "U-matic SP (Superior Performance) was een variant van de U-matic en werd in 1986 door Sony geïntroduceerd. Dit werd ook beschikbaar gesteld in het S-formaat. SP gebruikte chroomtape en bood een verbetering van de prestaties ten opzichte van eerdere generaties U-matic (low-band en high-band) met een horizontale resolutie van 330 lijnen, een betere signaal-ruisverhouding en Dolby C-ruisonderdrukking."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "U-matic (S) SP"@en,
-        "U-matic (S) SP"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "U-matic (S) SP"@nl .
 
 <https://data.hetarchief.be/id/carrier/VCR-LP> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -854,16 +770,14 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "VCR-LP" ;
     skos:prefLabel "Video Cassette Recording Long-Play"@en,
-        "Video Cassette Recording Long-Play"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Video Cassette Recording Long-Play"@nl .
 
 <https://data.hetarchief.be/id/carrier/VHS-C> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "VHS-C"@en,
-        "VHS-C"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "VHS-C"@nl .
 
 <https://data.hetarchief.be/id/carrier/Video-CD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -872,8 +786,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "VCD" ;
     skos:prefLabel "Video CD"@en,
-        "Video CD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Video CD"@nl .
 
 <https://data.hetarchief.be/id/carrier/Video2000> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -882,8 +795,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "VCC" ;
     skos:prefLabel "Video2000"@en,
-        "Video2000"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Video2000"@nl .
 
 <https://data.hetarchief.be/id/carrier/Video8> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -892,8 +804,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Video8> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Video8"@en,
-        "Video8"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Video8"@nl .
 
 <https://data.hetarchief.be/id/carrier/VinylRecording> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -903,16 +814,14 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#VinylRecording> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Vinyl recording"@en,
-        "Vinylplaat"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Vinylplaat"@nl .
 
 <https://data.hetarchief.be/id/carrier/W-VHS> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "W-VHS"@en,
-        "W-VHS"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "W-VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier/WaxCylinder> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -923,8 +832,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#WaxCylinder> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Wax cylinder"@en,
-        "wassen rol"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "wassen rol"@nl .
 
 <https://data.hetarchief.be/id/carrier/WireRecording> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -936,8 +844,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#WireRecording> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:prefLabel "Wire recording"@en,
-        "draadspoel"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "draadspoel"@nl .
 
 <https://data.hetarchief.be/id/carrier/XDCAM> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -946,8 +853,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:notation "PFD" ;
     skos:prefLabel "XDCAM"@en,
-        "XDCAM"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "XDCAM"@nl .
 
 <https://data.hetarchief.be/id/carrier/MiniCD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -957,8 +863,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:narrower <https://data.hetarchief.be/id/carrier/MiniCD-R> ;
     skos:prefLabel "Mini CD"@en,
-        "Mini-CD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Mini-CD"@nl .
 
 <https://data.hetarchief.be/id/carrier/PhotographicCarrier> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -967,8 +872,7 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     skos:inScheme <https://data.hetarchief.be/id/carrier> ;
     skos:narrower <https://data.hetarchief.be/id/carrier/GlassPlate> ;
     skos:prefLabel "photographic carrier"@en,
-        "fotografische drager"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "fotografische drager"@nl .
 
 <https://data.hetarchief.be/id/carrier/Umatic> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -983,8 +887,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
     skos:narrower <https://data.hetarchief.be/id/carrier/UmaticSP> ;
     skos:notation "SMPTE E" ;
     skos:prefLabel "U-matic (S)"@en,
-        "U-Matic (S)"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "U-Matic (S)"@nl .
 
 <https://data.hetarchief.be/id/carrier/AudioCD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -998,8 +901,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/CD-RW> ;
     skos:notation "CDDA,CD-DA" ;
     skos:prefLabel "Compact Disc"@en,
-        "Compact Disc"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Compact Disc"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCAM> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1010,8 +912,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
     skos:narrower <https://data.hetarchief.be/id/carrier/DVCAM34>,
         <https://data.hetarchief.be/id/carrier/DVCAM40> ;
     skos:prefLabel "(Mini-)DVCAM"@en,
-        "(Mini-)DVCAM"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "(Mini-)DVCAM"@nl .
 
 <https://data.hetarchief.be/id/carrier/Print> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1020,8 +921,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
     skos:narrower <https://data.hetarchief.be/id/carrier/Magazine>,
         <https://data.hetarchief.be/id/carrier/Newspaper> ;
     skos:prefLabel "print"@en,
-        "drukwerk"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "drukwerk"@nl .
 
 <https://data.hetarchief.be/id/carrier/8mmtapevideo> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1033,8 +933,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/Hi8>,
         <https://data.hetarchief.be/id/carrier/Video8> ;
     skos:prefLabel "8mm tape video"@en,
-        "8mm"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "8mm"@nl .
 
 <https://data.hetarchief.be/id/carrier/DigitalVideoCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1047,8 +946,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/DVCAM>,
         <https://data.hetarchief.be/id/carrier/HDV> ;
     skos:prefLabel "Digital Video Cassette"@en,
-        "Digital Video Cassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Digital Video Cassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/GramophoneRecord> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1061,8 +959,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/ShellacDisc>,
         <https://data.hetarchief.be/id/carrier/VinylRecording> ;
     skos:prefLabel "Gramophone record"@en,
-        "Grammofoonplaat"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Grammofoonplaat"@nl .
 
 <https://data.hetarchief.be/id/carrier/VCR> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1074,8 +971,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/VCR-LP> ;
     skos:notation "VCR" ;
     skos:prefLabel "Video Cassette Recording"@en,
-        "Video Cassette Recording"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Video Cassette Recording"@nl .
 
 <https://data.hetarchief.be/id/carrier/VideoCarrier> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1090,8 +986,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/OpticalVideoDisc>,
         <https://data.hetarchief.be/id/carrier/Videocassette> ;
     skos:prefLabel "video carrier"@en,
-        "videodrager"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "videodrager"@nl .
 
 <https://data.hetarchief.be/id/carrier/Betacam> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1104,8 +999,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/BetacamSX>,
         <https://data.hetarchief.be/id/carrier/DigitalBetacam> ;
     skos:prefLabel "Betacam"@en,
-        "Betacam"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Betacam"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVCPRO> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1118,8 +1012,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/DVCProHD>,
         <https://data.hetarchief.be/id/carrier/DVCProProgressive> ;
     skos:prefLabel "DVCPRO"@en,
-        "DVCPRO"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVCPRO"@nl .
 
 <https://data.hetarchief.be/id/carrier/OpenReelAudiotape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1135,8 +1028,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/HalfInchAudioTape>,
         <https://data.hetarchief.be/id/carrier/QuarterInchAudioTape> ;
     skos:prefLabel "Open reel audiotape"@en,
-        "Openspoelaudiotape"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Openspoelaudiotape"@nl .
 
 <https://data.hetarchief.be/id/carrier/OpenReelVideoTape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1152,8 +1044,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/HalfInchVideotape>,
         <https://data.hetarchief.be/id/carrier/QuarterInchVideotape> ;
     skos:prefLabel "open reel videotape"@en,
-        "openspoelvideo"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "openspoelvideo"@nl .
 
 <https://data.hetarchief.be/id/carrier/OpticalAudioDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1167,8 +1058,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/MiniDisc>,
         <https://data.hetarchief.be/id/carrier/SuperAudioCD> ;
     skos:prefLabel "optical audio disc"@en,
-        "optische audio schrijf"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "optische audio schrijf"@nl .
 
 <https://data.hetarchief.be/id/carrier/DVD> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1184,8 +1074,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/DVD-RW> ;
     skos:notation "DVD" ;
     skos:prefLabel "DVD"@en,
-        "DVD"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "DVD"@nl .
 
 <https://data.hetarchief.be/id/carrier/DataCarrier> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1215,8 +1104,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/VHS-C>,
         <https://data.hetarchief.be/id/carrier/W-VHS> ;
     skos:prefLabel "VHS"@en,
-        "VHS"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier/AudioCarrier> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1231,8 +1119,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/WaxCylinder>,
         <https://data.hetarchief.be/id/carrier/WireRecording> ;
     skos:prefLabel "audio carrier"@en,
-        "geluidsdrager"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "geluidsdrager"@nl .
 
 <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1249,8 +1136,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/Video-CD>,
         <https://data.hetarchief.be/id/carrier/XDCAM> ;
     skos:prefLabel "optical video disc"@en,
-        "optische video schrijf"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "optische video schrijf"@nl .
 
 <https://data.hetarchief.be/id/carrier/FilmCarrier> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1270,8 +1156,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/Super16mmFilm>,
         <https://data.hetarchief.be/id/carrier/Super8mmFilm> ;
     skos:prefLabel "film carrier"@en,
-        "filmdrager"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "filmdrager"@nl .
 
 <https://data.hetarchief.be/id/carrier/AudioCassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1291,8 +1176,7 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/PicoCassette>,
         <https://data.hetarchief.be/id/carrier/StenoCassette> ;
     skos:prefLabel "Audio cassette"@en,
-        "Audiocassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "Audiocassette"@nl .
 
 <https://data.hetarchief.be/id/carrier/Videocassette> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1323,127 +1207,9 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
         <https://data.hetarchief.be/id/carrier/VHS>,
         <https://data.hetarchief.be/id/carrier/Video2000> ;
     skos:prefLabel "videocassette"@en,
-        "videocassette"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+        "videocassette"@nl .
 
 <https://data.hetarchief.be/id/carrier> a skos:ConceptScheme ;
-    skos:hasTopConcept <https://data.hetarchief.be/id/carrier/16mmFilm>,
-        <https://data.hetarchief.be/id/carrier/1InchAudioTape>,
-        <https://data.hetarchief.be/id/carrier/1InchVideotape>,
-        <https://data.hetarchief.be/id/carrier/22mmFilm>,
-        <https://data.hetarchief.be/id/carrier/28mmFilm>,
-        <https://data.hetarchief.be/id/carrier/2InchAudioTape>,
-        <https://data.hetarchief.be/id/carrier/2InchVideotape>,
-        <https://data.hetarchief.be/id/carrier/35mmFilm>,
-        <https://data.hetarchief.be/id/carrier/70mmFilm>,
-        <https://data.hetarchief.be/id/carrier/8Track>,
-        <https://data.hetarchief.be/id/carrier/8mmFilm>,
-        <https://data.hetarchief.be/id/carrier/8mmtapevideo>,
-        <https://data.hetarchief.be/id/carrier/9andaHalfmmFilm>,
-        <https://data.hetarchief.be/id/carrier/ADAT>,
-        <https://data.hetarchief.be/id/carrier/AudioCD>,
-        <https://data.hetarchief.be/id/carrier/AudioCarrier>,
-        <https://data.hetarchief.be/id/carrier/AudioCassette>,
-        <https://data.hetarchief.be/id/carrier/Betacam>,
-        <https://data.hetarchief.be/id/carrier/BetacamOxide>,
-        <https://data.hetarchief.be/id/carrier/BetacamSP>,
-        <https://data.hetarchief.be/id/carrier/BetacamSX>,
-        <https://data.hetarchief.be/id/carrier/Betamax>,
-        <https://data.hetarchief.be/id/carrier/BluRayDisc>,
-        <https://data.hetarchief.be/id/carrier/CD-R>,
-        <https://data.hetarchief.be/id/carrier/CD-RW>,
-        <https://data.hetarchief.be/id/carrier/CDVideo>,
-        <https://data.hetarchief.be/id/carrier/CompactCassette>,
-        <https://data.hetarchief.be/id/carrier/CompactVideoCassette>,
-        <https://data.hetarchief.be/id/carrier/D-VHS>,
-        <https://data.hetarchief.be/id/carrier/D1>,
-        <https://data.hetarchief.be/id/carrier/D2>,
-        <https://data.hetarchief.be/id/carrier/D3>,
-        <https://data.hetarchief.be/id/carrier/D5>,
-        <https://data.hetarchief.be/id/carrier/D6>,
-        <https://data.hetarchief.be/id/carrier/D9>,
-        <https://data.hetarchief.be/id/carrier/DCT>,
-        <https://data.hetarchief.be/id/carrier/DV>,
-        <https://data.hetarchief.be/id/carrier/DVCAM>,
-        <https://data.hetarchief.be/id/carrier/DVCAM34>,
-        <https://data.hetarchief.be/id/carrier/DVCAM40>,
-        <https://data.hetarchief.be/id/carrier/DVCPRO>,
-        <https://data.hetarchief.be/id/carrier/DVCPro25>,
-        <https://data.hetarchief.be/id/carrier/DVCPro50>,
-        <https://data.hetarchief.be/id/carrier/DVCProHD>,
-        <https://data.hetarchief.be/id/carrier/DVCProProgressive>,
-        <https://data.hetarchief.be/id/carrier/DVD>,
-        <https://data.hetarchief.be/id/carrier/DVD+R>,
-        <https://data.hetarchief.be/id/carrier/DVD+RDL>,
-        <https://data.hetarchief.be/id/carrier/DVD+RW>,
-        <https://data.hetarchief.be/id/carrier/DVD-R>,
-        <https://data.hetarchief.be/id/carrier/DVD-RW>,
-        <https://data.hetarchief.be/id/carrier/DataCarrier>,
-        <https://data.hetarchief.be/id/carrier/Digital8>,
-        <https://data.hetarchief.be/id/carrier/DigitalAudioTape>,
-        <https://data.hetarchief.be/id/carrier/DigitalBetacam>,
-        <https://data.hetarchief.be/id/carrier/DigitalCompactCassette>,
-        <https://data.hetarchief.be/id/carrier/DigitalVideoCassette>,
-        <https://data.hetarchief.be/id/carrier/Fidelpac>,
-        <https://data.hetarchief.be/id/carrier/FilmCarrier>,
-        <https://data.hetarchief.be/id/carrier/GlassPlate>,
-        <https://data.hetarchief.be/id/carrier/GramophoneRecord>,
-        <https://data.hetarchief.be/id/carrier/GrundigEN3>,
-        <https://data.hetarchief.be/id/carrier/HD-DVD>,
-        <https://data.hetarchief.be/id/carrier/HDCAM>,
-        <https://data.hetarchief.be/id/carrier/HDV>,
-        <https://data.hetarchief.be/id/carrier/HalfInchAudioTape>,
-        <https://data.hetarchief.be/id/carrier/HalfInchVideotape>,
-        <https://data.hetarchief.be/id/carrier/Hi8>,
-        <https://data.hetarchief.be/id/carrier/LacquerDisc>,
-        <https://data.hetarchief.be/id/carrier/LaserDisc>,
-        <https://data.hetarchief.be/id/carrier/M>,
-        <https://data.hetarchief.be/id/carrier/MII>,
-        <https://data.hetarchief.be/id/carrier/Magazine>,
-        <https://data.hetarchief.be/id/carrier/Manuscript>,
-        <https://data.hetarchief.be/id/carrier/MicroCassette>,
-        <https://data.hetarchief.be/id/carrier/MiniCD>,
-        <https://data.hetarchief.be/id/carrier/MiniCD-R>,
-        <https://data.hetarchief.be/id/carrier/MiniCassette>,
-        <https://data.hetarchief.be/id/carrier/MiniDisc>,
-        <https://data.hetarchief.be/id/carrier/Newspaper>,
-        <https://data.hetarchief.be/id/carrier/OpenReelAudiotape>,
-        <https://data.hetarchief.be/id/carrier/OpenReelVideoTape>,
-        <https://data.hetarchief.be/id/carrier/OpticalAudioDisc>,
-        <https://data.hetarchief.be/id/carrier/OpticalVideoDisc>,
-        <https://data.hetarchief.be/id/carrier/PhotographicCarrier>,
-        <https://data.hetarchief.be/id/carrier/PicoCassette>,
-        <https://data.hetarchief.be/id/carrier/Print>,
-        <https://data.hetarchief.be/id/carrier/QuarterInchAudioTape>,
-        <https://data.hetarchief.be/id/carrier/QuarterInchVideotape>,
-        <https://data.hetarchief.be/id/carrier/S-VHS>,
-        <https://data.hetarchief.be/id/carrier/S-VHS-C>,
-        <https://data.hetarchief.be/id/carrier/SANYOV-CORD>,
-        <https://data.hetarchief.be/id/carrier/SeparateSoundTrackFilm>,
-        <https://data.hetarchief.be/id/carrier/ShellacDisc>,
-        <https://data.hetarchief.be/id/carrier/StandardVCR>,
-        <https://data.hetarchief.be/id/carrier/StandardVHS>,
-        <https://data.hetarchief.be/id/carrier/StenoCassette>,
-        <https://data.hetarchief.be/id/carrier/Super16mmFilm>,
-        <https://data.hetarchief.be/id/carrier/Super8mmFilm>,
-        <https://data.hetarchief.be/id/carrier/SuperAudioCD>,
-        <https://data.hetarchief.be/id/carrier/SuperVideoCD>,
-        <https://data.hetarchief.be/id/carrier/SuperVideoRecording>,
-        <https://data.hetarchief.be/id/carrier/Umatic>,
-        <https://data.hetarchief.be/id/carrier/UmaticSP>,
-        <https://data.hetarchief.be/id/carrier/VCR>,
-        <https://data.hetarchief.be/id/carrier/VCR-LP>,
-        <https://data.hetarchief.be/id/carrier/VHS>,
-        <https://data.hetarchief.be/id/carrier/VHS-C>,
-        <https://data.hetarchief.be/id/carrier/Video-CD>,
-        <https://data.hetarchief.be/id/carrier/Video2000>,
-        <https://data.hetarchief.be/id/carrier/Video8>,
-        <https://data.hetarchief.be/id/carrier/VideoCarrier>,
-        <https://data.hetarchief.be/id/carrier/Videocassette>,
-        <https://data.hetarchief.be/id/carrier/VinylRecording>,
-        <https://data.hetarchief.be/id/carrier/W-VHS>,
-        <https://data.hetarchief.be/id/carrier/WaxCylinder>,
-        <https://data.hetarchief.be/id/carrier/WireRecording>,
-        <https://data.hetarchief.be/id/carrier/XDCAM> ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/carrier/DataCarrier> ;
     skos:prefLabel "Thesaurus dragertypes"@nl .
 
