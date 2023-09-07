@@ -1,0 +1,1449 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/carrier/16mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 16mm in width."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 16 mm breed."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#16mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "16mm film"@en,
+        "16mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/1InchAudioTape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelAudiotape> ;
+    skos:definition "An open reel analog audiotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#1InchAudioTape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "1 inch audio tape"@en,
+        "1\" audio tape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/1InchVideotape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelVideoTape> ;
+    skos:definition "Thick 1\" (25.4 mm) wide brown or black videotape loosely wound on a spool, without a cartridge case. The 1\" videotape was used for professional purposes."@en,
+        "Dikke bruine of zwarte videotape van 1\" (25,4 mm) breed los op een spoel gewonden, zonder cassette-omhulzing. De 1\" videotape werd gebruikt voor professionele doeleinden."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#1InchVideotape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "One inch videotape"@en,
+        "1\" videotape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/22mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 22mm in width."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 22 mm breed."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#22mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "22mm film"@en,
+        "22mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/28mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 28mm in width."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 28 mm breed."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#28mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "28mm film"@en,
+        "28mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/2InchAudioTape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelAudiotape> ;
+    skos:definition "An open reel analog audiotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#2InchAudioTape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "2 inch audio tape"@en,
+        "2\" audio tape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/2InchVideotape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelVideoTape> ;
+    skos:definition "Thick 2\" (50.8 mm) wide brown or black videotape loosely wound on a spool, with no cartridge case. The 2\" videotape was used for professional purposes."@en,
+        "Dikke bruine of zwarte videotape van 2\" (50,8 mm) breed los op een spoel gewonden, zonder cassette-omhulzing. De 2\" videotape werd gebruikt voor professionele doeleinden."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#2InchVideotape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Two inch videotape"@en,
+        "2\" videotape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/35mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 35mm in width. Some 35mm films may be printed on paper."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 35 mm breed. Sommige 35 mm-films kunnen op papier worden afgedrukt."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#35mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "35mm film"@en,
+        "35mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/70mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 70mm in width."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 70 mm breed."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#70mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "70mm film"@en,
+        "70mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/8Track> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Stereo8,8-track cartridge,8-trace cassettes"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:definition "A cartridge-based 1/4-inch analog audiotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#8Track,https://obsoletemedia.org/8-track/> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "8-track"@en,
+        "8-track"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/8mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 8mm in width."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 8 mm breed."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#8mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "8mm film"@en,
+        "8mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/9andaHalfmmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 9.5mm in width."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 9,5 mm breed."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Super8mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "9.5mm film"@en,
+        "9.5mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/ADAT> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Alesis Digital Audio Tape"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:exactmatch <https://obsoletemedia.org/adat/> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "ADAT" ;
+    skos:prefLabel "ADAT"@en,
+        "ADAT"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/BetacamOxide> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Betacam> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Betacam Oxide"@en,
+        "Betacam Oxide"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/BetacamSP> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Betacam> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Betacam SP"@en,
+        "Betacam SP"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/BetacamSX> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Betacam> ;
+    skos:definition "A cassette-based 1/2-inch digital videotape format. Betacam SX is a digital version of Betacam SP."@en,
+        "Een digitaal videocassetteformaat van ½ inch. Betacam SX is een digitale versie van Betacam SP."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#BetacamSX> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Betacam SX"@en,
+        "Betacam SX"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Betamax> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/2-inch analog videotape format. May also be know as Beta. Types of Betamax also include Beta Hi-Fi, ED Betamax and Super Betamax."@en,
+        "Een digitaal videocassetteformaat van ½ inch. Mogelijk ook bekend als Beta. Soorten Betamax omvatten ook Beta Hi-Fi, ED Betamax en Super Betamax."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Betamax> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Betamax"@en ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/BluRayDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Blu-ray Disc"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#BluRayDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "BD" ;
+    skos:prefLabel "Blu-ray"@en,
+        "Blu-ray"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/CD-R> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Compact Disc Write Once"@en,
+        "Compact Disc Write Once"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "CD-R,CD-WO" ;
+    skos:prefLabel "Compact Disc Recordable"@en,
+        "Compact Disc Recordable"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/CD-RW> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "CD-RW" ;
+    skos:prefLabel "Compact Disc ReWritable"@en,
+        "Compact Disc ReWritable"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/CDVideo> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "CD-V" ;
+    skos:prefLabel "CD-Video"@en,
+        "CD-Video"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/CompactCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "CC" ;
+    skos:prefLabel "Compact Cassette"@en,
+        "Compact Cassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/CompactVideoCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "Funai and Technicolor introduced the Compact Video Cassette in 1980, together with its own player and a portable video camera. The cassettes were just a little bit bigger than a Compact Cassette. There was room for 30, 45 or 60 minutes of imagery in colour, but only with mono sound."@en,
+        "Funai en Technicolor introduceerden de Compact Video Cassette in 1980, samen met een eigen speler en een draagbare videocamera. De cassettes waren net iets groter dan een compact audiocassette. Er was ruimte voor 30, 45 of 60 minuten beeldmateriaal in kleur, maar enkel met monogeluid."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "CVC" ;
+    skos:prefLabel "Compact Video Cassette"@en,
+        "Compact Video Cassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D-VHS> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "D-VHS"@en,
+        "D-VHS"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D1> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 3/4-inch digital videotape format. D1 was the first major digital video format for professionals. It is also known as a 4:2:2 Component Digital cassette. You can recognise these carriers by their grey casing in two formats: medium and large. Sony, 3M, Philips and Ampex are the most famous brands."@en,
+        "Een 3/4\" digitaal videobandformaat op cassette. D1 was het eerste grote digitale videoformaat voor professionelen. Ze is ook gekend als een 4:2:2 Component Digital cassette. Je herkent deze dragers aan hun grijze behuizing in twee formaten: medium en large. Sony, 3M, Philips en Ampex zijn de meest bekende merken."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#D1> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D1" ;
+    skos:prefLabel "D1"@en,
+        "D1"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D2> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 3/4-inch digital videotape format. D2 is the successor of the D1 tape. Ampex developed this new version for professional usage at the end of the 1980s. D2 cassettes contain uncompressed video of 32, 94 or 208 minutes. That is because there were three formats to choose from: small, medium and large."@en,
+        "Een 3/4\" digitaal videobandformaat op cassette. D2 is de opvolger van de D1-tape. Ampex ontwikkelde deze nieuwe versie voor professionele toepassingen eind jaren 80. D2-cassettes bevatten ongecomprimeerde video van 32, 94 of 208 minuten. Er waren immers drie formaten om uit te kiezen: small, medium en large."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#D2> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D2" ;
+    skos:prefLabel "D2"@en,
+        "D2"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D3> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/2-inch digital videotape format. Panasonic launched this D3 cassette in 1991 to compete with the D2 of Ampex. There are three formats here as well: small, medium and large. There was no shortage in terms of capacity because the D3 cassettes went from 50 up to 248 minutes."@en,
+        "Een 1/2\" digitaal videobandformaat op cassette. Panasonic lanceerde deze D3-cassette in 1991 om te concurreren met de D2 van Ampex. Ook hier zijn er drie formaten: small, medium en large. Qua capaciteit kwam men niets te kort, want D3-cassettes gingen van 50 tot 248 minuten."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#D3> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D3" ;
+    skos:prefLabel "D3"@en,
+        "D3"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D5> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/2-inch digital videotape format. In 1994, Panasonic launched two varieties of the D5: a standard version and an HD version (D5 HD). The cassettes could contain 23, 63 or 94 minutes of material, and some of them had a yellow valve. Professionals in particular used this carrier for digital video."@en,
+        "Een 1/2\" digitaal videobandformaat op cassette. In 1994 bracht Panasonic twee varianten van de D5 op de markt: een standaardversie en een HD-versie (D5 HD). De cassettes konden 23, 63 of 94 minuten aan materiaal bevatten en sommige hadden een gele klep. Vooral professionals gebruikten deze drager voor digitale video."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#D5> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D5" ;
+    skos:prefLabel "D5"@en,
+        "D5"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D6> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 3/4-inch digital videotape format. The first D6 cassettes were launched in 1995. Only a handful of professional studios took them home, given the high price tag."@en,
+        "Een 3/4\" digitaal videobandformaat op cassette. De eerste D6 cassettes kwamen in 1995 op de markt. Slechts een handvol professionele studio’s haalde ze in huis. Dat komt door het hoge prijskaartje."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#D6> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D6" ;
+    skos:prefLabel "D6"@en,
+        "D6"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/D9> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Digital-S"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition """A cassette-based 1/2-inch digital videotape format. D9 was originally known as Digital-S. In 1999, its name was changed. With D9, JVC wanted to compete with Sony’s Digital Betacam. They more or less succeeded. A few companies in Europe, Asia and the United States switched, but it was a commercial failure compared to the Digital Betacam.
+Capacity
+Like many other producers, JVS launched an HD variety under the name D9 HD. There was room for 10, 34, 64, 104 or 124 minutes of imagery. The capacity was always mentioned on the tape (for example DS10 means 10 minutes)."""@en,
+        """Een 1/2" digitaal videobandformaat op cassette. D9 was oorspronkelijk gekend als Digital-S. In 1999 veranderde men de naam. JVC ging met D9 de concurrentie aan met Sony’s Digital Betacam. Dat lukte enigszins. Sommige bedrijven in Europa, Azië en de VS stapten over, maar ten opzichte van de Digital Betacam was het een commerciële flop. 
+Zoals zoveel producenten, lanceerde JVC een HD-variant onder de naam D9 HD. Er was ruimte voor 10, 34, 64, 104 of 124 minuten aan beeldmateriaal. De capaciteit stond altijd op de tape vermeld (bijvoorbeeld DS10 is 10 minuten)"""@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#D9> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D9" ;
+    skos:prefLabel "D9"@en,
+        "D9"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DCT> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition """DCT is a digital video cassette, introduced by Ampex in 1992. Professional videographers and (inter)national broadcasters were part of the target audience and could choose from three formats: small, medium and large.
+DCT was a pioneer: it was the first digital videotape with data compression, which made the files smaller to save space. The specific technique that is used to compress was called “discrete cosine transform”, or short: DCT. Now you also know the origin of the name."""@en,
+        """DCT is een digitale videocassette geïntroduceerd door Ampex in 1992. Professionele videografen en (inter)nationale omroepen behoorden tot de doelgroep en konden uit drie formaten kiezen: small, medium en large.
+DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompressie, waarbij de bestanden kleiner gemaakt worden om plaats te besparen. De specifieke techniek die hier gebruikt werd om data te comprimeren noemde men “discrete cosine transform”. Of afgekort: DCT. Zo weet je meteen waar de naam vandaan komt."""@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DCT> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DCT" ;
+    skos:prefLabel "DCT"@en,
+        "DCT"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DV> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "DVC, DV25"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DigitalVideoCassette> ;
+    skos:definition "A cassette-based 1/4-inch digital videotape format. This grey cassette is known as DV, DVC, DV25 or MiniDV. It was launched in 1992 for video recordings in camcorders. Because of this, we mainly recover amateur and semi-professional images on DV-cassettes. The MiniDV, with a playtime of 120 minutes and the standard DV with 360 minutes, had enough space for recordings of family outings, birthday parties or weddings."@en,
+        "Een 3/4\" digitaal videobandformaat op cassette. Deze grijze cassette is gekend als DV, DVC, DV25 of MiniDV. Ze werd in 1992 gelanceerd voor video-opnames in camcorders. Hierdoor vinden we voornamelijk amateur- en semiprofessionele beelden terug op DV-cassettes. Met een speelduur tot 120 minuten bij een MiniDV en 360 min bij een standaard-DV, was er ruimte genoeg voor opnames van familie-uitstapjes, verjaardagsfeesten en huwelijken."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#MiniDV> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "(Mini-)DV"@en,
+        "(Mini-)DV"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCAM34> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVCAM> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVCAM 34"@en,
+        "DVCAM 35"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCAM40> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVCAM> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVCAM 40"@en,
+        "DVCAM 41"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCPro25> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "D-7"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVCPro 25"@en,
+        "DVCPro 25"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCPro50> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVCPro 50"@en,
+        "DVCPro 50"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCProHD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVCPro HD"@en,
+        "DVCPro HD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCProProgressive> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVCPRO> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVCPro Progressive"@en,
+        "DVCPro Progressive"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVD+R> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DVD-R" ;
+    skos:prefLabel "DVD+R"@en,
+        "DVD+R"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVD+RDL> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DVD+R" ;
+    skos:prefLabel "DVD+R DL"@en,
+        "DVD+R DL"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVD+RW> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DVD-RW" ;
+    skos:prefLabel "DVD+RW"@en,
+        "DVD+RW"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVD-R> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "DVD-R"@en,
+        "DVD-R"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVD-RW> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DVD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DVD+R DL" ;
+    skos:prefLabel "DVD-RW"@en,
+        "DVD-RW"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Digital8> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/8mmtapevideo> ;
+    skos:definition "A cassette-based 8mm digital videotape format. Digital Betacam is a digital version of Hi8."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Digital8> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Digital8"@en,
+        "Digital8"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DigitalAudioTape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:definition "A cassette-based 4mm digital audiotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DAT> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DAT" ;
+    skos:prefLabel "Digital Audio Tape"@en,
+        "Digital Audio Tape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DigitalBetacam> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Betacam> ;
+    skos:definition "A cassette-based 1/2-inch digital videotape format. May also be known as DigiBeta or D-Beta. Digital Betacam is a digital version of Betacam SP."@en,
+        "Een digitaal videocassetteformaat van ½ inch. Mogelijk ook bekend als DigiBeta of D-Beta. Digitale Betacam is een digitale versie van Betacam SP."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DigitalBetacam> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Digital Betacam"@en,
+        "Digital Betacam"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DigitalCompactCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "DCC" ;
+    skos:prefLabel "Digital Compact Cassette"@en,
+        "Digital Compact Cassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Fidelpac> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "NAB Cartridge"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "NAB" ;
+    skos:prefLabel "Fidelpac"@en,
+        "Fidelpac"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/GlassPlate> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/PhotographicCarrier> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Glass Plate"@en,
+        "Glasplaat"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/GrundigEN3> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "electronic notebook,Grundig DeJUR Versatile III"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Grundig EN3"@en,
+        "Grundig EN3"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/HD-DVD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "High Definition Digital Versatile Disc"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "HD-DVD" ;
+    skos:prefLabel "HD DVD"@en,
+        "HD DVD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/HDCAM> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "D11"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition """A cassette-based 1/2-inch digital videotape format. HDCAM (or D11) was launched in 1997 as a high definition version of the Digital Betacam. This digital video cassette was available in two formats: small and large.
+You can recognise HDCAM cassettes by their black casing with orange accent. In 2013, the HDCAM SR variety was also launched. This one had a cyan colour at the top."""@en,
+        """Een 1/2" digitaal videobandformaat op cassette. HDCAM (of D11) kwam in 1997 op de markt als high definition versie van de Digital Betacam. Deze digitale videocassette was verkrijgbaar in twee formaten: small en large.
+HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 2013 lanceerde men nog een HDCAM SR-variant. Die kreeg een cyaankleur bovenaan."""@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HDCAM> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "D11" ;
+    skos:prefLabel "HDCAM"@en,
+        "HDCAM"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/HDV> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DigitalVideoCassette> ;
+    skos:definition "A cassette-based 1/4-inch digital videotape format. This is a high-definition version of MiniDV."@en,
+        "Een op cassette gebaseerd 1/4-inch digitaal videobandformaat. Dit is een versie van MiniDV in hoge definitie."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HDV> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "HDV"@en,
+        "HDV"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/HalfInchAudioTape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelAudiotape> ;
+    skos:definition "An open reel analog audiotape format ."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HalfInchAudioTape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "½ inch audio tape"@en,
+        "½\" audio tape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/HalfInchVideotape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "helical scan tape"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelVideoTape> ;
+    skos:definition "Thick ½\" (12.7 mm) wide brown or black videotape loosely wound on a spool, with no cartridge case."@en,
+        "Dikke bruine of zwarte videotape van ½\" (12,7 mm) breed los op een spoel gewonden, zonder cassette-omhulzing."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HalfInchVideotape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "½ inch videotape"@en,
+        "½\" videotape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Hi8> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/8mmtapevideo> ;
+    skos:definition "A cassette-based 8mm analog videotape format. Hi8 is a high-band version of Video8."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Hi8> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Hi8"@en,
+        "Hi8"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/LacquerDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "direct cut disk,acetate disc"@en,
+        "gesneden plaat"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/GramophoneRecord> ;
+    skos:definition "The core can be made of different types of material: if you look closely at the hole of the playback shaft, you can see a piece of a metallic, glassy or brown paper material here. This is the material from which the core is made and to which the lacquer has been applied: glass, metal or cardboard. You can recognize a glass core if the plate is transparent when you hold it in front of a light source. These plates are very fragile. Lacquer sheets are heavier than vinyl and lighter than shellac, depending on the material from which the core is made. They are less flexible than vinyl records and less rigid than shellac. Also sometimes recognizable by a self-written label."@en,
+        "Een analoog schijfformaat met gegroefde lak. De kern kan gemaakt zijn uit verschillende soorten materiaal: als je het gaatje van de afspeelas van dichtbij bekijkt, kan je hier een stukje zien van een metaalachtig, glasachtig of bruin papieren materiaal. Dit is het materiaal waaruit de kern is gemaakt en waar de lak op is aange-bracht: glas, metaal of karton. Een glazen kern kan je herkennen als de plaat doorzichtig is wanneer je ze voor een lichtbron houdt. Deze platen zijn erg fragiel. Lakplaten zijn zwaarder dan vinyl en lichter dan shellac, afhanke-lijk van het material waaruit de kern is gemaakt. Ze zijn minder flexibel dan vinylplaten en minder stijf dan shellac. Ook soms te herkennen aan een zelfgeschreven label."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#LacquerDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Lacquer disc"@en,
+        "Lakplaat"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/LaserDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "DiscoVision"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#LaserDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "LaserDisc"@en,
+        "LaserDisc"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/M> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based ½-inch analog videotape format. The M cassette was a product by Matsushita and RCA, launched in 1982. You can recognise them by their grey colour and the letter ‘M’. Unfortunately, this carrier had but little success."@en,
+        "Een analoog videocassetteformaat van ½ inch. De M-cassette was een product van Matsushita en RCA, gelanceerd in 1982. Je herkent ze aan hun grijze kleur en de letter ‘M’. Helaas kende deze drager maar weinig succes."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "M"@en,
+        "M"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/MII> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based ½-inch analog videotape format. Stimulated by the flop of the M cassette, the quest for a newer, better variety began, to at least gain some market share. The result was MII, which initially had some success."@en,
+        "Een analoog videocassetteformaat van ½ inch. Geprikkeld door de flop van de M-cassette ging men op zoek naar een nieuwere, betere variant om toch wat marktaandeel te winnen. Het resultaat was de MII. Die kende aanvankelijk wel enig succes."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#MII> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "MII"@en,
+        "MII"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Magazine> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Print> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Magazine"@en,
+        "Tijdschrift"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Manuscript> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Manuscript"@en,
+        "Manuscript"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/MicroCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Microcassette"@en,
+        "Microcassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/MiniCD-R> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/MiniCD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Mini CD Recordable"@en,
+        "Mini CD Recordable"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/MiniCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Mini-Cassette"@en,
+        "Minicassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/MiniDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Mini CD single"@en,
+        "Mini-CD single"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalAudioDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "MiniDisc"@en,
+        "MiniDisc"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Newspaper> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Print> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Newspaper"@en,
+        "Krant"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/PicoCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Dictasette"@en,
+        "Dictasette"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Picocassette"@en,
+        "Picocassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/QuarterInchAudioTape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "¼ inch audiospoel, kwartduim audiotape"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelAudiotape> ;
+    skos:definition "An open reel analog audiotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#QuarterInchAudioTape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "¼ inch audio tape"@en,
+        "Kwartduims audiotape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/QuarterInchVideotape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Akai"@en,
+        "Kwartduim openspoelvideotape"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpenReelVideoTape> ;
+    skos:definition "Thick ¼\" (6.35 mm) wide brown or black videotape loosely wound on a spool, with no cartridge case."@en,
+        "Dikke bruine of zwarte videotape van ¼\" (6,35 mm) breed los op een spoel gewonden, zonder cassette-omhulzing."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#QuarterInchVideotape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "¼ inch videotape"@en,
+        "¼\" videotape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/S-VHS> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "S-VHS"@en,
+        "S-VHS"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/S-VHS-C> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "S-VHS-C"@en,
+        "S-VHS-C"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/SANYOV-CORD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/2-inch analog videotape format."@en ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "SANYO V-Cord"@en,
+        "SANYO V-Cord"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/SeparateSoundTrackFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Separate sound track film"@en,
+        "Aparte klankband film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/ShellacDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "shellack"@en,
+        "78-toerenplaat, schellak"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/GramophoneRecord> ;
+    skos:definition "The oldest type of phono record recording: a record recorded before the late 1920s is most likely a shellac record. The label of a commercially pressed 78rpm record is visibly pressed into the shellac, while most vinyl and lacquer records have these labels on top of the record. They are usually heavier, thicker and less flexible than lacquered plates and vinyl. They have a more matt surface compared to vinyl or lacquer plates."@en,
+        "Het oudste type fonoplaatopnamen: een plaat die opgenomen is voor het einde van de jaren twintig, is hoogstwaarschijnlijk een shellacplaat. Het label van een commercieel geperste 78-toerenplaat is zichtbaar in de shellac gedrukt, terwijl deze bij de meeste vinyl- en lakplaten boven-op de plaat geplakt zijn. Ze zijn doorgaans zwaarder, dikker en minder flexibel dan lakpla-ten en vinyl. Ze hebben een matter oppervlak vergeleken met vinyl- of lakplaten."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#ShellacDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Shellac disc"@en,
+        "schellakplaat"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/StandardVCR> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VCR> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "VCR" ;
+    skos:prefLabel "standard Video Cassette Recording"@en,
+        "standaard Video Cassette Recording"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/StandardVHS> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Standard VHS"@en,
+        "Standaard VHS"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/StenoCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Steno-Cassette"@en,
+        "Stenocassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Super16mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 16mm in width, with an expanded picture area."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 16 mm breed, met een vergroot beeldgebied."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Super16mmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "super 16mm film"@en,
+        "super 16mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Super8mmFilm> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/FilmCarrier> ;
+    skos:definition "A gauge of moving image printed on celluloid, 8mm in width, with an expanded picture area."@en,
+        "Een standaard voor bewegend beeld gedrukt op pellicule, 8 mm breed, met een vergroot beeldgebied."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#9andaHalfmmFilm> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "super 8mm film"@en,
+        "super 8mm film"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/SuperAudioCD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalAudioDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "SACD" ;
+    skos:prefLabel "Super Audio CD"@en,
+        "Super Audio CD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/SuperVideoCD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Super Video Compact Disc"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#SuperVideoCD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "SVCD" ;
+    skos:prefLabel "Super Video CD"@en,
+        "Super Video CD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/SuperVideoRecording> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VCR> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "SVR" ;
+    skos:prefLabel "Super Video Recording"@en,
+        "Super Video Recording"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/UmaticSP> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "U-matic Superior Performance"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Umatic> ;
+    skos:definition "U-matic SP (Superior Performance) was a variant of the U-matic video cassette format, and was introduced by Sony in 1986. This was also made available in the S size format. SP used chrome tape and offered an improvement in performance over previous generations of U-matic (low-band and high-band) with a a horizontal resolution of 330 lines, a better signal to noise ratio, and Dolby C noise reduction."@en,
+        "U-matic SP (Superior Performance) was een variant van de U-matic en werd in 1986 door Sony geïntroduceerd. Dit werd ook beschikbaar gesteld in het S-formaat. SP gebruikte chroomtape en bood een verbetering van de prestaties ten opzichte van eerdere generaties U-matic (low-band en high-band) met een horizontale resolutie van 330 lijnen, een betere signaal-ruisverhouding en Dolby C-ruisonderdrukking."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "U-matic (S) SP"@en,
+        "U-matic (S) SP"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/VCR-LP> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VCR> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "VCR-LP" ;
+    skos:prefLabel "Video Cassette Recording Long-Play"@en,
+        "Video Cassette Recording Long-Play"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/VHS-C> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "VHS-C"@en,
+        "VHS-C"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Video-CD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Compact Disc digital video"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "VCD" ;
+    skos:prefLabel "Video CD"@en,
+        "Video CD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Video2000> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Video Compact Cassette"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "VCC" ;
+    skos:prefLabel "Video2000"@en,
+        "Video2000"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Video8> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/8mmtapevideo> ;
+    skos:definition "A cassette-based 8mm analog videotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Video8> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Video8"@en,
+        "Video8"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/VinylRecording> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/GramophoneRecord> ;
+    skos:definition "An analog disc format with grooved vinyl."@en,
+        "Een analoog schijfformaat met gegroefde vinyl."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#VinylRecording> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Vinyl recording"@en,
+        "Vinylplaat"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/W-VHS> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "W-VHS"@en,
+        "W-VHS"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/WaxCylinder> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "wasrol, wassen cilinder"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:definition "A grooved wax analog phonograph cylinder format. Cylindrical roller (slightly conical), with minimal thickening at the top and bottom, made of wax or plastic in different colours: brown, black, gray (wax); blue, purple/pink (celluloid). With horizontal grooves on the outside and inscription on the top edge. Used for recording audio recordings. Very fragile due to material and age."@en,
+        "Cilindervormige rol (licht conisch), met minimale verdikking aan onder- en bovenkant, gemaakt uit was of plastic in verschillende kleuren: bruin, zwart, grijs (was); blauw, paars/roze (celluloid). Met horizontale groeven aan de buitenzijde en opschrift op de boven-rand. Gebruikt voor het opnemen van geluidsopnames. Zeer fragiel omwille van materiaal en ouderdom."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#WaxCylinder> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Wax cylinder"@en,
+        "wassen rol"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/WireRecording> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "magnetic wire"@en,
+        "geluidsdraad,staaldraad"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:definition "The magnetic wire is an analogue audio format. The magnetic recording is located on a thin steel wire of about 0.004 inch (0,1 mm) thick, which is wound around a reel."@en,
+        "De draadspoel is een analoog audioformaat. De magnetische opname bevindt zich op een dunne staaldraad van ongeveer 0,1 mm dik die om een spoel is gewonden (vandaar de naam ‘draadspoel’)."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#WireRecording> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:prefLabel "Wire recording"@en,
+        "draadspoel"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/XDCAM> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Professional Disc"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:notation "PFD" ;
+    skos:prefLabel "XDCAM"@en,
+        "XDCAM"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/MiniCD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalAudioDisc> ;
+    skos:definition "A smaller version of the Compact Disc. These small disks have a diameter between 0.24 inch (60 mm) and 0.31 inch (80 mm). They were used for audio singles, as business cards (round, rectangular or another shape) or as a carrier for computer software."@en,
+        "Een kleinere versie van de Compact Disc. Deze schijfjes hebben een diameter tussen 60 mm en 80 mm. Ze werden gebruikt voor audiosingles, als visitekaartjes (rond, rechthoekig of een andere vorm) of als drager voor computersoftware."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/MiniCD-R> ;
+    skos:prefLabel "Mini CD"@en,
+        "Mini-CD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/PhotographicCarrier> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
+    skos:definition "Een fysieke drager van analoog of digitaal fotomateriaal."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/GlassPlate> ;
+    skos:prefLabel "photographic carrier"@en,
+        "fotografische drager"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Umatic> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "3/4-inch tape,3⁄4-inch Type E Helical Scan"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition """A cassette-based 3/4-inch analog videotape format. Did you know that U-Matic was one of the first videotapes in a closed cassette? Sony launched this product for consumers in 1971, but it was mainly used by companies and educative organisations because of the high cost. U-Matic tapes could store up to 30 minutes of video on the Small Cassette (U-Matic S) and up to 75 minutes on the Large Cassette. 
+We do not have to look far for the origin of the name U-Matic: the magnetic tape followed a U-shaped path in the player."""@en,
+        """Een 3/4" digitaal videobandformaat op cassette.  Wist je dat U-Matic een van de eerste videotapes in een gesloten cassette was? Sony bracht dit product in 1971 op de markt voor consumenten, maar door de hoge kostprijs waren het vooral bedrijven en educatieve organisaties die U-Matic tapes gebruikten. Die plaatsten tot 30 minuten video op de Small cassette (U-Matic S) en tot 75 minuten op de Large cassette.
+De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volgt de magnetische tape namelijk een U-vormig pad."""@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Umatic> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/UmaticSP> ;
+    skos:notation "SMPTE E" ;
+    skos:prefLabel "U-matic (S)"@en,
+        "U-Matic (S)"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/AudioCD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Audio CD,Compact disc digital audio"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalAudioDisc> ;
+    skos:definition "An optical disc-based digital audio format. The Compact Disc saw the light of day in 1982 as a joint project of Philips and Sony. A particularly successful project, given that the Compact Disc conquered the world in no time. The good recording quality probably had something to do with it."@en,
+        "Een optisch schijf-gebaseerd audioformaat. De Compact Disc zag in 1982 het levenslicht als gezamenlijk project van Philips en Sony. Een bijzonder succesvol project, want de Compact Disc veroverde de wereld in sneltempo. Waarschijnlijk zat de goede opnamekwaliteit en de ononderbroken speelduur van iets meer dan 70 minuten er voor iets tussen."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#AudioCD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/CD-R>,
+        <https://data.hetarchief.be/id/carrier/CD-RW> ;
+    skos:notation "CDDA,CD-DA" ;
+    skos:prefLabel "Compact Disc"@en,
+        "Compact Disc"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCAM> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DigitalVideoCassette> ;
+    skos:definition "A cassette-based 1/4-inch digital videotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DVCAM> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/DVCAM34>,
+        <https://data.hetarchief.be/id/carrier/DVCAM40> ;
+    skos:prefLabel "(Mini-)DVCAM"@en,
+        "(Mini-)DVCAM"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Print> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/Magazine>,
+        <https://data.hetarchief.be/id/carrier/Newspaper> ;
+    skos:prefLabel "print"@en,
+        "drukwerk"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/8mmtapevideo> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A family of videocassette formats that use 8mm videotape."@en,
+        "Een familie van videocassetteformaten die 8 mm videoband gebruiken."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/Digital8>,
+        <https://data.hetarchief.be/id/carrier/Hi8>,
+        <https://data.hetarchief.be/id/carrier/Video8> ;
+    skos:prefLabel "8mm tape video"@en,
+        "8mm"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DigitalVideoCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A family of 1/4-inch digital videotape formats used for storing digital video, launched in 1995 by a consortium of video camera manufacturers led by Sony and Panasonic."@en,
+        "Een familie van 1/4\" digitale videobandformaten die worden gebruikt voor het opslaan van digitale video, die werd gelanceerd in 1995 door een consortium van videocamerafabrikanten onder leiding van Sony en Panasonic."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DV> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/DV>,
+        <https://data.hetarchief.be/id/carrier/DVCAM>,
+        <https://data.hetarchief.be/id/carrier/HDV> ;
+    skos:prefLabel "Digital Video Cassette"@en,
+        "Digital Video Cassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/GramophoneRecord> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:definition "This disc has a spiral groove on one or both sides. When played, a needle converts the relief in this groove into sound. There are different types of gramophone records."@en,
+        "Deze schijf heeft aan één of beide kanten een spiraalvormige groef. Bij het afspelen zet een naald het reliëf in deze groef om in geluid. Er bestaan verschillende soorten grammofoonplaten."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#GroovedAnalogDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/LacquerDisc>,
+        <https://data.hetarchief.be/id/carrier/ShellacDisc>,
+        <https://data.hetarchief.be/id/carrier/VinylRecording> ;
+    skos:prefLabel "Gramophone record"@en,
+        "Grammofoonplaat"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/VCR> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "SVR"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/StandardVCR>,
+        <https://data.hetarchief.be/id/carrier/SuperVideoRecording>,
+        <https://data.hetarchief.be/id/carrier/VCR-LP> ;
+    skos:notation "VCR" ;
+    skos:prefLabel "Video Cassette Recording"@en,
+        "Video Cassette Recording"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/VideoCarrier> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "video format"@en,
+        "videoformat"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
+    skos:definition "An electronic medium for storing moving visual media."@en,
+        "Een elektronisch medium voor het opslaan van bewegende visuele media."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Film> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/OpenReelVideoTape>,
+        <https://data.hetarchief.be/id/carrier/OpticalVideoDisc>,
+        <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:prefLabel "video carrier"@en,
+        "videodrager"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Betacam> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/2-inch analog videotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Betacam> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/BetacamOxide>,
+        <https://data.hetarchief.be/id/carrier/BetacamSP>,
+        <https://data.hetarchief.be/id/carrier/BetacamSX>,
+        <https://data.hetarchief.be/id/carrier/DigitalBetacam> ;
+    skos:prefLabel "Betacam"@en,
+        "Betacam"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVCPRO> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/4-inch digital videotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DVCPRO> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/DVCPro25>,
+        <https://data.hetarchief.be/id/carrier/DVCPro50>,
+        <https://data.hetarchief.be/id/carrier/DVCProHD>,
+        <https://data.hetarchief.be/id/carrier/DVCProProgressive> ;
+    skos:prefLabel "DVCPRO"@en,
+        "DVCPRO"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/OpenReelAudiotape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "multitrack recording,24 track tape,16 track tape"@en,
+        "audioband met open spoel"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:definition "Open reel audio tape is an analog audio format featuring magnetic tape in various formats wound on a reel or core. The 1 inch and 2 inch formats were mainly used for professional purposes or in sound studios, but there is also a 1/2-inch variant."@en,
+        "Open spoel audio tape is een analoog audioformaat met magnetische tape in verschillende formaten, gewonden op een spoel of kern. De 1 inch en 2 inch formaten werden voornamelijk gebruikt voor professionele doel-einden of in geluidsstudio's maar er bestaat ook een 1/2\" variant."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#OpenReelAudiotape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/1InchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/2InchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/HalfInchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/QuarterInchAudioTape> ;
+    skos:prefLabel "Open reel audiotape"@en,
+        "Openspoelaudiotape"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/OpenReelVideoTape> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Reel-to-reel video"@en,
+        "Reel-to-reel video"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VideoCarrier> ;
+    skos:definition "The open reel video tape had its heyday between 1956 and the beginning of the eighties. The brown or black tape is wound around a reel or coil without a casing. Most often, the corresponding box consists of plastic or cardboard."@en,
+        "De openspoelvideotape beleefde haar hoogdagen tussen 1956 en begin jaren 80. De bruine of zwarte tape is rond een spoel of kern gewonden zonder cassetteomhulsel. De bijbehorende doos bestaat meestal uit plastic of karton."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#OpenReelVideoTape> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/1InchVideotape>,
+        <https://data.hetarchief.be/id/carrier/2InchVideotape>,
+        <https://data.hetarchief.be/id/carrier/HalfInchVideotape>,
+        <https://data.hetarchief.be/id/carrier/QuarterInchVideotape> ;
+    skos:prefLabel "open reel videotape"@en,
+        "openspoelvideo"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/OpticalAudioDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:definition "An optical disc that stores sound information such as music or speech."@en,
+        "Een optische schijf waarop geluidsinformatie zoals muziek of spraak wordt opgeslagen."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#OpticalVideoDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/AudioCD>,
+        <https://data.hetarchief.be/id/carrier/MiniCD>,
+        <https://data.hetarchief.be/id/carrier/MiniDisc>,
+        <https://data.hetarchief.be/id/carrier/SuperAudioCD> ;
+    skos:prefLabel "optical audio disc"@en,
+        "optische audio schrijf"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DVD> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Digital Video Disc,Digital Versatile Disc"@en ;
+    skos:broader <https://data.hetarchief.be/id/carrier/OpticalVideoDisc> ;
+    skos:definition "A digital optical disc video format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DVD> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/DVD+R>,
+        <https://data.hetarchief.be/id/carrier/DVD+RDL>,
+        <https://data.hetarchief.be/id/carrier/DVD+RW>,
+        <https://data.hetarchief.be/id/carrier/DVD-R>,
+        <https://data.hetarchief.be/id/carrier/DVD-RW> ;
+    skos:notation "DVD" ;
+    skos:prefLabel "DVD"@en,
+        "DVD"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/DataCarrier> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:definition "A physical carrier of analog or digital data."@en,
+        "Een fysieke drager van analoge of digitale gegevens."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/AudioCarrier>,
+        <https://data.hetarchief.be/id/carrier/FilmCarrier>,
+        <https://data.hetarchief.be/id/carrier/Manuscript>,
+        <https://data.hetarchief.be/id/carrier/PhotographicCarrier>,
+        <https://data.hetarchief.be/id/carrier/Print>,
+        <https://data.hetarchief.be/id/carrier/VideoCarrier> ;
+    skos:prefLabel "data carrier"@en,
+        "gegevensdrager"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/VHS> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/Videocassette> ;
+    skos:definition "A cassette-based 1/2-inch analog videotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#VHS> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/D-VHS>,
+        <https://data.hetarchief.be/id/carrier/S-VHS>,
+        <https://data.hetarchief.be/id/carrier/S-VHS-C>,
+        <https://data.hetarchief.be/id/carrier/StandardVHS>,
+        <https://data.hetarchief.be/id/carrier/VHS-C>,
+        <https://data.hetarchief.be/id/carrier/W-VHS> ;
+    skos:prefLabel "VHS"@en,
+        "VHS"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/AudioCarrier> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
+    skos:definition "Een fysieke drager van analoge of digitale audio."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/AudioCassette>,
+        <https://data.hetarchief.be/id/carrier/GramophoneRecord>,
+        <https://data.hetarchief.be/id/carrier/OpenReelAudiotape>,
+        <https://data.hetarchief.be/id/carrier/OpticalAudioDisc>,
+        <https://data.hetarchief.be/id/carrier/SeparateSoundTrackFilm>,
+        <https://data.hetarchief.be/id/carrier/WaxCylinder>,
+        <https://data.hetarchief.be/id/carrier/WireRecording> ;
+    skos:prefLabel "audio carrier"@en,
+        "geluidsdrager"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/OpticalVideoDisc> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VideoCarrier> ;
+    skos:definition "A general term for optical video formats."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#OpticalVideoDisc> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/BluRayDisc>,
+        <https://data.hetarchief.be/id/carrier/CDVideo>,
+        <https://data.hetarchief.be/id/carrier/DVD>,
+        <https://data.hetarchief.be/id/carrier/HD-DVD>,
+        <https://data.hetarchief.be/id/carrier/LaserDisc>,
+        <https://data.hetarchief.be/id/carrier/SuperVideoCD>,
+        <https://data.hetarchief.be/id/carrier/Video-CD>,
+        <https://data.hetarchief.be/id/carrier/XDCAM> ;
+    skos:prefLabel "optical video disc"@en,
+        "optische video schrijf"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/FilmCarrier> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "pellicule"@en,
+        "celluloid"@nl ;
+    skos:broader <https://data.hetarchief.be/id/carrier/DataCarrier> ;
+    skos:definition "A carrier for moving image made of celluloid."@en,
+        "Een drager voor bewegend beeld gemaakt van pellicule."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/16mmFilm>,
+        <https://data.hetarchief.be/id/carrier/22mmFilm>,
+        <https://data.hetarchief.be/id/carrier/28mmFilm>,
+        <https://data.hetarchief.be/id/carrier/35mmFilm>,
+        <https://data.hetarchief.be/id/carrier/70mmFilm>,
+        <https://data.hetarchief.be/id/carrier/8mmFilm>,
+        <https://data.hetarchief.be/id/carrier/9andaHalfmmFilm>,
+        <https://data.hetarchief.be/id/carrier/Super16mmFilm>,
+        <https://data.hetarchief.be/id/carrier/Super8mmFilm> ;
+    skos:prefLabel "film carrier"@en,
+        "filmdrager"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/AudioCassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/AudioCarrier> ;
+    skos:definition "A cassette-based 1/8-inch analog audiotape format."@en ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#AudioCassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/8Track>,
+        <https://data.hetarchief.be/id/carrier/ADAT>,
+        <https://data.hetarchief.be/id/carrier/CompactCassette>,
+        <https://data.hetarchief.be/id/carrier/DigitalAudioTape>,
+        <https://data.hetarchief.be/id/carrier/DigitalCompactCassette>,
+        <https://data.hetarchief.be/id/carrier/Fidelpac>,
+        <https://data.hetarchief.be/id/carrier/GrundigEN3>,
+        <https://data.hetarchief.be/id/carrier/MicroCassette>,
+        <https://data.hetarchief.be/id/carrier/MiniCassette>,
+        <https://data.hetarchief.be/id/carrier/PicoCassette>,
+        <https://data.hetarchief.be/id/carrier/StenoCassette> ;
+    skos:prefLabel "Audio cassette"@en,
+        "Audiocassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier/Videocassette> a skos:Concept ;
+    rdfs:subClassOf premis:StorageMedium ;
+    skos:broader <https://data.hetarchief.be/id/carrier/VideoCarrier> ;
+    skos:definition "A plastic housing containing two reels on which a video tape is wound. Openings in the housing (which are protected against dust and damage by a cover) allow the video recorder to play and record on the tape."@en,
+        "Een kunststoffen behuizing met daarin twee haspels waarop een videoband is gewikkeld. Via openingen in de behuizing (die door een klepje tegen stof en beschadiging worden beschermd) kan de videorecorder de band afspelen en hierop opnemen."@nl ;
+    skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Videocassette> ;
+    skos:inScheme <https://data.hetarchief.be/id/carrier> ;
+    skos:narrower <https://data.hetarchief.be/id/carrier/8mmtapevideo>,
+        <https://data.hetarchief.be/id/carrier/Betacam>,
+        <https://data.hetarchief.be/id/carrier/Betamax>,
+        <https://data.hetarchief.be/id/carrier/CompactVideoCassette>,
+        <https://data.hetarchief.be/id/carrier/D1>,
+        <https://data.hetarchief.be/id/carrier/D2>,
+        <https://data.hetarchief.be/id/carrier/D3>,
+        <https://data.hetarchief.be/id/carrier/D5>,
+        <https://data.hetarchief.be/id/carrier/D6>,
+        <https://data.hetarchief.be/id/carrier/D9>,
+        <https://data.hetarchief.be/id/carrier/DCT>,
+        <https://data.hetarchief.be/id/carrier/DVCPRO>,
+        <https://data.hetarchief.be/id/carrier/DigitalVideoCassette>,
+        <https://data.hetarchief.be/id/carrier/HDCAM>,
+        <https://data.hetarchief.be/id/carrier/M>,
+        <https://data.hetarchief.be/id/carrier/MII>,
+        <https://data.hetarchief.be/id/carrier/SANYOV-CORD>,
+        <https://data.hetarchief.be/id/carrier/Umatic>,
+        <https://data.hetarchief.be/id/carrier/VCR>,
+        <https://data.hetarchief.be/id/carrier/VHS>,
+        <https://data.hetarchief.be/id/carrier/Video2000> ;
+    skos:prefLabel "videocassette"@en,
+        "videocassette"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/carrier> .
+
+<https://data.hetarchief.be/id/carrier> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/carrier/16mmFilm>,
+        <https://data.hetarchief.be/id/carrier/1InchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/1InchVideotape>,
+        <https://data.hetarchief.be/id/carrier/22mmFilm>,
+        <https://data.hetarchief.be/id/carrier/28mmFilm>,
+        <https://data.hetarchief.be/id/carrier/2InchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/2InchVideotape>,
+        <https://data.hetarchief.be/id/carrier/35mmFilm>,
+        <https://data.hetarchief.be/id/carrier/70mmFilm>,
+        <https://data.hetarchief.be/id/carrier/8Track>,
+        <https://data.hetarchief.be/id/carrier/8mmFilm>,
+        <https://data.hetarchief.be/id/carrier/8mmtapevideo>,
+        <https://data.hetarchief.be/id/carrier/9andaHalfmmFilm>,
+        <https://data.hetarchief.be/id/carrier/ADAT>,
+        <https://data.hetarchief.be/id/carrier/AudioCD>,
+        <https://data.hetarchief.be/id/carrier/AudioCarrier>,
+        <https://data.hetarchief.be/id/carrier/AudioCassette>,
+        <https://data.hetarchief.be/id/carrier/Betacam>,
+        <https://data.hetarchief.be/id/carrier/BetacamOxide>,
+        <https://data.hetarchief.be/id/carrier/BetacamSP>,
+        <https://data.hetarchief.be/id/carrier/BetacamSX>,
+        <https://data.hetarchief.be/id/carrier/Betamax>,
+        <https://data.hetarchief.be/id/carrier/BluRayDisc>,
+        <https://data.hetarchief.be/id/carrier/CD-R>,
+        <https://data.hetarchief.be/id/carrier/CD-RW>,
+        <https://data.hetarchief.be/id/carrier/CDVideo>,
+        <https://data.hetarchief.be/id/carrier/CompactCassette>,
+        <https://data.hetarchief.be/id/carrier/CompactVideoCassette>,
+        <https://data.hetarchief.be/id/carrier/D-VHS>,
+        <https://data.hetarchief.be/id/carrier/D1>,
+        <https://data.hetarchief.be/id/carrier/D2>,
+        <https://data.hetarchief.be/id/carrier/D3>,
+        <https://data.hetarchief.be/id/carrier/D5>,
+        <https://data.hetarchief.be/id/carrier/D6>,
+        <https://data.hetarchief.be/id/carrier/D9>,
+        <https://data.hetarchief.be/id/carrier/DCT>,
+        <https://data.hetarchief.be/id/carrier/DV>,
+        <https://data.hetarchief.be/id/carrier/DVCAM>,
+        <https://data.hetarchief.be/id/carrier/DVCAM34>,
+        <https://data.hetarchief.be/id/carrier/DVCAM40>,
+        <https://data.hetarchief.be/id/carrier/DVCPRO>,
+        <https://data.hetarchief.be/id/carrier/DVCPro25>,
+        <https://data.hetarchief.be/id/carrier/DVCPro50>,
+        <https://data.hetarchief.be/id/carrier/DVCProHD>,
+        <https://data.hetarchief.be/id/carrier/DVCProProgressive>,
+        <https://data.hetarchief.be/id/carrier/DVD>,
+        <https://data.hetarchief.be/id/carrier/DVD+R>,
+        <https://data.hetarchief.be/id/carrier/DVD+RDL>,
+        <https://data.hetarchief.be/id/carrier/DVD+RW>,
+        <https://data.hetarchief.be/id/carrier/DVD-R>,
+        <https://data.hetarchief.be/id/carrier/DVD-RW>,
+        <https://data.hetarchief.be/id/carrier/DataCarrier>,
+        <https://data.hetarchief.be/id/carrier/Digital8>,
+        <https://data.hetarchief.be/id/carrier/DigitalAudioTape>,
+        <https://data.hetarchief.be/id/carrier/DigitalBetacam>,
+        <https://data.hetarchief.be/id/carrier/DigitalCompactCassette>,
+        <https://data.hetarchief.be/id/carrier/DigitalVideoCassette>,
+        <https://data.hetarchief.be/id/carrier/Fidelpac>,
+        <https://data.hetarchief.be/id/carrier/FilmCarrier>,
+        <https://data.hetarchief.be/id/carrier/GlassPlate>,
+        <https://data.hetarchief.be/id/carrier/GramophoneRecord>,
+        <https://data.hetarchief.be/id/carrier/GrundigEN3>,
+        <https://data.hetarchief.be/id/carrier/HD-DVD>,
+        <https://data.hetarchief.be/id/carrier/HDCAM>,
+        <https://data.hetarchief.be/id/carrier/HDV>,
+        <https://data.hetarchief.be/id/carrier/HalfInchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/HalfInchVideotape>,
+        <https://data.hetarchief.be/id/carrier/Hi8>,
+        <https://data.hetarchief.be/id/carrier/LacquerDisc>,
+        <https://data.hetarchief.be/id/carrier/LaserDisc>,
+        <https://data.hetarchief.be/id/carrier/M>,
+        <https://data.hetarchief.be/id/carrier/MII>,
+        <https://data.hetarchief.be/id/carrier/Magazine>,
+        <https://data.hetarchief.be/id/carrier/Manuscript>,
+        <https://data.hetarchief.be/id/carrier/MicroCassette>,
+        <https://data.hetarchief.be/id/carrier/MiniCD>,
+        <https://data.hetarchief.be/id/carrier/MiniCD-R>,
+        <https://data.hetarchief.be/id/carrier/MiniCassette>,
+        <https://data.hetarchief.be/id/carrier/MiniDisc>,
+        <https://data.hetarchief.be/id/carrier/Newspaper>,
+        <https://data.hetarchief.be/id/carrier/OpenReelAudiotape>,
+        <https://data.hetarchief.be/id/carrier/OpenReelVideoTape>,
+        <https://data.hetarchief.be/id/carrier/OpticalAudioDisc>,
+        <https://data.hetarchief.be/id/carrier/OpticalVideoDisc>,
+        <https://data.hetarchief.be/id/carrier/PhotographicCarrier>,
+        <https://data.hetarchief.be/id/carrier/PicoCassette>,
+        <https://data.hetarchief.be/id/carrier/Print>,
+        <https://data.hetarchief.be/id/carrier/QuarterInchAudioTape>,
+        <https://data.hetarchief.be/id/carrier/QuarterInchVideotape>,
+        <https://data.hetarchief.be/id/carrier/S-VHS>,
+        <https://data.hetarchief.be/id/carrier/S-VHS-C>,
+        <https://data.hetarchief.be/id/carrier/SANYOV-CORD>,
+        <https://data.hetarchief.be/id/carrier/SeparateSoundTrackFilm>,
+        <https://data.hetarchief.be/id/carrier/ShellacDisc>,
+        <https://data.hetarchief.be/id/carrier/StandardVCR>,
+        <https://data.hetarchief.be/id/carrier/StandardVHS>,
+        <https://data.hetarchief.be/id/carrier/StenoCassette>,
+        <https://data.hetarchief.be/id/carrier/Super16mmFilm>,
+        <https://data.hetarchief.be/id/carrier/Super8mmFilm>,
+        <https://data.hetarchief.be/id/carrier/SuperAudioCD>,
+        <https://data.hetarchief.be/id/carrier/SuperVideoCD>,
+        <https://data.hetarchief.be/id/carrier/SuperVideoRecording>,
+        <https://data.hetarchief.be/id/carrier/Umatic>,
+        <https://data.hetarchief.be/id/carrier/UmaticSP>,
+        <https://data.hetarchief.be/id/carrier/VCR>,
+        <https://data.hetarchief.be/id/carrier/VCR-LP>,
+        <https://data.hetarchief.be/id/carrier/VHS>,
+        <https://data.hetarchief.be/id/carrier/VHS-C>,
+        <https://data.hetarchief.be/id/carrier/Video-CD>,
+        <https://data.hetarchief.be/id/carrier/Video2000>,
+        <https://data.hetarchief.be/id/carrier/Video8>,
+        <https://data.hetarchief.be/id/carrier/VideoCarrier>,
+        <https://data.hetarchief.be/id/carrier/Videocassette>,
+        <https://data.hetarchief.be/id/carrier/VinylRecording>,
+        <https://data.hetarchief.be/id/carrier/W-VHS>,
+        <https://data.hetarchief.be/id/carrier/WaxCylinder>,
+        <https://data.hetarchief.be/id/carrier/WireRecording>,
+        <https://data.hetarchief.be/id/carrier/XDCAM> ;
+    skos:prefLabel "Thesaurus dragertypes"@nl .
+
