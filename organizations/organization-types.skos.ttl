@@ -1,250 +1,390 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 
-@base <https://data.hetarchief.be/id/organization-type/> .
+<https://data.hetarchief.be/id/organization-type/adviescommissie> a skos:Concept ;
+    skos:altLabel "adviesraad"@nl,
+        "raad van advies"@nl ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OVH> ;
+    skos:definition "An advisory committee is a permanent group of independent people who advise a specific organization on the policy to be pursued. An advisory board can be part of a government body, a foundation, an association or a company."@en,
+        "Een adviescomissie is een vaste groep onafhankelijke personen die een bepaalde organisatie adviseert over het te voeren beleid. Een adviesraad kan deel uitmaken van een overheidsorgaan, een stichting, een vereniging of een bedrijf."@nl ;
+    skos:example "Adviescommissie K&E"@nl,
+        "SARC"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Advisory committee"@en,
+        "Adviescommissie"@nl .
 
-<https://data.hetarchief.be/id/organization-type> a skos:ConceptScheme;
+<https://data.hetarchief.be/id/organization-type/advocatenbureau> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/ALG> ;
+    skos:definition "A law firm is an organization for legal services that mainly carries out legal work by lawyers."@en,
+        "Een advocatenbureau is een organisatie voor juridische dienstverlening die voornamelijk juridische werkzaamheden door advocaten uitvoert."@nl ;
+    skos:example "Hans Bracquené"@nl,
+        "Monard Law"@nl,
+        "Van Eeghem & Criel"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Law firm"@en,
+        "Advocatenbureau"@nl .
+
+<https://data.hetarchief.be/id/organization-type/archief> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "An archive is an organization committed to preserving collections of important data in document form or objects of social value."@en,
+        "Een archief is een organisatie die zich inzet voor het bewaren van verzamelingen van belangrijke gegevens in documentvorm of objecten met maatschappelijke waarde."@nl ;
+    skos:example "ADVN"@nl,
+        "AMSAB"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Archive"@en,
+        "Archief"@nl .
+
+<https://data.hetarchief.be/id/organization-type/commissie_vlaams_parlement> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OVH> ;
+    skos:definition "A committee is a group of Flemish representatives who specialize in a specific subject, such as education, welfare or economics. A committee has fifteen permanent members and fifteen alternates, divided according to the strength of the factions."@en,
+        "Een commissie is een groep van Vlaamse volksvertegenwoordigers, die zich gespecialiseerd hebben in een bepaalde onderwerp, zoals onderwijs, welzijn of economie. Een commissie telt vijftien vaste leden en vijftien plaatsvervangers, verdeeld volgens de sterkte van de fracties."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Committee of the Flemish Parliament"@en,
+        "Commissie Vlaams Parlement"@nl .
+
+<https://data.hetarchief.be/id/organization-type/deeltijds_kunstonderwijs> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "An organization in Part-time Art Education offers education in your spare time."@en,
+        "Een organisatie in Deeltijds Kunstonderwijs biedt onderwijs in de vrije tijd."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Part-time art education"@en,
+        "Deeltijds kunstonderwijs"@nl .
+
+<https://data.hetarchief.be/id/organization-type/dienstenbedrijf> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/LEV> ;
+    skos:definition "A service company is an organization that acts as a supplier of general services."@en,
+        "Een dienstenbedrijf is een organisatie die optreedt als leverancier voor algemene diensten."@nl ;
+    skos:example "Algemene consultancy"@nl,
+        "Elektriciteitsleverancier"@nl,
+        "Internetleverancier"@nl,
+        "Sociaal secretariaat"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Services company"@en,
+        "Dienstenbedrijf"@nl .
+
+<https://data.hetarchief.be/id/organization-type/digitaliseringsbedrijf> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/LEV> ;
+    skos:definition "A digitalization company is an organization that acts as a supplier in the field of digitalization."@en,
+        "Een digitaliseringsbedrijf is een organisatie die optreedt als leverancier in het domein van digitalisering."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Digitization company"@en,
+        "Digitaliseringsbedrijf"@nl .
+
+<https://data.hetarchief.be/id/organization-type/educatieve_organisatie> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "An educational organization is an organization that provides educational services."@en,
+        "Een educatieve organisatie is een organisatie die educatieve diensten verleent."@nl ;
+    skos:example "Jekino VZW"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Educational organization"@en,
+        "Educatieve organisatie"@nl .
+
+<https://data.hetarchief.be/id/organization-type/educatieve_uitgeverij> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "An educational publisher is a publishing house that develops, produces and publishes educational materials."@en,
+        "Een educatieve uitgeverij is een uitgeverij die leermiddelen ontwikkelt, produceert en uitgeeft."@nl ;
+    skos:example "Averbode"@nl,
+        "Die Keure"@nl,
+        "Van In"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Educational publisher"@en,
+        "Educatieve uitgeverij"@nl .
+
+<https://data.hetarchief.be/id/organization-type/erfgoedbibliotheek> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "A heritage library or preservation library is a library whose mission is to permanently preserve specific parts of the collection."@en,
+        "Een erfgoedbibliotheek of bewaarbibliotheek is een bibliotheek met als opdracht specifieke delen van de collectie permanent te bewaren."@nl ;
+    skos:example "EHC"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Heritage Library"@en,
+        "Erfgoedbibliotheek"@nl .
+
+<https://data.hetarchief.be/id/organization-type/erfgoedcel> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "A heritage cell is an organization, usually in the form of a non-profit organization, that promotes cultural heritage in a region or city in various ways. The main activities are public projects, to make local heritage known to the public, and to identify, preserve and pass on that heritage."@en,
+        "Een erfgoedcel of erfgoedcelwerking is een organisatie, meestal in de vorm van een vzw, die zich op verschillende manieren inspant voor het cultureel erfgoed in een regio of stad. De voornaamste activiteiten zijn publieksprojecten, om lokaal erfgoed bekend te maken bij het publiek, en het identificeren, bewaren en doorgeven van dat erfgoed."@nl ;
+    skos:example "CO7"@nl,
+        "Kempens Karakter"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Heritage cell"@en,
+        "Erfgoedcel"@nl .
+
+<https://data.hetarchief.be/id/organization-type/fotograaf> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/LEV> ;
+    skos:definition "A photographer is an organization that acts as a supplier in the field of photography (especially at Art in Flanders)."@en,
+        "Een fotograaf is een organisatie die optreedt als leverancier in het domein van fotografie (vooral bij Art in Flanders)."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Photographer"@en,
+        "Fotograaf"@nl .
+
+<https://data.hetarchief.be/id/organization-type/hoger_onderwijs> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "A higher education institution is an organization that offers education that follows secondary education or secondary education."@en,
+        "Een Hoger onderwijsinstelling is een organisatie dieonderwijs aanbiedt die volgt op het voortgezet onderwijs of secundair onderwijs."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "College"@en,
+        "Hoger onderwijs"@nl .
+
+<https://data.hetarchief.be/id/organization-type/kabinet> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OVH> ;
+    skos:definition "In Belgian society, primarily in politics, a cabinet is the designation of a service consisting of a group of employees, and the work location of this group, who support a politician with an important position in the executive power or the legislative power ."@en,
+        "Een kabinet is in de Belgische samenleving, in de eerste plaats in de politiek, de aanduiding van een dienst bestaande uit een groep medewerkers, en de werklocatie van deze groep, die een politicus met een belangrijke functie in de uitvoerende macht of de wetgevende macht ondersteunen."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Cabinet"@en,
+        "Kabinet"@nl .
+
+<https://data.hetarchief.be/id/organization-type/kathedrale_kerkfabriek> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/ALG> ;
+    skos:definition "A cathedral church council is a church council that manages the resources of a cathedral."@en,
+        "Een kathedrale kerkfabriek is een kerkfabriek die de middelen van een kathedraal beheert."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Cathedral church council"@en,
+        "Kathedrale kerkfabriek"@nl .
+
+<https://data.hetarchief.be/id/organization-type/kerkfabriek> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/ALG> ;
+    skos:definition "A church council is a public institution with legal personality that manages the material resources necessary for the exercise of worship in a parish. She owns the church, or manages the church as property of the municipality. A church factory is not concerned with organizing worship services, liturgy or catechesis."@en,
+        "Een kerkfabriek is een openbare instelling met rechtspersoonlijkheid die de materiële middelen beheert die nodig zijn voor de uitoefening van de eredienst in een parochie. Ze heeft de kerk in eigendom, of beheert de kerk als eigendom van de gemeente. Een kerkfabriek houdt zich niet bezig met het organiseren van erediensten, liturgie of catechese."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Church council"@en,
+        "Kerkfabriek"@nl .
+
+<https://data.hetarchief.be/id/organization-type/kunstenorganisatie> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "An arts organization is a legal entity that is professionally active in the arts sector within the Flemish Community and that assumes one or more functions within it."@en,
+        "Een kunstenorganisatie is een rechtspersoon die professioneel actief is in de kunstensector binnen de Vlaamse Gemeenschap en die daarin een of meer functies opneemt."@nl ;
+    skos:example "Beeldende kunstorganisaties"@nl,
+        "Podiumkunstenorganisaties"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Arts organization"@en,
+        "Kunstenorganisatie"@nl .
+
+<https://data.hetarchief.be/id/organization-type/landelijke_private_omroep> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/MED> ;
+    skos:definition "A national private broadcaster is a broadcaster aimed at a broad audience throughout the country."@en,
+        "Een Landelijke private omroep is een omroep gericht naar een breed publiek in het hele land."@nl ;
+    skos:example "Medialaan"@nl,
+        "SBS"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "National private broadcaster"@en,
+        "Landelijke private omroep"@nl .
+
+<https://data.hetarchief.be/id/organization-type/leerplichtonderwijs> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "An organization in compulsory education offers education that falls under compulsory education."@en,
+        "Een organisatie in het leerplichtonderwijs biedt onderwijs aan dat onder de leerplicht valt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Compulsory education"@en,
+        "Leerplichtonderwijs"@nl .
+
+<https://data.hetarchief.be/id/organization-type/mediabedrijf> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/MED> ;
+    skos:definition "A media company is a private media organization with a commercial purpose."@en,
+        "Een mediabedrijf is een private mediaorganisatie met een commercieel doel."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Media company"@en,
+        "Mediabedrijf"@nl .
+
+<https://data.hetarchief.be/id/organization-type/museum_erkend> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "A recognized museum is a museum that has obtained the quality label as a recognized organization on the basis of the Flemish Cultural Heritage Decree and can therefore claim an operating subsidy."@en,
+        "Een erkend museum is een museum die het kwaliteitslabel als erkende organisatie heeft behaald op basis van het Vlaams Cultureelerfgoeddecreet en kan daarom aanspraak maken op een werkingssubsidie."@nl ;
+    skos:example "Groeningemuseum"@nl,
+        "MAS"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Certified museum"@en,
+        "Erkend museum"@nl .
+
+<https://data.hetarchief.be/id/organization-type/museum_niet_erkend> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "A non-recognized museum is a museum that is not a recognized organization on the basis of the Flemish Cultural Heritage Decree and therefore cannot claim an operating subsidy."@en,
+        "Een niet-erkend museum is een museum dat geen erkende organisatie is op basis van het Vlaams Cultureelerfgoeddecreet en kan daarom geen aanspraak maken op een werkingssubsidie."@nl ;
+    skos:example "Erasmushuis"@nl,
+        "Historische Huizen Gent"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Uncertified museum"@en,
+        "Niet-erkend museum"@nl .
+
+<https://data.hetarchief.be/id/organization-type/onderwijskoepel> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "An educational umbrella organization is an association that represents a group of schools. In Flanders there are three educational umbrella organizations: the umbrella organization of Catholic schools (Flemish Secretariat of Catholic Education), the provincial schools (Provincial Education Flanders) and the umbrella organization of urban and municipal schools (Education Secretariat of Cities and Municipalities). Such an educational umbrella organization supports the schools, draws up curricula and represents them at a Flemish level."@en,
+        "Een onderwijskoepel is een vereniging die een groep scholen vertegenwoordigt. In Vlaanderen zijn er drie onderwijskoepels: de koepel van de katholieke scholen (Vlaams Secretariaat van het Katholiek Onderwijs), de provinciale scholen (Provinciaal Onderwijs Vlaanderen) en de koepel van stedelijke en gemeentelijke scholen (Onderwijssecretariaat van Steden en Gemeenten). Zo’n onderwijskoepel ondersteunt de scholen, maakt leerplannen op en vertegenwoordigt hen op Vlaams niveau."@nl ;
+    skos:example "GO"@nl,
+        "KOV"@nl,
+        "OVSG"@nl,
+        "POV"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Education umbrella organization"@en,
+        "Onderwijskoepel"@nl .
+
+<https://data.hetarchief.be/id/organization-type/openbare_bibliotheek> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/CUL> ;
+    skos:definition "A public library is an organization that makes various types of physical and digital information and culture carriers and the content they contain available and accessible to residents in its work area."@en,
+        "Een openbare bibliotheek is een organisatie die verschillende soorten fysieke en digitale informatie- en cultuurdragers én de inhoud die ze bevatten beschikbaar en toegankelijk maakt voor inwoners in haar werkgebied."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Public Library"@en,
+        "Openbare bibliotheek"@nl .
+
+<https://data.hetarchief.be/id/organization-type/overheidsdienst> a skos:Concept ;
+    skos:altLabel "government service"@en ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OVH> ;
+    skos:definition "A public service is a service provider that is part of a government."@en,
+        "Een overheidsdienst is een dienstenleverancier die deel uitmaakt van een overheid."@nl ;
+    skos:example "Departement CJSM"@nl,
+        "Vlaams Parlement"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Public service"@en,
+        "Overheidsdienst"@nl .
+
+<https://data.hetarchief.be/id/organization-type/publieke_omroep> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/MED> ;
+    skos:definition "A public broadcaster is an organization created by the government to broadcast information via a means of communication to a wide audience."@en,
+        "Een publieke omroep is een organisatie die door de overheid in het leven is geroepen om informatie uit te zenden via een communicatiemiddel naar een breed publiek."@nl ;
+    skos:example "VRT"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Public broadcast Corporation"@en,
+        "Publieke omroep"@nl .
+
+<https://data.hetarchief.be/id/organization-type/regionale_omroep> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/MED> ;
+    skos:definition "A regional broadcaster is a broadcaster aimed at an audience in a subnationally defined area, a region."@en,
+        "Een regionale omroep is een omroep gericht op een publiek in een subnationaal afgegrensd gebied, een regio."@nl ;
+    skos:example "ATV"@nl,
+        "AVS"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Regional broadcaster"@en,
+        "Regionale omroep"@nl .
+
+<https://data.hetarchief.be/id/organization-type/sectororganisatie> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/ALG> ;
+    skos:definition "A sector organization supports other organizations and companies with services tailored to the sector."@en,
+        "Een sectororganisatie ondersteunt andere organisaties en ondernemingen met diensten op maat van de sector."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Sector organization"@en,
+        "Sectororganisatie"@nl .
+
+<https://data.hetarchief.be/id/organization-type/technologiebedrijf> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/LEV> ;
+    skos:definition "A technology company is a company that acts as a supplier in the field of technology."@en,
+        "Een technologiebedrijf is een onderneming die optreedt als leverancier in het domein van technologie."@nl ;
+    skos:example "Archiefdiensten"@nl,
+        "Webdiensten"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Technology company"@en,
+        "Technologiebedrijf"@nl .
+
+<https://data.hetarchief.be/id/organization-type/vakbond> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "A trade union, trade association, employees' association, trade association or syndicate is an organization that represents the individual and collective interests of affiliated employees."@en,
+        "Een vakbond, vakvereniging, werknemersvereniging, vakorganisatie of syndicaat is een organisatie die de individuele en collectieve belangen van aangesloten werknemers behartigt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Union"@en,
+        "Vakbond"@nl .
+
+<https://data.hetarchief.be/id/organization-type/vakvereniging_onderwijs> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "A trade union, trade association, employees' association, trade association or syndicate is an organization that represents the individual and collective interests of affiliated employees."@en,
+        "Een vakbond, vakvereniging, werknemersvereniging, vakorganisatie of syndicaat is een organisatie die de individuele en collectieve belangen van aangesloten werknemers behartigt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Trade association education"@en,
+        "Vakvereniging onderwijs"@nl .
+
+<https://data.hetarchief.be/id/organization-type/volwassenenonderwijs> a skos:Concept ;
+    skos:broader <https://data.hetarchief.be/id/organization-type/OND> ;
+    skos:definition "An adult education organization offers education to people who are not obliged to attend school."@en,
+        "Een organisatie in het volwassenenonderwijs biedt onderwijs aan niet-leerplichtigen."@nl ;
+    skos:example "COV"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:prefLabel "Adult education"@en,
+        "Volwassenenonderwijs"@nl .
+
+<https://data.hetarchief.be/id/organization-type/ALG> a skos:Concept ;
+    skos:definition "A general organization is an organization with a general character or carries out activities with a general interest."@en,
+        "Een algemene organisatie is een organisatie met een algemeen karakter of voert activiteiten uit met algemeen belang."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:narrower <https://data.hetarchief.be/id/organization-type/advocatenbureau>,
+        <https://data.hetarchief.be/id/organization-type/kathedrale_kerkfabriek>,
+        <https://data.hetarchief.be/id/organization-type/kerkfabriek>,
+        <https://data.hetarchief.be/id/organization-type/sectororganisatie> ;
+    skos:prefLabel "General organization"@en,
+        "Algemene organisatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-type> .
+
+<https://data.hetarchief.be/id/organization-type/LEV> a skos:Concept ;
+    skos:definition "An organization that provides services within a specific domain."@en,
+        "Een organisatie die diensten leveren binnen een bepaald domein."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:narrower <https://data.hetarchief.be/id/organization-type/dienstenbedrijf>,
+        <https://data.hetarchief.be/id/organization-type/digitaliseringsbedrijf>,
+        <https://data.hetarchief.be/id/organization-type/fotograaf>,
+        <https://data.hetarchief.be/id/organization-type/technologiebedrijf> ;
+    skos:prefLabel "Supplier"@en,
+        "Leverancier"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-type> .
+
+<https://data.hetarchief.be/id/organization-type/MED> a skos:Concept ;
+    skos:definition "A media organization is an organization with activities in the media."@en,
+        "Een mediaorganisatie is een organisatie met activiteiten in de media."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:narrower <https://data.hetarchief.be/id/organization-type/landelijke_private_omroep>,
+        <https://data.hetarchief.be/id/organization-type/mediabedrijf>,
+        <https://data.hetarchief.be/id/organization-type/publieke_omroep>,
+        <https://data.hetarchief.be/id/organization-type/regionale_omroep> ;
+    skos:prefLabel "Media organization"@en,
+        "Mediaorganisatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-type> .
+
+<https://data.hetarchief.be/id/organization-type/OVH> a skos:Concept ;
+    skos:definition "A government organization is an organization that carries out tasks on behalf of the government."@en,
+        "Een overheidsorganisatie is een organisatie die taken uitvoert namens de overheid."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:narrower <https://data.hetarchief.be/id/organization-type/adviescommissie>,
+        <https://data.hetarchief.be/id/organization-type/commissie_vlaams_parlement>,
+        <https://data.hetarchief.be/id/organization-type/kabinet>,
+        <https://data.hetarchief.be/id/organization-type/overheidsdienst> ;
+    skos:prefLabel "Government organization"@en,
+        "Overheidsorganisatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-type> .
+
+<https://data.hetarchief.be/id/organization-type/CUL> a skos:Concept ;
+    skos:definition "A cultural organization carries out activities in the cultural sector."@en,
+        "Een culturele organisatie voert activiteiten uit in de cultuursector."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:narrower <https://data.hetarchief.be/id/organization-type/archief>,
+        <https://data.hetarchief.be/id/organization-type/erfgoedbibliotheek>,
+        <https://data.hetarchief.be/id/organization-type/erfgoedcel>,
+        <https://data.hetarchief.be/id/organization-type/kunstenorganisatie>,
+        <https://data.hetarchief.be/id/organization-type/museum_erkend>,
+        <https://data.hetarchief.be/id/organization-type/museum_niet_erkend>,
+        <https://data.hetarchief.be/id/organization-type/openbare_bibliotheek> ;
+    skos:prefLabel "Cultural organization"@en,
+        "Culturele organisatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-type> .
+
+<https://data.hetarchief.be/id/organization-type/OND> a skos:Concept ;
+    skos:definition "An educational organization is an organization with activities in education."@en,
+        "Een onderwijsorganisatie is een organisatie met activiteiten in het onderwijs."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-type> ;
+    skos:narrower <https://data.hetarchief.be/id/organization-type/deeltijds_kunstonderwijs>,
+        <https://data.hetarchief.be/id/organization-type/educatieve_organisatie>,
+        <https://data.hetarchief.be/id/organization-type/educatieve_uitgeverij>,
+        <https://data.hetarchief.be/id/organization-type/hoger_onderwijs>,
+        <https://data.hetarchief.be/id/organization-type/leerplichtonderwijs>,
+        <https://data.hetarchief.be/id/organization-type/onderwijskoepel>,
+        <https://data.hetarchief.be/id/organization-type/vakbond>,
+        <https://data.hetarchief.be/id/organization-type/vakvereniging_onderwijs>,
+        <https://data.hetarchief.be/id/organization-type/volwassenenonderwijs> ;
+    skos:prefLabel "Educational organization"@en,
+        "Onderwijsorganisatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/organization-type> .
+
+<https://data.hetarchief.be/id/organization-type> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/organization-type/ALG>,
+        <https://data.hetarchief.be/id/organization-type/CUL>,
+        <https://data.hetarchief.be/id/organization-type/LEV>,
+        <https://data.hetarchief.be/id/organization-type/MED>,
+        <https://data.hetarchief.be/id/organization-type/OND>,
+        <https://data.hetarchief.be/id/organization-type/OVH> ;
     skos:prefLabel "Meemoo organization classification thesaurus"@en;
     skos:prefLabel "Meemoo lijst organisatietypes"@nl;
     skos:definition "Meemoo lijst organisatietypes"@nl;
     skos:hasTopConcept <ALG>, <CUL>, <LEV>, <MED>, <OVH>.
-
-# --- Algemeen ---
-
-<ALG> a haOrg:OrganizationType, skos:Concept;
-    skos:topConceptOf <https://data.hetarchief.be/id/organization-type>;
-    skos:narrower <advocatenbureau>, <kerkfabriek>, <kathedrale_kerkfabriek>, <sectororganisatie>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Algemeen"@nl;
-    skos:definition "Algemeen"@nl.
-
-<advocatenbureau> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <ALG>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Advocatenbureau"@nl;
-    skos:definition "Advocatenbureau"@nl.
-
-<kerkfabriek> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <ALG>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Kerkfabriek"@nl;
-    skos:definition "Kerkfabriek"@nl.
-
-<kathedrale_kerkfabriek> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <ALG>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Kathedrale kerkfabriek"@nl;
-    skos:definition "Kathedrale kerkfabriek"@nl.
-
-<sectororganisatie> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <ALG>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Sectororganisatie"@nl;
-    skos:definition "Sectororganisatie"@nl.
-
-# --- Cultuur ---
-
-<CUL> a haOrg:OrganizationType, skos:Concept;
-    skos:topConceptOf <https://data.hetarchief.be/id/organization-type>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:narrower <kunstenorganisatie>, <erfgoedcel>, <openbare_bibliotheek>, <archief>, <erfgoedbibliotheek>, <museum_(niet_erkend)>, <museum_(erkend)>;
-    skos:prefLabel "Cultuur/erfgoed"@nl;
-    skos:definition "Cultuur/erfgoed"@nl.
-
-<kunstenorganisatie> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Kunstenorganisatie"@nl;
-    skos:definition "Kunstenorganisatie"@nl.
-
-<erfgoedcel> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Erfgoedcel"@nl;
-    skos:definition "Erfgoedcel"@nl.
-
-<openbare_bibliotheek> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Openbare bibliotheek"@nl;
-    skos:definition "Openbare bibliotheek"@nl.
-
-<archief> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Archief"@nl;
-    skos:definition "Archief"@nl.
-
-<erfgoedbibliotheek> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Erfgoedbibliotheek"@nl;
-    skos:definition "Erfgoedbibliotheek"@nl.
-
-<museum_(niet_erkend)> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Museum (niet erkend)"@nl;
-    skos:definition "Museum (niet erkend)"@nl.
-
-<museum_(erkend)> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <CUL>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Museum (erkend)"@nl;
-    skos:definition "Museum (erkend)"@nl.
-
-# --- Leverancier ---
-
-<LEV> a haOrg:OrganizationType, skos:Concept;
-    skos:topConceptOf <https://data.hetarchief.be/id/organization-type>;
-    skos:narrower <dienstenbedrijf>, <digitaliseringsbedrijf>, <technologiebedrijf> ;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Leverancier"@nl;
-    skos:definition "Leverancier"@nl.
-
-<dienstenbedrijf> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <LEV>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Dienstenbedrijf"@nl;
-    skos:definition "Dienstenbedrijf"@nl.
-
-<digitaliseringsbedrijf> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <LEV>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Digitaliseringsbedrijf"@nl;
-    skos:definition "Digitaliseringsbedrijf"@nl.
-
-<technologiebedrijf> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <LEV>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Technologiebedrijf"@nl;
-    skos:definition "Technologiebedrijf"@nl.
-
-# --- Media ---
-
-<MED> a haOrg:OrganizationType, skos:Concept;
-    skos:topConceptOf <https://data.hetarchief.be/id/organization-type>;
-    skos:narrower <mediabedrijf>, <landelijke_private_omroep>, <regionale_omroep>, <publieke_omroep> ;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Media"@nl;
-    skos:definition "Media"@nl.
-
-<mediabedrijf> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <MED>; 
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Mediabedrijf"@nl;
-    skos:definition "Mediabedrijf"@nl.
-
-<landelijke_private_omroep> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <MED>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Landelijke private omroep"@nl;
-    skos:definition "Landelijke private omroep"@nl.
-
-<regionale_omroep> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <MED>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Regionale omroep"@nl;
-    skos:definition "Regionale omroep"@nl.
-
-<publieke_omroep> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <MED>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Publieke omroep"@nl;
-    skos:definition "Publieke omroep"@nl.
-
-
-# --- Overheid ---
-
-<OVH> a haOrg:OrganizationType, skos:Concept;
-    skos:topConceptOf <https://data.hetarchief.be/id/organization-type>;
-    skos:narrower <adviescommissie>, <commissie_vlaams_parlement>, <kabinet>, <overheidsdienst>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Overheid"@nl;
-    skos:definition "Overheid"@nl.
-
-<adviescommissie> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OVH>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "adviescommissie"@nl;
-    skos:definition "adviescommissie"@nl.
-
-<commissie_vlaams_parlement> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OVH>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Commissie Vlaams Parlement"@nl;
-    skos:definition "Commissie Vlaams Parlement"@nl.
-
-<kabinet> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OVH>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Kabinet"@nl;
-    skos:definition "Kabinet"@nl.
-
-<overheidsdienst> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OVH>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Overheidsdienst"@nl;
-    skos:definition "Overheidsdienst"@nl.
-
-
-# --- Onderwijs ---
-
-<OND> a haOrg:OrganizationType, skos:Concept;
-    skos:topConceptOf <https://data.hetarchief.be/id/organization-type>;
-    skos:narrower <hoger_onderwijs>, <leerplichtonderwijs>, <vakbond>, <educatieve_uitgeverij>, <educatieve_organisatie>, <vakvereniging_onderwijs>, <onderwijskoepel>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Onderwijs"@nl;
-    skos:definition "Onderwijs"@nl.
-
-<hoger_onderwijs> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Hoger onderwijs"@nl;
-    skos:definition "Hoger onderwijs"@nl.
-
-<leerplichtonderwijs> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Leerplichtonderwijs"@nl;
-    skos:definition "Leerplichtonderwijs"@nl.
-
-<vakbond> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Vakbond"@nl;
-    skos:definition "Vakbond"@nl.
-
-<educatieve_uitgeverij> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Educatieve uitgeverij"@nl;
-    skos:definition "Educatieve uitgeverij"@nl.
-
-<educatieve_organisatie> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Educatieve organisatie"@nl;
-    skos:definition "Educatieve organisatie"@nl.
-
-<vakvereniging_onderwijs> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Vakvereniging onderwijs"@nl;
-    skos:definition "Vakvereniging onderwijs"@nl.
-
-<volwassenenonderwijs> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Volwassenenonderwijs"@nl;
-    skos:definition "Volwassenenonderwijs"@nl.
-
-<onderwijskoepel> a haOrg:OrganizationType, skos:Concept;
-    skos:broader <OND>;
-    skos:inScheme <https://data.hetarchief.be/id/organization-type>;
-    skos:prefLabel "Onderwijskoepel"@nl;
-    skos:definition "Onderwijskoepel"@nl.
-
-
