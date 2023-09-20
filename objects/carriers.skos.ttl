@@ -161,7 +161,8 @@
         "Een digitaal videocassetteformaat van ½ inch. Mogelijk ook bekend als Beta. Soorten Betamax omvatten ook Beta Hi-Fi, ED Betamax en Super Betamax."@nl ;
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#Betamax> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "Betamax"@en .
+    skos:prefLabel "Betamax"@en,
+        "Betamax"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/bluraydisc> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -222,8 +223,9 @@
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/vhs> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "D-VHS"@en,
-        "D-VHS"@nl .
+    skos:notation "D-VHS" ;
+    skos:prefLabel "Digital VHS"@en,
+        "Digital VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/d1> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -361,42 +363,42 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvcam> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:prefLabel "DVCAM 34"@en,
-        "DVCAM 35"@nl .
+        "DVCAM 34"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/dvcam40> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvcam> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:prefLabel "DVCAM 40"@en,
-        "DVCAM 41"@nl .
+        "DVCAM 40"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/dvcpro25> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:altLabel "D-7"@en ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvcpro> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "DVCPro 25"@en,
+    skos:prefLabel "DVC PRO 25"@en,
         "DVCPro 25"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/dvcpro50> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvcpro> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "DVCPro 50"@en,
+    skos:prefLabel "DVC PRO 50"@en,
         "DVCPro 50"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/dvcprohd> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvcpro> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "DVCPro HD"@en,
+    skos:prefLabel "DVC PRO HD"@en,
         "DVCPro HD"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/dvcproprogressive> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvcpro> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "DVCPro Progressive"@en,
+    skos:prefLabel "DVC PRO Progressive"@en,
         "DVCPro Progressive"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/dvd+r> a skos:Concept ;
@@ -508,8 +510,8 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
 <https://data.hetarchief.be/id/carrier-type/hdv> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/digitalvideocassette> ;
-    skos:definition "A cassette-based 1/4-inch digital videotape format. This is a high-definition version of MiniDV."@en,
-        "Een op cassette gebaseerd 1/4-inch digitaal videobandformaat. Dit is een versie van MiniDV in hoge definitie."@nl ;
+    skos:definition "HDV is a cassette-based 1/4-inch digital videotape format. This is a high-definition version of MiniDV."@en,
+        "HDV is een op cassette gebaseerd 1/4-inch digitaal videobandformaat. Dit is een versie van MiniDV in hoge definitie."@nl ;
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#HDV> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:prefLabel "HDV"@en,
@@ -650,15 +652,17 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/vhs> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "S-VHS"@en,
-        "S-VHS"@nl .
+    skos:notation "S-VHS" ;
+    skos:prefLabel "Super VHS"@en,
+        "Super-VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/s-vhs-c> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/vhs> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "S-VHS-C"@en,
-        "S-VHS-C"@nl .
+    skos:notation "S-VHS-C" ;
+    skos:prefLabel "Compact Super VHS"@en,
+        "compact Super-VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/sanyov-cord> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -777,8 +781,9 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/vhs> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "VHS-C"@en,
-        "VHS-C"@nl .
+    skos:notation "VHS-C" ;
+    skos:prefLabel "Compact Cassette VHS"@en,
+        "compact cassette VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/video-cd> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -793,6 +798,10 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     rdfs:subClassOf premis:StorageMedium ;
     skos:altLabel "Video Compact Cassette"@en ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/videocassette> ;
+    skos:definition """The Video2000 cassette was introduced by Philips in 1979. The Video 2000 cassette looks like a large audio cassette, but is approximately the size of a VHS cassette, which existed in the same period. They can be recognized by the Video2000 logo or the inscription VCC.
+This carrier contained all kinds of technical innovations. Video 2000 cassettes are two-sided. Each side had room for four hours of footage. Yet Video 2000 was not an overwhelming success."""@en,
+        """De Video 2000 cassette werd door Philips in 1979 op de markt gebracht. De Video 2000-cassette ziet eruit als een grote audiocassette, maar heeft ongeveer de grootte van een VHS-cassette, die dezelfde periode bestond. Ze zijn te herkennen aan het logo Video2000, of het opschrift VCC. 
+Deze drager bevatte allerlei technische innovaties. Video 2000-cassettes zijn tweezijdig. Elke kant had plaats voor vier uur aan beeldmateriaal. Toch was Video 2000 geen overdonderend succes."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:notation "VCC" ;
     skos:prefLabel "Video2000"@en,
@@ -821,8 +830,9 @@ HDCAM-cassettes herken je aan hun zwarte behuizing met oranjekleurig accent. In 
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/vhs> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:prefLabel "W-VHS"@en,
-        "W-VHS"@nl .
+    skos:notation "W-VHS" ;
+    skos:prefLabel "Double VHS"@en,
+        "dubbel-VHS"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/waxcylinder> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -907,8 +917,10 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
 
 <https://data.hetarchief.be/id/carrier-type/dvcam> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
+    skos:altLabel "Digital Video"@en ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/digitalvideocassette> ;
-    skos:definition "A cassette-based 1/4-inch digital videotape format."@en ;
+    skos:definition "DVCAM was introduced by Sony (as an alternative to Panasonic's DVCPRO), as a professional version of the standard DV format. The cassette is dark gray with a gray-blue accent color at the top."@en,
+        "DVCAM werd geïntroduceerd door Sony (als alternatief voor DVCPRO van Panasonic), als professionele versie van het standaard DV-formaat. De cassette is donkergrijs met een grijs-blauwe accentkleur bovenaan."@nl ;
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DVCAM> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:narrower <https://data.hetarchief.be/id/carrier-type/dvcam34>,
@@ -1006,15 +1018,16 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
 <https://data.hetarchief.be/id/carrier-type/dvcpro> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/videocassette> ;
-    skos:definition "A cassette-based 1/4-inch digital videotape format."@en ;
+    skos:definition "DVCPRO is a cassette-based 1/4-inch digital videotape format. They were mainly used for professional purposes. From 1995 to the 2010s, they regularly appeared at (inter)national broadcasters. There are 3 different format versions in DVCPRO: 25, 50 and HD. This is related to the bit depth (25, 50 or 100) at which recording could be made. The 3 format versions can be distinguished by the logo on the cassette, but also by the accent color: 25 has a yellow top, 50 a blue and HD a red one."@en,
+        "DVC PRO is een op cassette gebaseerd 1/4-inch digitaal videobandformaat. Ze werden vooral voor professionele doeleinden gebruikt. Van 1995 tot de jaren 2010 doken ze geregeld op bij (inter)nationale omroepen. DEr zijn 3 verschillende formaatversies in DVCPRO: 25, 50 en HD. Dit is gerelateerd aan de bitdiepte (25, 50 of 100) waarop opgenomen kon worden. De 3 formaatversies zijn te onderscheiden door het logo dat op de cassette staat, maar ook door de accentkleur: 25 heeft een gele bovenkant, 50 een blauwe en HD een rode."@nl ;
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#DVCPRO> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:narrower <https://data.hetarchief.be/id/carrier-type/dvcpro25>,
         <https://data.hetarchief.be/id/carrier-type/dvcpro50>,
         <https://data.hetarchief.be/id/carrier-type/dvcprohd>,
         <https://data.hetarchief.be/id/carrier-type/dvcproprogressive> ;
-    skos:prefLabel "DVCPRO"@en,
-        "DVCPRO"@nl .
+    skos:prefLabel "DVC PRO"@en,
+        "DVC PRO"@nl .
 
 <https://data.hetarchief.be/id/carrier-type/openreelaudiotape> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
@@ -1096,7 +1109,16 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
 <https://data.hetarchief.be/id/carrier-type/vhs> a skos:Concept ;
     rdfs:subClassOf premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/videocassette> ;
-    skos:definition "A cassette-based 1/2-inch analog videotape format."@en ;
+    skos:definition """VHS is a cassette-based 1/2-inch analog videotape format. VHS Cassettes were particularly popular. The period of production is the best proof of that. Only in July 2016 - no less than 40 years after its introduction - the last VHS devices rolled off the assembly line. 
+
+VHS cassettes are typically black with 2 white spindles and translucent windows showing both reels. The logo is placed in the top right or bottom corner. The most common is a plastic box with a clip closure on the long side. Sometimes cardboard or plastic sleeves are also used.
+
+We can find all kinds of cassettes under the term ‘VHS’. For example, think of VHS-C (Compact Cassette), S-VHS (Super VHS), W-VHS (Double VHS) and D-VHS (Digital VHS). Their playing time varies, depending on the tape length and the recording/playing speed. The maximum was somewhere around 8 hours."""@en,
+        """VHS is een op cassettes gebaseerd analoog videobandformaat van 1/2 inch. VHS-cassettes waren bijzonder populair. Het beste bewijs daarvan is de productietermijn. Pas in juli 2016, maar liefst 40 jaar na haar introductie, rolden de laatste VHS-toestellen van de band.
+
+VHS-cassettes zijn doorgaans zwart met 2 witte assen en doorschijnende vensters die beide spoelen tonen. Het logo is aangebracht in de rechter-boven- of onderhoek. Meest voorkomend is een plastieken doos met een klipsluiting op de lange zijde. Soms komen ook kartonnen of plastieken hoezen voor.
+
+Onder de noemer ‘VHS’ vinden we allerlei soorten cassettes. Denk bijvoorbeeld aan VHS-C (compact cassette), S-VHS (Super-VHS), W-VHS (dubbel-VHS) en D-VHS (Digital VHS). De afspeelduur varieert, afhankelijk van de tapelengte en de opname-/afspeelsnelheid. Het maximum lag in de buurt van 8 uur."""@nl ;
     skos:exactmatch <http://pbcore.org/pbcore-controlled-vocabularies/titletype-vocabulary/#VHS> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
     skos:narrower <https://data.hetarchief.be/id/carrier-type/d-vhs>,
@@ -1214,4 +1236,3 @@ De oorsprong van de naam U-Matic hoeven we niet ver te zoeken. In de speler volg
 <https://data.hetarchief.be/id/carrier-type> a skos:ConceptScheme ;
     skos:hasTopConcept <https://data.hetarchief.be/id/carrier-type/datacarrier> ;
     skos:prefLabel "Thesaurus dragertypes"@nl .
-
