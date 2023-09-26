@@ -89,25 +89,25 @@
     ], 
     [
         a sh:PropertyShape ;
-        sh:path prov:wasAttributedTo;
+        sh:path prov:wasAssociatedWith;
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
            [sh:class premis:SoftwareAgent] 
            [sh:class premis:HardwareAgent]
         ) ;
-        sh:name "was attributed to"@en ;
-        sh:name "était attribué à"@fr ;
-        sh:name "was toegekend aan"@nl;
-        sh:description """The agent that was attributed to the activity."""@en ;
-        sh:description """L'agent qui est attribué à l'activité."""@fr ;
-        sh:description """De agent die toegekend is aan de activiteit."""@nl ;
+        rdfs:label "was associated with"@en ;
+        rdfs:label "a été associé à"@fr ;
+        rdfs:label "is geassocieerd met"@nl ;
+        skos:definition "An agent that had some (unspecified) responsibility for the occurrence of this activity."@en ;
+        skos:definition "Un agent qui avait une responsabilité (non spécifiée) avant la survenue de cette activité."@fr ;
+        skos:definition "Een agent die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze activiteit."@nl ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:severity sh:Violation ;
-        sh:message "prov:wasAttributedTo is absent, occurs more than once or its value is not an instance of classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@en ;
-        sh:message "prov:wasAttributedTo est absent, apparaît plus d'une fois ou sa valeur n'est pas une instance de classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@fr ;
-        sh:message "prov:endedAtTime ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klassen schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@nl ;
+        sh:message "prov:wasAssociatedWith is absent, occurs more than once or its value is not an instance of classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@en ;
+        sh:message "prov:wasAssociatedWith est absent, apparaît plus d'une fois ou sa valeur n'est pas une instance de classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@fr ;
+        sh:message "prov:wasAssociatedWith ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klassen schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@nl ;
     ],
     [
         a sh:PropertyShape ;
