@@ -1,6 +1,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://creativecommons.org/publicdomain/zero/1.0/> skos:narrower <https://data.hetarchief.be/id/license/CC0-CONTENT> .
+<https://creativecommons.org/publicdomain/zero/1.0> skos:narrower <https://data.hetarchief.be/id/license/CC0-CONTENT> .
 
 <https://data.hetarchief.be/id/license/VIAA-BIBLIOTHEKEN> a skos:Concept ;
     skos:altLabel "Licentie bibliotheken"@nl ;
@@ -62,7 +62,7 @@
 
 <https://data.hetarchief.be/id/license/CC0-CONTENT> a skos:Concept ;
     skos:altLabel "CC0 1.0 Universeel Publiek Domein Verklaring"@nl ;
-    skos:broader <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:broader <https://creativecommons.org/publicdomain/zero/1.0> ;
     skos:definition """Geen auteursrecht
 De persoon die deze akte aan een werk heeft verbonden heeft het werk toegewezen aan het publiek domein door wereldwijd zijn of haar rechten op het werk onder het auteursrecht, inclusief alle bijbehorende en naburige rechten, af te staan, voor zover door de wet is toegestaan.
 
