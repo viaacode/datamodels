@@ -1,234 +1,349 @@
-@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://data.hetarchief.be/id/license/CC_BY-SA-METADATA>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-Gelijkdelen 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-sa/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nhet werk te bewerken: te remixen, te veranderen en afgeleide werken te maken\r\nvoor alle doeleinden, inclusief commerciële doeleinden.\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nGelijkDelen: Als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd, moet je het veranderde materiaal verspreiden onder dezelfde licentie als het originele werk.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) onder dezelfde licentie (SA) als het originele werk.\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-SA 4.0 metadata"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://creativecommons.org/publicdomain/zero/1.0/> skos:narrower <https://data.hetarchief.be/id/license/CC0-CONTENT> .
 
-<https://data.hetarchief.be/id/license/CC_BY-NC-ND-METADATA>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-NietCommercieel-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-nc-nd/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nNietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden.\r\nGeenAfgeleideWerken: Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van de metadata via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële doeleinden (NC) en in ongewijzigde vorm (ND).\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-NC-ND 4.0 metadata"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/VIAA-BIBLIOTHEKEN> a skos:Concept ;
+    skos:altLabel "Licentie bibliotheken"@nl ;
+    skos:definition "De afspeelmedia en metadata van een archiefitem mogen ontsloten worden in bibliotheken."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Bibliotheeklicentie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie onderwijs fragment"@nl ;
-        skos:definition    "De afspeelmedia en metadata van een of meer fragmenten van een archiefitem mogen ontsloten en gebruikt worden voor educatieve doeleinden en onderwijs."@nl ;
-        skos:scopeNote       "meemoo mag de content en metadata van één dan wel meerdere fragmenten van het item gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be.\r\nDeze licentie laat toe dat meemoo één of meerdere fragmenten van het item mag ontsluiten voor educatieve doeleinden"@nl , "waarbij de som van de fragmenten niet meer dan 50% van het geheel bedraagt."@nl , "een fragment vormt daarbij een inhoudelijk, relevant (educatief) geheel"@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Onderwijslicentie fragment"@nl ;
-        skos:related       <https://data.hetarchief.be/id/license/VIAA_ONDERWIJS> ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/VIAA-INTRAMUROS> a skos:Concept ;
+    skos:altLabel "Licentie intra muros"@nl ;
+    skos:definition "Media en en metadata van een item mogen ontsloten worden binnen de fysieke en digitale omgeving van meemoo."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Intramuros-licentie"@nl ;
+    skos:scopeNote "Deze licentie wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden."@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/CC_BY-METADATA>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nhet werk te bewerken: te remixen, te veranderen en afgeleide werken te maken\r\nvoor alle doeleinden, inclusief commerciële doeleinden.\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY).\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY 4.0 metadata"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/VIAA-ONDERZOEK> a skos:Concept ;
+    skos:altLabel "Licentie onderzoek"@nl ;
+    skos:definition "De afspeelmedia en metadata van een archiefitem mogen ontsloten en gebruikt worden voor onderzoek en wetenschappelijke doeleinden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Onderzoekslicentie"@nl ;
+    skos:scopeNote "meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar."@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/CC_BY-NC-METADATA>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-NietCommercieel 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-nc/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nhet werk te bewerken: te remixen, te veranderen en afgeleide werken te maken\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nNietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële (NC) doeleinden.\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-NC 4.0 metadata"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/VIAA_ONDERWIJS> skos:related <https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT> .
 
-<https://data.hetarchief.be/id/license/CC0-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "CC0 1.0 Universeel Publiek Domein Verklaring"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/publicdomain/zero/1.0/deed.nl> ;
-        skos:definition    "Geen auteursrecht\r\nDe persoon die deze akte aan een werk heeft verbonden heeft het werk toegewezen aan het publiek domein door wereldwijd zijn of haar rechten op het werk onder het auteursrecht, inclusief alle bijbehorende en naburige rechten, af te staan, voor zover door de wet is toegestaan.\r\n\r\nJe mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoeren, zelfs voor commerciële doeleinden."@nl ;
-        skos:scopeNote       "CCO = er zijn nog rechten op het materiaal, maar er wordt afstand van deze rechten gedaan. Publiek domein = er rusten geen rechten meer op het materiaal.\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC0 1.0 metadata"@nl , "CC0 1.0 media"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://creativecommons.org/licenses/by-nc-nd/4.0> skos:narrower <https://data.hetarchief.be/id/license/CC_BY-NC-ND-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-NC-ND-METADATA> .
 
-<https://data.hetarchief.be/id/license/VIAA-ONDERWIJS>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie onderwijs"@nl ;
-        skos:definition    "De afspeelmedia en metadata van een archiefitem mogen ontsloten en gebruikt worden voor educatieve doeleinden en onderwijs."@nl ;
-        skos:scopeNote       "meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Onderwijslicentie"@nl ;
-        skos:related       <https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT> ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://creativecommons.org/licenses/by-nc/4.0> skos:narrower <https://data.hetarchief.be/id/license/CC_BY-NC-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-NC-METADATA> .
 
-<https://data.hetarchief.be/id/license/VIAA-ONDERZOEK>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie onderzoek"@nl ;
-        skos:definition    "De afspeelmedia en metadata van een archiefitem mogen ontsloten en gebruikt worden voor onderzoek en wetenschappelijke doeleinden."@nl ;
-        skos:scopeNote       "meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Onderzoekslicentie"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://creativecommons.org/licenses/by-nd/4.0> skos:narrower <https://data.hetarchief.be/id/license/CC_BY-ND-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-ND-METADATA> .
 
-<https://data.hetarchief.be/id/license/VIAA-INTRA_CP-METADATA-ALL>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie content partners metadata uitgebreid"@nl ;
-        skos:definition    "Een uitgebreide set aan metadata van hun archiefitems mag ontsloten worden tussen meemoo content partners onderling."@nl ;
-        skos:scopeNote       "Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be"@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:narrower      <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT> ;
-        skos:prefLabel     "Intra-CP-licentie metadata"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://creativecommons.org/licenses/by-sa/4.0> skos:narrower <https://data.hetarchief.be/id/license/CC_BY-SA-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-SA-METADATA> .
 
-<https://data.hetarchief.be/id/license/CC_BY-NC-ND-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-NietCommercieel-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-nc-nd/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nNietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden.\r\nGeenAfgeleideWerken: Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële doeleinden (NC) en in ongewijzigde vorm (ND).\r\n\r\nWoordt gebruikt voor het downloaden van objecten op Art In Flanders."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-NC-ND 4.0 media"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://creativecommons.org/licenses/by/4.0> skos:narrower <https://data.hetarchief.be/id/license/CC_BY-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-METADATA> .
 
-<https://data.hetarchief.be/id/license/CC_BY-SA-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-Gelijkdelen 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-sa/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nhet werk te bewerken: te remixen, te veranderen en afgeleide werken te maken\r\nvoor alle doeleinden, inclusief commerciële doeleinden.\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nGelijkDelen: Als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd, moet je het veranderde materiaal verspreiden onder dezelfde licentie als het originele werk.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) onder dezelfde licentie (SA) als het originele werk.\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-SA 4.0 media"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT> a skos:Concept ;
+    skos:altLabel "Licentie bezoekersruimte media"@nl ;
+    skos:definition "De afspeelmedia van een archiefitem mag ontsloten worden binnen een afgeschermde digitale ruimte."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Bezoekerslicentie"@nl ;
+    skos:related <https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL> ;
+    skos:scopeNote "De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie publiek media"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> ;
-        skos:definition    "De afspeelmedia van een archiefitem mag publiek ontsloten worden."@nl ;
-        skos:scopeNote       "De lage resolutiekopie van het object mag beschikbaar gemaakt worden aan het brede publiek. Deze licentie impliceert dat ook de VIAA-PUBLIEK-METADATA-LTD of VIAA-PUBLIEK-METADATA-ALL gegeven wordt. Deze licentie is nog niet in gebruik."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Publiekslicentie"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL> a skos:Concept ;
+    skos:altLabel "Licentie bezoekersruimte metadata uitgebreid"@nl ;
+    skos:definition "Een uitgebreide set aan metadata van het object mag ontsloten worden binnen een afgeschermde digitale ruimte."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Bezoekerslicentie metadata"@nl ;
+    skos:related <https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT> ;
+    skos:scopeNote "Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/CC_BY-NC-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-NietCommercieel 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-nc/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nhet werk te bewerken: te remixen, te veranderen en afgeleide werken te maken\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nNietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële (NC) doeleinden.\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-NC 4.0 media"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/CC0-CONTENT> a skos:Concept ;
+    skos:altLabel "CC0 1.0 Universeel Publiek Domein Verklaring"@nl ;
+    skos:broader <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    skos:definition """Geen auteursrecht
+De persoon die deze akte aan een werk heeft verbonden heeft het werk toegewezen aan het publiek domein door wereldwijd zijn of haar rechten op het werk onder het auteursrecht, inclusief alle bijbehorende en naburige rechten, af te staan, voor zover door de wet is toegestaan.
 
-<https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie bezoekersruimte media"@nl ;
-        skos:definition    "De afspeelmedia van een archiefitem mag ontsloten worden binnen een afgeschermde digitale ruimte."@nl ;
-        skos:scopeNote       "De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be"@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Bezoekerslicentie"@nl ;
-        skos:related       <https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL> ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Je mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoeren, zelfs voor commerciële doeleinden."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC0 1.0 media"@nl ;
+    skos:scopeNote """CCO = er zijn nog rechten op het materiaal, maar er wordt afstand van deze rechten gedaan. Publiek domein = er rusten geen rechten meer op het materiaal.
 
-<https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie content partners media"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-METADATA-ALL> ;
-        skos:definition    "De afspeelmedia van hun archiefitems mogen ontsloten worden tussen meemoo content partners onderling."@nl ;
-        skos:scopeNote       "De lage resolutiekopie van het object mag getoond worden tussen contentpartners.\r\nIndien deze licentie gegeven wordt, zal ook de licentie VIAA-INTRA_CP-METADATA-ALL van toepassing worden.\r\nDeze licentie wordt gebruikt op cataloguspro.hetarchief.be."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Intra-CP-licentie"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie bezoekersruimte metadata uitgebreid"@nl ;
-        skos:definition    "Een uitgebreide set aan metadata van het object mag ontsloten worden binnen een afgeschermde digitale ruimte."@nl ;
-        skos:scopeNote       "Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be"@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Bezoekerslicentie metadata"@nl ;
-        skos:related       <https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT> ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/CC_BY-CONTENT> a skos:Concept ;
+    skos:altLabel "Naamsvermelding 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+het werk te bewerken: te remixen, te veranderen en afgeleide werken te maken
+voor alle doeleinden, inclusief commerciële doeleinden.
 
-<https://data.hetarchief.be/id/license/VIAA-BIBLIOTHEKEN>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie bibliotheken"@nl ;
-        skos:definition    "De afspeelmedia en metadata van een archiefitem mogen ontsloten worden in bibliotheken."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Bibliotheeklicentie"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY 4.0 media"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY).
 
-<https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie publiek metadata basis"@nl ;
-        skos:definition    "Een beperkte set aan metadata van het archiefitem mag publiek ontsloten worden."@nl ;
-        skos:scopeNote       "Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Publiekslicentie metadata beperkt"@nl ;
-        skos:related       <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie publiek metadata uitgebreid"@nl ;
-        skos:definition    "Een uitgebreide set aan metadata van het item mag publiek ontsloten worden."@nl ;
-        skos:scopeNote       "Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:narrower      <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT> ;
-        skos:prefLabel     "Publiekslicentie metadata"@nl ;
-        skos:related       <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD> ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/CC_BY-METADATA> a skos:Concept ;
+    skos:altLabel "Naamsvermelding 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+het werk te bewerken: te remixen, te veranderen en afgeleide werken te maken
+voor alle doeleinden, inclusief commerciële doeleinden.
 
-<https://data.hetarchief.be/id/license/CC_BY-ND-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-nd/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nvoor alle doeleinden, inclusief commerciële doeleinden.\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nGeenAfgeleideWerken:Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) in ongewijzigde vorm (ND).\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-ND 4.0 media"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY 4.0 metadata"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY).
 
-<https://data.hetarchief.be/id/license/CC_BY-CONTENT>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nhet werk te bewerken: te remixen, te veranderen en afgeleide werken te maken\r\nvoor alle doeleinden, inclusief commerciële doeleinden.\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY).\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY 4.0 media"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
-<https://data.hetarchief.be/id/license/VIAA-INTRAMUROS>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Licentie intra muros"@nl ;
-        skos:definition    "Media en en metadata van een item mogen ontsloten worden binnen de fysieke en digitale omgeving van meemoo."@nl ;
-        skos:scopeNote       "Deze licentie wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "Intramuros-licentie"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+<https://data.hetarchief.be/id/license/CC_BY-NC-CONTENT> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-NietCommercieel 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-nc/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+het werk te bewerken: te remixen, te veranderen en afgeleide werken te maken
 
-<https://data.hetarchief.be/id/license>
-        rdf:type            skos:ConceptScheme ;
-        skos:hasTopConcept  <https://data.hetarchief.be/id/license/VIAA-BIBLIOTHEKEN> , <https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT> , <https://data.hetarchief.be/id/license/CC_BY-NC-ND-METADATA> , <https://data.hetarchief.be/id/license/CC_BY-ND-METADATA> , <https://data.hetarchief.be/id/license/CC_BY-SA-CONTENT> , <https://data.hetarchief.be/id/license/VIAA-ONDERZOEK> , <https://data.hetarchief.be/id/license/CC_BY-CONTENT> , <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT> , <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-METADATA-ALL> , <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> , <https://data.hetarchief.be/id/license/VIAA-ONDERWIJS> , <https://data.hetarchief.be/id/license/CC0-CONTENT> , <https://data.hetarchief.be/id/license/CC_BY-SA-METADATA> , <https://data.hetarchief.be/id/license/CC_BY-NC-CONTENT> , <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD> , <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT> , <https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL> , <https://data.hetarchief.be/id/license/VIAA-INTRAMUROS> , <https://data.hetarchief.be/id/license/CC_BY-NC-METADATA> , <https://data.hetarchief.be/id/license/CC_BY-ND-CONTENT> , <https://data.hetarchief.be/id/license/CC_BY-METADATA> , <https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT> , <https://data.hetarchief.be/id/license/CC_BY-NC-ND-CONTENT> ;
-        skos:prefLabel      "haLicId" .
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+NietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-NC 4.0 media"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële (NC) doeleinden.
 
-<https://data.hetarchief.be/id/license/CC_BY-ND-METADATA>
-        rdf:type           skos:Concept ;
-        skos:altLabel      "Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
-        skos:broader       <https://data.hetarchief.be/id/license/https://creativecommons.org/licenses/by-nd/4.0/deed.nl> ;
-        skos:definition    "Je bent vrij om:\r\nhet werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat\r\nvoor alle doeleinden, inclusief commerciële doeleinden.\r\n\r\nOnder de volgende voorwaarden:\r\nNaamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.\r\nGeenAfgeleideWerken:Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.\r\nGeen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."@nl ;
-        skos:scopeNote       "Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) in ongewijzigde vorm.\r\n\r\nDeze licentie wordt momenteel niet gebruikt."@nl ;
-        skos:inScheme      <https://data.hetarchief.be/id/license> ;
-        skos:prefLabel     "CC BY-ND 4.0 metadata"@nl ;
-        skos:topConceptOf  <https://data.hetarchief.be/id/license> .
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-NC-METADATA> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-NietCommercieel 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-nc/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+het werk te bewerken: te remixen, te veranderen en afgeleide werken te maken
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+NietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-NC 4.0 metadata"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële (NC) doeleinden.
+
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-NC-ND-CONTENT> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-NietCommercieel-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-nc-nd/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+NietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden.
+GeenAfgeleideWerken: Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-NC-ND 4.0 media"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële doeleinden (NC) en in ongewijzigde vorm (ND).
+
+Woordt gebruikt voor het downloaden van objecten op Art In Flanders."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-NC-ND-METADATA> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-NietCommercieel-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-nc-nd/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+NietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden.
+GeenAfgeleideWerken: Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-NC-ND 4.0 metadata"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van de metadata via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële doeleinden (NC) en in ongewijzigde vorm (ND).
+
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-ND-CONTENT> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-nd/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+voor alle doeleinden, inclusief commerciële doeleinden.
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+GeenAfgeleideWerken:Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-ND 4.0 media"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) in ongewijzigde vorm (ND).
+
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-ND-METADATA> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-nd/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+voor alle doeleinden, inclusief commerciële doeleinden.
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+GeenAfgeleideWerken:Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-ND 4.0 metadata"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) in ongewijzigde vorm.
+
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-SA-CONTENT> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-Gelijkdelen 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-sa/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+het werk te bewerken: te remixen, te veranderen en afgeleide werken te maken
+voor alle doeleinden, inclusief commerciële doeleinden.
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+GelijkDelen: Als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd, moet je het veranderde materiaal verspreiden onder dezelfde licentie als het originele werk.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-SA 4.0 media"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) onder dezelfde licentie (SA) als het originele werk.
+
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/CC_BY-SA-METADATA> a skos:Concept ;
+    skos:altLabel "Naamsvermelding-Gelijkdelen 4.0 Internationaal"@nl ;
+    skos:broader <https://creativecommons.org/licenses/by-sa/4.0> ;
+    skos:definition """Je bent vrij om:
+het werk te delen: te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+het werk te bewerken: te remixen, te veranderen en afgeleide werken te maken
+voor alle doeleinden, inclusief commerciële doeleinden.
+
+Onder de volgende voorwaarden:
+Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link naar de licentie te plaatsen en aan te geven of het werk veranderd is. Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+GelijkDelen: Als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd, moet je het veranderde materiaal verspreiden onder dezelfde licentie als het originele werk.
+Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "CC BY-SA 4.0 metadata"@nl ;
+    skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) onder dezelfde licentie (SA) als het originele werk.
+
+Deze licentie wordt momenteel niet gebruikt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT> a skos:Concept ;
+    skos:altLabel "Licentie content partners media"@nl ;
+    skos:broader <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-METADATA-ALL> ;
+    skos:definition "De afspeelmedia van hun archiefitems mogen ontsloten worden tussen meemoo content partners onderling."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Intra-CP-licentie"@nl ;
+    skos:scopeNote """De lage resolutiekopie van het object mag getoond worden tussen contentpartners.
+Indien deze licentie gegeven wordt, zal ook de licentie VIAA-INTRA_CP-METADATA-ALL van toepassing worden.
+Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/VIAA-INTRA_CP-METADATA-ALL> a skos:Concept ;
+    skos:altLabel "Licentie content partners metadata uitgebreid"@nl ;
+    skos:definition "Een uitgebreide set aan metadata van hun archiefitems mag ontsloten worden tussen meemoo content partners onderling."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:narrower <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT> ;
+    skos:prefLabel "Intra-CP-licentie metadata"@nl ;
+    skos:scopeNote "Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/VIAA-ONDERWIJS> a skos:Concept ;
+    skos:altLabel "Licentie onderwijs"@nl ;
+    skos:definition "De afspeelmedia en metadata van een archiefitem mogen ontsloten en gebruikt worden voor educatieve doeleinden en onderwijs."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Onderwijslicentie"@nl ;
+    skos:related <https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT> ;
+    skos:scopeNote "meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be."@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT> a skos:Concept ;
+    skos:altLabel "Licentie publiek media"@nl ;
+    skos:broader <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> ;
+    skos:definition "De afspeelmedia van een archiefitem mag publiek ontsloten worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Publiekslicentie"@nl ;
+    skos:scopeNote "De lage resolutiekopie van het object mag beschikbaar gemaakt worden aan het brede publiek. Deze licentie impliceert dat ook de VIAA-PUBLIEK-METADATA-LTD of VIAA-PUBLIEK-METADATA-ALL gegeven wordt. Deze licentie is nog niet in gebruik."@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD> a skos:Concept ;
+    skos:altLabel "Licentie publiek metadata basis"@nl ;
+    skos:definition "Een beperkte set aan metadata van het archiefitem mag publiek ontsloten worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Publiekslicentie metadata beperkt"@nl ;
+    skos:related <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> ;
+    skos:scopeNote "Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be."@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT> a skos:Concept ;
+    skos:altLabel "Licentie onderwijs fragment"@nl ;
+    skos:definition "De afspeelmedia en metadata van een of meer fragmenten van een archiefitem mogen ontsloten en gebruikt worden voor educatieve doeleinden en onderwijs."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:prefLabel "Onderwijslicentie fragment"@nl ;
+    skos:related <https://data.hetarchief.be/id/license/VIAA-ONDERWIJS>,
+        <https://data.hetarchief.be/id/license/VIAA_ONDERWIJS> ;
+    skos:scopeNote """meemoo mag de content en metadata van één dan wel meerdere fragmenten van het item gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be.
+Deze licentie laat toe dat meemoo één of meerdere fragmenten van het item mag ontsluiten voor educatieve doeleinden; een fragment vormt daarbij een inhoudelijk, relevant (educatief) geheel; waarbij de som van de fragmenten niet meer dan 50% van het geheel bedraagt."""@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> a skos:Concept ;
+    skos:altLabel "Licentie publiek metadata uitgebreid"@nl ;
+    skos:definition "Een uitgebreide set aan metadata van het item mag publiek ontsloten worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/license> ;
+    skos:narrower <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT> ;
+    skos:prefLabel "Publiekslicentie metadata"@nl ;
+    skos:related <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD> ;
+    skos:scopeNote "Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be."@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/license> .
+
+<https://data.hetarchief.be/id/license> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT>,
+        <https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL>,
+        <https://data.hetarchief.be/id/license/CC0-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-METADATA>,
+        <https://data.hetarchief.be/id/license/CC_BY-NC-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-NC-METADATA>,
+        <https://data.hetarchief.be/id/license/CC_BY-NC-ND-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-NC-ND-METADATA>,
+        <https://data.hetarchief.be/id/license/CC_BY-ND-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-ND-METADATA>,
+        <https://data.hetarchief.be/id/license/CC_BY-SA-CONTENT>,
+        <https://data.hetarchief.be/id/license/CC_BY-SA-METADATA>,
+        <https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT>,
+        <https://data.hetarchief.be/id/license/VIAA-BIBLIOTHEKEN>,
+        <https://data.hetarchief.be/id/license/VIAA-INTRAMUROS>,
+        <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT>,
+        <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-METADATA-ALL>,
+        <https://data.hetarchief.be/id/license/VIAA-ONDERWIJS>,
+        <https://data.hetarchief.be/id/license/VIAA-ONDERZOEK>,
+        <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT>,
+        <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL>,
+        <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD> ;
+    skos:prefLabel "Thesaurus meemoo licenties"@nl .
