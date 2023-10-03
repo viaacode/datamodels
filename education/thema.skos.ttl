@@ -75,330 +75,330 @@ haOndCol:thema a skos:Collection,
     skos:memberList ( haOndThema:nederlandse-taal haOndThema:moderne-talen haOndThema:klassieke-talen haOndThema:literatuur haOndThema:media-en-communicatie haOndThema:sport-en-spel haOndThema:gezondheid-en-gezondheidszorg haOndThema:lichamelijke-verzorging haOndThema:voeding-en-horeca haOndThema:politiek-en-overheid haOndThema:recht haOndThema:participatie haOndThema:relaties-en-seksualiteit haOndThema:psychologie haOndThema:opvoeding-en-ontwikkeling haOndThema:identiteit haOndThema:armoede-en-welvaart haOndThema:normen-en-waarden haOndThema:rolpatronen-en-stereotypen haOndThema:leren-en-onderzoeken haOndThema:religie-en-geloof haOndThema:filosofie haOndThema:rampen-en-conflicten haOndThema:economie haOndThema:bedrijfsbeheer haOndThema:omgaan-met-geld haOndThema:beroepen haOndThema:prehistorie haOndThema:oudheid haOndThema:middeleeuwen haOndThema:vroegmoderne-tijd haOndThema:moderne-tijd haOndThema:hedendaagse-tijd haOndThema:erfgoed haOndThema:verkeer-en-mobiliteit haOndThema:toerisme haOndThema:weer-en-klimaat haOndThema:bevolking-en-ruimtelijke-ordening haOndThema:landschap-en-reli%C3%ABf haOndThema:het-heelal haOndThema:milieu-en-ecologie haOndThema:wiskunde haOndThema:chemie haOndThema:biologie haOndThema:fysica haOndThema:constructie-en-productie haOndThema:land--en-tuinbouw haOndThema:digitale-vaardigheden-en-informatica haOndThema:mediawijsheid haOndThema:beeldende-kunsten haOndThema:podiumkunsten haOndThema:toegepaste-kunsten ) ;
     skos:prefLabel "themas"@nl .
 
-<https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-folk--en-wereldmuziek> skos:related haOndThema:podiumkunsten .
+<https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-folk--en-wereldmuziek> skos:relatedMatch haOndThema:podiumkunsten .
 
-<https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-jazz-pop-rock> skos:related haOndThema:podiumkunsten .
+<https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-jazz-pop-rock> skos:relatedMatch haOndThema:podiumkunsten .
 
-<https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-klassiek> skos:related haOndThema:podiumkunsten .
+<https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-klassiek> skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:administratie skos:related haOndThema:bedrijfsbeheer .
+haOndVak:administratie skos:relatedMatch haOndThema:bedrijfsbeheer .
 
-haOndVak:afwerking-bouw skos:related haOndThema:constructie-en-productie .
+haOndVak:afwerking-bouw skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:agrarische-technieken skos:related haOndThema:land--en-tuinbouw .
+haOndVak:agrarische-technieken skos:relatedMatch haOndThema:land--en-tuinbouw .
 
-haOndVak:algemene-muziekleer skos:related haOndThema:podiumkunsten .
+haOndVak:algemene-muziekleer skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:aphaOndThemaek skos:related haOndThema:chemie .
+haOndVak:aphaOndThemaek skos:relatedMatch haOndThema:chemie .
 
-haOndVak:architecturale-vorming skos:related haOndThema:toegepaste-kunsten .
+haOndVak:architecturale-vorming skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:architectuurtekenen skos:related haOndThema:toegepaste-kunsten .
+haOndVak:architectuurtekenen skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:atelier-drama skos:related haOndThema:podiumkunsten .
+haOndVak:atelier-drama skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:atelier-woord skos:related haOndThema:podiumkunsten .
+haOndVak:atelier-woord skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:autorijtechnieken skos:related haOndThema:constructie-en-productie .
+haOndVak:autorijtechnieken skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:autotechnieken skos:related haOndThema:constructie-en-productie .
+haOndVak:autotechnieken skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:beeldende-kunsten skos:related haOndThema:beeldende-kunsten .
+haOndVak:beeldende-kunsten skos:relatedMatch haOndThema:beeldende-kunsten .
 
-haOndVak:beeldende-vorming skos:related haOndThema:beeldende-kunsten .
+haOndVak:beeldende-vorming skos:relatedMatch haOndThema:beeldende-kunsten .
 
-haOndVak:besturing-bouwmachines skos:related haOndThema:constructie-en-productie .
+haOndVak:besturing-bouwmachines skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:binnenhuiskunst skos:related haOndThema:toegepaste-kunsten .
+haOndVak:binnenhuiskunst skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:bosbouw skos:related haOndThema:land--en-tuinbouw .
+haOndVak:bosbouw skos:relatedMatch haOndThema:land--en-tuinbouw .
 
-haOndVak:bouw skos:related haOndThema:constructie-en-productie .
+haOndVak:bouw skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:bouwkunst skos:related haOndThema:toegepaste-kunsten .
+haOndVak:bouwkunst skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:centrale-verwarming skos:related haOndThema:constructie-en-productie .
+haOndVak:centrale-verwarming skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:chemie skos:related haOndThema:chemie .
+haOndVak:chemie skos:relatedMatch haOndThema:chemie .
 
-haOndVak:commerci%C3%ABle-technieken skos:related haOndThema:bedrijfsbeheer .
+haOndVak:commerci%C3%ABle-technieken skos:relatedMatch haOndThema:bedrijfsbeheer .
 
-haOndVak:creatief-musiceren skos:related haOndThema:podiumkunsten .
+haOndVak:creatief-musiceren skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:dakwerken skos:related haOndThema:constructie-en-productie .
+haOndVak:dakwerken skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:eigen-cultuur-en-religie skos:related haOndThema:religie-en-geloof .
+haOndVak:eigen-cultuur-en-religie skos:relatedMatch haOndThema:religie-en-geloof .
 
-haOndVak:exploratie skos:related haOndThema:leren-en-onderzoeken .
+haOndVak:exploratie skos:relatedMatch haOndThema:leren-en-onderzoeken .
 
-haOndVak:filosofie skos:related haOndThema:filosofie .
+haOndVak:filosofie skos:relatedMatch haOndThema:filosofie .
 
-haOndVak:fotografie skos:related haOndThema:beeldende-kunsten .
+haOndVak:fotografie skos:relatedMatch haOndThema:beeldende-kunsten .
 
-haOndVak:fysica skos:related haOndThema:fysica .
+haOndVak:fysica skos:relatedMatch haOndThema:fysica .
 
-haOndVak:grafische-technieken skos:related haOndThema:toegepaste-kunsten .
+haOndVak:grafische-technieken skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:grime skos:related haOndThema:lichamelijke-verzorging .
+haOndVak:grime skos:relatedMatch haOndThema:lichamelijke-verzorging .
 
-haOndVak:groendecoratie skos:related haOndThema:land--en-tuinbouw .
+haOndVak:groendecoratie skos:relatedMatch haOndThema:land--en-tuinbouw .
 
-haOndVak:groepsmusiceren%3A-folk--en-wereldmuziek skos:related haOndThema:podiumkunsten .
+haOndVak:groepsmusiceren%3A-folk--en-wereldmuziek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:groepsmusiceren%3A-jazz-pop-rock skos:related haOndThema:podiumkunsten .
+haOndVak:groepsmusiceren%3A-jazz-pop-rock skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:groepsmusiceren%3A-klassiek skos:related haOndThema:podiumkunsten .
+haOndVak:groepsmusiceren%3A-klassiek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:groepsmusiceren%3A-musical skos:related haOndThema:podiumkunsten .
+haOndVak:groepsmusiceren%3A-musical skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:groepsmusiceren%3A-opera%2Fmuziektheater skos:related haOndThema:podiumkunsten .
+haOndVak:groepsmusiceren%3A-opera%2Fmuziektheater skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:haarverzorging skos:related haOndThema:lichamelijke-verzorging .
+haOndVak:haarverzorging skos:relatedMatch haOndThema:lichamelijke-verzorging .
 
-haOndVak:hedendaagse-dans skos:related haOndThema:podiumkunsten .
+haOndVak:hedendaagse-dans skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:hotel skos:related haOndThema:voeding-en-horeca .
+haOndVak:hotel skos:relatedMatch haOndThema:voeding-en-horeca .
 
-haOndVak:hout skos:related haOndThema:constructie-en-productie .
+haOndVak:hout skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:human-resources skos:related haOndThema:bedrijfsbeheer .
+haOndVak:human-resources skos:relatedMatch haOndThema:bedrijfsbeheer .
 
-haOndVak:indirecte-zorg skos:related haOndThema:gezondheid-en-gezondheidszorg .
+haOndVak:indirecte-zorg skos:relatedMatch haOndThema:gezondheid-en-gezondheidszorg .
 
-haOndVak:instrumentenbouw skos:related haOndThema:constructie-en-productie .
+haOndVak:instrumentenbouw skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:keukentechnieken skos:related haOndThema:voeding-en-horeca .
+haOndVak:keukentechnieken skos:relatedMatch haOndThema:voeding-en-horeca .
 
-haOndVak:klassieke-dans skos:related haOndThema:podiumkunsten .
+haOndVak:klassieke-dans skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:koetswerk skos:related haOndThema:constructie-en-productie .
+haOndVak:koetswerk skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:kunststoffen skos:related haOndThema:constructie-en-productie .
+haOndVak:kunststoffen skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:landbouw skos:related haOndThema:land--en-tuinbouw .
+haOndVak:landbouw skos:relatedMatch haOndThema:land--en-tuinbouw .
 
-haOndVak:lassen-constructie skos:related haOndThema:constructie-en-productie .
+haOndVak:lassen-constructie skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:leren-leren skos:related haOndThema:leren-en-onderzoeken .
+haOndVak:leren-leren skos:relatedMatch haOndThema:leren-en-onderzoeken .
 
-haOndVak:lichamelijke-opvoeding skos:related haOndThema:sport-en-spel .
+haOndVak:lichamelijke-opvoeding skos:relatedMatch haOndThema:sport-en-spel .
 
-haOndVak:mechanica skos:related haOndThema:constructie-en-productie .
+haOndVak:mechanica skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:mechanische-vormgeving skos:related haOndThema:constructie-en-productie .
+haOndVak:mechanische-vormgeving skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:meubelmakerij skos:related haOndThema:constructie-en-productie .
+haOndVak:meubelmakerij skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:militaire-vorming skos:related haOndThema:beroepen .
+haOndVak:militaire-vorming skos:relatedMatch haOndThema:beroepen .
 
-haOndVak:mode skos:related haOndThema:toegepaste-kunsten .
+haOndVak:mode skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:muziektheorie%3A-folk-en-wereldmuziek skos:related haOndThema:podiumkunsten .
+haOndVak:muziektheorie%3A-folk-en-wereldmuziek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:muziektheorie%3A-jazz-pop-rock skos:related haOndThema:podiumkunsten .
+haOndVak:muziektheorie%3A-jazz-pop-rock skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:muziektheorie%3A-klassiek skos:related haOndThema:podiumkunsten .
+haOndVak:muziektheorie%3A-klassiek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:natuurbeheer skos:related haOndThema:land--en-tuinbouw .
+haOndVak:natuurbeheer skos:relatedMatch haOndThema:land--en-tuinbouw .
 
-haOndVak:nautische-technieken skos:related haOndThema:verkeer-en-mobiliteit .
+haOndVak:nautische-technieken skos:relatedMatch haOndThema:verkeer-en-mobiliteit .
 
-haOndVak:opvoedkunde skos:related haOndThema:opvoeding-en-ontwikkeling .
+haOndVak:opvoedkunde skos:relatedMatch haOndThema:opvoeding-en-ontwikkeling .
 
-haOndVak:orthopedie skos:related haOndThema:constructie-en-productie .
+haOndVak:orthopedie skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:pedagogiek skos:related haOndThema:opvoeding-en-ontwikkeling .
+haOndVak:pedagogiek skos:relatedMatch haOndThema:opvoeding-en-ontwikkeling .
 
-haOndVak:praktische-harmonie%3A-folk-en-wereldmuziek skos:related haOndThema:podiumkunsten .
+haOndVak:praktische-harmonie%3A-folk-en-wereldmuziek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:praktische-harmonie%3A-jazz-pop-rock skos:related haOndThema:podiumkunsten .
+haOndVak:praktische-harmonie%3A-jazz-pop-rock skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:praktische-harmonie%3A-klassiek skos:related haOndThema:podiumkunsten .
+haOndVak:praktische-harmonie%3A-klassiek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:productie-industrie skos:related haOndThema:constructie-en-productie .
+haOndVak:productie-industrie skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:public-relations skos:related haOndThema:media-en-communicatie .
+haOndVak:public-relations skos:relatedMatch haOndThema:media-en-communicatie .
 
-haOndVak:recht skos:related haOndThema:recht .
+haOndVak:recht skos:relatedMatch haOndThema:recht .
 
-haOndVak:restauranttechnieken skos:related haOndThema:voeding-en-horeca .
+haOndVak:restauranttechnieken skos:relatedMatch haOndThema:voeding-en-horeca .
 
-haOndVak:ruwbouw skos:related haOndThema:constructie-en-productie .
+haOndVak:ruwbouw skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:sanitair skos:related haOndThema:constructie-en-productie .
+haOndVak:sanitair skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:scheepswerktuigkunde skos:related haOndThema:constructie-en-productie .
+haOndVak:scheepswerktuigkunde skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:scheepvaart skos:related haOndThema:verkeer-en-mobiliteit .
+haOndVak:scheepvaart skos:relatedMatch haOndThema:verkeer-en-mobiliteit .
 
-haOndVak:schilderen-en-decoratie skos:related haOndThema:toegepaste-kunsten .
+haOndVak:schilderen-en-decoratie skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:schoonheidsverzorging skos:related haOndThema:lichamelijke-verzorging .
+haOndVak:schoonheidsverzorging skos:relatedMatch haOndThema:lichamelijke-verzorging .
 
-haOndVak:schoonmaak skos:related haOndThema:lichamelijke-verzorging .
+haOndVak:schoonmaak skos:relatedMatch haOndThema:lichamelijke-verzorging .
 
-haOndVak:schrijnwerkerij skos:related haOndThema:constructie-en-productie .
+haOndVak:schrijnwerkerij skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:slagerij skos:related haOndThema:voeding-en-horeca .
+haOndVak:slagerij skos:relatedMatch haOndThema:voeding-en-horeca .
 
-haOndVak:sport skos:related haOndThema:sport-en-spel .
+haOndVak:sport skos:relatedMatch haOndThema:sport-en-spel .
 
-haOndVak:steigerbouw skos:related haOndThema:constructie-en-productie .
+haOndVak:steigerbouw skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:tandtechnieken skos:related haOndThema:lichamelijke-verzorging .
+haOndVak:tandtechnieken skos:relatedMatch haOndThema:lichamelijke-verzorging .
 
-haOndVak:techniek skos:related haOndThema:constructie-en-productie .
+haOndVak:techniek skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:technologische-opvoeding skos:related haOndThema:constructie-en-productie .
+haOndVak:technologische-opvoeding skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:textielproductie skos:related haOndThema:toegepaste-kunsten .
+haOndVak:textielproductie skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:textielverzorging skos:related haOndThema:toegepaste-kunsten .
+haOndVak:textielverzorging skos:relatedMatch haOndThema:toegepaste-kunsten .
 
-haOndVak:toegepaste-beeldende-vorming skos:related haOndThema:beeldende-kunsten .
+haOndVak:toegepaste-beeldende-vorming skos:relatedMatch haOndThema:beeldende-kunsten .
 
-haOndVak:toegepaste-biologie skos:related haOndThema:biologie .
+haOndVak:toegepaste-biologie skos:relatedMatch haOndThema:biologie .
 
-haOndVak:toegepaste-chemie skos:related haOndThema:chemie .
+haOndVak:toegepaste-chemie skos:relatedMatch haOndThema:chemie .
 
-haOndVak:toegepaste-fysica skos:related haOndThema:fysica .
+haOndVak:toegepaste-fysica skos:relatedMatch haOndThema:fysica .
 
-haOndVak:toegepaste-informatica skos:related haOndThema:digitale-vaardigheden-en-informatica .
+haOndVak:toegepaste-informatica skos:relatedMatch haOndThema:digitale-vaardigheden-en-informatica .
 
-haOndVak:toerisme skos:related haOndThema:toerisme .
+haOndVak:toerisme skos:relatedMatch haOndThema:toerisme .
 
-haOndVak:topsport skos:related haOndThema:sport-en-spel .
+haOndVak:topsport skos:relatedMatch haOndThema:sport-en-spel .
 
-haOndVak:tuinbouw skos:related haOndThema:milieu-en-ecologie .
+haOndVak:tuinbouw skos:relatedMatch haOndThema:milieu-en-ecologie .
 
-haOndVak:uurwerkmaken skos:related haOndThema:constructie-en-productie .
+haOndVak:uurwerkmaken skos:relatedMatch haOndThema:constructie-en-productie .
 
-haOndVak:verpleegkunde skos:related haOndThema:gezondheid-en-gezondheidszorg .
+haOndVak:verpleegkunde skos:relatedMatch haOndThema:gezondheid-en-gezondheidszorg .
 
-haOndVak:verzorging skos:related haOndThema:gezondheid-en-gezondheidszorg .
+haOndVak:verzorging skos:relatedMatch haOndThema:gezondheid-en-gezondheidszorg .
 
-haOndVak:voeding skos:related haOndThema:voeding-en-horeca .
+haOndVak:voeding skos:relatedMatch haOndThema:voeding-en-horeca .
 
-haOndVak:vrije-beeldende-vorming skos:related haOndThema:beeldende-kunsten .
+haOndVak:vrije-beeldende-vorming skos:relatedMatch haOndThema:beeldende-kunsten .
 
-haOndVak:waarnemingstekenen skos:related haOndThema:beeldende-kunsten .
+haOndVak:waarnemingstekenen skos:relatedMatch haOndThema:beeldende-kunsten .
 
-haOndVak:wegenwerken skos:related haOndThema:verkeer-en-mobiliteit .
+haOndVak:wegenwerken skos:relatedMatch haOndThema:verkeer-en-mobiliteit .
 
-haOndVak:wiskunde skos:related haOndThema:wiskunde .
+haOndVak:wiskunde skos:relatedMatch haOndThema:wiskunde .
 
-haOndVak:zang%3A-folk--en-wereldmuziek skos:related haOndThema:podiumkunsten .
+haOndVak:zang%3A-folk--en-wereldmuziek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:zang%3A-jazz-pop-rock skos:related haOndThema:podiumkunsten .
+haOndVak:zang%3A-jazz-pop-rock skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:zang%3A-klassiek skos:related haOndThema:podiumkunsten .
+haOndVak:zang%3A-klassiek skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:zang%3A-musical skos:related haOndThema:podiumkunsten .
+haOndVak:zang%3A-musical skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:zang%3A-opera%2Fmuziektheater skos:related haOndThema:podiumkunsten .
+haOndVak:zang%3A-opera%2Fmuziektheater skos:relatedMatch haOndThema:podiumkunsten .
 
-haOndVak:zeemanschap skos:related haOndThema:verkeer-en-mobiliteit .
+haOndVak:zeemanschap skos:relatedMatch haOndThema:verkeer-en-mobiliteit .
 
-haOndVak:algemene-verbale-vorming skos:related haOndThema:literatuur,
+haOndVak:algemene-verbale-vorming skos:relatedMatch haOndThema:literatuur,
         haOndThema:podiumkunsten .
 
-haOndVak:artistieke-expressie skos:related haOndThema:beeldende-kunsten,
+haOndVak:artistieke-expressie skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:podiumkunsten .
 
-haOndVak:audiovisuele-vorming skos:related haOndThema:beeldende-kunsten,
+haOndVak:audiovisuele-vorming skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:digitale-vaardigheden-en-informatica .
 
-haOndVak:bakkerij skos:related haOndThema:constructie-en-productie,
+haOndVak:bakkerij skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:voeding-en-horeca .
 
-haOndVak:bewegingswetenschappen skos:related haOndThema:gezondheid-en-gezondheidszorg,
+haOndVak:bewegingswetenschappen skos:relatedMatch haOndThema:gezondheid-en-gezondheidszorg,
         haOndThema:sport-en-spel .
 
-haOndVak:biochemie skos:related haOndThema:biologie,
+haOndVak:biochemie skos:relatedMatch haOndThema:biologie,
         haOndThema:chemie .
 
-haOndVak:boekhouding skos:related haOndThema:bedrijfsbeheer,
+haOndVak:boekhouding skos:relatedMatch haOndThema:bedrijfsbeheer,
         haOndThema:omgaan-met-geld .
 
-haOndVak:communicatiewetenschappen skos:related haOndThema:media-en-communicatie,
+haOndVak:communicatiewetenschappen skos:relatedMatch haOndThema:media-en-communicatie,
         haOndThema:mediawijsheid .
 
-haOndVak:decoratieve-technieken skos:related haOndThema:constructie-en-productie,
+haOndVak:decoratieve-technieken skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:diamant skos:related haOndThema:constructie-en-productie,
+haOndVak:diamant skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:dierenzorg skos:related haOndThema:biologie,
+haOndVak:dierenzorg skos:relatedMatch haOndThema:biologie,
         haOndThema:gezondheid-en-gezondheidszorg .
 
-haOndVak:ecologie skos:related haOndThema:land--en-tuinbouw,
+haOndVak:ecologie skos:relatedMatch haOndThema:land--en-tuinbouw,
         haOndThema:milieu-en-ecologie .
 
-haOndVak:elektriciteit skos:related haOndThema:constructie-en-productie,
+haOndVak:elektriciteit skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:fysica .
 
-haOndVak:elektronica skos:related haOndThema:constructie-en-productie,
+haOndVak:elektronica skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:digitale-vaardigheden-en-informatica .
 
-haOndVak:esthetica skos:related haOndThema:beeldende-kunsten,
+haOndVak:esthetica skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:podiumkunsten .
 
-haOndVak:glastechnieken skos:related haOndThema:constructie-en-productie,
+haOndVak:glastechnieken skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:goud-en-juwelen skos:related haOndThema:constructie-en-productie,
+haOndVak:goud-en-juwelen skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:hoefverzorging skos:related haOndThema:biologie,
+haOndVak:hoefverzorging skos:relatedMatch haOndThema:biologie,
         haOndThema:land--en-tuinbouw .
 
-haOndVak:ict skos:related haOndThema:digitale-vaardigheden-en-informatica,
+haOndVak:ict skos:relatedMatch haOndThema:digitale-vaardigheden-en-informatica,
         haOndThema:mediawijsheid .
 
-haOndVak:informaticawetenschappen skos:related haOndThema:digitale-vaardigheden-en-informatica,
+haOndVak:informaticawetenschappen skos:relatedMatch haOndThema:digitale-vaardigheden-en-informatica,
         haOndThema:mediawijsheid .
 
-haOndVak:koeltechnieken skos:related haOndThema:constructie-en-productie,
+haOndVak:koeltechnieken skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:fysica .
 
-haOndVak:logistiek skos:related haOndThema:bedrijfsbeheer,
+haOndVak:logistiek skos:relatedMatch haOndThema:bedrijfsbeheer,
         haOndThema:economie .
 
-haOndVak:muzikale-opvoeding skos:related haOndThema:podiumkunsten,
+haOndVak:muzikale-opvoeding skos:relatedMatch haOndThema:podiumkunsten,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:nederlands-voor-nieuwkomers skos:related haOndThema:literatuur,
+haOndVak:nederlands-voor-nieuwkomers skos:relatedMatch haOndThema:literatuur,
         haOndThema:nederlandse-taal .
 
-haOndVak:onthaal skos:related haOndThema:bedrijfsbeheer,
+haOndVak:onthaal skos:relatedMatch haOndThema:bedrijfsbeheer,
         haOndThema:media-en-communicatie .
 
-haOndVak:optiek skos:related haOndThema:biologie,
+haOndVak:optiek skos:relatedMatch haOndThema:biologie,
         haOndThema:gezondheid-en-gezondheidszorg .
 
-haOndVak:plastische-opvoeding skos:related haOndThema:beeldende-kunsten,
+haOndVak:plastische-opvoeding skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:podiumtechnieken skos:related haOndThema:constructie-en-productie,
+haOndVak:podiumtechnieken skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:podiumkunsten .
 
-haOndVak:publiciteitstekenen skos:related haOndThema:media-en-communicatie,
+haOndVak:publiciteitstekenen skos:relatedMatch haOndThema:media-en-communicatie,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:restauratie skos:related haOndThema:beeldende-kunsten,
+haOndVak:restauratie skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:constructie-en-productie .
 
-haOndVak:rijn--en-binnenvaart skos:related haOndThema:landschap-en-reli%C3%ABf,
+haOndVak:rijn--en-binnenvaart skos:relatedMatch haOndThema:landschap-en-reli%C3%ABf,
         haOndThema:verkeer-en-mobiliteit .
 
-haOndVak:steen--en-marmerbewerking skos:related haOndThema:constructie-en-productie,
+haOndVak:steen--en-marmerbewerking skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:toegepaste-biochemie skos:related haOndThema:biologie,
+haOndVak:toegepaste-biochemie skos:relatedMatch haOndThema:biologie,
         haOndThema:chemie .
 
-haOndVak:zakelijke-communicatie skos:related haOndThema:media-en-communicatie,
+haOndVak:zakelijke-communicatie skos:relatedMatch haOndThema:media-en-communicatie,
         haOndThema:nederlandse-taal .
 
 haOndThema:cat-leren-en-onderzoeken a skos:Concept ;
@@ -409,95 +409,95 @@ haOndThema:cat-leren-en-onderzoeken a skos:Concept ;
     skos:prefLabel "leren en onderzoeken"@nl ;
     skos:topConceptOf o:thema .
 
-haOndVak:artistieke-creatie skos:related haOndThema:beeldende-kunsten,
+haOndVak:artistieke-creatie skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:podiumkunsten,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:bedrijfswetenschappen skos:related haOndThema:bedrijfsbeheer,
+haOndVak:bedrijfswetenschappen skos:relatedMatch haOndThema:bedrijfsbeheer,
         haOndThema:economie,
         haOndThema:recht .
 
-haOndVak:biologie skos:related haOndThema:biologie,
+haOndVak:biologie skos:relatedMatch haOndThema:biologie,
         haOndThema:gezondheid-en-gezondheidszorg,
         haOndThema:milieu-en-ecologie .
 
-haOndVak:duits skos:related haOndThema:literatuur,
+haOndVak:duits skos:relatedMatch haOndThema:literatuur,
         haOndThema:moderne-talen,
         haOndThema:toerisme .
 
-haOndVak:economie- skos:related haOndThema:bedrijfsbeheer,
+haOndVak:economie- skos:relatedMatch haOndThema:bedrijfsbeheer,
         haOndThema:economie,
         haOndThema:omgaan-met-geld .
 
-haOndVak:elektromechanica skos:related haOndThema:constructie-en-productie,
+haOndVak:elektromechanica skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:digitale-vaardigheden-en-informatica,
         haOndThema:fysica .
 
-haOndVak:engels- skos:related haOndThema:literatuur,
+haOndVak:engels- skos:relatedMatch haOndThema:literatuur,
         haOndThema:moderne-talen,
         haOndThema:toerisme .
 
-haOndVak:frans skos:related haOndThema:literatuur,
+haOndVak:frans skos:relatedMatch haOndThema:literatuur,
         haOndThema:moderne-talen,
         haOndThema:toerisme .
 
-haOndVak:interlevensbeschouwelijke-dialoog skos:related haOndThema:filosofie,
+haOndVak:interlevensbeschouwelijke-dialoog skos:relatedMatch haOndThema:filosofie,
         haOndThema:normen-en-waarden,
         haOndThema:religie-en-geloof .
 
-haOndVak:italiaans skos:related haOndThema:literatuur,
+haOndVak:italiaans skos:relatedMatch haOndThema:literatuur,
         haOndThema:moderne-talen,
         haOndThema:toerisme .
 
-haOndVak:kunstbeschouwing skos:related haOndThema:beeldende-kunsten,
+haOndVak:kunstbeschouwing skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:podiumkunsten,
         haOndThema:toegepaste-kunsten .
 
-haOndVak:muzische-vorming skos:related haOndThema:beeldende-kunsten,
+haOndVak:muzische-vorming skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:media-en-communicatie,
         haOndThema:podiumkunsten .
 
-haOndVak:natuurwetenschappen skos:related haOndThema:biologie,
+haOndVak:natuurwetenschappen skos:relatedMatch haOndThema:biologie,
         haOndThema:chemie,
         haOndThema:fysica .
 
-haOndVak:nederlands skos:related haOndThema:literatuur,
+haOndVak:nederlands skos:relatedMatch haOndThema:literatuur,
         haOndThema:media-en-communicatie,
         haOndThema:nederlandse-taal .
 
-haOndVak:printmedia skos:related haOndThema:constructie-en-productie,
+haOndVak:printmedia skos:relatedMatch haOndThema:constructie-en-productie,
         haOndThema:digitale-vaardigheden-en-informatica,
         haOndThema:media-en-communicatie .
 
-haOndVak:psychologie skos:related haOndThema:gezondheid-en-gezondheidszorg,
+haOndVak:psychologie skos:relatedMatch haOndThema:gezondheid-en-gezondheidszorg,
         haOndThema:opvoeding-en-ontwikkeling,
         haOndThema:psychologie .
 
-haOndVak:russisch skos:related haOndThema:literatuur,
+haOndVak:russisch skos:relatedMatch haOndThema:literatuur,
         haOndThema:moderne-talen,
         haOndThema:toerisme .
 
-haOndVak:sociale-vaardigheden skos:related haOndThema:media-en-communicatie,
+haOndVak:sociale-vaardigheden skos:relatedMatch haOndThema:media-en-communicatie,
         haOndThema:participatie,
         haOndThema:relaties-en-seksualiteit .
 
-haOndVak:spaans skos:related haOndThema:literatuur,
+haOndVak:spaans skos:relatedMatch haOndThema:literatuur,
         haOndThema:moderne-talen,
         haOndThema:toerisme .
 
-haOndVak:toegepaste-natuurwetenschappen skos:related haOndThema:biologie,
+haOndVak:toegepaste-natuurwetenschappen skos:relatedMatch haOndThema:biologie,
         haOndThema:chemie,
         haOndThema:fysica .
 
-haOndVak:toegepaste-psychologie skos:related haOndThema:media-en-communicatie,
+haOndVak:toegepaste-psychologie skos:relatedMatch haOndThema:media-en-communicatie,
         haOndThema:opvoeding-en-ontwikkeling,
         haOndThema:psychologie .
 
-haOndVak:veiligheidstechnieken skos:related haOndThema:gezondheid-en-gezondheidszorg,
+haOndVak:veiligheidstechnieken skos:relatedMatch haOndThema:gezondheid-en-gezondheidszorg,
         haOndThema:media-en-communicatie,
         haOndThema:recht .
 
-haOndVak:verkoop skos:related haOndThema:digitale-vaardigheden-en-informatica,
+haOndVak:verkoop skos:relatedMatch haOndThema:digitale-vaardigheden-en-informatica,
         haOndThema:economie,
         haOndThema:media-en-communicatie .
 
@@ -506,7 +506,7 @@ haOndThema:beroepen a skos:Concept ;
     skos:definition "Alles over de arbeidsmarkt, arbeidsomstandigheden, beroepen, vakbonden, solliciteren, arbeidswetgeving, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "beroepen"@nl ;
-    skos:related haOndVak:militaire-vorming .
+    skos:relatedMatch haOndVak:militaire-vorming .
 
 haOndThema:levensbeschouwing a skos:Concept ;
     skos:definition "De thema categorie Levensbeschouwing"@nl ;
@@ -516,42 +516,42 @@ haOndThema:levensbeschouwing a skos:Concept ;
     skos:prefLabel "levensbeschouwing"@nl ;
     skos:topConceptOf o:thema .
 
-haOndVak:beeld--en-mediacultuur skos:related haOndThema:beeldende-kunsten,
+haOndVak:beeld--en-mediacultuur skos:relatedMatch haOndThema:beeldende-kunsten,
         haOndThema:digitale-vaardigheden-en-informatica,
         haOndThema:media-en-communicatie,
         haOndThema:mediawijsheid .
 
-haOndVak:godsdienst- skos:related haOndThema:filosofie,
+haOndVak:godsdienst- skos:relatedMatch haOndThema:filosofie,
         haOndThema:identiteit,
         haOndThema:normen-en-waarden,
         haOndThema:religie-en-geloof .
 
-haOndVak:grieks skos:related haOndThema:klassieke-talen,
+haOndVak:grieks skos:relatedMatch haOndThema:klassieke-talen,
         haOndThema:literatuur,
         haOndThema:oudheid,
         haOndThema:toerisme .
 
-haOndVak:hebreeuws skos:related haOndThema:klassieke-talen,
+haOndVak:hebreeuws skos:relatedMatch haOndThema:klassieke-talen,
         haOndThema:literatuur,
         haOndThema:oudheid,
         haOndThema:toerisme .
 
-haOndVak:latijn skos:related haOndThema:klassieke-talen,
+haOndVak:latijn skos:relatedMatch haOndThema:klassieke-talen,
         haOndThema:literatuur,
         haOndThema:oudheid,
         haOndThema:toerisme .
 
-haOndVak:niet-confessionele-zedenleer- skos:related haOndThema:filosofie,
+haOndVak:niet-confessionele-zedenleer- skos:relatedMatch haOndThema:filosofie,
         haOndThema:identiteit,
         haOndThema:normen-en-waarden,
         haOndThema:religie-en-geloof .
 
-haOndVak:oud-hebreeuws skos:related haOndThema:klassieke-talen,
+haOndVak:oud-hebreeuws skos:relatedMatch haOndThema:klassieke-talen,
         haOndThema:literatuur,
         haOndThema:oudheid,
         haOndThema:toerisme .
 
-haOndVak:toegepaste-economie skos:related haOndThema:bedrijfsbeheer,
+haOndVak:toegepaste-economie skos:relatedMatch haOndThema:bedrijfsbeheer,
         haOndThema:economie,
         haOndThema:omgaan-met-geld,
         haOndThema:recht .
@@ -561,7 +561,7 @@ haOndThema:armoede-en-welvaart a skos:Concept ;
     skos:definition "Alles over armoede, kansarmoede, armoedebestrijding, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "armoede en welvaart"@nl ;
-    skos:related haOndVak:cultuurwetenschappen,
+    skos:relatedMatch haOndVak:cultuurwetenschappen,
         haOndVak:mens-en-maatschappij .
 
 haOndThema:bevolking-en-ruimtelijke-ordening a skos:Concept ;
@@ -569,7 +569,7 @@ haOndThema:bevolking-en-ruimtelijke-ordening a skos:Concept ;
     skos:definition "Demografie en ruimtelijke planning"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "bevolking en ruimtelijke ordening"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:mens-en-maatschappij .
 
 haOndThema:het-heelal a skos:Concept ;
@@ -577,7 +577,7 @@ haOndThema:het-heelal a skos:Concept ;
     skos:definition "To space ... and beyond"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "het heelal"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:mens-en-maatschappij .
 
 haOndThema:kunst a skos:Concept ;
@@ -594,7 +594,7 @@ haOndThema:rampen-en-conflicten a skos:Concept ;
     skos:definition "Denk aan oorlog, hongersnood, Arabische lente, treinramp Buizingen, Fukushima, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "rampen en conflicten"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:mens-en-maatschappij .
 
 haOndThema:weer-en-klimaat a skos:Concept ;
@@ -602,7 +602,7 @@ haOndThema:weer-en-klimaat a skos:Concept ;
     skos:definition "Alles over het weer en het klimaat"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "weer en klimaat"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:mens-en-maatschappij .
 
 haOndThema:wiskunde a skos:Concept ;
@@ -610,16 +610,16 @@ haOndThema:wiskunde a skos:Concept ;
     skos:definition "Wiskunde"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "wiskunde"@nl ;
-    skos:related haOndVak:project-stem,
+    skos:relatedMatch haOndVak:project-stem,
         haOndVak:wiskunde .
 
-haOndVak:gedragswetenschappen skos:related haOndThema:identiteit,
+haOndVak:gedragswetenschappen skos:relatedMatch haOndThema:identiteit,
         haOndThema:normen-en-waarden,
         haOndThema:opvoeding-en-ontwikkeling,
         haOndThema:psychologie,
         haOndThema:rolpatronen-en-stereotypen .
 
-haOndVak:project-stem skos:related haOndThema:biologie,
+haOndVak:project-stem skos:relatedMatch haOndThema:biologie,
         haOndThema:chemie,
         haOndThema:constructie-en-productie,
         haOndThema:fysica,
@@ -640,7 +640,7 @@ haOndThema:erfgoed a skos:Concept ;
     skos:definition "Materieel en immaterieel erfgoed (tradities, rituelen, ...), alles over hoe we vandaag naar het verleden kijken"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "erfgoed"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij .
 
@@ -649,7 +649,7 @@ haOndThema:hedendaagse-tijd a skos:Concept ;
     skos:definition "Alles over de hedendaagse tijd (na WO II - 10 jaar geleden)"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "hedendaagse tijd"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij .
 
@@ -658,7 +658,7 @@ haOndThema:landschap-en-reli%C3%ABf a skos:Concept ;
     skos:definition "Fysische geografie"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "landschap en reliëf"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:mens-en-maatschappij,
         haOndVak:rijn--en-binnenvaart .
 
@@ -667,7 +667,7 @@ haOndThema:middeleeuwen a skos:Concept ;
     skos:definition "Alles over de middeleeuwen"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "middeleeuwen"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij .
 
@@ -676,7 +676,7 @@ haOndThema:moderne-tijd a skos:Concept ;
     skos:definition "Alles over de moderne tijd"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "moderne tijd"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij .
 
@@ -685,7 +685,7 @@ haOndThema:nederlandse-taal a skos:Concept ;
     skos:definition "Taalkunde, exclusief literatuur, voor de Nederlandse taal"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "Nederlandse taal"@nl ;
-    skos:related haOndVak:nederlands,
+    skos:relatedMatch haOndVak:nederlands,
         haOndVak:nederlands-voor-nieuwkomers,
         haOndVak:zakelijke-communicatie .
 
@@ -694,7 +694,7 @@ haOndThema:prehistorie a skos:Concept ;
     skos:definition "Alles over de prehistorie"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "prehistorie"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij .
 
@@ -713,32 +713,32 @@ haOndThema:vroegmoderne-tijd a skos:Concept ;
     skos:definition "Alles over de vroegmoderne tijd"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "vroegmoderne tijd"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij .
 
-haOndVak:burgerschap skos:related haOndThema:filosofie,
+haOndVak:burgerschap skos:relatedMatch haOndThema:filosofie,
         haOndThema:identiteit,
         haOndThema:normen-en-waarden,
         haOndThema:participatie,
         haOndThema:politiek-en-overheid,
         haOndThema:recht .
 
-haOndVak:cultuurbeschouwing skos:related haOndThema:filosofie,
+haOndVak:cultuurbeschouwing skos:relatedMatch haOndThema:filosofie,
         haOndThema:identiteit,
         haOndThema:participatie,
         haOndThema:politiek-en-overheid,
         haOndThema:recht,
         haOndThema:religie-en-geloof .
 
-haOndVak:sociologie skos:related haOndThema:identiteit,
+haOndVak:sociologie skos:relatedMatch haOndThema:identiteit,
         haOndThema:mediawijsheid,
         haOndThema:normen-en-waarden,
         haOndThema:recht,
         haOndThema:relaties-en-seksualiteit,
         haOndThema:rolpatronen-en-stereotypen .
 
-haOndVak:wetenschappen-en-techniek skos:related haOndThema:biologie,
+haOndVak:wetenschappen-en-techniek skos:relatedMatch haOndThema:biologie,
         haOndThema:chemie,
         haOndThema:constructie-en-productie,
         haOndThema:fysica,
@@ -750,7 +750,7 @@ haOndThema:klassieke-talen a skos:Concept ;
     skos:definition "Taalkunde, exclusief literatuur, voor de klassieke talen"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "klassieke talen"@nl ;
-    skos:related haOndVak:grieks,
+    skos:relatedMatch haOndVak:grieks,
         haOndVak:hebreeuws,
         haOndVak:latijn,
         haOndVak:oud-hebreeuws .
@@ -760,7 +760,7 @@ haOndThema:leren-en-onderzoeken a skos:Concept ;
     skos:definition "Hoe leren mensen en alles over onderzoekscompetenties en het onderwijs"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "leren en onderzoeken"@nl ;
-    skos:related haOndVak:exploratie,
+    skos:relatedMatch haOndVak:exploratie,
         haOndVak:leren-leren ;
     skos:topConceptOf o:thema .
 
@@ -769,7 +769,7 @@ haOndThema:omgaan-met-geld a skos:Concept ;
     skos:definition "Persoonlijke financiële geletterdheid"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "omgaan met geld"@nl ;
-    skos:related haOndVak:boekhouding,
+    skos:relatedMatch haOndVak:boekhouding,
         haOndVak:economie-,
         haOndVak:maatschappelijke-vorming,
         haOndVak:toegepaste-economie .
@@ -779,7 +779,7 @@ haOndThema:psychologie a skos:Concept ;
     skos:definition "Alles over psychologie en mentaal welzijn"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "psychologie"@nl ;
-    skos:related haOndVak:gedragswetenschappen,
+    skos:relatedMatch haOndVak:gedragswetenschappen,
         haOndVak:mens-en-maatschappij,
         haOndVak:psychologie,
         haOndVak:toegepaste-psychologie .
@@ -789,7 +789,7 @@ haOndThema:relaties-en-seksualiteit a skos:Concept ;
     skos:definition "Alles over persoonlijke relaties, inclusief familiebanden en vriendschap, en seksualiteit"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "relaties en seksualiteit"@nl ;
-    skos:related haOndVak:maatschappelijke-vorming,
+    skos:relatedMatch haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij,
         haOndVak:sociale-vaardigheden,
         haOndVak:sociologie .
@@ -799,7 +799,7 @@ haOndThema:sport-en-spel a skos:Concept ;
     skos:definition "Alles over lichaamsbeweging, (top)sport, spellen en spelen"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "sport en spel"@nl ;
-    skos:related haOndVak:bewegingswetenschappen,
+    skos:relatedMatch haOndVak:bewegingswetenschappen,
         haOndVak:lichamelijke-opvoeding,
         haOndVak:sport,
         haOndVak:topsport .
@@ -815,7 +815,7 @@ haOndThema:taal a skos:Concept ;
     skos:prefLabel "taal"@nl ;
     skos:topConceptOf o:thema .
 
-haOndVak:aardrijkskunde skos:related haOndThema:bevolking-en-ruimtelijke-ordening,
+haOndVak:aardrijkskunde skos:relatedMatch haOndThema:bevolking-en-ruimtelijke-ordening,
         haOndThema:het-heelal,
         haOndThema:landschap-en-reli%C3%ABf,
         haOndThema:milieu-en-ecologie,
@@ -828,7 +828,7 @@ haOndThema:lichamelijke-verzorging a skos:Concept ;
     skos:definition "Persoonlijke hygiëne, haartooi, cosmetica, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "lichamelijke verzorging"@nl ;
-    skos:related haOndVak:grime,
+    skos:relatedMatch haOndVak:grime,
         haOndVak:haarverzorging,
         haOndVak:schoonheidsverzorging,
         haOndVak:schoonmaak,
@@ -839,7 +839,7 @@ haOndThema:participatie a skos:Concept ;
     skos:definition "Maatschappelijke participatie"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "participatie"@nl ;
-    skos:related haOndVak:burgerschap,
+    skos:relatedMatch haOndVak:burgerschap,
         haOndVak:cultuurbeschouwing,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij,
@@ -850,7 +850,7 @@ haOndThema:politiek-en-overheid a skos:Concept ;
     skos:definition "Van politieke partijen en besluitvorming tot de werking van de overheid, wetgeving en burgerparticipatie. Zowel binnen- als buitenland"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "politiek en overheid"@nl ;
-    skos:related haOndVak:burgerschap,
+    skos:relatedMatch haOndVak:burgerschap,
         haOndVak:cultuurbeschouwing,
         haOndVak:cultuurwetenschappen,
         haOndVak:maatschappelijke-vorming,
@@ -861,7 +861,7 @@ haOndThema:religie-en-geloof a skos:Concept ;
     skos:definition "Alles over religies, geloofsovertuigingen en godsdiensten"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "religie en geloof"@nl ;
-    skos:related haOndVak:cultuurbeschouwing,
+    skos:relatedMatch haOndVak:cultuurbeschouwing,
         haOndVak:eigen-cultuur-en-religie,
         haOndVak:godsdienst-,
         haOndVak:interlevensbeschouwelijke-dialoog,
@@ -872,13 +872,13 @@ haOndThema:rolpatronen-en-stereotypen a skos:Concept ;
     skos:definition "Alles over de rollen die mensen opnemen in de maatschappij en de stereotypen die daar bij komen. Ook racisme, seksisme, discriminatie, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "rolpatronen en stereotypen"@nl ;
-    skos:related haOndVak:cultuurwetenschappen,
+    skos:relatedMatch haOndVak:cultuurwetenschappen,
         haOndVak:gedragswetenschappen,
         haOndVak:maatschappelijke-vorming,
         haOndVak:mens-en-maatschappij,
         haOndVak:sociologie .
 
-haOndVak:geschiedenis skos:related haOndThema:erfgoed,
+haOndVak:geschiedenis skos:relatedMatch haOndThema:erfgoed,
         haOndThema:hedendaagse-tijd,
         haOndThema:middeleeuwen,
         haOndThema:moderne-tijd,
@@ -905,7 +905,7 @@ haOndThema:economie a skos:Concept ;
     skos:definition "Micro- en macro-economie"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "economie"@nl ;
-    skos:related haOndVak:bedrijfswetenschappen,
+    skos:relatedMatch haOndVak:bedrijfswetenschappen,
         haOndVak:cultuurwetenschappen,
         haOndVak:economie-,
         haOndVak:logistiek,
@@ -917,7 +917,7 @@ haOndThema:milieu-en-ecologie a skos:Concept ;
     skos:definition "Ecosystemen, biodiversiteit, habitat, milieuvervuiling, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "milieu en ecologie"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:biologie,
         haOndVak:ecologie,
         haOndVak:mens-en-maatschappij,
@@ -929,7 +929,7 @@ haOndThema:moderne-talen a skos:Concept ;
     skos:definition "Taalkunde, exclusief literatuur, voor alle moderne talen"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "moderne talen"@nl ;
-    skos:related haOndVak:duits,
+    skos:relatedMatch haOndVak:duits,
         haOndVak:engels-,
         haOndVak:frans,
         haOndVak:italiaans,
@@ -941,7 +941,7 @@ haOndThema:opvoeding-en-ontwikkeling a skos:Concept ;
     skos:definition "Opvoeding van kinderen en ontwikkeling van de mens"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "opvoeding en ontwikkeling"@nl ;
-    skos:related haOndVak:gedragswetenschappen,
+    skos:relatedMatch haOndVak:gedragswetenschappen,
         haOndVak:mens-en-maatschappij,
         haOndVak:opvoedkunde,
         haOndVak:pedagogiek,
@@ -961,7 +961,7 @@ haOndThema:stem a skos:Concept ;
     skos:prefLabel "STEM"@nl ;
     skos:topConceptOf o:thema .
 
-haOndVak:cultuurwetenschappen skos:related haOndThema:armoede-en-welvaart,
+haOndVak:cultuurwetenschappen skos:relatedMatch haOndThema:armoede-en-welvaart,
         haOndThema:economie,
         haOndThema:filosofie,
         haOndThema:identiteit,
@@ -990,7 +990,7 @@ haOndThema:mediawijsheid a skos:Concept ;
     skos:definition "Mediawijsheid, beeldgeletterdheid, kritische zin"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "mediawijsheid"@nl ;
-    skos:related haOndVak:beeld--en-mediacultuur,
+    skos:relatedMatch haOndVak:beeld--en-mediacultuur,
         haOndVak:communicatiewetenschappen,
         haOndVak:ict,
         haOndVak:informaticawetenschappen,
@@ -1003,7 +1003,7 @@ haOndThema:oudheid a skos:Concept ;
     skos:definition "Alles over de oudheid"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "oudheid"@nl ;
-    skos:related haOndVak:geschiedenis,
+    skos:relatedMatch haOndVak:geschiedenis,
         haOndVak:grieks,
         haOndVak:hebreeuws,
         haOndVak:latijn,
@@ -1016,7 +1016,7 @@ haOndThema:verkeer-en-mobiliteit a skos:Concept ;
     skos:definition "Organisatie van het verkeer, verkeersveiligheid, files, geschiedenis van de fiets"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "verkeer en mobiliteit"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:mens-en-maatschappij,
         haOndVak:nautische-technieken,
         haOndVak:rijn--en-binnenvaart,
@@ -1029,7 +1029,7 @@ haOndThema:voeding-en-horeca a skos:Concept ;
     skos:definition "Alles over voeding en alle aspecten van de horeca"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "voeding en horeca"@nl ;
-    skos:related haOndVak:bakkerij,
+    skos:relatedMatch haOndVak:bakkerij,
         haOndVak:hotel,
         haOndVak:keukentechnieken,
         haOndVak:mens-en-maatschappij,
@@ -1042,7 +1042,7 @@ haOndThema:filosofie a skos:Concept ;
     skos:definition "Alles over filosofie, (rationele) levensbeschouwingen en ethische vraagstukken"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "filosofie"@nl ;
-    skos:related haOndVak:burgerschap,
+    skos:relatedMatch haOndVak:burgerschap,
         haOndVak:cultuurbeschouwing,
         haOndVak:cultuurwetenschappen,
         haOndVak:filosofie,
@@ -1056,7 +1056,7 @@ haOndThema:land--en-tuinbouw a skos:Concept ;
     skos:definition "Van landbouw tot bosbeheer, van veeteelt tot tuinbouw"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "land- en tuinbouw"@nl ;
-    skos:related haOndVak:agrarische-technieken,
+    skos:relatedMatch haOndVak:agrarische-technieken,
         haOndVak:bosbouw,
         haOndVak:ecologie,
         haOndVak:groendecoratie,
@@ -1070,7 +1070,7 @@ haOndThema:bedrijfsbeheer a skos:Concept ;
     skos:definition "Bedrijfseconomie, ondernemerschap, alle aspecten van bedrijfskunde"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "bedrijfsbeheer"@nl ;
-    skos:related haOndVak:administratie,
+    skos:relatedMatch haOndVak:administratie,
         haOndVak:bedrijfswetenschappen,
         haOndVak:boekhouding,
         haOndVak:commerci%C3%ABle-technieken,
@@ -1085,7 +1085,7 @@ haOndThema:chemie a skos:Concept ;
     skos:definition "Chemie (theorie/praktijk)"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "chemie"@nl ;
-    skos:related haOndVak:aphaOndThemaek,
+    skos:relatedMatch haOndVak:aphaOndThemaek,
         haOndVak:biochemie,
         haOndVak:chemie,
         haOndVak:natuurwetenschappen,
@@ -1100,7 +1100,7 @@ haOndThema:digitale-vaardigheden-en-informatica a skos:Concept ;
     skos:definition "Digitale technologieën, programmeren, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "digitale vaardigheden en informatica"@nl ;
-    skos:related haOndVak:audiovisuele-vorming,
+    skos:relatedMatch haOndVak:audiovisuele-vorming,
         haOndVak:beeld--en-mediacultuur,
         haOndVak:elektromechanica,
         haOndVak:elektronica,
@@ -1115,7 +1115,7 @@ haOndThema:fysica a skos:Concept ;
     skos:definition "Fysica (theorie/praktijk)"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "fysica"@nl ;
-    skos:related haOndVak:elektriciteit,
+    skos:relatedMatch haOndVak:elektriciteit,
         haOndVak:elektromechanica,
         haOndVak:fysica,
         haOndVak:koeltechnieken,
@@ -1130,7 +1130,7 @@ haOndThema:identiteit a skos:Concept ;
     skos:definition "Het zelfbeeld van individuen en groepen. Gaande van persoonlijke, sociale, culturele tot nationale identiteitsvorming. Ook gender."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "identiteit"@nl ;
-    skos:related haOndVak:burgerschap,
+    skos:relatedMatch haOndVak:burgerschap,
         haOndVak:cultuurbeschouwing,
         haOndVak:cultuurwetenschappen,
         haOndVak:gedragswetenschappen,
@@ -1161,7 +1161,7 @@ haOndThema:normen-en-waarden a skos:Concept ;
     skos:definition "Alles over de waarden (idealen en motieven) van een maatschappij en de normen (richtlijnen, gedragsregels) die moeten leiden tot die waarden, plus deviant gedrag"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "normen en waarden"@nl ;
-    skos:related haOndVak:burgerschap,
+    skos:relatedMatch haOndVak:burgerschap,
         haOndVak:cultuurwetenschappen,
         haOndVak:gedragswetenschappen,
         haOndVak:godsdienst-,
@@ -1176,7 +1176,7 @@ haOndThema:gezondheid-en-gezondheidszorg a skos:Concept ;
     skos:definition "Alle aspecten van de gezondheidszorg, lichamelijke gezondheid"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "gezondheid en gezondheidszorg"@nl ;
-    skos:related haOndVak:bewegingswetenschappen,
+    skos:relatedMatch haOndVak:bewegingswetenschappen,
         haOndVak:biologie,
         haOndVak:dierenzorg,
         haOndVak:indirecte-zorg,
@@ -1192,7 +1192,7 @@ haOndThema:recht a skos:Concept ;
     skos:definition "Alles over rechtbanken, rechtspraak, criminaliteit, wetgeving, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "recht"@nl ;
-    skos:related haOndVak:bedrijfswetenschappen,
+    skos:relatedMatch haOndVak:bedrijfswetenschappen,
         haOndVak:burgerschap,
         haOndVak:cultuurbeschouwing,
         haOndVak:cultuurwetenschappen,
@@ -1208,7 +1208,7 @@ haOndThema:biologie a skos:Concept ;
     skos:definition "Biologie (theorie/praktijk)"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "biologie"@nl ;
-    skos:related haOndVak:biochemie,
+    skos:relatedMatch haOndVak:biochemie,
         haOndVak:biologie,
         haOndVak:dierenzorg,
         haOndVak:hoefverzorging,
@@ -1225,7 +1225,7 @@ haOndThema:literatuur a skos:Concept ;
     skos:definition "Alles over literatuur, in alle talen"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "literatuur"@nl ;
-    skos:related haOndVak:algemene-verbale-vorming,
+    skos:relatedMatch haOndVak:algemene-verbale-vorming,
         haOndVak:duits,
         haOndVak:engels-,
         haOndVak:frans,
@@ -1244,7 +1244,7 @@ haOndThema:toerisme a skos:Concept ;
     skos:definition "Alles over toerisme"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "toerisme"@nl ;
-    skos:related haOndVak:aardrijkskunde,
+    skos:relatedMatch haOndVak:aardrijkskunde,
         haOndVak:duits,
         haOndVak:engels-,
         haOndVak:frans,
@@ -1258,7 +1258,7 @@ haOndThema:toerisme a skos:Concept ;
         haOndVak:spaans,
         haOndVak:toerisme .
 
-haOndVak:maatschappelijke-vorming skos:related haOndThema:erfgoed,
+haOndVak:maatschappelijke-vorming skos:relatedMatch haOndThema:erfgoed,
         haOndThema:hedendaagse-tijd,
         haOndThema:identiteit,
         haOndThema:media-en-communicatie,
@@ -1281,7 +1281,7 @@ haOndThema:beeldende-kunsten a skos:Concept ;
     skos:definition "Schilderkunst, tekenkunst, film en fotografie, beeldhouwkunst, games, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "beeldende kunsten"@nl ;
-    skos:related haOndVak:artistieke-creatie,
+    skos:relatedMatch haOndVak:artistieke-creatie,
         haOndVak:artistieke-expressie,
         haOndVak:audiovisuele-vorming,
         haOndVak:beeld--en-mediacultuur,
@@ -1302,7 +1302,7 @@ haOndThema:media-en-communicatie a skos:Concept ;
     skos:definition "Alles over communicatie (verbaal, non-verbaal), communicatiemiddelen en de media"@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "media en communicatie"@nl ;
-    skos:related haOndVak:beeld--en-mediacultuur,
+    skos:relatedMatch haOndVak:beeld--en-mediacultuur,
         haOndVak:communicatiewetenschappen,
         haOndVak:cultuurwetenschappen,
         haOndVak:maatschappelijke-vorming,
@@ -1323,7 +1323,7 @@ haOndThema:toegepaste-kunsten a skos:Concept ;
     skos:definition "Mode, sierkunsten, architectuur, design, grafische beeldvorming, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "toegepaste kunsten"@nl ;
-    skos:related haOndVak:architecturale-vorming,
+    skos:relatedMatch haOndVak:architecturale-vorming,
         haOndVak:architectuurtekenen,
         haOndVak:artistieke-creatie,
         haOndVak:binnenhuiskunst,
@@ -1343,7 +1343,7 @@ haOndThema:toegepaste-kunsten a skos:Concept ;
         haOndVak:textielproductie,
         haOndVak:textielverzorging .
 
-haOndVak:mens-en-maatschappij skos:related haOndThema:armoede-en-welvaart,
+haOndVak:mens-en-maatschappij skos:relatedMatch haOndThema:armoede-en-welvaart,
         haOndThema:bevolking-en-ruimtelijke-ordening,
         haOndThema:erfgoed,
         haOndThema:filosofie,
@@ -1378,7 +1378,7 @@ haOndThema:podiumkunsten a skos:Concept ;
     skos:definition "Dans, muziek, theater, ..."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "podiumkunsten"@nl ;
-    skos:related <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-folk--en-wereldmuziek>,
+    skos:relatedMatch <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-folk--en-wereldmuziek>,
         <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-jazz-pop-rock>,
         <https://w3id.org/onderwijs-vlaanderen/id/vak/%22instrument%3A-klassiek>,
         haOndVak:algemene-muziekleer,
@@ -1417,7 +1417,7 @@ haOndThema:constructie-en-productie a skos:Concept ;
     skos:definition "Constructie is de manier waarop een groter geheel uit onderdelen samengesteld wordt. Bijvoorbeeld de assemblage van een auto, het bouwen van een woning, meubels, .... Productie is de manier waarop objecten vanuit hun grondstoffen vervaardigd worden. Bijvoorbeeld het maken van glas, karton, houten planken, ... Maar denk hierbij ook aan industriële assemblage."@nl ;
     skos:inScheme o:thema ;
     skos:prefLabel "constructie en productie"@nl ;
-    skos:related haOndVak:afwerking-bouw,
+    skos:relatedMatch haOndVak:afwerking-bouw,
         haOndVak:autorijtechnieken,
         haOndVak:autotechnieken,
         haOndVak:bakkerij,
