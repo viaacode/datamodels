@@ -387,4 +387,4 @@
     skos:prefLabel "Meemoo organization classification thesaurus"@en;
     skos:prefLabel "Meemoo lijst organisatietypes"@nl;
     skos:definition "Meemoo lijst organisatietypes"@nl;
-    skos:hasTopConcept <ALG>, <CUL>, <LEV>, <MED>, <OVH>.
+    skos:hasTopConcept <https://data.hetarchief.be/id/organization-type/ALG>, <https://data.hetarchief.be/id/organization-type/CUL>, <https://data.hetarchief.be/id/organization-type/LEV>, <https://data.hetarchief.be/id/organization-type/MED>, <https://data.hetarchief.be/id/organization-type/OVH>.
