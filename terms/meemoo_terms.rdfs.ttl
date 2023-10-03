@@ -1,0 +1,31 @@
+@prefix haTer: <https://data.hetarchief.be/ns/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+haTer:lowerPriority a rdf:Property;
+  owl:inverseOf haObj:higherPriority ;
+  rdfs:label  "has lower priority than"@en ;
+  rdfs:label  "a une priorité inférieure à"@fr ;
+  rdfs:label  "heeft een lagere prioriteit dan"@nl ;
+  skos:definition "Relates a concept to a concept that has a lower priority."@en ;
+  skos:definition "Relie un concept à un concept qui a une priorité inférieure."@fr ;
+  skos:definition "Relateert een concept aan een ander concept dat een lagere prioriteit heeft."@nl ;
+  skos:example "File format XML1.1 is a more recent and thus preferable format over XML1.0; XML1.0 thus holds a lower priority than XML1.1."@en ;
+  skos:example "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.0 a donc une priorité inférieure à XML1.1."@fr ;
+  skos:example "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.0 heeft dus een lagere prioriteit dan XML1.1."@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/terms/> .
+
+haTer:higherPriority a rdf:Property;
+  owl:inverseOf haObj:lowerPriority ;
+  rdfs:label  "has higher priority than"@en ;
+  rdfs:label  "a une priorité plus grande que"@fr ;
+  rdfs:label  "heeft een hogere prioriteit dan"@nl ;
+  skos:definition "Relates a concept to a concept that has a higher priority."@en ;
+  skos:definition "Relie un concept à un concept qui a une priorité plus élevée."@fr ;
+  skos:definition "Relateert een concept aan een ander concept dat een hogere prioriteit heeft."@nl ;
+  skos:example "File format XML1.1 is a more recent and thus preferable format over XML1.0; XML1.1 thus holds a higher priority than XML1.0."@en ;
+  skos:example "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.1 a donc une priorité plus élevée que XML1.0."@fr ;
+  skos:example "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.1 heeft dus een hogere prioriteit dan XML1.0."@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/terms/> .
