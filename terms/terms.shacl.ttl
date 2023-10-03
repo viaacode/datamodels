@@ -1,6 +1,7 @@
 @prefix : <http://publications.europa.eu/ontology/skosShapes#> .
 @prefix dash: <http://datashapes.org/dash#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix haTer: <https://data.hetarchief.be/ns/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -36,7 +37,7 @@
     dct:title     "Modèle de données Listes de termes"@fr ;
     dct:title     "Datamodel Termenlijst"@nl ;
     dct:created   "2022-07-06" ;
-    dct:modified  "2023-01-12" ;
+    dct:modified  "2023-10-03" ;
     dct:description """Data model to describe structured lists of terms such as thesauri."""@en ;
     dct:description """Modèle de données pour décrire des listes structurées de termes tels que le thésaure."""@fr ;
     dct:description """Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."""@nl ;
@@ -258,6 +259,22 @@
     sh:name "label préféré"@fr ;
     sh:name "voorkeurslabel"@nl ;
     sh:severity sh:Violation ;
+    ] ;
+  sh:property [
+    sh:path haTer:lowerPriority ;
+    sh:class skos:Concept ;
+    sh:name  "has lower priority than"@en ;
+    sh:name  "a une priorité inférieure à"@fr ;
+    sh:name  "heeft een lagere prioriteit dan"@nl ;
+    sh:severity sh:Warning ;
+    ] ;
+  sh:property [
+    sh:path haTer:higherPriority ;
+    sh:class skos:Concept ;
+    sh:name  "has higher priority than"@en ;
+    sh:name  "a une priorité plus grande que"@fr ;
+    sh:name  "heeft een hogere prioriteit dan"@nl ;
+    sh:severity sh:Warning ;
     ] ;
   sh:scopeClass skos:Concept .
 
