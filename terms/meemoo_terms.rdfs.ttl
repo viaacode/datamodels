@@ -5,7 +5,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 haTer:lowerPriority a rdf:Property;
-  owl:inverseOf haObj:higherPriority ;
+  owl:inverseOf haTer:higherPriority ;
   rdfs:label  "has lower priority than"@en ;
   rdfs:label  "a une priorité inférieure à"@fr ;
   rdfs:label  "heeft een lagere prioriteit dan"@nl ;
@@ -18,7 +18,7 @@ haTer:lowerPriority a rdf:Property;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/terms/> .
 
 haTer:higherPriority a rdf:Property;
-  owl:inverseOf haObj:lowerPriority ;
+  owl:inverseOf haTer:lowerPriority ;
   rdfs:label  "has higher priority than"@en ;
   rdfs:label  "a une priorité plus grande que"@fr ;
   rdfs:label  "heeft een hogere prioriteit dan"@nl ;
