@@ -5,7 +5,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 haTer:lowerPriority a rdf:Property;
+  rdfs:subPropertyOf skos:related ;
   owl:inverseOf haTer:higherPriority ;
+  rdfs:domain skos:Concept ;
+  rdfs:range skos:Concept ;
   rdfs:label  "has lower priority than"@en ;
   rdfs:label  "a une priorité inférieure à"@fr ;
   rdfs:label  "heeft een lagere prioriteit dan"@nl ;
@@ -19,7 +22,10 @@ haTer:lowerPriority a rdf:Property;
 
 haTer:higherPriority a rdf:Property;
   owl:inverseOf haTer:lowerPriority ;
+  rdfs:subPropertyOf skos:related ;
   rdfs:label  "has higher priority than"@en ;
+  rdfs:domain skos:Concept ;
+  rdfs:range skos:Concept ;
   rdfs:label  "a une priorité plus grande que"@fr ;
   rdfs:label  "heeft een hogere prioriteit dan"@nl ;
   skos:definition "Relates a concept to a concept that has a higher priority."@en ;
