@@ -462,6 +462,9 @@
       sh:path ebucore:isMediaFragmentOf ;
       sh:class premis:File ;
 
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+
       sh:name "is Media Fragment Of"@en ;
       sh:name "is media fragment van"@nl ;
       sh:name "est fragment des médias de"@fr ;
