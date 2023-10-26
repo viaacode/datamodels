@@ -82,8 +82,6 @@
       sh:path premis:identifier ;
       sh:class haObj:LocalIdentifier ;
 
-      sh:minCount 1 ;
-
       sh:name "local identifier"@en ;
       sh:name "lokale identifier"@nl ;
       sh:name "identificateur local"@fr ;
