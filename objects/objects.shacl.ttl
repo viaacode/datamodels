@@ -427,6 +427,7 @@
         sh:path schema:startTime ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:time ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "startTime"@en ;
         sh:name "starttijd"@nl ;
@@ -444,6 +445,7 @@
         sh:path schema:endTime ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:time ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "endTime"@en ;
         sh:name "eindtijd"@nl ;
