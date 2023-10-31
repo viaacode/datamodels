@@ -234,9 +234,9 @@
     skos:altLabel "digitalisering"@nl ;
     skos:broader <https://data.hetarchief.be/id/event-type/creation>,
         <https://data.hetarchief.be/id/event-type/migration> ;
-    skos:definition "The conversion of analog to digital information, whereby the signal is changed (i.e., from analog to digital)."@en,
-        "La conversion d'informations analogiques en informations numériques, pendant laquelle une modification du signal a lieu (c'est-à-dire passage de l'analogique au numérique)."@fr,
-        "Het omzetten van analoge naar digitale informatie, waarbij het signaal wordt gewijzigd (i.e. van analoog naar digitaal)."@nl ;
+    skos:definition "The conversion of analog to digital information, whereby the type of information is changed (i.e., from analog to digital)."@en,
+        "La conversion d'informations analogiques en informations numériques, pendant laquelle une modification du type d'informations a lieu (c'est-à-dire passage de l'analogique au numérique)."@fr,
+        "Het omzetten van analoge naar digitale informatie, waarbij het type informatie wordt gewijzigd (i.e. van analoog naar digitaal)."@nl ;
     skos:example "digitalisering van filmreel, digitalisering van audiocassettes"@nl ;
     skos:inScheme <https://data.hetarchief.be/id/event-type> ;
     skos:prefLabel "digitization"@en,
@@ -291,9 +291,9 @@
 <https://data.hetarchief.be/id/event-type/migration> a skos:Concept ;
     rdfs:subClassOf premis:Event ;
     skos:broader <https://data.hetarchief.be/id/event-type/creation> ;
-    skos:definition "The conversion of one signal to another."@en,
-        "La conversion d'un signal en un autre."@fr,
-        "Het omzetten van een signaal naar een ander signaal."@nl ;
+    skos:definition "Umbrella term under which all activities can fall in the context of converting carrier-dependent to carrier-independent information. E.g. digitization, digital transfer."@en,
+        "Terme générique sous lequel peuvent relever toutes les activités dans le contexte de la conversion d’informations dépendantes du support en informations indépendantes du support. Par exemple: numérisation, transfert numérique."@fr,
+        "Koepelterm waaronder alle activiteiten kunnen vallen in het kader van het omzetten van dragerafhankelijke naar drageronafhankelijke info. Bv. digitalisering, digitale transfer."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/event-type> ;
     skos:narrower <https://data.hetarchief.be/id/event-type/digital_transfer>,
         <https://data.hetarchief.be/id/event-type/digitization> ;
