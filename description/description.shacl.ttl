@@ -129,15 +129,15 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:author ;
+        sh:path schema:creator ;
         sh:class schema:Role ;
-        sh:name "author"@en ;
-        sh:name "auteur"@nl ;
-        sh:name "auteur"@fr ;
+        sh:name "creator"@en ;
+        sh:name "maker"@nl ;
+        sh:name "créateur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:author is not of class schema:Role"@en ;
-        sh:message "schema:author is niet van de klasse schema:Role"@nl ;
-        sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
+        sh:message "schema:creator is not of class schema:Role"@en ;
+        sh:message "schema:creator is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:creator n'est pas de la classe schema:Role"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -610,15 +610,15 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:author ;
+        sh:path schema:creator ;
         sh:class schema:Role ;
-        sh:name "author"@en ;
-        sh:name "auteur"@nl ;
-        sh:name "auteur"@fr ;
+        sh:name "creator"@en ;
+        sh:name "maker"@nl ;
+        sh:name "créateur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:author is not of class schema:Role"@en ;
-        sh:message "schema:author is niet van de klasse schema:Role"@nl ;
-        sh:message "schema:author n'est pas de la classe schema:Role"@fr ;
+        sh:message "schema:creator is not of class schema:Role"@en ;
+        sh:message "schema:creator is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:creator n'est pas de la classe schema:Role"@fr ;
     ] .
 
 <#CarrierRepresentationNodeShape> a sh:NodeShape ; 
@@ -741,19 +741,19 @@
     sh:property
     [
         a sh:PropertyShape ;
-        sh:path schema:author ;
+        sh:path schema:creator ;
         sh:or ( 
            [sh:class schema:Person ]
            [sh:class org:Organization ]
            [sh:class schema:Thing ]
         ) ;
-        sh:name "author"@en ;
-        sh:name "auteur"@nl ;
-        sh:name "auteur"@fr ;
+        sh:name "creator"@en ;
+        sh:name "maker"@nl ;
+        sh:name "créateur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:author is not of class schema:Thing, schema:Person or org:Organization"@en ;
-        sh:message "schema:author is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
-        sh:message "schema:author n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr ;
+        sh:message "schema:creator is not of class schema:Thing, schema:Person or org:Organization"@en ;
+        sh:message "schema:creator is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
+        sh:message "schema:creator n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr ;
     ],
     [
         a sh:PropertyShape ;
