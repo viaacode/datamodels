@@ -306,18 +306,6 @@ schema:artMedium a rdf:Property ;
     skos:definition "Le matériau utilisé. (par exemple Huile, Aquarelle, Acrylique, Linoprint, Marbre, Cyanotype, Numérique, Lithographie, Point sec, Intaglio, Pastel, Gravure sur bois, Crayon, Médias mixtes, etc.)"@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
-schema:author a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
-    owl:equivalentProperty dct:creator ;
-    rdfs:label "author"@en ;
-    rdfs:label "auteur"@nl ;
-    rdfs:label "auteur"@fr ;
-    skos:definition "The author of this content or rating."@en ;
-    skos:definition "De auteur van deze inhoud of beoordeling."@nl ;
-    skos:definition "L'auteur de ce contenu ou de cette évaluation."@fr ;
-    rdfs:isDefinedBy <https://schema.org/> .
-
 schema:creator a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
