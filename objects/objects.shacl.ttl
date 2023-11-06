@@ -82,8 +82,6 @@
       sh:path premis:identifier ;
       sh:class haObj:LocalIdentifier ;
 
-      sh:minCount 1 ;
-
       sh:name "local identifier"@en ;
       sh:name "lokale identifier"@nl ;
       sh:name "identificateur local"@fr ;
@@ -427,6 +425,7 @@
         sh:path schema:startTime ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:time ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "startTime"@en ;
         sh:name "starttijd"@nl ;
@@ -444,6 +443,7 @@
         sh:path schema:endTime ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:time ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "endTime"@en ;
         sh:name "eindtijd"@nl ;
@@ -459,6 +459,9 @@
     [
       sh:path ebucore:isMediaFragmentOf ;
       sh:class premis:File ;
+
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
 
       sh:name "is Media Fragment Of"@en ;
       sh:name "is media fragment van"@nl ;
