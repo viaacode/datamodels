@@ -1,0 +1,79 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix haFil: <https://data.hetarchief.be/ns/film/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#  ██████ ██       █████  ███████ ███████ ███████ ███████ 
+# ██      ██      ██   ██ ██      ██      ██      ██      
+# ██      ██      ███████ ███████ ███████ █████   ███████ 
+# ██      ██      ██   ██      ██      ██ ██           ██ 
+#  ██████ ███████ ██   ██ ███████ ███████ ███████ ███████ 
+#                                                         
+                                                        
+haFil:FilmType   a   rdfs:Class ;
+    rdfs:label "van het type Film"@nl ;
+    rdfs:label "of type Film"@en ;
+    rdfs:label "du genre Film"@fr ;
+    skos:definition """FilmType is van toepassing op media in meemoo's archief dat afkomstig is van een analoge drager van het type film."""@nl ;
+    skos:definition """FilmType applies to media in meemoo's archive that is derived from an analog carrier of type film."""@en ;
+    skos:definition """FilmType s'applique aux médias dans les archives de meemoo qui sont dérivés d'un support analogique de type film."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
+# ██████  ██████   ██████  ██████  ███████ ██████  ████████ ██ ███████ ███████ 
+# ██   ██ ██   ██ ██    ██ ██   ██ ██      ██   ██    ██    ██ ██      ██      
+# ██████  ██████  ██    ██ ██████  █████   ██████     ██    ██ █████   ███████ 
+# ██      ██   ██ ██    ██ ██      ██      ██   ██    ██    ██ ██           ██ 
+# ██      ██   ██  ██████  ██      ███████ ██   ██    ██    ██ ███████ ███████ 
+#                                                                              
+                                                                             
+# of generieker: haFil:reelsLost met lijst, of simpeler met boolean?
+haFil:numberAudioReelsLost a rdf:Property ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "verloren audiospoelen"@nl ;
+    rdfs:label "lost audio reels"@en ;
+    rdfs:label "bobine audio perdues"@fr ;
+    skos:definition "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen verloren zijn, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film if (and how many) audio reels were lost, preceding any digitization process."@en;
+    skos:definition "Indique pour un film si (et combien) des bobines audio ont été perdues, avant toute opération de numérisation."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
+haFil:imageReelColoringType a rdf:Property ;
+    rdfs:subPropertyOf dbo:filmColourType ;
+    rdfs:domain haObj:PhysicalCarrier ;
+    rdfs:range skos:Concept ;
+    rdfs:label "type kleuring filmspoel"@nl ;
+    rdfs:label "type of coloring image reel"@en ;
+    rdfs:label "type de coloration bobine d'image"@fr ;
+    skos:definition "Het soort kleuring van de beeldrol/-spoel."@nl;
+    skos:definition "The type of coloring of the image reel."@en;
+    skos:definition "Le type de coloration de la bobine d’image."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
+haFil:numberOfReels a rdf:Property ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "aantal filmrollen/-spoelen"@nl ;
+    rdfs:label "number of film reels"@en ;
+    rdfs:label "nombre de bobines de film"@fr ;
+    skos:definition "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl;
+    skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en;
+    skos:definition "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
+# verwarring mogelijk met waarden uit de thesaurus carrier type?
+haFil:reelType a rdf:Property ;
+    rdfs:subPropertyOf dbo:filmAudioType ;
+    rdfs:domain haObj:PhysicalCarrier ;
+    rdfs:range skos:Concept ;
+    rdfs:label "type filmrol/-spoel"@nl ;
+    rdfs:label "type of film reel"@en ;
+    rdfs:label "type de bobine de film"@fr ;
+    skos:definition "Het type filmrol/-spoel, bv. een geluidsspoelspoel, een beeldspoel."@nl;
+    skos:definition "The type of film reel, e.g. an audio reel, an image reel."@en;
+    skos:definition "Le type de bobine de film, par exemple une bobine audio, une bobine d'image."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
+    
