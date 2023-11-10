@@ -28,7 +28,6 @@ haFil:FilmType   a   rdfs:Class ;
 # ██      ██   ██  ██████  ██      ███████ ██   ██    ██    ██ ███████ ███████ 
 #                                                                              
                                                                              
-# of generieker: haFil:reelsLost met lijst, of simpeler met boolean?
 haFil:numberAudioReelsLost a rdf:Property ;
     rdfs:domain haObj:CarrierRepresentation ;
     rdfs:range rdfs:Literal ;
@@ -63,7 +62,6 @@ haFil:numberOfReels a rdf:Property ;
     skos:definition "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
-# verwarring mogelijk met waarden uit de thesaurus carrier type?
 haFil:reelType a rdf:Property ;
     rdfs:subPropertyOf dbo:filmAudioType ;
     rdfs:domain haObj:PhysicalCarrier ;
