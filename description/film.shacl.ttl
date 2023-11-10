@@ -1,13 +1,8 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haDes: <https://data.hetarchief.be/ns/description/>  .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix haFil: <https://data.hetarchief.be/ns/film/>  .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 @prefix haObj: <https://data.hetarchief.be/ns/object/> .
-@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
@@ -46,7 +41,7 @@ haFil:FilmTypeNodeShape a sh:NodeShape ;
     sh:targetClass haFil:FilmType ;
     sh:property [
         a sh:PropertyShape ;
-        sh:path dcterms:format ;
+        sh:path dct:format ;
         sh:class skos:Concept ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
@@ -56,9 +51,9 @@ haFil:FilmTypeNodeShape a sh:NodeShape ;
         sh:description "Extra indication of the type of FilmType."@en ;
         sh:description "Indication supplémentaire du type de FilmType."@fr ;
         sh:description "Indicatie van het type FilmType."@nl ;
-        sh:message "the object of dcterms:format is not of type skos:Concept, is missing or occurs more than once"@en ;
-        sh:message "l'objet de dcterms:format n'est pas de type skos:Concept, est manquant ou apparaît plus d'une seule fois"@fr ;
-        sh:message "het object van dcterms:format is niet van het type skos:Concept, ontbreekt of komt meer dan eens voor"@nl ;
+        sh:message "the object of dct:format is not of type skos:Concept, is missing or occurs more than once"@en ;
+        sh:message "l'objet de dct:format n'est pas de type skos:Concept, est manquant ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van dct:format is niet van het type skos:Concept, ontbreekt of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation 
     ] .
 
