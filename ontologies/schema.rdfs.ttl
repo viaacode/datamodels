@@ -874,3 +874,12 @@ schema:endTime a rdf:Property ;
     skos:definition """De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. """@nl ;
     skos:definition """La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
+
+schema:mentions a rdf:Property ;
+    rdfs:label "mentions"@en ;
+    rdfs:label "vermeldt"@nl ;
+    rdfs:label "mentionné"@fr ;
+    skos:definition "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept."@en ;
+    skos:definition "Geeft aan dat het creatiefwerk een verwijzing bevat naar, maar niet noodzakelijkerwijs over een concept."@en ;
+    skos:definition "Indique que le travail créatif contient une référence à, mais ne concerne pas nécessairement un concept."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .

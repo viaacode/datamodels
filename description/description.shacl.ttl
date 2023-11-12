@@ -1,4 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/>  .
@@ -352,6 +353,18 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:mentions ;
+        sh:nodeKind schema:Thing ;
+        sh:name "mentions"@en ;
+        sh:name "ver"@nl ;
+        sh:name "sur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:mentions is not a schema:Thing"@en ;
+        sh:message "schema:mentions is geen schema:Thing"@nl ;
+        sh:message "schema:about n'est pas un schema:Thing"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:artform ;
         sh:nodeKind sh:Literal ;
         sh:datatype rdf:langString ;
@@ -530,7 +543,39 @@
 
 <#FileNodeShape> a sh:NodeShape ; 
     sh:targetClass premis:File ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>.
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
+    [
+        sh:path ebucore:hasCaptioning;
+        sh:class premis:File ;
+
+        sh:name "captioning"@en ;
+        sh:name "sous-titrage"@fr ;
+        sh:name "ondertiteling"@nl ;
+
+        sh:description "De ondertitels of transcriptie van dit bestand."@nl ;
+        sh:description "De ondertitels of transcriptie van dit bestand."@en ;
+        sh:description "La représentation digital dans ce fichier fait partie."@fr ;
+
+        sh:message "ebucore:hasCaptioning is missing or not a premis:File"@en ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        sh:path ebucore:hasMediaFragment ;
+        sh:class ebucore:MediaFragment ;
+        
+        sh:name "has media fragment"@en ;
+        sh:name "heeft media fragment"@nl;
+        sh:name "a le fragment des médias"@fr;
+
+        sh:description "Een fragment uit dit bestand."@nl;
+        sh:description "A fragment from this file."@en;
+        sh:description "Un fragment de ce fichier."@fr;
+
+        sh:message "ebucore:hasMediaFragment is not a ebucore:MediaFragment"@en ;
+        sh:message "ebucore:hasMediaFragment is geen ebucore:MediaFragment"@nl ;
+        sh:message "ebucore:hasMediaFragment n'est pas un ebucore:MediaFragment"@fr ;
+        sh:severity sh:Violation ;
+    ].
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
@@ -898,7 +943,152 @@
         sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
         sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
     ] .
-    
+
+<#MediaFragmentShape> a sh:NodeShape ;
+  sh:targetClass ebucore:MediaFragment ;
+  sh:property[
+      a sh:PropertyShape ;
+      sh:path schema:startTime ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:time ;
+      sh:maxCount 1 ;
+      sh:name "startTime"@en ;
+      sh:name "starttijd"@nl ;
+      sh:name "heure de départ"@fr ;
+      sh:description "Het tijdstip waarop het fragment start."@nl;
+      sh:description "The time at which the fragment starts."@en;
+      sh:description "Le moment où le fragment commence."@fr;
+      sh:severity sh:Violation ;
+      sh:message "schema:startTime is not of type xsd:time"@en ;
+      sh:message "schema:startTime is niet van het type xsd:time"@nl ;
+      sh:message "schema:startTime n'est pas de type xsd:time"@fr 
+  ],
+  [
+      a sh:PropertyShape ;
+      sh:path schema:endTime ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:time ;
+      sh:maxCount 1 ;
+      sh:name "endTime"@en ;
+      sh:name "eindtijd"@nl ;
+      sh:name "heure de fin"@fr ;
+      sh:description "Het tijdstip waarop het fragment stopt."@nl;
+      sh:description "The time at which the fragment stops."@en;
+      sh:description "Le moment où le fragment s'arrête."@fr;
+      sh:severity sh:Violation ;
+      sh:message "schema:endTime is not of type xsd:time"@en ;
+      sh:message "schema:endTime is niet van het type xsd:time"@nl ;
+      sh:message "schema:endTime n'est pas de type xsd:time"@fr 
+  ] ,
+  [
+    sh:path ebucore:isMediaFragmentOf ;
+    sh:class premis:File ;
+
+    sh:name "is Media Fragment Of"@en ;
+    sh:name "is media fragment van"@nl ;
+    sh:name "est fragment des médias de"@fr ;
+
+    sh:description "Het bestand waarvan dit een fragment is."@nl;
+    sh:description "The file of which this is a fragment."@en;
+    sh:description "Le fichier dont il s'agit d'un fragment."@fr;
+
+    sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
+    sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
+    sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+    sh:severity sh:Violation ;
+  ].
+
+<#AnnotationShape> a sh:NodeShape ;
+  sh:targetClass ebucore:Annotation ;
+  sh:property [
+    sh:path ebucore:isAnnotatedMediaResource;
+    sh:class ebucore:MediaFragment ;
+
+    sh:minCount 1;
+
+    sh:name "annotates"@en ;
+    sh:name "annoteert"@nl ;
+    sh:name "annoter"@fr ;
+
+    sh:description "Het media fragment die gelinkt is aan deze annotatie."@nl ;
+    sh:description "The media fragment that is linked to this Annotation."@en ;
+    sh:description "Le fragment médiatique lié à cette annotation."@fr ;
+
+    sh:message "ebucore:isAnnotatedMediaResource is missing or not a ebucore:MediaFragment"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path ebucore:annotationConfidence;
+    sh:datatype xsd:integer;
+
+    sh:minCount 1;
+    sh:maxCount 1;
+
+    sh:name "annotation confidence"@en ;
+    sh:name "annotatie vertrouwen"@nl ;
+    sh:name "confiance en annotation"@fr ;
+
+    sh:description "Cijfer om het vertrouwen in de annotatie te schatten."@nl ;
+    sh:description "Number to estimate the confidence in the Annotation."@en ;
+    sh:description "Nombre pour estimer la confiance dans l'annotation."@fr ;
+
+    sh:message "ebucore:annotationConfidence is missing or not a xsd:integer"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path ebucore:annotationType;
+    sh:class skos:Concept;
+
+    sh:minCount 0;
+    sh:maxCount 1;
+
+    sh:name "Annotation type"@en ;
+    sh:name "type annotatie"@nl ;
+    sh:name "Type d'annotation"@fr ;
+
+    sh:description "Om het type annotatie te definiëren, zoals herkend gezicht of Named Entity."@nl ;
+    sh:description "To define a type of Annotation, such as a recognized face or Named Entity."@en ;
+    sh:description "Pour définir un type d'annotation, comme une face reconnue ou une entité nommée."@fr ;
+
+    sh:message "ebucore:annotationType occurs more than once or not a skos:Concept"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path ebucore:hasAnnotationTarget;
+    sh:class premis:File;
+
+    sh:minCount 1;
+    sh:maxCount 1;
+
+    sh:name "Annotation target"@en ;
+    sh:name "Annotatiedoel"@nl ;
+    sh:name "Cible d'annotation"@fr ;
+
+    sh:description "Om het doelbestand te definiëren waarop de annotatie van toepassing is."@nl ;
+    sh:description "To define the target file to which the Annotation applies."@en ;
+    sh:description "Pour définir le fichier cible dans lequel l'annotation s'applique."@fr ;
+
+    sh:message "ebucore:hasAnnotationTarget occurs more than once or not a premis:File"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path ebucore:hasAnnotationRelatedPurpose;
+    sh:nodeKind sh:IRI;
+
+    sh:minCount 1;
+    sh:maxCount 1;
+
+    sh:name "Annotation related subject"@en ;
+    sh:name "Annotatie gerelateerd onderwerp"@nl ;
+    sh:name "Sujet lié à l'annotation"@fr ;
+
+    sh:description "Het onderwerp van de annotatie."@nl ;
+    sh:description "The subject of the Annotation."@en;
+    sh:description "L'objet de l'annotation."@fr ;
+
+    sh:message "ebucore:hasAnnotationRelatedPurpose is missing or not an IRI"@en ;
+    sh:severity sh:Violation ;
+  ].
 
 #################################
 #         PropertyShapes        #
