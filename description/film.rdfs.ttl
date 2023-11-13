@@ -5,13 +5,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-#  ██████ ██       █████  ███████ ███████ ███████ ███████ 
-# ██      ██      ██   ██ ██      ██      ██      ██      
-# ██      ██      ███████ ███████ ███████ █████   ███████ 
-# ██      ██      ██   ██      ██      ██ ██           ██ 
-#  ██████ ███████ ██   ██ ███████ ███████ ███████ ███████ 
-#                                                         
-                                                        
+# Classes
+
 haFil:FilmType   a   rdfs:Class ;
     rdfs:label "van het type Film"@nl ;
     rdfs:label "of type Film"@en ;
@@ -21,12 +16,7 @@ haFil:FilmType   a   rdfs:Class ;
     skos:definition """FilmType s'applique aux médias dans les archives de meemoo qui sont dérivés d'un support analogique de type film."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
-# ██████  ██████   ██████  ██████  ███████ ██████  ████████ ██ ███████ ███████ 
-# ██   ██ ██   ██ ██    ██ ██   ██ ██      ██   ██    ██    ██ ██      ██      
-# ██████  ██████  ██    ██ ██████  █████   ██████     ██    ██ █████   ███████ 
-# ██      ██   ██ ██    ██ ██      ██      ██   ██    ██    ██ ██           ██ 
-# ██      ██   ██  ██████  ██      ███████ ██   ██    ██    ██ ███████ ███████ 
-#                                                                              
+# Properties                                                                            
                                                                              
 haFil:numberAudioReelsLost a rdf:Property ;
     rdfs:domain haObj:CarrierRepresentation ;
