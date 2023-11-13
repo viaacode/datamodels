@@ -62,8 +62,7 @@ haFil:PhysicalCarrierNodeShape a sh:NodeShape ;
     sh:property [
         a sh:PropertyShape ;
         sh:path schema:material ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:class skos:Concept ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "material"@en ;
@@ -72,9 +71,9 @@ haFil:PhysicalCarrierNodeShape a sh:NodeShape ;
         sh:description "The base material that makes up the film reel."@en ;
         sh:description "Le matériau de base qui constitue la bobine de film."@fr ;
         sh:description "Het basismateriaal waaruit de filmrol bestaat."@nl ;
-        sh:message "schema:material is not of type string, or occurs more than once"@en ;
-        sh:message "schema:material n'est pas du type string, ou apparaît plus qu'une seule fois"@fr ;
-        sh:message "schema:materiaal is niet van het type string, of komt meer dan eens voor"@nl ;
+        sh:message "the object of schema:material is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "l'objet de schema:material n'est pas du type skos:Concept, ou apparaît plus qu'une seule fois"@fr ;
+        sh:message "het object van schema:materiaal is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation 
     ] , 
     [
