@@ -11,9 +11,9 @@ haFil:FilmType   a   rdfs:Class ;
     rdfs:label "van het type Film"@nl ;
     rdfs:label "of type Film"@en ;
     rdfs:label "du genre Film"@fr ;
-    skos:definition """FilmType is van toepassing op media in meemoo's archief dat afkomstig is van een analoge drager van het type film."""@nl ;
-    skos:definition """FilmType applies to media in meemoo's archive that is derived from an analog carrier of type film."""@en ;
-    skos:definition """FilmType s'applique aux médias dans les archives de meemoo qui sont dérivés d'un support analogique de type film."""@fr ;
+    skos:definition """FilmType is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."""@nl ;
+    skos:definition """FilmType applies to media in meemoo's archive that is originally derived from an analog carrier of type film."""@en ;
+    skos:definition """FilmType s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
 # Properties                                                                            
