@@ -73,7 +73,7 @@ haFil:PhysicalCarrierNodeShape a sh:NodeShape ;
         sh:description "Het basismateriaal waaruit de filmrol bestaat."@nl ;
         sh:message "the object of schema:material is not of type skos:Concept, or occurs more than once"@en ;
         sh:message "l'objet de schema:material n'est pas du type skos:Concept, ou apparaît plus qu'une seule fois"@fr ;
-        sh:message "het object van schema:materiaal is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+        sh:message "het object van schema:material is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation 
     ] , 
     [
