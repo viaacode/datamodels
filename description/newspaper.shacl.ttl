@@ -1,0 +1,170 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix haNePa: <https://data.hetarchief.be/ns/newspaper/>  .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
+
+<http://data.hetarchief.be/ns/newspaper/>  a owl:Ontology ;
+    vann:preferredNamespacePrefix "haNePa" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/newspaper/" ;
+    dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+    [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
+    ] ,
+    [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "Data model Newspaper"@en ;
+    dct:title     "Modèle de données Newspaper"@fr ;
+    dct:title     "Newspaper Datamodel "@nl ;
+    dct:created   "2023-11-13" ;
+    dct:modified  "2023-11-13" ;
+    dct:description """Data model to provide a detailed description of Newspaper objects and their components."""@en ;
+    dct:description """Modèle de données pour fournir une description détaillée des objets Newspaper et leurs composants."""@fr ;
+    dct:description """Datamodel voor de gedetailleerde beschrijving van Newspaperobjecten en hun componenten."""@nl ;
+    pav:version "0.0.1" .
+
+haNePa:NewspaperEditionTypeNodeShape a sh:NodeShape ;
+    sh:targetClass haNePa:NewspaperEditionType ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:class skos:Concept ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "format"@en ;
+        sh:name "format"@fr ;
+        sh:name "formaat"@nl ;
+        sh:description "Extra indication of the type of NewspaperType."@en ;
+        sh:description "Indication supplémentaire du type de NewspaperType."@fr ;
+        sh:description "Indicatie van het type NewspaperType."@nl ;
+        sh:message "the object of dct:format is not of type skos:Concept, is missing or occurs more than once"@en ;
+        sh:message "l'objet de dct:format n'est pas de type skos:Concept, est manquant ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van dct:format is niet van het type skos:Concept, ontbreekt of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haNePa:issuanceFrequency ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "frequency of issuance"@en ;
+        sh:name "fréquence d'émission"@fr ;
+        sh:name "uitgavefrequentie"@nl ;
+        sh:description "Indicates how frequent a newspaper is issued, e.g. twice a day, daily, weekly etc."@en ;
+        sh:description "Indique la fréquence de parution d'un journal, par ex. deux fois par jour, quotidiennement, hebdomadairement, etc."@fr ;
+        sh:description "Geeft aan hoe vaak een krant verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc."@nl ;
+        sh:message "the object of haNePa:issuanceType is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "l'objet de haNePa:issuanceType n'est pas de type skos:Concept, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haNePa:issuanceType is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haNePa:issueType ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "publication type"@en ;
+        sh:name "type de publication"@fr ;
+        sh:name "uitgavetype"@nl ;
+        sh:description "Indicates the specific publication type of a newspaper edition (e.g. morning, evening, weekend newspaper edition, etc.)."@en ;
+        sh:description "Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.)."@fr ;
+        sh:description "Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.)."@nl ;
+        sh:message "the object of haNePa:issueType is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "l'objet de haNePa:issueType n'est pas de type skos:Concept, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haNePa:issueType is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation
+    ] .
+
+haNePa:NewspaperPageTypeNodeShape a sh:NodeShape ;
+    sh:targetClass haNePa:NewspaperPageType ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:class skos:Concept ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "format"@en ;
+        sh:name "format"@fr ;
+        sh:name "formaat"@nl ;
+        sh:description "Extra indication of the NewspaperPageType type."@en ;
+        sh:description "Indication supplémentaire du NewspaperType type."@fr ;
+        sh:description "Extra indicatie van het NewspaperType type."@nl ;
+        sh:message "the object of dct:format is not of type skos:Concept, is missing or occurs more than once"@en ;
+        sh:message "l'objet de dct:format n'est pas de type skos:Concept, est manquant ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van dct:format is niet van het type skos:Concept, ontbreekt of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haNePa:pageNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "page number"@en ;
+        sh:name "numéro de page"@fr ;
+        sh:name "paginanummer"@nl ;
+        sh:description "Indicates the serial number of a newspaper page within its edition."@en ;
+        sh:description "Indique le numéro de série d'une page de journal dans son édition."@fr ;
+        sh:description "Geeft het volgnummer aan van een krantenpagina binnen zijn editie."@nl ;
+        sh:message "the object of haNePa:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
+        sh:message "l'objet de haNePa:pageNumber n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haNePa:pageNumber is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation
+    ] .
+
+haNePa:CarrierRepresentationNodeShape a sh:Nodeshape ;
+    sh:targetClass haObj:CarrierRepresentation ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haNePa:numberOfPages ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of pages"@en ;
+        sh:name "nombre de pages"@fr ;
+        sh:name "aantal pagina's"@nl ;
+        sh:description "Indicates how many newspaper pages a certain newspaper edition consists of."@en ;
+        sh:description "Indique le nombre de pages de journal que comprend une édition de journal."@fr ;
+        sh:description "Geeft aan uit hoeveel krantenpagina's een kranteneditie bestaat."@nl ;
+        sh:message "the object of haNePa:numberOfPages is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "l'objet de haNePa:numberOfPages n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haNePa:numberOfPages is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] .
+
+haNePa:PhysicalCarrierNodeShape a sh:NodeShape ;
+    sh:targetClass haObj:PhysicalCarrier ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:material ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "material"@en ;
+        sh:name "matériau"@fr ;
+        sh:name "materiaal"@nl ;
+        sh:description "The base material that makes up the newspaper edition."@en ;
+        sh:description "Le matériau de base qui constitue l'édition du journal."@fr ;
+        sh:description "Het basismateriaal waaruit de kranteneditie bestaat."@nl ;
+        sh:message "the object of schema:material is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "l'objet de schema:material n'est pas du type skos:Concept, ou apparaît plus qu'une seule fois"@fr ;
+        sh:message "het object van schema:materiaal is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] .
