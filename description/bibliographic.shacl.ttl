@@ -1,0 +1,201 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix haBib: <https://data.hetarchief.be/ns/bibliographic/>  .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/>.
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
+
+<https://data.hetarchief.be/ns/bibliographic/>  a owl:Ontology ;
+    vann:preferredNamespacePrefix "haBib" ;
+    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/bibliographic/" ;
+    dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+    [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
+    ] ,
+    [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "Bibliographic data model"@en ;
+    dct:title     "Modèle de données bibliographiques"@fr ;
+    dct:title     "Bibliografisch datamodel "@nl ;
+    dct:created   "2023-11-13" ;
+    dct:modified  "2023-11-29" ;
+    dct:description """Data model to provide a detailed description of bibliographic objects and their components."""@en ;
+    dct:description """Modèle de données pour fournir une description détaillée des objets bibliographiques et leurs composants."""@fr ;
+    dct:description """Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten."""@nl ;
+    pav:version "0.0.1" .
+
+haBib:IntellectualEntityNodeShape a sh:NodeShape ;
+    sh:targetClass premis:IntellectualEntity ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haBib:numberOfPages ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of pages"@en ;
+        sh:name "nombre de pages"@fr ;
+        sh:name "aantal pagina's"@nl ;
+        sh:description "Indicates how many pages a certain bibliographic object contains."@en ;
+        sh:description "Indique le nombre de pages qu'un certain objet bibliographique contient."@fr ;
+        sh:description "Geeft aan uit hoeveel pagina's een bepaald bibliografisch object bestaat."@nl ;
+        sh:message "the object of haBib:numberOfPages is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haBib:pageNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "page number"@en ;
+        sh:name "numéro de page"@fr ;
+        sh:name "paginanummer"@nl ;
+        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
+        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
+        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
+        sh:message "the object of haBib:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:materialExtent ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "material extent"@en ;
+        sh:name "étendue matérielle"@fr ;
+        sh:name "materiële omvang"@nl ;
+        sh:description "Indicates the physical extent of a bibliographic object (e.g. A4, A5 etc.)."@en ;
+        sh:description "Indique l'étendue physique d'un objet bibliographique (par. ex. A4, A5 etc.)."@fr ;
+        sh:description "Geeft de fysieke omvang van een bibliografisch object aan (bv. A4, A5)."@nl ;
+        sh:message "the object of schema:materialExtent is not of type xsd:string, or occurs more than once"@en ;
+    ] .
+
+haBib:NewspaperIssueNodeShape a sh:NodeShape ;
+    sh:targetClass haBib:NewspaperIssue ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "is part of"@en ;
+        sh:name "fait partie de"@fr ;
+        sh:name "maakt deel uit van"@nl ;
+        sh:description "Indicates the newspaper series that a specific newspaper edition is part of."@en ;
+        sh:description "Indique la série de journaux dont fait partie une édition spécifique."@fr ;
+        sh:description "Geeft de krantenserie aan waar een specifieke kranteneditie deel van uitmaakt."@nl ;
+        sh:message "the object of schema:isPartOf is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:issueNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "issue number"@en ;
+        sh:name "numéro de l'édition"@fr ;
+        sh:name "editienummer"@nl ;
+        sh:description "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."@en ;
+        sh:description "Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie."@fr ;
+        sh:description "Geeft het volgnummer aan van een kranteneditie binnen de grotere krantenserie waarvan het deel uitmaakt."@nl ;
+        sh:message "the object of schema:issueNumber is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:hasValue "newspaper" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "format"@en ;
+        sh:name "format"@fr ;
+        sh:name "formaat"@nl ;
+        sh:description "Extra indication of the type of NewspaperIssue."@en ;
+        sh:description "Indication supplémentaire du type de NewspaperIssue."@fr ;
+        sh:description "Indicatie van het type NewspaperIssue."@nl ;
+        sh:message "the object of dct:format is not 'newspaper', is missing or occurs more than once"@en ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path bf:issuance ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "frequency of issuance"@en ;
+        sh:name "fréquence d'émission"@fr ;
+        sh:name "uitgavefrequentie"@nl ;
+        sh:description "Indicates how frequent a newspaper is issued, e.g. twice a day, daily, weekly etc."@en ;
+        sh:description "Indique la fréquence de parution d'un journal, par ex. deux fois par jour, quotidiennement, hebdomadairement, etc."@fr ;
+        sh:description "Geeft aan hoe vaak een krant verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc."@nl ;
+        sh:message "the object of bf:issuance is not of type skos:Concept, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path bf:edition ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "publication type"@en ;
+        sh:name "type de publication"@fr ;
+        sh:name "uitgavetype"@nl ;
+        sh:description "Indicates the specific publication type of a newspaper edition (e.g. morning, evening, weekend newspaper edition, etc.)."@en ;
+        sh:description "Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.)."@fr ;
+        sh:description "Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.)."@nl ;
+        sh:message "the object of haBib:issueType is not of type skos:Concept, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] .
+
+haBib:NewspaperIssuePageNodeShape a sh:NodeShape ;
+    sh:targetClass haBib:NewspaperIssuePage ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path rel:isp ;
+        sh:class haBib:NewspaperIssue ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "is part of"@en ;
+        sh:name "fait partie de"@fr ;
+        sh:name "maakt deel uit van"@nl ;
+        sh:description "Indicates the newspaper issue that a specific page is part of."@en ;
+        sh:description "Indique l'édition de journal dont fait partie une page spécifique."@fr ;
+        sh:description "Geeft de kranteneditie aan waar een specifieke pagina deel van uitmaakt."@nl ;
+        sh:message "the object of rel:isp is not of type haBib:NewspaperIssue, is missing or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:hasValue "newspaperpage" ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "format"@en ;
+        sh:name "format"@fr ;
+        sh:name "formaat"@nl ;
+        sh:description "Extra indication of the NewspaperIssuePage type."@en ;
+        sh:description "Indication supplémentaire du NewspaperIssuePage type."@fr ;
+        sh:description "Extra indicatie van het NewspaperIssuePage type."@nl ;
+        sh:message "the object of dct:format is not 'newspaperpage', is missing or occurs more than once"@en ;
+        sh:severity sh:Violation 
+    ] .
