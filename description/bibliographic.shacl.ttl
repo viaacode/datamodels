@@ -38,8 +38,8 @@
     dct:description """Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten."""@nl ;
     pav:version "0.0.1" .
 
-haBib:IntellectualEntityNodeShape a sh:NodeShape ;
-    sh:targetClass premis:IntellectualEntity ;
+haBib:NewspaperIssueNodeShape a sh:NodeShape ;
+    sh:targetClass haBib:NewspaperIssue ;
     sh:property [
         a sh:PropertyShape ;
         sh:path haBib:numberOfPages ;
@@ -57,40 +57,6 @@ haBib:IntellectualEntityNodeShape a sh:NodeShape ;
         sh:severity sh:Violation
     ] ,
     [
-        a sh:PropertyShape ;
-        sh:path haBib:pageNumber ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:name "page number"@en ;
-        sh:name "numéro de page"@fr ;
-        sh:name "paginanummer"@nl ;
-        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
-        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
-        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of haBib:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
-        sh:severity sh:Violation
-    ] ,
-    [
-        a sh:PropertyShape ;
-        sh:path schema:materialExtent ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:name "material extent"@en ;
-        sh:name "étendue matérielle"@fr ;
-        sh:name "materiële omvang"@nl ;
-        sh:description "Indicates the physical extent of a bibliographic object (e.g. A4, A5 etc.)."@en ;
-        sh:description "Indique l'étendue physique d'un objet bibliographique (par. ex. A4, A5 etc.)."@fr ;
-        sh:description "Geeft de fysieke omvang van een bibliografisch object aan (bv. A4, A5)."@nl ;
-        sh:message "the object of schema:materialExtent is not of type xsd:string, or occurs more than once"@en ;
-    ] .
-
-haBib:NewspaperIssueNodeShape a sh:NodeShape ;
-    sh:targetClass haBib:NewspaperIssue ;
-    sh:property [
         a sh:PropertyShape ;
         sh:path schema:isPartOf ;
         sh:class schema:Newspaper ;
@@ -169,7 +135,24 @@ haBib:NewspaperIssueNodeShape a sh:NodeShape ;
 
 haBib:NewspaperIssuePageNodeShape a sh:NodeShape ;
     sh:targetClass haBib:NewspaperIssuePage ;
-    sh:property [
+    sh:property 
+    [
+        a sh:PropertyShape ;
+        sh:path haBib:pageNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "page number"@en ;
+        sh:name "numéro de page"@fr ;
+        sh:name "paginanummer"@nl ;
+        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
+        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
+        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
+        sh:message "the object of haBib:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],
+    [
         a sh:PropertyShape ;
         sh:path rel:isp ;
         sh:class haBib:NewspaperIssue ;
