@@ -43,7 +43,7 @@ haBib:numberOfPages a rdf:Property ;
 
 haBib:pageNumber a rdf:Property ;
     rdfs:subPropertyOf schema:position ;
-    rdfs:domain haBib:NewspaperPageType ;
+    rdfs:domain haBib:NewspaperIssuePage ;
     rdfs:range rdfs:Literal ;
     rdfs:label "paginanummer"@nl ;
     rdfs:label "page number"@en ;
