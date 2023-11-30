@@ -472,6 +472,21 @@
         sh:severity sh:Violation ;
     ],
     [
+        a sh:PropertyShape ;
+        sh:path schema:materialExtent ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "material extent"@en ;
+        sh:name "étendue matérielle"@fr ;
+        sh:name "materiële omvang"@nl ;
+        sh:description "Indicates the physical extent of an object (e.g. A4, A5 etc.)."@en ;
+        sh:description "Indique l'étendue physique d'un objet (par. ex. A4, A5 etc.)."@fr ;
+        sh:description "Geeft de fysieke omvang van een object aan (bv. A4, A5)."@nl ;
+        sh:message "the object of schema:materialExtent is not of type xsd:string, or occurs more than once"@en ;
+    ],
+    [
         sh:path haObj:preservationProblem ;
         sh:class skos:Concept ;
 
