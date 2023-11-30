@@ -30,7 +30,7 @@ haBib:NewspaperIssuePage   a   rdfs:Class ;
 # Properties
 
 haBib:numberOfPages a rdf:Property ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain haBib:NewspaperIssue ;
     rdfs:range rdfs:Literal ;
     skos:related schema:numberOfPages ;
     rdfs:label "aantal pagina's"@nl ;
