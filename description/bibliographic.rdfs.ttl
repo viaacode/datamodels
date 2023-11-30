@@ -8,6 +8,7 @@
 # Classes
 
 haBib:NewspaperIssue   a   rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Kranteneditie"@nl ;
     rdfs:label "Newspaper edition"@en ;
     rdfs:label "Edition de journal"@fr ;
@@ -17,6 +18,7 @@ haBib:NewspaperIssue   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> .
 
 haBib:NewspaperIssuePage   a   rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Kranteneditiepagina"@nl ;
     rdfs:label "Newspaper issue page"@en ;
     rdfs:label "Page d'édition de journal"@fr ;
