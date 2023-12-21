@@ -98,7 +98,7 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "coloring type"@en ;
-        sh:name "type de coloratione"@fr ;
+        sh:name "type de coloration"@fr ;
         sh:name "type kleuring"@nl ;
         sh:description "Indication of the coloring of the image reel."@en ;
         sh:description "Indication de la coloration de la bobine d'image."@fr ;
