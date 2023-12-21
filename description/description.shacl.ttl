@@ -526,7 +526,25 @@
         sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en ;
         sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
         sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
-    ] .
+    ] , 
+    [
+        a sh:PropertyShape ;
+        sh:path schema:material ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "material"@en ;
+        sh:name "matériau"@fr ;
+        sh:name "materiaal"@nl ;
+        sh:description "The base material that makes up the physical carrier."@en ;
+        sh:description "Le matériau de base qui constitue le porteur physique."@fr ;
+        sh:description "Het basismateriaal waaruit de fysieke drager bestaat."@nl ;
+        sh:message "the object of schema:material is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "l'objet de schema:material n'est pas du type skos:Concept, ou apparaît plus qu'une seule fois"@fr ;
+        sh:message "het object van schema:material is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] . 
 
 <#FileNodeShape> a sh:NodeShape ; 
     sh:targetClass premis:File ;

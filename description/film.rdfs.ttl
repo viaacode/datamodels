@@ -16,6 +16,24 @@ haFil:Film   a   rdfs:Class ;
     skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
+haFil:ImageReel   a   rdfs:Class ;
+    rdfs:label "Beeldspoel"@nl ;
+    rdfs:label "Image reel"@en ;
+    rdfs:label "Bobine d'image"@fr ;
+    skos:definition """Een speo van een analoge film drager die beeld bevat."""@nl ;
+    skos:definition """A reel of an analog film carrier that contains video."""@en ;
+    skos:definition """Une bobine d'un porte-film analogique qui contient une vidéo."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
+haFil:AudioReel   a   rdfs:Class ;
+    rdfs:label "Geluidsspoel"@nl ;
+    rdfs:label "Audio reel"@en ;
+    rdfs:label "Bobine audio"@fr ;
+    skos:definition """Een band van een analoge film drager die audio bevat."""@nl ;
+    skos:definition """A reel of an analog film carrier that contains audio."""@en ;
+    skos:definition """Une bobine d'un porte-film analogique qui contient de l'audio."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
 # Properties                                                                            
                                                                              
 haFil:numberOfMissingAudioReels a rdf:Property ;
@@ -29,9 +47,20 @@ haFil:numberOfMissingAudioReels a rdf:Property ;
     skos:definition "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
+haFil:numberOfMissingImageReels a rdf:Property ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "ontbrekende beeldspoelen"@nl ;
+    rdfs:label "missing image reels"@en ;
+    rdfs:label "bobines d'image manquantes"@fr ;
+    skos:definition "Duidt aan voor een film of (en hoeveel) beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film if (and how many) image reels are missing, preceding any digitization process."@en;
+    skos:definition "Indique pour un film si (et combien) des bobines d'image sont manquantes, avant toute opération de numérisation."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
+
 haFil:coloringType a rdf:Property ;
     rdfs:subPropertyOf dbo:filmColourType ;
-    rdfs:domain haObj:PhysicalCarrier ;
+    rdfs:domain haFil:ImageReel ;
     rdfs:range skos:Concept ;
     rdfs:label "type kleuring filmspoel"@nl ;
     rdfs:label "type of coloring image reel"@en ;
@@ -50,18 +79,6 @@ haFil:numberOfReels a rdf:Property ;
     skos:definition "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl;
     skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en;
     skos:definition "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
-
-haFil:reelType a rdf:Property ;
-    rdfs:subPropertyOf dbo:filmAudioType ;
-    rdfs:domain haObj:PhysicalCarrier ;
-    rdfs:range skos:Concept ;
-    rdfs:label "type filmrol/-spoel"@nl ;
-    rdfs:label "type of film reel"@en ;
-    rdfs:label "type de bobine de film"@fr ;
-    skos:definition "Het type filmrol/-spoel, bv. een geluidsspoelspoel, een beeldspoel."@nl;
-    skos:definition "The type of film reel, e.g. an audio reel, an image reel."@en;
-    skos:definition "Le type de bobine de film, par exemple une bobine audio, une bobine d'image."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
     
