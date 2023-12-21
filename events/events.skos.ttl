@@ -26,7 +26,7 @@
         "kalibreren"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/event-type> .
 
-<https://data.hetarchief.be/id/event-type/check_in> a skos:Concept ;
+<https://data.hetarchief.be/id/event-type/check-in> a skos:Concept ;
     rdfs:subClassOf premis:Event ;
     skos:definition "Registering that a carrier has arrived at a party and is ready for the next step in the digitization process."@en,
         "L'enregistrement qu'un support est arrivé chez une partie et est prêt pour la prochaine étape du processus de numérisation."@fr,
@@ -38,7 +38,7 @@
         "check-in"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/event-type> .
 
-<https://data.hetarchief.be/id/event-type/check_out> a skos:Concept ;
+<https://data.hetarchief.be/id/event-type/check-out> a skos:Concept ;
     rdfs:subClassOf premis:Event ;
     skos:definition "Registering that a carrier has left one party and is on its way to the next party in the digitization process."@en,
         "L'enregistrement qu'un support a quitté une partie et est en route vers la partie suivante dans le processus de numérisation."@fr,
@@ -104,7 +104,7 @@
         "bewerken"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/event-type> .
 
-<https://data.hetarchief.be/id/event-type/format_identification> a skos:Concept ;
+<https://data.hetarchief.be/id/event-type/format-identification> a skos:Concept ;
     rdfs:subClassOf premis:Event ;
     skos:altLabel "format identification"@en,
         "identification du format"@fr,
@@ -213,7 +213,7 @@
         "tranformatie"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/event-type> .
 
-<https://data.hetarchief.be/id/event-type/digital_transfer> a skos:Concept ;
+<https://data.hetarchief.be/id/event-type/digital-transfer> a skos:Concept ;
     rdfs:subClassOf premis:Event ;
     skos:altLabel "transfert numérique"@fr ;
     skos:broader <https://data.hetarchief.be/id/event-type/creation>,
@@ -243,7 +243,7 @@
         "numérisation"@fr,
         "digitaliseren"@nl .
 
-<https://data.hetarchief.be/id/event-type/quality_control> a skos:Concept ;
+<https://data.hetarchief.be/id/event-type/quality-control> a skos:Concept ;
     rdfs:subClassOf premis:Event ;
     skos:definition "Checking and subsequent approval or rejection that a file meets the content requirements. Validation is a 'subjective check': there is no fixed reference set, so there is a certain 'range' within which something must fall in order to be approved."@en,
         "La vérification puis la (dés)approbation qu'un fichier répond aux exigences de contenu. La validation est une 'vérification subjective': il n'y a pas d'ensemble de références fixes, il existe donc une certaine 'plage' dans laquelle quelque chose doit se situer pour être approuvé."@fr,
@@ -285,7 +285,7 @@
     skos:prefLabel "validation"@en,
         "validation"@fr,
         "validatie"@nl ;
-    skos:related <https://data.hetarchief.be/id/event-type/quality_control> ;
+    skos:related <https://data.hetarchief.be/id/event-type/quality-control> ;
     skos:topConceptOf <https://data.hetarchief.be/id/event-type> .
 
 <https://data.hetarchief.be/id/event-type/migration> a skos:Concept ;
@@ -295,7 +295,7 @@
         "Terme générique sous lequel peuvent relever toutes les activités dans le contexte de la conversion d’informations dépendantes du support en informations indépendantes du support. Par exemple: numérisation, transfert numérique."@fr,
         "Koepelterm waaronder alle activiteiten kunnen vallen in het kader van het omzetten van dragerafhankelijke naar drageronafhankelijke info. Bv. digitalisering, digitale transfer."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/event-type> ;
-    skos:narrower <https://data.hetarchief.be/id/event-type/digital_transfer>,
+    skos:narrower <https://data.hetarchief.be/id/event-type/digital-transfer>,
         <https://data.hetarchief.be/id/event-type/digitization> ;
     skos:prefLabel "migration"@en,
         "migration"@fr,
@@ -311,7 +311,7 @@
     skos:example "een S3-object"@nl,
         "een digitaal bestand"@nl ;
     skos:inScheme <https://data.hetarchief.be/id/event-type> ;
-    skos:narrower <https://data.hetarchief.be/id/event-type/digital_transfer>,
+    skos:narrower <https://data.hetarchief.be/id/event-type/digital-transfer>,
         <https://data.hetarchief.be/id/event-type/digitization>,
         <https://data.hetarchief.be/id/event-type/migration>,
         <https://data.hetarchief.be/id/event-type/transcription> ;
@@ -322,17 +322,17 @@
 
 <https://data.hetarchief.be/id/event-type> a skos:ConceptScheme ;
     skos:hasTopConcept <https://data.hetarchief.be/id/event-type/calibration>,
-        <https://data.hetarchief.be/id/event-type/check_in>,
-        <https://data.hetarchief.be/id/event-type/check_out>,
+        <https://data.hetarchief.be/id/event-type/check-in>,
+        <https://data.hetarchief.be/id/event-type/check-out>,
         <https://data.hetarchief.be/id/event-type/cleaning>,
         <https://data.hetarchief.be/id/event-type/compression>,
         <https://data.hetarchief.be/id/event-type/creation>,
         <https://data.hetarchief.be/id/event-type/decompression>,
         <https://data.hetarchief.be/id/event-type/editing>,
-        <https://data.hetarchief.be/id/event-type/format_identification>,
+        <https://data.hetarchief.be/id/event-type/format-identification>,
         <https://data.hetarchief.be/id/event-type/ingest>,
         <https://data.hetarchief.be/id/event-type/inspection>,
-        <https://data.hetarchief.be/id/event-type/quality_control>,
+        <https://data.hetarchief.be/id/event-type/quality-control>,
         <https://data.hetarchief.be/id/event-type/registration>,
         <https://data.hetarchief.be/id/event-type/repair>,
         <https://data.hetarchief.be/id/event-type/transcoding>,
