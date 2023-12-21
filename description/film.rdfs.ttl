@@ -13,23 +13,23 @@ haFil:Film   a   rdfs:Class ;
     rdfs:label "Film"@fr ;
     skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."""@nl ;
     skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."""@en ;
-    skos:definition """FilmType s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."""@fr ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
 # Properties                                                                            
                                                                              
-haFil:numberAudioReelsLost a rdf:Property ;
+haFil:numberOfMissingAudioReels a rdf:Property ;
     rdfs:domain haObj:CarrierRepresentation ;
     rdfs:range rdfs:Literal ;
-    rdfs:label "verloren audiospoelen"@nl ;
-    rdfs:label "lost audio reels"@en ;
-    rdfs:label "bobine audio perdues"@fr ;
-    skos:definition "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen verloren zijn, voorafgaand aan enig digitaliseringsproces."@nl;
-    skos:definition "Indicates for a film if (and how many) audio reels were lost, preceding any digitization process."@en;
-    skos:definition "Indique pour un film si (et combien) des bobines audio ont été perdues, avant toute opération de numérisation."@fr;
+    rdfs:label "ontbrekende audiospoelen"@nl ;
+    rdfs:label "missing audio reels"@en ;
+    rdfs:label "bobines audio manquantes"@fr ;
+    skos:definition "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film if (and how many) audio reels are missing, preceding any digitization process."@en;
+    skos:definition "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> .
 
-haFil:imageReelColoringType a rdf:Property ;
+haFil:coloringType a rdf:Property ;
     rdfs:subPropertyOf dbo:filmColourType ;
     rdfs:domain haObj:PhysicalCarrier ;
     rdfs:range skos:Concept ;
