@@ -1,0 +1,40 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/color-type/BandW> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "black and white"@en,
+        "zwart-wit"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type/Color> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "color"@en,
+        "kleur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type/Colorized> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "colorized"@en,
+        "gekleurd"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type/Composite> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "composite"@en,
+        "composiet"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type/UnknownColorType> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "unknown color type"@en,
+        "onbekend kleurtype"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/color-type/BandW>,
+        <https://data.hetarchief.be/id/color-type/Color>,
+        <https://data.hetarchief.be/id/color-type/Colorized>,
+        <https://data.hetarchief.be/id/color-type/Composite>,
+        <https://data.hetarchief.be/id/color-type/UnknownColorType> ;
+    skos:prefLabel "Thesaurus color types"@en,
+        "Thesaurus kleurtypes"@nl .

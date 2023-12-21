@@ -1,0 +1,207 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix haFil: <https://data.hetarchief.be/ns/film/>  .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix haCt: <https://data.hetarchief.be/id/color-type/> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+
+@base <http://data.hetarchief.be/ns/film> .
+
+<>  a owl:Ontology ;
+    vann:preferredNamespacePrefix "haFil" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/film/" ;
+    dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+    [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
+    ] ,
+    [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "Data model Film"@en ;
+    dct:title     "Modèle de données Film"@fr ;
+    dct:title     "Datamodel Film"@nl ;
+    dct:created   "2023-11-09" ;
+    dct:modified  "2023-11-10" ;
+    dct:description """Data model to provide a detailed description of Film objects and their components."""@en ;
+    dct:description """Modèle de données pour fournir une description détaillée des objets Film et leurs composants."""@fr ;
+    dct:description """Datamodel voor de gedetailleerde beschrijving van Filmobjecten en hun componenten."""@nl ;
+    pav:version "0.0.1" .
+
+<#FilmTypeNodeShape> a sh:NodeShape ;
+    sh:targetClass haFil:Film ;
+    sh:property [
+        sh:path rel:isr ;
+        sh:class haObj:CarrierRepresentation ;
+
+        sh:minCount 1 ;
+
+        sh:name "is Represented By"@en ;
+        sh:name "wordt gerepresenteerd door"@nl ;
+        sh:name "est représenté par"@fr ;
+
+        sh:description "Een representatie van de intellectuele entiteit."@nl ;
+        sh:description "A representation of the intellectual entity."@en ;
+        sh:description "Une représentation de l'entité intellectuelle."@fr ;
+
+        sh:message "rel:isr is missing or not a premis:Representation"@en ;
+        sh:message "rel:isr ontbreekt of is geen premis:Representation"@nl ;
+        sh:message "rel:isr manque ou n'est pas une premis:Representation"@fr ;
+        sh:severity sh:Violation ;
+    ].
+
+<#CarrierRepresentationShape> a sh:NodeShape ;
+  sh:targetClass haObj:CarrierRepresentation ;
+  sh:property [
+    sh:path premis:storedAt ;
+    sh:or (
+      [ sh:class haFil:ImageReel] 
+      [ sh:class haFil:AudioReel] 
+    ) ;
+    sh:minCount 1 ;
+
+    sh:name "stored at"@en ;
+    sh:name "opgeslagen op"@nl ;
+    sh:name "stocké à"@fr ;
+
+    sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
+    sh:description "The reel where the representation is stored."@en ;
+    sh:description "Le porteur physique où la représentation est stocké."@fr ;
+
+    sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
+    sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+    sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+    sh:severity sh:Violation ;
+  ] .
+
+<#ImageReelNodeShape> a sh:NodeShape ;
+  sh:targetClass haFil:ImageReel ;
+  sh:property [
+        a sh:PropertyShape ;
+        sh:path haFil:coloringType ;
+        sh:class skos:Concept ;
+        sh:in (haCt:BandW haCt:Color haCt:Colorized haCt:Composite haCt:UnknownColorType) ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "coloring type"@en ;
+        sh:name "type de coloration"@fr ;
+        sh:name "type kleuring"@nl ;
+        sh:description "Indication of the coloring of the image reel."@en ;
+        sh:description "Indication de la coloration de la bobine d'image."@fr ;
+        sh:description "Indicatie van de kleuring van de beeldrol/-spoel."@nl ;
+        sh:message "the object of haFil:imageReelColoringType is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "l'objet de haFil:imageReelColoringType n'est pas du type skos:Concept, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haFil:imageReelColoringType is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path ebucore:hasCaptioning ;
+        sh:class ebucore:OpenCaptions ;
+        sh:minCount 0 ;
+        sh:name "has (embedded) captioning"@en ;
+        sh:name "a des sous-titres (intégrés)"@fr ;
+        sh:name "heeft (ingebedde) ondertiteling"@nl ;
+        sh:description "Indicates the (embedded) captioning of an image reel ."@en ;
+        sh:description "Indique les sous-titres (intégrés) d'une bobine d'image."@fr ;
+        sh:description "Geeft de (ingebedde) ondertiteling aan van een beeldrol/-spoel."@nl ;
+        sh:message "the object of ebucore:hasCaptioning is not of type ebucore:OpenCaptions"@en ;
+        sh:message "l'objet de ebucore:hasCaptioning n'est pas du type ebucore:OpenCaptions"@fr ;
+        sh:message "het object van ebucore:hasCaptioning is niet van het type ebucore:OpenCaptions"@nl ;
+        sh:severity sh:Violation
+    ] .
+
+<#AudioReelNodeShape> a sh:NodeShape ;
+  sh:targetClass haFil:AudioReel .
+
+<#OpenCaptionsNodeShape> a sh:NodeShape ;
+    sh:targetClass ebucore:OpenCaptions ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:inLanguage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:name "in language"@en ;
+        sh:name "en langue"@fr ;
+        sh:name "in taal"@nl ;
+        sh:description "Indicates the language of the embedded captioning."@en ;
+        sh:description "Indique la langue des sous-titres intégrés."@fr ;
+        sh:description "Duidt de taal aan van de ingebedde ondertiteling."@nl ;
+        sh:message "the object of schema:inLanguage is not of type xsd:string"@en ;
+        sh:message "l'objet de schema:inLanguage n'est pas du type xsd:string"@fr ;
+        sh:message "het object van schema:inLanguage is niet van het type xsd:string"@nl ;
+        sh:severity sh:Violation
+    ] .
+
+<#CarrierRepresentationNodeShape> a sh:Nodeshape ;
+    sh:targetClass haObj:CarrierRepresentation ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haFil:numberOfMissingAudioReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of lost audio reels"@en ;
+        sh:name "nombre de bobines audio perdues"@fr ;
+        sh:name "aantal verloren audiorollen/-spoelen"@nl ;
+        sh:description "Indicates if and how many audio reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si et combien de bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of en hoeveel geluidsrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haFil:numberAudioReelsLost is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "l'objet de haFil:numberAudioReelsLost n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haFil:numberAudioReelsLost is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haFil:numberOfMissingImageReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of lost image reels"@en ;
+        sh:name "nombre de bobines d'image perdues"@fr ;
+        sh:name "aantal verloren beeldrollen/-spoelen"@nl ;
+        sh:description "Indicates if and how many image reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si et combien de bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of en hoeveel beeldrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haFil:numberAudioReelsLost is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "l'objet de haFil:numberAudioReelsLost n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haFil:numberAudioReelsLost is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haFil:numberOfReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of reels"@en ;
+        sh:name "nombre de bobines"@fr ;
+        sh:name "aantal (film)rollen/-spoelen"@nl ;
+        sh:description "Indicates the number of reels (regardless of type) that the film consists of."@en ;
+        sh:description "Indique le nombre de bobines (quel que soit le type) qui composent le film."@fr ;
+        sh:description "Geeft aan uit hoeveel rollen/spoelen (ongeacht het type) waaruit de film bestaat."@nl ;
+        sh:message "the object of haFil:numberOfReels is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "l'objet de haFil:numberOfReels n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haFil:numberOfReels is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation
+    ] .
+
