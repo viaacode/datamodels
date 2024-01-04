@@ -354,7 +354,7 @@
     [
         a sh:PropertyShape ;
         sh:path schema:mentions ;
-        sh:nodeKind schema:Thing ;
+        sh:class schema:Thing ;
         sh:name "mentions"@en ;
         sh:name "ver"@nl ;
         sh:name "sur"@fr ;
