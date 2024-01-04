@@ -878,8 +878,8 @@ schema:endTime a rdf:Property ;
 schema:mentions a rdf:Property ;
     rdfs:label "mentions"@en ;
     rdfs:label "vermeldt"@nl ;
-    rdfs:label "mentionné"@fr ;
+    rdfs:label "mentionne"@fr ;
     skos:definition "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept."@en ;
-    skos:definition "Geeft aan dat het creatiefwerk een verwijzing bevat naar, maar niet noodzakelijkerwijs over een concept."@en ;
-    skos:definition "Indique que le travail créatif contient une référence à, mais ne concerne pas nécessairement un concept."@fr ;
+    skos:definition "Geeft aan dat het Creative Work een verwijzing bevat naar, maar niet noodzakelijkerwijs over een concept."@nl ;
+    skos:definition "Indique que le Creative Work contient une référence à, mais ne concerne pas nécessairement un concept."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .

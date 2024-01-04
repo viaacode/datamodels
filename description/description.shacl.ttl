@@ -356,12 +356,12 @@
         sh:path schema:mentions ;
         sh:class schema:Thing ;
         sh:name "mentions"@en ;
-        sh:name "ver"@nl ;
-        sh:name "sur"@fr ;
+        sh:name "vermeldt"@nl ;
+        sh:name "mentionne"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:mentions is not a schema:Thing"@en ;
         sh:message "schema:mentions is geen schema:Thing"@nl ;
-        sh:message "schema:about n'est pas un schema:Thing"@fr ;
+        sh:message "schema:mentions n'est pas un schema:Thing"@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -546,7 +546,10 @@
     sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
     [
         sh:path ebucore:hasCaptioning;
-        sh:class premis:File ;
+        sh:and (
+            [ sh:class premis:File ]
+            [ sh:class ebucore:ClosedCaptioning ]
+        );
 
         sh:name "captioning"@en ;
         sh:name "sous-titrage"@fr ;
@@ -554,9 +557,9 @@
 
         sh:description "De ondertitels of transcriptie van dit bestand."@nl ;
         sh:description "De ondertitels of transcriptie van dit bestand."@en ;
-        sh:description "La représentation digital dans ce fichier fait partie."@fr ;
+        sh:description "Les sous-titres ou transcription de ce fichier."@fr ;
 
-        sh:message "ebucore:hasCaptioning is missing or not a premis:File"@en ;
+        sh:message "ebucore:hasCaptioning is missing, not a premis:File or not a ebucore:ClosedCaptioning."@en ;
         sh:severity sh:Violation ;
     ],
     [
@@ -565,7 +568,7 @@
         
         sh:name "has media fragment"@en ;
         sh:name "heeft media fragment"@nl;
-        sh:name "a le fragment des médias"@fr;
+        sh:name "a un fragment multimédia"@fr;
 
         sh:description "Een fragment uit dit bestand."@nl;
         sh:description "A fragment from this file."@en;
@@ -992,9 +995,9 @@
     sh:description "The file of which this is a fragment."@en;
     sh:description "Le fichier dont il s'agit d'un fragment."@fr;
 
-    sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
-    sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
-    sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+    sh:message "The object of ebucore:isMediaFragmentOf is not a premis:File"@en ;
+    sh:message "Het object van ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
+    sh:message "L'objet de ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
     sh:severity sh:Violation ;
   ].
 
@@ -1008,13 +1011,13 @@
 
     sh:name "annotates"@en ;
     sh:name "annoteert"@nl ;
-    sh:name "annoter"@fr ;
+    sh:name "annote"@fr ;
 
-    sh:description "Het media fragment die gelinkt is aan deze annotatie."@nl ;
+    sh:description "Het media fragment dat gelinkt is aan deze annotatie."@nl ;
     sh:description "The media fragment that is linked to this Annotation."@en ;
-    sh:description "Le fragment médiatique lié à cette annotation."@fr ;
+    sh:description "Le fragment multimédia lié à cette annotation."@fr ;
 
-    sh:message "ebucore:isAnnotatedMediaResource is missing or not a ebucore:MediaFragment"@en ;
+    sh:message "ebucore:isAnnotatedMediaResource is missing or its object is not a ebucore:MediaFragment"@en ;
     sh:severity sh:Violation ;
   ],
   [
@@ -1032,7 +1035,7 @@
     sh:description "Number to estimate the confidence in the Annotation."@en ;
     sh:description "Nombre pour estimer la confiance dans l'annotation."@fr ;
 
-    sh:message "ebucore:annotationConfidence is missing or not a xsd:integer"@en ;
+    sh:message "ebucore:annotationConfidence is missing, occurs more than once or its object is not a xsd:integer"@en ;
     sh:severity sh:Violation ;
   ],
   [
@@ -1046,11 +1049,11 @@
     sh:name "type annotatie"@nl ;
     sh:name "Type d'annotation"@fr ;
 
-    sh:description "Om het type annotatie te definiëren, zoals herkend gezicht of Named Entity."@nl ;
+    sh:description "Om het type annotatie te definiëren, zoals een herkend gezicht of Named Entity."@nl ;
     sh:description "To define a type of Annotation, such as a recognized face or Named Entity."@en ;
-    sh:description "Pour définir un type d'annotation, comme une face reconnue ou une entité nommée."@fr ;
+    sh:description "Pour définir un type d'annotation, comme un visage reconnu ou une entité nommée."@fr ;
 
-    sh:message "ebucore:annotationType occurs more than once or not a skos:Concept"@en ;
+    sh:message "ebucore:annotationType occurs more than once or its object is not a skos:Concept"@en ;
     sh:severity sh:Violation ;
   ],
   [
@@ -1066,27 +1069,27 @@
 
     sh:description "Om het doelbestand te definiëren waarop de annotatie van toepassing is."@nl ;
     sh:description "To define the target file to which the Annotation applies."@en ;
-    sh:description "Pour définir le fichier cible dans lequel l'annotation s'applique."@fr ;
+    sh:description "Pour définir le fichier cible auquel l'annotation s'applique."@fr ;
 
-    sh:message "ebucore:hasAnnotationTarget occurs more than once or not a premis:File"@en ;
+    sh:message "ebucore:hasAnnotationTarget is missing, occurs more than once or its object is not a premis:File"@en ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path ebucore:hasAnnotationRelatedPurpose;
+    sh:path ebucore:hasAnnotationRelatedArtefact;
     sh:nodeKind sh:IRI;
 
     sh:minCount 1;
     sh:maxCount 1;
 
-    sh:name "Annotation related subject"@en ;
+    sh:name "Annotation related artefact"@en ;
     sh:name "Annotatie gerelateerd onderwerp"@nl ;
     sh:name "Sujet lié à l'annotation"@fr ;
 
     sh:description "Het onderwerp van de annotatie."@nl ;
     sh:description "The subject of the Annotation."@en;
-    sh:description "L'objet de l'annotation."@fr ;
+    sh:description "Le sujet de l'annotation."@fr ;
 
-    sh:message "ebucore:hasAnnotationRelatedPurpose is missing or not an IRI"@en ;
+    sh:message "ebucore:hasAnnotationRelatedPurpose is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
     sh:severity sh:Violation ;
   ].
 

@@ -19,6 +19,15 @@ ebucore:Annotation a rdfs:Class ;
   skos:definition "Een klasse die wordt gebruikt om activa te annoteren."@nl ;
   skos:definition "Une classe utilisée pour annoter les actifs."@fr .
 
+ebucore:TextAnnotation a rdfs:Class ;
+  rdfs:subClassOf ebucore:Annotation ;
+  rdfs:label "Text Annotation"@en ;
+  rdfs:label "Annotation texte"@fr ;
+  rdfs:label "Tekstannotatie"@nl ;
+  skos:definition "A class specific to the annotation of a text or portions of text."@en ;
+  skos:definition "Une classe spécifique à l'annotation d'un texte ou de portions de texte."@fr ;
+  skos:definition "Een klasse die specifiek is voor de annotatie van een tekst of delen van tekst."@nl .
+
 #####################################
 #             PROPERTIES            #
 #####################################
@@ -82,16 +91,6 @@ ebucore:isMediaFragmentOf  a rdf:Property ;
   rdfs:domain ebucore:MediaFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 
-# ebucore:hasAnnotationRelatedAgent a rdf:Property ;
-#   rdfs:range xsd:string, xsd:anyURI ;
-#   rdfs:label "Annotation related agent"@en ;
-#   rdfs:label "Annotatiegerelateerde agent"@nl ;
-#   rdfs:label "Agent lié à l'annotation"@fr ;
-#   rdfs:domain ebucore:Annotation ;
-#   skos:definition "To identify an Agent subject of the Annotation."@en ;
-#   skos:definition "Pour identifier un agent sujet de l'annotation."@fr ;
-#   skos:definition "Om een agent van de annotatie te identificeren."@nl ;
-#   rdfs:subPropertyOf ebucore:hasAnnotationPurpose .
   
 ebucore:hasAnnotationTarget a rdf:Property ;
   skos:definition "To define the target object to which the Annotation applies."@en ;
@@ -124,12 +123,6 @@ ebucore:annotationType a rdf:Property ;
   rdfs:label "Annotatietype"@nl ;
   rdfs:label "Type d'annotation"@fr .
 
-# ebucore:hasAnnotationRelatedLocation a rdf:Property ;
-#   skos:definition "To identify a Location subject of the Annotation."@en ;
-#   rdfs:range xsd:string, xsd:anyURI ;
-#   rdfs:label "Annotation related location"@en ;
-#   rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
-#   rdfs:domain ebucore:Annotation .
 
 ebucore:annotationConfidence a rdf:Property ;
   rdfs:domain ebucore:Annotation ;
@@ -138,15 +131,16 @@ ebucore:annotationConfidence a rdf:Property ;
   skos:definition "Om het vertrouwen in een annotatie te schatten."@nl ;
   rdfs:range xsd:string ;
   rdfs:label "Annotation confidence"@en ;
-  rdfs:label "Annotation confidence"@en ;
-  rdfs:label "Annotation confidence"@en .
+  rdfs:label "Fiabilité des annotations"@fr ;
+  rdfs:label "Annotatievertrouwen"@nl .
 
-ebucore:hasAnnotationPurpose a rdf:Property ;
+ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
   rdfs:domain ebucore:Annotation ;
   rdfs:range xsd:string, xsd:anyURI ;
-  rdfs:label "Annotation purpose"@en ;
-  rdfs:label "Annotatiedoel"@nl ;
-  rdfs:label "Objectif d'annotation"@fr ;
-  skos:definition "To define the purpose of an Annotation."@en ;
-  skos:definition "Om het doel van een annotatie te definiëren."@nl ;
-  skos:definition "Définir l'objectif d'une annotation."@fr .
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Annotation related artefact"@en ;
+  rdfs:label "Artefact lié à l'Annotation"@fr ;
+  rdfs:label "Artefact verbonden aan de Annotatie"@nl ;
+  skos:definition "To identify an Artefact subject of the Annotation."@en ;
+  skos:definition "Pour identifier un objet d'artefact de l'annotation."@fr ;
+  skos:definition "Om een artefactonderwerp van de annotatie te identificeren."@nl .
