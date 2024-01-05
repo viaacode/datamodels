@@ -1081,9 +1081,9 @@
     sh:minCount 1;
     sh:maxCount 1;
 
-    sh:name "Annotation related artefact"@en ;
-    sh:name "Annotatie gerelateerd onderwerp"@nl ;
-    sh:name "Sujet lié à l'annotation"@fr ;
+    sh:name "Annotation subject"@en ;
+    sh:name "Annotatie onderwerp"@nl ;
+    sh:name "Sujet d'annotation"@fr ;
 
     sh:description "Het onderwerp van de annotatie."@nl ;
     sh:description "The subject of the Annotation."@en;
