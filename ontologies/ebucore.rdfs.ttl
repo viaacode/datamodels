@@ -16,8 +16,8 @@ ebucore:Annotation a rdfs:Class ;
   rdfs:label "Annotatie"@nl ;
   rdfs:label "annotation"@fr ;
   skos:definition "A class used to annotate Assets."@en ;
-  skos:definition "Een klasse die wordt gebruikt om activa te annoteren."@nl ;
-  skos:definition "Une classe utilisée pour annoter les actifs."@fr .
+  skos:definition "Een klasse die wordt gebruikt om items te annoteren."@nl ;
+  skos:definition "Une classe utilisée pour annoter les éléments."@fr .
 
 ebucore:TextAnnotation a rdfs:Class ;
   rdfs:subClassOf ebucore:Annotation ;
