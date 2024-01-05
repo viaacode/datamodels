@@ -1089,7 +1089,7 @@
     sh:description "The subject of the Annotation."@en;
     sh:description "Le sujet de l'annotation."@fr ;
 
-    sh:message "ebucore:hasAnnotationRelatedPurpose is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
+    sh:message "ebucore:hasAnnotationRelatedArtefact is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
     sh:severity sh:Violation ;
   ].
 
