@@ -7,6 +7,28 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 #####################################
+#             CLASSES               #
+#####################################
+
+ebucore:Annotation a rdfs:Class ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:label "annotation"@en ;
+  rdfs:label "Annotatie"@nl ;
+  rdfs:label "annotation"@fr ;
+  skos:definition "A class used to annotate Assets."@en ;
+  skos:definition "Een klasse die wordt gebruikt om items te annoteren."@nl ;
+  skos:definition "Une classe utilisée pour annoter les éléments."@fr .
+
+ebucore:TextAnnotation a rdfs:Class ;
+  rdfs:subClassOf ebucore:Annotation ;
+  rdfs:label "Text Annotation"@en ;
+  rdfs:label "Annotation texte"@fr ;
+  rdfs:label "Tekstannotatie"@nl ;
+  skos:definition "A class specific to the annotation of a text or portions of text."@en ;
+  skos:definition "Une classe spécifique à l'annotation d'un texte ou de portions de texte."@fr ;
+  skos:definition "Een klasse die specifiek is voor de annotatie van een tekst of delen van tekst."@nl .
+
+#####################################
 #             PROPERTIES            #
 #####################################
 
@@ -68,3 +90,57 @@ ebucore:isMediaFragmentOf  a rdf:Property ;
   skos:definition "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl ;
   rdfs:domain ebucore:MediaFragment ;
   rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+
+  
+ebucore:hasAnnotationTarget a rdf:Property ;
+  skos:definition "To define the target object to which the Annotation applies."@en ;
+  skos:definition "Pour définir l'objet cible auquel s'applique l'annotation."@fr ;
+  skos:definition "Om het doelobject te definiëren waarop de annotatie van toepassing is."@nl ;
+  rdfs:domain ebucore:Annotation ;
+  rdfs:range xsd:anyURI ;
+  rdfs:label "Annotation target"@en ;
+  rdfs:label "Cible d'annotation"@fr ;
+  rdfs:label "Annotatiedoel"@nl .
+  
+ebucore:isAnnotatedMediaResource a rdf:Property ;
+  rdfs:range ebucore:MediaResource ;
+  skos:definition "To link an Annotation to a MediaResource."@en ;
+  skos:definition "Pour lier une annotation à un MediaResource."@fr ;
+  skos:definition "Om een annotatie te koppelen aan een mediaresource."@nl ;
+  rdfs:domain ebucore:Annotation ;
+  rdfs:label "Media resource"@en ;
+  rdfs:label "Media resource"@nl ;
+  rdfs:label "Media resource"@fr .
+
+ebucore:annotationType a rdf:Property ;
+  rdfs:domain ebucore:Annotation ;
+  rdfs:range xsd:string, xsd:anyURI, ebucore:Annotation_Type ;
+  skos:definition "Range: string, anyURI or Concept."@en, 
+  "To define a type of Annotation."@en ,
+  "Om een type annotatie te definiëren."@nl ,
+  "Pour définir un type d'annotation."@fr ;
+  rdfs:label "Annotation type"@en ;
+  rdfs:label "Annotatietype"@nl ;
+  rdfs:label "Type d'annotation"@fr .
+
+
+ebucore:annotationConfidence a rdf:Property ;
+  rdfs:domain ebucore:Annotation ;
+  skos:definition "To estimate the confidence in an Annotation."@en ;
+  skos:definition "Pour estimer la confiance dans une annotation."@fr ;
+  skos:definition "Om het vertrouwen in een annotatie te schatten."@nl ;
+  rdfs:range xsd:string ;
+  rdfs:label "Annotation confidence"@en ;
+  rdfs:label "Fiabilité des annotations"@fr ;
+  rdfs:label "Annotatievertrouwen"@nl .
+
+ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
+  rdfs:domain ebucore:Annotation ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Annotation related artefact"@en ;
+  rdfs:label "Artefact lié à l'Annotation"@fr ;
+  rdfs:label "Artefact verbonden aan de Annotatie"@nl ;
+  skos:definition "To identify an Artefact subject of the Annotation."@en ;
+  skos:definition "Pour identifier un objet d'artefact de l'annotation."@fr ;
+  skos:definition "Om een artefactonderwerp van de annotatie te identificeren."@nl .
