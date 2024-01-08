@@ -64,30 +64,6 @@
         sh:severity sh:Violation ;
     ].
 
-<#CarrierRepresentationShape> a sh:NodeShape ;
-  sh:targetClass haObj:CarrierRepresentation ;
-  sh:property [
-    sh:path premis:storedAt ;
-    sh:or (
-      [ sh:class haFil:ImageReel] 
-      [ sh:class haFil:AudioReel] 
-    ) ;
-    sh:minCount 1 ;
-
-    sh:name "stored at"@en ;
-    sh:name "opgeslagen op"@nl ;
-    sh:name "stocké à"@fr ;
-
-    sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
-    sh:description "The reel where the representation is stored."@en ;
-    sh:description "Le porteur physique où la représentation est stocké."@fr ;
-
-    sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
-    sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
-    sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
-    sh:severity sh:Violation ;
-  ] .
-
 <#ImageReelNodeShape> a sh:NodeShape ;
   sh:targetClass haFil:ImageReel ;
   sh:property [
@@ -203,5 +179,27 @@
         sh:message "l'objet de haFil:numberOfReels n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
         sh:message "het object van haFil:numberOfReels is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation
-    ] .
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path premis:storedAt ;
+        sh:or (
+        [ sh:class haFil:ImageReel] 
+        [ sh:class haFil:AudioReel] 
+        ) ;
+        sh:minCount 1 ;
+
+        sh:name "stored at"@en ;
+        sh:name "opgeslagen op"@nl ;
+        sh:name "stocké à"@fr ;
+
+        sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
+        sh:description "The reel where the representation is stored."@en ;
+        sh:description "Le porteur physique où la représentation est stocké."@fr ;
+
+        sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
+        sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+        sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+        sh:severity sh:Violation ;
+  ] .
 
