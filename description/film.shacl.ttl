@@ -36,7 +36,7 @@
     dct:title     "Modèle de données Film"@fr ;
     dct:title     "Datamodel Film"@nl ;
     dct:created   "2023-11-09" ;
-    dct:modified  "2023-11-10" ;
+    dct:modified  "2024-01-08" ;
     dct:description """Data model to provide a detailed description of Film objects and their components."""@en ;
     dct:description """Modèle de données pour fournir une description détaillée des objets Film et leurs composants."""@fr ;
     dct:description """Datamodel voor de gedetailleerde beschrijving van Filmobjecten en hun componenten."""@nl ;
