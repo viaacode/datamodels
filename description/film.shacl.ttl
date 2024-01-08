@@ -42,7 +42,7 @@
     dct:description """Datamodel voor de gedetailleerde beschrijving van Filmobjecten en hun componenten."""@nl ;
     pav:version "0.0.1" .
 
-<#FilmTypeNodeShape> a sh:NodeShape ;
+<#FilmNodeShape> a sh:NodeShape ;
     sh:targetClass haFil:Film ;
     sh:property [
         sh:path rel:isr ;
