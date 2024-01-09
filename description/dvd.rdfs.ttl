@@ -9,7 +9,16 @@ haDVD:DVD   a   rdfs:Class ;
     rdfs:label "Dvd"@nl ;
     rdfs:label "DVD"@en ;
     rdfs:label "DVD"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD."""@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent le DVD dans son ensemble."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/dvd/> .
+
+haDVD:DVDChapter   a   rdfs:Class ;
+    rdfs:label "Dvd-hoofdstuk"@nl ;
+    rdfs:label "DVD Chapter"@en ;
+    rdfs:label "Chapitre DVD"@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific DVD chapter."""@en ;
+    skos:definition """Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent un chapitre DVD spécifique."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/dvd/> .
