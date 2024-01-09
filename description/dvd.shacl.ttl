@@ -1,0 +1,66 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix haDVD: <https://data.hetarchief.be/ns/dvd/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+
+<>  a owl:Ontology ;
+    vann:preferredNamespacePrefix "haDVD" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/DVD/" ;
+    dct:author  [
+        schema:name   "Miel Vander Sande" ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ] ,
+    [
+        schema:name   "Lennert Van de Velde" ;
+        schema:email  "lennert.vandevelde@meemoo.be"
+    ] ,
+    [
+        schema:name   "Milan Valadou" ;
+        schema:email  "milan.valadou@meemoo.be"
+    ] ;
+    dct:title     "Data model DVD"@en ;
+    dct:title     "Modèle de données DVD"@fr ;
+    dct:title     "Datamodel Dvd"@nl ;
+    dct:created   "2024-01-09" ;
+    dct:modified  "2024-01-09" ;
+    dct:description """Data model to provide a detailed description of DVD objects and their components."""@en ;
+    dct:description """Modèle de données pour fournir une description détaillée des objets DVD et leurs composants."""@fr ;
+    dct:description """Datamodel voor de gedetailleerde beschrijving van Dvd-objecten en hun componenten."""@nl ;
+    pav:version "0.0.1" .
+
+haDvd:DVDNodeShape a sh:NodeShape ;
+    sh:targetClass haDVD:DVD ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:hasValue "video" ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "format"@en ;
+        sh:name "format"@fr ;
+        sh:name "formaat"@nl ;
+
+        sh:description "Extra indication of the type of Video."@en ;
+        sh:description "Indication supplémentaire du type de Video."@fr ;
+        sh:description "Indicatie van het type Video."@nl ;
+
+        sh:message "the object of dct:format is not 'video', is missing or occurs more than once"@en ;
+
+        sh:severity sh:Violation 
+    ].
