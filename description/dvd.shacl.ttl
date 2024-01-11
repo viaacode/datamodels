@@ -34,12 +34,12 @@
     ] ;
     dct:title     "Data model DVD"@en ;
     dct:title     "Modèle de données DVD"@fr ;
-    dct:title     "Datamodel Dvd"@nl ;
+    dct:title     "Datamodel dvd"@nl ;
     dct:created   "2024-01-09" ;
-    dct:modified  "2024-01-09" ;
+    dct:modified  "2024-01-10" ;
     dct:description """Data model to provide a detailed description of DVD objects and their components."""@en ;
     dct:description """Modèle de données pour fournir une description détaillée des objets DVD et leurs composants."""@fr ;
-    dct:description """Datamodel voor de gedetailleerde beschrijving van Dvd-objecten en hun componenten."""@nl ;
+    dct:description """Datamodel voor de gedetailleerde beschrijving van dvd-objecten en hun componenten."""@nl ;
     pav:version "0.0.1" .
 
 haDvd:DVDNodeShape a sh:NodeShape ;
@@ -63,4 +63,84 @@ haDvd:DVDNodeShape a sh:NodeShape ;
         sh:message "the object of dct:format is not 'video', is missing or occurs more than once"@en ;
 
         sh:severity sh:Violation 
-    ].
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path rel:hsp ;
+        sh:class haDVD:DVDChapter ;
+
+        sh:minCount 0 ;
+
+        sh:name "has part"@en ;
+        sh:name "a une partie"@fr ;
+        sh:name "heeft een onderdeel"@nl ;
+
+        sh:description "Indicates the DVD chapters that make up the DVD as a whole."@en ;
+        sh:description "Indique les chapitres du DVD qui composent le DVD dans son ensemble."@fr ;
+        sh:description "Aanduiding van de dvd-hoofdstukken die deel uitmaken van de dvd als geheel."@nl ;
+
+        sh:message "the object of schema:hasPart is no DVDChapter"@en ;
+
+        sh:severity sh:Violation
+    ] .
+
+haDvd:DVDChapterNodeShape a sh:NodeShape ;
+    sh:targetClass haDVD:DVDChapter ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path dct:format ;
+        sh:hasValue "video" ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "format"@en ;
+        sh:name "format"@fr ;
+        sh:name "formaat"@nl ;
+
+        sh:description "Extra indication of the type of Video."@en ;
+        sh:description "Indication supplémentaire du type de Video."@fr ;
+        sh:description "Indicatie van het type Video."@nl ;
+
+        sh:message "the object of dct:format is not 'video', is missing or occurs more than once"@en ;
+
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path rel:isi ;
+        sh:class haDVD:DVD ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "is part of"@en ;
+        sh:name "fait partie de"@fr ;
+        sh:name "is onderdeel van"@nl ;
+
+        sh:description "Indicates the DVD that the chapter is part of."@en ;
+        sh:description "Indique le DVD dont le chapitre fait partie."@fr ;
+        sh:description "Aanduiding van de dvd waarvan het hoofdstuk deel uitmaakt."@nl ;
+
+        sh:message "the object of schema:isPartOf is no DVD, is absent or occurs more than once"@en ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDVD:chapterNumber ;
+        sh:datatype xsd:integer ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "DVD chapter number"@en ;
+        sh:name "Numéro de chapitre DVD"@fr ;
+        sh:name "Dvd-hoofdstuknummer"@nl ;
+
+        sh:description "Indicates the sequence number of the DVD chapter."@en ;
+        sh:description "Indique le numéro de séquence du chapitre DVD."@fr ;
+        sh:description "Aanduiding van het volgnummer van het dvd-hoofdstuk."@nl ;
+
+        sh:message "the object of haDVD:chapterNumber is not an integer, is absent or occurs more than once"@en ;
+
+        sh:severity sh:Violation
+    ] .
