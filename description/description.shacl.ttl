@@ -611,6 +611,21 @@
         sh:message "ebucore:hasMediaFragment is geen ebucore:MediaFragment"@nl ;
         sh:message "ebucore:hasMediaFragment n'est pas un ebucore:MediaFragment"@fr ;
         sh:severity sh:Violation ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype edtf:EDTF-level1 ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "aangemaakt op"@nl ;
+        sh:name "créé le"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
+        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
     ].
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
@@ -673,21 +688,6 @@
         sh:message "schema:thumbnailUrl is not an IRI"@en ;
         sh:message "schema:thumbnailUrl is geen IRI"@nl ;
         sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:dateCreated ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype edtf:EDTF-level1 ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:name "date created"@en ;
-        sh:name "aangemaakt op"@nl ;
-        sh:name "créé le"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
-        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
     ],
     [
         a sh:PropertyShape ;
