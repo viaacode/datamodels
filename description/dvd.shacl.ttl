@@ -42,7 +42,7 @@
     dct:description """Datamodel voor de gedetailleerde beschrijving van dvd-objecten en hun componenten."""@nl ;
     pav:version "0.0.1" .
 
-haDvd:DVDNodeShape a sh:NodeShape ;
+haDVD:DVDNodeShape a sh:NodeShape ;
     sh:targetClass haDVD:DVD ;
     sh:property [
         a sh:PropertyShape ;
@@ -84,7 +84,7 @@ haDvd:DVDNodeShape a sh:NodeShape ;
         sh:severity sh:Violation
     ] .
 
-haDvd:DVDChapterNodeShape a sh:NodeShape ;
+haDVD:DVDChapterNodeShape a sh:NodeShape ;
     sh:targetClass haDVD:DVDChapter ;
     sh:property [
         a sh:PropertyShape ;
