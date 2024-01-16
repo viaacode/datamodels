@@ -626,6 +626,22 @@
         sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
         sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
         sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:thumbnailUrl ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:name "thumbnail"@en ;
+        sh:name "miniatuurafbeelding"@nl ;
+        sh:name "image miniature"@fr ;
+        sh:severity sh:Violation ;
+        sh:description "A thumbnail image relevant to the Digital Representation."@en;
+        sh:description "Une image miniature pertinente pour la représentation numérique."@fr;
+        sh:description "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl;
+        sh:message "schema:thumbnailUrl is not an IRI"@en ;
+        sh:message "schema:thumbnailUrl is geen IRI"@nl ;
+        sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
     ].
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
@@ -672,22 +688,6 @@
         sh:message "schema:caption is not of type string "@en ;
         sh:message "schema:caption is niet van het type string"@nl ;
         sh:message "schema:caption n'est pas de type string"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:thumbnailUrl ;
-        sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
-        sh:name "thumbnail"@en ;
-        sh:name "miniatuurafbeelding"@nl ;
-        sh:name "image miniature"@fr ;
-        sh:severity sh:Violation ;
-        sh:description "A thumbnail image relevant to the Digital Representation."@en;
-        sh:description "Une image miniature pertinente pour la représentation numérique."@fr;
-        sh:description "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl;
-        sh:message "schema:thumbnailUrl is not an IRI"@en ;
-        sh:message "schema:thumbnailUrl is geen IRI"@nl ;
-        sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
     ],
     [
         a sh:PropertyShape ;
