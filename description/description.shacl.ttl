@@ -615,7 +615,7 @@
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, 
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
