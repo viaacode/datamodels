@@ -27,6 +27,7 @@ haDVD:DVDChapter   a   rdfs:Class ;
 # Properties
 
 haDVD:chapterNumber a rdf:Property ;
+    rdfs:subPropertyOf schema:position ;
     rdfs:label "Dvd-hoofdstuknummer"@nl ;
     rdfs:label "DVD chapter number"@en ;
     rdfs:label "Numéro de chapitre DVD"@fr ;
