@@ -87,7 +87,7 @@ haDVD:DVDChapterNodeShape a sh:NodeShape ;
     [
         a sh:PropertyShape ;
         sh:path haDVD:chapterNumber ;
-        sh:datatype xsd:integer ;
+        sh:datatype xsd:nonNegativeInteger ;
 
         sh:minCount 1 ;
         sh:maxCount 1 ;
