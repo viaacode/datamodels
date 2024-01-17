@@ -102,7 +102,11 @@
         a sh:PropertyShape ;
         sh:path schema:dateCreated ;
         sh:nodeKind sh:Literal ;
-        sh:datatype edtf:EDTF-level1 ;
+        sh:or ( 
+            [ sh:datatype edtf:EDTF-level0 ]
+            [ sh:datatype edtf:EDTF-level1 ]
+            [ sh:datatype edtf:EDTF-level2 ] 
+        );
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "date created"@en ;
@@ -118,7 +122,11 @@
         a sh:PropertyShape ;
         sh:path schema:datePublished ;
         sh:nodeKind sh:Literal ;
-        sh:datatype edtf:EDTF-level1 ;
+        sh:or ( 
+            [ sh:datatype edtf:EDTF-level0 ]
+            [ sh:datatype edtf:EDTF-level1 ]
+            [ sh:datatype edtf:EDTF-level2 ] 
+        );
         sh:maxCount 1;
         sh:name "date published"@en ;
         sh:name "gepubliceerd op"@nl ;
@@ -611,11 +619,46 @@
         sh:message "ebucore:hasMediaFragment is geen ebucore:MediaFragment"@nl ;
         sh:message "ebucore:hasMediaFragment n'est pas un ebucore:MediaFragment"@fr ;
         sh:severity sh:Violation ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:or ( 
+            [ sh:datatype edtf:EDTF-level0 ]
+            [ sh:datatype edtf:EDTF-level1 ]
+            [ sh:datatype edtf:EDTF-level2 ] 
+        );
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "aangemaakt op"@nl ;
+        sh:name "créé le"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
+        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:thumbnailUrl ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+        sh:name "thumbnail"@en ;
+        sh:name "miniatuurafbeelding"@nl ;
+        sh:name "image miniature"@fr ;
+        sh:severity sh:Violation ;
+        sh:description "A thumbnail image relevant to the Digital Representation."@en;
+        sh:description "Une image miniature pertinente pour la représentation numérique."@fr;
+        sh:description "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl;
+        sh:message "schema:thumbnailUrl is not an IRI"@en ;
+        sh:message "schema:thumbnailUrl is geen IRI"@nl ;
+        sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
     ].
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, 
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
@@ -657,37 +700,6 @@
         sh:message "schema:caption is not of type string "@en ;
         sh:message "schema:caption is niet van het type string"@nl ;
         sh:message "schema:caption n'est pas de type string"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:thumbnailUrl ;
-        sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
-        sh:name "thumbnail"@en ;
-        sh:name "miniatuurafbeelding"@nl ;
-        sh:name "image miniature"@fr ;
-        sh:severity sh:Violation ;
-        sh:description "A thumbnail image relevant to the Digital Representation."@en;
-        sh:description "Une image miniature pertinente pour la représentation numérique."@fr;
-        sh:description "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl;
-        sh:message "schema:thumbnailUrl is not an IRI"@en ;
-        sh:message "schema:thumbnailUrl is geen IRI"@nl ;
-        sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
-    ],
-    [
-        a sh:PropertyShape ;
-        sh:path schema:dateCreated ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype edtf:EDTF-level1 ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:name "date created"@en ;
-        sh:name "aangemaakt op"@nl ;
-        sh:name "créé le"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
-        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
     ],
     [
         a sh:PropertyShape ;
