@@ -13,9 +13,9 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
 
-<https://data.hetarchief.be/ns/bibliographic/>  a owl:Ontology ;
-    vann:preferredNamespacePrefix "haBib" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/bibliographic/" ;
+<http://data.hetarchief.be/ns/description/>  a owl:Ontology ;
+    vann:preferredNamespacePrefix "haDes" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" ;
     dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
@@ -28,14 +28,14 @@
         schema:name   "Milan Valadou" ;
         schema:email  "milan.valadou@meemoo.be"
     ] ;
-    dct:title     "Bibliographic data model"@en ;
-    dct:title     "Modèle de données bibliographiques"@fr ;
-    dct:title     "Bibliografisch datamodel "@nl ;
-    dct:created   "2023-11-13" ;
-    dct:modified  "2023-11-29" ;
-    dct:description """Data model to provide a detailed description of bibliographic objects and their components."""@en ;
-    dct:description """Modèle de données pour fournir une description détaillée des objets bibliographiques et leurs composants."""@fr ;
-    dct:description """Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten."""@nl ;
+    dct:title     "Data model Description"@en ;
+    dct:title     "Modèle de données Description"@fr ;
+    dct:title     "Datamodel Descriptie"@nl ;
+    dct:created   "2022-01-07" ;
+    dct:modified  "2024-01-17" ;
+    dct:description """Data model to describe the content of objects."""@en ;
+    dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
+    dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
     pav:version "0.0.1" .
 
 haBib:NewspaperIssueNodeShape a sh:NodeShape ;
