@@ -75,6 +75,11 @@ haDes:AudioReel   a   rdfs:Class ;
     skos:definition """Une bobine d'un porte-film analogique qui contient de l'audio."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
+haDes:Audio a rdfs:Class .
+    
+
+haDes:Video a rdfs:Class .
+
 # Properties
 
 haDes:numberOfPages a rdf:Property ;
