@@ -104,3 +104,65 @@ haDes:DVDChapterNodeShape a sh:NodeShape ;
 
         sh:severity sh:Violation
     ] .
+
+haDes:AudioNodeShape a sh:NodeShape ;
+    sh:targetClass haDes:Audio .
+
+haDes:VideoNodeShape a sh:NodeShape ;
+    sh:targetClass haDes:Audio .
+
+haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ; 
+    sh:targetClass haObj:PhysicalCarrier ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haDes:iec60094Type ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class skos:Concept ;
+        sh:in (<https://data.hetarchief.be/id/iec60094-type/I>
+        <https://data.hetarchief.be/id/iec60094-type/II>
+        <https://data.hetarchief.be/id/iec60094-type/III>
+        <https://data.hetarchief.be/id/iec60094-type/IV>);
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "iec-60094 type"@en ;
+        sh:name "iec-60094 type"@nl ;
+        sh:name "iec-60094 type"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:iec60094Type is not \"I\", \"II\", \"III\", or \"IV\"."@en 
+    ] , 
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:audioRecordingSpeed ;
+        sh:or ( 
+            [sh:value "Variabel"@nl]
+            [sh:value "Variable"@en]
+            [sh:class schema:QualitativeValue]
+        );
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "audio recording speed"@en ;
+        sh:name "audio opnamesnelheid"@nl ;
+        sh:name "vitesse d'enregistrement audio"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:audioRecordingSpeed is not a quantitative value."@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path  haDes:audioNoiseReduction;
+        sh:in ("DBX" "Dolby A" "Dolby B" "Dolby C" "Dolby D");
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "audio noise reduction"@en ;
+        sh:name "audio ruisonderdrukking"@nl ;
+        sh:name "réduction du bruit audio"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path  haDes:numberOfAudioTracks;
+        sh:datatype xsd:nonNegativeInteger;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of audio tracks"@en ;
+        sh:name "aantal audiotracks"@nl ;
+        sh:name "nombre de pistes audio"@fr ;
+    ].
