@@ -127,22 +127,24 @@ haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ;
         sh:name "iec-60094 type"@en ;
         sh:name "iec-60094 type"@nl ;
         sh:name "iec-60094 type"@fr ;
+        sh:description "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl ;
+        sh:description "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@nl ;
+        sh:description "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@nl ;
         sh:severity sh:Violation ;
         sh:message "haDes:iec60094Type is not \"I\", \"II\", \"III\", or \"IV\"."@en 
     ] , 
     [
         a sh:PropertyShape ;
         sh:path haDes:audioRecordingSpeed ;
-        sh:or ( 
-            [sh:value "Variabel"@nl]
-            [sh:value "Variable"@en]
-            [sh:class schema:QualitativeValue]
-        );
+        sh:class skos:Concept ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "audio recording speed"@en ;
         sh:name "audio opnamesnelheid"@nl ;
         sh:name "vitesse d'enregistrement audio"@fr ;
+        sh:description "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
+        sh:description "The speed with which open reel audio or a gramophone record is recorded."@en ;
+        sh:description "La vitesse à laquelle l'audio ouvert ou un enregistrement gramophone est enregistré."@fr ;
         sh:severity sh:Violation ;
         sh:message "haDes:audioRecordingSpeed is not a quantitative value."@en 
     ],
@@ -155,10 +157,26 @@ haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ;
         sh:name "audio noise reduction"@en ;
         sh:name "audio ruisonderdrukking"@nl ;
         sh:name "réduction du bruit audio"@fr ;
+        skos:definition "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl;
+        skos:definition "La technologie utilisée pour la réduction du bruit de l'audio."@fr;
+        skos:definition "The technology used for noise reduction in audio."@en;
+    ].
+
+haDes:AVCarrierRepresentatioNodeShape a sh:NodeShape ; 
+    sh:targetClass haObj:CarrierRepresentation ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path  haDes:numberOfAudioTracks;
+        sh:datatype xsd:nonNegativeInteger;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of audio tracks"@en ;
+        sh:name "aantal audiotracks"@nl ;
+        sh:name "nombre de pistes audio"@fr ;
     ],
     [
         a sh:PropertyShape ;
-        sh:path  haDes:numberOfAudioTracks;
+        sh:path  haDes:numberOfAudioChannels;
         sh:datatype xsd:nonNegativeInteger;
         sh:minCount 0 ;
         sh:maxCount 1 ;
