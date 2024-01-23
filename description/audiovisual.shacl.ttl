@@ -109,7 +109,7 @@ haDes:AudioNodeShape a sh:NodeShape ;
     sh:targetClass haDes:Audio .
 
 haDes:VideoNodeShape a sh:NodeShape ;
-    sh:targetClass haDes:Audio .
+    sh:targetClass haDes:Video .
 
 haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ; 
     sh:targetClass haObj:PhysicalCarrier ;
