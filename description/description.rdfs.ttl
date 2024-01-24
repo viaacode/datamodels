@@ -90,7 +90,7 @@ haDes:Video a rdfs:Class ;
     rdfs:label "Vidéo"@fr ;
     skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."""@nl ;
     skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type video."""@fr ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
     
 # Properties
@@ -190,11 +190,11 @@ haDes:iec60094Type a rdf:Property ;
 haDes:audioRecordingSpeed a rdf:Property ;
   rdfs:domain haObj:PhysicalCarrier ;
   rdfs:label "audio recording speed"@en ;
-  rdfs:label "audio opnamesnelheid"@nl ;
+  rdfs:label "audio-opnamesnelheid"@nl ;
   rdfs:label "vitesse d'enregistrement audio"@fr ;
   skos:definition "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
   skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en ;
-  skos:definition "La vitesse à laquelle l'audio ouvert ou un enregistrement gramophone est enregistré."@fr ;
+  skos:definition "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr ;
   rdfs:range skos:Concept ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
@@ -225,7 +225,7 @@ haDes:numberOfAudioChannels a rdf:Property ;
   rdfs:label "number of audio channels"@en ;
   rdfs:label "aantal audiokanalen"@nl ;
   rdfs:label "nombre de canaux audio"@fr ;
-  skos:definition "Het aantal audio kanalen die een audiospoor bevat."@nl;
+  skos:definition "Het aantal audiokanalen die een audiospoor bevat."@nl;
   skos:definition "Le nombre de canaux audio parallèles que contient la piste audio."@fr;
   skos:definition "The number of parallel audio channels that the audio track contains."@en;
   rdfs:range rdfs:Literal ;
