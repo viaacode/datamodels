@@ -152,6 +152,7 @@ haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ;
         a sh:PropertyShape ;
         sh:path  haDes:audioNoiseReduction;
         sh:in ("DBX" "Dolby A" "Dolby B" "Dolby C" "Dolby D");
+        sh:datatype xsd:string;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "audio noise reduction"@en ;

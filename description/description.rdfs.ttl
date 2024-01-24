@@ -206,7 +206,7 @@ haDes:audioNoiseReduction a rdf:Property ;
   skos:definition "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl;
   skos:definition "La technologie utilisée pour la réduction du bruit de l'audio."@fr;
   skos:definition "The technology used for noise reduction in audio."@en;
-  rdfs:range skos:Concept ;
+  rdfs:range rdf:Literal ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
 
 haDes:numberOfAudioTracks a rdf:Property ;
