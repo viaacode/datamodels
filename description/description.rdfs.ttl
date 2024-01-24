@@ -214,9 +214,9 @@ haDes:numberOfAudioTracks a rdf:Property ;
   rdfs:label "number of audio tracks"@en ;
   rdfs:label "aantal audiosporen"@nl ;
   rdfs:label "nombre de pistes audio"@fr ;
-  skos:definition "Het aantal parallele audio sporen die de representatie bevat."@nl;
-  skos:definition "Le nombre de pistes audio parallèles que la représentation contient."@fr;
-  skos:definition "The number of parallel audio tracks that the representation contains."@en;
+  skos:definition "Het aantal audio sporen die de representatie bevat."@nl;
+  skos:definition "Le nombre de pistes audio que la représentation contient."@fr;
+  skos:definition "The number of audio tracks that the representation contains."@en;
   rdfs:range rdfs:Literal ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
 
