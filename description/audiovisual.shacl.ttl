@@ -140,13 +140,13 @@ haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "audio recording speed"@en ;
-        sh:name "audio opnamesnelheid"@nl ;
+        sh:name "audio-opnamesnelheid"@nl ;
         sh:name "vitesse d'enregistrement audio"@fr ;
         sh:description "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
         sh:description "The speed with which open reel audio or a gramophone record is recorded."@en ;
-        sh:description "La vitesse à laquelle l'audio ouvert ou un enregistrement gramophone est enregistré."@fr ;
+        sh:description "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement gramophone est enregistré."@fr ;
         sh:severity sh:Violation ;
-        sh:message "haDes:audioRecordingSpeed is not a quantitative value."@en 
+        sh:message "haDes:audioRecordingSpeed is not a skos:Concept, or occurs more than once."@en 
     ],
     [
         a sh:PropertyShape ;
@@ -160,7 +160,8 @@ haDes:AVPhysicalCarrierNodeShape a sh:NodeShape ;
         sh:name "réduction du bruit audio"@fr ;
         skos:definition "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl;
         skos:definition "La technologie utilisée pour la réduction du bruit de l'audio."@fr;
-        skos:definition "The technology used for noise reduction in audio."@en;
+        skos:definition "The technology used for noise reduction in audio."@en;  
+        sh:message "haDes:audioNoiseReduction is not DBX, Dolby A, Dolby B, Dolby C, Dolby D; or occurs more than once."@en 
     ].
 
 haDes:AVCarrierRepresentatioNodeShape a sh:NodeShape ; 
@@ -173,7 +174,8 @@ haDes:AVCarrierRepresentatioNodeShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:name "number of audio tracks"@en ;
         sh:name "aantal audiotracks"@nl ;
-        sh:name "nombre de pistes audio"@fr ;
+        sh:name "nombre de pistes audio"@fr ;  
+        sh:message "haDes:numberOfAudioTracks occurs more than once, or its object is not a xsd:nonNegativeInteger. "  
     ],
     [
         a sh:PropertyShape ;
