@@ -87,7 +87,7 @@ haDes:Audio a rdfs:Class ;
 haDes:Video a rdfs:Class ;
     rdfs:label "Video"@nl ;
     rdfs:label "Video"@en ;
-    rdfs:label "Video"@fr ;
+    rdfs:label "Vidéo"@fr ;
     skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."""@nl ;
     skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."""@en ;
     skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type video."""@fr ;
