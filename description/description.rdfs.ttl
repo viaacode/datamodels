@@ -75,6 +75,24 @@ haDes:AudioReel   a   rdfs:Class ;
     skos:definition """Une bobine d'un porte-film analogique qui contient de l'audio."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
+haDes:Audio a rdfs:Class ;
+    rdfs:label "Audio"@nl ;
+    rdfs:label "Audio"@en ;
+    rdfs:label "Audio"@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type audio."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type audio."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type audio."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:Video a rdfs:Class ;
+    rdfs:label "Video"@nl ;
+    rdfs:label "Video"@en ;
+    rdfs:label "Vidéo"@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+    
 # Properties
 
 haDes:numberOfPages a rdf:Property ;
@@ -157,3 +175,58 @@ haDes:numberOfReels a rdf:Property ;
     skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en;
     skos:definition "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:iec60094Type a rdf:Property ;
+  rdfs:domain haObj:PhysicalCarrier ;
+  rdfs:label "iec-60094 type"@en ;
+  rdfs:label "iec-60094 type"@nl ;
+  rdfs:label "iec-60094 type"@fr ;
+  skos:definition "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl ;
+  skos:definition "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@en ;
+  skos:definition "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@fr ;
+  rdfs:range skos:Concept ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:audioRecordingSpeed a rdf:Property ;
+  rdfs:domain haObj:PhysicalCarrier ;
+  rdfs:label "audio recording speed"@en ;
+  rdfs:label "audio-opnamesnelheid"@nl ;
+  rdfs:label "vitesse d'enregistrement audio"@fr ;
+  skos:definition "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
+  skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en ;
+  skos:definition "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr ;
+  rdfs:range skos:Concept ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:audioNoiseReduction a rdf:Property ;
+  rdfs:domain haObj:PhysicalCarrier ;
+  rdfs:label "audio noise reduction"@en ;
+  rdfs:label "audio ruisonderdrukking"@nl ;
+  rdfs:label "réduction du bruit audio"@fr ;
+  skos:definition "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl;
+  skos:definition "La technologie utilisée pour la réduction du bruit de l'audio."@fr;
+  skos:definition "The technology used for noise reduction in audio."@en;
+  rdfs:range rdf:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:numberOfAudioTracks a rdf:Property ;
+  rdfs:domain haObj:CarrierRepresentation ;
+  rdfs:label "number of audio tracks"@en ;
+  rdfs:label "aantal audiosporen"@nl ;
+  rdfs:label "nombre de pistes audio"@fr ;
+  skos:definition "Het aantal audio sporen die de representatie bevat."@nl;
+  skos:definition "Le nombre de pistes audio que la représentation contient."@fr;
+  skos:definition "The number of audio tracks that the representation contains."@en;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:numberOfAudioChannels a rdf:Property ;
+  rdfs:domain haObj:CarrierRepresentation ;
+  rdfs:label "number of audio channels"@en ;
+  rdfs:label "aantal audiokanalen"@nl ;
+  rdfs:label "nombre de canaux audio"@fr ;
+  skos:definition "Het aantal audiokanalen die een audiospoor bevat."@nl;
+  skos:definition "Le nombre de canaux audio parallèles que contient la piste audio."@fr;
+  skos:definition "The number of parallel audio channels that the audio track contains."@en;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 

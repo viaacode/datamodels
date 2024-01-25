@@ -1,0 +1,121 @@
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://data.hetarchief.be/id//variable> a skos:Concept ;
+    skos:definition "A variable rotational speed."@en,
+        "Een variabele draaisnelheid."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "Variable"@en,
+        "Variabel"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/16-rpm> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "RPM" ;
+    schema:unitText "r/min" ;
+    schema:value "16.0"^^xsd:float ;
+    skos:definition "A rotational speed of 16 revolutions per minute."@en,
+        "Een draaisnelheid van 16 omwentelingen per minuut."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "16 RPM"@en,
+        "16 rpm"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/19-cm-s> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "2M" ;
+    schema:unitText "cm/s" ;
+    schema:value "19.0"^^xsd:float ;
+    skos:definition "A rotational speed of 19 cm per second."@en,
+        "Een draaisnelheid van 19 cm per seconde."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "19 cm/s"@en,
+        "19 cm/s"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/33-1-3-rpm> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "RPM" ;
+    schema:unitText "r/min" ;
+    schema:value "33.33"^^xsd:float ;
+    skos:definition "A rotational speed of 33 1/3 revolutions per minute."@en,
+        "Een draaisnelheid van 33 1/3 omwentelingen per minuut."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "33⅓ rpm"@en,
+        "33⅓ rpm"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/38-cm-s> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "2M" ;
+    schema:unitText "cm/s" ;
+    schema:value "38.0"^^xsd:float ;
+    skos:definition "A rotational speed of 38 cm per second."@en,
+        "Een draaisnelheid van 38 cm per seconde."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "38 cm/s"@en,
+        "38 cm/s"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/4.75-cm-s> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "2M" ;
+    schema:unitText "cm/s" ;
+    schema:value "4.75"^^xsd:float ;
+    skos:definition "A rotational speed of 4.75 cm per second."@en,
+        "Een draaisnelheid van 4,75 cm per seconde."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "4.75 cm/s"@en,
+        "4,75 cm/s"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/72-cm-s> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "2M" ;
+    schema:unitText "cm/s" ;
+    schema:value "72.0"^^xsd:float ;
+    skos:definition "A rotational speed of 72 cm per second."@en,
+        "Een draaisnelheid van 72 cm per seconde."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "72 cm/s"@en,
+        "72 cm/s"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/78-rpm> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "RPM" ;
+    schema:unitText "r/min" ;
+    schema:value "78.0"^^xsd:float ;
+    skos:definition "A rotational speed of 78 revolutions per minute."@en,
+        "Een draaisnelheid van 78 omwentelingen per minuut."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "78 rpm"@en,
+        "78 rpm"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed/9.5-cm-s> a schema:QualitativeValue,
+        skos:Concept ;
+    schema:unitCode "2M" ;
+    schema:unitText "cm/s" ;
+    schema:value "4.75"^^xsd:float ;
+    skos:definition "A rotational speed of 9.5 cm per second."@en,
+        "Een draaisnelheid van 9,5 cm per seconde."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
+    skos:prefLabel "9.5 cm/s"@en,
+        "9,5 cm/s"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
+
+<https://data.hetarchief.be/id/rotational-speed> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id//variable>,
+        <https://data.hetarchief.be/id/rotational-speed/16-rpm>,
+        <https://data.hetarchief.be/id/rotational-speed/19-cm-s>,
+        <https://data.hetarchief.be/id/rotational-speed/33-1-3-rpm>,
+        <https://data.hetarchief.be/id/rotational-speed/38-cm-s>,
+        <https://data.hetarchief.be/id/rotational-speed/4.75-cm-s>,
+        <https://data.hetarchief.be/id/rotational-speed/72-cm-s>,
+        <https://data.hetarchief.be/id/rotational-speed/78-rpm>,
+        <https://data.hetarchief.be/id/rotational-speed/9.5-cm-s> ;
+    skos:prefLabel "Thesaurus rotational speeds for playing and recording audiovisual carriers."@en,
+        "Thesaurus draaisnelheden voor het spelen en opnemen van audiovisual carriers."@nl .
+
