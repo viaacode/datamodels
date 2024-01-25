@@ -186,4 +186,5 @@ haDes:AVCarrierRepresentatioNodeShape a sh:NodeShape ;
         sh:name "number of audio tracks"@en ;
         sh:name "aantal audiotracks"@nl ;
         sh:name "nombre de pistes audio"@fr ;
+        sh:message "haDes:numberOfAudioChannels occurs more than once, or its object is not of type xsd:nonNegativeInteger." .
     ].
