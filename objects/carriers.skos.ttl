@@ -362,7 +362,7 @@ DCT vervulde een pioniersrol. Het was de eerste digitale videotape met datacompr
 <https://data.hetarchief.be/id/carrier-type/dvd+r> a skos:Concept, premis:StorageMedium ;
     skos:broader <https://data.hetarchief.be/id/carrier-type/dvd> ;
     skos:inScheme <https://data.hetarchief.be/id/carrier-type> ;
-    skos:notation "DVD-R" ;
+    skos:notation "DVD+R" ;
     skos:prefLabel "DVD+R"@en,
         "DVD+R"@nl .
 
