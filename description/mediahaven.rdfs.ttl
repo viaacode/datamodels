@@ -1,0 +1,35 @@
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix mh: <https://data.hetarchief.be/ns/mediahaven/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+mh:FragmentIdentifier a rdfs:Class ;
+    rdfs:subClassOf haObj:LocalIdentifier ;
+    rdfs:label "fragment identifier"@en ;
+    rdfs:label "identifiant de fragment"@fr ;
+    rdfs:label "fragment-ID"@nl ;
+    skos:definition "A fragment identifier for a fragment, defined by the Mediahaven asset management system."@en ;
+    skos:definition "Un identifiant de fragment pour un fragment, défini par le système de gestion d'actifs Mediahaven."@fr ;
+    skos:definition "Een fragment-ID voor een fragment, gedefinieerd door het Mediahaven asset management systeem."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
+
+mh:MediaObjectIdentifier a rdfs:Class ;
+    rdfs:subClassOf haObj:LocalIdentifier ;
+    rdfs:label "media object identifier"@en ;
+    rdfs:label "identifiant d'objet multimédia"@fr ;
+    rdfs:label "mediaobject-ID"@nl ;
+    skos:definition "A media object identifier for an object, defined by the Mediahaven asset management system."@en ;
+    skos:definition "Un identifiant d'objet multimédia pour un objet, défini par le système de gestion d'actifs Mediahaven."@fr ;
+    skos:definition "Een mediaobject-ID voor een object, gedefinieerd door het Mediahaven asset management systeem."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
+
+mh:RecordIdentifier a rdfs:Class ;
+    rdfs:subClassOf haObj:LocalIdentifier ;
+    rdfs:label "record identifier"@en ;
+    rdfs:label "identifiant d'enregistrement"@fr ;
+    rdfs:label "record-ID"@nl ;
+    skos:definition "A record identifier for an object, defined by the Mediahaven asset management system."@en ;
+    skos:definition "Un identifiant d'enregistrement pour un objet, défini par le système de gestion d'actifs Mediahaven."@fr ;
+    skos:definition "Een record-ID voor een object, gedefinieerd door het Mediahaven asset management systeem."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
