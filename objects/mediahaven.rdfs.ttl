@@ -26,33 +26,3 @@ mh:fragmentIdentifier a rdf:Property ;
     skos:definition "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr ;
     skos:definition "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
-
-mh:FragmentIdentifier a rdfs:Class ;
-    rdfs:subClassOf haObj:LocalIdentifier ;
-    rdfs:label "fragment identifier"@en ;
-    rdfs:label "identifiant de fragment"@fr ;
-    rdfs:label "fragment-ID"@nl ;
-    skos:definition "A fragment identifier for a fragment, defined by the Mediahaven asset management system."@en ;
-    skos:definition "Un identifiant de fragment pour un fragment, défini par le système de gestion d'actifs Mediahaven."@fr ;
-    skos:definition "Een fragment-ID voor een fragment, gedefinieerd door het Mediahaven asset management systeem."@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
-
-mh:MediaObjectIdentifier a rdfs:Class ;
-    rdfs:subClassOf haObj:LocalIdentifier ;
-    rdfs:label "media object identifier"@en ;
-    rdfs:label "identifiant d'objet multimédia"@fr ;
-    rdfs:label "mediaobject-ID"@nl ;
-    skos:definition "A media object identifier for an object, defined by the Mediahaven asset management system."@en ;
-    skos:definition "Un identifiant d'objet multimédia pour un objet, défini par le système de gestion d'actifs Mediahaven."@fr ;
-    skos:definition "Een mediaobject-ID voor een object, gedefinieerd door het Mediahaven asset management systeem."@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
-
-mh:RecordIdentifier a rdfs:Class ;
-    rdfs:subClassOf haObj:LocalIdentifier ;
-    rdfs:label "record identifier"@en ;
-    rdfs:label "identifiant d'enregistrement"@fr ;
-    rdfs:label "record-ID"@nl ;
-    skos:definition "A record identifier for an object, defined by the Mediahaven asset management system."@en ;
-    skos:definition "Un identifiant d'enregistrement pour un objet, défini par le système de gestion d'actifs Mediahaven."@fr ;
-    skos:definition "Een record-ID voor een object, gedefinieerd door het Mediahaven asset management systeem."@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
