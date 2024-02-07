@@ -19,6 +19,7 @@ mh:Record a rdfs:Class ;
 
 mh:fragmentIdentifier a rdf:Property ;
     rdfs:domain mh:Record ;
+    rdfs:range xsd:string ;
     rdfs:label "fragment identifier"@en ;
     rdfs:label "identifiant de fragment"@fr ;
     rdfs:label "fragment-ID"@nl ;
