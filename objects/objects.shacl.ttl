@@ -217,6 +217,24 @@
     sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen premis:File"@nl ;
     sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un premis:File"@fr ;
     sh:severity sh:Violation ;
+  ],
+  [
+    sh:path prov:wasDerivedFrom ;
+    sh:class mh:Record ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "was derived from"@en ;
+    sh:name "werd afgeleid van"@nl;
+    sh:name "était dérivé de"@fr;
+
+    sh:description "Het Mediahaven record waarvan deze intellectuele entiteit afgeleid werd."@nl;
+    sh:description "The Mediahaven record from which this intellectual entity was derived."@en;
+    sh:description "L'enregistrement Mediahaven à partir duquel cette entité intellectuelle est dérivée."@fr;
+
+    sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+    sh:severity sh:Violation ;
   ].
 
 <#CarrierRepresentationShape> a sh:NodeShape ;
@@ -240,7 +258,25 @@
     sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
     sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
     sh:severity sh:Violation ;
-  ] .
+  ],
+  [
+    sh:path prov:wasDerivedFrom ;
+    sh:class mh:Record ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "was derived from"@en ;
+    sh:name "werd afgeleid van"@nl;
+    sh:name "était dérivé de"@fr;
+
+    sh:description "Het Mediahaven record waarvan deze dragerrepresentatie afgeleid werd."@nl;
+    sh:description "The Mediahaven record from which this carrier representation was derived."@en;
+    sh:description "L'enregistrement Mediahaven à partir duquel cette représentation du porteur est dérivée."@fr;
+
+    sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+    sh:severity sh:Violation ;
+  ].
 
 <#PhysicalCarrierShape> a sh:NodeShape ;
   sh:targetClass haObj:PhysicalCarrier ;
@@ -417,7 +453,25 @@
     sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen haObj:DigitalRepresentation"@nl ;
     sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
-  ] .
+  ],
+  [
+    sh:path prov:wasDerivedFrom ;
+    sh:class mh:Record ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "was derived from"@en ;
+    sh:name "werd afgeleid van"@nl;
+    sh:name "était dérivé de"@fr;
+
+    sh:description "Het Mediahaven record waarvan deze digitale representatie afgeleid werd."@nl;
+    sh:description "The Mediahaven record from which this digital representation was derived."@en;
+    sh:description "L'enregistrement Mediahaven à partir duquel cette représentation digitale est dérivée."@fr;
+
+    sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+    sh:severity sh:Violation ;
+  ].
 
 <#FragmentRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:FragmentRepresentation ;
@@ -489,6 +543,24 @@
       sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
       sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
       sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
+    ],
+    [
+      sh:path prov:wasDerivedFrom ;
+      sh:class mh:Record ;
+
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+
+      sh:name "was derived from"@en ;
+      sh:name "werd afgeleid van"@nl;
+      sh:name "était dérivé de"@fr;
+
+      sh:description "Het Mediahaven record waarvan deze fragmentenrepresentatie afgeleid werd."@nl;
+      sh:description "The Mediahaven record from which this fragment representation was derived."@en;
+      sh:description "L'enregistrement Mediahaven à partir duquel cette représentation du fragment est dérivée."@fr;
+
+      sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
       sh:severity sh:Violation ;
     ].
 
@@ -695,7 +767,25 @@
       sh:message "premis:originalName heeft meer dan één waarde of is niet van het type string"@nl ;
       sh:message "premis:originalName a plus d'une valeur ou n'est pas de type string"@fr ;
       sh:severity sh:Violation ;
-    ] .
+    ],
+    [
+      sh:path prov:wasDerivedFrom ;
+      sh:class mh:Record ;
+
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
+
+      sh:name "was derived from"@en ;
+      sh:name "werd afgeleid van"@nl;
+      sh:name "était dérivé de"@fr;
+
+      sh:description "Het Mediahaven record waarvan dit bestand afgeleid werd."@nl;
+      sh:description "The Mediahaven record from which this file was derived."@en;
+      sh:description "L'enregistrement Mediahaven à partir duquel ce fichier est dérivé."@fr;
+
+      sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+      sh:severity sh:Violation ;
+    ].
 
 <#FixityShape> a sh:NodeShape ;
   sh:targetClass premis:Fixity ;
@@ -790,5 +880,48 @@
         sh:message "rdf:value is missing or not of type string"@en ;
         sh:message "rdf:value ontbreekt of is niet van het type string"@nl ;
         sh:message "rdf:value est manquant ou n'est pas de type string"@fr ;
+        sh:severity sh:Violation ;
+    ] .
+
+<#RecordNodeShape> a sh:NodeShape ; 
+    sh:targetClass mh:Record ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "has record identifier"@en ;
+        sh:name "heeft record-ID"@nl ;
+        sh:name "a identifiant d'enregistrement"@fr ;
+
+        sh:description "De unieke identifier van een record binnen het Mediahaven asset management system."@nl;
+        sh:description "The unique identifier of a record within the Mediahaven asset management system."@en;
+        sh:description "L'identifiant unique d'un enregistrement au sein du système de gestion d'actifs Mediahaven."@fr;
+        
+        sh:message "the object of schema:identifier is no xsd:string, is missing or occurs more than once"@en ;
+        sh:severity sh:Violation ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path mh:fragmentIdentifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "has fragment identifier"@en ;
+        sh:name "heeft fragment-ID"@nl ;
+        sh:name "a identifiant de fragment"@fr ;
+
+        sh:description "De unieke identifier van een fragment binnen het Mediahaven asset management system."@nl;
+        sh:description "The unique identifier of a fragment within the Mediahaven asset management system."@en;
+        sh:description "L'identifiant unique d'un fragment au sein du système de gestion d'actifs Mediahaven."@fr;
+        
+        sh:message "the object of mh:fragmentIdentifier is no xsd:string, is missing or occurs more than once"@en ;
         sh:severity sh:Violation ;
     ] .
