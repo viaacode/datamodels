@@ -209,7 +209,7 @@
     sh:name "volgende intellectuele entiteit in volgorde"@nl;
     sh:name "l'entité intellectuelle suivante dans l'ordre"@fr;
 
-    sh:description "Het intellectuele entiteit dat op dit intellectuele entiteit volgt."@nl;
+    sh:description "De intellectuele entiteit die op deze intellectuele entiteit volgt."@nl;
     sh:description "The intellectual entity that follows on this intellectual entity."@en;
     sh:description "L'entité intellectuelle qui suit sur cette entité intellectuelle."@fr;
 
