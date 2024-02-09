@@ -490,24 +490,6 @@
       sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
       sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
       sh:severity sh:Violation ;
-    ],
-    [
-      sh:path  premis:identifier ;
-      sh:class mh:FragmentIdentifier ;
-
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-
-      sh:name "has fragment identifier"@en ;
-      sh:name "heeft fragment-ID"@nl ;
-      sh:name "a identifiant de fragment"@fr ;
-
-      sh:description "De unieke identifier van een fragment binnen het Mediahaven asset management system."@nl;
-      sh:description "The unique identifier of a fragment within the Mediahaven asset management system."@en;
-      sh:description "L'identifiant unique d'un fragment au sein du système de gestion d'actifs Mediahaven."@fr;
-
-      sh:message "The object of premis:identifier is not a mh:FragmentIdentifier, is absent or occurs more than once."@en ;
-      sh:severity sh:Violation ;
     ].
 
 <#FileShape> a sh:NodeShape ;
@@ -712,42 +694,6 @@
       sh:message "premis:originalName has more than one value or not of type string"@en ;
       sh:message "premis:originalName heeft meer dan één waarde of is niet van het type string"@nl ;
       sh:message "premis:originalName a plus d'une valeur ou n'est pas de type string"@fr ;
-      sh:severity sh:Violation ;
-    ] ,
-    [
-      sh:path  premis:identifier ;
-      sh:class mh:MediaObjectIdentifier ;
-
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-
-      sh:name "has media object identifier"@en ;
-      sh:name "heeft mediaobject-ID"@nl ;
-      sh:name "a identifiant d'objet multimédia"@fr ;
-
-      sh:description "De unieke mediaobject-ID van een object binnen het Mediahaven asset management system."@nl;
-      sh:description "The unique media object identifier of an object within the Mediahaven asset management system."@en;
-      sh:description "L'identifiant d'objet multimédia unique d'un objet au sein du système de gestion d'actifs Mediahaven."@fr;
-
-      sh:message "The object of premis:identifier is not a mh:MediaObjectIdentifier, is absent or occurs more than once."@en ;
-      sh:severity sh:Violation ;
-    ] ,
-    [
-      sh:path  premis:identifier ;
-      sh:class mh:RecordIdentifier ;
-
-      sh:minCount 1 ;
-      sh:maxCount 1 ;
-
-      sh:name "has record identifier"@en ;
-      sh:name "heeft record-ID"@nl ;
-      sh:name "a identifiant d'enregistrement"@fr ;
-
-      sh:description "De unieke record-ID van een object binnen het Mediahaven asset management system."@nl;
-      sh:description "The unique record identifier of an object within the Mediahaven asset management system."@en;
-      sh:description "L'identifiant d'enregistrement unique d'un objet au sein du système de gestion d'actifs Mediahaven."@fr;
-
-      sh:message "The object of premis:identifier is not a mh:RecordIdentifier, is absent or occurs more than once."@en ;
       sh:severity sh:Violation ;
     ] .
 
