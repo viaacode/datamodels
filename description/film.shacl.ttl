@@ -15,7 +15,7 @@
 @prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 
-@base <http://data.hetarchief.be/ns/film> .
+@base <https://data.hetarchief.be/ns/film> .
 
 <>  a owl:Ontology ;
     vann:preferredNamespacePrefix "haDes" ;

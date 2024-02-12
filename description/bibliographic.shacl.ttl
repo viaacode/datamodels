@@ -1,6 +1,6 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix haDes: <https://data.hetarchief.be/ns/bibliographic/>  .
+@prefix haDes: <https://data.hetarchief.be/ns/description/>  .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -13,7 +13,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
 
-@base <http://data.hetarchief.be/ns/bibliographic> .
+@base <https://data.hetarchief.be/ns/bibliographic> .
 
 <>  a owl:Ontology ;
     vann:preferredNamespacePrefix "haDes" ;
