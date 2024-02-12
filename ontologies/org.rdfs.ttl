@@ -15,9 +15,9 @@ org:Organization    a   owl:Class,  rdfs:Class ;
     owl:equivalentClass foaf:Organization ;
     owl:equivalentClass schema:Organization ;
     owl:disjointWith schema:Person ;
-    rdfs:label "organization"@en ;
-    rdfs:label "organisation"@fr ;
-    rdfs:label "organisatie"@nl ;
+    rdfs:label "Organization"@en ;
+    rdfs:label "Organisation"@fr ;
+    rdfs:label "Organisatie"@nl ;
     skos:definition """Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.  It is recommended that SKOS lexical labels should be used to label the Organization. In particular `skos:prefLabel` for the primary (possibly legally recognized name), `skos:altLabel` for alternative names (trading names, colloquial names) and `skos:notation` to denote a code from a code list. Alternative names: _Collective_ _Body_ _Org_ _Group_"""@en ;
     skos:definition """Représente un groupe de personnes organisées en communauté où tout autre forme de structure sociale, commerciale ou politique. Le groupe a un but commun ou une raison d'être qui va au-delà de la somme des personnes qui en font partie et peut agir en tant que `Agent`. Les organisations sont souvent décomposables en structures hiérarchisées. Il est recommandé d'utiliser des labels lexicaux SKOS pour nommer l'Organisation. En particulier `skos:prefLabel` pour le nom principal (en général le nom légal), `skos:altLabel` pour les noms alternatifs (marques, sigles, appellations familières) et `skos:notation` pour indiquer un code provenant d'une liste de codes."""@fr ;  
     skos:definition """Stelt een groep personen voor, georganiseerd in een gemeenschap of een andere sociale, commerciële of politieke structuur. De groep heeft een gemeenschappelijk doel of reden van bestaan dat verder gaat dan de som van de mensen die ertoe behoren en kan handelen als `Agent`. De organisaties zijn vaak onder te verdelen in hiërarchische structuren. Het wordt aanbevolen om SKOS labels te gebruiken om de organisatie te benoemen. In het bijzonder `skos:prefLabel` voor de primaire (mogelijks juridisch geldende) naam, `skos:altLabel` voor alternatieve namen (handelsnamen, colloquialismen) en `skos:notation` om een code aan te duiden uit een codelijst."""@nl ;
@@ -25,18 +25,18 @@ org:Organization    a   owl:Class,  rdfs:Class ;
     
 org:OrganizationalUnit  a   owl:Class,  rdfs:Class ;
     rdfs:subClassOf  org:Organization ;
-    rdfs:label "organizationalUnit"@en ;
-    rdfs:label "unité opérationnelle"@fr ;
-    rdfs:label "organisatie-eenheid"@nl ;
+    rdfs:label "OrganizationalUnit"@en ;
+    rdfs:label "Unité opérationnelle"@fr ;
+    rdfs:label "Organisatie-eenheid"@nl ;
     skos:definition """An Organization such as a University Support Unit which is part of some larger FormalOrganization and only has full recognition within the context of that FormalOrganization, it is not a Legal Entity in its own right. Units can be large and complex containing other Units and even FormalOrganizations. Alternative names: _OU_ _Unit_ _Department_"""@en ;
     skos:definition """Une organisation (par exemple le support informatique d'une université) qui fait partie d'une Organisation Formelle plus importante et qui ne peut être reconnue qu'en tant que membre de cette organisation supérieure, ce n'est pas une entité légale en elle-même. Les unités opérationnelles peuvent être étendues, complexes et inclure elles-mêmes d'autres branches ou Unités Opérationnelles, voire des Organisations Formelles."""@fr ;
     skos:definition "Een organisatie zoals een afdeling of dienst die deel uitmaakt van de grotere organisatie en zijn bestaansreden daaraan ontleent. Heeft geen juridische status op zich."@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:Post a  owl:Class,   rdfs:Class ;
-    rdfs:label "post"@en ;
-  	rdfs:label "poste"@fr ;
-    rdfs:label "positie"@nl ;
+    rdfs:label "Post"@en ;
+  	rdfs:label "Poste"@fr ;
+    rdfs:label "Positie"@nl ;
     skos:definition """A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio (for example the Secretary of State for Scotland is part of UK Cabinet by virtue of being Secretary of State for Scotland, not as an individual person). A post can be held by multiple people and hence can be treated as a organization in its own right."""@en ;
   	skos:definition """Un Poste représente une position au sein d'une Organisation qui existe indépendamment de la personne ou des personnes qui le remplissent. Les postes peuvent être utilisés pour représenter des situations où une personne est membre d'une Organisation d'office (par exemple, le Secrétaire d'Etat pour l'Ecosse fait partie du Cabinet du Royaume-Uni du fait d'être Secrétaire d'Etat pour l'Ecosse, non pas comme une personne physique). Un poste après peut être occupé par plusieurs personnes et peut donc être considéré comme une Organisation à part entière."""@fr ;
     skos:definition """Functie binnen een organisatie, kan bestaan los van de persoon/personen die ze invult/invullen."""@nl ;
@@ -44,18 +44,18 @@ org:Post a  owl:Class,   rdfs:Class ;
     
 org:Role    a   owl:Class,    rdfs:Class ;
     rdfs:subClassOf skos:Concept ;
-    rdfs:label "role"@en ;
-    rdfs:label "rôle"@fr ;
-    rdfs:label "rol"@nl ;
+    rdfs:label "Role"@en ;
+    rdfs:label "Rôle"@fr ;
+    rdfs:label "Rol"@nl ;
     skos:definition """Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of `org:Membership`. It is common for roles to be arranged in some taxonomic structure and we use SKOS to represent that. The normal SKOS lexical properties should be used when labelling the Role. Additional descriptive properties for the Role, such as a Salary band, may be added by extension vocabularies."""@en ;
     skos:definition """Indique le rôle qu'une Personne ou un autre Agent peut avoir dans une Organisation. Les instances de cette classe décrivent le rôle dans l'absolu; pour indiquer une personne ayant ce rôle spécifique dans une Organisation, utilisez une instance de `org:Membership`. Il est courant que les rôles soient organisés dans une sorte de taxonomie, ce qui peut être représenté avec SKOS. Les propriétés de libellés standards de SKOS devraient être utilisées pour libeller le Rôle. D'autres propriétés additionnelles pour ce rôle, comme une fourchette de Salaire peuvent être ajoutées par une extension de ce vocabulaire."""@fr;     
     skos:definition """Rol die een persoon of agent kan vervullen in een organisatie."""@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> .
 
 org:Site    a   owl:Class,    rdfs:Class ;
-    rdfs:label "site"@en ;
-    rdfs:label "site"@fr ;
-    rdfs:label "vestiging"@nl ;
+    rdfs:label "Site"@en ;
+    rdfs:label "Site"@fr ;
+    rdfs:label "Vestiging"@nl ;
     skos:definition """An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."""@en ;
     skos:definition """Un établissement ou tout autre lieu dans lequel une Organisation est localisé. Beaucoup d'organisations sont dispersées à travers plusieurs sites. Dans la plupart des cas un Site sera un lieu physique. Toutefois, nous n'excluons pas la possibilité de sites non-physiques comme un bureau virtuel avec une boîte postale et un service de secrétariat mutualisé. Des extensions pourraient fournir des sous-classes pour décrire des types de sites particuliers."""@fr ;
     skos:definition """Een kantoor of ander pand waar een organisatie gevestigd is. Organisaties kunnen over meerdere vestigingen verspreid zijn en vestigingen kunnen op meerdere locaties betrekking hebben."""@nl ;

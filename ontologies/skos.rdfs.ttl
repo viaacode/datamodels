@@ -23,18 +23,18 @@
 #####################################
 
 skos:Concept a owl:Class, rdfs:Class ;
-    rdfs:label "concept"@en ;
-    rdfs:label "concept"@fr ;
-    rdfs:label "concept"@nl ;
+    rdfs:label "Concept"@en ;
+    rdfs:label "Concept"@fr ;
+    rdfs:label "Concept"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     skos:definition """A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive."""@en ;
     skos:definition """Un concept SKOS peut être considéré comme une idée ou une notion, une unité de pensée. Cependant, ce qui constitue une unité de pensée est subjectif, et cette définition se veut suggestive, plutôt que restrictive."""@fr ;
     skos:definition """Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Echter, wat  een gedachte-eenheid is, is subjectief, en deze definitie is eerder suggestief dan beperkend bedoeld."""@nl .
 
 skos:OrderedCollection a owl:Class, rdfs:Class ;
-    rdfs:label "ordered collection"@en ;
-    rdfs:label "collection ordonnée"@fr ;
-    rdfs:label "geordende collectie"@nl ;
+    rdfs:label "Ordered collection"@en ;
+    rdfs:label "Collection ordonnée"@fr ;
+    rdfs:label "Geordende collectie"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subClassOf skos:Collection ;
     skos:definition "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en ;
@@ -45,9 +45,9 @@ skos:OrderedCollection a owl:Class, rdfs:Class ;
     skos:scopeNote "Geordende collecties kunnen worden gebruikt waar je een set van concepten wilt weergeven in een specifieke volgorde, en optioneel onder een 'knooppuntlabel'."@nl .
 
 skos:Collection a owl:Class, rdfs:Class ;
-    rdfs:label "collection"@en ;
-    rdfs:label "collection"@fr ;
-    rdfs:label "verzameling"@nl ;
+    rdfs:label "Collection"@en ;
+    rdfs:label "Collection"@fr ;
+    rdfs:label "Verzameling"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     owl:disjointWith skos:Concept,
         skos:ConceptScheme ;
@@ -59,9 +59,9 @@ skos:Collection a owl:Class, rdfs:Class ;
     skos:scopeNote "Gelabelde verzamelingen kunnen gebruikt worden waar je een set concepten onder een 'node label' in de hiërarchie wilt weergeven."@nl .
 
 skos:ConceptScheme a owl:Class, rdfs:Class ;
-    rdfs:label "concept scheme"@en ;
-    rdfs:label "schéma de concepts"@fr ;
-    rdfs:label "conceptenschema"@nl ;
+    rdfs:label "Concept scheme"@en ;
+    rdfs:label "Schéma de concepts"@fr ;
+    rdfs:label "Conceptenschema"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     owl:disjointWith skos:Concept ;
     skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en ;

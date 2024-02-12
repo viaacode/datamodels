@@ -31,7 +31,7 @@ haDes:NewspaperIssuePage   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVD   a   rdfs:Class ;
-    rdfs:label "Dvd"@nl ;
+    rdfs:label "DVD"@nl ;
     rdfs:label "DVD"@en ;
     rdfs:label "DVD"@fr ;
     skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."""@nl ;
@@ -40,8 +40,8 @@ haDes:DVD   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVDChapter   a   rdfs:Class ;
-    rdfs:label "Dvd-hoofdstuk"@nl ;
-    rdfs:label "DVD Chapter"@en ;
+    rdfs:label "DVD-hoofdstuk"@nl ;
+    rdfs:label "DVD chapter"@en ;
     rdfs:label "Chapitre DVD"@fr ;
     skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."""@nl ;
     skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."""@en ;
