@@ -2,7 +2,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.hetarchief.be/id/variable> a skos:Concept ;
+<https://data.hetarchief.be/id/rotational-speed/variable> a skos:Concept ;
     skos:definition "A variable rotational speed."@en,
         "Een variabele draaisnelheid."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
@@ -119,7 +119,7 @@
     skos:topConceptOf <https://data.hetarchief.be/id/rotational-speed> .
 
 <https://data.hetarchief.be/id/rotational-speed> a skos:ConceptScheme ;
-    skos:hasTopConcept <https://data.hetarchief.be/id/variable>,
+    skos:hasTopConcept <https://data.hetarchief.be/id/rotational-speed/variable>,
         <https://data.hetarchief.be/id/rotational-speed/16-rpm>,
         <https://data.hetarchief.be/id/rotational-speed/19-cm-s>,
         <https://data.hetarchief.be/id/rotational-speed/33-1-3-rpm>,
