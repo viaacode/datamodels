@@ -12,9 +12,9 @@
 
 ebucore:Annotation a rdfs:Class ;
   rdfs:subClassOf owl:Thing ;
-  rdfs:label "annotation"@en ;
+  rdfs:label "Annotation"@en ;
   rdfs:label "Annotatie"@nl ;
-  rdfs:label "annotation"@fr ;
+  rdfs:label "Annotation"@fr ;
   skos:definition "A class used to annotate Assets."@en ;
   skos:definition "Een klasse die wordt gebruikt om items te annoteren."@nl ;
   skos:definition "Une classe utilisée pour annoter les éléments."@fr .

@@ -12,9 +12,9 @@
 prov:Activity
     a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
-    rdfs:label "activity"@en ;
-    rdfs:label "activité"@fr ;
-    rdfs:label "activiteit"@nl ;
+    rdfs:label "Activity"@en ;
+    rdfs:label "Activité"@fr ;
+    rdfs:label "Activiteit"@nl ;
     owl:disjointWith prov:Entity ;
     skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en;
     skos:definition "Une activité est quelque chose qui se passe pendant un certain temps et qui agit sur/avec des entités. Cela peut inclure la consommation, le traitement, la transformation, la modification, le déplacement, l'utilisation ou la génération d'entités."@fr;
@@ -23,9 +23,9 @@ prov:Activity
 prov:Agent
     a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
-    rdfs:label "agent"@en ;
-    rdfs:label "agent"@fr ;
-    rdfs:label "agent"@nl ;
+    rdfs:label "Agent"@en ;
+    rdfs:label "Agent"@fr ;
+    rdfs:label "Agent"@nl ;
     owl:disjointWith prov:InstantaneousEvent ;
     skos:definition "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. "@en;
     skos:definition "Un agent est quelque chose qui porte une forme de responsabilité pour une activité qui se passe, pour l'existence d'une entité ou pour l'activité d'un autre agent. "@fr;
@@ -34,9 +34,9 @@ prov:Agent
 prov:Entity
     a owl:Class, rdfs:Class ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
-    rdfs:label "entity"@en ;
-    rdfs:label "entité"@fr ;
-    rdfs:label "entiteit"@nl ;
+    rdfs:label "Entity"@en ;
+    rdfs:label "Entité"@fr ;
+    rdfs:label "Entiteit"@nl ;
     owl:disjointWith prov:InstantaneousEvent ;
     skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en;
     skos:definition "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr;

@@ -9,9 +9,9 @@
 
 rdf:List a rdfs:Class ;
 	rdfs:subClassOf rdfs:Resource ;
-    rdfs:label "list"@en ;
-    rdfs:label "liste"@fr ;
-    rdfs:label "lijst"@nl ;
+    rdfs:label "List"@en ;
+    rdfs:label "Liste"@fr ;
+    rdfs:label "Lijst"@nl ;
 	skos:definition "The class of RDF Lists."@en ;
     skos:definition "La classe des listes RDF."@fr ;
     skos:definition "De klasse van RDF-lijsten."@nl ;

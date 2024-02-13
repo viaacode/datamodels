@@ -20,9 +20,9 @@
 #####################################
 
 skosxl:Label
-  rdfs:label "label"@en ;
-  rdfs:label "label"@nl ;
-  rdfs:label "étiquette"@fr ;
+  rdfs:label "Label"@en ;
+  rdfs:label "Label"@nl ;
+  rdfs:label "Étiquette"@fr ;
   rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
   skos:definition "A special class of lexical entities."@en ;
   skos:definition "Een speciale klasse van lexicale entiteiten."@nl ;

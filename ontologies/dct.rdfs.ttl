@@ -12,9 +12,9 @@ dct:FileFormat dct:description "Examples include the formats defined by the list
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
 	a rdfs:Class ;
-	rdfs:label "file format"@en ;
-    rdfs:label "format de fichier"@fr ;
-    rdfs:label "bestandsformaat"@nl ;
+	rdfs:label "File format"@en ;
+    rdfs:label "Format de fichier"@fr ;
+    rdfs:label "Bestandsformaat"@nl ;
     skos:definition "A digital resource format."@en ;
     skos:definition "Un format de ressource numérique."@fr ;
     skos:definition "Een formaat van een digitale bron."@nl ;
