@@ -40,7 +40,7 @@ haDes:DVD   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVDChapter   a   rdfs:Class ;
-    rdfs:label "DVD-hoofdstuk"@nl ;
+    rdfs:label "Dvd-hoofdstuk"@nl ;
     rdfs:label "DVD chapter"@en ;
     rdfs:label "Chapitre DVD"@fr ;
     skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."""@nl ;
