@@ -18,8 +18,6 @@
 @base <https://data.hetarchief.be/ns/film> .
 
 <>  a owl:Ontology ;
-    vann:preferredNamespacePrefix "haDes" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" ;
     dct:author  [
         schema:name   "Miel Vander Sande" ;
         schema:email  "miel.vandersande@meemoo.be"
