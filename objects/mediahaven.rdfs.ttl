@@ -37,6 +37,6 @@ mh:tenantName a rdf:Property ;
     skos:definition "De Mediahaven tenant naam van de organisatie."@nl ;
 
     rdfs:label "tenant name"@en ;
-    rdfs:label "nom du locataire Mediahaven"@fr ;
+    rdfs:label "nom du locataire"@fr ;
     rdfs:label "tenant naam"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .

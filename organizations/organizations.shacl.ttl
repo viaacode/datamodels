@@ -94,7 +94,7 @@
     sh:description "De Mediahaven tenant naam van de organisatie."@nl ;
 
     sh:name "tenant name"@en ;
-    sh:name "nom du locataire Mediahaven"@fr ;
+    sh:name "nom du locataire"@fr ;
     sh:name "tenant naam"@nl ;
       
     sh:message "is no string"@en
