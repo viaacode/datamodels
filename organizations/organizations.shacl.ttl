@@ -86,7 +86,7 @@
   ],
   [ 
     a sh:PropertyShape ;
-    sh:path mh:label ;
+    sh:path mh:tenantName ;
     sh:datatype xsd:string ;
 
     sh:description "The Mediahaven tenant name of the organization."@en ;

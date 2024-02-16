@@ -27,3 +27,15 @@ mh:fragmentIdentifier a rdf:Property ;
     skos:definition "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr ;
     skos:definition "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
+
+mh:tenantName a rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range xsd:string ;
+    skos:definition "The Mediahaven tenant name of the organization."@en ;
+    skos:definition "Le nom du locataire Mediahaven de l'organisation."@fr ;
+    skos:definition "De Mediahaven tenant naam van de organisatie."@nl ;
+
+    rdfs:label "tenant name"@en ;
+    rdfs:label "nom du locataire Mediahaven"@fr ;
+    rdfs:label "tenant naam"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
