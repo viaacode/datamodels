@@ -449,6 +449,25 @@ schema:datePublished a rdf:Property ;
     skos:definition "La date de la première diffusion ou publication."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:dateModified a rdf:Property ;
+    rdfs:label "date modified" ;
+    rdfs:domain schema:CreativeWork ,
+        schema:DataFeedItem ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en ;
+    skos:definition "De datum waarop het creatieve werk het meest recent werd gewijzigd of wanneer de invoer van het item binnen een DataFeed werd gewijzigd."@nl ;
+    skos:definition "La date à laquelle le Creativework a été récemment modifié ou lorsque l'entrée de l'élément a été modifiée dans une DataFeed."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:dateDeleted a rdf:Property ;
+    rdfs:label "date deleted" ;
+    rdfs:domain schema:DataFeedItem ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The datetime the item was removed from the DataFeed."@en ;
+    skos:definition "L'élément DateTime a été supprimé du DataFeed."@nl ;
+    skos:definition "De DateTime Het item is verwijderd uit de DataFeed."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:deathDate a rdf:Property ;
     rdfs:domain schema:Person ;
     rdfs:range xsd:date ; 

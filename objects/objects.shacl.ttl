@@ -924,4 +924,52 @@
         
         sh:message "the object of mh:fragmentIdentifier is no xsd:string, is missing or occurs more than once"@en ;
         sh:severity sh:Violation ;
-    ] .
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "datum aangemaakt"@nl ;
+        sh:name "date de création"@fr ;
+        sh:description "The date on which the record was created."@en;
+        sh:description "De datum waarop het record is aangemaakt."@nl;
+        sh:description "La date à laquelle le dossier a été créé."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type xsd:dateTime or is missing."@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateDeleted ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "date deleted"@en ;
+        sh:name "datum verwijderd"@nl ;
+        sh:name "date supprimée"@fr ;
+        sh:description "The date on which the record was deleted."@en;
+        sh:description "De datum waarop het record is verwijderd."@nl;
+        sh:description "La date à laquelle le dossier a été supprimée."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateDeleted is not of type xsd:dateTime or occurs more than once."@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateModified ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date modified"@en ;
+        sh:name "datum gewijzigd"@nl ;
+        sh:name "date modifiée"@fr ;
+        sh:description "The date on which the record was most recently modified."@en;
+        sh:description "De datum waarop het record het meest recent is gewijzigd."@nl;
+        sh:description "La date à laquelle le dossier a été récemment modifié."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateModified is not of type xsd:dateTime or is missing."@en
+    ].
