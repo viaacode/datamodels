@@ -130,7 +130,7 @@
         a sh:PropertyShape ;
         sh:path haDes:numberOfMissingAudioReels ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "number of lost audio reels"@en ;
@@ -139,16 +139,16 @@
         sh:description "Indicates if and how many audio reels were lost (prior to any digitization processes)."@en ;
         sh:description "Indique si et combien de bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of en hoeveel geluidsrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
-        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:decimal, or occurs more than once"@en ;
-        sh:message "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
-        sh:message "het object van haDes:numberAudioReelsLost is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberAudioReelsLost is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation 
     ] ,
     [
         a sh:PropertyShape ;
         sh:path haDes:numberOfMissingImageReels ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "number of lost image reels"@en ;
@@ -157,16 +157,16 @@
         sh:description "Indicates if and how many image reels were lost (prior to any digitization processes)."@en ;
         sh:description "Indique si et combien de bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of en hoeveel beeldrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
-        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:decimal, or occurs more than once"@en ;
-        sh:message "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
-        sh:message "het object van haDes:numberAudioReelsLost is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberAudioReelsLost is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation 
     ] ,
     [
         a sh:PropertyShape ;
         sh:path haDes:numberOfReels ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "number of reels"@en ;
@@ -175,9 +175,9 @@
         sh:description "Indicates the number of reels (regardless of type) that the film consists of."@en ;
         sh:description "Indique le nombre de bobines (quel que soit le type) qui composent le film."@fr ;
         sh:description "Geeft aan uit hoeveel rollen/spoelen (ongeacht het type) waaruit de film bestaat."@nl ;
-        sh:message "the object of haDes:numberOfReels is not of type xsd:decimal, or occurs more than once"@en ;
-        sh:message "l'objet de haDes:numberOfReels n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr ;
-        sh:message "het object van haDes:numberOfReels is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+        sh:message "the object of haDes:numberOfReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberOfReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberOfReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation
     ] ,
     [

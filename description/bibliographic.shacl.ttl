@@ -44,7 +44,7 @@
         a sh:PropertyShape ;
         sh:path haDes:numberOfPages ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "number of pages"@en ;
@@ -53,7 +53,7 @@
         sh:description "Indicates how many pages a certain bibliographic object contains."@en ;
         sh:description "Indique le nombre de pages qu'un certain objet bibliographique contient."@fr ;
         sh:description "Geeft aan uit hoeveel pagina's een bepaald bibliografisch object bestaat."@nl ;
-        sh:message "the object of haDes:numberOfPages is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "the object of haDes:numberOfPages is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
         sh:severity sh:Violation
     ] ,
     [
@@ -75,7 +75,7 @@
         a sh:PropertyShape ;
         sh:path schema:issueNumber ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:xsd:String ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "issue number"@en ;
@@ -84,7 +84,7 @@
         sh:description "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."@en ;
         sh:description "Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie."@fr ;
         sh:description "Geeft het volgnummer aan van een kranteneditie binnen de grotere krantenserie waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of schema:issueNumber is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "the object of schema:issueNumber is not of type xsd:string, or occurs more than once"@en ;
         sh:severity sh:Violation
     ] ,
     [
@@ -140,7 +140,7 @@
         a sh:PropertyShape ;
         sh:path haDes:pageNumber ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "page number"@en ;
@@ -149,7 +149,7 @@
         sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
         sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
         sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of haDes:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
+        sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
         sh:severity sh:Violation
     ],
     [
