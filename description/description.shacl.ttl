@@ -286,14 +286,15 @@
         sh:or (
            [sh:class schema:Person ]
            [sh:class org:Organization ]
+           [sh:class schema:Thing ]
         ) ;
         sh:name "copyright holder"@en ;
         sh:name "houder van auteursrecht"@nl ;
         sh:name "détenteur des droits d'auteur"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:copyrightHolder is not of class schema:Person or org:Organization"@en ;
-        sh:message "schema:copyrightHolder is niet van de klasse schema:Person of org:Organization"@nl ;
-        sh:message "schema:copyrightHolder n'est pas de la classe schema:Person ou org:Organization"@fr ;
+        sh:message "schema:copyrightHolder is not of class schema:Person, schema:Thing, or org:Organization"@en ;
+        sh:message "schema:copyrightHolder is niet van de klasse schema:Person, schema:Thing of org:Organization"@nl ;
+        sh:message "schema:copyrightHolder n'est pas de la classe schema:Person, schema:Thing ou org:Organization"@fr ;
     ],
     [
         a sh:PropertyShape ;
