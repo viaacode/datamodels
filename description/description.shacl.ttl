@@ -466,7 +466,52 @@
         sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en ;
         sh:message "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
         sh:message "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr ;
-    ] .
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path ebucore:hasObjectType ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1;
+        sh:name "object type"@en ;
+        sh:name "type d'objet"@fr ;
+        sh:name "type object"@nl ;
+        sh:description ""@en ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasObjectType is not of type string"@en ;
+        sh:message "schema:hasObjectType is niet van het type string"@nl ;
+        sh:message "schema:hasObjectType n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path ebucore:hasCastMember ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1;
+        sh:name "castmembers"@en ;
+        sh:name "les acteurs"@fr ;
+        sh:name "castleden"@nl ;
+        sh:description "The cast members of a TV or theatre production."@en ;
+        sh:description "De castleden van een tv- of theaterproductie."@en ;
+        sh:description "Les acteurs d'une production télévisée ou théâtrale."@en ;
+        sh:severity sh:Violation ;
+        sh:message "ebucore:hasCastMember is not of type string"@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path ebucore:synopsis ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1;
+        sh:name "synopsis"@en ;
+        sh:name "synopsis"@fr ;
+        sh:name "korte inhoud"@nl ;
+        sh:description "The plot summary of the TV or theatre production."@en;
+        sh:description "Le résumé de l'intrigue de la production télévisée ou théâtrale."@nl;
+        sh:description "De korte inhoud van de tv- of theaterproductie."@nl;
+        sh:severity sh:Violation ;
+        sh:message "ebucore:synopsis is not of type string"@en 
+    ].
 
 ####################
 #      haDes      #

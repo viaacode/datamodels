@@ -144,3 +144,22 @@ ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
   skos:definition "To identify an Artefact subject of the Annotation."@en ;
   skos:definition "Pour identifier un objet d'artefact de l'annotation."@fr ;
   skos:definition "Om een artefactonderwerp van de annotatie te identificeren."@nl .
+
+ebucore:synopsis a rdf:Property ;
+  rdfs:label "Synopsis"@en ;
+  rdfs:label "synopsis"@fr ;
+  rdfs:label "Korte inhoud"@nl ;
+  rdfs:subPropertyOf ebucore:description ;
+  rdfs:range xsd:string ;
+  rdfs:comment "To provide a summary."@en ;
+  rdfs:comment "To provide a summary."@fr ;
+  rdfs:comment "Om een samenvatting te geven."@nl ;
+  rdfs:domain ebucore:Asset .
+
+ebucore:hasCastMember a rdf:Property ;
+  rdfs:label "Cast member"@en ;
+  rdfs:label "Cast lid"@nl ;
+  rdfs:label "Membre de la distribution"@fr ;
+  rdfs:comment "A member of the cast."@en, "Een lid van de cast."@nl, "A member of the cast."@fr, "Range: a string or a Cast"@en ;
+  rdfs:range xsd:string, ebucore:Cast ;
+  rdfs:domain ebucore:Asset .
