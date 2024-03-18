@@ -165,7 +165,7 @@ schema:PostalAddress    a   rdfs:Class ;
 
 schema:QuantitativeValue a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
-    rdfs:label "quantitative Value"@en ;
+    rdfs:label "Quantitative Value"@en ;
     rdfs:label "Kwantitatieve waarde"@nl ;
     rdfs:label "Valeur quantitative"@fr ;
     skos:definition """A point value or interval for product characteristics and other purposes."""@en ;
@@ -422,7 +422,7 @@ schema:creditText a rdf:Property ;
     rdfs:label "credit text"@en ;
     rdfs:label "credittekst"@nl ;
     rdfs:label "texte du crédit"@fr ;
-    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work." ;
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work."@en ;
     skos:definition "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl ;
     skos:definition "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .

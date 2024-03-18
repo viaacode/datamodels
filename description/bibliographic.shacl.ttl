@@ -90,21 +90,6 @@
     ] ,
     [
         a sh:PropertyShape ;
-        sh:path dct:format ;
-        sh:hasValue "newspaper" ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:name "format"@en ;
-        sh:name "format"@fr ;
-        sh:name "formaat"@nl ;
-        sh:description "Extra indication of the type of NewspaperIssue."@en ;
-        sh:description "Indication supplémentaire du type de NewspaperIssue."@fr ;
-        sh:description "Indicatie van het type NewspaperIssue."@nl ;
-        sh:message "the object of dct:format is not 'newspaper', is missing or occurs more than once"@en ;
-        sh:severity sh:Violation 
-    ] ,
-    [
-        a sh:PropertyShape ;
         sh:path bf:issuance ;
         sh:class skos:Concept ;
         sh:minCount 0 ;
@@ -183,21 +168,6 @@
         sh:description "Geeft de kranteneditie aan waar een specifieke pagina deel van uitmaakt."@nl ;
         sh:message "the object of rel:isp is not of type haDes:NewspaperIssue, is missing or occurs more than once"@en ;
         sh:severity sh:Violation
-    ] ,
-    [
-        a sh:PropertyShape ;
-        sh:path dct:format ;
-        sh:hasValue "newspaperpage" ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:name "format"@en ;
-        sh:name "format"@fr ;
-        sh:name "formaat"@nl ;
-        sh:description "Extra indication of the NewspaperIssuePage type."@en ;
-        sh:description "Indication supplémentaire du NewspaperIssuePage type."@fr ;
-        sh:description "Extra indicatie van het NewspaperIssuePage type."@nl ;
-        sh:message "the object of dct:format is not 'newspaperpage', is missing or occurs more than once"@en ;
-        sh:severity sh:Violation 
     ] .
 
 

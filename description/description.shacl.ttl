@@ -343,6 +343,9 @@
         sh:name "credit text"@en ;
         sh:name "credittekst"@nl ;
         sh:name "texte de crédit"@fr ;
+        sh:description "Text to credit person(s) and/or organization(s) associated with the intellectual entity."@en;
+        sh:description "Texte pour énoncer les person(s) et / ou les organisations associés à l'entité intellectuelle."@fr;
+        sh:description "Tekst om perso(o)n(en) en/of organisatie(s) geassocieerd met de intellectuele entiteit te vermelden."@nl;
         sh:severity sh:Violation ;
         sh:message "schema:creditText is not of type string"@en ;
         sh:message "schema:creditText is niet van het type string"@nl ;
@@ -403,7 +406,7 @@
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
-        sh:in ("audio" "video" "film" "paper") ;
+        sh:in ("audio" "video" "film" "paper" "newspaper" "newspaperpage") ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "format"@en ;
@@ -433,6 +436,7 @@
         sh:path schema:height ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
+        sh:maxCount 1;
         sh:name "height"@en ;
         sh:name "hoogte"@nl ;
         sh:name "hauteur"@fr ;
@@ -446,6 +450,7 @@
         sh:path schema:depth ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
+        sh:maxCount 1;
         sh:name "depth"@en ;
         sh:name "diepte"@nl ;
         sh:name "profondeur"@fr ;
@@ -459,6 +464,7 @@
         sh:path schema:width ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
+        sh:maxCount 1;
         sh:name "width"@en ;
         sh:name "breedte"@nl ;
         sh:name "largeur"@fr ;
@@ -575,6 +581,7 @@
         sh:path schema:height ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
+        sh:maxCount 1;
         sh:name "height"@en ;
         sh:name "hoogte"@nl ;
         sh:name "hauteur"@fr ;
@@ -588,6 +595,7 @@
         sh:path schema:depth ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
+        sh:maxCount 1;
         sh:name "depth"@en ;
         sh:name "diepte"@nl ;
         sh:name "profondeur"@fr ;
@@ -601,6 +609,7 @@
         sh:path schema:width ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:class schema:QuantitativeValue ;
+        sh:maxCount 1;
         sh:name "width"@en ;
         sh:name "breedte"@nl ;
         sh:name "largeur"@fr ;
@@ -968,6 +977,8 @@
         sh:path schema:unitCode ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
+        sh:minCount 1;
+        sh:maxCount 1;
         sh:name "unit code"@en ;
         sh:name "eenheidcode"@nl ;
         sh:name "code d'unité"@fr ;
@@ -982,6 +993,7 @@
         sh:path schema:unitText ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
+        sh:maxCount 1;
         sh:name "unit text"@en ;
         sh:name "eenheidstekst"@nl ;
         sh:name "texte d'unité"@fr ;
@@ -995,6 +1007,8 @@
         sh:path schema:value ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:float ;
+        sh:minCount 1;
+        sh:maxCount 1;
         sh:name "value"@en ;
         sh:name "waarde"@nl ;
         sh:name "valeur"@fr ;
