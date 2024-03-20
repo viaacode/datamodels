@@ -190,8 +190,8 @@
         a sh:PropertyShape ;
         sh:path schema:genre ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:maxCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:uniqueLang true ;
         sh:name "genre"@en ;
         sh:name "genre"@nl ;
         sh:name "genre"@fr ;
@@ -243,7 +243,6 @@
         sh:path schema:inLanguage ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
-        sh:minCount 1;
         sh:name "in language"@en ;
         sh:name "in taal"@nl ;
         sh:name "en langue"@fr ;
@@ -300,7 +299,7 @@
         a sh:PropertyShape ;
         sh:path schema:copyrightNotice ;
         sh:nodeKind sh:Literal ;
-        sh:datatype rdf:langString ;
+        sh:datatype xsd:string ;
         sh:name "copyright notice"@en ;
         sh:name "auteursrechtenmelding"@nl ;
         sh:name "avis de copyright"@fr ;
@@ -406,7 +405,7 @@
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
-        sh:in ("audio" "video" "film" "paper" "newspaper" "newspaperpage") ;
+        sh:in ("audio"^^xsd:string "video"^^xsd:string "film"^^xsd:string "paper"^^xsd:string "newspaper"^^xsd:string "newspaperpage"^^xsd:string "videofragment"^^xsd:string "audiofragment"^^xsd:string) ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "format"@en ;
@@ -417,20 +416,20 @@
         sh:message "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film paper)"@nl ;
         sh:message "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film paper)"@fr ;
     ],
-    [
-        a sh:PropertyShape ;
-        sh:path dct:medium ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:minCount 1 ;
-        sh:name "medium"@en ;
-        sh:name "medium"@nl ;
-        sh:name "médium"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "dct:medium is not of type string "@en ;
-        sh:message "dct:medium is niet van het type string"@nl ;
-        sh:message "dct:medium n'est pas de type string"@fr ;
-    ],
+    # [
+    #     a sh:PropertyShape ;
+    #     sh:path dct:medium ;
+    #     sh:nodeKind sh:Literal ;
+    #     sh:datatype xsd:string ;
+    #     sh:minCount 1 ;
+    #     sh:name "medium"@en ;
+    #     sh:name "medium"@nl ;
+    #     sh:name "médium"@fr ;
+    #     sh:severity sh:Violation ;
+    #     sh:message "dct:medium is not of type string "@en ;
+    #     sh:message "dct:medium is niet van het type string"@nl ;
+    #     sh:message "dct:medium n'est pas de type string"@fr ;
+    # ],
     [
         a sh:PropertyShape ;
         sh:path schema:height ;
@@ -639,7 +638,20 @@
 
 <#FileNodeShape> a sh:NodeShape ; 
     sh:targetClass premis:File ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
+    sh:property <#NameShape>, <#DescriptionShape>, <#DurationShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "identifier"@en ;
+        sh:name "identifier"@nl ;
+        sh:name "identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+    ],
     [
         sh:path ebucore:hasCaptioning;
         sh:and (
@@ -713,7 +725,20 @@
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, 
+    sh:property <#NameShape>, <#DescriptionShape>, 
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "identifier"@en ;
+        sh:name "identifier"@nl ;
+        sh:name "identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
@@ -771,14 +796,40 @@
 
 <#CarrierRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:CarrierRepresentation ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>.
+    sh:property <#NameShape>, <#DescriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "identifier"@en ;
+        sh:name "identifier"@nl ;
+        sh:name "identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+    ].
 
 ####################
 #      SCHEMA      #
 ####################
 <#CreativeWorkSeriesShape> a sh:NodeShape ; 
     sh:targetClass schema:CreativeWorkSeries ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    sh:property <#NameShape>, <#DescriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "identifier"@en ;
+        sh:name "identifier"@nl ;
+        sh:name "identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:seasonNumber ;
@@ -1020,7 +1071,20 @@
 
 <#CollectionShape> a sh:NodeShape ; 
     sh:targetClass schema:Collection ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, 
+    sh:property <#NameShape>, <#DescriptionShape>, 
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "identifier"@en ;
+        sh:name "identifier"@nl ;
+        sh:name "identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:collectionSize ;
@@ -1039,7 +1103,10 @@
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
-        sh:class premis:IntellectualEntity ;
+        sh:or (
+            [ sh:class premis:IntellectualEntity ]
+            [ sh:class haObj:PhysicalCarrier ]
+        ) ;
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this collection."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie."@nl ;
         sh:description "Indique un IntellectualEntity ou CreativeWork qui fait partie de cette collection."@fr ;
@@ -1220,7 +1287,7 @@
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:uniqueLang true;
     sh:name "name"@en ;
     sh:name "naam"@nl ;
     sh:name "nom"@fr ;
@@ -1234,7 +1301,7 @@
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
     sh:minCount 0 ;
-    sh:maxCount 1 ;
+    sh:uniqueLang true;
     sh:name "description"@en ;
     sh:name "omschrijving"@nl ;
     sh:name "description"@fr ;

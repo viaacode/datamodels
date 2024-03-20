@@ -1,0 +1,73 @@
+#!/usr/bin/env python
+
+import argparse
+import os
+from pyshacl import validate
+from rdflib import Graph
+
+def load_rdfs_files(directory):
+    rdfs_graph = Graph()
+    for root, _, files in os.walk(directory):
+        for filename in files:
+            if filename.endswith(".ttl"):
+                print(f"Loading RDFS file: {filename}")
+                rdfs_file = os.path.join(root, filename)
+                rdfs_graph.parse(rdfs_file, format="turtle")
+    return rdfs_graph
+
+def load_context_files(context_files):
+    context_graph = Graph()
+    for file in context_files:
+        print(f"Loading context file: {file}")
+        context_graph.parse(file, format="turtle")
+    return context_graph
+
+def validate_turtle_against_shacl(turtle_file, shacl_file, rdfs_directory=None, context_files=None):
+    # Load Turtle file
+    data_graph = Graph()
+    data_graph.parse(turtle_file, format="turtle")
+
+    # Load SHACL file
+    shacl_graph = Graph()
+    shacl_graph.parse(shacl_file, format="turtle")
+
+    # Load RDFS files if directory is provided
+    if rdfs_directory:
+        rdfs_graph = load_rdfs_files(rdfs_directory)
+    else:
+        rdfs_graph = Graph()
+
+    # Load context files
+    if context_files:
+        context_graph = load_context_files(context_files)
+    else:
+        context_graph = Graph()
+
+    # Validate
+    conforms, results_graph, results_text = validate(data_graph=data_graph+context_graph+rdfs_graph, shacl_graph=shacl_graph)
+
+    return conforms, results_text
+
+def validate_turtle_files_in_directory(directory, shacl_file, rdfs_directory=None, context_files=None):
+    for root, _, files in os.walk(directory):
+        for filename in files:
+            if filename.endswith(".ttl"):
+                turtle_file = os.path.join(root, filename)
+                print(f"Validating {turtle_file} against SHACL...")
+                conforms, results_text = validate_turtle_against_shacl(turtle_file, shacl_file, rdfs_directory, context_files)
+                print(results_text)
+                print(f"{turtle_file} conforms to SHACL constraints: {conforms}")
+                print("=" * 50)
+
+def main():
+    parser = argparse.ArgumentParser(description="Validate Turtle files against a SHACL file")
+    parser.add_argument("directory", help="Directory containing Turtle files")
+    parser.add_argument("shacl_file", help="SHACL file")
+    parser.add_argument("--rdfs-directory", help="Directory containing RDFS files for inference (optional)")
+    parser.add_argument("--context-files", nargs="+", help="Arbitrary list of context Turtle files for inference (optional)")
+    args = parser.parse_args()
+
+    validate_turtle_files_in_directory(args.directory, args.shacl_file, args.rdfs_directory, args.context_files)
+
+if __name__ == "__main__":
+    main()
