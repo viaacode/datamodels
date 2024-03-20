@@ -1,6 +1,7 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/>  .
+@prefix haPrmId: <https://data.hetarchief.be/id/production-method/>  .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -44,7 +45,7 @@
         a sh:PropertyShape ;
         sh:path haDes:numberOfPages ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "number of pages"@en ;
@@ -53,7 +54,7 @@
         sh:description "Indicates how many pages a certain bibliographic object contains."@en ;
         sh:description "Indique le nombre de pages qu'un certain objet bibliographique contient."@fr ;
         sh:description "Geeft aan uit hoeveel pagina's een bepaald bibliografisch object bestaat."@nl ;
-        sh:message "the object of haDes:numberOfPages is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "the object of haDes:numberOfPages is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
         sh:severity sh:Violation
     ] ,
     [
@@ -75,7 +76,7 @@
         a sh:PropertyShape ;
         sh:path schema:issueNumber ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "issue number"@en ;
@@ -84,23 +85,8 @@
         sh:description "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."@en ;
         sh:description "Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie."@fr ;
         sh:description "Geeft het volgnummer aan van een kranteneditie binnen de grotere krantenserie waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of schema:issueNumber is not of type xsd:decimal, or occurs more than once"@en ;
+        sh:message "the object of schema:issueNumber is not of type xsd:string, or occurs more than once"@en ;
         sh:severity sh:Violation
-    ] ,
-    [
-        a sh:PropertyShape ;
-        sh:path dct:format ;
-        sh:hasValue "newspaper" ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:name "format"@en ;
-        sh:name "format"@fr ;
-        sh:name "formaat"@nl ;
-        sh:description "Extra indication of the type of NewspaperIssue."@en ;
-        sh:description "Indication supplémentaire du type de NewspaperIssue."@fr ;
-        sh:description "Indicatie van het type NewspaperIssue."@nl ;
-        sh:message "the object of dct:format is not 'newspaper', is missing or occurs more than once"@en ;
-        sh:severity sh:Violation 
     ] ,
     [
         a sh:PropertyShape ;
@@ -129,7 +115,23 @@
         sh:description "Indicates the specific publication type of a newspaper edition (e.g. morning, evening, weekend newspaper edition, etc.)."@en ;
         sh:description "Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.)."@fr ;
         sh:description "Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.)."@nl ;
-        sh:message "the object of haDes:issueType is not of type skos:Concept, or occurs more than once"@en ;
+        sh:message "the object of bf:edition is not of type skos:Concept, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path bf:productionMethod ;
+        sh:class skos:Concept ;
+        sh:in (haPrmId:handwritten haPrmId:typed haPrmId:printed);
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "production method"@en ;
+        sh:name "méthode de production"@fr ;
+        sh:name "productie methode"@nl ;
+        sh:description "The process used to produce the newspaper edition (e.g. handwritten, typed, printed)."@en ;
+        sh:description "Le processus utilisé pour produire la édition de journal (par exemple manuscrit, dactylographié, imprimé)."@fr ;
+        sh:description "Het proces dat werd gebruikt om de kranteneditie te produceren (bijv. handgeschreven, getypt, gedrukt)."@nl ;
+        sh:message "the object of bf:productionMethod is not of type skos:Concept, or occurs more than once"@en ;
         sh:severity sh:Violation
     ] .
 
@@ -140,7 +142,7 @@
         a sh:PropertyShape ;
         sh:path haDes:pageNumber ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:decimal ;
+        sh:datatype xsd:nonNegativeInteger ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "page number"@en ;
@@ -149,7 +151,7 @@
         sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
         sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
         sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of haDes:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
+        sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
         sh:severity sh:Violation
     ],
     [
@@ -166,19 +168,177 @@
         sh:description "Geeft de kranteneditie aan waar een specifieke pagina deel van uitmaakt."@nl ;
         sh:message "the object of rel:isp is not of type haDes:NewspaperIssue, is missing or occurs more than once"@en ;
         sh:severity sh:Violation
-    ] ,
+    ] .
+
+
+<#NewspaperNodeShape> a sh:NodeShape ;
+    sh:targetClass schema:Newspaper ;
+    sh:property 
     [
         a sh:PropertyShape ;
-        sh:path dct:format ;
-        sh:hasValue "newspaperpage" ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:name "format"@en ;
-        sh:name "format"@fr ;
-        sh:name "formaat"@nl ;
-        sh:description "Extra indication of the NewspaperIssuePage type."@en ;
-        sh:description "Indication supplémentaire du NewspaperIssuePage type."@fr ;
-        sh:description "Extra indicatie van het NewspaperIssuePage type."@nl ;
-        sh:message "the object of dct:format is not 'newspaperpage', is missing or occurs more than once"@en ;
-        sh:severity sh:Violation 
-    ] .
+        sh:name "abraham identifier"@en ;
+        sh:name "abraham identifier"@nl ;
+        sh:name "abraham identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier is missing or not of type string "@en ;
+        sh:message "schema:identifier ontbreekt of is niet van het type string"@nl ;
+        sh:message "schema:identifier est manquant ou n'est pas de type string"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:name ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "name"@en ;
+        sh:name "naam"@nl ;
+        sh:name "nom"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:name is missing or not of type string "@en ;
+        sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+        sh:message "schema:name est manquant ou n'est pas de type string"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:alternateName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:name "alternate name"@en ;
+        sh:name "alternatieve naam"@nl ;
+        sh:name "nom alternatif"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:alternateName is not of type string"@en ;
+        sh:message "schema:alternateName is niet van het type string"@nl ;
+        sh:message "schema:alternateName n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:startDate ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "start date"@en ;
+        sh:name "date de début"@fr ;
+        sh:name "begindatum"@nl ;
+        sh:severity sh:Violation ;
+        sh:message "schema:startDate is not of type xsd:dateTime."@en ;
+        sh:message "schema:startDate is niet van het type xsd:dateTime."@nl ;
+        sh:message "schema:startDate n'est pas de type xsd:dateTime."@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:endDate ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "end date"@en ;
+        sh:name "date de fin"@fr ;
+        sh:name "einddatum"@nl ;
+        sh:severity sh:Violation ;
+        sh:message "schema:endDate is not of type xsd:dateTime."@en ;
+        sh:message "schema:endDate is niet van het type xsd:dateTime."@nl ;
+        sh:message "schema:endDate n'est pas de type xsd:dateTime."@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:locationCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:class schema:Place ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "page number"@en ;
+        sh:name "numéro de page"@fr ;
+        sh:name "paginanummer"@nl ;
+        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
+        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
+        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
+        sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],  
+    [
+        a sh:PropertyShape ;
+        sh:path bf:supplement ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        rdfs:label "supplement"@en ;
+        rdfs:label "supplément"@fr ;
+        rdfs:label "supplement"@nl ;
+        sh:description "Newspaper that updates or otherwise complements the predominant newspaper."@en ;
+        sh:description "Journal qui met à jour ou complète autrement le journal prédominant."@fr ;
+        sh:description "Krant die de overheersende krant bijwerkt of anderszins aanvult."@nl ;
+        sh:message "the object of bf:supplement is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path bf:supplementTo ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        rdfs:label "supplement to"@en ;
+        rdfs:label "compléter"@fr ;
+        rdfs:label "supplement aan"@nl ;
+	    sh:description "Newspaper that is updated or otherwise complemented by the augmenting newspaper."@en ;
+	    sh:description "Journal qui est mis à jour ou autrement complété par le journal augmentant."@fr ;
+	    sh:description "Krant die wordt bijgewerkt of anderszins wordt aangevuld met de aanvullende krant."@nl ;
+        sh:message "the object of bf:supplementTo is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path bf:succeededBy ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        rdfs:label "succeeded by"@en ;
+        rdfs:label "succédé par"@fr ;
+        rdfs:label "opgevolgd door"@nl ;
+	    skos:definition "Newspaper that succeeds the newspaper being described, e.g., later in time or after in a narrative."@en;
+	    skos:definition "Journal qui succède à la journal décrite, par exemple, plus tard dans le temps ou après dans un récit."@fr;
+	    skos:definition "Krant die de krant die wordt beschreven opvolgt, bijvoorbeeld later in de tijd of daarna in een verhaal."@nl; 
+        sh:message "the object of bf:succeededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path bf:precededBy ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        rdfs:label "preceded by"@en ;
+        rdfs:label "précédé par"@fr ;
+        rdfs:label "voorafgegaan door"@nl ;
+	    sh:description "Newspaper that precedes the newspaper being described, e.g., is earlier in time or before in narrative."@en; 
+	    sh:description "Le journal qui précède le journal décrit, par exemple, est plus tôt dans le temps ou avant dans le récit."@fr; 
+	    sh:description "Krant die voorafgaat aan de beschreven krant, bijvoorbeeld, is eerder in de tijd of eerder in het verhaal."@nl;
+        sh:message "the object of bf:precededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:publisher ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class schema:Role ;
+        sh:name "publisher"@en ;
+        sh:name "uitgever"@nl ;
+        sh:name "éditeur"@fr ;
+        sh:description "Publisher of the newspaper."@en;
+        sh:description "Éditeur du journal."@nl;
+        sh:description "Uitgever van de krant."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:publisher is not of class schema:Role, or occurs more than once"@en 
+    ].

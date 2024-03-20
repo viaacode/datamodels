@@ -165,7 +165,7 @@ schema:PostalAddress    a   rdfs:Class ;
 
 schema:QuantitativeValue a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
-    rdfs:label "quantitative Value"@en ;
+    rdfs:label "Quantitative Value"@en ;
     rdfs:label "Kwantitatieve waarde"@nl ;
     rdfs:label "Valeur quantitative"@fr ;
     skos:definition """A point value or interval for product characteristics and other purposes."""@en ;
@@ -422,7 +422,7 @@ schema:creditText a rdf:Property ;
     rdfs:label "credit text"@en ;
     rdfs:label "credittekst"@nl ;
     rdfs:label "texte du crédit"@fr ;
-    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work." ;
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work."@en ;
     skos:definition "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl ;
     skos:definition "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
@@ -447,6 +447,25 @@ schema:datePublished a rdf:Property ;
     skos:definition "Date of first broadcast/publication."@en ;
     skos:definition "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl ;
     skos:definition "La date de la première diffusion ou publication."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:dateModified a rdf:Property ;
+    rdfs:label "date modified" ;
+    rdfs:domain schema:CreativeWork ,
+        schema:DataFeedItem ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en ;
+    skos:definition "De datum waarop het creatieve werk het meest recent werd gewijzigd of wanneer de invoer van het item binnen een DataFeed werd gewijzigd."@nl ;
+    skos:definition "La date à laquelle le Creativework a été récemment modifié ou lorsque l'entrée de l'élément a été modifiée dans une DataFeed."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:dateDeleted a rdf:Property ;
+    rdfs:label "date deleted" ;
+    rdfs:domain schema:DataFeedItem ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The datetime the item was removed from the DataFeed."@en ;
+    skos:definition "L'élément DateTime a été supprimé du DataFeed."@nl ;
+    skos:definition "De DateTime Het item is verwijderd uit de DataFeed."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:deathDate a rdf:Property ;
@@ -873,6 +892,41 @@ schema:endTime a rdf:Property ;
     Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en ;
     skos:definition """De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. """@nl ;
     skos:definition """La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en ;
+    rdfs:label "date de début"@fr ;
+    rdfs:label "begindatum"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:Role,
+        schema:MerchantReturnPolicySeasonalOverride ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime ;
+    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en ;
+    skos:definition "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr ;
+    skos:definition "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en ;
+    rdfs:label "date de fin"@fr ;
+    rdfs:label "einddatum"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:Role,
+        schema:MerchantReturnPolicySeasonalOverride ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime ;
+    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en ;
+    skos:definition "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr ;
+    skos:definition "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:mentions a rdf:Property ;

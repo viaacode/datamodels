@@ -1,0 +1,90 @@
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> . # SKOS Vocabulary
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> . # The RDF Schema vocabulary (RDFS)
+@prefix owl: <http://www.w3.org/2002/07/owl#> . # The OWL 2 Schema vocabulary (OWL 2)
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> . # The RDF Concepts Vocabulary (RDF)
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+
+bf:productionMethod dc:modified "2016-04-21 (New)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:domain bf:Instance ;
+	rdfs:label "production method"@en ;
+	rdfs:label "méthode de production"@fr ;
+	rdfs:label "productiemethode"@nl ;
+	rdfs:range bf:ProductionMethod ;
+	skos:definition "Process used to produce a resource."@en ;
+	skos:definition "Processus utilisé pour produire une ressource."@fr ;
+	skos:definition "Proces dat wordt gebruikt om een bron te produceren."@nl .
+
+bf:supplement dc:modified "2016-04-21 (New)", "2016-04-29 (added inverse, updated range)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:comment "Suggested use - With Work or Instance", "Suggested value - Work or Instance" ;
+	rdfs:label "supplement"@en ;
+	rdfs:label "supplément"@fr ;
+	rdfs:label "supplement"@nl ;
+	rdfs:subPropertyOf bf:accompaniedBy ;
+	owl:inverseOf bf:supplementTo ;
+	skos:definition "Resource that updates or otherwise complements the predominant resource."@en ;
+	skos:definition "Ressource qui met à jour ou complète autrement la ressource prédominante."@fr ;
+	skos:definition "Bron die de overheersende bron bijwerkt of anderszins aanvult."@nl .
+
+bf:supplementTo dc:modified "2016-04-21 (New)", "2016-04-29 (added inverse, updated range)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:comment "Suggested use - With Work or Instance", "Suggested value - Work or Instance" ;
+	rdfs:label "supplement to"@en ;
+	rdfs:label "compléter"@fr ;
+	rdfs:label "supplement aan"@nl ;
+	rdfs:subPropertyOf bf:accompanies ;
+	owl:inverseOf bf:supplement ;
+	skos:definition "Resource that is updated or otherwise complemented by the augmenting resource."@en ;
+	skos:definition "Ressource mise à jour ou complétée par la ressource augmentante."@fr ;
+	skos:definition "Bron die wordt bijgewerkt of anderszins wordt aangevuld met de aanvullende bron."@nl .
+
+bf:accompaniedBy dc:modified "2016-04-21 (New)", "2016-04-29 (added inverse)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:comment "Suggested use - With Work, Instance or Item", "Suggested value - Work, Instance or Item" ;
+	rdfs:label "accompanied by"@en ;
+	rdfs:label "accompagné par"@fr ;
+	rdfs:label "vergezeld van"@nl ;
+	rdfs:subPropertyOf bf:relatedTo ;
+	owl:inverseOf bf:accompanies ;
+	skos:definition "Resource that accompanies the described resource."@en ;
+	skos:definition "Ressource qui accompagne la ressource décrite."@fr ;
+	skos:definition "Bron die bij de beschreven bron hoort."@nl .
+
+bf:accompanies dc:modified "2016-04-21 (New)", "2016-04-29 (added inverse)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:comment "Suggested use - With Work, Instance or Item", "Suggested value - Work, Instance or Item" ;
+	rdfs:label "accompanies"@en ;
+	rdfs:label "accompagne"@fr ;
+	rdfs:label "begeleidt"@nl ;
+	rdfs:subPropertyOf bf:relatedTo ;
+	owl:inverseOf bf:accompaniedBy ;
+	skos:definition "Resource that adds to or is issued with the described resource."@en ;
+	skos:definition "Ressource qui ajoute ou est émise avec la ressource décrite."@fr ;
+	skos:definition "Bron die bijdraagt aan of wordt uitgegeven met de beschreven bron."@nl .
+
+bf:succeededBy dc:modified "2016-04-21 (New)", "2016-04-29 (added inverse)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:comment "Suggested use - With Work or Instance", "Suggested value - Work or Instance" ;
+	rdfs:label "succeeded by"@en ;
+	rdfs:label "succédé par"@fr ;
+	rdfs:label "opgevolgd door"@nl ;
+	rdfs:subPropertyOf bf:relatedTo ;
+	owl:inverseOf bf:precededBy ;
+	skos:definition "Resource that succeeds the resource being described, e.g., later in time or after in a narrative."@en;
+	skos:definition "Ressource qui succède à la ressource décrite, par exemple, plus tard dans le temps ou après dans un récit."@fr;
+	skos:definition "Resource die de bron die wordt beschreven opvolgt, bijvoorbeeld later in de tijd of daarna in een verhaal."@nl. 
+
+bf:precededBy dc:modified "2016-04-21 (New)", "2016-04-29 (added inverse)" ;
+	a owl:ObjectProperty, rdf:Property ;
+	rdfs:comment "Suggested use - With Work or Instance", "Suggested value - Work or Instance" ;
+	rdfs:label "preceded by"@en ;
+	rdfs:label "précédé par"@fr ;
+	rdfs:label "voorafgegaan door"@nl ;
+	rdfs:subPropertyOf bf:relatedTo ;
+	owl:inverseOf bf:succeededBy ;
+	skos:definition "Resource that precedes the resource being described, e.g., is earlier in time or before in narrative."@en; 
+	skos:definition "La ressource qui précède la ressource décrite, par exemple, est plus tôt dans le temps ou avant dans le récit."@fr; 
+	skos:definition "Bron die voorafgaat aan de beschreven bron, bijvoorbeeld, is eerder in de tijd of eerder in het verhaal."@nl.

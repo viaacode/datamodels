@@ -91,9 +91,7 @@
       sh:description "Een lokale identifier voor de intellectuele entiteit."@nl ;
       sh:description "Un identificateur local pour l'entité intellectuelle."@fr ;
       
-      sh:message "premis:identifier is missing or not a LocalIdentifier"@en ;
-      sh:message "premis:identifier ontbreekt of is geen LocalIdentifier"@nl ;
-      sh:message "premis:identifier manque ou n'est pas un LocalIdentifier"@fr ;
+      sh:message "premis:identifier is not a LocalIdentifier"@en ;
       sh:severity sh:Violation ;
   ],
   [
@@ -109,8 +107,6 @@
     sh:description "Une entité intellectuelle qui fait partie de cette entité intellectuelle."@fr ;
 
     sh:message "rel:hsp is not a premis:IntellectualEntity"@en ;
-    sh:message "rel:hsp is niet van de klasse premis:IntellectualEntity"@nl ;
-    sh:message "rel:hsp n'est pas de la classe premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],[
     sh:path rel:isp ;
@@ -125,8 +121,6 @@
     sh:description "L'entité intellectuelle dont cette entité intellectuelle fait partie de."@fr ;
 
     sh:message "rel:isp is not a premis:IntellectualEntity"@en ;
-    sh:message "rel:isp is niet van de klasse premis:IntellectualEntity"@nl ;
-    sh:message "rel:isp n'est pas de la classe premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
@@ -144,8 +138,6 @@
     sh:description "Une représentation de l'entité intellectuelle."@fr ;
 
     sh:message "rel:isr is missing or not a premis:Representation"@en ;
-    sh:message "rel:isr ontbreekt of is geen premis:Representation"@nl ;
-    sh:message "rel:isr manque ou n'est pas une premis:Representation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
@@ -161,8 +153,6 @@
     sh:description "Le maître des archives de l'entité intellectuelle."@fr ;
 
     sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en ;
-    sh:message "haObj:hasMasterCopy is geen haObj:DigitalRepresentation"@nl ;
-    sh:message "haObj:hasMasterCopy n'est pas un haObj:DigitalRepresentation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
@@ -420,7 +410,10 @@
   ],
   [
     sh:path rel:hss ;
-    sh:class haObj:CarrierRepresentation ;
+    sh:or (
+      [ sh:class haObj:CarrierRepresentation ] 
+      [ sh:class haObj:DigitalRepresentation ] 
+    );
 
     sh:name "has Source"@en ;
     sh:name "heeft bron"@nl ;
@@ -604,7 +597,7 @@
         sh:path premis:fixity;
         sh:class premis:Fixity ;
 
-        sh:minCount 1 ;
+        sh:minCount 0 ;
         sh:maxCount 1 ;
 
         sh:name "fixity"@en ;
@@ -616,8 +609,6 @@
         sh:description "La somme de contrôle de fixité calculée du fichier."@fr ;
 
         sh:message "premis:fixity is missing or not a premis:Fixity"@en ;
-        sh:message "premis:fixity ontbreekt of is geen premis:Fixity"@nl ;
-        sh:message "premis:fixity manque ou n'est pas une premis:Fixity"@fr ;
         sh:severity sh:Violation ;
     ],
     [
@@ -643,7 +634,7 @@
         sh:path dct:format;
         sh:class dct:FileFormat ;
 
-        sh:minCount 1 ;
+        sh:minCount 0 ;
         sh:maxCount 1 ;
 
         sh:name "format"@en ;
@@ -792,6 +783,7 @@
     sh:property [
         sh:path rdf:value;
         sh:datatype xsd:string;
+        sh:maxCount 1 ;
         sh:minCount 1 ;
         sh:name "fixity checksum"@nl;
         sh:name "fixity checksum"@en;
@@ -799,7 +791,9 @@
 
         sh:description "De waarde van de checksum."@nl ;
         sh:description "The value of the checksum."@en ; 
-        sh:description "La valeur de la somme de contrôle."@fr ;       
+        sh:description "La valeur de la somme de contrôle."@fr ; 
+
+        sh:message "rdf:value is missing, occurs more than once, or is not of type string"@en ;      
     
         sh:severity sh:Violation ;
     ],
@@ -830,7 +824,7 @@
             [sh:nodeKind sh:IRI ]
         ) ;
 
-        sh:minCount 1 ;
+        sh:maxCount 1 ;
 
         sh:name "opslagpad"@nl ;
         sh:name "file path"@en ;
@@ -877,9 +871,7 @@
         sh:description "The value of this identifier."@en;
         sh:description "La valeur de cet identifiant."@fr;
         
-        sh:message "rdf:value is missing or not of type string"@en ;
-        sh:message "rdf:value ontbreekt of is niet van het type string"@nl ;
-        sh:message "rdf:value est manquant ou n'est pas de type string"@fr ;
+        sh:message "rdf:value is missing, occurs more than once, or is not of type string"@en ;
         sh:severity sh:Violation ;
     ] .
 
@@ -924,4 +916,52 @@
         
         sh:message "the object of mh:fragmentIdentifier is no xsd:string, is missing or occurs more than once"@en ;
         sh:severity sh:Violation ;
-    ] .
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "datum aangemaakt"@nl ;
+        sh:name "date de création"@fr ;
+        sh:description "The date on which the record was created."@en;
+        sh:description "De datum waarop het record is aangemaakt."@nl;
+        sh:description "La date à laquelle le dossier a été créé."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type xsd:dateTime or is missing."@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateDeleted ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "date deleted"@en ;
+        sh:name "datum verwijderd"@nl ;
+        sh:name "date supprimée"@fr ;
+        sh:description "The date on which the record was deleted."@en;
+        sh:description "De datum waarop het record is verwijderd."@nl;
+        sh:description "La date à laquelle le dossier a été supprimée."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateDeleted is not of type xsd:dateTime or occurs more than once."@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:dateModified ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "date modified"@en ;
+        sh:name "datum gewijzigd"@nl ;
+        sh:name "date modifiée"@fr ;
+        sh:description "The date on which the record was most recently modified."@en;
+        sh:description "De datum waarop het record het meest recent is gewijzigd."@nl;
+        sh:description "La date à laquelle le dossier a été récemment modifié."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateModified is not of type xsd:dateTime or is missing."@en
+    ].
