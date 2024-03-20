@@ -76,7 +76,7 @@
         a sh:PropertyShape ;
         sh:path schema:issueNumber ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:xsd:String ;
+        sh:datatype xsd:string ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "issue number"@en ;
