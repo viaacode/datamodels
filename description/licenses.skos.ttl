@@ -7,6 +7,7 @@
     skos:definition "De afspeelmedia en metadata van een archiefitem mogen ontsloten worden in bibliotheken."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Bibliotheeklicentie"@nl ;
+    skos:notation "VIAA-BIBLIOTHEKEN";
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
 <https://data.hetarchief.be/id/license/VIAA-INTRAMUROS> a skos:Concept ;
@@ -14,6 +15,7 @@
     skos:definition "Media en en metadata van een item mogen ontsloten worden binnen de fysieke en digitale omgeving van meemoo."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Intramuros-licentie"@nl ;
+    skos:notation "VIAA-INTRAMUROS";
     skos:scopeNote "Deze licentie wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden."@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
@@ -22,6 +24,7 @@
     skos:definition "De afspeelmedia en metadata van een archiefitem mogen ontsloten en gebruikt worden voor onderzoek en wetenschappelijke doeleinden."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Onderzoekslicentie"@nl ;
+    skos:notation "VIAA-ONDERZOEK";
     skos:scopeNote "meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar."@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
@@ -47,6 +50,7 @@
     skos:definition "De afspeelmedia van een archiefitem mag ontsloten worden binnen een afgeschermde digitale ruimte."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Bezoekerslicentie"@nl ;
+    skos:notation "BEZOEKERTOOL-CONTENT";
     skos:related <https://data.hetarchief.be/id/license/BEZOEKERTOOL-METADATA-ALL> ;
     skos:scopeNote "De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
@@ -56,6 +60,7 @@
     skos:definition "Een uitgebreide set aan metadata van het object mag ontsloten worden binnen een afgeschermde digitale ruimte."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Bezoekerslicentie metadata"@nl ;
+    skos:notation "BEZOEKERTOOL-METADATA-ALL";
     skos:related <https://data.hetarchief.be/id/license/BEZOEKERTOOL-CONTENT> ;
     skos:scopeNote "Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
@@ -69,6 +74,7 @@ De persoon die deze akte aan een werk heeft verbonden heeft het werk toegewezen 
 Je mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoeren, zelfs voor commerciële doeleinden."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC0 1.0 media"@nl ;
+    skos:notation "CC0-CONTENT";
     skos:scopeNote """CCO = er zijn nog rechten op het materiaal, maar er wordt afstand van deze rechten gedaan. Publiek domein = er rusten geen rechten meer op het materiaal.
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -87,6 +93,7 @@ Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY 4.0 media"@nl ;
+    skos:notation "CC_BY-CONTENT";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY).
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -105,6 +112,7 @@ Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY 4.0 metadata"@nl ;
+    skos:notation "CC_BY-METADATA";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY).
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -122,6 +130,7 @@ Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link
 NietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-NC 4.0 media"@nl ;
+    skos:notation "CC_BY-NC-CONTENT";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële (NC) doeleinden.
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -139,6 +148,7 @@ Naamsvermelding: De gebruiker dient de maker van het werk te vermelden, een link
 NietCommercieel: Je mag het werk niet gebruiken voor commerciële doeleinden."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-NC 4.0 metadata"@nl ;
+    skos:notation "CC_BY-NC-METADATA";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële (NC) doeleinden.
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -157,6 +167,7 @@ GeenAfgeleideWerken: Je mag het veranderde materiaal niet verspreiden als je het
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-NC-ND 4.0 media"@nl ;
+    skos:notation "CC_BY-NC-ND-CONTENT";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële doeleinden (NC) en in ongewijzigde vorm (ND).
 
 Woordt gebruikt voor het downloaden van objecten op Art In Flanders."""@nl ;
@@ -175,6 +186,7 @@ GeenAfgeleideWerken: Je mag het veranderde materiaal niet verspreiden als je het
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-NC-ND 4.0 metadata"@nl ;
+    skos:notation "CC_BY-NC-ND-METADATA";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van de metadata via elk medium of bestandsformaat mits naamvermelding (BY) voor niet-commerciële doeleinden (NC) en in ongewijzigde vorm (ND).
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -193,6 +205,7 @@ GeenAfgeleideWerken:Je mag het veranderde materiaal niet verspreiden als je het 
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-ND 4.0 media"@nl ;
+    skos:notation "CC_BY-ND-CONTENT";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) in ongewijzigde vorm (ND).
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -211,6 +224,7 @@ GeenAfgeleideWerken:Je mag het veranderde materiaal niet verspreiden als je het 
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-ND 4.0 metadata"@nl ;
+    skos:notation "CC_BY-ND-METADATA";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) in ongewijzigde vorm.
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -230,6 +244,7 @@ GelijkDelen: Als je het werk hebt geremixt, veranderd, of op het werk hebt voort
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-SA 4.0 media"@nl ;
+    skos:notation "CC_BY-SA-CONTENT";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van de browserkopie via elk medium of bestandsformaat mits naamvermelding (BY) onder dezelfde licentie (SA) als het originele werk.
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -249,6 +264,7 @@ GelijkDelen: Als je het werk hebt geremixt, veranderd, of op het werk hebt voort
 Geen aanvullende restricties: Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "CC BY-SA 4.0 metadata"@nl ;
+    skos:notation "CC_BY-SA-METADATA";
     skos:scopeNote """Kopiëren, verspreiden en door te geven van metadata via elk medium of bestandsformaat mits naamvermelding (BY) onder dezelfde licentie (SA) als het originele werk.
 
 Deze licentie wordt momenteel niet gebruikt."""@nl ;
@@ -260,6 +276,7 @@ Deze licentie wordt momenteel niet gebruikt."""@nl ;
     skos:definition "De afspeelmedia van hun archiefitems mogen ontsloten worden tussen meemoo content partners onderling."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Intra-CP-licentie"@nl ;
+    skos:notation "VIAA-INTRA_CP-CONTENT";
     skos:scopeNote """De lage resolutiekopie van het object mag getoond worden tussen contentpartners.
 Indien deze licentie gegeven wordt, zal ook de licentie VIAA-INTRA_CP-METADATA-ALL van toepassing worden.
 Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
@@ -271,6 +288,7 @@ Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:narrower <https://data.hetarchief.be/id/license/VIAA-INTRA_CP-CONTENT> ;
     skos:prefLabel "Intra-CP-licentie metadata"@nl ;
+    skos:notation "VIAA-INTRA_CP-METADATA-ALL";
     skos:scopeNote "Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
@@ -279,6 +297,7 @@ Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
     skos:definition "De afspeelmedia en metadata van een archiefitem mogen ontsloten en gebruikt worden voor educatieve doeleinden en onderwijs."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Onderwijslicentie"@nl ;
+    skos:notation "VIAA-ONDERWIJS";
     skos:related <https://data.hetarchief.be/id/license/ONDERWIJS-FRAGMENT> ;
     skos:scopeNote "meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be."@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
@@ -289,6 +308,7 @@ Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
     skos:definition "De afspeelmedia van een archiefitem mag publiek ontsloten worden."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Publiekslicentie"@nl ;
+    skos:notation "VIAA-PUBLIEK-CONTENT";
     skos:scopeNote "De lage resolutiekopie van het object mag beschikbaar gemaakt worden aan het brede publiek. Deze licentie impliceert dat ook de VIAA-PUBLIEK-METADATA-LTD of VIAA-PUBLIEK-METADATA-ALL gegeven wordt. Deze licentie is nog niet in gebruik."@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
 
@@ -297,6 +317,7 @@ Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
     skos:definition "Een beperkte set aan metadata van het archiefitem mag publiek ontsloten worden."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Publiekslicentie metadata beperkt"@nl ;
+    skos:notation "VIAA-PUBLIEK-METADATA-LTD";
     skos:related <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-ALL> ;
     skos:scopeNote "Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be."@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
@@ -306,6 +327,7 @@ Deze licentie wordt gebruikt op cataloguspro.hetarchief.be."""@nl ;
     skos:definition "De afspeelmedia en metadata van een of meer fragmenten van een archiefitem mogen ontsloten en gebruikt worden voor educatieve doeleinden en onderwijs."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:prefLabel "Onderwijslicentie fragment"@nl ;
+    skos:notation "ONDERWIJS-FRAGMENT";
     skos:related <https://data.hetarchief.be/id/license/VIAA-ONDERWIJS>,
         <https://data.hetarchief.be/id/license/VIAA_ONDERWIJS> ;
     skos:scopeNote """meemoo mag de content en metadata van één dan wel meerdere fragmenten van het item gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be.
@@ -318,6 +340,7 @@ Deze licentie laat toe dat meemoo één of meerdere fragmenten van het item mag 
     skos:inScheme <https://data.hetarchief.be/id/license> ;
     skos:narrower <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-CONTENT> ;
     skos:prefLabel "Publiekslicentie metadata"@nl ;
+    skos:notation "VIAA-PUBLIEK-METADATA-ALL";
     skos:related <https://data.hetarchief.be/id/license/VIAA-PUBLIEK-METADATA-LTD> ;
     skos:scopeNote "Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be."@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/license> .
