@@ -120,3 +120,11 @@ haObj:preservationProblem a rdf:Property;
   rdfs:label  "problème de préservation"@fr ;
   rdfs:label  "preservatieprobleem"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:primaryIdentifier a rdf:Property;
+    rdfs:subPropertyOf premis:identifier ;
+    rdfs:range haObj:LocalIdentifier;
+    rdfs:label "has primary identifier"@en ;
+    rdfs:label "a identifiant principal"@fr ;
+    rdfs:label "heeft primaire identificatiecode"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .

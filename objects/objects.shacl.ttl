@@ -95,6 +95,22 @@
       sh:severity sh:Violation ;
   ],
   [
+      a sh:PropertyShape ;
+      sh:path haObj:primaryIdentifier ;
+      sh:class haObj:LocalIdentifier ;
+
+      rdfs:label "primary local identifier"@en ;
+      rdfs:label "identificateur local principal"@fr ;
+      rdfs:label "primaire lokale identifier"@nl ;
+      
+      sh:description "The primary local identifier for the intellectual entity."@en ;
+      sh:description "De primaire lokale identifier voor de intellectuele entiteit."@nl ;
+      sh:description "Un identificateur local principal pour l'entité intellectuelle."@fr ;
+      
+      sh:message "haObj:primaryIdentifier is not a LocalIdentifier"@en ;
+      sh:severity sh:Violation ;
+  ],
+  [
     sh:path rel:hsp ;
     sh:class premis:IntellectualEntity ;
 
