@@ -4,6 +4,8 @@
     skos:inScheme <https://data.hetarchief.be/id/color-type> ;
     skos:prefLabel "black and white"@en,
         "zwart-wit"@nl ;
+    skos:definition "A color palette employing only black and white or black, white, and values of gray."@en,
+        "Een kleurenpalet die alleen zwart en wit of zwart, wit en waarden van grijs gebruiken."@nl;
     skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
 
 <https://data.hetarchief.be/id/color-type/Color> a skos:Concept ;
@@ -16,18 +18,35 @@
     skos:inScheme <https://data.hetarchief.be/id/color-type> ;
     skos:prefLabel "colorized"@en,
         "gekleurd"@nl ;
+    #skos:definition ""@en, ""@nl;
     skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
 
 <https://data.hetarchief.be/id/color-type/Composite> a skos:Concept ;
     skos:inScheme <https://data.hetarchief.be/id/color-type> ;
     skos:prefLabel "composite"@en,
         "composiet"@nl ;
+    #skos:definition ""@en, ""@nl;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type/Tinted> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "tinted"@en,
+        "getint"@nl ;
+    #skos:definition ""@en, ""@nl;
+    skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
+
+<https://data.hetarchief.be/id/color-type/Toned> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/color-type> ;
+    skos:prefLabel "toned"@en,
+        "getoned"@nl ;
+    #skos:definition ""@en, ""@nl;
     skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
 
 <https://data.hetarchief.be/id/color-type/UnknownColorType> a skos:Concept ;
     skos:inScheme <https://data.hetarchief.be/id/color-type> ;
     skos:prefLabel "unknown color type"@en,
         "onbekend kleurtype"@nl ;
+    #skos:definition ""@en, ""@nl;
     skos:topConceptOf <https://data.hetarchief.be/id/color-type> .
 
 <https://data.hetarchief.be/id/color-type> a skos:ConceptScheme ;
@@ -35,6 +54,8 @@
         <https://data.hetarchief.be/id/color-type/Color>,
         <https://data.hetarchief.be/id/color-type/Colorized>,
         <https://data.hetarchief.be/id/color-type/Composite>,
+        <https://data.hetarchief.be/id/color-type/Toned>,
+        <https://data.hetarchief.be/id/color-type/Tinted>,
         <https://data.hetarchief.be/id/color-type/UnknownColorType> ;
     skos:prefLabel "Thesaurus color types"@en,
         "Thesaurus kleurtypes"@nl .
