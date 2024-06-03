@@ -1006,10 +1006,11 @@
                 sh:nodeKind sh:Literal ;
                 sh:datatype xsd:string ; 
             ]
-            [sh:class skos:Concept ]
+            [
+                sh:class skos:Concept ;
+                sh:nodeKind sh:IRI
+            ]
         ) ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
         sh:minCount 1 ;
         sh:name "role name"@en ;
         sh:name "rolenaam"@nl ;
