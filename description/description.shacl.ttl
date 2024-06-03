@@ -723,10 +723,9 @@
         sh:message "schema:thumbnailUrl n'est pas un IRI"@fr ;
     ].
 
-<#DigitalRepresentationNodeShape> a sh:NodeShape ; 
-    sh:targetClass haObj:DigitalRepresentation ;
-    sh:property <#NameShape>, <#DescriptionShape>, 
-    [
+<#RepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass premis:Representation ;
+    sh:property <#NameShape>, <#DescriptionShape>, [
         a sh:PropertyShape ;
         sh:path schema:identifier ;
         sh:nodeKind sh:Literal ;
@@ -738,8 +737,11 @@
         sh:name "identifier"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:identifier occurs more than once or is not of type string "@en ;
-    ],
-    [
+    ].
+
+<#DigitalRepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass haObj:DigitalRepresentation ;
+    sh:property [
         a sh:PropertyShape ;
         sh:path schema:transcript ;
         sh:nodeKind sh:Literal ;
@@ -795,21 +797,7 @@
     ] .
 
 <#CarrierRepresentationNodeShape> a sh:NodeShape ; 
-    sh:targetClass haObj:CarrierRepresentation ;
-    sh:property <#NameShape>, <#DescriptionShape>,
-    [
-        a sh:PropertyShape ;
-        sh:path schema:identifier ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-        sh:name "identifier"@en ;
-        sh:name "identifier"@nl ;
-        sh:name "identifier"@fr ;
-        sh:severity sh:Violation ;
-        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
-    ].
+    sh:targetClass haObj:CarrierRepresentation .
 
 ####################
 #      SCHEMA      #

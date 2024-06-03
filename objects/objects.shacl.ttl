@@ -264,24 +264,6 @@
     sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
     sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
     sh:severity sh:Violation ;
-  ],
-  [
-    sh:path prov:wasDerivedFrom ;
-    sh:class mh:Record ;
-
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-
-    sh:name "was derived from"@en ;
-    sh:name "werd afgeleid van"@nl;
-    sh:name "était dérivé de"@fr;
-
-    sh:description "Het Mediahaven record waarvan deze dragerrepresentatie afgeleid werd."@nl;
-    sh:description "The Mediahaven record from which this carrier representation was derived."@en;
-    sh:description "L'enregistrement Mediahaven à partir duquel cette représentation du porteur est dérivée."@fr;
-
-    sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
-    sh:severity sh:Violation ;
   ].
 
 <#PhysicalCarrierShape> a sh:NodeShape ;
@@ -306,6 +288,46 @@
     sh:message "premis:medium a plus d'une valeur, pas de valeur ou n'est pas une premis:StorageMedium"@fr ;
     sh:severity sh:Violation ;
   ] .
+
+<#RepresentationShape> a sh:NodeShape ;
+  sh:targetClass premis:Representation ;
+  sh:property    [
+    sh:path rel:rep ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "represents"@en ;
+    sh:name "representeert"@nl ;
+    sh:name "représente"@fr ;
+
+    sh:description "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
+    sh:description "The intellectual entity that represents this digital representation."@en ;
+    sh:description "L'entité intellectuelle qui représente cette représentation digital."@fr ;
+
+    sh:message "rel:rep is missing or not a premis:IntellectualEntity"@en ;
+    sh:message "rel:rep ontbreekt of is geen premis:IntellectualEntity"@nl ;
+    sh:message "rel:rep manque ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:severity sh:Violation ;
+  ], [
+    sh:path prov:wasDerivedFrom ;
+    sh:class mh:Record ;
+
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+
+    sh:name "was derived from"@en ;
+    sh:name "werd afgeleid van"@nl;
+    sh:name "était dérivé de"@fr;
+
+    sh:description "Het Mediahaven record waarvan deze digitale representatie afgeleid werd."@nl;
+    sh:description "The Mediahaven record from which this digital representation was derived."@en;
+    sh:description "L'enregistrement Mediahaven à partir duquel cette représentation digitale est dérivée."@fr;
+
+    sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+    sh:severity sh:Violation ;
+].
 
 <#DigitalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
@@ -367,26 +389,6 @@
     sh:severity sh:Violation ;
   ],
   [
-    sh:path rel:rep ;
-    sh:class premis:IntellectualEntity ;
-
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-
-    sh:name "represents"@en ;
-    sh:name "representeert"@nl ;
-    sh:name "représente"@fr ;
-
-    sh:description "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
-    sh:description "The intellectual entity that represents this digital representation."@en ;
-    sh:description "L'entité intellectuelle qui représente cette représentation digital."@fr ;
-
-    sh:message "rel:rep is missing or not a premis:IntellectualEntity"@en ;
-    sh:message "rel:rep ontbreekt of is geen premis:IntellectualEntity"@nl ;
-    sh:message "rel:rep manque ou n'est pas une premis:IntellectualEntity"@fr ;
-    sh:severity sh:Violation ;
-  ],
-  [
     sh:path rel:inc ;
     sh:class premis:File ;
 
@@ -426,10 +428,11 @@
   ],
   [
     sh:path rel:hss ;
-    sh:or (
-      [ sh:class haObj:CarrierRepresentation ] 
-      [ sh:class haObj:DigitalRepresentation ] 
-    );
+    sh:class premis:Representation ;
+    # sh:or (
+    #   [ sh:class haObj:CarrierRepresentation ] 
+    #   [ sh:class haObj:DigitalRepresentation ] 
+    # );
 
     sh:name "has Source"@en ;
     sh:name "heeft bron"@nl ;
@@ -439,9 +442,9 @@
     sh:description "The physical carrier from which this digital representation originates from."@en ;
     sh:description "Le porteur physique dont vient cette représentation numérique."@fr ;
 
-    sh:message "rel:hss is not a haObj:CarrierRepresentation"@en ;
-    sh:message "rel:hss is geen haObj:CarrierRepresentation"@nl ;
-    sh:message "rel:hss n'est pas un haObj:CarrierRepresentation"@fr ;
+    sh:message "rel:hss is not a premis:Representation"@en ;
+    sh:message "rel:hss is geen premis:Representation"@nl ;
+    sh:message "rel:hss n'est pas un premis:Representation"@fr ;
     sh:severity sh:Violation ;
   ],
   [
