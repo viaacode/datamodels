@@ -896,7 +896,7 @@
         sh:description "The Mediahaven Record to which this fragment belongs."@en;
         sh:description "Le dossier MediaHaven auquel appartient ce fragment."@fr;
         
-        sh:message "the object of mh:Fragment is no mh:Record, is missing or occurs more than once"@en ;
+        sh:message "the object of mh:record is no mh:Record, is missing or occurs more than once"@en ;
         sh:severity sh:Violation ;
     ],
     [
