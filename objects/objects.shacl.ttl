@@ -873,7 +873,7 @@
         sh:name "heeft fragment-ID"@nl ;
         sh:name "a identifiant d'enregistrement"@fr ;
 
-        sh:description "De unieke identifier van een record binnen het Mediahaven asset management system."@nl;
+        sh:description "De unieke identifier van een fragment binnen het Mediahaven asset management system."@nl;
         sh:description "The unique identifier of a record within the Mediahaven asset management system."@en;
         sh:description "L'identifiant unique d'un enregistrement au sein du système de gestion d'actifs Mediahaven."@fr;
         
