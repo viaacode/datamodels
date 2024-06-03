@@ -16,17 +16,26 @@ mh:Record a rdfs:Class ;
     skos:definition "Een record in het Mediahaven asset management systeem."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
 
+mh:Fragment a rdfs:Class ;
+    rdfs:label "Mediahaven fragment"@en ;
+    rdfs:label "Fragment Mediahaven"@fr ;
+    rdfs:label "Mediahavenfragment"@nl ;
+    skos:definition "A fragment in the Mediahaven asset management system."@en ;
+    skos:definition "Un fragment dans le système de gestion d'actifs Mediahaven."@fr ;
+    skos:definition "Een fragment in het Mediahaven asset management systeem."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
+
 # Properties
 
-mh:fragmentIdentifier a rdf:Property ;
-    rdfs:domain mh:Record ;
-    rdfs:range xsd:string ;
-    rdfs:label "fragment identifier"@en ;
-    rdfs:label "identifiant de fragment"@fr ;
-    rdfs:label "fragment-ID"@nl ;
-    skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en ;
-    skos:definition "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr ;
-    skos:definition "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl ;
+mh:record a rdf:Property ;
+    rdfs:domain mh:Fragment ;
+    rdfs:range mh:Record ;
+    rdfs:label "record"@en ;
+    rdfs:label "enregistrement"@fr ;
+    rdfs:label "record"@nl ;
+    skos:definition "The record in the Mediahaven asset management system."@en ;
+    skos:definition "L'enregistrement dans le système de gestion d'actifs Mediahaven."@fr ;
+    skos:definition "Het fragment in het Mediahaven asset management systeem."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> .
 
 mh:tenantName a rdf:Property ;
