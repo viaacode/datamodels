@@ -75,6 +75,14 @@ haObj:hasAccessCopy a rdf:Property;
   rdfs:label  "heeft toegangskopie"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
+haObj:hasIIIFCopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isIIIFCopyOf ;
+  rdfs:label  "has IIIF copy"@en ;
+  rdfs:label  "a copie IIIF"@fr ;
+  rdfs:label  "heeft IIIF-kopie"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
 haObj:hasMasterCopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
   owl:inverseOf haObj:isMasterCopyOf ;
@@ -97,6 +105,14 @@ haObj:isAccessCopyOf a rdf:Property;
   rdfs:label  "is access copy of"@en ;
   rdfs:label  "est copie d'accès de"@fr ;
   rdfs:label  "is toegangskopie van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isIIIFCopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasIIIFCopy ;
+  rdfs:label  "is IIIF copy of"@en ;
+  rdfs:label  "est copie IIIF de"@fr ;
+  rdfs:label  "is IIIF-kopie van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:isMasterCopyOf a rdf:Property;

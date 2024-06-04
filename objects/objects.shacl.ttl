@@ -206,6 +206,23 @@
     sh:severity sh:Violation ;
   ],
   [
+    sh:path haObj:hasIIIFCopy ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:name "has IIIF Copy"@en ;
+    sh:name "heeft IIIF-kopie"@nl ;
+    sh:name "a copie de IIIF"@fr ;
+
+sh:description "De toegangs- of inkijkkopie van de intellectuele entiteit die beschikbaar is via de IIIF Image API."@nl ;
+    sh:description "The access or browse copy of the intellectual entity available via IIIF Image API."@en ;
+    sh:description "L'accès ou la copie de l'entité intellectuelle d'accès qui est disponible via IIIF Image API."@fr ;
+
+sh:message "haObj:hasIIIFCopy is not a haObj:DigitalRepresentation"@en ;
+    sh:message "haObj:hasIIIFCopy is geen haObj:DigitalRepresentation"@nl ;
+    sh:message "haObj:hasIIIFCopy n'est pas un haObj:DigitalRepresentation"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
     sh:path edm:isNextInSequence ;
     sh:class premis:IntellectualEntity ;
 
@@ -386,6 +403,25 @@
     sh:message "haObj:isAccessCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
     sh:message "haObj:isAccessCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
     sh:message "haObj:isAccessCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isIIIFCopyOf ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ; 
+
+    sh:name "is IIIF Copy Of"@en ;
+    sh:name "is IIIF-kopie van"@nl ;
+    sh:name "est copie IIIF de"@fr ;
+
+    sh:description "De intellectuele entiteit waarvan deze digitale representatie de IIIF toegangskopie is."@nl ;
+    sh:description "The intellectual entity of which this digital representation is the IIIF access copy."@en ;
+    sh:description "L'entité intellectuelle dont cette représentation digital est l'accès IIIF."@fr ;
+
+sh:message "haObj:isIIIFCopyOf has more than one value or is not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isIIIFCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
+    sh:message "haObj:isIIIFCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
     sh:severity sh:Violation ;
   ],
   [
