@@ -79,18 +79,18 @@ haDes:Audio a rdfs:Class ;
     rdfs:label "Audio"@nl ;
     rdfs:label "Audio"@en ;
     rdfs:label "Audio"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type audio."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type audio."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type audio."""@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een digitaal geboren audio of dat oorspronkelijk afkomstig is van een analoge drager van het type audio."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de l'audio ou à l'origine d'un support analogue du type audio."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Video a rdfs:Class ;
     rdfs:label "Video"@nl ;
     rdfs:label "Video"@en ;
     rdfs:label "Vidéo"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."""@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een digitaal geboren video of dat oorspronkelijk afkomstig is van een analoge drager van het type video."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de la vidéo née numérique ou à l'origine d'un support analogue du type vidéo."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Image a rdfs:Class ;
