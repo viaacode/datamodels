@@ -108,6 +108,9 @@
 <#VideoNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Video .
 
+<#ImageNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Image .
+
 <#AVPhysicalCarrierNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:PhysicalCarrier ;
     sh:property [
