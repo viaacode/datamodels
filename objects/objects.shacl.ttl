@@ -635,6 +635,7 @@ sh:message "haObj:isIIIFCopyOf has more than one value or is not a premis:Intell
         sh:class premis:StorageLocation ;
 
         sh:minCount 1 ;
+        sh:maxCount 1 ;
 
         sh:name "stored at"@en ;
         sh:name "opgeslagen op"@nl ;
