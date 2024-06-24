@@ -254,13 +254,13 @@
         sh:class schema:Place ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:name "page number"@en ;
-        sh:name "numéro de page"@fr ;
-        sh:name "paginanummer"@nl ;
-        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
-        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
-        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
+        sh:name "location created"@en ;
+        sh:name "emplacement créé"@fr ;
+        sh:name "creatieplaats"@nl ;
+        sh:description "The location where the newspaper was created."@en ;
+        sh:description "L'emplacement où le journal a été créé."@fr ;
+        sh:description "De locatie waar de krant is gemaakt."@nl ;
+        sh:message "the object of schema:locationCreated is not of type schema:Place, or occurs more than once"@en ;
         sh:severity sh:Violation
     ],  
     [
@@ -341,4 +341,17 @@
         sh:description "Uitgever van de krant."@fr;
         sh:severity sh:Violation ;
         sh:message "schema:publisher is not of class schema:Role, or occurs more than once"@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:class schema:Newspaper ;
+        sh:description "Indicates a newspaper series that is part of this newspaper, often a subseries with the same title that ran in a particular timeframe and/or location."@en ;
+        sh:description "Geeft aan dat deze krantenreeks deel uitmaakt van deze krant, vaak een deelreeks met dezelfde titel die in een bepaald tijdsbestek en/of locatie liep."@nl ;
+        sh:description "Indique une série de journaux qui fait partie de ce journal, souvent une sous-série avec le même titre qui était dans un délai et / ou un emplacement particulier."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasPart is not of class schema:Newspaper"@en 
     ].
