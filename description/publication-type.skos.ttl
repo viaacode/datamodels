@@ -1,0 +1,40 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/publication-type/afternoon-edition> a skos:Concept ;
+    skos:definition "Edition of a newspaper that appears in the afternoon."@en,
+        "Uitgave van een krant, die 's middags verschijnt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/publication-type> ;
+    skos:prefLabel "Afternoon edition"@en,
+        "Middageditie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/publication-type> .
+
+<https://data.hetarchief.be/id/publication-type/evening-edition> a skos:Concept ;
+    skos:definition "Edition of a newspaper that appears in the evening."@en,
+        "Uitgave van een krant, die 's avonds verschijnt"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/publication-type> ;
+    skos:prefLabel "Evening edition"@en,
+        "Avondeditie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/publication-type> .
+
+<https://data.hetarchief.be/id/publication-type/morning-edition> a skos:Concept ;
+    skos:definition "Edition of a newspaper that appears in the morning."@en,
+        "Uitgave van een krant, die 's morgens verschijnt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/publication-type> ;
+    skos:prefLabel "Morning edition"@en,
+        "Ochtendeditie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/publication-type> .
+
+<https://data.hetarchief.be/id/publication-type/weekend-edition> a skos:Concept ;
+    skos:definition "Edition of a newspaper that appears during the weekend."@en,
+        "Uitgave van een krant, die in het weekend verschijnt"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/publication-type> ;
+    skos:prefLabel "Weekend edition"@en,
+        "Weekendeditie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/publication-type> .
+
+<https://data.hetarchief.be/id/publication-type> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/publication-type/afternoon-edition>,
+        <https://data.hetarchief.be/id/publication-type/evening-edition>,
+        <https://data.hetarchief.be/id/publication-type/morning-edition>,
+        <https://data.hetarchief.be/id/publication-type/weekend-edition> ;
+    skos:prefLabel "Thesaurus meemoo publicatietypes"@nl .

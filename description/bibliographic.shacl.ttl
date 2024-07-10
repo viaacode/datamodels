@@ -2,6 +2,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/>  .
 @prefix haPrmId: <https://data.hetarchief.be/id/production-method/>  .
+@prefix haPubId: <https://data.hetarchief.be/id/publication-type/>  .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/>.
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -107,6 +108,7 @@
         a sh:PropertyShape ;
         sh:path bf:edition ;
         sh:class skos:Concept ;
+        sh:in (haPubId:morning-edition haPubId:afternoon-edition haPubId:evening-edition haPubId:weekend-edition);
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "publication type"@en ;
