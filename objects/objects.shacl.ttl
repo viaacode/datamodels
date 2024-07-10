@@ -223,6 +223,21 @@ sh:message "haObj:hasIIIFCopy is not a haObj:DigitalRepresentation"@en ;
     sh:severity sh:Violation ;
   ],
   [
+    sh:path haObj:hasTranscriptionCopy ;
+    sh:class haObj:DigitalRepresentation ;
+
+    sh:name "has transcription Copy"@en ;
+    sh:name "heeft transcriptiekopie"@nl ;
+    sh:name "a copie de transcription"@fr ;
+
+    sh:description "Een tekstuele toegangs- of inkijkkopie van de intellectuele entiteit gemaakt door automatische of manuele transcriptie van een andere digitale representatie."@nl ;
+    sh:description "A textual access or browse copy of the intellectual entity made by automatic or manual transcription of another digital representation."@en ;
+    sh:description "Un accès textuel ou parcourir une copie de l'entité intellectuelle faite par transcription automatique ou manuelle d'une autre représentation numérique."@fr ;
+
+  sh:message "haObj:hasTranscriptionCopy is not a haObj:DigitalRepresentation"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
     sh:path edm:isNextInSequence ;
     sh:class premis:IntellectualEntity ;
 
@@ -411,7 +426,7 @@ sh:message "haObj:hasIIIFCopy is not a haObj:DigitalRepresentation"@en ;
 
     sh:maxCount 1 ; 
 
-    sh:name "is IIIF Copy Of"@en ;
+    sh:name "is IIIF copy of"@en ;
     sh:name "is IIIF-kopie van"@nl ;
     sh:name "est copie IIIF de"@fr ;
 
@@ -419,9 +434,26 @@ sh:message "haObj:hasIIIFCopy is not a haObj:DigitalRepresentation"@en ;
     sh:description "The intellectual entity of which this digital representation is the IIIF access copy."@en ;
     sh:description "L'entité intellectuelle dont cette représentation digital est l'accès IIIF."@fr ;
 
-sh:message "haObj:isIIIFCopyOf has more than one value or is not a premis:IntellectualEntity"@en ;
+    sh:message "haObj:isIIIFCopyOf has more than one value or is not a premis:IntellectualEntity"@en ;
     sh:message "haObj:isIIIFCopyOf heeft meer dan één waarde of is geen premis:IntellectualEntity"@nl ;
     sh:message "haObj:isIIIFCopyOf a plus d'une valeur ou n'est pas une premis:IntellectualEntity"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isTranscriptionCopyOf ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ; 
+
+    sh:name "is transcription copy Of"@en ;
+    sh:name "is transcriptiekopie van"@nl ;
+    sh:name "est copie transcription de"@fr ;
+
+    sh:description "De intellectuele entiteit waarvan deze digitale representatie een transcriptie toegangskopie is."@nl ;
+    sh:description "The intellectual entity of which this digital representation is a transcription access copy."@en ;
+    sh:description "L'entité intellectuelle dont cette représentation digital est l'accès transcription."@fr ;
+
+    sh:message "haObj:isTranscriptionCopyOf has more than one value or is not a premis:IntellectualEntity"@en ;
     sh:severity sh:Violation ;
   ],
   [
