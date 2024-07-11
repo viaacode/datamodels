@@ -82,6 +82,14 @@ haObj:hasIIIFCopy a rdf:Property;
   rdfs:label  "a copie IIIF"@fr ;
   rdfs:label  "heeft IIIF-kopie"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+  
+haObj:hasTranscriptionCopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isTranscriptionCopyOf ;
+  rdfs:label  "has transcription copy"@en ;
+  rdfs:label  "a copie de transcription"@fr ;
+  rdfs:label  "heeft transcriptiekopie"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:hasMasterCopy a rdf:Property;
   rdfs:subPropertyOf rel:isr ;
@@ -113,6 +121,14 @@ haObj:isIIIFCopyOf a rdf:Property;
   rdfs:label  "is IIIF copy of"@en ;
   rdfs:label  "est copie IIIF de"@fr ;
   rdfs:label  "is IIIF-kopie van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isTranscriptionCopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasTranscriptionCopy ;
+  rdfs:label  "is transcription copy of"@en ;
+  rdfs:label  "est copie transcription de"@fr ;
+  rdfs:label  "is transcriptiekopie van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:isMasterCopyOf a rdf:Property;
