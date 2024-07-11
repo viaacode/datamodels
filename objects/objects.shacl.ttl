@@ -226,7 +226,7 @@ sh:message "haObj:hasIIIFCopy is not a haObj:DigitalRepresentation"@en ;
     sh:path haObj:hasTranscriptionCopy ;
     sh:class haObj:DigitalRepresentation ;
 
-    sh:name "has transcription Copy"@en ;
+    sh:name "has transcription copy"@en ;
     sh:name "heeft transcriptiekopie"@nl ;
     sh:name "a copie de transcription"@fr ;
 
