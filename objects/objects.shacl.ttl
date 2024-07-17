@@ -849,6 +849,25 @@
 
       sh:message "the object of schema:width is no xsd:nonNegativeInteger or occurs more than once"@en ;
       sh:severity sh:Violation ;
+    ],
+    [
+      sh:path schema:height ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:nonNegativeInteger ;
+
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+
+      sh:name "height"@en ;
+      sh:name "hoogte"@nl;
+      sh:name "hauteur"@fr;
+
+      sh:description "De hoogte van een bestand."@nl;
+      sh:description "The height of a file"@en;
+      sh:description "La hauteur d'un fichier"@fr;
+
+      sh:message "the object of schema:height is no xsd:nonNegativeInteger or occurs more than once"@en ;
+      sh:severity sh:Violation ;
     ] .
 
 <#FixityShape> a sh:NodeShape ;
