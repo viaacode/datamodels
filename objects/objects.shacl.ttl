@@ -830,7 +830,26 @@
 
       sh:message "the object of prov:wasDerivedFrom is no mh:Fragment, is absent or occurs more than once"@en ;
       sh:severity sh:Violation ;
-    ].
+    ],
+    [
+      sh:path schema:width ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:nonNegativeInteger ;
+
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
+
+      sh:name "width"@en ;
+      sh:name "breedte"@nl;
+      sh:name "largeur"@fr;
+
+      sh:description "De breedte van een bestand."@nl;
+      sh:description "The width of a file"@en;
+      sh:description "La largeur d'un fichier."@fr;
+
+      sh:message "the object of schema:width is no xsd:nonNegativeInteger or occurs more than once"@en ;
+      sh:severity sh:Violation ;
+    ] .
 
 <#FixityShape> a sh:NodeShape ;
   sh:targetClass premis:Fixity ;
