@@ -833,8 +833,8 @@
     ],
     [
       sh:path schema:width ;
-      sh:nodeKind sh:Literal ;
-      sh:datatype xsd:nonNegativeInteger ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:class schema:QuantitativeValue ;
 
       sh:minCount 0 ;
       sh:maxCount 1 ;
@@ -852,8 +852,8 @@
     ],
     [
       sh:path schema:height ;
-      sh:nodeKind sh:Literal ;
-      sh:datatype xsd:nonNegativeInteger ;
+      sh:nodeKind sh:BlankNodeOrIRI ;
+      sh:class schema:QuantitativeValue ;
 
       sh:minCount 0 ;
       sh:maxCount 1 ;
