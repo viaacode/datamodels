@@ -308,7 +308,24 @@
     sh:description "Verwijst naar de unieke identificator van de organisatie."@nl ;
 
     sh:message "occurs more than once or its object is no xsd:string"@en ;
-  ] .
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path haOrg:hasPreference ;
+    sh:minCount 0 ;
+    sh:class skos:Concept ;
+
+    sh:name "prefers"@en ;
+    sh:name "préfère"@fr ;
+    sh:name "verkiest"@nl ;
+
+    sh:description "Expresses the wish of an organization regarding whether or not to perform a certain service in collaboration with/by meemoo."@en ;
+    sh:description "Exprime le souhait d'une organisation quant à la réalisation ou non d'un certain service en collaboration avec/par meemoo."@fr ;
+    sh:description "Drukt de wens uit van een organisatie met betrekking tot het al dan niet uitvoeren van een bepaalde service in samenwerking met/door meemoo."@nl ;
+
+    sh:message "the object of `` is no skos:Concept" @en ;
+
+  ].
 
 <#LogoShape> a sh:NodeShape ;
   sh:targetClass haOrg:Logo .
