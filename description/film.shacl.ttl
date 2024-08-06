@@ -179,7 +179,7 @@
         sh:name "bobines audio perdues"@fr ;
         sh:name "verloren audiorollen/-spoelen"@nl ;
         sh:description "Indicates if audio reels were lost (prior to any digitization processes)."@en ;
-        sh:description "Indique si bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Indique si des bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
         sh:message "the object of haDes:hasMissingAudioReels is not of type xsd:boolean, or occurs more than once"@en ;
         sh:severity sh:Violation 
@@ -195,7 +195,7 @@
         sh:name "bobines d'image perdues"@fr ;
         sh:name "verloren beeldrollen/-spoelen"@nl ;
         sh:description "Indicates if image reels were lost (prior to any digitization processes)."@en ;
-        sh:description "Indique si bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Indique si des bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
         sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:boolean, or occurs more than once"@en ;
         sh:severity sh:Violation 
