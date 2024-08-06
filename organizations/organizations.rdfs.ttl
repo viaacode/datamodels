@@ -173,3 +173,14 @@ haOrg:requestForm a rdf:Property ;
     skos:definition "A link to a form with which a user can request content from the content partner."@en;
     skos:definition "Un lien vers un formulaire avec lequel un utilisateur peut demander du contenu au partenaire de contenu."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+haOrg:hasPreference a rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range skos:Concept ;
+    rdfs:label "verkiest"@nl ;
+    rdfs:label "prefers"@en ;
+    rdfs:label "préfère"@fr ;
+    skos:definition "Drukt de wens uit van een organisatie met betrekking tot het al dan niet uitvoeren van een bepaalde service in samenwerking met/door meemoo."@nl ;
+    skos:definition "Expresses the wish of an organization regarding whether or not to perform a certain service in collaboration with/by meemoo."@en ;
+    skos:definition "Exprime le souhait d'une organisation quant à la réalisation ou non d'un certain service en collaboration avec/par meemoo."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
