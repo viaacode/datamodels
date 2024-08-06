@@ -36,7 +36,7 @@
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2023-02-20" ;
+    dct:modified  "2024-08-06" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
@@ -323,7 +323,7 @@
     sh:description "Exprime le souhait d'une organisation quant à la réalisation ou non d'un certain service en collaboration avec/par meemoo."@fr ;
     sh:description "Drukt de wens uit van een organisatie met betrekking tot het al dan niet uitvoeren van een bepaalde service in samenwerking met/door meemoo."@nl ;
 
-    sh:message "the object of `` is no skos:Concept" @en ;
+    sh:message "the object of `haOrg:hasPreference` is no skos:Concept" @en ;
 
   ].
 
