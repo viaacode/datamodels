@@ -64,6 +64,12 @@
         sh:severity sh:Violation ;
     ].
 
+<#SoundFilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:SoundFilm .
+
+<#SilentFilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:SilentFilm .
+
 <#ImageReelNodeShape> a sh:NodeShape ;
   sh:targetClass haDes:ImageReel ;
   sh:property [
@@ -139,9 +145,9 @@
         sh:description "Indicates if and how many audio reels were lost (prior to any digitization processes)."@en ;
         sh:description "Indique si et combien de bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of en hoeveel geluidsrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
-        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
-        sh:message "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
-        sh:message "het object van haDes:numberAudioReelsLost is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+        sh:message "the object of haDes:numberOfMissingAudioReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberOfMissingAudioReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberOfMissingAudioReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation 
     ] ,
     [
@@ -157,9 +163,41 @@
         sh:description "Indicates if and how many image reels were lost (prior to any digitization processes)."@en ;
         sh:description "Indique si et combien de bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of en hoeveel beeldrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
-        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
-        sh:message "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
-        sh:message "het object van haDes:numberAudioReelsLost is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+        sh:message "the object of haDes:numberOfMissingImageReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberOfMissingImageReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberOfMissingImageReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:hasMissingAudioReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "lost audio reels"@en ;
+        sh:name "bobines audio perdues"@fr ;
+        sh:name "verloren audiorollen/-spoelen"@nl ;
+        sh:description "Indicates if audio reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si des bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haDes:hasMissingAudioReels is not of type xsd:boolean, or occurs more than once"@en ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:hasMissingImageReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "lost image reels"@en ;
+        sh:name "bobines d'image perdues"@fr ;
+        sh:name "verloren beeldrollen/-spoelen"@nl ;
+        sh:description "Indicates if image reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si des bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:boolean, or occurs more than once"@en ;
         sh:severity sh:Violation 
     ] ,
     [

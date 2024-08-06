@@ -57,6 +57,26 @@ haDes:Film   a   rdfs:Class ;
     skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."""@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
+haDes:SilentFilm a   rdfs:Class ;
+    rdfs:subClassOf haDes:Film ;
+    rdfs:label "Stomme film"@nl ;
+    rdfs:label "Silent film"@en ;
+    rdfs:label "Film muet"@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor stomme film."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film muet."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:SoundFilm a rdfs:Class ;
+    rdfs:subClassOf haDes:Film ;
+    rdfs:label "Geluidsfilm"@nl ;
+    rdfs:label "Sound film"@en ;
+    rdfs:label "Film sonore"@fr ;
+    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor geluidsfilm."""@nl ;
+    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."""@en ;
+    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film sonore."""@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
 haDes:ImageReel   a   rdfs:Class ;
     rdfs:label "Beeldspoel"@nl ;
     rdfs:label "Image reel"@en ;
@@ -140,26 +160,48 @@ haDes:chapterNumber a rdf:Property ;
     rdfs:range xsd:integer ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
-haDes:numberOfMissingAudioReels a rdf:Property ;
+haDes:hasMissingAudioReels a rdf:Property ;
     rdfs:domain haObj:CarrierRepresentation ;
     rdfs:range rdfs:Literal ;
     rdfs:label "ontbrekende audiospoelen"@nl ;
     rdfs:label "missing audio reels"@en ;
     rdfs:label "bobines audio manquantes"@fr ;
-    skos:definition "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
-    skos:definition "Indicates for a film if (and how many) audio reels are missing, preceding any digitization process."@en;
-    skos:definition "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr;
+    skos:definition "Duidt aan voor een film of er audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film if audio reels are missing, preceding any digitization process."@en;
+    skos:definition "Indique pour un film si des bobines audio sont manquantes, avant toute opération de numérisation."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
-haDes:numberOfMissingImageReels a rdf:Property ;
+haDes:hasMissingImageReels a rdf:Property ;
     rdfs:domain haObj:CarrierRepresentation ;
     rdfs:range rdfs:Literal ;
     rdfs:label "ontbrekende beeldspoelen"@nl ;
     rdfs:label "missing image reels"@en ;
     rdfs:label "bobines d'image manquantes"@fr ;
-    skos:definition "Duidt aan voor een film of (en hoeveel) beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
-    skos:definition "Indicates for a film if (and how many) image reels are missing, preceding any digitization process."@en;
-    skos:definition "Indique pour un film si (et combien) des bobines d'image sont manquantes, avant toute opération de numérisation."@fr;
+    skos:definition "Duidt aan voor een film of er beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film if image reels are missing, preceding any digitization process."@en;
+    skos:definition "Indique pour un film si des bobines d'image sont manquantes, avant toute opération de numérisation."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:numberOfMissingAudioReels a rdf:Property ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "aantal ontbrekende audiospoelen"@nl ;
+    rdfs:label "number of missing audio reels"@en ;
+    rdfs:label "nombre de bobines audio manquantes"@fr ;
+    skos:definition "Duidt aan voor een film hoeveel audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film how many audio reels are missing, preceding any digitization process."@en;
+    skos:definition "Indique pour un film combien des bobines audio sont manquantes, avant toute opération de numérisation."@fr;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:numberOfMissingImageReels a rdf:Property ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "aantal ontbrekende beeldspoelen"@nl ;
+    rdfs:label "number of missing image reels"@en ;
+    rdfs:label "nombre de bobines d'image manquantes"@fr ;
+    skos:definition "Duidt aan voor een film hoeveel beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl;
+    skos:definition "Indicates for a film how many image reels are missing, preceding any digitization process."@en;
+    skos:definition "Indique pour un film combien des bobines d'image sont manquantes, avant toute opération de numérisation."@fr;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:coloringType a rdf:Property ;
