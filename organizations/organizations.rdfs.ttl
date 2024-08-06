@@ -141,28 +141,6 @@ haOrg:hasLogo  a   rdf:Property ;
     skos:definition "Een logo voor een organisatie."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
-haOrg:allowsBZT a rdf:Property ;
-    rdfs:domain haOrg:ContentPartner ;
-    rdfs:range rdfs:Literal ;
-    rdfs:label "laat bezoekertool toe"@nl ;
-    rdfs:label "allows bezoekertool"@en ;
-    rdfs:label "permet le bezoekertool"@fr ;
-    skos:definition "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten op de Bezoekertool van meemoo."@nl;
-    skos:definition "Gives admission to disseminate the content of which this content partner is the owner on the Bezoekertool of meemoo."@en;
-    skos:definition "Donne admission pour diffuser le contenu dont cette contentpartner est propriétaire sur le Bezoekertool de meemoo."@fr;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
-
-haOrg:allowsOverlay a rdf:Property ;
-    rdfs:domain haOrg:ContentPartner ;
-    rdfs:range rdfs:Literal ;
-    rdfs:label "laat overlay toe"@nl ;
-    rdfs:label "allows overlay"@en ;
-    rdfs:label "permet la superposition"@fr ;
-    skos:definition "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te presenteren met een watermerk."@nl;
-    skos:definition "Gives admission to present the content of which this content partner is the owner with an overlay."@en;
-    skos:definition "Donne admission pour présenter le contenu dont cette contentpartner est propriétaire avec une superposition."@fr;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
-
 haOrg:requestForm a rdf:Property ;
     rdfs:domain haOrg:ContentPartner ;
     rdfs:range  rdfs:Literal ;
