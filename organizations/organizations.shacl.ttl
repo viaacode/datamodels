@@ -36,7 +36,7 @@
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2023-02-20" ;
+    dct:modified  "2024-08-06" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
@@ -459,44 +459,6 @@
   ] ,
   [
     a sh:PropertyShape ;
-    sh:path haOrg:allowsBZT ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:boolean ;
-
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-
-    sh:name "laat bezoekertool toe"@nl ;
-    sh:name "allows bezoekertool"@en ;
-    sh:name "permet le bezoekertool"@fr ;
-    
-    sh:description "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten op de Bezoekertool van meemoo."@nl;
-    sh:description "Gives admission to disseminate the content of which this content partner is the owner on the Bezoekertool of meemoo."@en;
-    sh:description "Donne admission pour diffuser le contenu dont cette contentpartner est propriétaire sur le Bezoekertool de meemoo."@fr;
-
-    sh:message "is missing, occurs more than once or its object is no xsd:boolean"@en ;
-  ] ,
-  [
-    a sh:PropertyShape ;
-    sh:path haOrg:allowsOverlay ;
-    sh:nodeKind sh:Literal ;
-    sh:datatype xsd:boolean ;
-
-    sh:minCount 1 ;
-    sh:maxCount 1 ;
-
-    sh:name "laat overlay toe"@nl ;
-    sh:name "allows overlay"@en ;
-    sh:name "permet la superposition"@fr ;
-    
-    sh:description "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te presenteren met een watermerk."@nl;
-    sh:description "Gives admission to present the content of which this content partner is the owner with an overlay."@en;
-    sh:description "Donne admission pour présenter le contenu dont cette contentpartner est propriétaire avec une superposition."@fr;
-
-    sh:message "is missing, occurs more than once or its object is no xsd:boolean"@en ;
-  ],
-  [
-    a sh:PropertyShape ;
     sh:path haOrg:requestForm ;
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
@@ -510,6 +472,23 @@
     sh:description "Een link naar een formulier waarmee een gebruiker content kan aanvragen bij de contentpartner."@nl ;
 
     sh:message "object is no xsd:string"@en ;
+  ] ,
+  [
+    a sh:PropertyShape ;
+    sh:path haOrg:hasPreference ;
+    sh:minCount 0 ;
+    sh:class skos:Concept ;
+
+    sh:name "has preference"@en ;
+    sh:name "préfère"@fr ;
+    sh:name "verkiest"@nl ;
+
+    sh:description "Expresses a preference of an organization with respect to their collaboration with meemoo, such as whether or not to perform or allow a certain service."@en ;
+    sh:description "Exprime une préférence d'une organisation concernant sa collaboration avec meemoo, par exemple s'il faut ou non exécuter ou autoriser un certain service."@fr ;
+    sh:description "Geeft een voorkeur van een organisatie weer met betrekking tot hun samenwerking met meemoo, bijvoorbeeld om een ​​bepaalde service al dan niet uit te voeren of toe te staan."@nl ;
+
+    sh:message "the object of `haOrg:hasPreference` is no skos:Concept" @en ;
+
   ] .
   
 
