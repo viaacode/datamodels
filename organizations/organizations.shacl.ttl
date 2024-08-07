@@ -489,7 +489,7 @@
 
     sh:message "the object of `haOrg:hasPreference` is no skos:Concept" @en ;
 
-  ]
+  ] .
   
 
 <#EducationalPartnerShape>  a sh:NodeShape ;
