@@ -31,6 +31,7 @@ haDes:NewspaperIssuePage   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVD   a   rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Dvd"@nl ;
     rdfs:label "DVD"@en ;
     rdfs:label "DVD"@fr ;
@@ -40,6 +41,7 @@ haDes:DVD   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVDChapter   a   rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Dvd-hoofdstuk"@nl ;
     rdfs:label "DVD chapter"@en ;
     rdfs:label "Chapitre DVD"@fr ;
@@ -49,6 +51,7 @@ haDes:DVDChapter   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Film   a   rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Film"@nl ;
     rdfs:label "Film"@en ;
     rdfs:label "Film"@fr ;
@@ -96,6 +99,7 @@ haDes:AudioReel   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Audio a rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Audio"@nl ;
     rdfs:label "Audio"@en ;
     rdfs:label "Audio"@fr ;
@@ -105,6 +109,7 @@ haDes:Audio a rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Video a rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Video"@nl ;
     rdfs:label "Video"@en ;
     rdfs:label "Vidéo"@fr ;
@@ -114,6 +119,7 @@ haDes:Video a rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Image a rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     rdfs:label "Afbeelding"@nl ;
     rdfs:label "Image"@en ;
     rdfs:label "Image"@fr ;
