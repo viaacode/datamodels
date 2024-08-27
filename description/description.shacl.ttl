@@ -1238,9 +1238,9 @@
       sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
       sh:description "La hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr;
 
-      sh:message "ebucore:width is not of type xsd:integer"@en ;
-      sh:message "ebucore:width is niet van het type xsd:integer"@nl ;
-      sh:message "ebucore:width n'est pas de type xsd:integer"@fr ;
+      sh:message "ebucore:height is not of type xsd:integer"@en ;
+      sh:message "ebucore:height is niet van het type xsd:integer"@nl ;
+      sh:message "ebucore:height n'est pas de type xsd:integer"@fr ;
       sh:severity sh:Violation ;
   ] ,
   [
