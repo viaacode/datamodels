@@ -145,6 +145,17 @@ ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
   skos:definition "Pour identifier un objet d'artefact de l'annotation."@fr ;
   skos:definition "Om een artefactonderwerp van de annotatie te identificeren."@nl .
 
+ebucore:hasAnnotationRelatedAgent a rdf:Property ;
+  rdfs:domain ebucore:Annotation ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Annotation related Agent"@en ;
+  rdfs:label "Agent lié à l'Annotation"@fr ;
+  rdfs:label "Agent verbonden aan de Annotatie"@nl ;
+  skos:definition "To identify an Agent subject of the Annotation."@en ;
+  skos:definition "Pour identifier un Agent de l'annotation."@fr ;
+  skos:definition "Om een Agent van de annotatie te identificeren."@nl .
+
 ebucore:synopsis a rdf:Property ;
   rdfs:label "Synopsis"@en ;
   rdfs:label "synopsis"@fr ;
@@ -163,3 +174,47 @@ ebucore:hasCastMember a rdf:Property ;
   rdfs:comment "A member of the cast."@en, "Een lid van de cast."@nl, "A member of the cast."@fr, "Range: a string or a Cast"@en ;
   rdfs:range xsd:string, ebucore:Cast ;
   rdfs:domain ebucore:Asset .
+
+ebucore:regionDelimX a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Region delimiter ()"@en ;
+  rdfs:label "Regio-afbakening (x-as)"@fr ;
+  rdfs:label "Délimiteur de région (axe des x)"@nl ;
+  skos:definition "To define the top left corner of a zone on the x-axis."@en ;
+  skos:definition "Définir le coin supérieur gauche d'une zone sur l'axe des x."@fr ;
+  skos:definition "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl .
+
+ebucore:regionDelimY a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Region delimiter (y-axis)"@en ;
+  rdfs:label "Regio-afbakening (y-as)"@fr ;
+  rdfs:label "Délimiteur de région (axe des y)"@nl ;
+  skos:definition "To define the top left corner of a zone on the y-axis."@en ;
+  skos:definition "Définir le coin supérieur gauche d'une zone sur l'axe des y."@fr ;
+  skos:definition "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl .
+
+ebucore:width a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Width"@en ;
+  rdfs:label "Width"@fr ;
+  rdfs:label "Width"@nl ;
+  skos:definition "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
+  skos:definition "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+  skos:definition "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr .
+
+ebucore:height a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "Width"@en ;
+  rdfs:label "Breedte"@nl ;
+  rdfs:label "Largeur"@fr ;
+  skos:definition "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
+  skos:definition "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+  skos:definition "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr .
