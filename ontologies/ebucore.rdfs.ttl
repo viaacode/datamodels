@@ -98,9 +98,9 @@ ebucore:hasAnnotationTarget a rdf:Property ;
   skos:definition "Om het doelobject te definiëren waarop de annotatie van toepassing is."@nl ;
   rdfs:domain ebucore:Annotation ;
   rdfs:range xsd:anyURI ;
-  rdfs:label "Annotation target"@en ;
-  rdfs:label "Cible d'annotation"@fr ;
-  rdfs:label "Annotatiedoel"@nl .
+  rdfs:label "annotation target"@en ;
+  rdfs:label "cible d'annotation"@fr ;
+  rdfs:label "annotatiedoel"@nl .
   
 ebucore:isAnnotatedMediaResource a rdf:Property ;
   rdfs:range ebucore:MediaResource ;
@@ -108,9 +108,9 @@ ebucore:isAnnotatedMediaResource a rdf:Property ;
   skos:definition "Pour lier une annotation à un MediaResource."@fr ;
   skos:definition "Om een annotatie te koppelen aan een mediaresource."@nl ;
   rdfs:domain ebucore:Annotation ;
-  rdfs:label "Media resource"@en ;
-  rdfs:label "Media resource"@nl ;
-  rdfs:label "Media resource"@fr .
+  rdfs:label "media resource"@en ;
+  rdfs:label "media resource"@nl ;
+  rdfs:label "media resource"@fr .
 
 ebucore:annotationType a rdf:Property ;
   rdfs:domain ebucore:Annotation ;
@@ -119,9 +119,9 @@ ebucore:annotationType a rdf:Property ;
   "To define a type of Annotation."@en ,
   "Om een type annotatie te definiëren."@nl ,
   "Pour définir un type d'annotation."@fr ;
-  rdfs:label "Annotation type"@en ;
-  rdfs:label "Annotatietype"@nl ;
-  rdfs:label "Type d'annotation"@fr .
+  rdfs:label "annotation type"@en ;
+  rdfs:label "annotatietype"@nl ;
+  rdfs:label "type d'annotation"@fr .
 
 
 ebucore:annotationConfidence a rdf:Property ;
@@ -130,25 +130,36 @@ ebucore:annotationConfidence a rdf:Property ;
   skos:definition "Pour estimer la confiance dans une annotation."@fr ;
   skos:definition "Om het vertrouwen in een annotatie te schatten."@nl ;
   rdfs:range xsd:string ;
-  rdfs:label "Annotation confidence"@en ;
-  rdfs:label "Fiabilité des annotations"@fr ;
-  rdfs:label "Annotatievertrouwen"@nl .
+  rdfs:label "annotation confidence"@en ;
+  rdfs:label "fiabilité des annotations"@fr ;
+  rdfs:label "annotatievertrouwen"@nl .
 
 ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
   rdfs:domain ebucore:Annotation ;
   rdfs:range xsd:string, xsd:anyURI ;
   rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
-  rdfs:label "Annotation related artefact"@en ;
-  rdfs:label "Artefact lié à l'Annotation"@fr ;
-  rdfs:label "Artefact verbonden aan de Annotatie"@nl ;
+  rdfs:label "annotation related artefact"@en ;
+  rdfs:label "artefact lié à l'Annotation"@fr ;
+  rdfs:label "artefact verbonden aan de Annotatie"@nl ;
   skos:definition "To identify an Artefact subject of the Annotation."@en ;
   skos:definition "Pour identifier un objet d'artefact de l'annotation."@fr ;
   skos:definition "Om een artefactonderwerp van de annotatie te identificeren."@nl .
 
+ebucore:hasAnnotationRelatedAgent a rdf:Property ;
+  rdfs:domain ebucore:Annotation ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "annotation related Agent"@en ;
+  rdfs:label "agent lié à l'Annotation"@fr ;
+  rdfs:label "agent verbonden aan de Annotatie"@nl ;
+  skos:definition "To identify an Agent subject of the Annotation."@en ;
+  skos:definition "Pour identifier un Agent de l'annotation."@fr ;
+  skos:definition "Om een Agent van de annotatie te identificeren."@nl .
+
 ebucore:synopsis a rdf:Property ;
-  rdfs:label "Synopsis"@en ;
+  rdfs:label "synopsis"@en ;
   rdfs:label "synopsis"@fr ;
-  rdfs:label "Korte inhoud"@nl ;
+  rdfs:label "korte inhoud"@nl ;
   rdfs:subPropertyOf ebucore:description ;
   rdfs:range xsd:string ;
   rdfs:comment "To provide a summary."@en ;
@@ -157,9 +168,53 @@ ebucore:synopsis a rdf:Property ;
   rdfs:domain ebucore:Asset .
 
 ebucore:hasCastMember a rdf:Property ;
-  rdfs:label "Cast member"@en ;
-  rdfs:label "Cast lid"@nl ;
-  rdfs:label "Membre de la distribution"@fr ;
+  rdfs:label "cast member"@en ;
+  rdfs:label "cast lid"@nl ;
+  rdfs:label "membre de la distribution"@fr ;
   rdfs:comment "A member of the cast."@en, "Een lid van de cast."@nl, "A member of the cast."@fr, "Range: a string or a Cast"@en ;
   rdfs:range xsd:string, ebucore:Cast ;
   rdfs:domain ebucore:Asset .
+
+ebucore:regionDelimX a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "region delimiter (x-axis)"@en ;
+  rdfs:label "regio-afbakening (x-as)"@fr ;
+  rdfs:label "délimiteur de région (axe des x)"@nl ;
+  skos:definition "To define the top left corner of a zone on the x-axis."@en ;
+  skos:definition "Définir le coin supérieur gauche d'une zone sur l'axe des x."@fr ;
+  skos:definition "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl .
+
+ebucore:regionDelimY a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "region delimiter (y-axis)"@en ;
+  rdfs:label "regio-afbakening (y-as)"@fr ;
+  rdfs:label "délimiteur de région (axe des y)"@nl ;
+  skos:definition "To define the top left corner of a zone on the y-axis."@en ;
+  skos:definition "Définir le coin supérieur gauche d'une zone sur l'axe des y."@fr ;
+  skos:definition "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl .
+
+ebucore:width a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "width"@en ;
+  rdfs:label "largeur"@fr ;
+  rdfs:label "breedte"@nl ;
+  skos:definition "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
+  skos:definition "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+  skos:definition "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr .
+
+ebucore:height a rdf:Property ;
+  rdfs:domain ebucore:MediaFragment ;
+  rdfs:range xsd:string, xsd:anyURI ;
+  rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+  rdfs:label "height"@en ;
+  rdfs:label "hoogte"@nl ;
+  rdfs:label "hauteur"@fr ;
+  skos:definition "De Hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
+  skos:definition "The Height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+  skos:definition "La Hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr .

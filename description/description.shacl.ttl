@@ -883,7 +883,19 @@
 
 <#PlaceShape> a sh:NodeShape ; 
     sh:targetClass schema:Place ;
-    sh:property <#NameShape>, <#DescriptionShape> .
+    sh:property <#NameShape>, <#DescriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:containedInPlace ;
+        sh:class schema:Place ;
+        sh:name "is contained in place"@en ;
+        sh:name "is deel van plaats"@nl ;
+        sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:containedInPlace is not of class schema:Place"@en ;
+        sh:message "schema:containedInPlace is niet van de klasse schema:Place"@nl ;
+        sh:message "schema:containedInPlace n'est pas de la classe schema:Place"@fr ;
+    ] .
 
 <#ThingShape> a sh:NodeShape ; 
     sh:targetClass schema:Thing ;
@@ -1108,6 +1120,9 @@
         sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
     ] .
 
+#####################
+#      EBUCORE      #
+#####################
 <#MediaFragmentShape> a sh:NodeShape ;
   sh:targetClass ebucore:MediaFragment ;
   sh:property[
@@ -1143,6 +1158,90 @@
       sh:message "schema:endTime is not of type xsd:time"@en ;
       sh:message "schema:endTime is niet van het type xsd:time"@nl ;
       sh:message "schema:endTime n'est pas de type xsd:time"@fr 
+  ] ,
+  [
+      a sh:PropertyShape ;
+      sh:path ebucore:regionDelimX ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:integer ;
+
+      sh:maxCount 1 ;
+
+      sh:name "Region delimiter (x-axis)"@en ;
+      sh:name "Regio-afbakening (x-as)"@nl ;
+      sh:name "Délimiteur de région (axe des x)"@fr ;
+
+      sh:description "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl;
+      sh:description "To define the top left corner of a zone on the x-axis."@en;
+      sh:description "Définir le coin supérieur gauche d'une zone sur l'axe des x."@fr;
+
+      sh:message "ebucore:regionDelimX is not of type xsd:integer"@en ;
+      sh:message "ebucore:regionDelimX is niet van het type xsd:integer"@nl ;
+      sh:message "ebucore:regionDelimX n'est pas de type xsd:integer"@fr ;
+      sh:severity sh:Violation ;
+  ] ,
+  [
+      a sh:PropertyShape ;
+      sh:path ebucore:regionDelimY ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:integer ;
+
+      sh:maxCount 1 ;
+
+      sh:name "Region delimiter (y-axis)"@en ;
+      sh:name "Regio-afbakening (y-as)"@nl ;
+      sh:name "Délimiteur de région (axe des y)"@fr ;
+
+      sh:description "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl;
+      sh:description "To define the top left corner of a zone on the y-axis."@en;
+      sh:description "Définir le coin supérieur gauche d'une zone sur l'axe des y."@fr;
+
+      sh:message "ebucore:regionDelimY is not of type xsd:integer"@en ;
+      sh:message "ebucore:regionDelimY is niet van het type xsd:integer"@nl ;
+      sh:message "ebucore:regionDelimY n'est pas de type xsd:integer"@fr ;
+      sh:severity sh:Violation ;
+  ] ,
+  [
+      a sh:PropertyShape ;
+      sh:path ebucore:width ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:integer ;
+
+      sh:maxCount 1 ;
+
+      sh:name "Width"@en ;
+      sh:name "Breedte"@nl ;
+      sh:name "Largeur"@fr ;
+
+      sh:description "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
+      sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+      sh:description "La largeur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr;
+
+      sh:message "ebucore:width is not of type xsd:integer"@en ;
+      sh:message "ebucore:width is niet van het type xsd:integer"@nl ;
+      sh:message "ebucore:width n'est pas de type xsd:integer"@fr ;
+      sh:severity sh:Violation ;
+  ] ,
+  [
+      a sh:PropertyShape ;
+      sh:path ebucore:height ;
+      sh:nodeKind sh:Literal ;
+      sh:datatype xsd:integer ;
+
+      sh:maxCount 1 ;
+
+      sh:name "Width"@en ;
+      sh:name "Hoogte"@nl ;
+      sh:name "Hauteur"@fr ;
+
+      sh:description "De hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
+      sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+      sh:description "La hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr;
+
+      sh:message "ebucore:height is not of type xsd:integer"@en ;
+      sh:message "ebucore:height is niet van het type xsd:integer"@nl ;
+      sh:message "ebucore:height n'est pas de type xsd:integer"@fr ;
+      sh:severity sh:Violation ;
   ] ,
   [
     sh:path ebucore:isMediaFragmentOf ;
@@ -1252,7 +1351,28 @@
 
     sh:message "ebucore:hasAnnotationRelatedArtefact is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
     sh:severity sh:Violation ;
-  ].
+  ],
+  [
+    sh:path ebucore:hasAnnotationRelatedAgent;
+    sh:nodeKind sh:IRI;
+
+    sh:maxCount 1;
+
+    sh:name "Annotation  person subject"@en ;
+    sh:name "Annotatie persoon onderwerp"@nl ;
+    sh:name "Sujet d'annotation person"@fr ;
+
+    sh:description "Het onderwerp (persoon) van de annotatie."@nl ;
+    sh:description "The subject (person) of the Annotation."@en;
+    sh:description "Le sujet (person) de l'annotation."@fr ;
+
+    sh:message "ebucore:hasAnnotationRelatedAgent is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
+    sh:severity sh:Violation ;
+  ] .
+
+<#TextAnnotationShape> a sh:NodeShape ;
+    sh:targetClass ebucore:TextAnnotation .
+
 
 #################################
 #         PropertyShapes        #

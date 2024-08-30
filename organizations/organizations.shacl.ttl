@@ -749,6 +749,34 @@
 
     sh:severity sh:Violation ;
     sh:message "occurs more than once or its object is not of type xsd:string"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path schema:deathPlace ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:String ;
+    sh:maxCount 1 ;
+
+    sh:name "death place"@en ;
+    sh:name "sterfplaats"@nl ;
+    sh:name "place de décès"@fr ;
+
+    sh:severity sh:Violation ;
+    sh:message "occurs more than once or its object is not of type xsd:string"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path schema:birthPlace ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:String ;
+    sh:maxCount 1 ;
+
+    sh:name "birth place"@en ;
+    sh:name "geboorteplaats"@nl ;
+    sh:name "Lieu de naissance"@fr ;
+
+    sh:severity sh:Violation ;
+    sh:message "occurs more than once or its object is not of type xsd:string"@en ;
   ].
 
 <#PostalAddressShape>  a sh:NodeShape ;
