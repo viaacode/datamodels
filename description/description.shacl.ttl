@@ -120,6 +120,26 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path haDes:minDateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:minDateCreated is not of type xsd:dateTime, is missing or appears more than once."@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:maxDateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:maxDateCreated is not of type xsd:dateTime, is missing or appears more than once."@en ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:datePublished ;
         sh:nodeKind sh:Literal ;
         sh:or ( 
@@ -135,6 +155,24 @@
         sh:message "schema:datePublished is not of type EDTF-level1"@en ;
         sh:message "schema:datePublished is niet van het type EDTF-level1"@nl ;
         sh:message "schema:datePublished n'est pas de type EDTF-level1"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:maxDatePublished ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:maxDatePublished is not of type xsd:dateTime, is missing or appears more than once."@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:minDatePublished ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:minDatePublished is not of type xsd:dateTime, is missing or appears more than once."@en ;
     ],
     [
         a sh:PropertyShape ;

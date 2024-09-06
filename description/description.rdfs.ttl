@@ -287,3 +287,46 @@ haDes:numberOfAudioChannels a rdf:Property ;
   skos:definition "The number of parallel audio channels that the audio track contains."@en;
   rdfs:range rdfs:Literal ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:minDateCreated a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+    rdfs:label "minimum date created"@en ;
+    rdfs:label "minimale creatiedatum"@nl ;
+    rdfs:label "date de création minimal"@fr ;
+    skos:definition "The earliest exact date on which the CreativeWork could have been created, derived from the known creation date. This date is used for sorting purposes."@en ;
+    skos:definition "De vroegste exacte datum waarop het creatief werk had kunnen worden gemaakt, afgeleid van de bekende creatiedatum. Deze datum wordt gebruikt voor sorteerdoeleinden."@nl ;
+    skos:definition "La date exacte la plus ancienne à laquelle le travail créatif aurait pu être fait, dérivé de la date de création bien connue. Cette date est utilisée à des fins de tri."@fr ;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:maxDateCreated a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+    rdfs:label "maximum date created"@en ;
+    rdfs:label "maximale creatiedatum"@nl ;
+    rdfs:label "date de création maximal"@fr ;
+    skos:definition "The latest exact date on which the CreativeWork could have been created, derived from the known creation date. This date is used for sorting purposes."@en ;
+    skos:definition "De laatste exacte datum waarop het creatief werk had kunnen worden gemaakt, afgeleid van de bekende creatiedatum. Deze datum wordt gebruikt voor sorteerdoeleinden."@nl ;
+    skos:definition "La dernière date exacte à laquelle le travail créatif aurait pu être fait, dérivé de la date de création bien connue. Cette date est utilisée à des fins de tri."@fr ;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:minDatePublished a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+  rdfs:label "minimum date published"@en ;
+  rdfs:label "minimale publicatiedatum"@nl ;
+  rdfs:label "date de publication minimal"@fr ;
+  skos:definition "The earliest exact date on which the CreativeWork could have been first broadcasted of published, derived from the known publication date. This date is used for sorting purposes."@en ;   skos:definition "De vroegste exacte datum waarop het CreativeWork voor het eerst had kunnen worden uitgezonden van gepubliceerd, afgeleid van de bekende publicatiedatum. Deze datum wordt gebruikt voor sorteerdoeleinden."@nl ;
+  skos:definition "La date exacte la plus ancienne à laquelle le Creativework aurait pu être diffusé pour la première fois publié, dérivé de la date de publication connue. Cette date est utilisée à des fins de tri."@fr ;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:maxDatePublished a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+  rdfs:label "maximum date published"@en ;
+  rdfs:label "maximale publicatiedatum"@nl ;
+  rdfs:label "date de publication maximal"@fr ;
+  skos:definition "The latest exact date on which the CreativeWork could have been first broadcasted of published, derived from the known publication date. This date is used for sorting purposes."@en ;
+  skos:definition "De laatste exacte datum waarop het CreativeWork voor het eerst had kunnen worden uitgezonden van gepubliceerd, afgeleid van de bekende publicatiedatum. Deze datum wordt gebruikt voor sorteerdoeleinden."@nl ;
+  skos:definition "La dernière date exacte à laquelle le Creativework aurait pu être diffusé pour la première fois publié, dérivé de la date de publication connue. Cette date est utilisée à des fins de tri."@fr ;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
