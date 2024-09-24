@@ -1,19 +1,21 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization/Logo> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 
 <https://data.hetarchief.be/id/logo-type/favicon> a skos:Concept ;
     rdfs:subClassOf haOrg:Logo ;
     skos:definition "Een klein pictogram van 24x24 pixels dat een website of webpagina vertegenwoordigt (in browsertabbladen, bladwijzers en soms in de adresbalk van een browser), waardoor gebruikers de site snel kunnen herkennen."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/logo-type> ;
+    skos:note "PNG of SVG"@nl ;
     skos:prefLabel "favicon"@en,
         "favicon"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/logo-type> .
 
 <https://data.hetarchief.be/id/logo-type/original> a skos:Concept ;
     rdfs:subClassOf haOrg:Logo ;
-    skos:definition "Het originele logo zoals ontvangen van de organisatie waartoe het logo behoort, bij voorkeur PNG of SVG."@nl ;
+    skos:definition "Het originele logo zoals ontvangen van de organisatie waartoe het logo behoort."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/logo-type> ;
+    skos:note "PNG of SVG"@nl ;
     skos:prefLabel "original logo"@en,
         "origineel logo"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/logo-type> .
@@ -22,14 +24,16 @@
     rdfs:subClassOf haOrg:Logo ;
     skos:definition "Een logo van maximaal 80 pixels, geschikt als overlay op een video-item."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/logo-type> ;
+    skos:note "PNG of SVG"@nl ;
     skos:prefLabel "overlay"@en,
         "overlay"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/logo-type> .
 
 <https://data.hetarchief.be/id/logo-type/webversion> a skos:Concept ;
     rdfs:subClassOf haOrg:Logo ;
-    skos:definition "Een logo van maximaal 300 pixels, geschikt voor webpublicatie, bij voorkeur PNG of SVG."@nl ;
+    skos:definition "Een logo van maximaal 300 pixels, geschikt voor webpublicatie."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/logo-type> ;
+    skos:note "PNG of SVG"@nl ;
     skos:prefLabel "webversion logo"@en,
         "webversie logo"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/logo-type> .
@@ -40,4 +44,3 @@
         <https://data.hetarchief.be/id/logo-type/overlay>,
         <https://data.hetarchief.be/id/logo-type/webversion> ;
     skos:prefLabel "Logo type"@nl .
-
