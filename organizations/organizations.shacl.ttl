@@ -68,7 +68,8 @@
     sh:description "Le nom / étiquette préféré de l'organisation."@fr ;
       
     sh:message "is missing or its object is no language string"@en ;
-  ],[ 
+  ],
+  [ 
     a sh:PropertyShape ;
     sh:path skos:altLabel ;
     sh:uniqueLang true ;
