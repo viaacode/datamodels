@@ -1012,6 +1012,7 @@
             ]
         ) ;
         sh:minCount 1 ;
+        sh:maxCount 1 ;
         sh:name "role name"@en ;
         sh:name "rolenaam"@nl ;
         sh:name "nom de rôle"@fr ;
