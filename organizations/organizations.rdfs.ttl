@@ -72,7 +72,7 @@ haOrg:ServiceProvider  a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
 haOrg:DigitizationPartner  a   rdfs:Class ;
-    rdfs:subClassOf org:ServiceProvider ;
+    rdfs:subClassOf haOrg:ServiceProvider ;
     rdfs:label "Digitization partner"@en ;
     rdfs:label "Partenaire de digitalisation"@fr ;
     rdfs:label "Digitaliseringspartner"@nl ;
