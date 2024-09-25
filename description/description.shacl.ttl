@@ -491,14 +491,17 @@
         a sh:PropertyShape ;
         sh:path ebucore:hasCastMember ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:or ( 
+            [ sh:datatype xsd:string ]
+            [ sh:datatype ebucore:Cast ]
+        );
         sh:maxCount 1;
         sh:name "castmembers"@en ;
         sh:name "les acteurs"@fr ;
         sh:name "castleden"@nl ;
         sh:description "The cast members of a TV or theatre production."@en ;
-        sh:description "De castleden van een tv- of theaterproductie."@en ;
-        sh:description "Les acteurs d'une production télévisée ou théâtrale."@en ;
+        sh:description "De castleden van een tv- of theaterproductie."@nl ;
+        sh:description "Les acteurs d'une production télévisée ou théâtrale."@fr ;
         sh:severity sh:Violation ;
         sh:message "ebucore:hasCastMember is not of type string"@en 
     ],
