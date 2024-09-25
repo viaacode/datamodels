@@ -946,6 +946,7 @@
            [sh:class org:Organization ]
            [sh:class schema:Thing ]
         ) ;
+        sh:maxCount 1 ;
         sh:name "creator"@en ;
         sh:name "maker"@nl ;
         sh:name "créateur"@fr ;
@@ -962,6 +963,7 @@
            [sh:class org:Organization ]
            [sh:class schema:Thing ]
         ) ;
+        sh:maxCount 1 ;
         sh:name "contributor"@en ;
         sh:name "bijdrager"@nl ;
         sh:name "contributeur"@fr ;
@@ -978,6 +980,7 @@
            [sh:class org:Organization ]
            [sh:class schema:Thing ]
         ) ;
+        sh:maxCount 1 ;
         sh:name "publisher"@en ;
         sh:name "uitgever"@nl ;
         sh:name "éditeur"@fr ;
@@ -990,6 +993,7 @@
         a sh:PropertyShape ;
         sh:path schema:actor ;
         sh:class schema:Person ;
+        sh:maxCount 1 ;
         sh:name "actor"@en ;
         sh:name "acteur"@nl ;
         sh:name "acteur"@fr ;
