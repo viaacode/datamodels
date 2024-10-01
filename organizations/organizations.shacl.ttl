@@ -754,7 +754,7 @@
     a sh:PropertyShape ;
     sh:path schema:deathPlace ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:String ;
+    sh:datatype xsd:string ;
     sh:maxCount 1 ;
 
     sh:name "death place"@en ;
@@ -768,7 +768,7 @@
     a sh:PropertyShape ;
     sh:path schema:birthPlace ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:String ;
+    sh:datatype xsd:string ;
     sh:maxCount 1 ;
 
     sh:name "birth place"@en ;
