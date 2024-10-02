@@ -171,7 +171,7 @@ ebucore:hasCastMember a rdf:Property ;
   rdfs:label "cast member"@en ;
   rdfs:label "cast lid"@nl ;
   rdfs:label "membre de la distribution"@fr ;
-  rdfs:comment "A member of the cast."@en, "Een lid van de cast."@nl, "A member of the cast."@fr, "Range: a string or a Cast"@en ;
+  rdfs:comment "A member of the cast."@en, "Een lid van de cast."@nl, "A member of the cast."@fr ;
   rdfs:range xsd:string, ebucore:Cast ;
   rdfs:domain ebucore:Asset .
 
