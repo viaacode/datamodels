@@ -59,6 +59,7 @@
 <#ObjectShape> a sh:NodeShape ;
   sh:targetClass premis:Object ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path premis:relationship ;
     sh:class premis:Object ;
 
@@ -111,6 +112,7 @@
       sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path rel:hsp ;
     sh:class premis:IntellectualEntity ;
 
@@ -126,6 +128,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path rel:isp ;
     sh:class premis:IntellectualEntity ;
 
@@ -141,6 +144,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path rel:isr ;
     sh:class premis:Representation ;
 
@@ -158,6 +162,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:hasMasterCopy ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -173,6 +178,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:hasMezzanineCopy ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -190,6 +196,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:hasAccessCopy ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -207,6 +214,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:hasIIIFCopy ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -224,6 +232,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:hasTranscriptionCopy ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -239,6 +248,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path edm:isNextInSequence ;
     sh:class premis:IntellectualEntity ;
 
@@ -258,6 +268,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path prov:wasDerivedFrom ;
     sh:class mh:Fragment ;
 
@@ -279,6 +290,7 @@
 <#PhysicalCarrierShape> a sh:NodeShape ;
   sh:targetClass haObj:PhysicalCarrier ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path premis:medium ;
     sh:class premis:StorageMedium ;
 
@@ -302,6 +314,7 @@
 <#RepresentationShape> a sh:NodeShape ;
   sh:targetClass premis:Representation ;
   sh:property    [
+    a sh:PropertyShape ;
     sh:path rel:rep ;
     sh:class premis:IntellectualEntity ;
 
@@ -322,6 +335,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path prov:wasDerivedFrom ;
     sh:class mh:Fragment ;
 
@@ -343,6 +357,7 @@
 <#CarrierRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:CarrierRepresentation ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path premis:storedAt ;
     sh:class haObj:PhysicalCarrier ;
 
@@ -366,6 +381,7 @@
 <#DigitalRepresentationShape> a sh:NodeShape ;
   sh:targetClass haObj:DigitalRepresentation ;
   sh:property  [
+    a sh:PropertyShape ;
     sh:path haObj:isMasterCopyOf ;
     sh:class premis:IntellectualEntity ;
 
@@ -385,6 +401,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:isMezzanineCopyOf ;
     sh:class premis:IntellectualEntity ;
 
@@ -404,6 +421,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:isAccessCopyOf ;
     sh:class premis:IntellectualEntity ;
 
@@ -423,6 +441,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:isIIIFCopyOf ;
     sh:class premis:IntellectualEntity ;
 
@@ -442,6 +461,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path haObj:isTranscriptionCopyOf ;
     sh:class premis:IntellectualEntity ;
 
@@ -459,6 +479,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path rel:inc ;
     sh:class premis:File ;
 
@@ -478,6 +499,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path rel:hsr ;
     sh:class premis:File ;
 
@@ -497,6 +519,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path rel:hss ;
     sh:class premis:Representation ;
     # sh:or (
@@ -518,6 +541,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path edm:isNextInSequence ;
     sh:class haObj:DigitalRepresentation ;
 
@@ -590,6 +614,7 @@
         sh:message "schema:duration n'est pas de type xsd:dateTime"@fr 
     ] ,
     [
+      a sh:PropertyShape ;
       sh:path ebucore:isMediaFragmentOf ;
       sh:class premis:File ;
 
@@ -613,6 +638,7 @@
 <#FileShape> a sh:NodeShape ;
   sh:targetClass premis:File ;
     sh:property [
+      a sh:PropertyShape ;
       sh:path rel:isi;
       sh:class haObj:DigitalRepresentation ;
 
@@ -630,6 +656,7 @@
       sh:severity sh:Violation ;
     ],
     [
+      a sh:PropertyShape ;
       sh:path rel:sup ;
       sh:class premis:File ;
 
@@ -647,120 +674,127 @@
       sh:severity sh:Violation ;
     ],
     [
-        sh:path premis:fixity;
-        sh:class premis:Fixity ;
+      a sh:PropertyShape ;
+      sh:path premis:fixity;
+      sh:class premis:Fixity ;
 
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
 
-        sh:name "fixity"@en ;
-        sh:name "fixity"@nl ;
-        sh:name "fixity"@fr ;
-        
-        sh:description "De berekende fixity checksum van het bestand."@nl ;
-        sh:description "The calculated fixity checksum of the file."@en ;
-        sh:description "La somme de contrôle de fixité calculée du fichier."@fr ;
+      sh:name "fixity"@en ;
+      sh:name "fixity"@nl ;
+      sh:name "fixity"@fr ;
+      
+      sh:description "De berekende fixity checksum van het bestand."@nl ;
+      sh:description "The calculated fixity checksum of the file."@en ;
+      sh:description "La somme de contrôle de fixité calculée du fichier."@fr ;
 
-        sh:message "premis:fixity is missing or not a premis:Fixity"@en ;
-        sh:severity sh:Violation ;
+      sh:message "premis:fixity is missing or not a premis:Fixity"@en ;
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path premis:storedAt;
-        sh:class premis:StorageLocation ;
+      a sh:PropertyShape ;
+      sh:path premis:storedAt;
+      sh:class premis:StorageLocation ;
 
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
 
-        sh:name "stored at"@en ;
-        sh:name "opgeslagen op"@nl ;
-        sh:name "stocké à"@fr ;
+      sh:name "stored at"@en ;
+      sh:name "opgeslagen op"@nl ;
+      sh:name "stocké à"@fr ;
 
-        sh:description "De (fysieke) locatie waar het bestand is opgeslagen."@nl ;
-        sh:description "The location where the file is stored."@en ;
-        sh:description "L'emplacement où le fichier est stocké."@fr ;
+      sh:description "De (fysieke) locatie waar het bestand is opgeslagen."@nl ;
+      sh:description "The location where the file is stored."@en ;
+      sh:description "L'emplacement où le fichier est stocké."@fr ;
 
-        sh:message "premis:storedAt is missing or not a premis:StorageLocation"@en ;
-        sh:message "premis:storedAt ontbreekt of is geen premis:StorageLocation"@nl ;
-        sh:message "premis:storedAt manque ou n'est pas une premis:StorageLocation"@fr ;
-        sh:severity sh:Violation ;
+      sh:message "premis:storedAt is missing or not a premis:StorageLocation"@en ;
+      sh:message "premis:storedAt ontbreekt of is geen premis:StorageLocation"@nl ;
+      sh:message "premis:storedAt manque ou n'est pas une premis:StorageLocation"@fr ;
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path dct:format;
-        sh:class dct:FileFormat ;
+      a sh:PropertyShape ;
+      sh:path dct:format;
+      sh:class dct:FileFormat ;
 
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
+      sh:minCount 0 ;
+      sh:maxCount 1 ;
 
-        sh:name "format"@en ;
-        sh:name "formaat"@nl ;
-        sh:name "format"@fr ;
+      sh:name "format"@en ;
+      sh:name "formaat"@nl ;
+      sh:name "format"@fr ;
 
-        sh:description "Het bestandsformaat van het bestand."@nl ;
-        sh:description "The file format of the file."@en ;
-        sh:description "Le format de fichier du fichier."@fr ;
-    
-        sh:message "dct:format is missing or not a dct:FileFormat"@en ;
-        sh:message "dct:format ontbreekt of is geen dct:FileFormat"@nl ;
-        sh:message "dct:format manque ou n'est pas une dct:FileFormat"@fr ;
-        sh:severity sh:Violation ;
+      sh:description "Het bestandsformaat van het bestand."@nl ;
+      sh:description "The file format of the file."@en ;
+      sh:description "Le format de fichier du fichier."@fr ;
+  
+      sh:message "dct:format is missing or not a dct:FileFormat"@en ;
+      sh:message "dct:format ontbreekt of is geen dct:FileFormat"@nl ;
+      sh:message "dct:format manque ou n'est pas une dct:FileFormat"@fr ;
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path ebucore:hasMimeType;
-        sh:datatype xsd:string;
+      a sh:PropertyShape ;
+      sh:path ebucore:hasMimeType;
+      sh:datatype xsd:string;
 
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:maxCount 1 ;
 
-        sh:name "mime type"@en ;
-        sh:name "mime type"@nl ;
-        sh:name "mime type"@fr ;
+      sh:name "mime type"@en ;
+      sh:name "mime type"@nl ;
+      sh:name "mime type"@fr ;
 
-        sh:description "Het MIME type of IANA media type van het bestand."@nl ;
-        sh:description "The MIME type or IANA media type of the file."@en;
-        sh:description "Le type MIME ou le type de média IANA du fichier."@fr;
+      sh:description "Het MIME type of IANA media type van het bestand."@nl ;
+      sh:description "The MIME type or IANA media type of the file."@en;
+      sh:description "Le type MIME ou le type de média IANA du fichier."@fr;
 
-        sh:message "ebucore:hasMimeType is missing, has more than one value or not of type string"@en ;
-        sh:message "ebucore:hasMimeType ontbreekt, heeft meer dan één waarde of is niet van het type string"@nl ;
-        sh:message "ebucore:hasMimeType manque, a plus d'une valeur ou n'est pas de type string"@fr ;
-        sh:severity sh:Violation ;
+      sh:message "ebucore:hasMimeType is missing, has more than one value or not of type string"@en ;
+      sh:message "ebucore:hasMimeType ontbreekt, heeft meer dan één waarde of is niet van het type string"@nl ;
+      sh:message "ebucore:hasMimeType manque, a plus d'une valeur ou n'est pas de type string"@fr ;
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path edm:isNextInSequence ;
-        sh:class premis:File ;
+      a sh:PropertyShape ;
+      sh:path edm:isNextInSequence ;
+      sh:class premis:File ;
 
-        sh:maxCount 1 ;
+      sh:maxCount 1 ;
 
-        sh:name "next file in sequence"@en ;
-        sh:name "volgende bestand in volgorde"@nl;
-        sh:name "fichier suivant dans l'ordre"@fr;
+      sh:name "next file in sequence"@en ;
+      sh:name "volgende bestand in volgorde"@nl;
+      sh:name "fichier suivant dans l'ordre"@fr;
 
-        sh:description "Het bestand dat op dit bestand volgt."@nl;
-        sh:description "The file that follows on this file."@en;
-        sh:description "Le fichier qui suit sur ce fichier."@fr;
+      sh:description "Het bestand dat op dit bestand volgt."@nl;
+      sh:description "The file that follows on this file."@en;
+      sh:description "Le fichier qui suit sur ce fichier."@fr;
 
-        sh:message "edm:isNextInSequence has more than one value or is not a premis:File"@en ;
-        sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen premis:File"@nl ;
-        sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un premis:File"@fr ;
-        sh:severity sh:Violation ;
+      sh:message "edm:isNextInSequence has more than one value or is not a premis:File"@en ;
+      sh:message "edm:isNextInSequence heeft meer dan één waarde of is geen premis:File"@nl ;
+      sh:message "edm:isNextInSequence a plus d'une valeur ou n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path rel:doc ;
-        sh:class premis:File ;
+      a sh:PropertyShape ;
+      sh:path rel:doc ;
+      sh:class premis:File ;
 
-        sh:name "documents"@en ;
-        sh:name "documenteert"@nl;
-        sh:name "document"@fr;
+      sh:name "documents"@en ;
+      sh:name "documenteert"@nl;
+      sh:name "document"@fr;
 
-        sh:description "Het bestand dat dit bestand beschrijft of documenteert."@nl;
-        sh:description "The file that describes or documents this file."@en;
-        sh:description "Le fichier qui décrit ou documente ce fichier."@fr;
+      sh:description "Het bestand dat dit bestand beschrijft of documenteert."@nl;
+      sh:description "The file that describes or documents this file."@en;
+      sh:description "Le fichier qui décrit ou documente ce fichier."@fr;
 
-        sh:message "rel:doc is not a premis:File"@en ;
-        sh:message "rel:doc is geen premis:File"@nl ;
-        sh:message "rel:doc n'est pas un premis:File"@fr ;
-        sh:severity sh:Violation ;
+      sh:message "rel:doc is not a premis:File"@en ;
+      sh:message "rel:doc is geen premis:File"@nl ;
+      sh:message "rel:doc n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
     ],
     [
+      a sh:PropertyShape ;
       sh:path ebucore:hasMediaFragment ;
       sh:class haObj:FragmentRepresentation ;
       
@@ -814,6 +848,7 @@
       sh:severity sh:Violation ;
     ],
     [
+      a sh:PropertyShape ;
       sh:path prov:wasDerivedFrom ;
       sh:class mh:Fragment ;
 
@@ -832,6 +867,7 @@
       sh:severity sh:Violation ;
     ],
     [
+      a sh:PropertyShape ;
       sh:path schema:width ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:class schema:QuantitativeValue ;
@@ -851,6 +887,7 @@
       sh:severity sh:Violation ;
     ],
     [
+      a sh:PropertyShape ;
       sh:path schema:height ;
       sh:nodeKind sh:BlankNodeOrIRI ;
       sh:class schema:QuantitativeValue ;
@@ -873,74 +910,78 @@
 <#FixityShape> a sh:NodeShape ;
   sh:targetClass premis:Fixity ;
     sh:property [
-        sh:path rdf:value;
-        sh:datatype xsd:string;
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-        sh:name "fixity checksum"@nl;
-        sh:name "fixity checksum"@en;
-        sh:name "vérification de la fixation"@fr;
+      a sh:PropertyShape ;
+      sh:path rdf:value;
+      sh:datatype xsd:string;
+      sh:maxCount 1 ;
+      sh:minCount 1 ;
+      sh:name "fixity checksum"@nl;
+      sh:name "fixity checksum"@en;
+      sh:name "vérification de la fixation"@fr;
 
-        sh:description "De waarde van de checksum."@nl ;
-        sh:description "The value of the checksum."@en ; 
-        sh:description "La valeur de la somme de contrôle."@fr ; 
+      sh:description "De waarde van de checksum."@nl ;
+      sh:description "The value of the checksum."@en ; 
+      sh:description "La valeur de la somme de contrôle."@fr ; 
 
-        sh:message "rdf:value is missing, occurs more than once, or is not of type string"@en ;      
-    
-        sh:severity sh:Violation ;
+      sh:message "rdf:value is missing, occurs more than once, or is not of type string"@en ;      
+  
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path dct:creator;
-        sh:datatype xsd:string;
+      a sh:PropertyShape ;
+      sh:path dct:creator;
+      sh:datatype xsd:string;
 
-        sh:name "checksum maker"@nl;
-        sh:name "checksum creator"@en;
-        sh:name "créateur de somme de contrôle"@fr;
+      sh:name "checksum maker"@nl;
+      sh:name "checksum creator"@en;
+      sh:name "créateur de somme de contrôle"@fr;
 
-        sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
-        sh:description "The entity that generated the checksum."@en ;
-        sh:description "L'entité qui a généré la somme de contrôle."@fr ;
-    
-        sh:severity sh:Violation ;
+      sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
+      sh:description "The entity that generated the checksum."@en ;
+      sh:description "L'entité qui a généré la somme de contrôle."@fr ;
+  
+      sh:severity sh:Violation ;
     ].
 
 <#StorageLocationShape> a sh:NodeShape ;
   sh:targetClass premis:StorageLocation ;
     sh:property [
-        sh:path rdf:value;
-        sh:or ( 
-            [   
-                sh:nodeKind sh:Literal ;
-                sh:datatype xsd:string ; 
-            ]
-            [sh:nodeKind sh:IRI ]
-        ) ;
+      a sh:PropertyShape ;
+      sh:path rdf:value;
+      sh:or ( 
+          [   
+              sh:nodeKind sh:Literal ;
+              sh:datatype xsd:string ; 
+          ]
+          [sh:nodeKind sh:IRI ]
+      ) ;
 
-        sh:maxCount 1 ;
+      sh:maxCount 1 ;
 
-        sh:name "opslagpad"@nl ;
-        sh:name "file path"@en ;
-        sh:name "chemin du fichier"@fr ;
+      sh:name "opslagpad"@nl ;
+      sh:name "file path"@en ;
+      sh:name "chemin du fichier"@fr ;
 
-        sh:description "Het pad van de opslaglocatie."@nl ;
-        sh:description "The file path of the storage location."@en ;
-        sh:description "Le chemin du fichier de l'emplacement de stockage."@fr ;
+      sh:description "Het pad van de opslaglocatie."@nl ;
+      sh:description "The file path of the storage location."@en ;
+      sh:description "Le chemin du fichier de l'emplacement de stockage."@fr ;
 
-        sh:severity sh:Violation ;
+      sh:severity sh:Violation ;
     ],
     [
-        sh:path premis:medium;
-        sh:class premis:StorageMedium ;
+      a sh:PropertyShape ;
+      sh:path premis:medium;
+      sh:class premis:StorageMedium ;
 
-        sh:name "opslagmedium"@nl;
-        sh:name "storage medium"@en;
-        sh:name "milieu de stockage"@fr;
+      sh:name "opslagmedium"@nl;
+      sh:name "storage medium"@en;
+      sh:name "milieu de stockage"@fr;
 
-        sh:description "Het type opslagmedium."@nl ;
-        sh:description "The type of storage medium."@en ;
-        sh:description "Le type de milieu de stockage."@fr ;
+      sh:description "Het type opslagmedium."@nl ;
+      sh:description "The type of storage medium."@en ;
+      sh:description "Le type de milieu de stockage."@fr ;
 
-        sh:severity sh:Violation ;
+      sh:severity sh:Violation ;
     ].
   
 <#LocalIdentifierNodeShape> a sh:NodeShape ; 
