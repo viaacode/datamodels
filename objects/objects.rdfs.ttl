@@ -22,7 +22,7 @@ haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:FragmentRepresentation a rdfs:Class ;
-    rdfs:subClassOf premis:DigitalRepresentation ;
+    rdfs:subClassOf haObj:DigitalRepresentation ;
     owl:equivalentClass ebucore:MediaFragment ;
     rdfs:label "Fragment representation"@en ;
     rdfs:label "Représentation fragment"@fr ;
