@@ -115,6 +115,14 @@ haObj:hasCarrierCopy a rdf:Property;
   rdfs:label  "heeft kopie van drager"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
+haObj:hasFragmentCopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isFragmentCopyOf ;
+  rdfs:label  "has fragment copy"@en ;
+  rdfs:label  "a copie de fragment"@fr ;
+  rdfs:label  "heeft kopie van fragment"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
 haObj:isAccessCopyOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
   owl:inverseOf haObj:hasAccessCopy ;
@@ -161,6 +169,14 @@ haObj:isCarrierCopyOf a rdf:Property;
   rdfs:label  "is carrier copy of"@en ;
   rdfs:label  "est copie de porteur de"@fr ;
   rdfs:label  "is drager kopie van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isFragmentCopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasFragmenetCopy ;
+  rdfs:label  "is fragement copy of"@en ;
+  rdfs:label  "est copie de fragment"@fr ;
+  rdfs:label  "is kopie van fragment"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:preservationProblem a rdf:Property;

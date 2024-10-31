@@ -249,6 +249,16 @@
     sh:severity sh:Violation ;
   ],
   [
+    sh:path haObj:hasFragmentCopy;
+    sh:class haObj:FragmentRepresentation ;
+
+    sh:name "has fragment copy"@en ;
+    sh:description "a representation of a fragment."@en ;
+
+    sh:message "haObj:hasFragmentCopy is not a haObj:FragementRepresentation"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
     sh:path edm:isNextInSequence ;
     sh:class premis:IntellectualEntity ;
 
@@ -629,6 +639,18 @@
       sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
       sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
       sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
+    ],
+    [
+      sh:path haObj:isFragmentCopyOf;
+      sh:class premis:IntellectualEntity ;
+
+      sh:maxCount 1 ;
+
+      sh:name "is fragment copy of"@en ;
+      sh:description "The intellectual entity of which this fragment is a representation."@en ;
+
+      sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
       sh:severity sh:Violation ;
     ].
 
