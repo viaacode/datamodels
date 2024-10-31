@@ -239,6 +239,16 @@
     sh:severity sh:Violation ;
   ],
   [
+    sh:path haObj:hasCarrierCopy;
+    sh:class haObj:CarrierRepresentation ;
+
+    sh:name "has carrier copy"@en ;
+    sh:description "a representation of a physical carrier."@en ;
+
+    sh:message "haObj:hasCarrierCopy is not a haObj:CarrierRepresentation"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
     sh:path edm:isNextInSequence ;
     sh:class premis:IntellectualEntity ;
 
@@ -360,6 +370,18 @@
     sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
     sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
     sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isCarrierCopyOf ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ;
+
+    sh:name "is carrier copy of"@en ;
+    sh:description "The intellectual entity of which this digital carrier is the copy."@en ;
+
+    sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
     sh:severity sh:Violation ;
   ].
 

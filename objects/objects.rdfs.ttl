@@ -107,6 +107,14 @@ haObj:hasMezzanineCopy a rdf:Property;
   rdfs:label  "heeft mezzanineformaat"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
+haObj:hasCarrierCopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isCarrierCopyOf ;
+  rdfs:label  "has copy of carrier"@en ;
+  rdfs:label  "a copie d'un porteur"@fr ;
+  rdfs:label  "heeft kopie van drager"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
 haObj:isAccessCopyOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
   owl:inverseOf haObj:hasAccessCopy ;
@@ -145,6 +153,14 @@ haObj:isMezzanineCopyOf a rdf:Property;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isCarrierCopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasCarrierCopy ;
+  rdfs:label  "is carrier copy of"@en ;
+  rdfs:label  "est copie de porteur de"@fr ;
+  rdfs:label  "is drager kopie van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:preservationProblem a rdf:Property;
