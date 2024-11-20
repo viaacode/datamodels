@@ -243,17 +243,25 @@
     sh:class haObj:CarrierRepresentation ;
 
     sh:name "has carrier copy"@en ;
-    sh:description "a representation of a physical carrier."@en ;
+    sh:name "heeft dragerkopie"@nl ;
+    sh:name  "est copie sur porteur"@fr ;
+    sh:description "a representation stored on a physical carrier."@en ;
+    sh:description "een representatie opgeslagen op een fysieke drager."@nl ;
+    sh:description "une représentation stockée sur un porteur physique."@fr ;
 
     sh:message "haObj:hasCarrierCopy is not a haObj:CarrierRepresentation"@en ;
     sh:severity sh:Violation ;
   ],
   [
-    sh:path haObj:hasFragmentCopy;
+    sh:path haObj:hasFragmentRepresentation;
     sh:class haObj:FragmentRepresentation ;
 
-    sh:name "has fragment copy"@en ;
+    sh:name "has fragment"@en ;
+    sh:name "heeft fragment"@nl ;
+    sh:name "a fragment"@fr ;
     sh:description "a representation of a fragment."@en ;
+    sh:description "een representatie van een fragment."@nl ;
+    sh:description "une représentation d'un fragment."@fr ;
 
     sh:message "haObj:hasFragmentCopy is not a haObj:FragementRepresentation"@en ;
     sh:severity sh:Violation ;
@@ -389,7 +397,11 @@
     sh:maxCount 1 ;
 
     sh:name "is carrier copy of"@en ;
-    sh:description "The intellectual entity of which this digital carrier is the copy."@en ;
+    sh:name "is dragerkopie van"@nl ;
+    sh:name "est un copie sur porteur de"@fr ;
+    sh:description "The intellectual entity that is represented by this carrier copy."@en ;
+    sh:description "De intellectuele entiteit waarvan deze dragerkopie een representatie is."@nl ;
+    sh:description "L'entité intellectuelle représentée par cette copie sur un porteur."@fr ;
 
     sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
     sh:severity sh:Violation ;
@@ -642,13 +654,17 @@
       sh:severity sh:Violation ;
     ],
     [
-      sh:path haObj:isFragmentCopyOf;
+      sh:path haObj:isFragmentRepresentationOf;
       sh:class premis:IntellectualEntity ;
 
       sh:maxCount 1 ;
 
-      sh:name "is fragment copy of"@en ;
+      sh:name "is fragment of"@en ;
+      sh:name "is een fragment van"@nl ;
+      sh:name "est un fragment de"@fr ;
       sh:description "The intellectual entity of which this fragment is a representation."@en ;
+      sh:description "De intellectuele entiteit waarvan dit fragment een representatie is."@nl ;
+      sh:description "L'entité intellectuelle dont ce fragment est une représentation."@fr ;
 
       sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
       sh:severity sh:Violation ;
