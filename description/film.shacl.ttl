@@ -54,9 +54,9 @@
         sh:name "has carrier copy"@en ;
         sh:name "heeft dragerkopie"@nl ;
         sh:name  "est porteur du copie"@fr ;
-        sh:description "a representation stored on a physical carrier."@en ;
-        sh:description "een representatie opgeslagen op een fysieke drager."@nl ;
-        sh:description "une représentation stockée sur un porteur physique."@fr ;
+        sh:description "The representation stored on a physical carrier."@en ;
+        sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+        sh:description "La représentation stockée sur un porteur physique."@fr ;
 
         sh:message "haObj:hasCarrierCopy is missing, has more than one value or is not a haObj:CarrierRepresentation"@en ;
         sh:severity sh:Violation ;

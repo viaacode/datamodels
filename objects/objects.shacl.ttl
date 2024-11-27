@@ -247,9 +247,9 @@
     sh:name "has carrier copy"@en ;
     sh:name "heeft dragerkopie"@nl ;
     sh:name  "est copie sur porteur"@fr ;
-    sh:description "a representation stored on a physical carrier."@en ;
-    sh:description "een representatie opgeslagen op een fysieke drager."@nl ;
-    sh:description "une représentation stockée sur un porteur physique."@fr ;
+    sh:description "The representation stored on a physical carrier."@en ;
+    sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+    sh:description "La représentation stockée sur un porteur physique."@fr ;
 
     sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haObj:CarrierRepresentation"@en ;
     sh:severity sh:Violation ;
@@ -261,9 +261,9 @@
     sh:name "has fragment"@en ;
     sh:name "heeft fragment"@nl ;
     sh:name "a fragment"@fr ;
-    sh:description "a representation of a fragment."@en ;
-    sh:description "een representatie van een fragment."@nl ;
-    sh:description "une représentation d'un fragment."@fr ;
+    sh:description "A representation which incorporates a file fragment."@en ;
+    sh:description "Een representatie dat een bestandsfragment bevat."@nl ;
+    sh:description "Une représentation qui inclut une partie d'un fichier."@fr ;
 
     sh:message "haObj:hasFragmentCopy is not a haObj:FragementRepresentation"@en ;
     sh:severity sh:Violation ;
