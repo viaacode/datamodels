@@ -239,6 +239,36 @@
     sh:severity sh:Violation ;
   ],
   [
+    sh:path haObj:hasCarrierCopy;
+    sh:class haObj:CarrierRepresentation ;
+
+    sh:maxCount 1 ;
+
+    sh:name "has carrier copy"@en ;
+    sh:name "heeft dragerkopie"@nl ;
+    sh:name  "est copie sur porteur"@fr ;
+    sh:description "The representation stored on a physical carrier."@en ;
+    sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+    sh:description "La représentation stockée sur un porteur physique."@fr ;
+
+    sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haObj:CarrierRepresentation"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:hasFragmentRepresentation;
+    sh:class haObj:FragmentRepresentation ;
+
+    sh:name "has fragment"@en ;
+    sh:name "heeft fragment"@nl ;
+    sh:name "a fragment"@fr ;
+    sh:description "A representation which incorporates a file fragment."@en ;
+    sh:description "Een representatie dat een bestandsfragment bevat."@nl ;
+    sh:description "Une représentation qui inclut une partie d'un fichier."@fr ;
+
+    sh:message "haObj:hasFragmentCopy is not a haObj:FragementRepresentation"@en ;
+    sh:severity sh:Violation ;
+  ],
+  [
     sh:path edm:isNextInSequence ;
     sh:class premis:IntellectualEntity ;
 
@@ -360,6 +390,22 @@
     sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
     sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
     sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+    sh:severity sh:Violation ;
+  ],
+  [
+    sh:path haObj:isCarrierCopyOf ;
+    sh:class premis:IntellectualEntity ;
+
+    sh:maxCount 1 ;
+
+    sh:name "is carrier copy of"@en ;
+    sh:name "is dragerkopie van"@nl ;
+    sh:name "est un copie sur porteur de"@fr ;
+    sh:description "The intellectual entity that is represented by this carrier copy."@en ;
+    sh:description "De intellectuele entiteit waarvan deze dragerkopie een representatie is."@nl ;
+    sh:description "L'entité intellectuelle représentée par cette copie sur un porteur."@fr ;
+
+    sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
     sh:severity sh:Violation ;
   ].
 
@@ -607,6 +653,22 @@
       sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en ;
       sh:message "ebucore:isMediaFragmentOf is geen premis:File"@nl ; 
       sh:message "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr ;
+      sh:severity sh:Violation ;
+    ],
+    [
+      sh:path haObj:isFragmentRepresentationOf;
+      sh:class premis:IntellectualEntity ;
+
+      sh:maxCount 1 ;
+
+      sh:name "is fragment of"@en ;
+      sh:name "is een fragment van"@nl ;
+      sh:name "est un fragment de"@fr ;
+      sh:description "The intellectual entity of which this fragment is a representation."@en ;
+      sh:description "De intellectuele entiteit waarvan dit fragment een representatie is."@nl ;
+      sh:description "L'entité intellectuelle dont ce fragment est une représentation."@fr ;
+
+      sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
       sh:severity sh:Violation ;
     ].
 

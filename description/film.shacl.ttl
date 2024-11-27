@@ -45,22 +45,20 @@
 <#FilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Film ;
     sh:property [
-        sh:path rel:isr ;
+        sh:path haObj:hasCarrierCopy ;
         sh:class haObj:CarrierRepresentation ;
 
         sh:minCount 1 ;
+        sh:maxCount 1 ;
 
-        sh:name "is Represented By"@en ;
-        sh:name "wordt gerepresenteerd door"@nl ;
-        sh:name "est représenté par"@fr ;
+        sh:name "has carrier copy"@en ;
+        sh:name "heeft dragerkopie"@nl ;
+        sh:name  "est porteur du copie"@fr ;
+        sh:description "The representation stored on a physical carrier."@en ;
+        sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+        sh:description "La représentation stockée sur un porteur physique."@fr ;
 
-        sh:description "Een representatie van de intellectuele entiteit."@nl ;
-        sh:description "A representation of the intellectual entity."@en ;
-        sh:description "Une représentation de l'entité intellectuelle."@fr ;
-
-        sh:message "rel:isr is missing or not a premis:Representation"@en ;
-        sh:message "rel:isr ontbreekt of is geen premis:Representation"@nl ;
-        sh:message "rel:isr manque ou n'est pas une premis:Representation"@fr ;
+        sh:message "haObj:hasCarrierCopy is missing, has more than one value or is not a haObj:CarrierRepresentation"@en ;
         sh:severity sh:Violation ;
     ].
 
