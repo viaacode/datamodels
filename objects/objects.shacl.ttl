@@ -242,6 +242,8 @@
     sh:path haObj:hasCarrierCopy;
     sh:class haObj:CarrierRepresentation ;
 
+    sh:maxCount 1 ;
+
     sh:name "has carrier copy"@en ;
     sh:name "heeft dragerkopie"@nl ;
     sh:name  "est copie sur porteur"@fr ;
@@ -249,7 +251,7 @@
     sh:description "een representatie opgeslagen op een fysieke drager."@nl ;
     sh:description "une représentation stockée sur un porteur physique."@fr ;
 
-    sh:message "haObj:hasCarrierCopy is not a haObj:CarrierRepresentation"@en ;
+    sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haObj:CarrierRepresentation"@en ;
     sh:severity sh:Violation ;
   ],
   [
