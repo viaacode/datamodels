@@ -1,0 +1,251 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/genre/animation> a skos:Concept ;
+    skos:definition "A film or video with drawn or other inanimate figures, where animation has been applied."@en,
+        "Een film of video met getekende of andere levenloze figuren, waarbij animatie toegepast is."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Animation"@en,
+        "Animatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/artwork> a skos:Concept ;
+    skos:definition "A product of the creative and original expression or representation of thoughts or feelings, for example a painting, a piece of music or a sculpture; product of art"@en,
+        "Een voortbrengsel van het creatief en origineel tot uiting of voorstelling brengen van gedachten of gevoelens, bijvoorbeeld een schilderij, een muziekstuk of een beeldhouwwerk; voortbrengsel van de kunst"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Artwork"@en,
+        "Kunstwerk"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/comedy> a skos:Concept ;
+    skos:definition "Dramatic work that deals with ordinary people in everyday situations in an amusing way."@en,
+        "Dramatisch werk waarin op amusante wijze over gewone mensen in alledaagse situaties gehandeld wordt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Comedy"@en,
+        "Komedie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/concert> a skos:Concept ;
+    skos:definition "A performance where music is played for an audience."@en,
+        "Een voorstelling waar muziek gespeeld wordt voor publiek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Concert"@en,
+        "Concert"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/current-affairs> a skos:Concept ;
+    skos:definition "An account of the events of the day or of the moment; the news that is happening at that moment."@en,
+        "Een verslag van de gebeurtenissen van de dag of van het ogenblik; het nieuws dat op dat moment aan de orde is."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Current affairs"@en,
+        "Actualiteit"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/dance> a skos:Concept ;
+    skos:definition "A performance for an audience where rhythmic movement is set to music."@en,
+        "Een voorstelling voor publiek waar ritmisch bewogen wordt op muziek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Dance"@en,
+        "Dans"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/docudrama> a skos:Concept ;
+    skos:definition "A combination of documentary and drama; a kind of report of a historical or current event, in which historical events are reenacted based on factual data."@en,
+        "Een combinatie van documentaire en drama; een soort verslag van een historische of actuele gebeurtenis, waarbij uitgaande van feitelijke gegevens historische gebeurtenissen worden nagespeeld."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Docudrama"@en,
+        "Docudrama"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/documentary> a skos:Concept ;
+    skos:definition "A non-fictional film or program on television or radio about things that really happened. They contain scenes or recordings from reality that try to give an image of a certain situation."@en,
+        "Een non-fictieve film of programma op televisie of radio over dingen die echt gebeurd zijn. Ze bevatten scènes of opnames uit de werkelijkheid die een beeld proberen te geven van een bepaalde situatie."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Documentary"@en,
+        "Documentaire"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/documentation> a skos:Concept ;
+
+    skos:definition "Material that surrounds and describes a particular subject."@en,
+        "Materiaal dat een bepaald onderwerp om- en beschrijft."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Documentation"@en,
+        "Documentatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/drama> a skos:Concept ;
+    skos:definition "A play or with a bad ending."@en,
+        "Een toneelstuk of met een slechte afloop."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Drama"@en,
+        "Drama"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/educational> a skos:Concept ;
+    skos:definition "Material that is intended for learning or has educational value."@en,
+        "Materiaal dat bedoeld is om van te leren of opvoedkundige waarde heeft."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Educational"@en,
+        "Educatief"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/entertainment> a skos:Concept ;
+    skos:definition "Material with an entertainment function and the main purpose of which is to entertain, amuse or amuse the audience."@en,
+        "Materiaal met een amusementsfunctie en heeft als hoofddoel het vertier, vermaak of amusement van het publiek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Entertainment"@en,
+        "Entertainment"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/feature-film> a skos:Concept ;
+    skos:definition "A film in which actors play."@en,
+        "Een film waarin acteurs spelen."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Feature film"@en,
+        "Speelfilm"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/fiction> a skos:Concept ;
+    skos:definition "A story or text that is not based on reality. It is written from the writer's imagination."@en,
+        "Een verhaal of tekst, dat niet op de werkelijkheid is gebaseerd. Het wordt geschreven vanuit de fantasie van de schrijver."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Fiction"@en,
+        "Fictie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/game-show> a skos:Concept ;
+    skos:definition "A television program in which people participate in a game alone or as a team."@en,
+        "Een televisieprogramma waarin mensen alleen of in teamverband deelnemen aan een spel."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Game show"@en,
+        "Quiz- of spelprogramma"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/interview> a skos:Concept ;
+    skos:definition "An organized conversation in which someone asks questions and another answers."@en,
+        "Een georganiseerd gesprek waarbij iemand vragen stelt en een ander antwoordt."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Interview"@en,
+        "Interview"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/magazine> a skos:Concept ;
+    skos:definition "A periodic publication that consists of a collection of articles per issue."@en,
+        "Een periodieke publicatie die per aflevering bestaat uit een bundeling van artikelen."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Magazine"@en,
+        "Magazine"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/music-recording> a skos:Concept ;
+    skos:definition "A sound recording consisting of music."@en,
+        "Een geluidsopname die bestaat uit muziek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Music recording"@en,
+        "Muziekopname"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/news> a skos:Concept ;
+    skos:definition "Messages about important things that happened recently."@en,
+        "Berichten over belangrijke dingen die kortgeleden gebeurd zijn."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "News"@en,
+        "Nieuws"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/non-fiction> a skos:Concept ;
+    skos:definition "A story or text that is based on reality. The writer describes facts."@en,
+        "Een verhaal of tekst, dat op de werkelijkheid is gebaseerd. De schrijver beschrijft feiten."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Non-fiction"@en,
+        "Non-fictie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/opera> a skos:Concept ;
+    skos:definition "The opera is a play with orchestral accompaniment in which the singing is mainly in poetry form."@en,
+        "De opera is een toneelstuk met orkestbegeleiding waarin voornamelijk gezongen wordt in poëzievorm."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Opera"@en,
+        "Opera"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/performance> a skos:Concept ;
+    skos:definition "A theatrical performance by a performing artist or visual artist"@en,
+        "Een theatrale voorstelling van een podiumkunstenaar of beeldend kunstenaar"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Performance"@en,
+        "Performance"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/science> a skos:Concept ;
+    skos:definition "A television or radio program with science as the main subject."@en,
+        "Een televisie- of radioprogramma met wetenschap als hoofdonderwerp."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Science"@en,
+        "Wetenschap"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/short-film> a skos:Concept ;
+    skos:definition "A film with a relatively short running time for films."@en,
+        "Een film met een voor films relatief korte speelduur."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Short film"@en,
+        "Kortfilm"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/sport> a skos:Concept ;
+    skos:definition "A television or radio program that reports on sports matches, gives results of sports matches or discusses a match."@en,
+        "Een televisie- of radioprogramma waar verslag wordt gedaan van sportwedstrijden, uitslagen van sportwedstrijden worden gegeven of een wedstrijd wordt besproken."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Sport"@en,
+        "Sport"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/talk-show> a skos:Concept ;
+    skos:definition "A television or radio program in which the main part consists of speaking."@en,
+        "Een televisie- of radioprogramma waarbij het hoofdaandeel uit spreken bestaat."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Talk show"@en,
+        "Praatprogramma"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre/theater> a skos:Concept ;
+    skos:definition "Theater is a collective name for art forms in which actors perform living performances"@en,
+        "Theater is een verzamelnaam voor kunstvormen waarbij acteurs levende voorstellingen"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/genre> ;
+    skos:prefLabel "Theater"@en,
+        "Theater"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/genre> .
+
+<https://data.hetarchief.be/id/genre> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/genre/animation>,
+        <https://data.hetarchief.be/id/genre/artwork>,
+        <https://data.hetarchief.be/id/genre/comedy>,
+        <https://data.hetarchief.be/id/genre/concert>,
+        <https://data.hetarchief.be/id/genre/current-affairs>,
+        <https://data.hetarchief.be/id/genre/dance>,
+        <https://data.hetarchief.be/id/genre/docudrama>,
+        <https://data.hetarchief.be/id/genre/documentary>,
+        <https://data.hetarchief.be/id/genre/documentation>,
+        <https://data.hetarchief.be/id/genre/drama>,
+        <https://data.hetarchief.be/id/genre/educational>,
+        <https://data.hetarchief.be/id/genre/entertainment>,
+        <https://data.hetarchief.be/id/genre/feature-film>,
+        <https://data.hetarchief.be/id/genre/fiction>,
+        <https://data.hetarchief.be/id/genre/game-show>,
+        <https://data.hetarchief.be/id/genre/interview>,
+        <https://data.hetarchief.be/id/genre/magazine>,
+        <https://data.hetarchief.be/id/genre/music-recording>,
+        <https://data.hetarchief.be/id/genre/news>,
+        <https://data.hetarchief.be/id/genre/non-fiction>,
+        <https://data.hetarchief.be/id/genre/opera>,
+        <https://data.hetarchief.be/id/genre/performance>,
+        <https://data.hetarchief.be/id/genre/science>,
+        <https://data.hetarchief.be/id/genre/short-film>,
+        <https://data.hetarchief.be/id/genre/sport>,
+        <https://data.hetarchief.be/id/genre/talk-show>,
+        <https://data.hetarchief.be/id/genre/theater> ;
+    skos:prefLabel "Thesaurus genres"@nl .
+

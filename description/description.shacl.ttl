@@ -189,9 +189,35 @@
     [
         a sh:PropertyShape ;
         sh:path schema:genre ;
-        sh:nodeKind sh:Literal ;
-        sh:datatype rdf:langString ;
-        sh:uniqueLang true ;
+        sh:nodeKind sh:IRI ;
+        sh:class skos:Concept;
+        sh:in (<https://data.hetarchief.be/id/genre/animation>
+        <https://data.hetarchief.be/id/genre/artwork>
+        <https://data.hetarchief.be/id/genre/comedy>
+        <https://data.hetarchief.be/id/genre/concert>
+        <https://data.hetarchief.be/id/genre/current-affairs>
+        <https://data.hetarchief.be/id/genre/dance>
+        <https://data.hetarchief.be/id/genre/docudrama>
+        <https://data.hetarchief.be/id/genre/documentary>
+        <https://data.hetarchief.be/id/genre/documentation>
+        <https://data.hetarchief.be/id/genre/drama>
+        <https://data.hetarchief.be/id/genre/educational>
+        <https://data.hetarchief.be/id/genre/entertainment>
+        <https://data.hetarchief.be/id/genre/feature-film>
+        <https://data.hetarchief.be/id/genre/fiction>
+        <https://data.hetarchief.be/id/genre/game-show>
+        <https://data.hetarchief.be/id/genre/interview>
+        <https://data.hetarchief.be/id/genre/magazine>
+        <https://data.hetarchief.be/id/genre/music-recording>
+        <https://data.hetarchief.be/id/genre/news>
+        <https://data.hetarchief.be/id/genre/non-fiction>
+        <https://data.hetarchief.be/id/genre/opera>
+        <https://data.hetarchief.be/id/genre/performance>
+        <https://data.hetarchief.be/id/genre/science>
+        <https://data.hetarchief.be/id/genre/short-film>
+        <https://data.hetarchief.be/id/genre/sport>
+        <https://data.hetarchief.be/id/genre/talk-show>
+        <https://data.hetarchief.be/id/genre/theater>);
         sh:name "genre"@en ;
         sh:name "genre"@nl ;
         sh:name "genre"@fr ;
