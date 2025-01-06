@@ -691,6 +691,22 @@
   ],
   [
     a sh:PropertyShape ;
+    sh:path schema:telephone ;
+    sh:datatype xsd:string ;
+
+    sh:name "telephone"@en ;
+    sh:name "telefoon"@nl ;
+    sh:name "téléphone"@fr ;
+    
+    sh:description "Telephone of this person."@en ;
+    sh:description "Telefoon van deze persoon."@nl ;
+    sh:description "Téléphone de cette personne."@fr ;
+
+    sh:severity sh:Info ;
+    sh:message "its object is no xsd:string"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
     sh:path haOrg:isAccountManagerOf ;
     sh:class org:Organization ;
 
