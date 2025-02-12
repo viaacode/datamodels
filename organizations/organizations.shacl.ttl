@@ -40,7 +40,7 @@
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 #####################################
 #               SHAPES              #

@@ -50,7 +50,7 @@
     owl:imports <http://www.loc.gov/premis/rdf/v3/> ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> ;
     owl:imports <http://www.w3.org/ns/prov#>;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 #####################################
 #               SHAPES              #

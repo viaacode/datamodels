@@ -42,7 +42,7 @@
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
     dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 ##############################
 #         NodeShapes         #

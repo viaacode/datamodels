@@ -40,7 +40,7 @@
     dct:description """Datamodel voor de gedetailleerde beschrijving van Filmobjecten en hun componenten."""@nl ;
     dct:created   "2022-01-07" ;
     dct:modified  "2024-01-17" ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 <#FilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Film ;

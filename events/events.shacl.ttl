@@ -48,7 +48,7 @@
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole> ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventType> ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 
 <#ActivityShape> a sh:NodeShape ;
