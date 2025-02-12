@@ -1239,12 +1239,12 @@
 
       sh:maxCount 1 ;
 
-      sh:name "Width"@en ;
+      sh:name "Height"@en ;
       sh:name "Hoogte"@nl ;
       sh:name "Hauteur"@fr ;
 
       sh:description "De hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
-      sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+      sh:description "The height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
       sh:description "La hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr;
 
       sh:message "ebucore:height is not of type xsd:integer"@en ;
