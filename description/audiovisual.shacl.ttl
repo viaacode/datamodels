@@ -18,15 +18,15 @@
 
 <>  a owl:Ontology ;
     dct:author  [
-        schema:name   "Miel Vander Sande" ;
+        schema:name   "Miel Vander Sande"@nl ;
         schema:email  "miel.vandersande@meemoo.be"
     ] ,
     [
-        schema:name   "Lennert Van de Velde" ;
+        schema:name   "Lennert Van de Velde"@nl ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ,
     [
-        schema:name   "Milan Valadou" ;
+        schema:name   "Milan Valadou"@nl ;
         schema:email  "milan.valadou@meemoo.be"
     ] ;
     dct:title     "Data model Audiovisual archive objects"@en ;

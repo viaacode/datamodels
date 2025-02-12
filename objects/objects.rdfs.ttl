@@ -22,7 +22,7 @@ haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:FragmentRepresentation a rdfs:Class ;
-    rdfs:subClassOf premis:DigitalRepresentation ;
+    rdfs:subClassOf haObj:DigitalRepresentation ;
     owl:equivalentClass ebucore:MediaFragment ;
     rdfs:label "Fragment representation"@en ;
     rdfs:label "Représentation fragment"@fr ;
@@ -107,6 +107,22 @@ haObj:hasMezzanineCopy a rdf:Property;
   rdfs:label  "heeft mezzanineformaat"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
+haObj:hasCarrierCopy a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isCarrierCopyOf ;
+  rdfs:label  "has carrier copy"@en ;
+  rdfs:label  "a copie sur porteur"@fr ;
+  rdfs:label  "heeft dragerkopie"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:hasFragmentRepresentation a rdf:Property;
+  rdfs:subPropertyOf rel:isr ;
+  owl:inverseOf haObj:isFragmentRepresentationOf ;
+  rdfs:label  "has fragment "@en ;
+  rdfs:label  "a un fragment"@fr ;
+  rdfs:label  "heeft fragment"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
 haObj:isAccessCopyOf a rdf:Property;
   rdfs:subPropertyOf rel:rep ;
   owl:inverseOf haObj:hasAccessCopy ;
@@ -145,6 +161,22 @@ haObj:isMezzanineCopyOf a rdf:Property;
   rdfs:label  "is mezzanine format of"@en ;
   rdfs:label  "est format mezzanine de"@fr ;
   rdfs:label  "is mezzanineformaat van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isCarrierCopyOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasCarrierCopy ;
+  rdfs:label  "is carrier copy of"@en ;
+  rdfs:label  "est copie sur porteur de"@fr ;
+  rdfs:label  "is dragerkopie van"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:isFragmentRepresentationOf a rdf:Property;
+  rdfs:subPropertyOf rel:rep ;
+  owl:inverseOf haObj:hasFragmentRepresentation ;
+  rdfs:label  "is fragement of"@en ;
+  rdfs:label  "est fragment de"@fr ;
+  rdfs:label  "is fragment van"@nl ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 haObj:preservationProblem a rdf:Property;

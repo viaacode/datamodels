@@ -21,15 +21,15 @@
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" ;
     schema:author  [
         a schema:Person ;
-        schema:name   "Miel Vander Sande" ;
+        schema:name   "Miel Vander Sande"@nl ;
         schema:email  "miel.vandersande@meemoo.be"
     ] , [
         a schema:Person ;
-        schema:name   "Milan Valadou" ;
+        schema:name   "Milan Valadou"@nl ;
         schema:email  "milan.valadou@meemoo.be"
     ] , [
         a schema:Person ;
-        schema:name   "Lennert Van de Velde" ;
+        schema:name   "Lennert Van de Velde"@nl ;
         schema:email  "lennert.vandevelde@meemoo.be"
     ] ;
     dct:title     "Data model Organizations"@en ;
@@ -691,6 +691,22 @@
   ],
   [
     a sh:PropertyShape ;
+    sh:path schema:telephone ;
+    sh:datatype xsd:string ;
+
+    sh:name "telephone"@en ;
+    sh:name "telefoon"@nl ;
+    sh:name "téléphone"@fr ;
+    
+    sh:description "Telephone of this person."@en ;
+    sh:description "Telefoon van deze persoon."@nl ;
+    sh:description "Téléphone de cette personne."@fr ;
+
+    sh:severity sh:Info ;
+    sh:message "its object is no xsd:string"@en ;
+  ],
+  [
+    a sh:PropertyShape ;
     sh:path haOrg:isAccountManagerOf ;
     sh:class org:Organization ;
 
@@ -737,8 +753,9 @@
     a sh:PropertyShape ;
     sh:path schema:name ;
     sh:nodeKind sh:Literal ;
-    sh:datatype xsd:string ;
-    sh:maxCount 1 ;
+    sh:datatype rdf:langString ;
+    sh:minCount 1 ;
+    sh:uniqueLang true;
 
     sh:name "name"@en ;
     sh:name "naam"@nl ;
@@ -749,7 +766,7 @@
     sh:description "De voor- en achternaam van deze persoon (gecombineerd in één string)."@nl ;
 
     sh:severity sh:Violation ;
-    sh:message "occurs more than once or its object is not of type xsd:string"@en ;
+    sh:message "schema:name is missing or is not of type string"@en ;
   ],
   [
     a sh:PropertyShape ;
