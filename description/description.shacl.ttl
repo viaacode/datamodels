@@ -525,6 +525,7 @@
     sh:targetClass haObj:PhysicalCarrier ;
     sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
     [
+        a sh:PropertyShape ;
         sh:path schema:brand ;
         sh:class schema:Brand ;
 
@@ -559,6 +560,7 @@
         sh:message "the object of schema:materialExtent is not of type xsd:string, or occurs more than once"@en ;
     ],
     [
+        a sh:PropertyShape ;
         sh:path haObj:preservationProblem ;
         sh:class skos:Concept ;
 
@@ -653,6 +655,7 @@
         sh:message "schema:identifier occurs more than once or is not of type string "@en ;
     ],
     [
+        a sh:PropertyShape ;
         sh:path ebucore:hasCaptioning;
         sh:and (
             [ sh:class premis:File ]
@@ -671,6 +674,7 @@
         sh:severity sh:Violation ;
     ],
     [
+        a sh:PropertyShape ;
         sh:path ebucore:hasMediaFragment ;
         sh:class ebucore:MediaFragment ;
         
@@ -1249,6 +1253,7 @@
       sh:severity sh:Violation ;
   ] ,
   [
+    a sh:PropertyShape ;
     sh:path ebucore:isMediaFragmentOf ;
     sh:class premis:File ;
 
@@ -1269,6 +1274,7 @@
 <#AnnotationShape> a sh:NodeShape ;
   sh:targetClass ebucore:Annotation ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path ebucore:isAnnotatedMediaResource;
     sh:class ebucore:MediaFragment ;
 
@@ -1286,6 +1292,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path ebucore:annotationConfidence;
     sh:datatype xsd:integer;
 
@@ -1304,6 +1311,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path ebucore:annotationType;
     sh:class skos:Concept;
 
@@ -1322,6 +1330,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path ebucore:hasAnnotationTarget;
     sh:class premis:File;
 
@@ -1340,6 +1349,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path ebucore:hasAnnotationRelatedArtefact;
     sh:nodeKind sh:IRI;
 
@@ -1358,6 +1368,7 @@
     sh:severity sh:Violation ;
   ],
   [
+    a sh:PropertyShape ;
     sh:path ebucore:hasAnnotationRelatedAgent;
     sh:nodeKind sh:IRI;
 

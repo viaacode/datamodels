@@ -45,6 +45,7 @@
 <#FilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Film ;
     sh:property [
+        a sh:PropertyShape ;
         sh:path haObj:hasCarrierCopy ;
         sh:class haObj:CarrierRepresentation ;
 

@@ -48,6 +48,7 @@
   sh:targetClass skos:Collection ;
   sh:property <#NoteShape>, <#ChangeNoteShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:member ;
     sh:or (
       [ sh:class skos:Concept ]
@@ -59,6 +60,7 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:definition ;
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
@@ -75,6 +77,7 @@
   sh:targetClass skos:OrderedCollection ;
   sh:property <#NoteShape>, <#ChangeNoteShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:memberList ;
     sh:name "member list"@en ;
     sh:name "liste de membres"@fr ;
@@ -83,6 +86,7 @@
     sh:node <#ListShape>
   ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:definition ;
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
@@ -97,6 +101,7 @@
  a sh:NodeShape ;
  sh:targetClass rdf:List ;
  sh:property [
+    a sh:PropertyShape ;
     sh:path ( [ sh:zeroOrMorePath rdf:rest ] rdf:first ) ;
     sh:or (
       [ sh:class skos:Concept ]
@@ -109,6 +114,7 @@
   sh:targetClass skos:Concept ;
   sh:property <#NoteShape>, <#ChangeNoteShape>, <#DefinitionShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:broader ;
     sh:class skos:Concept ;
     sh:name "broader"@en ;
@@ -117,6 +123,7 @@
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:broadMatch ;
     sh:class skos:Concept ;
     sh:name "broad match"@en ;
@@ -125,6 +132,7 @@
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:broaderTransitive ;
     sh:class skos:Concept ;
     sh:name "broader transitive"@en ;
@@ -133,6 +141,7 @@
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:narrower ;
     sh:class skos:Concept ;
     sh:name "narrower"@en ;
@@ -142,6 +151,7 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:narrowMatch ;
     sh:disjoint skos:broadMatch ;
     sh:disjoint skos:closeMatch ;
@@ -155,6 +165,7 @@
     sh:severity sh:Violation ;
   ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:narrowerTransitive ;
     sh:class skos:Concept ;
     sh:name "narrower transitive"@en ;
@@ -164,32 +175,35 @@
     sh:severity sh:Violation ;
   ] ;
   sh:property [
-      sh:path skos:closeMatch ;
-      sh:disjoint skos:broadMatch ;
-      sh:disjoint skos:exactMatch ;
-      sh:disjoint skos:narrowMatch ;
-      sh:disjoint skos:relatedMatch ;
-      sh:class skos:Concept ;
-      sh:name "close match"@en ;
-      sh:name "correspondance proche"@fr ;
-      sh:name "nabije match"@nl ;
-      sh:nodeKind sh:IRI ;
-      sh:severity sh:Violation ;
-    ] ;
+    a sh:PropertyShape ;
+    sh:path skos:closeMatch ;
+    sh:disjoint skos:broadMatch ;
+    sh:disjoint skos:exactMatch ;
+    sh:disjoint skos:narrowMatch ;
+    sh:disjoint skos:relatedMatch ;
+    sh:class skos:Concept ;
+    sh:name "close match"@en ;
+    sh:name "correspondance proche"@fr ;
+    sh:name "nabije match"@nl ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] ;
   sh:property [
-      sh:path skos:exactMatch ;
-      sh:disjoint skos:broadMatch ;
-      sh:disjoint skos:closeMatch ;
-      sh:disjoint skos:narrowMatch ;
-      sh:disjoint skos:relatedMatch ;
-      sh:class skos:Concept ;
-      sh:name "exact match"@en ;
-      sh:name "correspondance exacte"@fr ;
-      sh:name "exacte overeenkomst"@nl ;
-      sh:nodeKind sh:IRI ;
-      sh:severity sh:Violation ;
-    ] ;
+    a sh:PropertyShape ;
+    sh:path skos:exactMatch ;
+    sh:disjoint skos:broadMatch ;
+    sh:disjoint skos:closeMatch ;
+    sh:disjoint skos:narrowMatch ;
+    sh:disjoint skos:relatedMatch ;
+    sh:class skos:Concept ;
+    sh:name "exact match"@en ;
+    sh:name "correspondance exacte"@fr ;
+    sh:name "exacte overeenkomst"@nl ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:inScheme ;
     sh:class skos:ConceptScheme ;
     sh:minCount 1 ;
@@ -200,6 +214,7 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:mappingRelation ;
     sh:class skos:Concept ;
     sh:name "mapping relation"@en ;
@@ -209,6 +224,7 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:related ;
     sh:class skos:Concept ;
     sh:disjoint skos:broader ;
@@ -221,6 +237,7 @@
     sh:severity sh:Warning ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:relatedMatch ;
     sh:disjoint skos:broadMatch ;
     sh:disjoint skos:closeMatch ;
@@ -234,15 +251,17 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
-      sh:path skos:semanticRelation ;
-      sh:class skos:Concept ;
-      sh:name "semantic relation"@en ;
-      sh:name "relation sémantique"@fr ;
-      sh:name "semantische relatie"@nl ;
-      sh:nodeKind sh:IRI ;
-      sh:severity sh:Violation ;
-    ] ;
+    a sh:PropertyShape ;
+    sh:path skos:semanticRelation ;
+    sh:class skos:Concept ;
+    sh:name "semantic relation"@en ;
+    sh:name "relation sémantique"@fr ;
+    sh:name "semantische relatie"@nl ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+  ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:topConceptOf ;
     sh:class skos:ConceptScheme ;
     sh:name "top concept of"@en ;
@@ -252,6 +271,7 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skosxl:prefLabel ;
     sh:class skosxl:Label ;
     sh:maxCount 1 ;
@@ -261,6 +281,7 @@
     sh:severity sh:Violation ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path haTer:lowerPriority ;
     sh:class skos:Concept ;
     sh:name  "has lower priority than"@en ;
@@ -269,6 +290,7 @@
     sh:severity sh:Warning ;
     ] ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path haTer:higherPriority ;
     sh:class skos:Concept ;
     sh:name  "has higher priority than"@en ;
@@ -283,6 +305,7 @@
   sh:targetClass skos:ConceptScheme ;
   sh:property <#NoteShape>, <#ChangeNoteShape>, <#EditorialNoteShape>, <#ExampleShape>, <#HistoryNoteShape>, <#ScopeNoteShape>, <#PrefLabelShape>, <#AltLabelShape>, <#HiddenLabelShape>, <#NotationShape> ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skos:hasTopConcept ;
     sh:class skos:Concept ;
     sh:name "has top concept"@en ;
@@ -296,6 +319,7 @@
   a sh:NodeShape ;
   sh:targetClass skosxl:Label ;
   sh:property [
+    a sh:PropertyShape ;
     sh:path skosxl:literalForm ;
     sh:datatype rdf:langString ;
     sh:maxCount 1 ;
