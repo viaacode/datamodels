@@ -43,7 +43,7 @@
     dct:title     "Modèle de données Objets"@fr ;
     dct:title     "Datamodel Objecten"@nl ;
     dct:created   "2022-05-16" ;
-    dct:modified  "2023-01-12" ;
+    dct:modified  "2025-02-13" ;
     dct:description """Data model to describe objects."""@en ;
     dct:description """Modèle de données pour décrire des objets."""@fr ;
     dct:description """Datamodel voor het beschrijven van objecten."""@nl ;

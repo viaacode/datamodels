@@ -34,12 +34,12 @@
     dct:title     "Modèle de données Film"@fr ;
     dct:title     "Datamodel Film"@nl ;
     dct:created   "2023-11-09" ;
-    dct:modified  "2024-02-13" ;
+    dct:modified  "2025-02-13" ;
     dct:description """Data model to provide a detailed description of Film objects and their components."""@en ;
     dct:description """Modèle de données pour fournir une description détaillée des objets Film et leurs composants."""@fr ;
     dct:description """Datamodel voor de gedetailleerde beschrijving van Filmobjecten en hun componenten."""@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2024-01-17" ;
+    dct:modified  "2025-02-13" ;
     pav:version "1.0.0" .
 
 <#FilmNodeShape> a sh:NodeShape ;

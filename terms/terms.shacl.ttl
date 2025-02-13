@@ -37,7 +37,7 @@
     dct:title     "Modèle de données Listes de termes"@fr ;
     dct:title     "Datamodel Termenlijst"@nl ;
     dct:created   "2022-07-06" ;
-    dct:modified  "2023-10-03" ;
+    dct:modified  "2025-02-13" ;
     dct:description """Data model to describe structured lists of terms such as thesauri."""@en ;
     dct:description """Modèle de données pour décrire des listes structurées de termes tels que le thésaure."""@fr ;
     dct:description """Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."""@nl ;
