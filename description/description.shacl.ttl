@@ -42,7 +42,7 @@
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
     dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 ##############################
 #         NodeShapes         #
@@ -481,7 +481,6 @@
         sh:name "object type"@en ;
         sh:name "type d'objet"@fr ;
         sh:name "type object"@nl ;
-        sh:description ""@en ;
         sh:severity sh:Violation ;
         sh:message "schema:hasObjectType is not of type string"@en ;
         sh:message "schema:hasObjectType is niet van het type string"@nl ;
@@ -1140,7 +1139,7 @@
       sh:nodeKind sh:Literal ;
       sh:datatype xsd:time ;
       sh:maxCount 1 ;
-      sh:name "startTime"@en ;
+      sh:name "start time"@en ;
       sh:name "starttijd"@nl ;
       sh:name "heure de départ"@fr ;
       sh:description "Het tijdstip waarop het fragment start."@nl;
@@ -1157,7 +1156,7 @@
       sh:nodeKind sh:Literal ;
       sh:datatype xsd:time ;
       sh:maxCount 1 ;
-      sh:name "endTime"@en ;
+      sh:name "end time"@en ;
       sh:name "eindtijd"@nl ;
       sh:name "heure de fin"@fr ;
       sh:description "Het tijdstip waarop het fragment stopt."@nl;
@@ -1176,9 +1175,9 @@
 
       sh:maxCount 1 ;
 
-      sh:name "Region delimiter (x-axis)"@en ;
-      sh:name "Regio-afbakening (x-as)"@nl ;
-      sh:name "Délimiteur de région (axe des x)"@fr ;
+      sh:name "region delimiter (x-axis)"@en ;
+      sh:name "regio-afbakening (x-as)"@nl ;
+      sh:name "délimiteur de région (axe des x)"@fr ;
 
       sh:description "Het definiëren van de linkerbovenhoek van een zone op de x-as."@nl;
       sh:description "To define the top left corner of a zone on the x-axis."@en;
@@ -1197,9 +1196,9 @@
 
       sh:maxCount 1 ;
 
-      sh:name "Region delimiter (y-axis)"@en ;
-      sh:name "Regio-afbakening (y-as)"@nl ;
-      sh:name "Délimiteur de région (axe des y)"@fr ;
+      sh:name "region delimiter (y-axis)"@en ;
+      sh:name "regio-afbakening (y-as)"@nl ;
+      sh:name "délimiteur de région (axe des y)"@fr ;
 
       sh:description "Het definiëren van de linkerbovenhoek van een zone op de y-as."@nl;
       sh:description "To define the top left corner of a zone on the y-axis."@en;
@@ -1218,9 +1217,9 @@
 
       sh:maxCount 1 ;
 
-      sh:name "Width"@en ;
-      sh:name "Breedte"@nl ;
-      sh:name "Largeur"@fr ;
+      sh:name "width"@en ;
+      sh:name "breedte"@nl ;
+      sh:name "largeur"@fr ;
 
       sh:description "De breedte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
       sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
@@ -1239,12 +1238,12 @@
 
       sh:maxCount 1 ;
 
-      sh:name "Width"@en ;
-      sh:name "Hoogte"@nl ;
-      sh:name "Hauteur"@fr ;
+      sh:name "height"@en ;
+      sh:name "hoogte"@nl ;
+      sh:name "hauteur"@fr ;
 
       sh:description "De hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl;
-      sh:description "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
+      sh:description "The height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en;
       sh:description "La hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr;
 
       sh:message "ebucore:height is not of type xsd:integer"@en ;
@@ -1318,9 +1317,9 @@
     sh:minCount 0;
     sh:maxCount 1;
 
-    sh:name "Annotation type"@en ;
+    sh:name "annotation type"@en ;
     sh:name "type annotatie"@nl ;
-    sh:name "Type d'annotation"@fr ;
+    sh:name "type d'annotation"@fr ;
 
     sh:description "Om het type annotatie te definiëren, zoals een herkend gezicht of Named Entity."@nl ;
     sh:description "To define a type of Annotation, such as a recognized face or Named Entity."@en ;
@@ -1337,9 +1336,9 @@
     sh:minCount 1;
     sh:maxCount 1;
 
-    sh:name "Annotation target"@en ;
-    sh:name "Annotatiedoel"@nl ;
-    sh:name "Cible d'annotation"@fr ;
+    sh:name "annotation target"@en ;
+    sh:name "annotatiedoel"@nl ;
+    sh:name "cible d'annotation"@fr ;
 
     sh:description "Om het doelbestand te definiëren waarop de annotatie van toepassing is."@nl ;
     sh:description "To define the target file to which the Annotation applies."@en ;
@@ -1356,9 +1355,9 @@
     sh:minCount 1;
     sh:maxCount 1;
 
-    sh:name "Annotation subject"@en ;
-    sh:name "Annotatie onderwerp"@nl ;
-    sh:name "Sujet d'annotation"@fr ;
+    sh:name "annotation subject"@en ;
+    sh:name "annotatie onderwerp"@nl ;
+    sh:name "sujet d'annotation"@fr ;
 
     sh:description "Het onderwerp van de annotatie."@nl ;
     sh:description "The subject of the Annotation."@en;
@@ -1374,9 +1373,9 @@
 
     sh:maxCount 1;
 
-    sh:name "Annotation  person subject"@en ;
-    sh:name "Annotatie persoon onderwerp"@nl ;
-    sh:name "Sujet d'annotation person"@fr ;
+    sh:name "annotation  person subject"@en ;
+    sh:name "annotatie persoon onderwerp"@nl ;
+    sh:name "sujet d'annotation person"@fr ;
 
     sh:description "Het onderwerp (persoon) van de annotatie."@nl ;
     sh:description "The subject (person) of the Annotation."@en;

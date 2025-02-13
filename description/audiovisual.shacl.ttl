@@ -37,7 +37,7 @@
     dct:description """Data model to describe the content of audiovisual objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets audiovisuels."""@fr ;
     dct:description """Datamodel om de inhoud van audiovisuele objecten te beschrijven."""@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 <#DVDNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:DVD ;

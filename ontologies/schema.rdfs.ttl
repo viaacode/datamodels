@@ -657,6 +657,17 @@ schema:name a rdf:Property ;
     skos:definition "Le nom de l'article."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:containedInPlace a rdf:Property ;
+    rdfs:label "containedInPlace"@en ;
+    rdfs:label "opgenomenInPlaats"@nl ;
+    rdfs:label "contenuEnPlace"@fr ;
+    rdfs:domain schema:Place ;
+    rdfs:range schema:Place ;
+    skos:definition "The basic containment relation between a place and one that contains it."@en;
+    skos:definition "De basis verbindingsrelatie tussen een plaats en een die deze bevat."@nl;
+    skos:definition "La relation de confinement de base entre un lieu et une qui le contient."@fr;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:postalCode   a   rdf:Property ;
     schema:domainIncludes schema:DefinedRegion,
         schema:GeoCoordinates,

@@ -3,8 +3,8 @@
 # output dir
 out=${1:-./output}
 parent="Knowledge Graph"
-pip install shacl2md --extra-index-url http://do-prd-mvn-01.do.viaa.be:8081/repository/pypi-all/simple --trusted-host do-prd-mvn-01.do.viaa.be
-shacl2md organization:organizations/organizations.shacl.ttl \
+#pip install shacl2md --extra-index-url http://do-prd-mvn-01.do.viaa.be:8081/repository/pypi-all/simple --trusted-host do-prd-mvn-01.do.viaa.be
+shacl2md generate organization:organizations/organizations.shacl.ttl \
     object:objects/objects.shacl.ttl \
     descriptive:description/description.shacl.ttl \
     events:events/events.shacl.ttl \

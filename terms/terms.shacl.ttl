@@ -41,7 +41,7 @@
     dct:description """Data model to describe structured lists of terms such as thesauri."""@en ;
     dct:description """Modèle de données pour décrire des listes structurées de termes tels que le thésaure."""@fr ;
     dct:description """Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."""@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 <#CollectionShape>
   a sh:NodeShape ;

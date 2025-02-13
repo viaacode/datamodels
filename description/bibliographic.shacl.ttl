@@ -38,7 +38,7 @@
     dct:description """Data model to provide a detailed description of bibliographic objects and their components."""@en ;
     dct:description """Modèle de données pour fournir une description détaillée des objets bibliographiques et leurs composants."""@fr ;
     dct:description """Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten."""@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.0.0" .
 
 <#NewspaperIssueNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:NewspaperIssue ;
