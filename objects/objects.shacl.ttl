@@ -706,7 +706,7 @@
       sh:path rel:isi;
       sh:class haObj:DigitalRepresentation ;
 
-      sh:name "is Include In"@en ;
+      sh:name "is Included In"@en ;
       sh:name "is opgenomen in"@nl ;
       sh:name "est inclus dans"@fr ;
 
