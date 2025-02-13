@@ -28,6 +28,33 @@ ebucore:TextAnnotation a rdfs:Class ;
   skos:definition "Une classe spécifique à l'annotation d'un texte ou de portions de texte."@fr ;
   skos:definition "Een klasse die specifiek is voor de annotatie van een tekst of delen van tekst."@nl .
 
+ebucore:Captioning a rdfs:Class ;
+  skos:definition "To signal the presence of hard of hearing captioning."@en ;
+  skos:definition "Pour signaler la présence de sous-titres pour le durcissement dur."@fr ;
+  skos:definition "Om de aanwezigheid van ondertitels voor hardhorigen te signaleren."@nl ;
+  rdfs:label "Captioning"@en ;
+  rdfs:label "Sous-titrage"@fr ;
+  rdfs:label "Ondertitels"@nl ;
+  rdfs:subClassOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track> .
+
+ebucore:ClosedCaptions a rdfs:Class ;
+  rdfs:subClassOf ebucore:Captioning ;
+  rdfs:label "Closed caption"@en ;
+  rdfs:label "Gesloten ondertitels"@nl ;
+  rdfs:label "Légende fermée"@fr ;
+  skos:definition "Closed captioning is provided as separate content."@en ;
+  skos:definition "Le sous-titrage fermé est fourni en tant que contenu distinct."@fr ;
+  skos:definition "Gesloten bijschrift wordt verstrekt als afzonderlijke inhoud."@nl .
+
+ebucore:OpenCaptions a rdfs:Class ;
+  rdfs:subClassOf ebucore:Captioning ;
+  rdfs:label "Open captions"@en ;
+  rdfs:label "Sous-titres ouverts"@fr ;
+  rdfs:label "Open ondertitels"@nl ;
+  skos:definition "Open Captions are burned in the image."@en ;
+  skos:definition "Open bijschriften worden in de afbeelding gebrand."@en ;
+  skos:definition "Les légendes ouvertes sont brûlées dans l'image."@fr .
+
 #####################################
 #             PROPERTIES            #
 #####################################
