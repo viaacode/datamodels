@@ -36,7 +36,7 @@
     dct:title     "Modèle de données Organisations"@fr ;
     dct:title     "Datamodel Organisaties"@nl ;
     dct:created   "2022-03-14" ;
-    dct:modified  "2024-09-25" ;
+    dct:modified  "2025-02-13" ;
     dct:description """Data model to describe organizations."""@en ;
     dct:description """Modèle de données pour décrire des organisations."""@fr ;
     dct:description """Datamodel voor het beschrijven van organisaties."""@nl ;
