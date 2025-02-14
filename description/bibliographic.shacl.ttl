@@ -252,17 +252,16 @@
     [
         a sh:PropertyShape ;
         sh:path schema:locationCreated ;
-        sh:nodeKind sh:Literal ;
         sh:class schema:Place ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
-        sh:name "page number"@en ;
-        sh:name "numéro de page"@fr ;
-        sh:name "paginanummer"@nl ;
-        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
-        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
-        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
-        sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
+        sh:name "location created"@en ;
+        sh:name "lieu de création"@fr ;
+        sh:name "plaats van creatie"@nl ;
+        sh:description "The location where the Newspaper was created."@en ;
+        sh:description "L'emplacement où le journal a été créé."@fr ;
+        sh:description "De locatie waar de krant is gemaakt."@nl ;
+        sh:message "the object of schema:locationCreated is not of type schema:locationCreated,or occurs more than once"@en ;
         sh:severity sh:Violation
     ],  
     [
