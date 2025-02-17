@@ -300,9 +300,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the organisation."@en ;
     sh:description "Indique l'identifiant unique de l'organisation."@fr ;
@@ -327,9 +327,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the service consumer."@en ;
     sh:description "Indique l'identifiant unique du consomatteur de services."@fr ;
@@ -348,9 +348,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the service provider."@en ;
     sh:description "Indique l'identifiant unique du fournisseur de services."@fr ;
@@ -369,9 +369,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the digitization partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire de digitalisation."@fr ;
@@ -390,9 +390,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the project partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire de project."@fr ;
@@ -448,9 +448,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the content partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire de contenus."@fr ;
@@ -520,9 +520,9 @@
     sh:nodeKind sh:Literal ;
     sh:datatype xsd:string ;
 
-    sh:name "has identifier"@en ;
-    sh:name "possède un identifiant"@fr ;
-    sh:name "heeft een identificator"@nl ;
+    sh:name "identifier"@en ;
+    sh:name "identifiant"@fr ;
+    sh:name "identificator"@nl ;
     
     sh:description "Indicates the unique identifier of the educational partner."@en ;
     sh:description "Indique l'identifiant unique du partenaire éducatif."@fr ;

@@ -91,7 +91,7 @@
             [ sh:class schema:Collection ]
         );
         sh:name "is part of"@en ;
-        sh:name "is een deel van"@nl ;
+        sh:name "is deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode or schema:Collection."@en ;
@@ -511,7 +511,7 @@
         sh:name "synopsis"@fr ;
         sh:name "korte inhoud"@nl ;
         sh:description "The plot summary of the TV or theatre production."@en;
-        sh:description "Le résumé de l'intrigue de la production télévisée ou théâtrale."@nl;
+        sh:description "Le résumé de l'intrigue de la production télévisée ou théâtrale."@fr;
         sh:description "De korte inhoud van de tv- of theaterproductie."@nl;
         sh:severity sh:Violation ;
         sh:message "ebucore:synopsis is not of type string"@en 
@@ -648,8 +648,8 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "identifier"@en ;
-        sh:name "identifier"@nl ;
-        sh:name "identifier"@fr ;
+        sh:name "identificator"@nl ;
+        sh:name "identifiant"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:identifier occurs more than once or is not of type string "@en ;
     ],
@@ -736,8 +736,8 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "identifier"@en ;
-        sh:name "identifier"@nl ;
-        sh:name "identifier"@fr ;
+        sh:name "identificator"@nl ;
+        sh:name "identifiant"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:identifier occurs more than once or is not of type string "@en ;
     ].
@@ -816,8 +816,8 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "identifier"@en ;
-        sh:name "identifier"@nl ;
-        sh:name "identifier"@fr ;
+        sh:name "identificator"@nl ;
+        sh:name "identifiant"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:identifier occurs more than once or is not of type string "@en ;
     ],
@@ -857,7 +857,7 @@
         sh:path schema:isPartOf ;
         sh:class schema:CreativeWorkSeries ;
         sh:name "is part of"@en ;
-        sh:name "is een deel van"@nl ;
+        sh:name "is deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:isPartOf is not of class schema:CreativeWorkSeries."@en ;
@@ -930,7 +930,7 @@
         sh:path schema:isPartOf ;
         sh:class schema:ArchiveComponent  ;
         sh:name "is part of"@en ;
-        sh:name "is een deel van"@nl ;
+        sh:name "is deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:isPartOf is not of class schema:ArchiveComponent."@en ;
@@ -1089,8 +1089,8 @@
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "identifier"@en ;
-        sh:name "identifier"@nl ;
-        sh:name "identifier"@fr ;
+        sh:name "identificator"@nl ;
+        sh:name "identifiant"@fr ;
         sh:severity sh:Violation ;
         sh:message "schema:identifier occurs more than once or is not of type string "@en ;
     ],
@@ -1399,8 +1399,8 @@
     sh:minCount 1 ;
     sh:maxCount 1 ;
     sh:name "identifier"@en ;
-    sh:name "identifier"@nl ;
-    sh:name "identifier"@fr ;
+    sh:name "identificator"@nl ;
+    sh:name "identifiant"@fr ;
     sh:severity sh:Violation ;
     sh:message "schema:identifier is missing or not of type string "@en ;
     sh:message "schema:identifier ontbreekt of is niet van het type string"@nl ;

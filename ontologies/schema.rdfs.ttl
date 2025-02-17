@@ -584,7 +584,7 @@ schema:identifier a rdf:Property ;
     rdfs:range xsd:string ;
     owl:equivalentProperty dct:identifier ;
     rdfs:label "identifier"@en ;
-    rdfs:label "identifier"@nl ;
+    rdfs:label "identificator"@nl ;
     rdfs:label "identifiant"@fr ;
     skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en ;
     skos:definition "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl ;

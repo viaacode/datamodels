@@ -89,9 +89,9 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
 
-        sh:name "DVD chapter number"@en ;
-        sh:name "Numéro de chapitre DVD"@fr ;
-        sh:name "Dvd-hoofdstuknummer"@nl ;
+        sh:name "chapter number"@en ;
+        sh:name "Numéro de chapitre"@fr ;
+        sh:name "hoofdstuknummer"@nl ;
 
         sh:description "Indicates the sequence number of the DVD chapter."@en ;
         sh:description "Indique le numéro de séquence du chapitre DVD."@fr ;
