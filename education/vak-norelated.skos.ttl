@@ -1,0 +1,1541 @@
+@prefix ocol: <https://w3id.org/onderwijs-vlaanderen/id/collectie/> .
+@prefix ond: <https://w3id.org/onderwijs-vlaanderen/id/> .
+@prefix ovak: <https://w3id.org/onderwijs-vlaanderen/id/vak/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix pav: <http://purl.org/pav/> .
+
+
+ocol:vak a skos:Collection,
+        skos:OrderedCollection ;
+    skos:member ovak:aardrijkskunde,
+        ovak:administratie,
+        ovak:afwerking-bouw,
+        ovak:agrarische-technieken,
+        ovak:algemene-muziekleer,
+        ovak:algemene-verbale-vorming,
+        ovak:apotheek,
+        ovak:architecturale-vorming,
+        ovak:architectuurtekenen,
+        ovak:artistieke-creatie,
+        ovak:artistieke-expressie,
+        ovak:atelier-drama,
+        ovak:atelier-woord,
+        ovak:audiovisuele-vorming,
+        ovak:autorijtechnieken,
+        ovak:autotechnieken,
+        ovak:bakkerij,
+        ovak:bedrijfswetenschappen,
+        ovak:beeld--en-mediacultuur,
+        ovak:beeldende-kunsten,
+        ovak:beeldende-vorming,
+        ovak:besturing-bouwmachines,
+        ovak:bewegingswetenschappen,
+        ovak:binnenhuiskunst,
+        ovak:biochemie,
+        ovak:biologie,
+        ovak:boekhouding,
+        ovak:bosbouw,
+        ovak:bouw,
+        ovak:bouwkunst,
+        ovak:burgerschap,
+        ovak:centrale-verwarming,
+        ovak:chemie,
+        ovak:commerci%C3%ABle-technieken,
+        ovak:communicatiewetenschappen,
+        ovak:creatief-musiceren,
+        ovak:cultuurbeschouwing,
+        ovak:cultuurwetenschappen,
+        ovak:dakwerken,
+        ovak:decoratieve-technieken,
+        ovak:diamant,
+        ovak:dierenzorg,
+        ovak:duits,
+        ovak:ecologie,
+        ovak:economie-,
+        ovak:eigen-cultuur-en-religie,
+        ovak:elektriciteit,
+        ovak:elektromechanica,
+        ovak:elektronica,
+        ovak:engels-,
+        ovak:esthetica,
+        ovak:exploratie,
+        ovak:filosofie,
+        ovak:fotografie,
+        ovak:frans,
+        ovak:fysica,
+        ovak:gedragswetenschappen,
+        ovak:geschiedenis,
+        ovak:glastechnieken,
+        ovak:godsdienst-,
+        ovak:goud-en-juwelen,
+        ovak:grafische-technieken,
+        ovak:grieks,
+        ovak:grime,
+        ovak:groendecoratie,
+        ovak:groepsmusiceren%3A-folk--en-wereldmuziek,
+        ovak:groepsmusiceren%3A-jazz-pop-rock,
+        ovak:groepsmusiceren%3A-klassiek,
+        ovak:groepsmusiceren%3A-musical,
+        ovak:groepsmusiceren%3A-opera%2Fmuziektheater,
+        ovak:haarverzorging,
+        ovak:hebreeuws,
+        ovak:hedendaagse-dans,
+        ovak:hoefverzorging,
+        ovak:hotel,
+        ovak:hout,
+        ovak:human-resources,
+        ovak:ict,
+        ovak:indirecte-zorg,
+        ovak:informaticawetenschappen,
+        ovak:instrument%3A-folk--en-wereldmuziek,
+        ovak:instrument%3A-jazz-pop-rock,
+        ovak:instrument%3A-klassiek,
+        ovak:instrumentenbouw,
+        ovak:interlevensbeschouwelijke-dialoog,
+        ovak:italiaans,
+        ovak:keukentechnieken,
+        ovak:klassieke-dans,
+        ovak:koeltechnieken,
+        ovak:koetswerk,
+        ovak:kunstbeschouwing,
+        ovak:kunststoffen,
+        ovak:landbouw,
+        ovak:lassen-constructie,
+        ovak:latijn,
+        ovak:leren-leren,
+        ovak:lichamelijke-opvoeding,
+        ovak:logistiek,
+        ovak:maatschappelijke-vorming,
+        ovak:mechanica,
+        ovak:mechanische-vormgeving,
+        ovak:mens-en-maatschappij,
+        ovak:meubelmakerij,
+        ovak:militaire-vorming,
+        ovak:mode,
+        ovak:muziektheorie%3A-folk-en-wereldmuziek,
+        ovak:muziektheorie%3A-jazz-pop-rock,
+        ovak:muziektheorie%3A-klassiek,
+        ovak:muzikale-opvoeding,
+        ovak:muzische-vorming,
+        ovak:natuurbeheer,
+        ovak:natuurwetenschappen,
+        ovak:nautische-technieken,
+        ovak:nederlands,
+        ovak:nederlands-voor-nieuwkomers,
+        ovak:niet-confessionele-zedenleer-,
+        ovak:onthaal,
+        ovak:optiek,
+        ovak:opvoedkunde,
+        ovak:orthopedie,
+        ovak:oud-hebreeuws,
+        ovak:pedagogiek,
+        ovak:plastische-opvoeding,
+        ovak:podiumtechnieken,
+        ovak:praktische-harmonie%3A-folk-en-wereldmuziek,
+        ovak:praktische-harmonie%3A-jazz-pop-rock,
+        ovak:praktische-harmonie%3A-klassiek,
+        ovak:printmedia,
+        ovak:productie-industrie,
+        ovak:project-algemene-vakken,
+        ovak:project-stem,
+        ovak:psychologie,
+        ovak:public-relations,
+        ovak:publiciteitstekenen,
+        ovak:recht,
+        ovak:restauranttechnieken,
+        ovak:restauratie,
+        ovak:rijn--en-binnenvaart,
+        ovak:russisch,
+        ovak:ruwbouw,
+        ovak:sanitair,
+        ovak:scheepswerktuigkunde,
+        ovak:scheepvaart,
+        ovak:schilderen-en-decoratie,
+        ovak:schoonheidsverzorging,
+        ovak:schoonmaak,
+        ovak:schrijnwerkerij,
+        ovak:slagerij,
+        ovak:sociale-activiteit,
+        ovak:sociale-vaardigheden,
+        ovak:sociologie,
+        ovak:spaans,
+        ovak:sport,
+        ovak:steen--en-marmerbewerking,
+        ovak:steigerbouw,
+        ovak:tandtechnieken,
+        ovak:techniek,
+        ovak:technologische-opvoeding,
+        ovak:textielproductie,
+        ovak:textielverzorging,
+        ovak:toegepaste-beeldende-vorming,
+        ovak:toegepaste-biochemie,
+        ovak:toegepaste-biologie,
+        ovak:toegepaste-chemie,
+        ovak:toegepaste-economie,
+        ovak:toegepaste-fysica,
+        ovak:toegepaste-informatica,
+        ovak:toegepaste-natuurwetenschappen,
+        ovak:toegepaste-psychologie,
+        ovak:toerisme,
+        ovak:topsport,
+        ovak:tuinbouw,
+        ovak:uurwerkmaken,
+        ovak:veiligheidstechnieken,
+        ovak:verkoop,
+        ovak:verpleegkunde,
+        ovak:verzorging,
+        ovak:voeding,
+        ovak:vrije-beeldende-vorming,
+        ovak:waarnemingstekenen,
+        ovak:wegenwerken,
+        ovak:wetenschappen-en-techniek,
+        ovak:wiskunde,
+        ovak:zakelijke-communicatie,
+        ovak:zang%3A-folk--en-wereldmuziek,
+        ovak:zang%3A-jazz-pop-rock,
+        ovak:zang%3A-klassiek,
+        ovak:zang%3A-musical,
+        ovak:zang%3A-opera%2Fmuziektheater,
+        ovak:zeemanschap ;
+    skos:memberList ( ovak:mens-en-maatschappij ovak:muzische-vorming ovak:wetenschappen-en-techniek ovak:ict ovak:leren-leren ovak:sociale-vaardigheden ovak:aardrijkskunde ovak:artistieke-expressie ovak:bedrijfswetenschappen ovak:bewegingswetenschappen ovak:biochemie ovak:biologie ovak:burgerschap ovak:chemie ovak:communicatiewetenschappen ovak:cultuurbeschouwing ovak:cultuurwetenschappen ovak:duits ovak:ecologie ovak:economie- ovak:eigen-cultuur-en-religie ovak:engels- ovak:esthetica ovak:exploratie ovak:filosofie ovak:frans ovak:fysica ovak:gedragswetenschappen ovak:geschiedenis ovak:godsdienst- ovak:grieks ovak:hebreeuws ovak:informaticawetenschappen ovak:interlevensbeschouwelijke-dialoog ovak:italiaans ovak:latijn ovak:lichamelijke-opvoeding ovak:maatschappelijke-vorming ovak:muzikale-opvoeding ovak:natuurwetenschappen ovak:nederlands ovak:nederlands-voor-nieuwkomers ovak:niet-confessionele-zedenleer- ovak:oud-hebreeuws ovak:pedagogiek ovak:plastische-opvoeding ovak:project-algemene-vakken ovak:project-stem ovak:psychologie ovak:russisch ovak:sociale-activiteit ovak:sociologie ovak:spaans ovak:sport ovak:topsport ovak:wiskunde ovak:algemene-muziekleer ovak:algemene-verbale-vorming ovak:architecturale-vorming ovak:architectuurtekenen ovak:artistieke-creatie ovak:atelier-drama ovak:atelier-woord ovak:audiovisuele-vorming ovak:beeld--en-mediacultuur ovak:beeldende-kunsten ovak:beeldende-vorming ovak:binnenhuiskunst ovak:bouwkunst ovak:creatief-musiceren ovak:fotografie ovak:groepsmusiceren%3A-folk--en-wereldmuziek ovak:groepsmusiceren%3A-jazz-pop-rock ovak:groepsmusiceren%3A-klassiek ovak:groepsmusiceren%3A-musical ovak:groepsmusiceren%3A-opera%2Fmuziektheater ovak:hedendaagse-dans ovak:instrument%3A-folk--en-wereldmuziek ovak:instrument%3A-jazz-pop-rock ovak:instrument%3A-klassiek ovak:klassieke-dans ovak:kunstbeschouwing ovak:muziektheorie%3A-folk-en-wereldmuziek ovak:muziektheorie%3A-jazz-pop-rock ovak:muziektheorie%3A-klassiek ovak:praktische-harmonie%3A-folk-en-wereldmuziek ovak:praktische-harmonie%3A-jazz-pop-rock ovak:praktische-harmonie%3A-klassiek ovak:toegepaste-beeldende-vorming ovak:vrije-beeldende-vorming ovak:waarnemingstekenen ovak:zang%3A-folk--en-wereldmuziek ovak:zang%3A-jazz-pop-rock ovak:zang%3A-klassiek ovak:zang%3A-musical ovak:zang%3A-opera%2Fmuziektheater ovak:administratie ovak:afwerking-bouw ovak:agrarische-technieken ovak:apotheek ovak:autorijtechnieken ovak:autotechnieken ovak:bakkerij ovak:besturing-bouwmachines ovak:boekhouding ovak:bosbouw ovak:bouw ovak:centrale-verwarming ovak:commerci%C3%ABle-technieken ovak:dakwerken ovak:decoratieve-technieken ovak:diamant ovak:dierenzorg ovak:elektriciteit ovak:elektromechanica ovak:elektronica ovak:glastechnieken ovak:goud-en-juwelen ovak:grafische-technieken ovak:grime ovak:groendecoratie ovak:haarverzorging ovak:hoefverzorging ovak:hotel ovak:hout ovak:human-resources ovak:indirecte-zorg ovak:instrumentenbouw ovak:keukentechnieken ovak:koeltechnieken ovak:koetswerk ovak:kunststoffen ovak:landbouw ovak:lassen-constructie ovak:logistiek ovak:mechanica ovak:mechanische-vormgeving ovak:meubelmakerij ovak:militaire-vorming ovak:mode ovak:natuurbeheer ovak:nautische-technieken ovak:onthaal ovak:optiek ovak:opvoedkunde ovak:orthopedie ovak:podiumtechnieken ovak:printmedia ovak:productie-industrie ovak:public-relations ovak:publiciteitstekenen ovak:recht ovak:restauranttechnieken ovak:restauratie ovak:rijn--en-binnenvaart ovak:ruwbouw ovak:sanitair ovak:scheepswerktuigkunde ovak:scheepvaart ovak:schilderen-en-decoratie ovak:schoonheidsverzorging ovak:schoonmaak ovak:schrijnwerkerij ovak:slagerij ovak:steen--en-marmerbewerking ovak:steigerbouw ovak:tandtechnieken ovak:techniek ovak:technologische-opvoeding ovak:textielproductie ovak:textielverzorging ovak:toegepaste-biochemie ovak:toegepaste-biologie ovak:toegepaste-chemie ovak:toegepaste-economie ovak:toegepaste-fysica ovak:toegepaste-informatica ovak:toegepaste-natuurwetenschappen ovak:toegepaste-psychologie ovak:toerisme ovak:tuinbouw ovak:uurwerkmaken ovak:veiligheidstechnieken ovak:verkoop ovak:verpleegkunde ovak:verzorging ovak:voeding ovak:wegenwerken ovak:zakelijke-communicatie ovak:zeemanschap ) ;
+    skos:prefLabel "vakken"@nl .
+
+ovak:aardrijkskunde a skos:Concept ;
+    skos:definition "Aarde, ruimte, reliëf, bevolking, weer en klimaat, natuurverschijnselen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "aardrijkskunde"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:administratie a skos:Concept ;
+    skos:definition "Administratie, documenten, informatica"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "administratie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:afwerking-bouw a skos:Concept ;
+    skos:definition "Bouw, vloeren, bepleisteren, muren, trappen, tegels"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "afwerking bouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:agrarische-technieken a skos:Concept ;
+    skos:definition "Agrarische technieken, milieu, plant, dier, landbouw, natuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "agrarische technieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:algemene-muziekleer a skos:Concept ;
+    skos:definition "Muzikale basiskennis, vaardigheden en attitudes, muziektheorie en praktische aspecten van muziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "algemene muziekleer"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:algemene-verbale-vorming a skos:Concept ;
+    skos:definition "Uitspraak en ademhalingstechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "algemene verbale vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:apotheek a skos:Concept ;
+    skos:definition "Apotheek, medicijnen, geneesmiddelen, cosmetische producten"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "apotheek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:architecturale-vorming a skos:Concept ;
+    skos:definition "Methodes om architectuur te ontwerpen, voor te stellen en te onderbouwen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "architecturale vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:architectuurtekenen a skos:Concept ;
+    skos:definition "Tekenen van ontwerpen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "architectuurtekenen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:artistieke-creatie a skos:Concept ;
+    skos:definition "Zelf creëren van beeldende kunst, toegepaste kunsten en theater"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "artistieke creatie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:artistieke-expressie a skos:Concept ;
+    skos:definition "Verkennen van dans, beeld, muziek, expressie - woord (basis)"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "artistieke expressie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:atelier-drama a skos:Concept ;
+    skos:definition "Praktische vorming podiumkunsten"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "atelier drama"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:atelier-woord a skos:Concept ;
+    skos:definition "Praktische vorming rond uitspraak en ademhaling"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "atelier woord"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:audiovisuele-vorming a skos:Concept ;
+    skos:definition "Hedendaagse audiovisuele cultuur, kritisch kijken naar beelden uit verschillende media"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "audiovisuele vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:autorijtechnieken a skos:Concept ;
+    skos:definition "Auto, rijden, transport, vrachtwagen, chauffeur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "autorijtechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:autotechnieken a skos:Concept ;
+    skos:definition "Werking en onderhoud auto's, elektronica, elektriciteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "autotechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:bakkerij a skos:Concept ;
+    skos:definition "Bakker, brood, patisserie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "bakkerij"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:bedrijfswetenschappen a skos:Concept ;
+    skos:definition "Economie, consumentenzaken, goederenmarkt, kapitaalmarkt, organisatie van bedrijven, handelsmarkten"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "bedrijfswetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:beeld--en-mediacultuur a skos:Concept ;
+    skos:definition "Hedendaagse audiovisuele cultuur, kritisch kijken naar beelden uit verschillende media"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "beeld- en mediacultuur"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:beeldende-kunsten a skos:Concept ;
+    skos:definition "Schilderkunst, beeldhouwkunst"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "beeldende kunsten"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:beeldende-vorming a skos:Concept ;
+    skos:definition "Waarnemingstekenen, schilderen, beeldhouwen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "beeldende vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:besturing-bouwmachines a skos:Concept ;
+    skos:definition "Bouw, chauffeur, kraan, vorkheftruck, graafmachines, rupsvoertuig"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "besturing bouwmachines"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:bewegingswetenschappen a skos:Concept ;
+    skos:definition "Bewegen en motoriek, revalidatie, anatomie, spieren, kracht en weerstand (fysica)"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "bewegingswetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:binnenhuiskunst a skos:Concept ;
+    skos:definition "Decoratie, interieur, binnenhuisarchitectuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "binnenhuiskunst"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:biochemie a skos:Concept ;
+    skos:definition "Zuren en basen, elektrolyse, redoxreacties, microscoop, labo analyse"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "biochemie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:biologie a skos:Concept ;
+    skos:definition "Cel, plant, mens, diersoorten, biotopen, stelsels: voortplanting, ademhaling, vertering, ziektebeelden ..."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "biologie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:boekhouding a skos:Concept ;
+    skos:definition "Boekhouding, financiën, bedrijfsadministratie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "boekhouding"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:bosbouw a skos:Concept ;
+    skos:definition "Bos, aanplanten, waters onderhouden, boskap"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "bosbouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:bouw a skos:Concept ;
+    skos:definition "Metsen, bekisten, ijzervlechten, muren zetten, bouwplannen lezen, voegen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "bouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:bouwkunst a skos:Concept ;
+    skos:definition "Architectuur en bouwkunst"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "bouwkunst"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:burgerschap a skos:Concept ;
+    skos:definition "Identiteit, diversiteit, dialoog, mensenrechten, plichten, rechtstaat, democratie, politiek, stemrecht, participatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "burgerschap"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:centrale-verwarming a skos:Concept ;
+    skos:definition "Je leert leidingen van water, gas en stookolie (de)monteren rekening houdend met het soort installatie voor de centrale verwarming (CV)"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "centrale verwarming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:chemie a skos:Concept ;
+    skos:definition "Materie, moleculen, atoombouw, mengels, massa, reacties, verbindingen, geleiders"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "chemie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:commerci%C3%ABle-technieken a skos:Concept ;
+    skos:definition "Verkoopstechnieken, verkoop, boekhouden, winkel houden"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "commerciële technieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:communicatiewetenschappen a skos:Concept ;
+    skos:definition "(Sociale) media, mediakritiek, beeldvorming, framing, mediatools, massacommunicatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "communicatiewetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:creatief-musiceren a skos:Concept ;
+    skos:definition "Creatief musiceren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "creatief musiceren"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:cultuurbeschouwing a skos:Concept ;
+    skos:definition "Steiner - invloed religie op moraal en cultuur: interculturele gelijkenissen, mythologie, sprookjes, volksverhalen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "cultuurbeschouwing"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:cultuurwetenschappen a skos:Concept ;
+    skos:definition "Media, propaganda, persvrijheid, privacy, ethiek, filosofie, politiek, recht, relatie kunst en maatschappij, identiteit, diversiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "cultuurwetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:dakwerken a skos:Concept ;
+    skos:definition "Dak plaatsen, isoleren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "dakwerken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:decoratieve-technieken a skos:Concept ;
+    skos:definition "In feite een studierichting beeldende kunsten met o.a. schilderen, goud en juwelen, diamant bewerken, publiciteit en etalage, decoratie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "decoratieve technieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:diamant a skos:Concept ;
+    skos:definition "Diamant bewerken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "diamant"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:dierenzorg a skos:Concept ;
+    skos:definition "Verzorgen van dieren, softwarepakketten gebruiken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "dierenzorg"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:duits a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Duitse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Duits"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:ecologie a skos:Concept ;
+    skos:definition "Biotoop(studie), natuurgebieden, ecosystemen, vervuiling, verontreiniging, broeikas, verwoestijning, bedreigd regenwoud"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "ecologie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:economie- a skos:Concept ;
+    skos:definition "Conjunctuur, inflatie, beurzen, belastingen, (internationale) handel, embargo's, omzet, ondernemen, innoveren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "economie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:eigen-cultuur-en-religie a skos:Concept ;
+    skos:definition "Yeshiva - God, Allah, Jahwe en de rest, godsdienst, zedenleer"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "eigen cultuur en religie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:elektriciteit a skos:Concept ;
+    skos:definition "Alles rond elektriciteit: basis, kenmerken, leggen, netwerk monteren,.."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "elektriciteit"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:elektromechanica a skos:Concept ;
+    skos:definition "Mechanica, elektronica, elektriciteit, automatisering en installatietechnologie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "elektromechanica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:elektronica a skos:Concept ;
+    skos:definition "Besturingssystemen, databases en datacommunicatie, multimedia, netwerkbeheer, webtechnologie en -design"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "elektronica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:engels- a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Angelsaksische cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Engels"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:esthetica a skos:Concept ;
+    skos:definition "Kunstvormen, functies kunst, kunstenaars, stijlstromingen, kunstkritiek, musea, veilingshuizen ..."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "esthetica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:exploratie a skos:Concept ;
+    skos:definition "Steiner - onderzoeksvaardigheden, groepswerk, zelfreflectie, waarnemen, beschrijven, onderzoeken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "exploratie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:filosofie a skos:Concept ;
+    skos:definition "Filosofen - stromingen - zin van het leven - waarheid en kennis"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "filosofie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:fotografie a skos:Concept ;
+    skos:definition "Digitale en analoge fotografie, portretfotografie, landschapfotografie, fototoestellen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "fotografie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:frans a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Franse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Frans"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:fysica a skos:Concept ;
+    skos:definition "Snelheid, krachten, druk, energie, licht, golven, trilling, warmte"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "fysica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:gedragswetenschappen a skos:Concept ;
+    skos:definition "opvoeding, kinderrechten, adolescentie, interactie, relaties, participatie, emancipatie, diversiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "gedragswetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:geschiedenis a skos:Concept ;
+    skos:definition "tijdvakken, bronnenonderzoek, historische kritiek, erfgoed"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "geschiedenis"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:glastechnieken a skos:Concept ;
+    skos:definition "Glas"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "glastechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:godsdienst- a skos:Concept ;
+    skos:definition "religie, geloof, de Kerk, filosofie, ethische kwesties, identiteit, diversiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "godsdienst"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:goud-en-juwelen a skos:Concept ;
+    skos:definition "Goud en juwelen bewerken en maken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "goud en juwelen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:grafische-technieken a skos:Concept ;
+    skos:definition "Druk, print, grafische publicatietechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "grafische technieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:grieks a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Griekse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Grieks"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:grime a skos:Concept ;
+    skos:definition "Grime"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "grime"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:groendecoratie a skos:Concept ;
+    skos:definition "Groendecoratie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "groendecoratie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:groepsmusiceren%3A-folk--en-wereldmuziek a skos:Concept ;
+    skos:definition "Groepsmusiceren binnen folk- en wereldmuziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "groepsmusiceren: folk- en wereldmuziek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:groepsmusiceren%3A-jazz-pop-rock a skos:Concept ;
+    skos:definition "Groepsmusiceren binnen jazz-pop-rock"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "groepsmusiceren: jazz-pop-rock"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:groepsmusiceren%3A-klassiek a skos:Concept ;
+    skos:definition "Groepsmusiceren binnen klassieke muziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "groepsmusiceren: klassiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:groepsmusiceren%3A-musical a skos:Concept ;
+    skos:definition "Groepsmusiceren binnen musicals"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "groepsmusiceren: musical"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:groepsmusiceren%3A-opera%2Fmuziektheater a skos:Concept ;
+    skos:definition "Groepsmusiceren binnen opera/muziektheater"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "groepsmusiceren: opera/muziektheater"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:haarverzorging a skos:Concept ;
+    skos:definition "Haarverzorging"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "haarverzorging"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:hebreeuws a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Hebreeuwse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Hebreeuws"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:hedendaagse-dans a skos:Concept ;
+    skos:definition "Artistieke en fysieke vaardigheden, oefeningen en choreografieën"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "hedendaagse dans"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:hoefverzorging a skos:Concept ;
+    skos:definition "Hoefverzorging bij hoefdieren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "hoefverzorging"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:hotel a skos:Concept ;
+    skos:definition "Keuken, zaal, receptie, hotel, koken, serveertechnieken, beheer en administratieve organisatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "hotel"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:hout a skos:Concept ;
+    skos:definition "Houtbewerking, meubels"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "hout"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:human-resources a skos:Concept ;
+    skos:definition "Personeelsbeleid, administratie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "human resources"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:ict a skos:Concept ;
+    skos:definition "ICT, computationeel denken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "ICT"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:indirecte-zorg a skos:Concept ;
+    skos:definition "Zorgkundige, opvoeder, begeleider"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "indirecte zorg"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:informaticawetenschappen a skos:Concept ;
+    skos:definition "Hardware, software, besturingsprogramma's, apps, programmeren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "informaticawetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:instrument%3A-folk--en-wereldmuziek a skos:Concept ;
+    skos:definition "Accordeon, contrabas, doedelzak, folkgitaar, folkviool, Keltische harp, mandoline, slagwerk"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "instrument: folk- en wereldmuziek (accordeon, contrabas, doedelzak, folkgitaar, folkviool, Keltische harp, mandoline, slagwerk)"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:instrument%3A-jazz-pop-rock a skos:Concept ;
+    skos:definition "Accordeon, bugel, contrabas, cornet, dwarsfluit, gitaar, hoorn, keyboard, klarinet, piano, saxofoon, slagwerk, trombone, trompet, tuba, viool"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "instrument: jazz-pop-rock (accordeon, bugel, contrabas, cornet, dwarsfluit, gitaar, hoorn, keyboard, klarinet, piano, saxofoon, slagwerk, trombone, trompet, tuba, viool)"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:instrument%3A-klassiek a skos:Concept ;
+    skos:definition "Althoorn, altviool, bariton, blokfluit, bugel, cello, contrabas, dwarsfluit, Engelse hoorn, fagot, gamba, gitaar, harp, hobo, hoorn, klarinet, klavecimbel, kornet, luit, orgel, piano, saxofoon, slagwerk, traverso, trombone, trompet, viool"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "instrument: klassiek (althoorn, altviool, bariton, blokfluit, bugel, cello, contrabas, dwarsfluit, Engelse hoorn, fagot, gamba, gitaar, harp, hobo, hoorn, klarinet, klavecimbel, kornet, luit, orgel, piano, saxofoon, slagwerk, traverso, trombone, trompet, viool)"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:instrumentenbouw a skos:Concept ;
+    skos:definition "Bouw van muziekinstrumenten"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "instrumentenbouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:interlevensbeschouwelijke-dialoog a skos:Concept ;
+    skos:definition "Identiteit, samenleving, dialoog, religie, diversiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "interlevensbeschouwelijke dialoog"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:italiaans a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Italiaanse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Italiaans"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:keukentechnieken a skos:Concept ;
+    skos:definition "Keukentechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "keukentechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:klassieke-dans a skos:Concept ;
+    skos:definition "Artistieke en fysieke vaardigheden, oefeningen aan de barre, omgezet tot choreografieën"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "klassieke dans"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:koeltechnieken a skos:Concept ;
+    skos:definition "Opbouw en werking van industriële koelinstallaties, elektriciteit, fysische kenmerken van het koelproces"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "koeltechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:koetswerk a skos:Concept ;
+    skos:definition "Demontage, montage, plaatwerk, richten, voorbereiden, spuiten en afwerken auto's"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "koetswerk"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:kunstbeschouwing a skos:Concept ;
+    skos:definition "Kunstwerken beschrijven, analyseren en waarderen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "kunstbeschouwing"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:kunststoffen a skos:Concept ;
+    skos:definition "Alles rond kunststofverwerking"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "kunststoffen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:landbouw a skos:Concept ;
+    skos:definition "Landbouwtechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "landbouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:lassen-constructie a skos:Concept ;
+    skos:definition "Lassen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "lassen-constructie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:latijn a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Latijnse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Latijn"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:leren-leren a skos:Concept ;
+    skos:definition "Leren een leertaak zelfstandig tot een goed einde brengen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "leren leren"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:lichamelijke-opvoeding a skos:Concept ;
+    skos:definition "Beweging, atletiek, gymnastiek, balsporten, veiligheid, teamspirit, identiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "lichamelijke opvoeding"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:logistiek a skos:Concept ;
+    skos:definition "Ontvangen, sorteren, opslaan, verpakken en verzenden van verschillende soorten goederen, magazijntechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "logistiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:maatschappelijke-vorming a skos:Concept ;
+    skos:definition "Informatie vinden en praten over overheid, eigen leefmilieu, diversiteit, rechten, participatie, geldzaken, geschiedenis en cultuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "maatschappelijke vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:mechanica a skos:Concept ;
+    skos:definition "Metaal, metaalbewerkingsmachines, boren, schaven, frezen, draaien en slijpen, programmeren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "mechanica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:mechanische-vormgeving a skos:Concept ;
+    skos:definition "Vorm geven aan een metalen werkstuk"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "mechanische vormgeving"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:mens-en-maatschappij a skos:Concept ;
+    skos:definition "Mens, maatschappij, tijd, ruimte, verkeer"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "mens en maatschappij"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:meubelmakerij a skos:Concept ;
+    skos:definition "Meubels maken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "meubelmakerij"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:militaire-vorming a skos:Concept ;
+    skos:definition "Opleiding tot militair"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "militaire vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:mode a skos:Concept ;
+    skos:definition "Ontwerpen van modellen en patronen, CAD, textiel bewerken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "mode"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:muziektheorie%3A-folk-en-wereldmuziek a skos:Concept ;
+    skos:definition "Harmonie, vormleer en orkestratie in folk- en wereldmuziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "muziektheorie: folk-en wereldmuziek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:muziektheorie%3A-jazz-pop-rock a skos:Concept ;
+    skos:definition "Harmonie, vormleer en orkestratie in jazz, pop, rock"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "muziektheorie: jazz-pop-rock"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:muziektheorie%3A-klassiek a skos:Concept ;
+    skos:definition "Harmonie, vormleer en orkestratie in klassieke muziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "muziektheorie: klassiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:muzikale-opvoeding a skos:Concept ;
+    skos:definition "Muziek beluisteren, spelen, beschrijven, mening vormen over, zelfexpressie, cultuur, diversiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "muzikale opvoeding"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:muzische-vorming a skos:Concept ;
+    skos:definition "Beeld, muziek, drama, beweging, media. Zelf-expressie en beleving."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "muzische vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:natuurbeheer a skos:Concept ;
+    skos:definition """Maaien, beplanten, snoeien, kappen, waterpartijen beheren,
+natuurlijke omgevingen en landschappen in stand houden of laten ontwikkelen"""@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "natuurbeheer"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:natuurwetenschappen a skos:Concept ;
+    skos:definition "Combinatie van biologie, chemie en fysica"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "natuurwetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:nautische-technieken a skos:Concept ;
+    skos:definition "Maritieme techniek, scheepwerktuigkunde, binnenscheepvaart, vaartechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "nautische technieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:nederlands a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Vlaamse en Nederlandse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Nederlands"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:nederlands-voor-nieuwkomers a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Nederlandse cultuur, vaardigheden voor beginners"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Nederlands voor nieuwkomers (vak voorbehouden aan OKAN)"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:niet-confessionele-zedenleer- a skos:Concept ;
+    skos:definition "Vrijzinnig humanisme, identiteit, samenleven, democratie, diversiteit, andere levensbeschouwingen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "niet-confessionele zedenleer"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:onthaal a skos:Concept ;
+    skos:definition "Communicatie, adminstratie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "onthaal"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:optiek a skos:Concept ;
+    skos:definition "Optische technieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "optiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:opvoedkunde a skos:Concept ;
+    skos:definition "Opvoeder, begeleider, pedagogische technieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "opvoedkunde"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:orthopedie a skos:Concept ;
+    skos:definition "Orthopedische technieken, schoentechnoloog"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "orthopedie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:oud-hebreeuws a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, cultuur, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Oud-Hebreeuws"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:pedagogiek a skos:Concept ;
+    skos:definition "Ontwikkeling van baby tot volwassene, opvoeding, relatie ouder - kind, leren, onderwijs"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "pedagogiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:plastische-opvoeding a skos:Concept ;
+    skos:definition "Waarnemen, vormgeven, stijlen, materialen, tekenen, schilderen, beeldhouwen, collages, foto ..."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "plastische opvoeding"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:podiumtechnieken a skos:Concept ;
+    skos:definition "Technische creatie en realisatie van theater, schouwburg, festival"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "podiumtechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:praktische-harmonie%3A-folk-en-wereldmuziek a skos:Concept ;
+    skos:definition "Samenspel folk-en wereldmuziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "praktische harmonie: folk-en wereldmuziek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:praktische-harmonie%3A-jazz-pop-rock a skos:Concept ;
+    skos:definition "Samenspel jazz, pop, rock"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "praktische harmonie: jazz-pop-rock"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:praktische-harmonie%3A-klassiek a skos:Concept ;
+    skos:definition "Samenspel klassieke muziek"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "praktische harmonie: klassiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:printmedia a skos:Concept ;
+    skos:definition "Ontwerp van drukwerken, de uitvoering ervan (drukken) als de afwerking (plooien, snijden, nieten, inbinden)"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "printmedia"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:productie-industrie a skos:Concept ;
+    skos:definition """Productiegegevens opvolgen
+de productie aan de machine instellen, omstellen, bedienen en opvolgen
+kwaliteitscontroles uitvoeren, het basisonderhoud uitvoeren, gepaste maatregelen nemen bij storingen en afwijkingen
+kwaliteitsprocedures, hygiëne-, milieu-, veiligheids- en productievoorschriften naleven"""@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "productie-industrie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:project-algemene-vakken a skos:Concept ;
+    skos:definition "Nederlands, wiskunde, geschiedenis, biologie, aardrijkskunde. Uitdovend vak."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "project algemene vakken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:project-stem a skos:Concept ;
+    skos:definition "Idee onderzoeken, innoveren, technisch tekenen, constructies, programmeren, mechanieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "project STEM"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:psychologie a skos:Concept ;
+    skos:definition "Menselijk gedrag, emoties, mentaal welzijn, fasen levensloop, identiteitsontwikkeling, diversiteit, gender, interactie, bekende theorieën"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "psychologie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:public-relations a skos:Concept ;
+    skos:definition "Onthaal, voorlichtingsactiviteiten, marktonderzoeken, communicatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "public relations"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:publiciteitstekenen a skos:Concept ;
+    skos:definition "Reclame, grafische publiciteitstechnieken, grafische programma's"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "publiciteitstekenen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:recht a skos:Concept ;
+    skos:definition "Wetten, decreten, rechtbank, justitie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "recht"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:restauranttechnieken a skos:Concept ;
+    skos:definition "Serveertechnieken, kooktechnieken, beheer en organisatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "restauranttechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:restauratie a skos:Concept ;
+    skos:definition "Restauratietechnieken voor glas, keramiek, hout, schilderkunst, muurschilderkunst, metaal, steen, visuele media, textiel of papier."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "restauratie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:rijn--en-binnenvaart a skos:Concept ;
+    skos:definition "Technieken om binnenschipper te worden, op drukke verkeersaders varen, het schip en de motoren te onderhouden en op kompas varen."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Rijn- en binnenvaart"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:russisch a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Russische cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Russisch"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:ruwbouw a skos:Concept ;
+    skos:definition """bouwmaterialen en technieken, constructies, 
+grond-, funderings- en rioleringswerken uitvoeren, spouwmuren, gevels en muuropeningen metselen, stutten plaatsen, beton storten en ontkisten, op stellingen werken, betonherstellingen en alle vormen van gevelwerken uitvoeren."""@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "ruwbouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:sanitair a skos:Concept ;
+    skos:definition "Loodgieter en installateur van centrale verwarming en sanitair"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "sanitair"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:scheepswerktuigkunde a skos:Concept ;
+    skos:definition "Scheepswerktuigen monteren, onderhouden, programmeren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "scheepswerktuigkunde"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:scheepvaart a skos:Concept ;
+    skos:definition "Technieken om schipper te worden (zie Rijn- en binnenvaart)"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "scheepvaart"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:schilderen-en-decoratie a skos:Concept ;
+    skos:definition "Behangen, schilderen, wand- en vloerbekleding"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "schilderen en decoratie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:schoonheidsverzorging a skos:Concept ;
+    skos:definition "Schoonheidsverzorging, verzorging van gelaat, handen, voeten en lichaam, aspecten van haarverzorging en make-up"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "schoonheidsverzorging"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:schoonmaak a skos:Concept ;
+    skos:definition "Poetsen, schoonmaken, huishouden"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "schoonmaak"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:schrijnwerkerij a skos:Concept ;
+    skos:definition "Schrijnwerker, maken en plaatsen van buitenschrijnwerk (ramen, deuren, poorten, enz.) voor nieuwbouw en renovatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "schrijnwerkerij"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:slagerij a skos:Concept ;
+    skos:definition "Slagertechnieken, vleesbewerking, samenstelling, bewaring"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "slagerij"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:sociale-activiteit a skos:Concept ;
+    skos:definition "Gedrag, hoe samenwerken, dialoog, communicatie, interactie, respect"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "sociale activiteit"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:sociale-vaardigheden a skos:Concept ;
+    skos:definition "Sociale interactie, sociale relaties, dialoog, participatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "sociale vaardigheden"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:sociologie a skos:Concept ;
+    skos:definition "Subculturen, sociale rollen, stereotiepen, diversiteit, integratie, rol overheid,"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "sociologie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:spaans a skos:Concept ;
+    skos:definition "Woordenschat, grammatica, Spaanse cultuur, vaardigheden, literatuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "Spaans"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:sport a skos:Concept ;
+    skos:definition "Beweging, atletiek, gymnastiek, balsporten, motoriek, veiligheid, teamspirit, identiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "sport"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:steen--en-marmerbewerking a skos:Concept ;
+    skos:definition "Steen- en marmerbewerkingstechnieken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "steen- en marmerbewerking"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:steigerbouw a skos:Concept ;
+    skos:definition "Monteren en demonteren van allerlei soorten stellingen, podia, tribunes, trappenhuizen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "steigerbouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:tandtechnieken a skos:Concept ;
+    skos:definition "Alles met tanden en tandonderhoud, tandprothesen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "tandtechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:techniek a skos:Concept ;
+    skos:definition "Beginselen van elektriciteit, mobiliteit, constructie, ontwerpen, monteren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "techniek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:technologische-opvoeding a skos:Concept ;
+    skos:definition "Beginselen van elektriciteit, mobiliteit, constructie, ontwerpen, monteren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "technologische opvoeding"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:textielproductie a skos:Concept ;
+    skos:definition "Maken van textielproducten in vezelvoorbereiding, de spinnerij, de voorbereiding weverij, de weverij, de tuftafdeling of de eindafwerking"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "textielproductie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:textielverzorging a skos:Concept ;
+    skos:definition "Wastechnieken, bewaring en verzorging van textiel"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "textielverzorging"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-beeldende-vorming a skos:Concept ;
+    skos:definition "Waarnemingstekenen, schilderen, beeldhouwen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste beeldende vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-biochemie a skos:Concept ;
+    skos:definition "Biologie en chemie van het leven, de organismen en hun cellen, de moleculaire architectuur en functie van de cel, de informatieoverdracht tussen cellen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste biochemie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-biologie a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van biologie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste biologie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-chemie a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van chemie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste chemie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-economie a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van economie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste economie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-fysica a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van fysica"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste fysica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-informatica a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van informatica"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste informatica"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-natuurwetenschappen a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van natuurwetenschappen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste natuurwetenschappen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toegepaste-psychologie a skos:Concept ;
+    skos:definition "Praktijkvoorbeelden van psychologie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toegepaste psychologie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:toerisme a skos:Concept ;
+    skos:definition "Kenmerken toerisme en de vrije tijd, reis- en koopgedrag van een toerist ontleden, reisdocumenten, contracten en betaalmiddelen."@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "toerisme"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:topsport a skos:Concept ;
+    skos:definition "Beweging, atletiek, gymnastiek, balsporten, motoriek, veiligheid, teamspirit, identiteit"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "topsport"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:tuinbouw a skos:Concept ;
+    skos:definition "Agrarische technieken rond tuinbouw"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "tuinbouw"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:uurwerkmaken a skos:Concept ;
+    skos:definition "Maken van uurwerken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "uurwerkmaken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:veiligheidstechnieken a skos:Concept ;
+    skos:definition "Technieken om bewakingsagent, gemachtigd opzichter, gemeenschapswacht, veldwachter, voetbalsteward,... te worden"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "veiligheidstechnieken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:verkoop a skos:Concept ;
+    skos:definition "Verkoopstechnieken, administratie, communicatie"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "verkoop"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:verpleegkunde a skos:Concept ;
+    skos:definition "Bieden van lichamelijke hulp en psychische en sociale ondersteuning aan zieken, gewonden, bejaarden of personen met een handicap"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "verpleegkunde"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:verzorging a skos:Concept ;
+    skos:definition "Alles rond de kinder-, bejaarden- en thuiszorg"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "verzorging"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:voeding a skos:Concept ;
+    skos:definition "Voeding, ambachtelijke bereidingen en industriële productie van levensmiddelen"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "voeding"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:vrije-beeldende-vorming a skos:Concept ;
+    skos:definition "Beeldende kunst - kunstbeschouwing, beeldtaal"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "vrije beeldende vorming"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:waarnemingstekenen a skos:Concept ;
+    skos:definition "Tekenen, modeltekenen, stillevens"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "waarnemingstekenen"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:wegenwerken a skos:Concept ;
+    skos:definition "Kennis en technieken rond wegenwerken"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "wegenwerken"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:wetenschappen-en-techniek a skos:Concept ;
+    skos:definition "Wetenschappen, techniek, natuur"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "wetenschappen en techniek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:wiskunde a skos:Concept ;
+    skos:definition "Getallenleer, meetkunde, algebra, analyse, kansrekenen, modelleren"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "wiskunde"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zakelijke-communicatie a skos:Concept ;
+    skos:definition "Communicatie, reclame, online media"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zakelijke communicatie"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zang%3A-folk--en-wereldmuziek a skos:Concept ;
+    skos:definition "Zangtraining binnen de genres folk-en wereldmuziek, muziekgeschiedenis"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zang: folk- en wereldmuziek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zang%3A-jazz-pop-rock a skos:Concept ;
+    skos:definition "Zangtraining binnen de genres jazz, pop en rock, muziekgeschiedenis"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zang: jazz-pop-rock"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zang%3A-klassiek a skos:Concept ;
+    skos:definition "Zangtraining binnen klassieke muziek, muziekgeschiedenis"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zang: klassiek"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zang%3A-musical a skos:Concept ;
+    skos:definition "Zangtraining binnen het musical genre, muziekgeschiedenis"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zang: musical"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zang%3A-opera%2Fmuziektheater a skos:Concept ;
+    skos:definition "Zangtraining binnen het genre opera"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zang: opera/muziektheater"@nl ;
+    skos:topConceptOf ond:vak .
+
+ovak:zeemanschap a skos:Concept ;
+    skos:definition "Opleiding om een matroos te worden"@nl ;
+    skos:inScheme ond:vak ;
+    skos:prefLabel "zeemanschap"@nl ;
+    skos:topConceptOf ond:vak .
+
+ond:vak a skos:ConceptScheme ;
+    pav:version "1.0.0" ;
+    skos:hasTopConcept ovak:aardrijkskunde,
+        ovak:administratie,
+        ovak:afwerking-bouw,
+        ovak:agrarische-technieken,
+        ovak:algemene-muziekleer,
+        ovak:algemene-verbale-vorming,
+        ovak:apotheek,
+        ovak:architecturale-vorming,
+        ovak:architectuurtekenen,
+        ovak:artistieke-creatie,
+        ovak:artistieke-expressie,
+        ovak:atelier-drama,
+        ovak:atelier-woord,
+        ovak:audiovisuele-vorming,
+        ovak:autorijtechnieken,
+        ovak:autotechnieken,
+        ovak:bakkerij,
+        ovak:bedrijfswetenschappen,
+        ovak:beeld--en-mediacultuur,
+        ovak:beeldende-kunsten,
+        ovak:beeldende-vorming,
+        ovak:besturing-bouwmachines,
+        ovak:bewegingswetenschappen,
+        ovak:binnenhuiskunst,
+        ovak:biochemie,
+        ovak:biologie,
+        ovak:boekhouding,
+        ovak:bosbouw,
+        ovak:bouw,
+        ovak:bouwkunst,
+        ovak:burgerschap,
+        ovak:centrale-verwarming,
+        ovak:chemie,
+        ovak:commerci%C3%ABle-technieken,
+        ovak:communicatiewetenschappen,
+        ovak:creatief-musiceren,
+        ovak:cultuurbeschouwing,
+        ovak:cultuurwetenschappen,
+        ovak:dakwerken,
+        ovak:decoratieve-technieken,
+        ovak:diamant,
+        ovak:dierenzorg,
+        ovak:duits,
+        ovak:ecologie,
+        ovak:economie-,
+        ovak:eigen-cultuur-en-religie,
+        ovak:elektriciteit,
+        ovak:elektromechanica,
+        ovak:elektronica,
+        ovak:engels-,
+        ovak:esthetica,
+        ovak:exploratie,
+        ovak:filosofie,
+        ovak:fotografie,
+        ovak:frans,
+        ovak:fysica,
+        ovak:gedragswetenschappen,
+        ovak:geschiedenis,
+        ovak:glastechnieken,
+        ovak:godsdienst-,
+        ovak:goud-en-juwelen,
+        ovak:grafische-technieken,
+        ovak:grieks,
+        ovak:grime,
+        ovak:groendecoratie,
+        ovak:groepsmusiceren%3A-folk--en-wereldmuziek,
+        ovak:groepsmusiceren%3A-jazz-pop-rock,
+        ovak:groepsmusiceren%3A-klassiek,
+        ovak:groepsmusiceren%3A-musical,
+        ovak:groepsmusiceren%3A-opera%2Fmuziektheater,
+        ovak:haarverzorging,
+        ovak:hebreeuws,
+        ovak:hedendaagse-dans,
+        ovak:hoefverzorging,
+        ovak:hotel,
+        ovak:hout,
+        ovak:human-resources,
+        ovak:ict,
+        ovak:indirecte-zorg,
+        ovak:informaticawetenschappen,
+        ovak:instrument%3A-folk--en-wereldmuziek,
+        ovak:instrument%3A-jazz-pop-rock,
+        ovak:instrument%3A-klassiek,
+        ovak:instrumentenbouw,
+        ovak:interlevensbeschouwelijke-dialoog,
+        ovak:italiaans,
+        ovak:keukentechnieken,
+        ovak:klassieke-dans,
+        ovak:koeltechnieken,
+        ovak:koetswerk,
+        ovak:kunstbeschouwing,
+        ovak:kunststoffen,
+        ovak:landbouw,
+        ovak:lassen-constructie,
+        ovak:latijn,
+        ovak:leren-leren,
+        ovak:lichamelijke-opvoeding,
+        ovak:logistiek,
+        ovak:maatschappelijke-vorming,
+        ovak:mechanica,
+        ovak:mechanische-vormgeving,
+        ovak:mens-en-maatschappij,
+        ovak:meubelmakerij,
+        ovak:militaire-vorming,
+        ovak:mode,
+        ovak:muziektheorie%3A-folk-en-wereldmuziek,
+        ovak:muziektheorie%3A-jazz-pop-rock,
+        ovak:muziektheorie%3A-klassiek,
+        ovak:muzikale-opvoeding,
+        ovak:muzische-vorming,
+        ovak:natuurbeheer,
+        ovak:natuurwetenschappen,
+        ovak:nautische-technieken,
+        ovak:nederlands,
+        ovak:nederlands-voor-nieuwkomers,
+        ovak:niet-confessionele-zedenleer-,
+        ovak:onthaal,
+        ovak:optiek,
+        ovak:opvoedkunde,
+        ovak:orthopedie,
+        ovak:oud-hebreeuws,
+        ovak:pedagogiek,
+        ovak:plastische-opvoeding,
+        ovak:podiumtechnieken,
+        ovak:praktische-harmonie%3A-folk-en-wereldmuziek,
+        ovak:praktische-harmonie%3A-jazz-pop-rock,
+        ovak:praktische-harmonie%3A-klassiek,
+        ovak:printmedia,
+        ovak:productie-industrie,
+        ovak:project-algemene-vakken,
+        ovak:project-stem,
+        ovak:psychologie,
+        ovak:public-relations,
+        ovak:publiciteitstekenen,
+        ovak:recht,
+        ovak:restauranttechnieken,
+        ovak:restauratie,
+        ovak:rijn--en-binnenvaart,
+        ovak:russisch,
+        ovak:ruwbouw,
+        ovak:sanitair,
+        ovak:scheepswerktuigkunde,
+        ovak:scheepvaart,
+        ovak:schilderen-en-decoratie,
+        ovak:schoonheidsverzorging,
+        ovak:schoonmaak,
+        ovak:schrijnwerkerij,
+        ovak:slagerij,
+        ovak:sociale-activiteit,
+        ovak:sociale-vaardigheden,
+        ovak:sociologie,
+        ovak:spaans,
+        ovak:sport,
+        ovak:steen--en-marmerbewerking,
+        ovak:steigerbouw,
+        ovak:tandtechnieken,
+        ovak:techniek,
+        ovak:technologische-opvoeding,
+        ovak:textielproductie,
+        ovak:textielverzorging,
+        ovak:toegepaste-beeldende-vorming,
+        ovak:toegepaste-biochemie,
+        ovak:toegepaste-biologie,
+        ovak:toegepaste-chemie,
+        ovak:toegepaste-economie,
+        ovak:toegepaste-fysica,
+        ovak:toegepaste-informatica,
+        ovak:toegepaste-natuurwetenschappen,
+        ovak:toegepaste-psychologie,
+        ovak:toerisme,
+        ovak:topsport,
+        ovak:tuinbouw,
+        ovak:uurwerkmaken,
+        ovak:veiligheidstechnieken,
+        ovak:verkoop,
+        ovak:verpleegkunde,
+        ovak:verzorging,
+        ovak:voeding,
+        ovak:vrije-beeldende-vorming,
+        ovak:waarnemingstekenen,
+        ovak:wegenwerken,
+        ovak:wetenschappen-en-techniek,
+        ovak:wiskunde,
+        ovak:zakelijke-communicatie,
+        ovak:zang%3A-folk--en-wereldmuziek,
+        ovak:zang%3A-jazz-pop-rock,
+        ovak:zang%3A-klassiek,
+        ovak:zang%3A-musical,
+        ovak:zang%3A-opera%2Fmuziektheater,
+        ovak:zeemanschap ;
+    skos:prefLabel "thesaurus vakken"@nl .

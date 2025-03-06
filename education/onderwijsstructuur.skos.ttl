@@ -1,0 +1,802 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix label-type: <http://publications.europa.eu/resource/authority/label-type/> .
+@prefix ocol: <https://w3id.org/onderwijs-vlaanderen/id/collectie/> .
+@prefix ond: <https://w3id.org/onderwijs-vlaanderen/id/> .
+@prefix ostr: <https://w3id.org/onderwijs-vlaanderen/id/structuur/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+ocol:finaliteit a skos:Collection ;
+    skos:definition "onderwijsfinaliteiten"@nl ;
+    skos:member ostr:secundair-2e-graad-arbeidsmarkt,
+        ostr:secundair-2e-graad-doorstroom,
+        ostr:secundair-2e-graad-dubbel,
+        ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt,
+        ostr:secundair-3e-graad-arbeidsmarkt,
+        ostr:secundair-3e-graad-doorstroom,
+        ostr:secundair-3e-graad-dubbel ;
+    skos:prefLabel "onderwijsfinaliteiten"@nl .
+
+ocol:graad a skos:Collection,
+        skos:OrderedCollection ;
+    skos:definition "onderwijsgraden"@nl ;
+    skos:member ostr:buitengewoon-secundair-1e-graad,
+        ostr:buitengewoon-secundair-2e-graad,
+        ostr:buitengewoon-secundair-3e-graad,
+        ostr:buitengewoon-secundair-3e-graad-3e-leerjaar,
+        ostr:lager-1e-graad,
+        ostr:lager-2e-graad,
+        ostr:lager-3e-graad,
+        ostr:secundair-1e-graad,
+        ostr:secundair-2e-graad,
+        ostr:secundair-3e-graad,
+        ostr:secundair-3e-graad-3e-leerjaar ;
+    skos:memberList ( ostr:lager-1e-graad ostr:lager-2e-graad ostr:lager-3e-graad ostr:secundair-1e-graad ostr:secundair-2e-graad ostr:secundair-3e-graad ostr:secundair-3e-graad-3e-leerjaar ostr:buitengewoon-secundair-1e-graad ostr:buitengewoon-secundair-2e-graad ostr:buitengewoon-secundair-3e-graad ostr:buitengewoon-secundair-3e-graad-3e-leerjaar ) ;
+    skos:prefLabel "onderwijsgraden"@nl .
+
+ocol:leerjaar a skos:Collection,
+        skos:OrderedCollection ;
+    skos:definition "onderwijs leerjaren"@nl ;
+    skos:member ostr:kleuter-3-jaar-of-jonger,
+        ostr:kleuter-4-jaar,
+        ostr:kleuter-5-jaar,
+        ostr:lager-1e-leerjaar,
+        ostr:lager-2e-leerjaar,
+        ostr:lager-3e-leerjaar,
+        ostr:lager-4e-leerjaar,
+        ostr:lager-5e-leerjaar,
+        ostr:lager-6e-leerjaar,
+        ostr:secundair-1e-leerjaar,
+        ostr:secundair-2e-leerjaar,
+        ostr:secundair-3e-leerjaar,
+        ostr:secundair-4e-leerjaar,
+        ostr:secundair-5e-leerjaar,
+        ostr:secundair-6e-leerjaar,
+        ostr:secundair-7e-leerjaar ;
+    skos:memberList ( ostr:kleuter-3-jaar-of-jonger ostr:kleuter-4-jaar ostr:kleuter-5-jaar ostr:lager-1e-leerjaar ostr:lager-2e-leerjaar ostr:lager-3e-leerjaar ostr:lager-4e-leerjaar ostr:lager-5e-leerjaar ostr:lager-6e-leerjaar ostr:secundair-1e-leerjaar ostr:secundair-2e-leerjaar ostr:secundair-3e-leerjaar ostr:secundair-4e-leerjaar ostr:secundair-5e-leerjaar ostr:secundair-6e-leerjaar ostr:secundair-7e-leerjaar ) ;
+    skos:prefLabel "onderwijs leerjaren"@nl .
+
+ocol:niveau a skos:Collection ;
+    skos:definition "onderwijsniveaus"@nl ;
+    skos:member ostr:basisonderwijs,
+        ostr:buitengewoon-basisonderwijs,
+        ostr:buitengewoon-secundair-onderwijs,
+        ostr:deeltijds-kunstonderwijs,
+        ostr:hoger-onderwijs,
+        ostr:secundair-onderwijs,
+        ostr:volwassenenonderwijs ;
+    skos:prefLabel "onderwijsniveaus"@nl .
+
+ocol:onderwijsvorm a skos:Collection ;
+    skos:definition "onderwijsvormen"@nl ;
+    skos:member ostr:secundair-2e-graad-arbeidsmarkt-bso,
+        ostr:secundair-2e-graad-doorstroom-aso,
+        ostr:secundair-2e-graad-doorstroom-kso,
+        ostr:secundair-2e-graad-doorstroom-tso,
+        ostr:secundair-2e-graad-dubbel-kso,
+        ostr:secundair-2e-graad-dubbel-tso,
+        ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-bso,
+        ostr:secundair-3e-graad-arbeidsmarkt-bso,
+        ostr:secundair-3e-graad-doorstroom-aso,
+        ostr:secundair-3e-graad-doorstroom-kso,
+        ostr:secundair-3e-graad-doorstroom-tso,
+        ostr:secundair-3e-graad-dubbel-kso,
+        ostr:secundair-3e-graad-dubbel-tso ;
+    skos:prefLabel "onderwijsvormen"@nl .
+
+ocol:opleidingsvorm a skos:Collection ;
+    skos:definition "opleidingsvormen"@nl ;
+    skos:member ostr:buitengewoon-secundair-opleidingsvorm-1,
+        ostr:buitengewoon-secundair-opleidingsvorm-2,
+        ostr:buitengewoon-secundair-opleidingsvorm-3,
+        ostr:buitengewoon-secundair-opleidingsvorm-4 ;
+    skos:prefLabel "opleidingsvormen"@nl .
+
+ocol:stroom a skos:Collection ;
+    skos:definition "onderwijsstromen"@nl ;
+    skos:member ostr:secundair-1e-graad-a-stroom,
+        ostr:secundair-1e-graad-b-stroom ;
+    skos:prefLabel "onderwijsstromen"@nl .
+
+ocol:structuur a skos:Collection ;
+    skos:definition "onderwijsstructuur"@nl ;
+    skos:member ostr:basiseducatie,
+        ostr:basisonderwijs,
+        ostr:buitengewoon-basisonderwijs,
+        ostr:buitengewoon-kleuteronderwijs,
+        ostr:buitengewoon-lager-onderwijs,
+        ostr:buitengewoon-secundair-1e-graad,
+        ostr:buitengewoon-secundair-2e-graad,
+        ostr:buitengewoon-secundair-3e-graad,
+        ostr:buitengewoon-secundair-3e-graad-3e-leerjaar,
+        ostr:buitengewoon-secundair-onderwijs,
+        ostr:buitengewoon-secundair-opleidingsvorm-1,
+        ostr:buitengewoon-secundair-opleidingsvorm-2,
+        ostr:buitengewoon-secundair-opleidingsvorm-3,
+        ostr:buitengewoon-secundair-opleidingsvorm-4,
+        ostr:deeltijds-kunstonderwijs,
+        ostr:hoger-onderwijs,
+        ostr:kleuter-3-jaar-of-jonger,
+        ostr:kleuter-4-jaar,
+        ostr:kleuter-5-jaar,
+        ostr:kleuteronderwijs,
+        ostr:lager-1e-graad,
+        ostr:lager-1e-leerjaar,
+        ostr:lager-2e-graad,
+        ostr:lager-2e-leerjaar,
+        ostr:lager-3e-graad,
+        ostr:lager-3e-leerjaar,
+        ostr:lager-4e-leerjaar,
+        ostr:lager-5e-leerjaar,
+        ostr:lager-6e-leerjaar,
+        ostr:lager-onderwijs,
+        ostr:secundair-1e-graad,
+        ostr:secundair-1e-graad-a-stroom,
+        ostr:secundair-1e-graad-b-stroom,
+        ostr:secundair-1e-leerjaar,
+        ostr:secundair-2e-graad,
+        ostr:secundair-2e-graad-arbeidsmarkt,
+        ostr:secundair-2e-graad-arbeidsmarkt-bso,
+        ostr:secundair-2e-graad-doorstroom,
+        ostr:secundair-2e-graad-doorstroom-aso,
+        ostr:secundair-2e-graad-doorstroom-kso,
+        ostr:secundair-2e-graad-doorstroom-tso,
+        ostr:secundair-2e-graad-dubbel,
+        ostr:secundair-2e-graad-dubbel-kso,
+        ostr:secundair-2e-graad-dubbel-tso,
+        ostr:secundair-2e-leerjaar,
+        ostr:secundair-3e-graad,
+        ostr:secundair-3e-graad-3e-leerjaar,
+        ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt,
+        ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-bso,
+        ostr:secundair-3e-graad-arbeidsmarkt,
+        ostr:secundair-3e-graad-arbeidsmarkt-bso,
+        ostr:secundair-3e-graad-doorstroom,
+        ostr:secundair-3e-graad-doorstroom-aso,
+        ostr:secundair-3e-graad-doorstroom-kso,
+        ostr:secundair-3e-graad-doorstroom-tso,
+        ostr:secundair-3e-graad-dubbel,
+        ostr:secundair-3e-graad-dubbel-kso,
+        ostr:secundair-3e-graad-dubbel-tso,
+        ostr:secundair-3e-leerjaar,
+        ostr:secundair-4e-leerjaar,
+        ostr:secundair-5e-leerjaar,
+        ostr:secundair-6e-leerjaar,
+        ostr:secundair-7e-leerjaar,
+        ostr:secundair-onderwijs,
+        ostr:secundair-volwassenenonderwijs,
+        ostr:volwassenenonderwijs ;
+    skos:prefLabel "onderwijsstructuur"@nl .
+
+ocol:subniveau a skos:Collection ;
+    skos:definition "onderwijs subniveaus"@nl ;
+    skos:member ostr:basiseducatie,
+        ostr:buitengewoon-kleuteronderwijs,
+        ostr:buitengewoon-lager-onderwijs,
+        ostr:kleuteronderwijs,
+        ostr:lager-onderwijs,
+        ostr:secundair-volwassenenonderwijs ;
+    skos:prefLabel "onderwijs subniveaus"@nl .
+
+ostr:buitengewoon-secundair-opleidingsvorm-1-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "opleidingsvorm 1"@nl .
+
+ostr:buitengewoon-secundair-opleidingsvorm-2-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "opleidingsvorm 2"@nl .
+
+ostr:buitengewoon-secundair-opleidingsvorm-3-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "opleidingsvorm 3"@nl .
+
+ostr:buitengewoon-secundair-opleidingsvorm-4-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "opleidingsvorm 4"@nl .
+
+ostr:secundair-1e-graad-a-stroom-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "a-stroom"@nl .
+
+ostr:secundair-1e-graad-b-stroom-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "b-stroom"@nl .
+
+ostr:secundair-2e-graad-arbeidsmarkt-bso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "bso"@nl .
+
+ostr:secundair-2e-graad-arbeidsmarkt-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "finaliteit arbeidsmarkt"@nl .
+
+ostr:secundair-2e-graad-doorstroom-aso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "aso"@nl .
+
+ostr:secundair-2e-graad-doorstroom-kso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "kso"@nl .
+
+ostr:secundair-2e-graad-doorstroom-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "finaliteit doorstroom"@nl .
+
+ostr:secundair-2e-graad-doorstroom-tso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "tso"@nl .
+
+ostr:secundair-2e-graad-dubbel-kso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "kso"@nl .
+
+ostr:secundair-2e-graad-dubbel-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "dubbele finaliteit"@nl .
+
+ostr:secundair-2e-graad-dubbel-tso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "tso"@nl .
+
+ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-bso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "bso"@nl .
+
+ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "finaliteit arbeidsmarkt"@nl .
+
+ostr:secundair-3e-graad-arbeidsmarkt-bso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "bso"@nl .
+
+ostr:secundair-3e-graad-arbeidsmarkt-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "finaliteit arbeidsmarkt"@nl .
+
+ostr:secundair-3e-graad-doorstroom-aso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "aso"@nl .
+
+ostr:secundair-3e-graad-doorstroom-kso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "kso"@nl .
+
+ostr:secundair-3e-graad-doorstroom-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "finaliteit doorstroom"@nl .
+
+ostr:secundair-3e-graad-doorstroom-tso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "tso"@nl .
+
+ostr:secundair-3e-graad-dubbel-kso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "kso"@nl .
+
+ostr:secundair-3e-graad-dubbel-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "dubbele finaliteit"@nl .
+
+ostr:secundair-3e-graad-dubbel-tso-short-label a skosxl:Label ;
+    dct:type label-type:SHORTLABEL ;
+    skosxl:literalForm "tso"@nl .
+
+ostr:basiseducatie a skos:Concept ;
+    skos:broader ostr:volwassenenonderwijs ;
+    skos:definition "basiseducatie"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "basiseducatie"@nl .
+
+ostr:buitengewoon-kleuteronderwijs a skos:Concept ;
+    skos:broader ostr:buitengewoon-basisonderwijs ;
+    skos:definition "buitengewoon kleuteronderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon kleuteronderwijs"@nl .
+
+ostr:buitengewoon-lager-onderwijs a skos:Concept ;
+    skos:broader ostr:buitengewoon-basisonderwijs ;
+    skos:definition "buitengewoon lager onderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon lager onderwijs"@nl .
+
+ostr:buitengewoon-secundair-opleidingsvorm-1 a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-onderwijs ;
+    skos:definition "buitengewoon secundair opleidingsvorm 1"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair opleidingsvorm 1"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-opleidingsvorm-1-short-label .
+
+ostr:buitengewoon-secundair-opleidingsvorm-2 a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-onderwijs ;
+    skos:definition "buitengewoon secundair opleidingsvorm 2"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair opleidingsvorm 2"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-opleidingsvorm-2-short-label .
+
+ostr:buitengewoon-secundair-opleidingsvorm-3 a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-onderwijs ;
+    skos:definition "buitengewoon secundair opleidingsvorm 3"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair opleidingsvorm 3"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-opleidingsvorm-3-short-label .
+
+ostr:deeltijds-kunstonderwijs a skos:Concept ;
+    skos:definition "deeltijds kunstonderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "deeltijds kunstonderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:hoger-onderwijs a skos:Concept ;
+    skos:definition "hoger onderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "hoger onderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:secundair-1e-graad-a-stroom a skos:Concept ;
+    skos:broader ostr:secundair-1e-graad ;
+    skos:definition "secundair 1e graad a-stroom"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 1e graad a-stroom"@nl ;
+    skosxl:altLabel ostr:secundair-1e-graad-a-stroom-short-label .
+
+ostr:secundair-1e-graad-b-stroom a skos:Concept ;
+    skos:broader ostr:secundair-1e-graad ;
+    skos:definition "secundair 1e graad b-stroom"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 1e graad b-stroom"@nl ;
+    skosxl:altLabel ostr:secundair-1e-graad-b-stroom-short-label .
+
+ostr:secundair-2e-graad-arbeidsmarkt-bso a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad-arbeidsmarkt ;
+    skos:definition "secundair 2e graad finaliteit arbeidsmarkt bso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e graad finaliteit arbeidsmarkt bso"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-arbeidsmarkt-bso-short-label .
+
+ostr:secundair-2e-graad-doorstroom-aso a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad-doorstroom ;
+    skos:definition "secundair 2e graad finaliteit doorstroom aso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e graad finaliteit doorstroom aso"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-doorstroom-aso-short-label .
+
+ostr:secundair-2e-graad-doorstroom-kso a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad-doorstroom ;
+    skos:definition "secundair 2e graad finaliteit doorstroom kso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e graad finaliteit doorstroom kso"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-doorstroom-kso-short-label .
+
+ostr:secundair-2e-graad-doorstroom-tso a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad-doorstroom ;
+    skos:definition "secundair 2e graad finaliteit doorstroom tso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e graad finaliteit doorstroom tso"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-doorstroom-tso-short-label .
+
+ostr:secundair-2e-graad-dubbel-kso a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad-dubbel ;
+    skos:definition "secundair 2e graad dubbele finaliteit kso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e graad dubbele finaliteit kso"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-dubbel-kso-short-label .
+
+ostr:secundair-2e-graad-dubbel-tso a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad-dubbel ;
+    skos:definition "secundair 2e graad dubbele finaliteit tso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e graad dubbele finaliteit tso"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-dubbel-tso-short-label .
+
+ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-bso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt ;
+    skos:definition "secundair 3e graad 3e leerjaar finaliteit arbeidsmarkt bso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad 3e leerjaar finaliteit arbeidsmarkt bso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-bso-short-label .
+
+ostr:secundair-3e-graad-arbeidsmarkt-bso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-arbeidsmarkt ;
+    skos:definition "secundair 3e graad finaliteit arbeidsmarkt bso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad finaliteit arbeidsmarkt bso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-arbeidsmarkt-bso-short-label .
+
+ostr:secundair-3e-graad-doorstroom-aso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-doorstroom ;
+    skos:definition "secundair 3e graad finaliteit doorstroom aso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad finaliteit doorstroom aso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-doorstroom-aso-short-label .
+
+ostr:secundair-3e-graad-doorstroom-kso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-doorstroom ;
+    skos:definition "secundair 3e graad finaliteit doorstroom kso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad finaliteit doorstroom kso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-doorstroom-kso-short-label .
+
+ostr:secundair-3e-graad-doorstroom-tso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-doorstroom ;
+    skos:definition "secundair 3e graad finaliteit doorstroom tso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad finaliteit doorstroom tso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-doorstroom-tso-short-label .
+
+ostr:secundair-3e-graad-dubbel-kso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-dubbel ;
+    skos:definition "secundair 3e graad dubbele finaliteit kso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad dubbele finaliteit kso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-dubbel-kso-short-label .
+
+ostr:secundair-3e-graad-dubbel-tso a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-dubbel ;
+    skos:definition "secundair 3e graad dubbele finaliteit tso"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e graad dubbele finaliteit tso"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-dubbel-tso-short-label .
+
+ostr:secundair-volwassenenonderwijs a skos:Concept ;
+    skos:broader ostr:volwassenenonderwijs ;
+    skos:definition "secundair volwassenenonderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair volwassenenonderwijs"@nl .
+
+ostr:buitengewoon-secundair-1e-graad a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-opleidingsvorm-4 ;
+    skos:definition "buitengewoon secundair 1e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair 1e graad"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-1e-graad-short-label .
+
+ostr:buitengewoon-secundair-2e-graad a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-opleidingsvorm-4 ;
+    skos:definition "buitengewoon secundair 2e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair 2e graad"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-2e-graad-short-label .
+
+ostr:buitengewoon-secundair-3e-graad a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-opleidingsvorm-4 ;
+    skos:definition "buitengewoon secundair 3e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair 3e graad"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-3e-graad-short-label .
+
+ostr:buitengewoon-secundair-3e-graad-3e-leerjaar a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-opleidingsvorm-4 ;
+    skos:definition "buitengewoon secundair 3e graad 3e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "buitengewoon secundair 3e graad 3e leerjaar"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-3e-graad-3e-leerjaar-short-label .
+
+ostr:kleuter-3-jaar-of-jonger a skos:Concept ;
+    skos:broader ostr:kleuteronderwijs ;
+    skos:definition "kleuter 3 jaar of jonger"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "kleuter 3 jaar of jonger"@nl .
+
+ostr:kleuter-4-jaar a skos:Concept ;
+    skos:broader ostr:kleuteronderwijs ;
+    skos:definition "kleuter 4 jaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "kleuter 4 jaar"@nl .
+
+ostr:kleuter-5-jaar a skos:Concept ;
+    skos:broader ostr:kleuteronderwijs ;
+    skos:definition "kleuter 5 jaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "kleuter 5 jaar"@nl .
+
+ostr:lager-1e-leerjaar a skos:Concept ;
+    skos:broader ostr:lager-1e-graad ;
+    skos:definition "lager 1e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "lager 1e leerjaar"@nl ;
+    skosxl:altLabel ostr:lager-1e-leerjaar-short-label .
+
+ostr:lager-2e-leerjaar a skos:Concept ;
+    skos:broader ostr:lager-1e-graad ;
+    skos:definition "lager 2e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "lager 2e leerjaar"@nl ;
+    skosxl:altLabel ostr:lager-2e-leerjaar-short-label .
+
+ostr:lager-3e-leerjaar a skos:Concept ;
+    skos:broader ostr:lager-2e-graad ;
+    skos:definition "lager 3e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "lager 3e leerjaar"@nl ;
+    skosxl:altLabel ostr:lager-3e-leerjaar-short-label .
+
+ostr:lager-4e-leerjaar a skos:Concept ;
+    skos:broader ostr:lager-2e-graad ;
+    skos:definition "lager 4e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "lager 4e leerjaar"@nl ;
+    skosxl:altLabel ostr:lager-4e-leerjaar-short-label .
+
+ostr:lager-5e-leerjaar a skos:Concept ;
+    skos:broader ostr:lager-3e-graad ;
+    skos:definition "lager 5e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "lager 5e leerjaar"@nl ;
+    skosxl:altLabel ostr:lager-5e-leerjaar-short-label .
+
+ostr:lager-6e-leerjaar a skos:Concept ;
+    skos:broader ostr:lager-3e-graad ;
+    skos:definition "lager 6e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "lager 6e leerjaar"@nl ;
+    skosxl:altLabel ostr:lager-6e-leerjaar-short-label .
+
+ostr:secundair-1e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-1e-graad ;
+    skos:definition "secundair 1e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 1e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-1e-leerjaar-short-label .
+
+ostr:secundair-2e-graad-arbeidsmarkt a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad ;
+    skos:definition "secundair 2e graad finaliteit arbeidsmarkt"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-2e-graad-arbeidsmarkt-bso ;
+    skos:prefLabel "secundair 2e graad finaliteit arbeidsmarkt"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-arbeidsmarkt-short-label .
+
+ostr:secundair-2e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-1e-graad ;
+    skos:definition "secundair 2e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 2e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-2e-leerjaar-short-label .
+
+ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-3e-leerjaar ;
+    skos:definition "secundair 3e graad 3e leerjaar finaliteit arbeidsmarkt"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-bso ;
+    skos:prefLabel "secundair 3e graad 3e leerjaar finaliteit arbeidsmarkt"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt-short-label .
+
+ostr:secundair-3e-graad-arbeidsmarkt a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad ;
+    skos:definition "secundair 3e graad finaliteit arbeidsmarkt"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-3e-graad-arbeidsmarkt-bso ;
+    skos:prefLabel "secundair 3e graad finaliteit arbeidsmarkt"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-arbeidsmarkt-short-label .
+
+ostr:secundair-3e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad ;
+    skos:definition "secundair 3e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 3e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-3e-leerjaar-short-label .
+
+ostr:secundair-4e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad ;
+    skos:definition "secundair 4e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 4e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-4e-leerjaar-short-label .
+
+ostr:secundair-5e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad ;
+    skos:definition "secundair 5e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 5e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-5e-leerjaar-short-label .
+
+ostr:secundair-6e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad ;
+    skos:definition "secundair 6e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 6e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-6e-leerjaar-short-label .
+
+ostr:secundair-7e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad-3e-leerjaar ;
+    skos:definition "secundair 7e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:prefLabel "secundair 7e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-7e-leerjaar-short-label .
+
+ostr:basisonderwijs a skos:Concept ;
+    skos:definition "basisonderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:kleuteronderwijs,
+        ostr:lager-onderwijs ;
+    skos:prefLabel "basisonderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:buitengewoon-basisonderwijs a skos:Concept ;
+    skos:definition "buitengewoon basisonderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:buitengewoon-kleuteronderwijs,
+        ostr:buitengewoon-lager-onderwijs ;
+    skos:prefLabel "buitengewoon basisonderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:secundair-2e-graad-dubbel a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad ;
+    skos:definition "secundair 2e graad dubbele finaliteit"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-2e-graad-dubbel-kso,
+        ostr:secundair-2e-graad-dubbel-tso ;
+    skos:prefLabel "secundair 2e graad dubbele finaliteit"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-dubbel-short-label .
+
+ostr:secundair-3e-graad-dubbel a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad ;
+    skos:definition "secundair 3e graad dubbele finaliteit"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-3e-graad-dubbel-kso,
+        ostr:secundair-3e-graad-dubbel-tso ;
+    skos:prefLabel "secundair 3e graad dubbele finaliteit"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-dubbel-short-label .
+
+ostr:volwassenenonderwijs a skos:Concept ;
+    skos:definition "volwassenenonderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:basiseducatie,
+        ostr:secundair-volwassenenonderwijs ;
+    skos:prefLabel "volwassenenonderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:kleuteronderwijs a skos:Concept ;
+    skos:broader ostr:basisonderwijs ;
+    skos:definition "kleuteronderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:kleuter-3-jaar-of-jonger,
+        ostr:kleuter-4-jaar,
+        ostr:kleuter-5-jaar ;
+    skos:prefLabel "kleuteronderwijs"@nl .
+
+ostr:lager-1e-graad a skos:Concept ;
+    skos:broader ostr:lager-onderwijs ;
+    skos:definition "lager 1e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:lager-1e-leerjaar,
+        ostr:lager-2e-leerjaar ;
+    skos:prefLabel "lager 1e graad"@nl ;
+    skosxl:altLabel ostr:lager-1e-graad-short-label .
+
+ostr:lager-2e-graad a skos:Concept ;
+    skos:broader ostr:lager-onderwijs ;
+    skos:definition "lager 2e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:lager-3e-leerjaar,
+        ostr:lager-4e-leerjaar ;
+    skos:prefLabel "lager 2e graad"@nl ;
+    skosxl:altLabel ostr:lager-2e-graad-short-label .
+
+ostr:lager-3e-graad a skos:Concept ;
+    skos:broader ostr:lager-onderwijs ;
+    skos:definition "lager 3e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:lager-5e-leerjaar,
+        ostr:lager-6e-leerjaar ;
+    skos:prefLabel "lager 3e graad"@nl ;
+    skosxl:altLabel ostr:lager-3e-graad-short-label .
+
+ostr:lager-onderwijs a skos:Concept ;
+    skos:broader ostr:basisonderwijs ;
+    skos:definition "lager onderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:lager-1e-graad,
+        ostr:lager-2e-graad,
+        ostr:lager-3e-graad ;
+    skos:prefLabel "lager onderwijs"@nl .
+
+ostr:secundair-2e-graad-doorstroom a skos:Concept ;
+    skos:broader ostr:secundair-2e-graad ;
+    skos:definition "secundair 2e graad finaliteit doorstroom"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-2e-graad-doorstroom-aso,
+        ostr:secundair-2e-graad-doorstroom-kso,
+        ostr:secundair-2e-graad-doorstroom-tso ;
+    skos:prefLabel "secundair 2e graad finaliteit doorstroom"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-doorstroom-short-label .
+
+ostr:secundair-3e-graad-3e-leerjaar a skos:Concept ;
+    skos:broader ostr:secundair-onderwijs ;
+    skos:definition "secundair 3e graad 3e leerjaar"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-3e-graad-3e-leerjaar-arbeidsmarkt,
+        ostr:secundair-7e-leerjaar ;
+    skos:prefLabel "secundair 3e graad 3e leerjaar"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-3e-leerjaar-short-label .
+
+ostr:secundair-3e-graad-doorstroom a skos:Concept ;
+    skos:broader ostr:secundair-3e-graad ;
+    skos:definition "secundair 3e graad finaliteit doorstroom"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-3e-graad-doorstroom-aso,
+        ostr:secundair-3e-graad-doorstroom-kso,
+        ostr:secundair-3e-graad-doorstroom-tso ;
+    skos:prefLabel "secundair 3e graad finaliteit doorstroom"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-doorstroom-short-label .
+
+ostr:buitengewoon-secundair-onderwijs a skos:Concept ;
+    skos:definition "buitengewoon secundair onderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:buitengewoon-secundair-opleidingsvorm-1,
+        ostr:buitengewoon-secundair-opleidingsvorm-2,
+        ostr:buitengewoon-secundair-opleidingsvorm-3,
+        ostr:buitengewoon-secundair-opleidingsvorm-4 ;
+    skos:prefLabel "buitengewoon secundair onderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:buitengewoon-secundair-opleidingsvorm-4 a skos:Concept ;
+    skos:broader ostr:buitengewoon-secundair-onderwijs ;
+    skos:definition "buitengewoon secundair opleidingsvorm 4"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:buitengewoon-secundair-1e-graad,
+        ostr:buitengewoon-secundair-2e-graad,
+        ostr:buitengewoon-secundair-3e-graad,
+        ostr:buitengewoon-secundair-3e-graad-3e-leerjaar ;
+    skos:prefLabel "buitengewoon secundair opleidingsvorm 4"@nl ;
+    skosxl:altLabel ostr:buitengewoon-secundair-opleidingsvorm-4-short-label .
+
+ostr:secundair-onderwijs a skos:Concept ;
+    skos:definition "secundair onderwijs"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-1e-graad,
+        ostr:secundair-2e-graad,
+        ostr:secundair-3e-graad,
+        ostr:secundair-3e-graad-3e-leerjaar ;
+    skos:prefLabel "secundair onderwijs"@nl ;
+    skos:topConceptOf ond:structuur .
+
+ostr:secundair-1e-graad a skos:Concept ;
+    skos:broader ostr:secundair-onderwijs ;
+    skos:definition "secundair 1e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-1e-graad-a-stroom,
+        ostr:secundair-1e-graad-b-stroom,
+        ostr:secundair-1e-leerjaar,
+        ostr:secundair-2e-leerjaar ;
+    skos:prefLabel "secundair 1e graad"@nl ;
+    skosxl:altLabel ostr:secundair-1e-graad-short-label .
+
+ostr:secundair-2e-graad a skos:Concept ;
+    skos:broader ostr:secundair-onderwijs ;
+    skos:definition "secundair 2e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-2e-graad-arbeidsmarkt,
+        ostr:secundair-2e-graad-doorstroom,
+        ostr:secundair-2e-graad-dubbel,
+        ostr:secundair-3e-leerjaar,
+        ostr:secundair-4e-leerjaar ;
+    skos:prefLabel "secundair 2e graad"@nl ;
+    skosxl:altLabel ostr:secundair-2e-graad-short-label .
+
+ostr:secundair-3e-graad a skos:Concept ;
+    skos:broader ostr:secundair-onderwijs ;
+    skos:definition "secundair 3e graad"@nl ;
+    skos:inScheme ond:structuur ;
+    skos:narrower ostr:secundair-3e-graad-arbeidsmarkt,
+        ostr:secundair-3e-graad-doorstroom,
+        ostr:secundair-3e-graad-dubbel,
+        ostr:secundair-5e-leerjaar,
+        ostr:secundair-6e-leerjaar ;
+    skos:prefLabel "secundair 3e graad"@nl ;
+    skosxl:altLabel ostr:secundair-3e-graad-short-label .
+
+ond:structuur a skos:ConceptScheme ;
+    pav:version "1.0.0" ;
+    skos:definition "thesaurus onderwijsstructuur"@nl ;
+    skos:hasTopConcept ostr:basisonderwijs,
+        ostr:buitengewoon-basisonderwijs,
+        ostr:buitengewoon-secundair-onderwijs,
+        ostr:deeltijds-kunstonderwijs,
+        ostr:hoger-onderwijs,
+        ostr:secundair-onderwijs,
+        ostr:volwassenenonderwijs ;
+    skos:prefLabel "thesaurus onderwijsstructuur"@nl .
