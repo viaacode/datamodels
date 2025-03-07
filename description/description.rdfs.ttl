@@ -81,6 +81,7 @@ haDes:SoundFilm a rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:ImageReel   a   rdfs:Class ;
+    rdfs:subClassOf haObj:PhysicalCarrier ;
     rdfs:label "Beeldspoel"@nl ;
     rdfs:label "Image reel"@en ;
     rdfs:label "Bobine d'image"@fr ;
@@ -90,6 +91,7 @@ haDes:ImageReel   a   rdfs:Class ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:AudioReel   a   rdfs:Class ;
+    rdfs:subClassOf haObj:PhysicalCarrier ;
     rdfs:label "Geluidsspoel"@nl ;
     rdfs:label "Audio reel"@en ;
     rdfs:label "Bobine audio"@fr ;
