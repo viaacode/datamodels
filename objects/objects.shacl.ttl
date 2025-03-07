@@ -394,7 +394,6 @@
     sh:class haObj:PhysicalCarrier ;
 
     sh:minCount 1 ;
-    sh:maxCount 1 ;
 
     sh:name "stored at"@en ;
     sh:name "opgeslagen op"@nl ;
