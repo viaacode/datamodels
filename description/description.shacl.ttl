@@ -1114,7 +1114,7 @@
         sh:path schema:hasPart ;
         sh:or (
             [ sh:class premis:IntellectualEntity ]
-            [ sh:class haObj:PhysicalCarrier ]
+            [ sh:class schema:CreativeWork ]
         ) ;
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this collection."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie."@nl ;
