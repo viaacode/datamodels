@@ -61,7 +61,29 @@
 
         sh:message "haObj:hasCarrierCopy is missing, has more than one value or is not a haObj:CarrierRepresentation"@en ;
         sh:severity sh:Violation ;
-    ].
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path ( haObj:hasCarrierCopy premis:storedAt ) ;
+        sh:or (
+        [ sh:class haDes:ImageReel ]
+        [ sh:class haDes:AudioReel ]
+        ) ;
+        sh:minCount 1 ;
+
+        sh:name "stored at"@en ;
+        sh:name "opgeslagen op"@nl ;
+        sh:name "stocké à"@fr ;
+
+        sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
+        sh:description "The reel where the representation is stored."@en ;
+        sh:description "La bobine sur laquelle la représentation est stockée."@fr ;
+
+        sh:message "premis:storedAt has no values, is not a haDes:ImageReel, or is not a haDes:AudioReel"@en ;
+        sh:message "premis:storedAt heeft geen waarden, is geen haDes:ImageReel, of is geen haDes:AudioReel"@nl ;
+        sh:message "premis:storedAt n'a pas de valeur, n'est pas un haDes:ImageReel, ou n'est pas un haDes:AudioReel"@fr ;
+        sh:severity sh:Violation ;
+  ] .
 
 <#SoundFilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:SoundFilm .
@@ -216,27 +238,5 @@
         sh:message "l'objet de haDes:numberOfReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
         sh:message "het object van haDes:numberOfReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
         sh:severity sh:Violation
-    ] ,
-    [
-        a sh:PropertyShape ;
-        sh:path premis:storedAt ;
-        sh:or (
-        [ sh:class haDes:ImageReel] 
-        [ sh:class haDes:AudioReel] 
-        ) ;
-        sh:minCount 1 ;
-
-        sh:name "stored at"@en ;
-        sh:name "opgeslagen op"@nl ;
-        sh:name "stocké à"@fr ;
-
-        sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
-        sh:description "The reel where the representation is stored."@en ;
-        sh:description "Le porteur physique où la représentation est stocké."@fr ;
-
-        sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
-        sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
-        sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
-        sh:severity sh:Violation ;
-  ] .
+    ] .
 
