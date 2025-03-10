@@ -75,7 +75,7 @@
         a sh:PropertyShape ;
         sh:path haDes:coloringType ;
         sh:class skos:Concept ;
-        sh:in (haCt:BandW haCt:Color haCt:Colorized haCt:Composite haCt:UnknownColorType) ;
+        sh:in (haCt:BandW haCt:Color haCt:Colorized haCt:Composite haCt:Tinted haCt:Toned haCt:UnknownColorType) ;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "coloring type"@en ;
