@@ -216,7 +216,7 @@
         a sh:PropertyShape ;
         sh:path schema:temporal ;
         sh:nodeKind sh:Literal ;
-        sh:datatype xsd:string ;
+        sh:datatype rdf:langString ;
         sh:name "temporal"@en ;
         sh:name "temporeel"@nl ;
         sh:name "temporelle"@fr ;
