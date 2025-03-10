@@ -668,6 +668,17 @@ schema:containedInPlace a rdf:Property ;
     skos:definition "La relation de confinement de base entre un lieu et une qui le contient."@fr;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:position a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range xsd:integer ;
+    rdfs:label "position"@en ;
+    rdfs:label "positie"@nl ;
+    rdfs:label "position"@fr ;
+    skos:definition "The position of an item in a series or sequence of items."@en;
+    skos:definition "De positie van een item in een reeks of opeenvolging van items."@nl;
+    skos:definition "La position d'un élément dans une série ou une séquence d'éléments."@fr;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:postalCode   a   rdf:Property ;
     schema:domainIncludes schema:DefinedRegion,
         schema:GeoCoordinates,

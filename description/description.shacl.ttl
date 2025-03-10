@@ -823,17 +823,17 @@
     ],
     [
         a sh:PropertyShape ;
-        sh:path schema:seasonNumber ;
+        sh:path schema:position ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:integer ;
-        sh:name "season number"@en ;
-        sh:name "seizoensnummer"@nl ;
-        sh:name "numéro de saison"@fr ;
+        sh:name "position"@en ;
+        sh:name "positie"@nl ;
+        sh:name "position"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:seasonNumber is not of type integer"@en ;
-        sh:message "schema:seasonNumber is niet van het type integer"@nl ;
-        sh:message "schema:seasonNumber n'est pas de type integer"@fr ;
-    ] ,
+        sh:message "schema:position is not of type integer"@en ;
+        sh:message "schema:position is niet van het type integer"@nl ;
+        sh:message "schema:position n'est pas de type integer"@fr ;
+    ],
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
