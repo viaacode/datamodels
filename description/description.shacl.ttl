@@ -1116,9 +1116,9 @@
             [ sh:class premis:IntellectualEntity ]
             [ sh:class haObj:PhysicalCarrier ]
         ) ;
-        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this collection."@en ;
-        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie."@nl ;
-        sh:description "Indique un IntellectualEntity ou CreativeWork qui fait partie de cette collection."@fr ;
+        sh:description "Indicates an IntellectualEntity or PhysicalCarrier that is part of this collection."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of PhysicalCarrier deel uitmaakt van deze collectie."@nl ;
+        sh:description "Indique un IntellectualEntity ou PhysicalCarrier qui fait partie de cette collection."@fr ;
         sh:name "has part"@en ;
         sh:name "is deel van"@nl ;
         sh:name "fait partie de"@fr ;
