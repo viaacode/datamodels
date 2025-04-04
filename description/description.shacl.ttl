@@ -656,7 +656,7 @@
     [
         a sh:PropertyShape ;
         sh:path ebucore:hasCaptioning;
-        sh:and (
+        sh:or (
             [ sh:class premis:File ]
             [ sh:class ebucore:ClosedCaptions ]
         );
@@ -666,7 +666,7 @@
         sh:name "ondertiteling"@nl ;
 
         sh:description "De ondertitels of transcriptie van dit bestand."@nl ;
-        sh:description "De ondertitels of transcriptie van dit bestand."@en ;
+        sh:description "The subtitles or transcription of this file."@en ;
         sh:description "Les sous-titres ou transcription de ce fichier."@fr ;
 
         sh:message "ebucore:hasCaptioning is missing, not a premis:File or not a ebucore:ClosedCaptions."@en ;
