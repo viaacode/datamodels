@@ -31,6 +31,16 @@ schema:ArchiveComponent a rdfs:Class;
     skos:definition """Un type intangible à appliquer à tout contenu d'archives, portant avec lui un ensemble de propriétés nécessaires pour la description d'éléments d'archives et de collections."""@fr  ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:BroadcastEvent a rdfs:Class ;
+    rdfs:subClassOf schema:Event ;
+    rdfs:label "Uitzendingsevenement"@nl ;
+    rdfs:label "Événement de radiodiffusion"@fr ;
+    rdfs:label "Broadcast event"@en ;
+    skos:definition "Een evenement dat via de ether of online wordt uitgezonden."@nl ;
+    skos:definition "Un événement diffusé par voie hertzienne ou en ligne."@fr ;
+    skos:definition "An over the air or online broadcast event."@en ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:Collection
   a rdfs:Class ;
     rdfs:subClassOf schema:CreativeWork ;
