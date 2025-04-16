@@ -77,7 +77,6 @@
         sh:class skos:Concept ;
         sh:in (haCt:BandW haCt:Color haCt:Colorized haCt:Composite haCt:Tinted haCt:Toned haCt:UnknownColorType) ;
         sh:minCount 0 ;
-        sh:maxCount 1 ;
         sh:name "coloring type"@en ;
         sh:name "type de coloration"@fr ;
         sh:name "type kleuring"@nl ;
