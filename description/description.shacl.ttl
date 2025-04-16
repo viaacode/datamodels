@@ -89,14 +89,15 @@
             [ sh:class schema:CreativeWorkSeries ]
             [ sh:class schema:Episode ]
             [ sh:class schema:Collection ]
+            [ sh:class schema:BroadcastEvent ]
         );
         sh:name "is part of"@en ;
         sh:name "is een deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode or schema:Collection."@en ;
-        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode of schema:Collection."@nl ;
-        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode ou schema:Collection."@fr ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode, schema:Collection or schema:BroadcastEvent."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode, schema:Collection of schema:BroadcastEvent."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode, schema:Collection ou schema:BroadcastEvent."@fr ;
     ],
     [
         a sh:PropertyShape ;
