@@ -85,10 +85,7 @@
         a sh:PropertyShape ;
         sh:path schema:isPartOf ;
         sh:or (
-            [ sh:class schema:ArchiveComponent ]
-            [ sh:class schema:CreativeWorkSeries ]
-            [ sh:class schema:Episode ]
-            [ sh:class schema:Collection ]
+            [ sh:class schema:CreativeWork ]
             [ sh:class schema:BroadcastEvent ]
         );
         sh:name "is part of"@en ;
@@ -840,7 +837,7 @@
         sh:path schema:hasPart ;
         sh:or (
             [ sh:class premis:IntellectualEntity ]
-            [ sh:class schema:CreativeWorkSeries ]
+            [ sh:class schema:CreativeWork ]
         );
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
@@ -900,7 +897,7 @@
         sh:path schema:hasPart ;
         sh:or (
             [ sh:class premis:IntellectualEntity ]
-            [ sh:class schema:CreativeWorkSeries ]
+            [ sh:class schema:CreativeWork]
         );
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
