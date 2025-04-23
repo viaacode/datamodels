@@ -195,7 +195,7 @@
         sh:description "Indicates if image reels were lost (prior to any digitization processes)."@en ;
         sh:description "Indique si des bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
         sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
-        sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:boolean, or occurs more than once"@en ;
+        sh:message "the object of haDes:hasMissingImageReels is not of type xsd:boolean, or occurs more than once"@en ;
         sh:severity sh:Violation 
     ] ,
     [
