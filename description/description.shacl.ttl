@@ -85,18 +85,16 @@
         a sh:PropertyShape ;
         sh:path schema:isPartOf ;
         sh:or (
-            [ sh:class schema:ArchiveComponent ]
-            [ sh:class schema:CreativeWorkSeries ]
-            [ sh:class schema:Episode ]
-            [ sh:class schema:Collection ]
+            [ sh:class schema:CreativeWork ]
+            [ sh:class schema:BroadcastEvent ]
         );
         sh:name "is part of"@en ;
         sh:name "is deel van"@nl ;
         sh:name "est partie de"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode or schema:Collection."@en ;
-        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode of schema:Collection."@nl ;
-        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode ou schema:Collection."@fr ;
+        sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode, schema:Collection or schema:BroadcastEvent."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode, schema:Collection of schema:BroadcastEvent."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode, schema:Collection ou schema:BroadcastEvent."@fr ;
     ],
     [
         a sh:PropertyShape ;
@@ -823,6 +821,66 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:position ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:integer ;
+        sh:name "position"@en ;
+        sh:name "positie"@nl ;
+        sh:name "position"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:position is not of type integer"@en ;
+        sh:message "schema:position is niet van het type integer"@nl ;
+        sh:message "schema:position n'est pas de type integer"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:hasPart ;
+        sh:or (
+            [ sh:class premis:IntellectualEntity ]
+            [ sh:class schema:CreativeWork ]
+        );
+        sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en ;
+        sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
+        sh:description "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr ;
+        sh:name "has part"@en ;
+        sh:name "is deel van"@nl ;
+        sh:name "fait partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en ;
+        sh:message "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+        sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:CreativeWorkSeries ;
+        sh:name "is part of"@en ;
+        sh:name "is een deel van"@nl ;
+        sh:name "est partie de"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:isPartOf is not of class schema:CreativeWorkSeries."@en ;
+        sh:message "schema:isPartOf is niet van de klasse schema:CreativeWorkSeries."@nl ;
+        sh:message "schema:isPartOf n'est pas de la classe schema:CreativeWorkSeries."@fr ;
+    ].
+
+<#CreativeWorkSeasonShape> a sh:NodeShape ; 
+    sh:targetClass schema:CreativeWorkSeason ;
+    sh:property <#NameShape>, <#DescriptionShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "identifier"@en ;
+        sh:name "identifier"@nl ;
+        sh:name "identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:seasonNumber ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:integer ;
@@ -839,7 +897,7 @@
         sh:path schema:hasPart ;
         sh:or (
             [ sh:class premis:IntellectualEntity ]
-            [ sh:class schema:CreativeWorkSeries ]
+            [ sh:class schema:CreativeWork]
         );
         sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en ;
         sh:description "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;

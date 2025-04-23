@@ -31,6 +31,16 @@ schema:ArchiveComponent a rdfs:Class;
     skos:definition """Un type intangible à appliquer à tout contenu d'archives, portant avec lui un ensemble de propriétés nécessaires pour la description d'éléments d'archives et de collections."""@fr  ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:BroadcastEvent a rdfs:Class ;
+    rdfs:subClassOf schema:Event ;
+    rdfs:label "Uitzendingsevenement"@nl ;
+    rdfs:label "Événement de radiodiffusion"@fr ;
+    rdfs:label "Broadcast event"@en ;
+    skos:definition "Een evenement dat via de ether of online wordt uitgezonden."@nl ;
+    skos:definition "Un événement diffusé par voie hertzienne ou en ligne."@fr ;
+    skos:definition "An over the air or online broadcast event."@en ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:Collection
   a rdfs:Class ;
     rdfs:subClassOf schema:CreativeWork ;
@@ -666,6 +676,17 @@ schema:containedInPlace a rdf:Property ;
     skos:definition "The basic containment relation between a place and one that contains it."@en;
     skos:definition "De basis verbindingsrelatie tussen een plaats en een die deze bevat."@nl;
     skos:definition "La relation de confinement de base entre un lieu et une qui le contient."@fr;
+    rdfs:isDefinedBy <https://schema.org/> .
+
+schema:position a rdf:Property ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:range xsd:integer ;
+    rdfs:label "position"@en ;
+    rdfs:label "positie"@nl ;
+    rdfs:label "position"@fr ;
+    skos:definition "The position of an item in a series or sequence of items."@en;
+    skos:definition "De positie van een item in een reeks of opeenvolging van items."@nl;
+    skos:definition "La position d'un élément dans une série ou une séquence d'éléments."@fr;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:postalCode   a   rdf:Property ;
