@@ -122,6 +122,16 @@ schema:Event a rdfs:Class ;
     skos:definition """Un événement qui se déroule à un moment et dans un lieu donnés, comme un concert, une conférence ou un festival."""@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:Newspaper a rdfs:Class ;
+    rdfs:subClassOf schema:CreativeWorkSeries ;
+    rdfs:label "Newspaper"@en ;
+    rdfs:label "Krant"@nl ;
+    rdfs:label "Journal"@fr ;
+    skos:definition """A publication containing information about varied topics that are pertinent to general information, a geographic area, or a specific subject matter (i.e. business, culture, education). Often published daily."""@en ;
+    skos:definition """Een publicatie met informatie over gevarieerde onderwerpen die relevant zijn voor algemene informatie, een geografisch gebied of een specifiek onderwerp (bijv. zaken, cultuur, onderwijs). Wordt vaak dagelijks gepubliceerd."""@nl ;
+    skos:definition """Publication contenant des informations sur des sujets variés relatifs à l'information générale, à une zone géographique ou à un sujet spécifique (par exemple, les affaires, la culture, l'éducation). Souvent publié quotidiennement."""@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 schema:Organization a rdfs:Class ;
     rdfs:subClassOf schema:Thing ;
     rdfs:label "Organisation"@en ;
