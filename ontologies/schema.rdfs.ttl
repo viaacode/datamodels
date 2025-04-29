@@ -360,6 +360,17 @@ schema:caption a rdf:Property ;
     skos:definition "Les sous-titres de cet objet."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
 
+schema:characterName a rdf:Property ;
+    rdfs:domain schema:PerformanceRole ;
+    rdfs:range xsd:string ;
+    rdfs:label "character name"@en ;
+    rdfs:label "karakternaam"@nl ;
+    rdfs:label "nom du personnage"@fr ;
+    skos:definition "The name of a character played in some acting or performing role, i.e. in a PerformanceRole."@en ;
+    skos:definition "De naam van een personage dat wordt gespeeld in een acteer- of uitvoerende rol, d.w.z. in een PerformanceRole."@nl ;
+    skos:definition "Le nom d'un personnage joué dans un rôle d'acteur ou d'interprète, c'est-à-dire dans un PerformanceRole."@fr ;
+    rdfs:isDefinedBy <https://schema.org/> .
+
 #TODO SHACL domein organization range contact point toevoegen
 schema:contactPoint a   rdf:Property ;
     schema:domainIncludes schema:HealthInsurancePlan,
@@ -736,7 +747,7 @@ schema:publisher a rdf:Property ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:roleName a rdf:Property ;
-    rdfs:domain schema:PerformanceRole ;
+    rdfs:domain schema:Role ;
     rdfs:range skos:Concept ;
     rdfs:label "role name"@en ;
     rdfs:label "rolnaam"@nl ;

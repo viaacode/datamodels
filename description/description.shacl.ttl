@@ -172,6 +172,18 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path schema:actor ;
+        sh:class schema:PerformanceRole ;
+        sh:name "actor"@en ;
+        sh:name "acteur"@nl ;
+        sh:name "acteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:actor is not of class schema:Role"@en ;
+        sh:message "schema:actor is niet van de klasse schema:Role"@nl ;
+        sh:message "schema:actor n'est pas de la classe schema:Role"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:abstract ;
         sh:nodeKind sh:Literal ;
         sh:datatype rdf:langString ;
@@ -1053,7 +1065,11 @@
     [
         a sh:PropertyShape ;
         sh:path schema:actor ;
-        sh:class schema:Person ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+           [sh:class schema:Thing ]
+        ) ;
         sh:maxCount 1 ;
         sh:name "actor"@en ;
         sh:name "acteur"@nl ;
@@ -1085,6 +1101,25 @@
         sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en ;
         sh:message "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
         sh:message "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr ;
+    ] .
+
+<#PerformanceRoleShape> a sh:NodeShape ; 
+    sh:targetClass schema:PerformanceRole ;
+    sh:property
+    [
+        a sh:PropertyShape ;
+        sh:path schema:characterName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ; 
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "character name"@en ;
+        sh:name "karaternaam"@nl ;
+        sh:name "nom de rôle"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:characterName is missing or not of type string or of class skos:Concept"@en ;
+        sh:message "schema:characterName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
+        sh:message "schema:charactername est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr ;
     ] .
 
 <#QuantitativeValueShape> a sh:NodeShape ; 
