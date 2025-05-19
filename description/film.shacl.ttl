@@ -82,9 +82,9 @@
         sh:description "Indication of the coloring of the image reel."@en ;
         sh:description "Indication de la coloration de la bobine d'image."@fr ;
         sh:description "Indicatie van de kleuring van de beeldrol/-spoel."@nl ;
-        sh:message "the object of haDes:imageReelColoringType is not of type skos:Concept"@en ;
-        sh:message "l'objet de haDes:imageReelColoringType n'est pas du type skos:Concept"@fr ;
-        sh:message "het object van haDes:imageReelColoringType is niet van het type skos:Concept"@nl ;
+        sh:message "the object of haDes:coloringType is not of type skos:Concept"@en ;
+        sh:message "l'objet de haDes:coloringType n'est pas du type skos:Concept"@fr ;
+        sh:message "het object van haDes:coloringType is niet van het type skos:Concept"@nl ;
         sh:severity sh:Violation
     ] ,
     [
