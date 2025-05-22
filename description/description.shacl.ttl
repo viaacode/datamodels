@@ -1538,6 +1538,6 @@
     sh:name "duur"@nl ;
     sh:name "durée"@fr ;
     sh:severity sh:Violation ;
-    sh:message "schema:duration is not of type xsd:dateTime"@en ;
-    sh:message "schema:duration is niet van het type xsd:dateTime"@nl ;
-    sh:message "schema:duration n'est pas de type xsd:dateTime"@fr .
+    sh:message "schema:duration is not of type xsd:duration"@en ;
+    sh:message "schema:duration is niet van het type xsd:duration"@nl ;
+    sh:message "schema:duration n'est pas de type xsd:duration"@fr .
