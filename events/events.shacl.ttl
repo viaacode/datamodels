@@ -296,7 +296,7 @@
         sh:nodeKind sh:Literal ;
         sh:datatype rdf:langString ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
+        sh:uniqueLang true;
         sh:name "name"@en ;
         sh:name "naam"@nl ;
         sh:name "nom"@fr ;
@@ -375,7 +375,7 @@
     sh:nodeKind sh:Literal ;
     sh:datatype rdf:langString ;
     sh:minCount 1 ;
-    sh:maxCount 1 ;
+    sh:uniqueLang true;
     sh:name "name"@en ;
     sh:name "naam"@nl ;
     sh:name "nom"@fr ;
