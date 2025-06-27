@@ -53,7 +53,7 @@
 ####################
 <#IntellectualEntityNodeShape> a sh:NodeShape ; 
     sh:targetClass premis:IntellectualEntity ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>,
+    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape>, <#DurationShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:maintainer ;
