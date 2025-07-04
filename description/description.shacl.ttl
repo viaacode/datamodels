@@ -955,6 +955,10 @@
         sh:message "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr ;
     ] .
 
+<#BroadcastEvent> a sh:NodeShape ; 
+    sh:targetClass schema:BroadcastEvent ;
+    sh:property <#NameShape>, <#AlternateNameShape> , <#DescriptionShape> .
+
 <#PlaceShape> a sh:NodeShape ; 
     sh:targetClass schema:Place ;
     sh:property <#NameShape>, <#DescriptionShape>,
