@@ -818,7 +818,7 @@
 ####################
 <#CreativeWorkSeriesShape> a sh:NodeShape ; 
     sh:targetClass schema:CreativeWorkSeries ;
-    sh:property <#NameShape>, <#DescriptionShape>,
+    sh:property <#NameShape>, <#AlternateNameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:identifier ;
@@ -878,7 +878,7 @@
 
 <#CreativeWorkSeasonShape> a sh:NodeShape ; 
     sh:targetClass schema:CreativeWorkSeason ;
-    sh:property <#NameShape>, <#DescriptionShape>,
+    sh:property <#NameShape>, <#AlternateNameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:identifier ;
@@ -938,7 +938,7 @@
 
 <#EpisodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Episode ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape> ,
+    sh:property <#IdentifierShape>, <#NameShape>, <#AlternateNameShape>, <#DescriptionShape> ,
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
@@ -977,7 +977,7 @@
 
 <#ArchiveComponentShape> a sh:NodeShape ; 
     sh:targetClass schema:ArchiveComponent ;
-    sh:property <#NameShape>, <#DescriptionShape>,
+    sh:property <#NameShape>, <#AlternateNameShape>, <#DescriptionShape>,
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
@@ -1513,6 +1513,18 @@
     sh:message "schema:name is missing or not of type string "@en ;
     sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
     sh:message "schema:name est manquant ou n'est pas de type string"@fr .
+
+<#AlternateNameShape> a sh:PropertyShape ;
+    sh:path schema:alternateName ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype rdf:langString ;
+    sh:name "alternate name"@en ;
+    sh:name "alternatieve naam"@nl ;
+    sh:name "nom alternatif"@fr ;
+    sh:severity sh:Violation ;
+    sh:message "schema:alternateName is not of type string"@en ;
+    sh:message "schema:alternateName is niet van het type string"@nl ;
+    sh:message "schema:alternateName n'est pas de type string"@fr .
 
 <#DescriptionShape> a sh:PropertyShape ;
     sh:path schema:description ;
