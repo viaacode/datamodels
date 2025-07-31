@@ -416,7 +416,7 @@
         sh:path dct:format ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
-        sh:in ("audio"^^xsd:string "video"^^xsd:string "film"^^xsd:string "paper"^^xsd:string "newspaper"^^xsd:string "newspaperpage"^^xsd:string "videofragment"^^xsd:string "audiofragment"^^xsd:string) ;
+        sh:in ("audio"^^xsd:string "video"^^xsd:string "film"^^xsd:string "paper"^^xsd:string "newspaper"^^xsd:string "newspaperpage"^^xsd:string "videofragment"^^xsd:string "audiofragment"^^xsd:string "image"^^xsd:string) ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:name "format"@en ;
