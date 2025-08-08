@@ -938,7 +938,7 @@
 
 <#EpisodeShape> a sh:NodeShape ; 
     sh:targetClass schema:Episode ;
-    sh:property <#IdentifierShape>, <#NameShape>, <#DescriptionShape> ,
+    sh:property <#NameShape>, <#DescriptionShape> ,
     [
         a sh:PropertyShape ;
         sh:path schema:hasPart ;
