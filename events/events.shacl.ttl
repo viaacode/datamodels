@@ -96,9 +96,9 @@
            [sh:class premis:SoftwareAgent] 
            [sh:class premis:HardwareAgent]
         ) ;
-        rdfs:label "was associated with"@en ;
-        rdfs:label "a été associé à"@fr ;
-        rdfs:label "is geassocieerd met"@nl ;
+        sh:name "was associated with"@en ;
+        sh:name "a été associé à"@fr ;
+        sh:name "is geassocieerd met"@nl ;
         skos:definition "An agent that had some (unspecified) responsibility for the occurrence of this activity."@en ;
         skos:definition "Un agent qui avait une responsabilité (non spécifiée) avant la survenue de cette activité."@fr ;
         skos:definition "Een agent die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze activiteit."@nl ;
