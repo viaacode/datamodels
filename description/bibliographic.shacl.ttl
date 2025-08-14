@@ -186,9 +186,9 @@
         sh:name "production method"@en ;
         sh:name "méthode de production"@fr ;
         sh:name "productie methode"@nl ;
-        sh:description "The process used to produce the newspaper edition (e.g. handwritten, typed, printed)."@en ;
-        sh:description "Le processus utilisé pour produire la édition de journal (par exemple manuscrit, dactylographié, imprimé)."@fr ;
-        sh:description "Het proces dat werd gebruikt om de kranteneditie te produceren (bijv. handgeschreven, getypt, gedrukt)."@nl ;
+        sh:description "The process used to produce the carrier representation of the written work (e.g. handwritten, typed, printed)."@en ;
+        sh:description "Le processus utilisé pour produire la eprésentation de porteur de l'œuvre écrite (par exemple manuscrit, dactylographié, imprimé)."@fr ;
+        sh:description "Het proces dat werd gebruikt om de dragerrepresentatie van het geschreven werk te produceren (bijv. handgeschreven, getypt, gedrukt)."@nl ;
         sh:message "the object of bf:productionMethod is not of type skos:Concept, or occurs more than once"@en ;
         sh:severity sh:Violation
     ] .
