@@ -100,9 +100,9 @@
       sh:path haObj:primaryIdentifier ;
       sh:class haObj:LocalIdentifier ;
 
-      rdfs:label "primary local identifier"@en ;
-      rdfs:label "identificateur local principal"@fr ;
-      rdfs:label "primaire lokale identifier"@nl ;
+      sh:name "primary local identifier"@en ;
+      sh:name "identificateur local principal"@fr ;
+      sh:name "primaire lokale identifier"@nl ;
       
       sh:description "The primary local identifier for the intellectual entity."@en ;
       sh:description "De primaire lokale identifier voor de intellectuele entiteit."@nl ;
@@ -883,6 +883,10 @@
       sh:minCount 1 ;
       sh:maxCount 1 ;
 
+      sh:name "filesize"@en ;
+      sh:name "taille de fichier"@fr ;
+      sh:name "bestandsgrootte"@nl ;
+
       sh:description "De grootte van dit bestand."@nl;
       sh:description "The size of this file."@en;
       sh:description "La taille de ce fichier."@fr;
@@ -900,6 +904,10 @@
 
       sh:minCount 0 ;
       sh:maxCount 1 ;
+
+      sh:name "has original name"@en ;
+      sh:name "porte le nom d'origine"@fr ;
+      sh:name "heeft originele naam"@nl ;
 
       sh:description "The original name of this file."@en;
       sh:description "De oorspronkelijke naam van dit bestand."@nl;
@@ -992,7 +1000,7 @@
     ],
     [
       a sh:PropertyShape ;
-      sh:path dct:creator;
+      sh:path  schema:creator;
       sh:datatype xsd:string;
 
       sh:name "checksum maker"@nl;
