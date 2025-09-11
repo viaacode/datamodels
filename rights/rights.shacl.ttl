@@ -1,0 +1,218 @@
+@prefix : <https://data.hetarchief.be/ns/rights#> .
+@prefix copyrightStatus: <http://id.loc.gov/vocabulary/preservation/copyrightStatus/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <https://data.hetarchief.be/ns/rights> .
+
+<> a owl:Ontology ;
+    vann:preferredNamespacePrefix "haRig" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/rights/" ;
+    schema:author [ 
+      a schema:Person ; 
+      schema:name "Miel Vander Sande"@nl ; 
+      schema:email "miel.vandersande@meemoo.be"
+    ] ;
+    dct:title "Data model Rights"@en ;
+    dct:title "Modèle de données Droits"@fr ;
+    dct:title "Datamodel Rechten"@nl ;
+    dct:created "2025-09-10" ;
+    dct:modified "2025-09-10" ;
+    dct:description "Data model to describe rights and distribution policy."@en ;
+    dct:description "Modèle de données pour décrire les droits et la politique de distribution."@fr ;
+    dct:description "Datamodel om rechten en distributiebeleid te beschrijven."@nl ;
+    pav:version "0.0.1" .
+
+# ####################################
+# SHAPES              #
+# ####################################
+
+# #####################
+# NodeShapes     #
+# #####################
+
+<#ConstraintNodeShape> a sh:NodeShape ;
+    sh:property [ 
+        sh:in ( :BredePubliek :public :intra-muros :education :research :limited :extended :partial :full ) ; 
+        sh:maxCount 1 ; 
+        sh:minCount 1 ; 
+        sh:nodeKind sh:IRI ; 
+        sh:or ( [ sh:class :Recipient ] 
+                [ sh:class :MetadataRange ] 
+                [ sh:class :ContentRange ] 
+        ) ; 
+        sh:path odrl:rightOperand 
+    ] , [ 
+        sh:in ( odrl:eq odrl:lt ) ; 
+        sh:maxCount 1 ; 
+        sh:minCount 1 ; 
+        sh:nodeKind sh:IRI ; 
+        sh:path odrl:operator ] , [ 
+                sh:in ( odrl:recipient :metadataRange :contentRange odrl:dateTime odrl:absoluteTemporalPosition ) ; 
+        sh:maxCount 1 ; 
+        sh:minCount 1 ; 
+        sh:nodeKind sh:IRI ; 
+        sh:path odrl:leftOperand ] ;
+    sh:targetClass odrl:Constraint .
+
+<#MotivationNodeShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:datatype rdf:langString ; 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:path skos:prefLabel ] ;
+  sh:targetClass :Motivation .
+
+<#ProhibitionNodeShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:in ( odrl:display odrl:disseminate ) ; 
+    sh:path odrl:action 
+  ] , [ 
+    sh:class odrl:Constraint ; 
+    sh:maxCount 5 ; 
+    sh:path odrl:constraint 
+  ] , [ 
+    sh:class :Motivation ; 
+    sh:minCount 1 ; 
+    sh:path :isMotivatedBy 
+  ] , [ 
+    sh:datatype xsd:string ; 
+    sh:maxCount 1 ; 
+    sh:path premis:note
+  ] , [ 
+    sh:class edtf:EDTF-level0 ; 
+    sh:maxCount 1 ; 
+    sh:path premis:endDate 
+  ] , [ 
+    sh:class edtf:EDTF-level0 ; 
+    sh:maxCount 1 ; 
+    sh:path premis:startDate 
+  ] ;
+  sh:targetClass odrl:Prohibition .
+
+<#PermissionNodeShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:datatype xsd:string ; 
+    sh:maxCount 1 ; 
+    sh:path premis:note 
+  ] , [ 
+    sh:class edtf:EDTF-level0 ; 
+    sh:maxCount 1 ; 
+    sh:path premis:endDate 
+  ] , [ 
+    sh:class edtf:EDTF-level0 ; 
+    sh:maxCount 1 ; 
+    sh:path premis:startDate 
+  ] ;
+  sh:targetClass odrl:Permission .
+
+<#PolicyNodeShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:class haObj:DigitalRepresentation ; 
+    sh:minCount 1 ; 
+    sh:path odrl:target ] , [ 
+    sh:class odrl:Permission ; 
+    sh:path odrl:permission ] , [ 
+    sh:class odrl:Prohibition ; 
+    sh:path odrl:prohibition ] ;
+  sh:targetClass odrl:Policy .
+
+<#DigitalRepresentationNodeShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:class odrl:Policy ; 
+    sh:maxCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:path odrl:hasPolicy ] , [ 
+    sh:class premis:License ; 
+    sh:maxCount 1 ; 
+    sh:path dct:license ] , [ 
+    sh:class premis:RightsStatus ; 
+    sh:maxCount 3 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:path premis:rightsStatus ] ;
+  sh:targetClass haObj:DigitalRepresentation .
+
+<#RightsStatementShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:datatype rdf:langString ; 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:path skos:prefLabel 
+  ] ;
+  sh:targetClass dct:RightsStatement .
+
+<#LicenseShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:datatype rdf:langString ; 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:path skos:prefLabel 
+  ] ;
+  sh:targetClass premis:License .
+
+<#RightsStatusShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:or ( 
+      [ sh:class dct:RightsStatement ] 
+      [ sh:class premis:License ] 
+    ) ; 
+    sh:path premis:basis 
+  ] , [ 
+    sh:datatype xsd:string ; 
+    sh:maxCount 1 ; 
+    sh:path premis:note 
+  ] , [ 
+    sh:class edtf:EDTF-level0 ; 
+    sh:maxCount 1 ; 
+    sh:path premis:endDate 
+  ] , [ 
+    sh:class edtf:EDTF-level0 ; 
+    sh:maxCount 1 ; 
+    sh:path premis:startDate 
+  ] ;
+  sh:targetClass premis:RightsStatus .
+
+<#IntellectualEntityNodeShape> a sh:NodeShape ;
+  sh:property [ 
+    sh:class premis:License ; 
+    sh:maxCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:path dct:license 
+  ] , [ 
+    sh:class dct:RightsStatement ; 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:path dct:rights 
+  ] , [ 
+    sh:maxCount 3 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:or ( 
+      [ sh:class premis:RightsStatus ] 
+      [ sh:class copyrightStatus:pub ] 
+    ) ; 
+    sh:path premis:rightsStatus 
+  ] ;
+  sh:targetClass premis:IntellectualEntity .

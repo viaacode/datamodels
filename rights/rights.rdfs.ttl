@@ -1,0 +1,24 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix haRig: <https://data.hetarchief.be/ns/rights/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+haRig:Motivation a rdfs:Class;
+    rdfs:subClassOf skos:Concept ;
+    rdfs:label "Motivatie"@nl ;
+    rdfs:label "Motivation"@en ;
+    rdfs:label "Motivation"@fr ;
+    skos:definition "Motivatie voor een ontsluitingsbeperking."@nl ;
+    skos:definition "Motivation for an access limitation."@en ;
+    skos:definition "Motivation pour une limitation d'accès."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
+
+
+haRig:isMotivatedBy a rdf:Property;
+  rdfs:domain odrl:Prohibition;
+  rdfs:range haRig:Motivation;
+  rdfs:label  "is motivated by"@en ;
+  rdfs:label  "est motivé par"@fr ;
+  rdfs:label  "wordt gemotiveerd door"@nl ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
