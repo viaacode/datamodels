@@ -1,3 +1,4 @@
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/> .
 @prefix pav: <http://purl.org/pav/> .
@@ -37,11 +38,11 @@
     dct:description """Data model to describe the content of audiovisual objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets audiovisuels."""@fr ;
     dct:description """Datamodel om de inhoud van audiovisuele objecten te beschrijven."""@nl ;
-    pav:version "1.0.0" .
+    pav:version "1.1.0" .
 
 <#DVDNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:DVD ;
-    sh:property [
+    sh:property <#BroadcasterShape>,[
         a sh:PropertyShape ;
         sh:path rel:hsp ;
         sh:class haDes:DVDChapter ;
@@ -103,10 +104,12 @@
     ] .
 
 <#AudioNodeShape> a sh:NodeShape ;
-    sh:targetClass haDes:Audio .
+    sh:targetClass haDes:Audio;
+    sh:property <#BroadcasterShape> .
 
 <#VideoNodeShape> a sh:NodeShape ;
-    sh:targetClass haDes:Video .
+    sh:targetClass haDes:Video;
+    sh:property <#BroadcasterShape> .
 
 <#ImageNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Image .
@@ -188,3 +191,14 @@
         sh:name "nombre de canaux audio"@fr ;
         sh:message "haDes:numberOfAudioChannels occurs more than once, or its object is not of type xsd:nonNegativeInteger." 
     ].
+
+<#BroadcasterShape> a sh:PropertyShape;
+        sh:path  haDes:broadcastingOrganization;
+        sh:datatype org:Organization;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "broadcasting organization"@en ;
+        sh:name "omroeporganisatie"@nl ;
+        sh:name "organisation de diffusion"@fr ; 
+        sh:message "haDes:broadcastingOrganization occurs more than once, or its object is not an  org:Organization. ".  
+    

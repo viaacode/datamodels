@@ -42,7 +42,7 @@
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
     dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
-    pav:version "1.0.0" .
+    pav:version "1.1.0" .
 
 ##############################
 #         NodeShapes         #
@@ -157,6 +157,26 @@
         sh:message "schema:publisher is not of class schema:Role"@en ;
         sh:message "schema:publisher is niet van de klasse schema:Role"@nl ;
         sh:message "schema:publisher n'est pas de la classe schema:Role"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:producer ;
+        sh:class schema:Role ;
+        sh:name "producer"@en ;
+        sh:name "producent"@nl ;
+        sh:name "producteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:producer is not of class schema:Role"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:executor ;
+        sh:class schema:Role ;
+        sh:name "executor"@en ;
+        sh:name "uitvoerder"@nl ;
+        sh:name "exécuteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:executor is not of class schema:Role"@en ;
     ],
     [
         a sh:PropertyShape ;
@@ -305,6 +325,20 @@
         sh:message "schema:copyrightHolder is not of class schema:Person, schema:Thing, or org:Organization"@en ;
         sh:message "schema:copyrightHolder is niet van de klasse schema:Person, schema:Thing of org:Organization"@nl ;
         sh:message "schema:copyrightHolder n'est pas de la classe schema:Person, schema:Thing ou org:Organization"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:licenseDistributor ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+           [sh:class schema:Thing ]
+        ) ;
+        sh:name "license distributor"@en ;
+        sh:name "licentiedistributeur"@nl ;
+        sh:name "distributeur de licence"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:licenseDistributor is not of class schema:Person, schema:Thing, or org:Organization"@en ;
     ],
     [
         a sh:PropertyShape ;
@@ -808,7 +842,44 @@
         sh:message "schema:creator is not of class schema:Role"@en ;
         sh:message "schema:creator is niet van de klasse schema:Role"@nl ;
         sh:message "schema:creator n'est pas de la classe schema:Role"@fr ;
-    ] .
+    ] ,
+        [
+        a sh:PropertyShape ;
+        sh:path schema:dateCreated ;
+        sh:nodeKind sh:Literal ;
+        sh:or ( 
+            [ sh:datatype edtf:EDTF-level0 ]
+            [ sh:datatype edtf:EDTF-level1 ]
+            [ sh:datatype edtf:EDTF-level2 ] 
+        );
+        sh:maxCount 1 ;
+        sh:name "date created"@en ;
+        sh:name "aangemaakt op"@nl ;
+        sh:name "date de création"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
+        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
+
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:datePublished ;
+        sh:nodeKind sh:Literal ;
+        sh:or ( 
+            [ sh:datatype edtf:EDTF-level0 ]
+            [ sh:datatype edtf:EDTF-level1 ]
+            [ sh:datatype edtf:EDTF-level2 ] 
+        );
+        sh:maxCount 1;
+        sh:name "date published"@en ;
+        sh:name "gepubliceerd op"@nl ;
+        sh:name "date de publication"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:datePublished is not of type EDTF-level1"@en ;
+        sh:message "schema:datePublished is niet van het type EDTF-level1"@nl ;
+        sh:message "schema:datePublished n'est pas de type EDTF-level1"@fr ;
+    ].
 
 <#CarrierRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:CarrierRepresentation .
@@ -1079,6 +1150,34 @@
         sh:message "schema:actor is not of class schema:Person"@en ;
         sh:message "schema:actor is niet van de klasse schema:Person"@nl ;
         sh:message "schema:actor n'est pas de la classe schema:Person"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:producer ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+           [sh:class schema:Thing ]
+        ) ;
+        sh:name "producer"@en ;
+        sh:name "producent"@nl ;
+        sh:name "producteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:producer is not of class schema:Person, org:Organization, or schema:Thing"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:executor ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+           [sh:class schema:Thing ]
+        ) ;
+        sh:name "executor"@en ;
+        sh:name "uitvoerder"@nl ;
+        sh:name "exécuteur"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:executor is not of class schema:Person, org:Organization, or schema:Thing"@en ;
     ],
     [
         a sh:PropertyShape ;

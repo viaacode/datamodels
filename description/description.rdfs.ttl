@@ -7,6 +7,8 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
 
 # Classes
 
@@ -15,9 +17,9 @@ haDes:NewspaperIssue   a   rdfs:Class ;
     rdfs:label "Kranteneditie"@nl ;
     rdfs:label "Newspaper edition"@en ;
     rdfs:label "Edition de journal"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:NewspaperIssuePage   a   rdfs:Class ;
@@ -25,9 +27,9 @@ haDes:NewspaperIssuePage   a   rdfs:Class ;
     rdfs:label "Kranteneditiepagina"@nl ;
     rdfs:label "Newspaper issue page"@en ;
     rdfs:label "Page d'édition de journal"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."""@en ;
-    skos:definition """Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."@en ;
+    skos:definition "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVD   a   rdfs:Class ;
@@ -35,9 +37,9 @@ haDes:DVD   a   rdfs:Class ;
     rdfs:label "Dvd"@nl ;
     rdfs:label "DVD"@en ;
     rdfs:label "DVD"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent le DVD dans son ensemble."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent le DVD dans son ensemble."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:DVDChapter   a   rdfs:Class ;
@@ -45,9 +47,9 @@ haDes:DVDChapter   a   rdfs:Class ;
     rdfs:label "Dvd-hoofdstuk"@nl ;
     rdfs:label "DVD chapter"@en ;
     rdfs:label "Chapitre DVD"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."""@en ;
-    skos:definition """Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent un chapitre DVD spécifique."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."@en ;
+    skos:definition "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent un chapitre DVD spécifique."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Film   a   rdfs:Class ;
@@ -55,9 +57,9 @@ haDes:Film   a   rdfs:Class ;
     rdfs:label "Film"@nl ;
     rdfs:label "Film"@en ;
     rdfs:label "Film"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:SilentFilm a   rdfs:Class ;
@@ -65,9 +67,9 @@ haDes:SilentFilm a   rdfs:Class ;
     rdfs:label "Stomme film"@nl ;
     rdfs:label "Silent film"@en ;
     rdfs:label "Film muet"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor stomme film."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film muet."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor stomme film."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film muet."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:SoundFilm a rdfs:Class ;
@@ -75,9 +77,9 @@ haDes:SoundFilm a rdfs:Class ;
     rdfs:label "Geluidsfilm"@nl ;
     rdfs:label "Sound film"@en ;
     rdfs:label "Film sonore"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor geluidsfilm."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film sonore."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor geluidsfilm."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film sonore."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:ImageReel   a   rdfs:Class ;
@@ -85,9 +87,9 @@ haDes:ImageReel   a   rdfs:Class ;
     rdfs:label "Beeldspoel"@nl ;
     rdfs:label "Image reel"@en ;
     rdfs:label "Bobine d'image"@fr ;
-    skos:definition """Een speo van een analoge film drager die beeld bevat."""@nl ;
-    skos:definition """A reel of an analog film carrier that contains video."""@en ;
-    skos:definition """Une bobine d'un porte-film analogique qui contient une vidéo."""@fr ;
+    skos:definition "Een speo van een analoge film drager die beeld bevat."@nl ;
+    skos:definition "A reel of an analog film carrier that contains video."@en ;
+    skos:definition "Une bobine d'un porte-film analogique qui contient une vidéo."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:AudioReel   a   rdfs:Class ;
@@ -95,9 +97,9 @@ haDes:AudioReel   a   rdfs:Class ;
     rdfs:label "Geluidsspoel"@nl ;
     rdfs:label "Audio reel"@en ;
     rdfs:label "Bobine audio"@fr ;
-    skos:definition """Een band van een analoge film drager die audio bevat."""@nl ;
-    skos:definition """A reel of an analog film carrier that contains audio."""@en ;
-    skos:definition """Une bobine d'un porte-film analogique qui contient de l'audio."""@fr ;
+    skos:definition "Een band van een analoge film drager die audio bevat."@nl ;
+    skos:definition "A reel of an analog film carrier that contains audio."@en ;
+    skos:definition "Une bobine d'un porte-film analogique qui contient de l'audio."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Audio a rdfs:Class ;
@@ -105,9 +107,9 @@ haDes:Audio a rdfs:Class ;
     rdfs:label "Audio"@nl ;
     rdfs:label "Audio"@en ;
     rdfs:label "Audio"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren audio of dat oorspronkelijk afkomstig is van een analoge drager van het type audio."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de l'audio né numérique ou à l'origine d'un support analogue du type audio."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren audio of dat oorspronkelijk afkomstig is van een analoge drager van het type audio."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de l'audio né numérique ou à l'origine d'un support analogue du type audio."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Video a rdfs:Class ;
@@ -115,9 +117,9 @@ haDes:Video a rdfs:Class ;
     rdfs:label "Video"@nl ;
     rdfs:label "Video"@en ;
     rdfs:label "Vidéo"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren video of dat oorspronkelijk afkomstig is van een analoge drager van het type video."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de la vidéo née numérique ou à l'origine d'un support analogue du type vidéo."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren video of dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de la vidéo née numérique ou à l'origine d'un support analogue du type vidéo."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:Image a rdfs:Class ;
@@ -125,9 +127,39 @@ haDes:Image a rdfs:Class ;
     rdfs:label "Afbeelding"@nl ;
     rdfs:label "Image"@en ;
     rdfs:label "Image"@fr ;
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een digitaal geboren afbeelding of van een analoge drager van het type afbeelding."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from a digital born image or an analog carrier of type image."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'une image née numérique ou d'un support analogue du type vidéo."""@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een digitaal geboren afbeelding of van een analoge drager van het type afbeelding."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from a digital born image or an analog carrier of type image."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'une image née numérique ou d'un support analogue du type vidéo."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:MaterialArtwork a rdfs:Class ;
+    rdfs:subClassOf premis:IntellectualEntity ;
+    rdfs:label "Materieel kunstwerk"@nl ;
+    rdfs:label "Material artwork"@en ;
+    rdfs:label "Œuvres d'art matérielles"@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst dat volledig in de fysieke realiteit bestaat, in ruimte en tijd."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from any form of visual art that entirely exists in physical reality, in space and time."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de Meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe entièrement dans la réalité physique, dans l'espace et le temps."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:2DArtwork a rdfs:Class ;
+    rdfs:subClassOf haDes:MaterialArtwork ;
+    rdfs:label "Tweedimensionaal kunstwerk"@nl ;
+    rdfs:label "Two-dimensional artwork"@en ;
+    rdfs:label "Œuvres d'art bidimensionnel"@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst die in twee dimensies bestaat. Tweedimensionale kunstvormen kunnen tekeningen, schilderijen, prints en foto's bevatten. Het omvat geen driedimensionale kunstwerken zoals sculpturen, installaties en driedimensionale schilderijen."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in two dimensions. Two-dimensional artforms can include drawings, paintings, prints, and photographs. It does not include three-dimensional artworks such as sculptures, installations, and three-dimensional paintings."@en ;
+    skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe en deux dimensions. Les formes d'art bidimensionnelles peuvent inclure des dessins, des peintures, des imprimés et des photographies. Il n'inclut pas les œuvres d'art tridimensionnelles telles que les sculptures, les installations et les peintures tridimensionnelles."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:3DArtwork a rdfs:Class ;
+    rdfs:subClassOf haDes:MaterialArtwork ;
+    rdfs:label "Driedimensionaal kunstwerk"@nl ;
+    rdfs:label "Three-dimensional artwork"@en ;
+    rdfs:label "Œuvres d'art tridimensionnelles"@fr ;
+    skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van elke vorm van visuele kunst die in drie dimensies bestaat. Driedimensionale kunstvormen kunnen sculpturen, installaties en driedimensionale schilderijen bevatten. Het omvat geen tweedimensionale kunstwerken zoals tekeningen, schilderijen, prints en foto's."@nl ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in three dimensions. Two-dimensional artforms can include sculptures, installations, and three-dimensional paintings. It does not include two-dimensional artworks such as drawings, paintings, prints, and photographs."@en ;
+    skos:definition "Cette classe s'applique aux médias des archives de Meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe en trois dimensions.Les formes d'art bidimensionnelles peuvent inclure des sculptures, des installations et des peintures tridimensionnelles.Il n'inclut pas les œuvres bidimensionnelles telles que les dessins, les peintures, les imprimés et les photographies."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 # Properties
@@ -161,9 +193,9 @@ haDes:chapterNumber a rdf:Property ;
     rdfs:label "Dvd-hoofdstuknummer"@nl ;
     rdfs:label "DVD chapter number"@en ;
     rdfs:label "Numéro de chapitre DVD"@fr ;
-    skos:definition """Het volgnummer van het dvd-hoofdstuk ten opzichte van de andere hoofstukken die deel uitmaken van dezelfde dvd."""@nl ;
-    skos:definition """The sequence number of the DVD chapter in relation to the other chapters that are part of the same DVD."""@en ;
-    skos:definition """Le numéro de série du chapitre du DVD par rapport aux autres chapitres qui font partie du même DVD."""@fr ;
+    skos:definition "Het volgnummer van het dvd-hoofdstuk ten opzichte van de andere hoofstukken die deel uitmaken van dezelfde dvd."@nl ;
+    skos:definition "The sequence number of the DVD chapter in relation to the other chapters that are part of the same DVD."@en ;
+    skos:definition "Le numéro de série du chapitre du DVD par rapport aux autres chapitres qui font partie du même DVD."@fr ;
     rdfs:domain haDes:DVDChapter ;
     rdfs:range xsd:integer ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
@@ -289,3 +321,36 @@ haDes:numberOfAudioChannels a rdf:Property ;
   skos:definition "The number of parallel audio channels that the audio track contains."@en;
   rdfs:range rdfs:Literal ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+
+haDes:executor a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+  rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
+  rdfs:label "executor"@en ;
+  rdfs:label "uitvoerder"@nl ;
+  rdfs:label "exécutrice"@fr ;
+  skos:definition "The executor of the CreativeWork or Event."@en ;
+  skos:definition "De uitvoerder van het CreativeWork of Event."@nl ;
+  skos:definition "L'interprète du travail créatif ou de l'événement."@fr ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:broadcastingOrganization a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+  rdfs:range org:Organization ;
+  rdfs:label "broadcasting organization"@en ;
+  rdfs:label "omroeporganisatie"@nl ;
+  rdfs:label "organisation de diffusion"@fr ;
+  skos:definition "The broadcasting organization of the CreativeWork."@en ;
+  skos:definition "De omroeporganisatie van het CreativeWork."@nl ;
+  skos:definition "Le diffuseur du Creativework."@fr ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:licenseDistributor a rdf:Property ;
+  rdfs:domain schema:CreativeWork ;
+  rdfs:range [ owl:unionOf(schema:Person org:Organization) ] ;
+  rdfs:label "license distributor"@en ;
+  rdfs:label "licentiegever"@nl ;
+  rdfs:label "distributeur de licence"@fr ;
+  skos:definition "The license distributor of the CreativeWork or Event."@en ;
+  skos:definition "De licentiedistributeur van het CreativeWork of Event."@nl ;
+  skos:definition "Le distributeur de licences du travail créatif ou de l'événement."@fr ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
