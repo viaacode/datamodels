@@ -54,7 +54,7 @@
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI ; 
-        sh:or ( [ sh:class :Recipient ] 
+        sh:or ( [ sh:class :UserGroup ] 
                 [ sh:class :MetadataRange ] 
                 [ sh:class :ContentRange ] 
         ) ; 

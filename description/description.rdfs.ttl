@@ -162,6 +162,16 @@ haDes:3DArtwork a rdfs:Class ;
     skos:definition "Cette classe s'applique aux médias des archives de Meemoo qui dérivent à l'origine de toute forme d'art visuel qui existe en trois dimensions.Les formes d'art bidimensionnelles peuvent inclure des sculptures, des installations et des peintures tridimensionnelles.Il n'inclut pas les œuvres bidimensionnelles telles que les dessins, les peintures, les imprimés et les photographies."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
+haDes:RoleName a rdfs:Class; 
+    rdfs:subClassOf skos:Concept;
+    rdfs:label "Rolnaam"@nl ;
+    rdfs:label "Role name"@en ;
+    rdfs:label "Nom de rôle"@fr ;
+    skos:definition "De rol gespeeld, uitgevoerd of gevuld door een ding, persoon of organisatie."@nl ;
+    skos:definition "The role played, performed or filled by a thing, person or organization."@en ;
+    skos:definition "Le rôle joué, joué ou rempli par une chose, une personne ou une organisation."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
 # Properties
 
 haDes:numberOfPages a rdf:Property ;

@@ -1188,7 +1188,7 @@
                 sh:datatype xsd:string ; 
             ]
             [
-                sh:class skos:Concept ;
+                sh:class haDes:RoleName ;
                 sh:nodeKind sh:IRI
             ]
         ) ;

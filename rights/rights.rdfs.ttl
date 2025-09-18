@@ -14,6 +14,35 @@ haRig:Motivation a rdfs:Class;
     skos:definition "Motivation pour une limitation d'accès."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
 
+haRig:UserGroup a rdfs:Class;
+    rdfs:subClassOf skos:Concept, odrl:rightOperand ;
+    rdfs:label "Gebruikersgroep"@nl ;
+    rdfs:label "User group"@en ;
+    rdfs:label "Groupe d'utilisateurs"@fr ;
+    skos:definition "Groep van web platform gebruikers."@nl ;
+    skos:definition "Group of web platform users."@en ;
+    skos:definition "Groupe d'utilisateurs de la plate-forme Web."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
+
+haRig:MetadataRange a rdf:Class;
+    rdfs:subClassOf skos:Concept, odrl:rightOperand ;
+    rdfs:label "Metadatabereik"@nl ;
+    rdfs:label "Metadata range"@en ;
+    rdfs:label "Gamme de métadonnées"@fr ;
+    skos:definition "Het beoogde bereik van de metadata van het object. Bijvoorbeeld, of het over de volledige set aan metadata gaat of slechts een deel."@nl ;
+    skos:definition "The intended reach of the object's metadata. For example, whether it is about the full set of metadata or only a part."@en ;
+    skos:definition "La portée prévue des métadonnées de l'objet.Par exemple, qu'il s'agisse de l'ensemble complet de métadonnées ou seulement une pièce."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
+
+haRig:ContentRange a rdfs:Class;
+    rdfs:subClassOf skos:Concept, odrl:rightOperand ;
+    rdfs:label "Inhoudsbereik"@nl ;
+    rdfs:label "Content range"@en ;
+    rdfs:label "Plage de contenu"@fr ;
+    skos:definition "Het beoogde bereik van de mediainhoud van het object. Bijvoorbeeld, of het over de volledige inhoud gaat of slechts een deel."@nl ;
+    skos:definition "The intended reach of the object's media content of the. For example, whether it is about the full content or only a part."@en ;
+    skos:definition "La portée prévue du contenu multimédia de l'objet du.Par exemple, qu'il s'agisse du contenu complet ou seulement une pièce."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
 
 haRig:isMotivatedBy a rdf:Property;
   rdfs:domain odrl:Prohibition;
