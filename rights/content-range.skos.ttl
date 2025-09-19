@@ -1,0 +1,27 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/content-range/full> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/ContentRange> ;
+    skos:definition "The material can be displayed in full, according to the agreements made."@en,
+        "De toestemming is van toepassing op het materiaal in zijn geheel."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/content-range> ;
+    skos:prefLabel "Full"@en,
+        "Complet"@fr,
+        "Volledig"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/content-range> .
+
+<https://data.hetarchief.be/id/content-range/partial> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/ContentRange> ;
+    skos:definition "The material can be displayed in part, according to the agreements made."@en,
+        "De toestemming is van toepassing op het materiaal in de vorm van één of meerdere fragmenten, volgens een aangegeven tijdsstempel of volgens de bilaterale afspraken (zodanig dat de duur van het fragment minder dan de helft van de totale duur van het materiaal is)."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/content-range> ;
+    skos:prefLabel "Partial"@en,
+        "Partiel"@fr,
+        "Deels"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/content-range> .
+
+<https://data.hetarchief.be/id/content-range> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/content-range/full>,
+        <https://data.hetarchief.be/id/content-range/partial> ;
+    skos:prefLabel "Thesaurus inhoudsbereik"@nl .
+

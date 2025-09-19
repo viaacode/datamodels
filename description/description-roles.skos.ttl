@@ -1,306 +1,394 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<https://data.hetarchief.be/id/role/absent> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/absent> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The absentee is a person who was absent from a meeting."@en,
         "De afwezige is een persoon die afwezig was bij een bijeenkomst."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "absent"@en,
-        "afwezig"@nl .
+        "afwezig"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/actor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/actor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van maker naar uitvoerder" ;
     skos:definition "The actor is a person who portrays a character in the story or role play."@en,
         "De acteur is een persoon die een personage uitbeeldt in het verhaal of rollenspel."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "actor"@en,
-        "acteur"@nl .
+        "acteur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/advisor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/advisor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The consultant is someone who has contributed his or her knowledge to the creation of the intellectual entity and generally works for many different clients."@en,
         "De adviseur is iemand die zijn of haar kennis in dienst heeft gesteld bij het tot stand komen van de intellectuele entiteit en over het algemeen voor vele verschillende klanten werkt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "advisor"@en,
-        "adviseur"@nl .
+        "adviseur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/announcer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/announcer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The announcer is a person who announces television or radio programs."@en,
         "De omroeper is een persoon die televisie- of radioprogramma's aankondigt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "announcer"@en,
-        "omroeper"@nl .
+        "omroeper"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/architect> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
-    skos:definition "The architect of the depicted building."@en,
-        "De architect van het afgebeelde gebouw."@nl ;
+<https://data.hetarchief.be/id/role/architect> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "definitie herzien" ;
+    skos:definition "The architect of the depicted building or maker of a plan for a building"@en,
+        "De architect van een afgebeeld gebouw of maker van een plan voor een gebouw."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "architect"@en,
-        "architect"@nl .
+        "architect"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/archivist> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/archivist> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "benaming en definitie herzien" ;
     skos:definition "The archivist is a person, organization, company or government that created the archive and after whom the archive is named."@en,
-        "De archivist is een persoon, organisatie, bedrijf of overheid die het archief heeft gevormd en waar het archief bijgevolg naar is vernoemd."@nl ;
+        "De archiefvormer is een persoon, organisatie, bedrijf of overheid die het archief heeft gevormd en waar het archief bijgevolg naar is vernoemd."@nl ;
     skos:example "het archief van John Hope Franklin, het archief van Heemkring Heidebloemke, het archief van de familie Kobayashi, het archief van Agfa-Gevaert NV, het archief van KV Kortrijk, enzovoort."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "archivist"@en,
-        "archiefvormer"@nl .
+        "archiefvormer"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/arranger> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/arranger> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The arranger is the person who adapts an existing piece of music or composition for a different instrumentation, a specific style or a specific occasion. The result is called 'arrangement'."@en,
         "De arrangeur is de persoon die een bestaand stuk muziek of compositie bewerkt voor een andere bezetting, een bepaalde stijl of een bepaalde gelegenheid. Het resultaat heet 'arrangement'."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "arranger"@en,
-        "arrangeur"@nl .
+        "arrangeur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/artist> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/artist> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The artist is the author of the work of art."@en,
         "De kunstenaar is de auteur van het kunstwerk."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "artist"@en,
-        "kunstenaar"@nl .
+        "kunstenaar"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/artistic-director> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/artistic-director> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The artistic director or artistic director is the person with the policy-making position in professional companies for the performing arts, such as ballet groups, orchestras, choirs and theater companies."@en,
         "De artistiek leider of artistiek directeur is de persoon met de beleidsbepalende functie bij professionele gezelschappen voor uitvoerende kunsten, zoals balletgroepen, orkesten, koren en toneelgezelschappen."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "artistic director"@en,
-        "artistiekdirecteur"@nl .
+        "artistiekdirecteur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/assistant> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/assistant> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The assistant helps someone perform their tasks."@en,
         "De assistent helpt iemand bij het uitvoeren van diens taken."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "assistant"@en,
-        "assistent"@nl .
+        "assistent"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/author> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/author> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The author is the original spiritual owner of the creative work."@en,
         "De auteur is de oorspronkelijke geestelijke eigenaar van het creatief werk."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "author"@en,
-        "auteur"@nl .
+        "auteur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/cameraman> a skos:Concept ;
-    skos:altLabel "cameravrouw"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/broadcaster> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:altLabel "Omroep"@nl ;
+    skos:changeNote "creeren als veld omroeporganisatie" ;
+    skos:definition "De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een audiovisueel item voor derden door omroep, verkoop, verhuur,…"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/role> ;
+    skos:prefLabel "broadcasting company"@en,
+        "omroeporganisatie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
+
+<https://data.hetarchief.be/id/role/cameraman> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:altLabel "cameraperson"@en,
+        "cameravrouw, camera"@nl ;
+    skos:changeNote "benaming herzien" ;
     skos:definition "The cameraman or camerawoman is someone who operated the film or video camera during the recording."@en,
         "De cameraman of cameravrouw is iemand die bij de opname de film- of videocamera heeft bediend."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "cameraman"@en,
-        "cameraman"@nl .
+        "cameraman"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/chairman> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/chairman> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The chairman is someone who, for his profession or as a hobby, heads a board, committee, jury, etc.; someone who chairs a meeting."@en,
         "De voorzitter is iemand die voor zijn beroep of ook wel uit liefhebberij aan het hoofd staat van een bestuur, commissie, jury, e.d.; iemand die een vergadering voorzit."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "chairman"@en,
-        "voorzitter"@nl .
+        "voorzitter"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/choreographer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/choreographer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The choreographer or choreographer, sometimes also called a dance maker, is someone who has designed the choreography."@en,
         "De choreograaf of choreografe, soms ook wel dansmaker genaamd, is iemand die de choreografie heeft ontworpen."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "choreographer"@en,
-        "choreograaf"@nl .
+        "choreograaf"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/client> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/client> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van maker naar bijdrager" ;
     skos:definition "The client is the person, or a company, that has awarded the assignment to a contractor."@en,
-        "De opdrachtgever is de persoon die, of een bedrijf dat, de opdracht heeft verstrekt aan een opdrachtnemer."@nl ;
+        "De opdrachtgever is de persoon die, of een bedrijf dat, de opdracht (de wet spreekt van bestelling) heeft verstrekt aan een opdrachtnemer. Ook de werkgever valt onder deze definitie."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "client"@en,
-        "opdrachtgever"@nl .
+        "opdrachtgever"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/co-producer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/co-producer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The co-producer is the institution that has acted as producer and financier of artistic projects such as films, television programs and theater performances, alongside one or more other producers."@en,
         "De coproducent is de instelling die heeft opgetreden als producent en financier van artistieke projecten zoals films, televisieprogramma's en theatervoorstellingen, naast een of meer andere producenten."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "co-producer"@en,
-        "coproducent"@nl .
+        "coproducent"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/commentator> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/commentator> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The commentator is someone who provides commentary on current events in the media."@en,
         "De commentator is iemand die actuele gebeurtenissen van commentaar voorziet in de media."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "commentator"@en,
-        "commentator"@nl .
+        "commentator"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/composer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/composer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The composer is the person who composed the music."@en,
         "De componist is de persoon die de muziek heeft gecomponeerd."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "composer"@en,
-        "componist"@nl .
+        "componist"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/conductor> a skos:Concept ;
+<https://data.hetarchief.be/id/role/conductor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "dirigente"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+    skos:changeNote "creeren in uitvoerder" ;
     skos:definition "The conductor was in charge of the orchestra, choir or other musical group."@en,
         "De dirigent of dirigente had de leiding over het orkest, koor of ander muziekgezelschap."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "conductor"@en,
-        "dirigent"@nl .
+        "dirigent"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/contributor> a skos:Concept ;
-    skos:definition "The person or institution that has made a substantial creative contribution to the content of the item."@en,
-        "De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud van het item heeft geleverd."@nl ;
+<https://data.hetarchief.be/id/role/contributor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "definitie herzien" ;
+    skos:definition "The person or institution that has made a substantial creative contribution to the content of the item, but cannot expect copyright."@en,
+        "De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud van het item heeft geleverd, maar geen rechten kan verwachten"@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "contributor"@en,
         "bijdrager"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/costume-designer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/costume-designer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The costume designer is the designer of the costumes, usually a visual artist, who sometimes also designs the sets and any props for a particular theater or dance production."@en,
         "De kostuumontwerper is de ontwerper van de kostuums, meestal een beeldend kunstenaar, die voor een bepaalde theater- of dansproductie soms ook de decors en eventuele rekwisieten ontwerpt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "costume designer"@en,
-        "kostuumontwerper"@nl .
+        "kostuumontwerper"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/dancer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/dancer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van maker naar uitvoerder" ;
     skos:definition "The dancer is the person who took part in performing the dance."@en,
         "De danser is de persoon die heeft deelgenomen aan het uitvoeren van de dans."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "dancer"@en,
-        "danser"@nl .
+        "danser"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/depicted> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/depicted> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The entities (e.g. objects, places or people) depicted in the material."@en,
         "De entiteiten (bv. objecten, plaatsen of personen) die worden afgebeeld op het materiaal."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "depicted"@en,
-        "afgebeelde"@nl .
+        "afgebeelde"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/digitization-partner> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/digitization-partner> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "creeren in bijdrager" ;
     skos:definition "The digitization partner is a company or organization that has carried out or assisted in the digitization of the creative work."@en,
         "De digitaliseringspartner is een bedrijf of organisatie die de digitalisering van het creatieve werk heeft uitgevoerd of daarbij heeft geassisteerd."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "digitization partner"@en,
-        "digitaliseringspartner"@nl .
+        "digitaliseringspartner"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/director> a skos:Concept ;
+<https://data.hetarchief.be/id/role/director> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "regisseuse"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+    skos:changeNote "geen" ;
     skos:definition "The director is the person who has creative supervision of the performing arts, other than music."@en,
         "De regisseur of regisseuse is de persoon die de creatieve supervisie heeft gevoerd over de uitvoerende kunst, behalve muziek."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "director"@en,
-        "regisseur"@nl .
+        "regisseur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/distributor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/publisher> ;
+<https://data.hetarchief.be/id/role/distributor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van publisher naar bijdrager" ;
     skos:definition "The distributor is a person or company that ensures the distribution of goods from producer to consumer."@en,
         "De distributeur is een persoon of onderneming die zorgt voor de distributie van goederen van producent naar consument."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "distributor"@en,
-        "distributeur"@nl .
+        "distributeur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/documentary-maker> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/documentary-maker> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The documentary maker is the person who made the documentary."@en,
         "De documentairemaker is de persoon die de documentaire heeft gemaakt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "documentary maker"@en,
-        "documentairemaker"@nl .
+        "documentairemaker"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/dramaturg> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/dramaturg> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The dramaturge is an advisor at the theater company who is responsible for choosing the program and tells the director how the performance comes across to the spectator."@en,
-        "De dramaturg is een adviseur bij het theatergezelschap die de programmakeuze verzorgt en de regisseur vertelt hoe de voorstelling op de toeschouwer overkomt."@nl ;
+        "De dramaturg is een toneelschrijver of een adviseur bij het theatergezelschap die de programmakeuze verzorgt en de regisseur vertelt hoe de voorstelling op de toeschouwer overkomt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "dramaturg"@en,
-        "dramaturg"@nl .
+        "dramaturg"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/editor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/editor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:altLabel "monteur"@nl ;
+    skos:changeNote "van bijdrager naar maker, hernoemen naar Montagemaker" ;
     skos:definition "The technician is someone who is responsible for the arrangement of image and/or sound in audio material or audiovisual material."@en,
-        "De monteur is iemand die verantwoordelijk is voor de ordening van beeld en/of geluid in audiomateriaal of audiovisueel materiaal."@nl ;
+        "De montagemaker is de persoon verantwoordelijk voor de montage en afwerking van beeld en/of geluid in audiomateriaal of audiovisueel materiaal."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "editor"@en,
-        "monteur"@nl .
+        "montagemaker"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/excused> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/excused> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The excused person is a person who was absent from a meeting and reported this to the organizers in advance."@en,
         "De verontschuldigde is een persoon die afwezig was bij een bijeenkomst en dit op voorhand heeft gemeld aan de organisatoren."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "excused"@en,
-        "verontschuldigd"@nl .
+        "verontschuldigd"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/exhibitor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/publisher> ;
+<https://data.hetarchief.be/id/role/exhibitor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van publisher naar bijdrager" ;
     skos:definition "The exhibitor is the person or organization that exhibits or participates in an exhibition."@en,
         "De exposant is de persoon of organisatie die exposeert of deelneemt aan een tentoonstelling."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "exhibitor"@en,
-        "exposant"@nl .
+        "exposant"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/filmmaker> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/filmmaker> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The filmmaker is the person responsible for the overall execution of the film project and is considered the author of the film."@en,
         "De cineast is de persoon die verantwoordelijk is voor de totale uitvoering van het filmproject en aanzien wordt als de auteur van de film."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "filmmaker"@en,
-        "cineast"@nl .
+        "cineast"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/graphic-designer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/graphic-designer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The graphic designer takes care of the graphic design of printed matter such as brochures, posters, packaging and book covers, digital products such as websites, and designs for use in various media, such as a logo or corporate identity."@en,
         "De grafisch ontwerper verzorgt de grafische vormgeving van drukwerk zoals brochures, affiches, verpakkingen en boekomslagen, digitale producten zoals websites, en ontwerpen voor gebruik in verschillende media, zoals een beeldmerk of huisstijl."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "graphic designer"@en,
-        "grafischontwerper"@nl .
+        "grafischontwerper"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/interviewee> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/interviewee> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The interviewee is the person who is interviewed by an interviewer."@en,
         "De geïnterviewde is de persoon die wordt geïnterviewd door een interviewer."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "interviewee"@en,
-        "geïnterviewde"@nl .
+        "geïnterviewde"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/interviewer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/interviewer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The interviewer is the person who conducts and conducts the interview."@en,
         "De interviewer is de persoon die het interview leidt en uitvoert."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "interviewer"@en,
-        "interviewer"@nl .
+        "interviewer"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/librarian> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/librarian> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The archivist supervises the implementation of archive management at archive creators, is involved in concrete archive management (supervision, weathering, selection, arrangement and access) and monitors the automated archive management system."@en,
         "De archivaris ziet toe op de uitvoering van het archiefbeheer bij archiefvormers, houdt zich bezig met concreet archiefbeheer (toezicht, verwering, selectie, ordening en ontsluiting) en volgt het geautomatiseerde archiefbeheersysteem op."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "librarian"@en,
-        "archivaris"@nl .
+        "archivaris"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/lighting> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/lighting> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The person responsible for lighting then filming or photographing."@en,
         "De persoon verantwoordelijk voor de belichting dan de film- of foto-opname."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "lighting"@en,
-        "belichting"@nl .
+        "belichting"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/maker> a skos:Concept ;
+<https://data.hetarchief.be/id/role/maker> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The creator is a person or institution that is (primarily) responsible for the creation of the content of the item."@en,
         "De maker is een persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -308,267 +396,339 @@
         "maker"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/makeup-artist> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/makeup-artist> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The make-up artist is the person who applies make-up to people participating in the recording or performance."@en,
         "De make-up artiest is de persoon die zich bezighoudt met het aanbrengen van make-up bij mensen die deelnemen aan de opname of voorstelling."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "makeup artist"@en,
-        "make-up"@nl .
+        "make-up"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/manufacturer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/manufacturer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "Company that produced the depicted good or product."@en,
         "Bedrijf dat het afgebeelde goed of product geproduceerd heeft."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "manufacturer"@en,
-        "fabrikant"@nl .
+        "fabrikant"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/musician> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/musician> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van maker naar uitvoerder" ;
     skos:definition "The musician or musician is someone who has performed music with a musical instrument."@en,
         "De muzikant of musicus is iemand die met een muziekinstrument de muziek heeft uitgevoerd."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "musician"@en,
-        "muzikant"@nl .
+        "muzikant"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/narrator> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/narrator> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar uitvoerder" ;
     skos:definition "The narrator is the one who tells what events are happening in the story."@en,
         "De verteller is degene die in het verhaal vertelt welke gebeurtenissen er plaatsvinden."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "narrator"@en,
-        "verteller"@nl .
+        "verteller"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/news-anchor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/news-anchor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The news anchor is the person who presents the news broadcast."@en,
         "Het nieuwsanker is de persoon die de nieuwsuitzending presenteert."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "news anchor"@en,
-        "nieuwsanker"@nl .
+        "nieuwsanker"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/performer> a skos:Concept ;
-    skos:altLabel "uitvoerder"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
-    skos:definition "The performer is an artist who carries out the performance."@en,
-        "De performer is een kunstenaar die de performance uitvoert."@nl ;
+<https://data.hetarchief.be/id/role/performer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "is nieuw hoofdveld \"uitvoerder\", definitie herzien" ;
+    skos:definition "The performer is the artist who carries out the performance."@en,
+        "De uitvoerder is  de uitvoerende kunstenaar van een werk"@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "performer"@en,
-        "performer"@nl .
+        "uitvoerder"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/photographer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/photographer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The photographer or photographer is someone who has taken the photos using a camera."@en,
         "De fotograaf of fotografe is iemand die de foto's heeft gemaakt met behulp van een fototoestel."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "photographer"@en,
-        "fotograaf"@nl .
+        "fotograaf"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/photography> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/photography> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The person responsible for the photography."@en,
         "De persoon verantwoordelijk voor de fotografie."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "photography"@en,
-        "fotografie"@nl .
+        "fotografie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/post-production> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/post-production> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The person responsible or involved in the process of processing films, photographs, videos, sound and television programs."@en,
         "De persoon die verantwoordelijk of betrokken was bij het proces van het verwerken van films, foto's, video's, geluid en televisieprogramma's."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "post-production"@en,
-        "post-productie"@nl .
+        "post-productie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/present> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/present> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The attendee is a person who was present at the performance or recording of the creative work."@en,
         "De aanwezige is een persoon die aanwezig was bij de uitvoering of opname van het creatief werk."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "present"@en,
-        "aanwezig"@nl .
+        "aanwezig"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/press-agency> a skos:Concept ;
+<https://data.hetarchief.be/id/role/press-agency> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "nieuwsagentschap"@nl,
         "persbureau"@nl,
         "persdienst"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/publisher> ;
+    skos:changeNote "van publisher naar bijdrager" ;
     skos:definition "The press agency is an organization that provides newspapers, radio and television channels and other media with national and international news on a daily basis."@en,
         "Het persagentschap is een organisatie die dagbladen, radio- en televisiezenders en andere media dagelijks van nationaal en internationaal nieuws voorziet."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "press agency"@en,
-        "persagentschap"@nl .
+        "persagentschap"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/producer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/producer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van maker naar producent, definitie herzien" ;
     skos:definition "The producer is the person responsible for the production and often also financing of the film, the music recording, the radio program, all possible aspects of a television series or program, or a theater production."@en,
-        "De producent is de verantwoordelijke persoon voor de productie en vaak ook financiering van de film, de muziekopname, het radioprogramma, alle mogelijke aspecten van een televisieserie of -programma, of een theaterproductie."@nl ;
+        "De producent is de verantwoordelijke persoon voor de productie en vaak ook financiering van de film, de muziekopname, het radioprogramma, alle mogelijke aspecten van een televisieserie of -programma, of een theatervoorstelling."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "producer"@en,
-        "producent"@nl .
+        "producent"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/production-house> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+<https://data.hetarchief.be/id/role/production-house> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van maker naar producent" ;
     skos:definition "The production house or production company is the company that has produced the theater performance or radio and/or television program for others."@en,
         "Het productiehuis of productiemaatschappij of productiebedrijf is het bedrijf dat de theatervoorstelling of radio- en/of televisieprogramma heeft geproduceerd voor anderen."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "production house"@en,
-        "productiehuis"@nl .
+        "productiehuis"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/publisher> a skos:Concept ;
-    skos:definition "The publisher is an entity primarily responsible for distributing and making an item accessible to third parties through broadcasting, sale, rental or other means of distribution."@en,
-        "De uitgever is een entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur of een andere manier van verspreiding."@nl ;
+<https://data.hetarchief.be/id/role/publisher> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "hernoemen naar uitgever" ;
+    skos:definition "The publisher is an entity that markets information products. These can be books, newspapers or magazines."@en,
+        "De uitgever is iemand die informatieproducten op de markt brengt. Dit kunnen bijvoorbeeld boeken, kranten of tijdschriften zijn."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "publisher"@en,
         "uitgever"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/reporter> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/recipient> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "creeëren als rol in Bijdrager" ;
+    skos:definition "De entiteit (bv. organisatie of persoon) die het materiaal origineel heeft ontvangen, zoals bij een brief of postkaart."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/role> ;
+    skos:prefLabel "recipient"@en,
+        "ontvanger"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
+
+<https://data.hetarchief.be/id/role/reporter> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The reporter is someone who reports on certain events."@en,
         "De reporter is iemand die verslag uitbrengt over bepaalde gebeurtenissen."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "reporter"@en,
-        "reporter"@nl .
+        "reporter"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/researcher> a skos:Concept ;
+<https://data.hetarchief.be/id/role/researcher> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "onderzoekster"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+    skos:changeNote "geen" ;
     skos:definition "The researcher is a person who investigates unknown matters."@en,
         "De onderzoeker of onderzoekster is een persoon die onbekende zaken onderzoekt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "researcher"@en,
-        "onderzoeker"@nl .
+        "onderzoeker"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/screenwriter> a skos:Concept ;
+<https://data.hetarchief.be/id/role/screenwriter> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "scenarioschrijver"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The screenwriter or screenwriter is the person who wrote or co-wrote the screenplay."@en,
         "De scenarist of scenarioschrijver is de persoon die het scenario heeft geschreven of daar aan meegeschreven."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "screenwriter"@en,
-        "scenarist"@nl .
+        "scenarist"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/set-designer> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/set-designer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The set designer is responsible for the design of a set for musicals, theater performances, films, television and exhibitions."@en,
         "De decorontwerper is verantwoordelijk voor het ontwerp van een decor bij musicals, theatervoorstellingen, films, televisie en op exposities."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "set designer"@en,
-        "decorontwerper"@nl .
+        "decorontwerper"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/sound> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/sound> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The person responsible for the sound of the film or photo recording."@en,
         "De persoon verantwoordelijk voor het geluid van de film- of foto-opname."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "sound"@en,
-        "geluid"@nl .
+        "geluid"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/soundman> a skos:Concept ;
-    skos:altLabel "geluidstechnicus"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/soundman> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:altLabel "soundperson"@en,
+        "geluidstechnicus, geluidspersoon"@nl ;
+    skos:changeNote "geen" ;
     skos:definition "The sound engineer is responsible for various activities related to sound systems."@en,
         "De geluidsman is verantwoordelijk voor verschillende werkzaamheden die met geluidssystemen te maken hebben."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "soundman"@en,
-        "geluidsman"@nl .
+        "geluidsman"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/soundtrack> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/soundtrack> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "van bijdrager naar maker" ;
     skos:definition "The person responsible for the music of a film, TV series or computer game."@en,
         "De persoon verantwoordelijk voor de muziek van een film, tv-serie of computerspel."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "soundtrack"@en,
-        "soundtrack"@nl .
+        "soundtrack"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/sponsor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/sponsor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The sponsor is a person or organization, usually a company, that supports the creative work by providing money or other resources in exchange for advertising."@en,
         "De sponsor is een persoon of organisatie, meestal een bedrijf, die het creatief werk steunt door geld of andere middelen ter beschikking te stellen, in ruil voor reclame."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "sponsor"@en,
-        "sponsor"@nl .
+        "sponsor"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/technical-advisor> a skos:Concept ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
+<https://data.hetarchief.be/id/role/technical-advisor> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "geen" ;
     skos:definition "The technical advisor advises customers (companies) about systems, standards and their purchase, installation and application."@en,
         "De technisch adviseur adviseert klanten (bedrijven) over systemen, standaarden en de aanschaf, installatie en toepassing daarvan."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "technical advisor"@en,
-        "technisch adviseur"@nl .
+        "technisch adviseur"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/translator> a skos:Concept ;
+<https://data.hetarchief.be/id/role/translator> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "vertaalster"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/contributor> ;
-    skos:definition "The translator is someone who translates written texts, especially if this is done professionally and usually from a foreign language into the translator's native language."@en,
-        "De vertaler of vertaalster is iemand die  de geschreven teksten vertaalt, vooral als dit beroepsmatig gebeurt en meestal uit een vreemde taal naar de moedertaal van de vertaler."@nl ;
+    skos:changeNote "van bijdrager naar maker" ;
+    skos:definition "The translator is someone who translates written texts."@en,
+        "De vertaler of vertaalster is iemand die  de teksten in het werk vertaalt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "translator"@en,
-        "vertaler"@nl .
+        "vertaler"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/writer> a skos:Concept ;
+<https://data.hetarchief.be/id/role/videographer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
+    skos:changeNote "creeren in veld maker" ;
+    skos:definition "The videographer is the person responsable for the videographic recording of a performance or work, with use of enough creative input."@en,
+        "De videograaf is de persoon verantwoordelijk voor de videografische vastlegging van een uitvoering of werk, waarbij voldoende creatieve inbreng kan aangetoond worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/role> ;
+    skos:prefLabel "videographer"@en,
+        "videograaf"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
+
+<https://data.hetarchief.be/id/role/writer> a skos:Concept,
+        <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "schrijfster"@nl ;
-    skos:broader <https://data.hetarchief.be/id/role/maker> ;
+    skos:changeNote "geen" ;
     skos:definition "The writer is someone who has produced written work such as a book, newspaper article, script, song lyrics or a poem."@en,
         "De schrijver of schrijfster is iemand die het geschreven werk heeft geproduceerd zoals een boek, krantenartikel, script, liedtekst of een gedicht."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
     skos:prefLabel "writer"@en,
-        "schrijver"@nl .
+        "schrijver"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
-<https://data.hetarchief.be/id/role/publisher> skos:narrower <https://data.hetarchief.be/id/role/distributor>,
-        <https://data.hetarchief.be/id/role/exhibitor>,
-        <https://data.hetarchief.be/id/role/press-agency> .
-
-<https://data.hetarchief.be/id/role/maker> skos:narrower <https://data.hetarchief.be/id/role/actor>,
-        <https://data.hetarchief.be/id/role/architect>,
-        <https://data.hetarchief.be/id/role/archivist>,
-        <https://data.hetarchief.be/id/role/artist>,
-        <https://data.hetarchief.be/id/role/author>,
-        <https://data.hetarchief.be/id/role/choreographer>,
-        <https://data.hetarchief.be/id/role/client>,
-        <https://data.hetarchief.be/id/role/composer>,
-        <https://data.hetarchief.be/id/role/dancer>,
-        <https://data.hetarchief.be/id/role/director>,
-        <https://data.hetarchief.be/id/role/documentary-maker>,
-        <https://data.hetarchief.be/id/role/filmmaker>,
-        <https://data.hetarchief.be/id/role/interviewee>,
-        <https://data.hetarchief.be/id/role/interviewer>,
-        <https://data.hetarchief.be/id/role/musician>,
-        <https://data.hetarchief.be/id/role/performer>,
-        <https://data.hetarchief.be/id/role/photographer>,
-        <https://data.hetarchief.be/id/role/producer>,
-        <https://data.hetarchief.be/id/role/production-house>,
-        <https://data.hetarchief.be/id/role/writer> .
-
-<https://data.hetarchief.be/id/role/contributor> skos:narrower <https://data.hetarchief.be/id/role/absent>,
+<https://data.hetarchief.be/id/role> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/role/absent>,
+        <https://data.hetarchief.be/id/role/actor>,
         <https://data.hetarchief.be/id/role/advisor>,
         <https://data.hetarchief.be/id/role/announcer>,
+        <https://data.hetarchief.be/id/role/architect>,
+        <https://data.hetarchief.be/id/role/archivist>,
         <https://data.hetarchief.be/id/role/arranger>,
+        <https://data.hetarchief.be/id/role/artist>,
         <https://data.hetarchief.be/id/role/artistic-director>,
         <https://data.hetarchief.be/id/role/assistant>,
+        <https://data.hetarchief.be/id/role/author>,
+        <https://data.hetarchief.be/id/role/broadcaster>,
         <https://data.hetarchief.be/id/role/cameraman>,
         <https://data.hetarchief.be/id/role/chairman>,
+        <https://data.hetarchief.be/id/role/choreographer>,
+        <https://data.hetarchief.be/id/role/client>,
         <https://data.hetarchief.be/id/role/co-producer>,
         <https://data.hetarchief.be/id/role/commentator>,
+        <https://data.hetarchief.be/id/role/composer>,
         <https://data.hetarchief.be/id/role/conductor>,
+        <https://data.hetarchief.be/id/role/contributor>,
         <https://data.hetarchief.be/id/role/costume-designer>,
+        <https://data.hetarchief.be/id/role/dancer>,
         <https://data.hetarchief.be/id/role/depicted>,
         <https://data.hetarchief.be/id/role/digitization-partner>,
+        <https://data.hetarchief.be/id/role/director>,
+        <https://data.hetarchief.be/id/role/distributor>,
+        <https://data.hetarchief.be/id/role/documentary-maker>,
         <https://data.hetarchief.be/id/role/dramaturg>,
         <https://data.hetarchief.be/id/role/editor>,
         <https://data.hetarchief.be/id/role/excused>,
+        <https://data.hetarchief.be/id/role/exhibitor>,
+        <https://data.hetarchief.be/id/role/filmmaker>,
         <https://data.hetarchief.be/id/role/graphic-designer>,
+        <https://data.hetarchief.be/id/role/interviewee>,
+        <https://data.hetarchief.be/id/role/interviewer>,
         <https://data.hetarchief.be/id/role/librarian>,
         <https://data.hetarchief.be/id/role/lighting>,
+        <https://data.hetarchief.be/id/role/maker>,
         <https://data.hetarchief.be/id/role/makeup-artist>,
         <https://data.hetarchief.be/id/role/manufacturer>,
+        <https://data.hetarchief.be/id/role/musician>,
         <https://data.hetarchief.be/id/role/narrator>,
         <https://data.hetarchief.be/id/role/news-anchor>,
+        <https://data.hetarchief.be/id/role/performer>,
+        <https://data.hetarchief.be/id/role/photographer>,
         <https://data.hetarchief.be/id/role/photography>,
         <https://data.hetarchief.be/id/role/post-production>,
         <https://data.hetarchief.be/id/role/present>,
+        <https://data.hetarchief.be/id/role/press-agency>,
+        <https://data.hetarchief.be/id/role/producer>,
+        <https://data.hetarchief.be/id/role/production-house>,
+        <https://data.hetarchief.be/id/role/publisher>,
+        <https://data.hetarchief.be/id/role/recipient>,
         <https://data.hetarchief.be/id/role/reporter>,
         <https://data.hetarchief.be/id/role/researcher>,
         <https://data.hetarchief.be/id/role/screenwriter>,
@@ -578,11 +738,8 @@
         <https://data.hetarchief.be/id/role/soundtrack>,
         <https://data.hetarchief.be/id/role/sponsor>,
         <https://data.hetarchief.be/id/role/technical-advisor>,
-        <https://data.hetarchief.be/id/role/translator> .
-
-<https://data.hetarchief.be/id/role> a skos:ConceptScheme ;
-    skos:hasTopConcept <https://data.hetarchief.be/id/role/contributor>,
-        <https://data.hetarchief.be/id/role/maker>,
-        <https://data.hetarchief.be/id/role/publisher> ;
+        <https://data.hetarchief.be/id/role/translator>,
+        <https://data.hetarchief.be/id/role/videographer>,
+        <https://data.hetarchief.be/id/role/writer> ;
     skos:prefLabel "Thesaurus rollen"@nl .
 
