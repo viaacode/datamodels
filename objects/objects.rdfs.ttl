@@ -53,6 +53,16 @@ haObj:CarrierRepresentation a rdfs:Class ;
     skos:definition "Een fysieke of digitale weergave van een gearchiveerde intellectuele entiteit (Intellectual Entity) die is opgeslagen op een fysieke drager zoals een videoband, filmrol, papier of canvas."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
+haObj:AudiovisualCarrierRepresentation a rdfs:Class ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    rdfs:label "Audiovisual carrier representation"@en ;
+    rdfs:label "Représentation de porteur audiovisuel"@fr ;
+    rdfs:label "Audiovisuele drager representatie"@nl ;
+    skos:definition "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."@en ;
+    skos:definition "Une représentation physique ou numérique d'une entité audio ou audiovisuel archivée qui est stockée sur un porteur physique tel qu'une bande vidéo."@fr ;
+    skos:definition "Een fysieke of digitale weergave van een gearchiveerde audio of video entiteit die is opgeslagen op een fysieke audiovisuele drager zoals een videoband."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
 haObj:PhysicalCarrier a rdfs:Class ;
     rdfs:subClassOf premis:StorageLocation ;
     rdfs:label "Physical carrier"@en ;
@@ -61,6 +71,16 @@ haObj:PhysicalCarrier a rdfs:Class ;
     skos:definition "A physical carrier in which data, sound, images, etc., are stored.  For certain categories of material, the physical carrier consists of a storage medium (e.g., tape, film) sometimes encased in a plastic, metal, etc., housing (e.g., cassette, cartridge) that is an integral part of the item."@en ;
     skos:definition "Un porteur physique dans lequel les données, le son, les images, etc., sont stockées.Pour certaines catégories de matériaux, le support physique se compose d'un support de stockage (par exemple, du ruban adhésif, du film) parfois enfermé dans un boîtier en plastique, en métal, etc., (par exemple, cassette, cartouche) qui fait partie intégrante de l'article."@fr ;
     skos:definition "Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaalde materiaalcategorieën bestaat de fysieke drager uit een opslagmedium (bijv. tape, film), soms verpakt in een plastic, metalen, enz. behuizing (bijv. cassette, cartridge) die een integraal onderdeel vormt van het item."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+haObj:AudiovisualCarrier a rdfs:Class ;
+    rdfs:subClassOf haObj:PhysicalCarrier ;
+    rdfs:label "Audiovisual carrier"@en ;
+    rdfs:label "Porteur audiovisuel"@fr ;
+    rdfs:label "Audiovisuele drager"@nl ;
+    skos:definition "A physical carrier that stores audio or audiovisual content."@en ;
+    skos:definition "Un porteur physique qui stocke du contenu audio ou audiovisuel."@fr ;
+    skos:definition "Een fysieke drager waarop audio of audiovisueel materiaal is opgeslagen."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
 #####################################
