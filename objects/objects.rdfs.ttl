@@ -63,6 +63,16 @@ haObj:AudiovisualCarrierRepresentation a rdfs:Class ;
     skos:definition "Een fysieke of digitale weergave van een gearchiveerde audio of video entiteit die is opgeslagen op een fysieke audiovisuele drager zoals een videoband."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
+haObj:WrittenWorkCarrierRepresentation a rdfs:Class ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    rdfs:label "Written work carrier representation"@en ;
+    rdfs:label "Représentation de porteur d'un travail écrit'"@fr ;
+    rdfs:label "Geschreven werk drager representatie"@nl ;
+    skos:definition "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."@en ;
+    skos:definition "Une représentation physique ou numérique d'une œuvre écrite archivée qui est stockée sur un transporteur physique tel qu'un journal ou un livre."@fr ;
+    skos:definition "Een fysieke of digitale weergave van een gearchiveerd geschreven werk dat is opgeslagen op een fysieke drager zoals een gedrukte krant of boek."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
 haObj:PhysicalCarrier a rdfs:Class ;
     rdfs:subClassOf premis:StorageLocation ;
     rdfs:label "Physical carrier"@en ;
