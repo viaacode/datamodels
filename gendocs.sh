@@ -5,7 +5,7 @@ out=${1:-./output}
 parent="Knowledge Graph"
 #pip install shacl2md --extra-index-url http://do-prd-mvn-01.do.viaa.be:8081/repository/pypi-all/simple --trusted-host do-prd-mvn-01.do.viaa.be
 shacl2md generate \
-    all:organizations/organizations.shacl.ttl,objects/objects.shacl.ttl,description/description.shacl.ttl,description/film.shacl.ttl,description/audiovisual.shacl.ttl,description/bibliographic.shacl.ttl,events/events.shacl.ttl,terms/terms.shacl.ttl \
+    all:organizations/organizations.shacl.ttl,objects/objects.shacl.ttl,description/description.shacl.ttl,events/events.shacl.ttl,terms/terms.shacl.ttl \
     organization:organizations/organizations.shacl.ttl \
     object:objects/objects.shacl.ttl \
     descriptive:description/description.shacl.ttl \
