@@ -63,7 +63,6 @@ haObj:PhysicalCarrier a rdfs:Class ;
     skos:definition "Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaalde materiaalcategorieën bestaat de fysieke drager uit een opslagmedium (bijv. tape, film), soms verpakt in een plastic, metalen, enz. behuizing (bijv. cassette, cartridge) die een integraal onderdeel vormt van het item."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
 
-
 #####################################
 #             PROPERTIES            #
 #####################################
