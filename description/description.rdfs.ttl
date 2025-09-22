@@ -9,6 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix org: <http://www.w3.org/ns/org#> .
+@prefix haCt: <https://data.hetarchief.be/id/color-type/> .
 
 # Classes
 
@@ -170,6 +171,46 @@ haDes:RoleName a rdfs:Class;
     skos:definition "De rol gespeeld, uitgevoerd of gevuld door een ding, persoon of organisatie."@nl ;
     skos:definition "The role played, performed or filled by a thing, person or organization."@en ;
     skos:definition "Le rôle joué, joué ou rempli par une chose, une personne ou une organisation."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:AudiovisualCarrier a rdfs:Class ;
+    rdfs:subClassOf haObj:PhysicalCarrier ;
+    rdfs:label "Audiovisual carrier"@en ;
+    rdfs:label "Porteur audiovisuel"@fr ;
+    rdfs:label "Audiovisuele drager"@nl ;
+    skos:definition "A physical carrier that stores audio or audiovisual content."@en ;
+    skos:definition "Un porteur physique qui stocke du contenu audio ou audiovisuel."@fr ;
+    skos:definition "Een fysieke drager waarop audio of audiovisueel materiaal is opgeslagen."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:AudiovisualCarrierRepresentation a rdfs:Class ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    rdfs:label "Audiovisual carrier representation"@en ;
+    rdfs:label "Représentation de porteur audiovisuel"@fr ;
+    rdfs:label "Audiovisuele drager representatie"@nl ;
+    skos:definition "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."@en ;
+    skos:definition "Une représentation physique ou numérique d'une entité audio ou audiovisuel archivée qui est stockée sur un porteur physique tel qu'une bande vidéo."@fr ;
+    skos:definition "Een fysieke of digitale weergave van een gearchiveerde audio of video entiteit die is opgeslagen op een fysieke audiovisuele drager zoals een videoband."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:WrittenWorkCarrierRepresentation a rdfs:Class ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    rdfs:label "Written work carrier representation"@en ;
+    rdfs:label "Représentation de porteur d'un travail écrit'"@fr ;
+    rdfs:label "Geschreven werk drager representatie"@nl ;
+    skos:definition "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."@en ;
+    skos:definition "Une représentation physique ou numérique d'une œuvre écrite archivée qui est stockée sur un transporteur physique tel qu'un journal ou un livre."@fr ;
+    skos:definition "Een fysieke of digitale weergave van een gearchiveerd geschreven werk dat is opgeslagen op een fysieke drager zoals een gedrukte krant of boek."@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:FilmCarrierRepresentation a rdfs:Class ;
+    rdfs:subClassOf haObj:CarrierRepresentation ;
+    rdfs:label "Film carrier representation"@en ;
+    rdfs:label "Représentation de porteur de films"@fr ;
+    rdfs:label "Filmdrager representatie"@nl ;
+    skos:definition "A representation of an archived film that is stored on a analog film carrier such as a film stock."@en ;
+    skos:definition "Une représentation d'un film archivé qui est stocké sur un porte-film analogique tel que bouton de cinéma."@fr ;
+    skos:definition "Een weergave van een gearchiveerde film die is opgeslagen op een analoge filmdrager zoals pelicule."@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 # Properties
