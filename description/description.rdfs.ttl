@@ -338,9 +338,9 @@ haDes:executor a rdf:Property ;
   rdfs:label "executor"@en ;
   rdfs:label "uitvoerder"@nl ;
   rdfs:label "exécutrice"@fr ;
-  skos:definition "The executor of the CreativeWork or Event."@en ;
-  skos:definition "De uitvoerder van het CreativeWork of Event."@nl ;
-  skos:definition "L'interprète du travail créatif ou de l'événement."@fr ;
+  skos:definition "The executor of the CreativeWork."@en ;
+  skos:definition "De uitvoerder van het CreativeWork."@nl ;
+  skos:definition "L'interprète du travail créatif."@fr ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:broadcastingOrganization a rdf:Property ;
@@ -354,9 +354,9 @@ haDes:broadcastingOrganization a rdf:Property ;
   rdfs:label "broadcasting organization"@en ;
   rdfs:label "omroeporganisatie"@nl ;
   rdfs:label "organisation de diffusion"@fr ;
-  skos:definition "The broadcasting organization of the CreativeWork."@en ;
-  skos:definition "De omroeporganisatie van het CreativeWork."@nl ;
-  skos:definition "Le diffuseur du Creativework."@fr ;
+  skos:definition "The broadcasting organization of the audiovisual work."@en ;
+  skos:definition "De omroeporganisatie van the audiovisual work."@nl ;
+  skos:definition "L'organisation de radiodiffusion des travaux audiovisuels."@fr ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:licenseDistributor a rdf:Property ;
