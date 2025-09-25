@@ -200,5 +200,5 @@
         sh:name "broadcasting organization"@en ;
         sh:name "omroeporganisatie"@nl ;
         sh:name "organisation de diffusion"@fr ; 
-        sh:message "haDes:broadcastingOrganization occurs more than once, or its object is not an  org:Organization. ".  
+        sh:message "haDes:broadcastingOrganization occurs more than once, or its object is not an  org:Organization."@en .  
     
