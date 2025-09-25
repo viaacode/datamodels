@@ -1,4 +1,3 @@
-@prefix : <https://data.hetarchief.be/ns/rights#> .
 @prefix copyrightStatus: <http://id.loc.gov/vocabulary/preservation/copyrightStatus/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dct: <http://purl.org/dc/terms/> .
@@ -20,6 +19,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
 @base <https://data.hetarchief.be/ns/rights> .
 
 <> a owl:Ontology ;
@@ -53,24 +53,24 @@
     sh:property [ 
         sh:path odrl:rightOperand ;
         sh:in ( 
-          :extended
-          :limited
-          :full
-          :partial
-          :available-for-consultation
-          :downloadable
-          :between-partners
-          :educational-public
-          :intra-muros
-          :public
-          :research-public 
+         </extended>
+         </limited>
+         </full>
+         </partial>
+         </available-for-consultation>
+         </downloadable>
+         </between-partners>
+         </educational-public>
+         </intra-muros>
+         </public>
+         </research-public>
         ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI ; 
-        sh:or ( [ sh:class :UserGroup ] 
-                [ sh:class :MetadataRange ] 
-                [ sh:class :ContentRange ] 
+        sh:or ( [ sh:class </UserGroup>] 
+                [ sh:class </MetadataRange> ] 
+                [ sh:class </ContentRange> ] 
         )  
     ], 
     [ 
@@ -82,14 +82,14 @@
     ], 
     [ 
         sh:path odrl:leftOperand ;
-        sh:in ( odrl:recipient :metadataRange :contentRange odrl:dateTime odrl:absoluteTemporalPosition ) ; 
+        sh:in ( odrl:recipient </metadataRange> </contentRange> odrl:dateTime odrl:absoluteTemporalPosition ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI 
     ] .
 
 <#MotivationNodeShape> a sh:NodeShape ;
-  sh:targetClass :Motivation .
+  sh:targetClass </Motivation> .
 
 <#ProhibitionNodeShape> a sh:NodeShape ;
   sh:targetClass odrl:Prohibition ;
@@ -99,9 +99,9 @@
   <#StartDateShape>,
   <#EndDateShape>, 
   [ 
-    sh:class :Motivation ; 
+    sh:class </Motivation> ; 
     sh:minCount 1 ; 
-    sh:path :isMotivatedBy 
+    sh:path </isMotivatedBy> 
   ] .
 
 <#PermissionNodeShape> a sh:NodeShape ;
@@ -204,7 +204,7 @@
 
 <#ActionShape> a sh:PropertyShape;
   sh:path odrl:action;
-  sh:in ( :available-for-consultation :downloadable ) ; 
+  sh:in ( </available-for-consultation> </downloadable> ) ; 
   sh:class odrl:Action;
   sh:nodeKind sh:IRI ;
   sh:minCount 1 .
