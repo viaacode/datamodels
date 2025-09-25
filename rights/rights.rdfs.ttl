@@ -57,18 +57,6 @@ haRig:isMotivatedBy a rdf:Property;
 
 # left operands (inviduals)
 
-haRig:userGroup a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
-    rdfs:label "Gebruikersgroep"@nl ;
-    rdfs:label "User group"@en ;
-    rdfs:label "Groupe d'utilisateurs"@fr ;
-    skos:prefLabel "Gebruikersgroep"@nl ;
-    skos:prefLabel "User group"@en ;
-    skos:prefLabel "Groupe d'utilisateurs"@fr ;
-    skos:definition "Groep van web platform gebruikers."@nl ;
-    skos:definition "Group of web platform users."@en ;
-    skos:definition "Groupe d'utilisateurs de la plate-forme Web."@fr ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/rights/> .
-
 haRig:metadataRange a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
     skos:prefLabel "Metadatabereik"@nl ;
     rdfs:label "Metadatabereik"@nl ;
