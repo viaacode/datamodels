@@ -8,18 +8,28 @@
 #              CLASSES              #
 #####################################
 
-dct:FileFormat dct:description "Examples include the formats defined by the list of Internet Media Types."@en ;
+dct:FileFormat a rdfs:Class ;
+  dct:description "Examples include the formats defined by the list of Internet Media Types."@en ;
 	dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
 	dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
-	a rdfs:Class ;
 	rdfs:label "File format"@en ;
-    rdfs:label "Format de fichier"@fr ;
-    rdfs:label "Bestandsformaat"@nl ;
-    skos:definition "A digital resource format."@en ;
-    skos:definition "Un format de ressource numérique."@fr ;
-    skos:definition "Een formaat van een digitale bron."@nl ;
+  rdfs:label "Format de fichier"@fr ;
+  rdfs:label "Bestandsformaat"@nl ;
+  skos:definition "A digital resource format."@en ;
+  skos:definition "Un format de ressource numérique."@fr ;
+  skos:definition "Een formaat van een digitale bron."@nl ;
 	rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
 	rdfs:subClassOf dct:MediaType .
+
+dct:RightsStatement a rdfs:Class;
+    dct:issued "2008-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    skos:definition "A statement about the intellectual property rights (IPR) held in or over a resource, a legal document giving official permission to do something with a resource, or a statement about access rights."@en ;
+    skos:definition "Een verklaring over de intellectuele eigendomsrechten (IPR) van toepassing op of over een entiteit, een juridisch document dat officiële toestemming geeft om iets te doen met een entiteit, of een verklaring over toegangsrechten."@nl ;
+    skos:definition "Une déclaration sur les droits de propriété intellectuelle (DPI) a été maintenue dans ou au-dessus d'une ressource, un document légal donnant l'autorisation officielle de faire quelque chose avec une ressource ou une déclaration sur les droits d'accès."@fr ;
+    rdfs:label "Rights Statement"@en ;
+    rdfs:label "Rechtenverklaring"@nl ;
+    rdfs:label "Déclaration des droits"@fr ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 #####################################
 #             PROPERTIES            #
@@ -69,7 +79,6 @@ dct:medium a rdf:Property ;
     rdfs:isDefinedBy <http://purl.org/dc/terms/> .
 
 dct:rights a rdf:Property ;
-  rdfs:range xsd:string ;
   dct:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.  Recommended practice is to refer to a rights statement with a URI.  If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en ;
   dct:description "Doorgaans bevat rechteninformatie een verklaring over verschillende eigendomsrechten die verband houden met de bron, inclusief intellectuele eigendomsrechten.Aanbevolen praktijk is om te verwijzen naar een rechtenverklaring met een URI.Als dit niet mogelijk of haalbaar is, kan een letterlijke waarde (naam, label of korte tekst) worden verstrekt."@nl ;
   dct:description "En règle générale, les informations sur les droits comprennent une déclaration sur les différents droits de propriété associés à la ressource, y compris les droits de propriété intellectuelle.La pratique recommandée est de se référer à une déclaration de droits avec un URI.Si cela n'est pas possible ou possible, une valeur littérale (nom, étiquette ou texte court) peut être fourni."@fr ;
@@ -82,3 +91,16 @@ dct:rights a rdf:Property ;
   rdfs:label "Rechten"@nl ;
   rdfs:label "Droits"@fr ;
   rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights> .
+
+dct:license a rdf:Property ;
+    #dcam:rangeIncludes dcterms:LicenseDocument ;
+    dct:description "Recommended practice is to identify the license document with a URI. If this is not possible or feasible, a literal value that identifies the license may be provided."@en ;
+    dct:issued "2004-06-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    skos:definition "A legal document giving official permission to do something with the resource."@en ;
+    skos:definition "Un document juridique permettant à l'autorisation officielle de faire quelque chose avec la ressource."@fr ;
+    skos:definition "Een juridisch document dat officiële toestemming geeft om iets met de entiteit te doen."@nl ;
+    rdfs:isDefinedBy <http://purl.org/dc/terms/> ;
+    rdfs:label "License"@en ;
+    rdfs:label "Licentie"@nl ;
+    rdfs:label "Licence"@fr ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/rights>, dct:rights .

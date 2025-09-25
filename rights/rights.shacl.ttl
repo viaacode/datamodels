@@ -49,102 +49,71 @@
 # #####################
 
 <#ConstraintNodeShape> a sh:NodeShape ;
+    sh:targetClass odrl:Constraint ;
     sh:property [ 
-        sh:in ( :BredePubliek :public :intra-muros :education :research :limited :extended :partial :full ) ; 
+        sh:path odrl:rightOperand ;
+        sh:in ( 
+          :extended
+          :limited
+          :full
+          :partial
+          :available-for-consultation
+          :downloadable
+          :between-partners
+          :educational-public
+          :intra-muros
+          :public
+          :research-public 
+        ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI ; 
         sh:or ( [ sh:class :UserGroup ] 
                 [ sh:class :MetadataRange ] 
                 [ sh:class :ContentRange ] 
-        ) ; 
-        sh:path odrl:rightOperand 
+        )  
     ], 
     [ 
+        sh:path odrl:operator ;
         sh:in ( odrl:eq odrl:lt ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
-        sh:nodeKind sh:IRI ; 
-        sh:path odrl:operator 
+        sh:nodeKind sh:IRI  
     ], 
     [ 
+        sh:path odrl:leftOperand ;
         sh:in ( odrl:recipient :metadataRange :contentRange odrl:dateTime odrl:absoluteTemporalPosition ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
-        sh:nodeKind sh:IRI ; 
-        sh:path odrl:leftOperand 
-    ] ;
-    sh:targetClass odrl:Constraint .
+        sh:nodeKind sh:IRI 
+    ] .
 
 <#MotivationNodeShape> a sh:NodeShape ;
-  sh:property [ 
-    sh:datatype rdf:langString ; 
-    sh:uniqueLang true ;
-    sh:maxCount 1 ; 
-    sh:minCount 1 ; 
-    sh:path skos:prefLabel ] ;
   sh:targetClass :Motivation .
 
 <#ProhibitionNodeShape> a sh:NodeShape ;
-  sh:property [ 
-    sh:in ( odrl:display odrl:disseminate ) ; 
-    sh:path odrl:action 
-  ], 
-  [ 
-    sh:class odrl:Constraint ; 
-    sh:maxCount 5 ; 
-    sh:path odrl:constraint 
-  ], 
+  sh:targetClass odrl:Prohibition ;
+  sh:property <#ActionShape>, 
+  <#ConstraintShape>, 
+  <#NoteShape>, 
+  <#StartDateShape>,
+  <#EndDateShape>, 
   [ 
     sh:class :Motivation ; 
     sh:minCount 1 ; 
     sh:path :isMotivatedBy 
-  ], 
-  [ 
-    sh:datatype xsd:string ; 
-    sh:maxCount 1 ; 
-    sh:path premis:note
-  ], 
-  [ 
-    sh:class edtf:EDTF-level0 ; 
-    sh:maxCount 1 ; 
-    sh:path premis:endDate 
-  ], 
-  [ 
-    sh:class edtf:EDTF-level0 ; 
-    sh:maxCount 1 ; 
-    sh:path premis:startDate 
-  ] ;
-  sh:targetClass odrl:Prohibition .
+  ] .
 
 <#PermissionNodeShape> a sh:NodeShape ;
-  sh:property [ 
-    sh:in ( odrl:display odrl:disseminate ) ; 
-    sh:path odrl:action 
-  ], 
-  [ 
-    sh:class odrl:Constraint ; 
-    sh:maxCount 5 ; 
-    sh:path odrl:constraint 
-  ], 
-  [ 
-    sh:datatype xsd:string ; 
-    sh:maxCount 1 ; 
-    sh:path premis:note 
-  ], 
-  [ 
-    sh:class edtf:EDTF-level0 ; 
-    sh:maxCount 1 ; 
-    sh:path premis:endDate 
-  ], 
-  [ 
-    sh:class edtf:EDTF-level0 ; 
-    sh:maxCount 1 ; 
-    sh:path premis:startDate 
-  ] ;
-  sh:targetClass odrl:Permission .
+  sh:targetClass odrl:Permission ;
+  sh:property <#ActionShape>, 
+  <#ConstraintShape>, 
+  <#NoteShape>, 
+  <#StartDateShape>,
+  <#EndDateShape>.
 
 <#PolicyNodeShape> a sh:NodeShape ;
+  sh:targetClass odrl:Policy ;
   sh:property [ 
     sh:class haObj:DigitalRepresentation ; 
     sh:minCount 1 ; 
@@ -157,48 +126,39 @@
   [ 
     sh:class odrl:Prohibition ; 
     sh:path odrl:prohibition 
-  ] ;
-  sh:targetClass odrl:Policy .
+  ] .
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ;
+  sh:targetClass haObj:DigitalRepresentation;
   sh:property [ 
+    sh:path odrl:hasPolicy ;
     sh:class odrl:Policy ; 
     sh:maxCount 1 ; 
-    sh:nodeKind sh:IRI ; 
-    sh:path odrl:hasPolicy ], 
+    sh:nodeKind sh:IRI 
+  ], 
   [ 
+    sh:path dct:license ;
     sh:class premis:License ; 
-    sh:maxCount 1 ; 
-    sh:path dct:license ], 
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI
+  ], 
   [ 
+    sh:path premis:rightsStatus ;
     sh:class premis:RightsStatus ; 
     sh:maxCount 3 ; 
     sh:minCount 1 ; 
-    sh:nodeKind sh:IRI ; 
-    sh:path premis:rightsStatus ] ;
-  sh:targetClass haObj:DigitalRepresentation .
+    sh:nodeKind sh:IRI 
+  ] .
 
 <#RightsStatementShape> a sh:NodeShape ;
-  sh:property [ 
-    sh:datatype rdf:langString ; 
-    sh:uniqueLang true ;
-    sh:maxCount 1 ; 
-    sh:minCount 1 ; 
-    sh:path skos:prefLabel 
-  ] ;
-  sh:targetClass dct:RightsStatement .
+  sh:targetClass dct:RightsStatement, skos:Concept .
 
 <#LicenseShape> a sh:NodeShape ;
-  sh:property [ 
-    sh:datatype rdf:langString ; 
-    sh:uniqueLang true ;
-    sh:maxCount 1 ; 
-    sh:minCount 1 ; 
-    sh:path skos:prefLabel 
-  ] ;
-  sh:targetClass premis:License .
+  sh:targetClass premis:License, skos:Concept .
 
 <#RightsStatusShape> a sh:NodeShape ;
+  sh:path premis:basis ;
+  sh:targetClass premis:RightsStatus ;
   sh:property [ 
     sh:maxCount 1 ; 
     sh:minCount 1 ; 
@@ -206,48 +166,69 @@
     sh:or ( 
       [ sh:class dct:RightsStatement ] 
       [ sh:class premis:License ] 
-    ) ; 
-    sh:path premis:basis 
+    )  
   ], 
-  [ 
-    sh:datatype xsd:string ; 
-    sh:maxCount 1 ; 
-    sh:path premis:note 
-  ], 
-  [ 
-    sh:class edtf:EDTF-level0 ; 
-    sh:maxCount 1 ; 
-    sh:path premis:endDate 
-  ], 
-  [ 
-    sh:class edtf:EDTF-level0 ; 
-    sh:maxCount 1 ; 
-    sh:path premis:startDate 
-  ] ;
-  sh:targetClass premis:RightsStatus .
+  <#NoteShape>, 
+  <#EndDateShape>,
+  <#StartDateShape> .
 
 <#IntellectualEntityNodeShape> a sh:NodeShape ;
+  sh:targetClass premis:IntellectualEntity ;
   sh:property [ 
+    sh:path dct:license ;
     sh:class premis:License ; 
     sh:maxCount 1 ; 
-    sh:nodeKind sh:IRI ; 
-    sh:path dct:license 
+    sh:nodeKind sh:IRI  
   ], 
   [ 
+    sh:path dct:rights ;
     sh:class dct:RightsStatement ; 
     sh:maxCount 1 ; 
     sh:minCount 1 ; 
-    sh:nodeKind sh:IRI ; 
-    sh:path dct:rights 
+    sh:nodeKind sh:IRI  
   ], 
   [ 
+    sh:path premis:rightsStatus ;
     sh:maxCount 3 ; 
     sh:minCount 1 ; 
     sh:nodeKind sh:IRI ; 
     sh:or ( 
       [ sh:class premis:RightsStatus ] 
       [ sh:class copyrightStatus:pub ] 
-    ) ; 
-    sh:path premis:rightsStatus 
-  ] ;
-  sh:targetClass premis:IntellectualEntity .
+    )  
+  ] .
+
+# #####################
+# PropertyShapes     #
+# #####################
+
+<#ActionShape> a sh:PropertyShape;
+  sh:path odrl:action;
+  sh:in ( :available-for-consultation :downloadable ) ; 
+  sh:class odrl:Action;
+  sh:nodeKind sh:IRI ;
+  sh:minCount 1 .
+
+<#ConstraintShape> a sh:PropertyShape;
+  sh:path odrl:constraint ;
+  sh:class odrl:Constraint ; 
+  sh:nodeKind sh:IRI ;
+  sh:maxCount 5 .
+
+<#NoteShape> a sh:PropertyShape;
+  sh:path premis:note ;
+  sh:datatype xsd:string ; 
+  sh:nodeKind sh:Literal ;
+  sh:maxCount 1 .
+
+<#EndDateShape> a sh:PropertyShape;
+  sh:path premis:endDate ;
+  sh:datatype xsd:dateTime ; 
+  sh:nodeKind sh:Literal ;
+  sh:maxCount 1 .
+
+<#StartDateShape> a sh:PropertyShape;
+  sh:path premis:startDate ;
+  sh:datatype xsd:dateTime ; 
+  sh:nodeKind sh:Literal ;
+  sh:maxCount 1 .
