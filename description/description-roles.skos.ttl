@@ -118,8 +118,7 @@
 
 <https://data.hetarchief.be/id/role/cameraman> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
-    skos:altLabel "cameraperson"@en,
-        "cameravrouw, camera"@nl ;
+    skos:altLabel "cameraperson"@en, "cameravrouw"@nl, "camera"@nl ;
     skos:broader <https://data.hetarchief.be/id/role/contributor> ;
     skos:changeNote "benaming herzien"@nl ;
     skos:definition "The cameraman or camerawoman is someone who operated the film or video camera during the recording."@en,
