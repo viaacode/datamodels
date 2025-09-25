@@ -354,9 +354,9 @@ haDes:broadcastingOrganization a rdf:Property ;
   rdfs:label "broadcasting organization"@en ;
   rdfs:label "omroeporganisatie"@nl ;
   rdfs:label "organisation de diffusion"@fr ;
-  skos:definition "The broadcasting organization of the audiovisual entity."@en ;
-  skos:definition "De omroeporganisatie van the audiovisual entity."@nl ;
-  skos:definition "L'organisation de radiodiffusion de l'entité audiovisuelle."@fr ;
+  skos:definition "The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc."@en ;
+  skos:definition "De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een audiovisueel item voor derden door omroep, verkoop, verhuur, etc."@nl ;
+  skos:definition "L'entité principalement responsable de la distribution et de la réalisation d'un élément audiovisuel à des tiers par le biais de la diffusion, de la vente, de la location, etc."@fr ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:licenseDistributor a rdf:Property ;

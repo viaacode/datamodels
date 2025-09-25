@@ -59,17 +59,21 @@
                 [ sh:class :ContentRange ] 
         ) ; 
         sh:path odrl:rightOperand 
-    ] , [ 
+    ], 
+    [ 
         sh:in ( odrl:eq odrl:lt ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI ; 
-        sh:path odrl:operator ] , [ 
-                sh:in ( odrl:recipient :metadataRange :contentRange odrl:dateTime odrl:absoluteTemporalPosition ) ; 
+        sh:path odrl:operator 
+    ], 
+    [ 
+        sh:in ( odrl:recipient :metadataRange :contentRange odrl:dateTime odrl:absoluteTemporalPosition ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI ; 
-        sh:path odrl:leftOperand ] ;
+        sh:path odrl:leftOperand 
+    ] ;
     sh:targetClass odrl:Constraint .
 
 <#MotivationNodeShape> a sh:NodeShape ;
@@ -84,23 +88,28 @@
   sh:property [ 
     sh:in ( odrl:display odrl:disseminate ) ; 
     sh:path odrl:action 
-  ] , [ 
+  ], 
+  [ 
     sh:class odrl:Constraint ; 
     sh:maxCount 5 ; 
     sh:path odrl:constraint 
-  ] , [ 
+  ], 
+  [ 
     sh:class :Motivation ; 
     sh:minCount 1 ; 
     sh:path :isMotivatedBy 
-  ] , [ 
+  ], 
+  [ 
     sh:datatype xsd:string ; 
     sh:maxCount 1 ; 
     sh:path premis:note
-  ] , [ 
+  ], 
+  [ 
     sh:class edtf:EDTF-level0 ; 
     sh:maxCount 1 ; 
     sh:path premis:endDate 
-  ] , [ 
+  ], 
+  [ 
     sh:class edtf:EDTF-level0 ; 
     sh:maxCount 1 ; 
     sh:path premis:startDate 
@@ -109,14 +118,25 @@
 
 <#PermissionNodeShape> a sh:NodeShape ;
   sh:property [ 
+    sh:in ( odrl:display odrl:disseminate ) ; 
+    sh:path odrl:action 
+  ], 
+  [ 
+    sh:class odrl:Constraint ; 
+    sh:maxCount 5 ; 
+    sh:path odrl:constraint 
+  ], 
+  [ 
     sh:datatype xsd:string ; 
     sh:maxCount 1 ; 
     sh:path premis:note 
-  ] , [ 
+  ], 
+  [ 
     sh:class edtf:EDTF-level0 ; 
     sh:maxCount 1 ; 
     sh:path premis:endDate 
-  ] , [ 
+  ], 
+  [ 
     sh:class edtf:EDTF-level0 ; 
     sh:maxCount 1 ; 
     sh:path premis:startDate 
@@ -127,11 +147,16 @@
   sh:property [ 
     sh:class haObj:DigitalRepresentation ; 
     sh:minCount 1 ; 
-    sh:path odrl:target ] , [ 
+    sh:path odrl:target 
+  ], 
+  [ 
     sh:class odrl:Permission ; 
-    sh:path odrl:permission ] , [ 
+    sh:path odrl:permission 
+  ], 
+  [ 
     sh:class odrl:Prohibition ; 
-    sh:path odrl:prohibition ] ;
+    sh:path odrl:prohibition 
+  ] ;
   sh:targetClass odrl:Policy .
 
 <#DigitalRepresentationNodeShape> a sh:NodeShape ;
@@ -139,10 +164,12 @@
     sh:class odrl:Policy ; 
     sh:maxCount 1 ; 
     sh:nodeKind sh:IRI ; 
-    sh:path odrl:hasPolicy ] , [ 
+    sh:path odrl:hasPolicy ], 
+  [ 
     sh:class premis:License ; 
     sh:maxCount 1 ; 
-    sh:path dct:license ] , [ 
+    sh:path dct:license ], 
+  [ 
     sh:class premis:RightsStatus ; 
     sh:maxCount 3 ; 
     sh:minCount 1 ; 
@@ -178,15 +205,18 @@
       [ sh:class premis:License ] 
     ) ; 
     sh:path premis:basis 
-  ] , [ 
+  ], 
+  [ 
     sh:datatype xsd:string ; 
     sh:maxCount 1 ; 
     sh:path premis:note 
-  ] , [ 
+  ], 
+  [ 
     sh:class edtf:EDTF-level0 ; 
     sh:maxCount 1 ; 
     sh:path premis:endDate 
-  ] , [ 
+  ], 
+  [ 
     sh:class edtf:EDTF-level0 ; 
     sh:maxCount 1 ; 
     sh:path premis:startDate 
@@ -199,13 +229,15 @@
     sh:maxCount 1 ; 
     sh:nodeKind sh:IRI ; 
     sh:path dct:license 
-  ] , [ 
+  ], 
+  [ 
     sh:class dct:RightsStatement ; 
     sh:maxCount 1 ; 
     sh:minCount 1 ; 
     sh:nodeKind sh:IRI ; 
     sh:path dct:rights 
-  ] , [ 
+  ], 
+  [ 
     sh:maxCount 3 ; 
     sh:minCount 1 ; 
     sh:nodeKind sh:IRI ; 

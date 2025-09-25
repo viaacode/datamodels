@@ -104,18 +104,6 @@
     skos:prefLabel "author"@en,
         "auteur"@nl .
 
-<https://data.hetarchief.be/id/role/broadcasting-company> a skos:Concept,
-        <https://data.hetarchief.be/ns/description/RoleName> ;
-    skos:altLabel "broadcaster"@en,
-        "omroep"@nl ;
-    skos:changeNote "creëren als veld omroeporganisatie"@nl ;
-    skos:definition "The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc."@en,
-        "De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een audiovisueel item voor derden door omroep, verkoop, verhuur,…"@nl ;
-    skos:inScheme <https://data.hetarchief.be/id/role> ;
-    skos:prefLabel "broadcasting company"@en,
-        "omroeporganisatie"@nl ;
-    skos:topConceptOf <https://data.hetarchief.be/id/role> .
-
 <https://data.hetarchief.be/id/role/cameraman> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "cameraperson"@en, "cameravrouw"@nl, "camera"@nl ;
@@ -704,8 +692,7 @@
     skos:topConceptOf <https://data.hetarchief.be/id/role> .
 
 <https://data.hetarchief.be/id/role> a skos:ConceptScheme ;
-    skos:hasTopConcept <https://data.hetarchief.be/id/role/broadcasting-company>,
-        <https://data.hetarchief.be/id/role/contributor>,
+    skos:hasTopConcept <https://data.hetarchief.be/id/role/contributor>,
         <https://data.hetarchief.be/id/role/creator>,
         <https://data.hetarchief.be/id/role/executor>,
         <https://data.hetarchief.be/id/role/producer>,
