@@ -354,18 +354,18 @@ haDes:broadcastingOrganization a rdf:Property ;
   rdfs:label "broadcasting organization"@en ;
   rdfs:label "omroeporganisatie"@nl ;
   rdfs:label "organisation de diffusion"@fr ;
-  skos:definition "The broadcasting organization of the audiovisual work."@en ;
-  skos:definition "De omroeporganisatie van the audiovisual work."@nl ;
-  skos:definition "L'organisation de radiodiffusion des travaux audiovisuels."@fr ;
+  skos:definition "The broadcasting organization of the audiovisual entity."@en ;
+  skos:definition "De omroeporganisatie van the audiovisual entity."@nl ;
+  skos:definition "L'organisation de radiodiffusion de l'entité audiovisuelle."@fr ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:licenseDistributor a rdf:Property ;
-  rdfs:domain schema:CreativeWork ;
+  rdfs:domain premis:IntellectualEntity ;
   rdfs:range [ owl:unionOf(schema:Person org:Organization) ] ;
   rdfs:label "license distributor"@en ;
   rdfs:label "licentiegever"@nl ;
   rdfs:label "distributeur de licence"@fr ;
-  skos:definition "The license distributor of the CreativeWork or Event."@en ;
-  skos:definition "De licentiedistributeur van het CreativeWork of Event."@nl ;
-  skos:definition "Le distributeur de licences du travail créatif ou de l'événement."@fr ;
+  skos:definition "The license distributor of the intellectual entity."@en ;
+  skos:definition "De licentiedistributeur van de intellectuele entiteit."@nl ;
+  skos:definition "Le distributeur de licences de l'entité intellectuelle."@fr ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
