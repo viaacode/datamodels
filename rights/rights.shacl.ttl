@@ -38,7 +38,7 @@
     dct:description "Data model to describe rights and distribution policy."@en ;
     dct:description "Modèle de données pour décrire les droits et la politique de distribution."@fr ;
     dct:description "Datamodel om rechten en distributiebeleid te beschrijven."@nl ;
-    pav:version "0.0.1" .
+    pav:version "1.1.0" .
 
 # ####################################
 # SHAPES              #
