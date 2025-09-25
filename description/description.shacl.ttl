@@ -111,10 +111,7 @@
         sh:name "aangemaakt op"@nl ;
         sh:name "date de création"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
-        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
-
+        sh:message "schema:dateCreated is missing, occurs more than once or is not of type EDTF-level0, EDTF-level1, or EDTF-level2"@en 
     ],
     [
         a sh:PropertyShape ;
@@ -130,9 +127,7 @@
         sh:name "gepubliceerd op"@nl ;
         sh:name "date de publication"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:datePublished is not of type EDTF-level1"@en ;
-        sh:message "schema:datePublished is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:datePublished n'est pas de type EDTF-level1"@fr ;
+        sh:message "schema:datePublished occurs more than once or is not of type EDTF-level0, EDTF-level1, or EDTF-level2"@en 
     ],
     [
         a sh:PropertyShape ;
@@ -750,9 +745,7 @@
         sh:name "aangemaakt op"@nl ;
         sh:name "créé le"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
-        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
+        sh:message "schema:dateCreated is missing, occurs more than once or is not of type EDTF-level0, EDTF-level1, or EDTF-level2"@en ;
     ],
     [
         a sh:PropertyShape ;
@@ -857,9 +850,7 @@
         sh:name "aangemaakt op"@nl ;
         sh:name "date de création"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:dateCreated is not of type EDTF-level1"@en ;
-        sh:message "schema:dateCreated is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:dateCreated n'est pas de type EDTF-level1"@fr ;
+        sh:message "schema:dateCreated occurs more than once or is not of type EDTF-level0, EDTF-level1, or EDTF-level2"@en ;
 
     ],
     [
@@ -876,9 +867,7 @@
         sh:name "gepubliceerd op"@nl ;
         sh:name "date de publication"@fr ;
         sh:severity sh:Violation ;
-        sh:message "schema:datePublished is not of type EDTF-level1"@en ;
-        sh:message "schema:datePublished is niet van het type EDTF-level1"@nl ;
-        sh:message "schema:datePublished n'est pas de type EDTF-level1"@fr ;
+        sh:message "schema:datePublished occurs more than once or is not of type EDTF-level0, EDTF-level1, or EDTF-level2"@en 
     ].
 
 <#CarrierRepresentationNodeShape> a sh:NodeShape ; 
@@ -1159,6 +1148,7 @@
            [sh:class org:Organization ]
            [sh:class schema:Thing ]
         ) ;
+        sh:maxCount 1 ;
         sh:name "producer"@en ;
         sh:name "producent"@nl ;
         sh:name "producteur"@fr ;
@@ -1173,6 +1163,7 @@
            [sh:class org:Organization ]
            [sh:class schema:Thing ]
         ) ;
+        sh:maxCount 1 ;
         sh:name "executor"@en ;
         sh:name "uitvoerder"@nl ;
         sh:name "exécuteur"@fr ;

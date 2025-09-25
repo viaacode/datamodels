@@ -45,7 +45,7 @@
 
 <#FilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Film ;
-    sh:property [
+    sh:property <#BroadcasterShape>,[
         a sh:PropertyShape ;
         sh:path haObj:hasCarrierCopy ;
         sh:class haObj:CarrierRepresentation ;
@@ -62,8 +62,7 @@
 
         sh:message "haObj:hasCarrierCopy is missing, has more than one value or is not a haObj:CarrierRepresentation"@en ;
         sh:severity sh:Violation ;
-    ], <#BroadcasterShape>.
-
+    ].
 
 <#SoundFilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:SoundFilm .
