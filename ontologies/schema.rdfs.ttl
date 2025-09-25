@@ -327,7 +327,7 @@ schema:artMedium a rdf:Property ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:creator a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
+    rdfs:domain [ owl:unionOf(schema:CreativeWork schema:Role) ] ;
     rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:creator ;
     rdfs:label "creator"@en ;
@@ -337,6 +337,19 @@ schema:creator a rdf:Property ;
     skos:definition "De maker/auteur van dit creatief werk."@nl ;
     skos:definition "Le créateur / auteur de ce travail créatif."@fr ;
     rdfs:isDefinedBy <https://schema.org/> .
+
+schema::producer a rdf:Property ;
+    rdfs:domain [ owl:unionOf(schema:CreativeWork schema:Role) ] ;
+    rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
+    rdfs:label "producer"@en ;
+    rdfs:label "producent"@nl ;
+    rdfs:label "producteur"@fr ;
+    schema:domainIncludes schema:CreativeWork ;
+    schema:rangeIncludes schema:Organization,
+        schema:Person ;
+    skos:definition "The person or organization who produced the work (e.g. music album, movie, TV/radio series etc.)."@en ;
+    skos:definition "De persoon of organisatie die het werk produceerde (bijv. Muziekalbum, film, tv/radioserie enz.)."@nl ;
+    skos:definition "La personne ou l'organisation qui a produit l'œuvre (par exemple, album de musique, film, télévision / série radio, etc.)."@fr .
 
 schema:birthDate a rdf:Property ;
     rdfs:domain schema:Person ;
@@ -401,7 +414,7 @@ schema:contactType  a   rdf:Property ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:contributor a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
+    rdfs:domain [ owl:unionOf(schema:CreativeWork schema:Role) ] ;
     rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:contributor ;
     rdfs:label "contributor"@en ;
@@ -736,7 +749,8 @@ schema:postOfficeBoxNumber  a   rdf:Property ;
     rdfs:isDefinedBy <https://schema.org/> .
 
 schema:publisher a rdf:Property ;
-    rdfs:domain schema:CreativeWork ;
+    rdfs:domain [ owl:unionOf(schema:CreativeWork schema:Role) ] ;
+    rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
     owl:equivalentProperty dct:publisher ;
     rdfs:label "publisher"@en ;
     rdfs:label "uitgever"@nl ;

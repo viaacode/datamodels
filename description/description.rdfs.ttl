@@ -333,7 +333,7 @@ haDes:numberOfAudioChannels a rdf:Property ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
 
 haDes:executor a rdf:Property ;
-  rdfs:domain schema:CreativeWork ;
+  rdfs:domain [ owl:unionOf(schema:CreativeWork schema:Role) ] ;
   rdfs:range [ owl:unionOf(schema:Person org:Organization schema:Role) ] ;
   rdfs:label "executor"@en ;
   rdfs:label "uitvoerder"@nl ;
