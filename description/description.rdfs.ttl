@@ -344,7 +344,12 @@ haDes:executor a rdf:Property ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:broadcastingOrganization a rdf:Property ;
-  rdfs:domain schema:CreativeWork ;
+  rdfs:domain [ owl:unionOf (
+      haDes:Video
+      haDes:Film
+      haDes:Audio
+      haDes:DVD
+  ) ] ;
   rdfs:range org:Organization ;
   rdfs:label "broadcasting organization"@en ;
   rdfs:label "omroeporganisatie"@nl ;
