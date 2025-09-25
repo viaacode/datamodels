@@ -189,6 +189,7 @@
 <#LicenseShape> a sh:NodeShape ;
   sh:property [ 
     sh:datatype rdf:langString ; 
+    sh:uniqueLang true ;
     sh:maxCount 1 ; 
     sh:minCount 1 ; 
     sh:path skos:prefLabel 
