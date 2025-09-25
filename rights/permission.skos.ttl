@@ -41,7 +41,7 @@
     ];
     #  welk metadata?: uitgebreid
     odrl:constraint [
-        odrl:leftOperand haRig:contentRange;
+        odrl:leftOperand haRig:metadataRange;
         odrl:operator odrl:eq;
         odrl:rightOperand haRig:extended
     ].
@@ -63,7 +63,7 @@
     ];
     #  welk materiaal?: deels
     odrl:constraint [
-        odrl:leftOperand haRig:metadataRange;
+        odrl:leftOperand haRig:contentRange;
         odrl:operator odrl:eq;
         odrl:rightOperand haRig:partial
     ].
