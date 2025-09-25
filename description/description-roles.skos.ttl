@@ -12,7 +12,7 @@
 <https://data.hetarchief.be/id/role/actor> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/executor> ;
-    skos:changeNote "van maker naar uitvoerder"@nl ;
+    skos:changeNote "Eerder werden acteurs als makers beschouwd, huidig worden deze als uitvoerders gezien."@nl ;
     skos:definition "The actor is a person who portrays a character in the story or role play."@en,
         "De acteur is een persoon die een personage uitbeeldt in het verhaal of rollenspel."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -61,7 +61,7 @@
 <https://data.hetarchief.be/id/role/arranger> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/creator> ;
-    skos:changeNote "van bijdrager naar maker"@nl ;
+    skos:changeNote "Eerder werden arrangeurs als bijdragers beschouwd, huidig worden deze als makers gezien."@nl ;
     skos:definition "The arranger is the person who adapts an existing piece of music or composition for a different instrumentation, a specific style or a specific occasion. The result is called 'arrangement'."@en,
         "De arrangeur is de persoon die een bestaand stuk muziek of compositie bewerkt voor een andere bezetting, een bepaalde stijl of een bepaalde gelegenheid. Het resultaat heet 'arrangement'."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -136,7 +136,7 @@
 <https://data.hetarchief.be/id/role/client> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/contributor> ;
-    skos:changeNote "van maker naar bijdrager"@nl ;
+    skos:changeNote "Eerder werden opdrachtgevers als makers beschouwd, huidig worden deze als bijdragers gezien."@nl ;
     skos:definition "The client is the person, or a company, that has awarded the assignment to a contractor."@en,
         "De opdrachtgever is de persoon die, of een bedrijf dat, de opdracht (de wet spreekt van bestelling) heeft verstrekt aan een opdrachtnemer. Ook de werkgever valt onder deze definitie."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -175,7 +175,7 @@
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "dirigente"@nl ;
     skos:broader <https://data.hetarchief.be/id/role/executor> ;
-    skos:changeNote "creëren in uitvoerder"@nl ;
+    skos:changeNote "Dirigent was vroeger bijdrager, maar is nu uitvoerder"@nl ;
     skos:definition "The conductor was in charge of the orchestra, choir or other musical group."@en,
         "De dirigent of dirigente had de leiding over het orkest, koor of ander muziekgezelschap."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -185,7 +185,7 @@
 <https://data.hetarchief.be/id/role/costume-designer> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/creator> ;
-    skos:changeNote "van bijdrager naar maker"@nl ;
+    skos:changeNote "Eerder werden kostuumontwerpers als bijdragers beschouwd, huidig worden deze als makers gezien."@nl ;
     skos:definition "The costume designer is the designer of the costumes, usually a visual artist, who sometimes also designs the sets and any props for a particular theater or dance production."@en,
         "De kostuumontwerper is de ontwerper van de kostuums, meestal een beeldend kunstenaar, die voor een bepaalde theater- of dansproductie soms ook de decors en eventuele rekwisieten ontwerpt."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -195,7 +195,7 @@
 <https://data.hetarchief.be/id/role/dancer> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/executor> ;
-    skos:changeNote "van maker naar uitvoerder"@nl ;
+    skos:changeNote "Eerder werden dansers als makers beschouwd, huidig worden deze als uitvoerders gezien."@nl ;
     skos:definition "The dancer is the person who took part in performing the dance."@en,
         "De danser is de persoon die heeft deelgenomen aan het uitvoeren van de dans."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -214,7 +214,6 @@
 <https://data.hetarchief.be/id/role/digitization-partner> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/contributor> ;
-    skos:changeNote "creëren in bijdrager"@nl ;
     skos:definition "The digitization partner is a company or organization that has carried out or assisted in the digitization of the creative work."@en,
         "De digitaliseringspartner is een bedrijf of organisatie die de digitalisering van het creatieve werk heeft uitgevoerd of daarbij heeft geassisteerd."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -234,7 +233,7 @@
 <https://data.hetarchief.be/id/role/distributor> a skos:Concept,
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:broader <https://data.hetarchief.be/id/role/contributor> ;
-    skos:changeNote "van publisher naar bijdrager"@nl ;
+    skos:changeNote "Eerder werden distributeurs als publisher beschouwd, huidig worden deze als bijdragers gezien."@nl ;
     skos:definition "The distributor is a person or company that ensures the distribution of goods from producer to consumer."@en,
         "De distributeur is een persoon of onderneming die zorgt voor de distributie van goederen van producent naar consument."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
@@ -263,7 +262,7 @@
         <https://data.hetarchief.be/ns/description/RoleName> ;
     skos:altLabel "monteur"@nl ;
     skos:broader <https://data.hetarchief.be/id/role/creator> ;
-    skos:changeNote "van bijdrager naar maker, hernoemen naar Montagemaker"@nl ;
+    skos:changeNote "Eerder werden motagemakers als bijdragers beschouwd, huidig worden deze als makers gezien. Verder werd monteur hernoemd naar montagemaker"@nl ;
     skos:definition "The technician is someone who is responsible for the arrangement of image and/or sound in audio material or audiovisual material."@en,
         "De montagemaker is de persoon verantwoordelijk voor de montage en afwerking van beeld en/of geluid in audiomateriaal of audiovisueel materiaal."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/role> ;
