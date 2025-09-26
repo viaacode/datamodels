@@ -14,6 +14,7 @@
 @prefix haCt: <https://data.hetarchief.be/id/color-type/> .
 @prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 
 @base <https://data.hetarchief.be/ns/film> .
 
@@ -44,7 +45,7 @@
 
 <#FilmNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Film ;
-    sh:property [
+    sh:property <#BroadcasterShape>,[
         a sh:PropertyShape ;
         sh:path haObj:hasCarrierCopy ;
         sh:class haObj:CarrierRepresentation ;
@@ -238,3 +239,12 @@
         sh:severity sh:Violation ;
   ] .
 
+<#BroadcasterShape> a sh:PropertyShape;
+        sh:path  haDes:broadcastingOrganization;
+        sh:datatype org:Organization;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "broadcasting organization"@en ;
+        sh:name "omroeporganisatie"@nl ;
+        sh:name "organisation de diffusion"@fr ; 
+        sh:message "haDes:broadcastingOrganization occurs more than once, or its object is not an  org:Organization."@en . 

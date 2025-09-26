@@ -1,0 +1,291 @@
+@prefix copyrightStatus: <http://id.loc.gov/vocabulary/preservation/copyrightStatus/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@base <https://data.hetarchief.be/ns/rights> .
+
+<> a owl:Ontology ;
+    vann:preferredNamespacePrefix "haRig" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/rights/" ;
+    schema:author [ 
+      a schema:Person ; 
+      schema:name "Miel Vander Sande"@nl ; 
+      schema:email "miel.vandersande@meemoo.be"
+    ] ;
+    dct:title "Data model Rights"@en ;
+    dct:title "Modèle de données Droits"@fr ;
+    dct:title "Datamodel Rechten"@nl ;
+    dct:created "2025-09-10" ;
+    dct:modified "2025-09-10" ;
+    dct:description "Data model to describe rights and distribution policy."@en ;
+    dct:description "Modèle de données pour décrire les droits et la politique de distribution."@fr ;
+    dct:description "Datamodel om rechten en distributiebeleid te beschrijven."@nl ;
+    pav:version "1.1.0" .
+
+# ####################################
+# SHAPES              #
+# ####################################
+
+# #####################
+# NodeShapes     #
+# #####################
+
+<#ConstraintNodeShape> a sh:NodeShape ;
+    sh:targetClass odrl:Constraint ;
+    sh:property [ 
+        sh:name "beperkingswaarde"@nl;
+        sh:name "constraint value"@en;
+        sh:name "valeur de contrainte"@fr;
+        sh:path odrl:rightOperand ;
+        sh:in ( 
+         </extended>
+         </limited>
+         </full>
+         </partial>
+         </available-for-consultation>
+         </downloadable>
+         </between-partners>
+         </educational-public>
+         </intra-muros>
+         </public>
+         </research-public>
+        ) ; 
+        sh:maxCount 1 ; 
+        sh:minCount 1 ; 
+        sh:nodeKind sh:IRI ; 
+        sh:or ( [ sh:class </UserGroup>] 
+                [ sh:class </MetadataRange> ] 
+                [ sh:class </ContentRange> ] 
+        )  
+    ], 
+    [ 
+        sh:path odrl:operator ;
+        sh:name "operator"@en ;
+        sh:name "operator"@nl ;
+        sh:name "opérateur"@fr ;        
+        sh:in ( odrl:eq odrl:lt ) ; 
+        sh:maxCount 1 ; 
+        sh:minCount 1 ; 
+        sh:nodeKind sh:IRI  
+    ], 
+    [ 
+        sh:path odrl:leftOperand ;
+        sh:name "constraint name"@en ;
+        sh:name "beperkingsnaam"@nl ;
+        sh:name "nom de la contrainte"@fr ;
+        sh:in ( odrl:recipient </metadataRange> </contentRange> odrl:dateTime odrl:absoluteTemporalPosition ) ; 
+        sh:maxCount 1 ; 
+        sh:minCount 1 ; 
+        sh:nodeKind sh:IRI 
+    ] .
+
+<#MotivationNodeShape> a sh:NodeShape ;
+  sh:targetClass </Motivation> .
+
+<#ProhibitionNodeShape> a sh:NodeShape ;
+  sh:targetClass odrl:Prohibition ;
+  sh:property <#ActionShape>, 
+  <#ConstraintShape>, 
+  <#NoteShape>, 
+  <#StartDateShape>,
+  <#EndDateShape>, 
+  [ 
+    sh:path </isMotivatedBy> ;
+    sh:name "is motivated by"@en;
+    sh:name "wordt gemotiveerd door"@nl;
+    sh:name "est motivé par"@fr;
+    sh:class </Motivation> ; 
+    sh:minCount 1 
+  ] .
+
+<#PermissionNodeShape> a sh:NodeShape ;
+  sh:targetClass odrl:Permission ;
+  sh:property <#ActionShape>, 
+  <#ConstraintShape>, 
+  <#NoteShape>, 
+  <#StartDateShape>,
+  <#EndDateShape>.
+
+<#PolicyNodeShape> a sh:NodeShape ;
+  sh:targetClass odrl:Policy ;
+  sh:property [ 
+    sh:path odrl:target;
+    sh:name "target representation"@en;
+    sh:name "doelrepresentatie"@en;
+    sh:name "représentation cible"@en;
+    sh:class haObj:DigitalRepresentation ; 
+    sh:minCount 1  
+  ], 
+  [ 
+    sh:path odrl:permission;
+    sh:name "ontsluitingstoestemming"@en;
+    sh:name "access permission"@nl;
+    sh:name "autorisation d'accès"@fr;
+    sh:class odrl:Permission 
+  ], 
+  [ 
+    sh:path odrl:prohibition;
+    sh:name "ontsluitingsbeperking"@nl;
+    sh:name "limitation of access"@en;
+    sh:name "limitation de l'accès"@fr;
+    sh:class odrl:Prohibition  
+  ] .
+
+<#DigitalRepresentationNodeShape> a sh:NodeShape ;
+  sh:targetClass haObj:DigitalRepresentation;
+  sh:property [ 
+    sh:path odrl:hasPolicy ;
+    rdfs:label "access policy"@en ;
+    rdfs:label "ontsluitingspolicy"@nl ;
+    rdfs:label "politique d'accès"@fr ;
+    sh:class odrl:Policy ; 
+    sh:maxCount 1 ; 
+    sh:nodeKind sh:IRI 
+  ], 
+  [ 
+    sh:path dct:license ;
+    sh:name "condition for reuse"@en ;
+    sh:name "hergebruikvoorwaarde"@nl ;
+    sh:name "condition de réutilisation"@fr ;    
+    sh:class premis:License ; 
+    sh:maxCount 1 ;
+    sh:nodeKind sh:IRI
+  ], 
+  [ 
+    sh:path premis:rightsStatus ;
+    sh:name "rights status"@en ;
+    sh:name "rechtenstatus"@nl ;
+    sh:name "statut de droit"@fr ;
+    sh:class premis:RightsStatus ; 
+    sh:maxCount 3 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI 
+  ] .
+
+<#RightsStatementShape> a sh:NodeShape ;
+  sh:targetClass dct:RightsStatement, skos:Concept .
+
+<#LicenseShape> a sh:NodeShape ;
+  sh:targetClass premis:License, skos:Concept .
+
+<#RightsStatusShape> a sh:NodeShape ;
+  sh:path premis:basis ;
+  sh:name "has basis"@en ;
+  sh:name "a une base"@fr ;
+  sh:name "heeft basis"@nl ;
+  sh:targetClass premis:RightsStatus ;
+  sh:property [ 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:or ( 
+      [ sh:class dct:RightsStatement ] 
+      [ sh:class premis:License ] 
+    )  
+  ], 
+  <#NoteShape>, 
+  <#EndDateShape>,
+  <#StartDateShape> .
+
+<#IntellectualEntityNodeShape> a sh:NodeShape ;
+  sh:targetClass premis:IntellectualEntity ;
+  sh:property [
+    sh:path dct:license ;
+    sh:name "condition for reuse"@en ;
+    sh:name "hergebruikvoorwaarde"@nl ;
+    sh:name "condition de réutilisation"@fr ;
+    sh:class premis:License ; 
+    sh:maxCount 1 ; 
+    sh:nodeKind sh:IRI  
+  ], 
+  [ 
+    sh:path dct:rights ;
+    sh:name "rights statement"@en ;
+    sh:name "rechtenverklaring"@nl ;
+    sh:name "déclaration des droits"@fr ;
+    sh:class dct:RightsStatement ; 
+    sh:maxCount 1 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI  
+  ], 
+  [ 
+    sh:path premis:rightsStatus ;
+    sh:name "rights status"@en ;
+    sh:name "rechtenstatus"@nl ;
+    sh:name "statut de droit"@fr ;
+    sh:maxCount 3 ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ; 
+    sh:or ( 
+      [ sh:class premis:RightsStatus ] 
+      [ sh:class copyrightStatus:pub ] 
+    )  
+  ] .
+
+# #####################
+# PropertyShapes     #
+# #####################
+
+<#ActionShape> a sh:PropertyShape;
+  sh:path odrl:action;
+  sh:name "ontsluitingsactie"@nl;
+  sh:name "access action"@nl;
+  sh:name "action d'accès"@nl;
+  sh:in ( </available-for-consultation> </downloadable> ) ; 
+  sh:class odrl:Action;
+  sh:nodeKind sh:IRI ;
+  sh:minCount 1 .
+
+<#ConstraintShape> a sh:PropertyShape;
+  sh:path odrl:constraint ;
+  sh:name "constraint"@en ;
+  sh:name "beperking"@nl ;
+  sh:name "contrainte"@fr ;
+  sh:class odrl:Constraint ; 
+  sh:nodeKind sh:IRI ;
+  sh:maxCount 5 .
+
+<#NoteShape> a sh:PropertyShape;
+  sh:path premis:note ;
+  sh:name "note"@en;
+  sh:name "notitie"@nl;
+  sh:name "note"@fr;
+  sh:datatype xsd:string ; 
+  sh:nodeKind sh:Literal ;
+  sh:maxCount 1 .
+
+<#EndDateShape> a sh:PropertyShape;
+  sh:path premis:endDate ;
+  sh:name "end date"@en ;
+  sh:name "einddatum"@nl ;
+  sh:name "fin"@fr ;
+  sh:datatype xsd:dateTime ; 
+  sh:nodeKind sh:Literal ;
+  sh:maxCount 1 .
+
+<#StartDateShape> a sh:PropertyShape;
+  sh:path premis:startDate ;
+  sh:name "start date"@en ;
+  sh:name "startdatum"@nl ;
+  sh:name "date de début"@fr;
+  sh:datatype xsd:dateTime ; 
+  sh:nodeKind sh:Literal ;
+  sh:maxCount 1 .

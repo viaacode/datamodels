@@ -1,3 +1,4 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix evtObjRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -9,6 +10,8 @@
 @prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix copyrightStatus: <http://id.loc.gov/vocabulary/preservation/copyrightStatus/> .
+
 
 #####################################
 #              CLASSES              #
@@ -144,6 +147,45 @@ premis:StorageMedium  a   rdfs:Class, owl:Class ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> .
 
+premis:RightsBasis a rdfs:Class, owl:Class ;
+  rdfs:label "Rights basis"@en ;
+  rdfs:label "Base des droits"@fr ;
+  rdfs:label "Rechtenbasis"@nl ;
+  skos:definition "Designation of the basis for the right or permission governing the Object."@en ;
+  skos:definition "Désignation de la base du droit ou de l'autorisation régissant l'objet."@fr ;
+  skos:definition "Aanwijzing van de basis voor het recht of toestemming voor het object."@nl ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
+  rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/rightsBasis> .
+
+premis:RightsStatus a rdfs:Class, owl:Class ;
+  rdfs:label "Rights status"@en ;
+  rdfs:label "Statut de droits"@fr ;
+  rdfs:label "Rechtenstatus"@nl ;
+  skos:definition "Information about how a RightsBasis applies to a particular object."@en ;
+  skos:definition "Informations sur la façon dont une base de droits s'applique à un objet particulier."@fr ;
+  skos:definition "Informatie over hoe een rechtenbasis van toepassing is op een bepaald object."@nl ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
+copyrightStatus:pub a rdfs:Class, owl:Class ;
+  rdfs:subClassOf premis:RightsStatus ;
+  rdfs:label "public domain"@en;
+  rdfs:label "domaine public"@fr;
+  rdfs:label "publiek domein"@nl;
+  skos:definition "In the public domain and may used without copyright restriction."@en;
+  skos:definition "Dans le domaine public et peut être utilisé sans restriction du droit d'auteur."@fr;
+  skos:definition "In het publieke domein en kan zonder auteursrechtbeperking worden gebruikt."@nl.
+
+premis:License a rdfs:Class, owl:Class ;
+  rdfs:label "License"@en ;
+  rdfs:label "Licence"@fr ;
+  rdfs:label "Licentie"@nl ;
+  skos:definition "A license agreement or other legal document that grants rights."@en ;
+  skos:definition "Un accord de licence ou un autre document juridique qui accorde les droits."@fr ;
+  skos:definition "Een licentieovereenkomst of ander juridisch document dat rechten verleent."@nl ;
+  rdfs:subClassOf premis:RightsBasis ;
+  owl:disjointWith premis:Copyright, premis:InstitutionalPolicy, premis:Statute ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
 #####################################
 #             PROPERTIES            #
 #               PREMIS              #
@@ -189,8 +231,8 @@ premis:medium a owl:ObjectProperty ;
   rdfs:label "has medium"@en ;
   rdfs:label "a un support"@fr ;
   rdfs:label "heeft als medium"@nl ;
-  rdfs:domain <http://www.loc.gov/premis/rdf/v3/StorageLocation> ;
-  rdfs:range <http://www.loc.gov/premis/rdf/v3/StorageMedium> ;
+  rdfs:domain premis:StorageLocation ;
+  rdfs:range premis:StorageMedium ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
 
 premis:note  a owl:DatatypeProperty ;
@@ -256,9 +298,9 @@ premis:originalName
   rdfs:domain [
     a owl:Class ;
     owl:unionOf (
-     <http://www.loc.gov/premis/rdf/v3/File>
-     <http://www.loc.gov/premis/rdf/v3/IntellectualEntity>
-     <http://www.loc.gov/premis/rdf/v3/Representation>
+     premis:File
+     premis:IntellectualEntity
+     premis:Representation
    )
   ] ;
   rdfs:range rdfs:Literal ;
@@ -292,6 +334,27 @@ premis:storedAt a owl:ObjectProperty ;
   ] ;
   rdfs:range premis:StorageLocation ;
   rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
+premis:basis a owl:ObjectProperty ;
+  rdfs:label "has basis"@en ;
+  rdfs:label "a une base"@fr ;
+  rdfs:label "heeft basis"@nl ;
+  skos:definition "Links from a RightsStatus to the RightsBasis instance that supports or documents it."@en ;
+  skos:definition "Liens d'un RightsStatus à l'instance Droite-Basis qui le prend en charge ou le documente."@fr ;
+  skos:definition "Links van een rechtenstatus naar de instantie van het rechtenbasis die dit ondersteunt of documenteert."@nl ;
+  rdfs:domain premis:RightsStatus ;
+  rdfs:range premis:RightsBasis ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
+premis:rightsStatus a owl:ObjectProperty ;
+  rdfs:label "has rights status"@en ;
+  rdfs:label "a le statut de droits"@fr ;
+  rdfs:label "heeft rechtenstatus"@nl ;
+  rdfs:subPropertyOf dc:rights ;
+  rdfs:domain premis:Object ;
+  rdfs:range premis:RightsStatus ;
+  rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> .
+
 
 #####################################
 #             PROPERTIES            #

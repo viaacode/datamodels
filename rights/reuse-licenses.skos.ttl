@@ -1,0 +1,155 @@
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://creativecommons.org/licenses/by-nc-nd/4.0/> a premis:License,
+        skos:Concept ;
+    skos:altLabel "CC-BY-NC-ND"@en,
+        "CC-BY-NC-ND"@nl ;
+    skos:definition """You are free to:
+Share — copy and redistribute the material in any medium or format.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:
+Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+NonCommercial — You may not use the material for commercial purposes .
+NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."""@en,
+        """Je bent vrij om:
+Delen — het materiaal te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+
+De licentiegever kan deze toestemming niet intrekken zolang aan de licentievoorwaarden voldaan wordt.
+
+Onder de volgende voorwaarden:
+Naamsvermelding — De gebruiker dient de maker van het werk te vermelden , een link naar de licentie te plaatsen en aan te geven of het werk veranderd is . Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+
+NietCommercieel — Je mag het werk niet gebruiken voor commerciële doeleinden .
+
+GeenAfgeleideWerken — Je mag het veranderde materiaal niet verspreiden als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd .
+
+Geen aanvullende restricties — Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:notation "CC-BY-NC-ND" ;
+    skos:prefLabel "CC-BY-NC-ND Attribution-NonCommercial-NoDerivatives 4.0"@en,
+        "CC-BY-NC-ND Naamsvermelding-NietCommercieel-GeenAfgeleideWerken 4.0 Internationaal"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
+
+<https://creativecommons.org/licenses/by-nc/4.0/> a premis:License,
+        skos:Concept ;
+    skos:altLabel "CC-BY-NC"@en,
+        "CC-BY-NC"@nl ;
+    skos:definition """You are free to:
+Share — copy and redistribute the material in any medium or format
+Adapt — remix, transform, and build upon the material
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:
+Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+NonCommercial — You may not use the material for commercial purposes .
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."""@en,
+        """Je bent vrij om:
+Delen — het materiaal te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat
+
+Bewerken — te remixen, te veranderen en afgeleide werken te maken
+
+De licentiegever kan deze toestemming niet intrekken zolang aan de licentievoorwaarden voldaan wordt.
+
+Onder de volgende voorwaarden:
+Naamsvermelding — De gebruiker dient de maker van het werk te vermelden , een link naar de licentie te plaatsen en aan te geven of het werk veranderd is . Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+
+NietCommercieel — Je mag het werk niet gebruiken voor commerciële doeleinden .
+
+Geen aanvullende restricties — Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:notation "CC-BY-NC" ;
+    skos:prefLabel "CC-BY-NC Attribution-NonCommercial 4.0"@en,
+        "CC-BY-NC Naamsvermelding-NietCommercieel 4.0 Internationaal"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
+
+<https://creativecommons.org/licenses/by-sa/4.0/> a premis:License,
+        skos:Concept ;
+    skos:altLabel "CC-BY-SA"@en,
+        "CC-BY-SA"@nl ;
+    skos:definition """You are free to:
+Share — copy and redistribute the material in any medium or format for any purpose, even commercially.
+Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:
+Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."""@en,
+        """Je bent vrij om:
+Delen — het materiaal te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat voor alle doeleinden, inclusief commerciële doeleinden.
+
+Bewerken — te remixen, te veranderen en afgeleide werken te maken voor alle doeleinden, inclusief commerciële doeleinden.
+
+De licentiegever kan deze toestemming niet intrekken zolang aan de licentievoorwaarden voldaan wordt.
+
+Onder de volgende voorwaarden:
+Naamsvermelding — De gebruiker dient de maker van het werk te vermelden , een link naar de licentie te plaatsen en aan te geven of het werk veranderd is . Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+
+GelijkDelen — Als je het werk hebt geremixt, veranderd, of op het werk hebt voortgebouwd, moet je het veranderde materiaal verspreiden onder dezelfde licentie als het originele werk.
+
+Geen aanvullende restricties — Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:notation "CC-BY-SA" ;
+    skos:prefLabel "CC-BY-SA Attribution-ShareAlike 4.0 International"@en,
+        "CC-BY-SA Naamsvermelding-GelijkDelen 4.0 Internationaal"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
+
+<https://creativecommons.org/licenses/by/4.0/> a premis:License,
+        skos:Concept ;
+    skos:altLabel "CC-BY"@en,
+        "CC-BY"@nl ;
+    skos:definition """You are free to: 
+Share — copy and redistribute the material in any medium or format for any purpose, even commercially. 
+Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+Under the following terms:
+Attribution — You must give appropriate credit , provide a link to the license, and indicate if changes were made . You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits."""@en,
+        """Je bent vrij om:
+Delen — het materiaal te kopiëren, te verspreiden en door te geven via elk medium of bestandsformaat voor alle doeleinden, inclusief commerciële doeleinden.
+
+Bewerken — te remixen, te veranderen en afgeleide werken te maken voor alle doeleinden, inclusief commerciële doeleinden.
+
+De licentiegever kan deze toestemming niet intrekken zolang aan de licentievoorwaarden voldaan wordt.
+
+Onder de volgende voorwaarden:
+Naamsvermelding — De gebruiker dient de maker van het werk te vermelden , een link naar de licentie te plaatsen en aan te geven of het werk veranderd is . Je mag dat op redelijke wijze doen, maar niet zodanig dat de indruk gewekt wordt dat de licentiegever instemt met je werk of je gebruik van het werk.
+
+Geen aanvullende restricties — Je mag geen juridische voorwaarden of technologische voorzieningen toepassen die anderen er juridisch in beperken om iets te doen wat de licentie toestaat."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:notation "CC-BY" ;
+    skos:prefLabel "CC-BY Attribution 4.0"@en,
+        "CC-BY Naamsvermelding 4.0"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
+
+<https://creativecommons.org/publicdomain/zero/1.0/> a premis:License,
+        skos:Concept ;
+    skos:altLabel "CC0"@en,
+        "CC0"@nl ;
+    skos:definition "The person who associated a work with this deed has dedicated the work to the public domain by waiving all of his or her rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law.You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."@en,
+        """De persoon die deze akte aan een werk heeft verbonden heeft het werk toegewezen aan het publiek domein door wereldwijd zijn of haar rechten op het werk onder het auteursrecht, inclusief alle bijbehorende en naburige rechten, af te staan, voor zover door de wet is toegestaan.
+Je mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoeren, zelfs voor commerciële doeleinden."""@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:notation "CC0" ;
+    skos:prefLabel "CC0 1.0"@en,
+        "CC0 1.0"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
+
+<https://data.hetarchief.be/id/license/non-public-license> a premis:License,
+        skos:Concept ;
+    skos:definition "A non-public license is a contractual juridical agreement between parties, where the licensor and the licensee agree on specific conditions for the use of certain copyright-protected material (payment, durations,...)"@en,
+        "Een niet-publieke licentie is een contractuele juridische verbintenis tussen partijen, waarbij de licentiegever en licentienemer specifieke voorwaarden voor het gebruik van bepaalde beschermde werken overeenkomen (vergoeding, termijn,...)"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:prefLabel "Non-public License"@en,
+        "Niet-publieke Licentie"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
+
+<https://data.hetarchief.be/id/reuse-license> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://creativecommons.org/licenses/by-nc-nd/4.0/>,
+        <https://creativecommons.org/licenses/by-nc/4.0/>,
+        <https://creativecommons.org/licenses/by-sa/4.0/>,
+        <https://creativecommons.org/licenses/by/4.0/>,
+        <https://creativecommons.org/publicdomain/zero/1.0/>,
+        <https://data.hetarchief.be/id/license/non-public-license> ;
+    skos:prefLabel "Thesaurus hergebruikvoorwaarden"@nl .
+

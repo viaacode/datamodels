@@ -1,0 +1,74 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://rightsstatements.org/vocab/InC-RUU/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "This Item is protected by copyright and/or related rights. However, for this Item, either (a) no rights-holder(s) have been identified or (b) one or more rights-holder(s) have been identified but none have been located. You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use."@en,
+        "Dit Item wordt beschermd door het auteursrecht en/of aanverwante rechten. Voor dit Item is echter ofwel (a) geen rechthebbende(n) geïdentificeerd of (b) een of meer rechthebbende(n) geïdentificeerd, maar zijn er geen gelokaliseerd. Je bent vrij om dit Item te gebruiken op elke manier die is toegestaan door de wetgeving betreffende het auteursrecht en de aanverwante rechten die van toepassing is op je gebruik."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "In Copyright - Rights-holder(s) Unlocatable or Unidentifiable"@en,
+        "Rechthebbende(n) niet lokaliseerbaar of niet-identificeerbaar"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<http://rightsstatements.org/vocab/NoC-CR/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "Use of this Item is not restricted by copyright and/or related rights. As part of the acquisition or digitization of this Work, the organization that has made the Item available is contractually required to limit the use of this Item. Limitations may include, but are not limited to, privacy issues, cultural protections, digitization agreements or donor agreements. Please refer to the organization that has made the Item available for more information."@en,
+        "Het gebruik van dit Item is niet beperkt door het auteursrecht en/of aanverwante rechten. Als onderdeel van de verwerving of digitalisering van dit Werk, is de organisatie die het Item beschikbaar heeft gesteld contractueel verplicht om het gebruik van dit Item te beperken. Beperkingen kunnen omvatten, maar zijn niet beperkt tot, privacykwesties, culturele bescherming, digitaliseringsovereenkomsten of donorovereenkomsten. Voor meer informatie, neem alsjeblieft contact op met de organisatie die het Item beschikbaar heeft gesteld."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "No Copyright - Contractual Restrictions"@en,
+        "Niet auteursrechtelijk beschermd - contractuele beperkingen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<https://creativecommons.org/publicdomain/mark/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."@en,
+        "Van dit werk is vastgesteld dat er geen bekende auteursrechtelijke beperkingen op rusten, alle aanverwante en naburige rechten daarbij inbegrepen. Je mag het werk zonder toestemming kopiëren, wijzigen, verspreiden,en uitvoeren, zelfs voor commerciële doeleinden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "Public Domain Mark 1.0"@en,
+        "Geen auteursrecht (PDM 1.0)"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<https://rightsstatements.org/vocab/CNE/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "De status betreffende het auteursrecht en de aanverwante rechten van dit Item zijn niet onderzocht. Voor meer informatie, neem alsjeblieft contact op met de organisatie die het Item beschikbaar heeft gesteld. Je bent vrij om dit Item te gebruiken op een manier die is toegestaan ​​door de wetgeving betreffende het auteursrecht en de aanverwante rechten die van toepassing is op je gebruik."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "Copyright Not Evaluated"@en,
+        "Auteursrechtelijke status niet geëvalueerd"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<https://rightsstatements.org/vocab/InC-OW-EU/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "This Item has been identified as an orphan work in the country of first publication and in line with Directive 2012/28/EU of the European Parliament and of the Council of 25 October 2012 on certain permitted uses of orphan works. For this Item, either (a) no rights-holder(s) have been identified or (b) one or more rights-holder(s) have been identified but none have been located even though a diligent search for the rights-holder(s) has been conducted. The results of the diligent search are available in the EU Orphan Works Database. You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use."@en,
+        "Dit Item is geïdentificeerd als een Verweesd Werk in het land van eerste publicatie en in overeenstemming met de Richtlijn 2012/28 /EU van het Europees Parlement en de Raad van 25 oktober 2012 betreffende bepaald toegestaan gebruik van Verweesde Werken. Voor dit item is ofwel (a) geen rechthebbende(n) geïdentificeerd, of (b) een of meer rechthebbende(n) geïdentificeerd, maar ondanks een zorgvuldig onderzoek naar de rechthebbende(n) geen enkele gelokaliseerd. De resultaten van het zorgvuldig zoeken zijn beschikbaar in de Europese Databank van Verweesde Werken. Je bent vrij om dit Item te gebruiken op elke manier die is toegestaan door de wetgeving betreffende het auteursrecht en de aanverwante rechten die van toepassing is op je gebruik."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "In Copyright - EU Orphan Work"@en,
+        "EU verweesd werk"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<https://rightsstatements.org/vocab/InC/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "This Item is protected by copyright and/or related rights. You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use. For other uses you need to obtain permission from the rights-holder(s)."@en,
+        "Dit Item is beschermd door het auteursrecht en/of aanverwante rechten. Je bent vrij om dit Item te gebruiken op elke manier die is toegestaan ​​door de wetgeving betreffende het auteursrecht en de aanverwante rechten die van toepassing is op je gebruik. Voor andere vormen van gebruik moet je toestemming krijgen van de rechthebbende(n)."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "In Copyright"@en,
+        "Auteursrechtelijk beschermd"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<https://rightsstatements.org/vocab/UND/1.0/> a dct:RightsStatement,
+        skos:Concept ;
+    skos:definition "De status betreffende het auteursrecht en de aanverwante rechten van dit Item is beoordeeld door de organisatie die het Item beschikbaar heeft gesteld, maar de organisatie kon de auteursrechtelijke status van het Item niet met zekerheid vaststellen. Voor meer informatie, neem alsjeblieft contact op met de organisatie die het Item beschikbaar heeft gesteld. Je bent vrij om dit Item te gebruiken op elke manier die is toegestaan door de wetgeving betreffende het auteursrecht en de aanverwante rechten die van toepassing is op je gebruik."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/rightsstatements> ;
+    skos:prefLabel "Copyright Undetermined"@en,
+        "Auteursrechtelijke bescherming niet bepaald"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
+
+<https://data.hetarchief.be/id/rightsstatements> a skos:ConceptScheme ;
+    skos:hasTopConcept <http://rightsstatements.org/vocab/InC-RUU/1.0/>,
+        <http://rightsstatements.org/vocab/NoC-CR/1.0/>,
+        <https://creativecommons.org/publicdomain/mark/1.0/>,
+        <https://rightsstatements.org/vocab/CNE/1.0/>,
+        <https://rightsstatements.org/vocab/InC-OW-EU/1.0/>,
+        <https://rightsstatements.org/vocab/InC/1.0/>,
+        <https://rightsstatements.org/vocab/UND/1.0/> ;
+    skos:prefLabel "Thesaurus rechtenverklaringen"@nl .
+

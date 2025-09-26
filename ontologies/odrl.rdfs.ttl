@@ -1,0 +1,233 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+odrl:Policy a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Policy"@en ;
+  rdfs:label "Politique"@fr ;
+  rdfs:label "Beleid"@nl ;
+  skos:definition "A non-empty group of Permissions and/or Prohibitions."@en ;
+  skos:definition "Un groupe non vide d’autorisations et/ou d’interdictions."@fr ;
+  skos:definition "Een niet-lege groep toestemmingen en/of verboden."@nl ;
+  skos:note "A Policy may contain multiple Rules."@en .
+
+odrl:Permission a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Permission"@en ;
+  rdfs:label "Toestemming"@nl ;
+  rdfs:label "Autorisation"@fr ;
+  rdfs:subClassOf odrl:Rule ;
+  owl:disjointWith odrl:Duty, odrl:Prohibition ;
+  skos:definition "The ability to perform an Action over an Asset."@en ;
+  skos:definition "De mogelijkheid om een actie uit te voeren op een middel."@nl ;
+  skos:definition "La capacité d’exécuter une action sur une ressource."@fr .
+
+odrl:Prohibition a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Prohibition"@en ;
+  rdfs:label "Verbod"@nl ;
+  rdfs:label "Interdiction"@fr ;
+  rdfs:subClassOf odrl:Rule ;
+  owl:disjointWith odrl:Duty, odrl:Permission ;
+  skos:definition "The inability to perform an Action over an Asset."@en ;
+  skos:definition "De onmogelijkheid om een actie uit te voeren op een middel."@nl ;
+  skos:definition "L’impossibilité d’exécuter une action sur une ressource."@fr .
+
+odrl:RightOperand a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Right Operand"@en ;
+  rdfs:label "Rechteroperand"@nl ;
+  rdfs:label "Opérande droit"@fr ;
+  skos:definition "Right operand for constraint expression."@en ;
+  skos:definition "Rechteroperand in een beperkingsuitdrukking."@nl ;
+  skos:definition "Opérande droit d’une expression de contrainte."@fr ;
+  skos:note "Instances of the RightOperand class are used as the rightOperand of a Constraint."@en .
+
+odrl:Rule a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Rule"@en ;
+  rdfs:label "Regel"@nl ;
+  rdfs:label "Règle"@fr ;
+  skos:definition "An abstract concept that represents the common characteristics of Permissions, Prohibitions, and Duties."@en ;
+  skos:definition "Een abstract concept dat de gemeenschappelijke kenmerken van toestemmingen, verboden en verplichtingen vertegenwoordigt."@nl ;
+  skos:definition "Un concept abstrait qui représente les caractéristiques communes des autorisations, interdictions et obligations."@fr ;
+  skos:note "Rule is an abstract concept."@en .
+
+odrl:Constraint a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Constraint"@en ;
+  rdfs:label "Beperking"@nl ;
+  rdfs:label "Contrainte"@fr ;
+  skos:definition "A boolean expression that refines the semantics of an Action and Party/Asset Collection or declare the conditions applicable to a Rule."@en ;
+  skos:definition "Een booleaanse uitdrukking die de betekenis van een actie en partij-/middelenverzameling verfijnt of de voorwaarden bepaalt die op een regel van toepassing zijn."@nl ;
+  skos:definition "Une expression booléenne qui affine la signification d’une action et d’un ensemble de parties/ressources ou qui déclare les conditions applicables à une règle."@fr .
+
+odrl:Action a rdfs:Class, owl:Class, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Action"@en ;
+  rdfs:label "Actie"@nl ;
+  rdfs:label "Action"@fr ;
+  rdfs:subClassOf schema:Action ;
+  skos:definition "An operation on an Asset."@en ;
+  skos:definition "Een handeling uitgevoerd op een middel."@nl ;
+  skos:definition "Une opération effectuée sur une ressource."@fr ;
+  skos:note "Actions may be allowed by Permissions, disallowed by Prohibitions, or made mandatory by Duties."@en .
+
+# Properties
+
+odrl:hasPolicy a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain odrl:Asset ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Target Policy"@en ;
+  rdfs:label "Doelbeleid"@nl ;
+  rdfs:label "Politique cible"@fr ;
+  rdfs:range odrl:Policy ;
+  skos:definition "Identifies an ODRL Policy for which the identified Asset is the target Asset to all the Rules."@en ;
+  skos:definition "Identificeert een ODRL-beleid waarvoor het middel het doelmiddel is van alle regels."@nl ;
+  skos:definition "Identifie une politique ODRL pour laquelle la ressource identifiée est la ressource cible de toutes les règles."@fr ;
+  skos:note "The Asset being identified MUST be inferred to be the target Asset of all of the Rules of the Policy."@en .
+
+odrl:constraint a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain [ a owl:Class ; owl:unionOf ( odrl:Policy odrl:Rule ) ] ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Constraint"@en ;
+  rdfs:label "Heeft beperking"@nl ;
+  rdfs:label "A une contrainte"@fr ;
+  rdfs:range [ a owl:Class ; owl:unionOf ( odrl:Constraint odrl:LogicalConstraint ) ] ;
+  skos:definition "Constraint applied to a Rule."@en ;
+  skos:definition "Beperking toegepast op een regel."@nl ;
+  skos:definition "Contrainte appliquée à une règle."@fr ;
+  skos:note "Constraints on Rules are used to determine if a rule is Active or not."@en .
+
+odrl:leftOperand a rdf:Property, skos:Concept ;
+  rdfs:domain odrl:Constraint ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Left Operand"@en ;
+  rdfs:label "Heeft linkeroperand"@nl ;
+  rdfs:label "A un opérande gauche"@fr ;
+  rdfs:range odrl:LeftOperand ;
+  skos:definition "The left operand in a constraint expression."@en ;
+  skos:definition "De linkeroperand in een beperkingsuitdrukking."@nl ;
+  skos:definition "L’opérande gauche dans une expression de contrainte."@fr .
+
+odrl:operator a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain odrl:Constraint ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Operator"@en ;
+  rdfs:label "Heeft operator"@nl ;
+  rdfs:label "A un opérateur"@fr ;
+  rdfs:range odrl:Operator ;
+  skos:definition "The operator function applied to operands of a Constraint."@en ;
+  skos:definition "De operatorfunctie toegepast op de operanden van een beperking."@nl ;
+  skos:definition "La fonction opérateur appliquée aux opérandes d’une contrainte."@fr .
+
+odrl:rightOperand a rdf:Property, owl:DatatypeProperty, skos:Concept ;
+  rdfs:domain odrl:Constraint ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Right Operand"@en ;
+  rdfs:label "Heeft rechteroperand"@nl ;
+  rdfs:label "A un opérande droit"@fr ;
+  rdfs:range [ a owl:Class ; owl:unionOf ( odrl:RightOperand rdfs:Literal xsd:anyURI ) ] ;
+  skos:definition "The value of the right operand in a constraint expression."@en ;
+  skos:definition "De waarde van de rechteroperand in een beperkingsuitdrukking."@nl ;
+  skos:definition "La valeur de l’opérande droit dans une expression de contrainte."@fr .
+
+odrl:permission a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain odrl:Policy ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Permission"@en ;
+  rdfs:label "Heeft toestemming"@nl ;
+  rdfs:label "A une autorisation"@fr ;
+  rdfs:range odrl:Permission ;
+  skos:definition "Relates an individual Permission to a Policy."@en ;
+  skos:definition "Verbindt een individuele toestemming aan een beleid."@nl ;
+  skos:definition "Relie une autorisation individuelle à une politique."@fr .
+
+odrl:prohibition a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain odrl:Policy ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Prohibition"@en ;
+  rdfs:label "Heeft verbod"@nl ;
+  rdfs:label "A une interdiction"@fr ;
+  rdfs:range odrl:Prohibition ;
+  skos:definition "Relates an individual Prohibition to a Policy."@en ;
+  skos:definition "Verbindt een individueel verbod aan een beleid."@nl ;
+  skos:definition "Relie une interdiction individuelle à une politique."@fr .
+
+odrl:target a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain [ a owl:Class ; owl:unionOf ( odrl:Rule odrl:Policy ) ] ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Target"@en ;
+  rdfs:label "Doel"@nl ;
+  rdfs:label "Cible"@fr ;
+  rdfs:range odrl:Asset ;
+  rdfs:subPropertyOf odrl:relation ;
+  skos:definition "The target property indicates the Asset that is the primary subject to which the Rule action directly applies."@en ;
+  skos:definition "De doel-eigenschap geeft het middel aan waarop de regelactie rechtstreeks van toepassing is."@nl ;
+  skos:definition "La propriété cible indique la ressource à laquelle l’action de la règle s’applique directement."@fr .
+
+# Individuals
+
+odrl:display a odrl:Action, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Display"@en ;
+  rdfs:label "Weergeven"@nl ;
+  rdfs:label "Afficher"@fr ;
+  skos:definition "To create a static and transient rendition of an Asset."@en ;
+  skos:definition "Een statische en tijdelijke weergave van een middel creëren."@nl ;
+  skos:definition "Créer une représentation statique et temporaire d’une ressource."@fr ;
+  skos:note "For example, displaying an image on a screen."@en .
+
+odrl:distribute a odrl:Action, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Distribute"@en ;
+  rdfs:label "Verspreiden"@nl ;
+  rdfs:label "Distribuer"@fr ;
+  skos:definition "To supply the Asset to third-parties."@en ;
+  skos:definition "Het middel aan derden leveren."@nl ;
+  skos:definition "Fournir la ressource à des tiers."@fr .
+
+odrl:absoluteTemporalPosition a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Absolute Temporal Asset Position"@en ;
+  rdfs:label "Absolute temporele positie van middel"@nl ;
+  rdfs:label "Position temporelle absolue de la ressource"@fr ;
+  skos:definition "The absolute temporal positions in a media stream the target Asset has to fit."@en ;
+  skos:definition "De absolute temporele posities in een mediastream waarin het doelmiddel moet passen."@nl ;
+  skos:definition "Les positions temporelles absolues dans un flux multimédia où la ressource cible doit s’insérer."@fr .
+
+odrl:dateTime a odrl:LeftOperand, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Datetime"@en ;
+  rdfs:label "Datumtijd"@nl ;
+  rdfs:label "Date/heure"@fr ;
+  skos:definition "The date (and optional time and timezone) of exercising the action of the Rule. Right operand value MUST be an xsd:date or xsd:dateTime as defined by [[xmlschema11-2]]."@en ;
+  skos:definition "De datum (en optionele tijd en tijdzone) waarop de regelactie wordt uitgevoerd."@nl ;
+  skos:definition "La date (et l’heure et le fuseau horaire facultatifs) d’exécution de l’action de la règle."@fr .
+
+odrl:eq a odrl:Operator, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Equal to"@en ;
+  rdfs:label "Gelijk aan"@nl ;
+  rdfs:label "Égal à"@fr ;
+  skos:definition "Indicating that a given value equals the right operand of the Constraint."@en ;
+  skos:definition "Geeft aan dat een waarde gelijk is aan de rechteroperand van de beperking."@nl ;
+  skos:definition "Indique qu’une valeur donnée est égale à l’opérande droit de la contrainte."@fr .
+
+odrl:lt a odrl:Operator, owl:NamedIndividual, skos:Concept ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Less than"@en ;
+  rdfs:label "Kleiner dan"@nl ;
+  rdfs:label "Inférieur à"@fr ;
+  skos:definition "Indicating that a given value is less than the right operand of the Constraint."@en ;
+  skos:definition "Geeft aan dat een waarde kleiner is dan de rechteroperand van de beperking."@nl ;
+  skos:definition "Indique qu’une valeur donnée est inférieure à l’opérande droit de la contrainte."@fr .

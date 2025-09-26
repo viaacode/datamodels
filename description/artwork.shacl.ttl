@@ -1,0 +1,41 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix haDes: <https://data.hetarchief.be/ns/description/> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+
+@base <https://data.hetarchief.be/ns/audiovisual> . 
+
+<>  a owl:Ontology ;
+    dct:author  [
+        schema:name   "Miel Vander Sande"@nl ;
+        schema:email  "miel.vandersande@meemoo.be"
+    ];
+    dct:title     "Data model digitized art objects"@en ;
+    dct:title     "Modèle de données Objets d'art numérisés"@fr ;
+    dct:title     "Datamodel gedigitaliseerde kunstobjecten"@nl ;
+    dct:created   "2025-09-16" ;
+    dct:modified  "2025-09-16" ;
+    dct:description "Data model to describe the content of digitized artworks."@en ;
+    dct:description "Modèle de données pour décrire le contenu des œuvres d'art numérisées."@fr ;
+    dct:description "Datamodel om de inhoud van gedigitaliseerde kunstwerken te beschrijven."@nl ;
+    pav:version "1.1.0" .
+
+<#MaterialArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:MaterialArtwork .
+
+<#3DArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:3DArtwork .
+
+<#2DArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:2DArtwork .
