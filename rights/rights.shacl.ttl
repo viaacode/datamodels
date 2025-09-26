@@ -19,6 +19,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix haRig: <https://data.hetarchief.be/ns/rights/> .
 
 @base <https://data.hetarchief.be/ns/rights> .
 
@@ -56,24 +57,24 @@
         sh:name "valeur de contrainte"@fr;
         sh:path odrl:rightOperand ;
         sh:in ( 
-         </extended>
-         </limited>
-         </full>
-         </partial>
-         </available-for-consultation>
-         </downloadable>
-         </between-partners>
-         </educational-public>
-         </intra-muros>
-         </public>
-         </research-public>
+         haRig:extended
+         haRig:limited
+         haRig:full
+         haRig:partial
+         haRig:available-for-consultation
+         haRig:downloadable
+         haRig:between-partners
+         haRig:educational-public
+         haRig:intra-muros
+         haRig:public
+         haRig:research-public
         ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI ; 
-        sh:or ( [ sh:class </UserGroup>] 
-                [ sh:class </MetadataRange> ] 
-                [ sh:class </ContentRange> ] 
+        sh:or ( [ sh:class haRig:UserGroup] 
+                [ sh:class haRig:MetadataRange ] 
+                [ sh:class haRig:ContentRange ] 
         )  
     ], 
     [ 
@@ -91,14 +92,14 @@
         sh:name "constraint name"@en ;
         sh:name "beperkingsnaam"@nl ;
         sh:name "nom de la contrainte"@fr ;
-        sh:in ( odrl:recipient </metadataRange> </contentRange> odrl:dateTime odrl:absoluteTemporalPosition ) ; 
+        sh:in ( odrl:recipient haRig:metadataRange haRig:contentRange odrl:dateTime odrl:absoluteTemporalPosition ) ; 
         sh:maxCount 1 ; 
         sh:minCount 1 ; 
         sh:nodeKind sh:IRI 
     ] .
 
 <#MotivationNodeShape> a sh:NodeShape ;
-  sh:targetClass </Motivation> .
+  sh:targetClass haRig:Motivation .
 
 <#ProhibitionNodeShape> a sh:NodeShape ;
   sh:targetClass odrl:Prohibition ;
@@ -108,11 +109,11 @@
   <#StartDateShape>,
   <#EndDateShape>, 
   [ 
-    sh:path </isMotivatedBy> ;
+    sh:path haRig:isMotivatedBy ;
     sh:name "is motivated by"@en;
     sh:name "wordt gemotiveerd door"@nl;
     sh:name "est motivé par"@fr;
-    sh:class </Motivation> ; 
+    sh:class haRig:Motivation ; 
     sh:minCount 1 
   ] .
 
@@ -249,7 +250,7 @@
   sh:name "ontsluitingsactie"@nl;
   sh:name "access action"@nl;
   sh:name "action d'accès"@nl;
-  sh:in ( </available-for-consultation> </downloadable> ) ; 
+  sh:in ( haRig:available-for-consultation haRig:downloadable ) ; 
   sh:class odrl:Action;
   sh:nodeKind sh:IRI ;
   sh:minCount 1 .
