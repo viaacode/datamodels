@@ -18,15 +18,9 @@ haDes:NewspaperIssue   a   rdfs:Class ;
     rdfs:label "Kranteneditie"@nl ;
     rdfs:label "Newspaper issue"@en ;
     rdfs:label "Edition de journal"@fr ;
-<<<<<<< HEAD
     skos:definition "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."@nl ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."@en ;
     skos:definition "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."@fr ;
-=======
-    skos:definition """Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."""@nl ;
-    skos:definition """This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper issue as a whole."""@en ;
-    skos:definition """Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."""@fr ;
->>>>>>> c30d8c8 (Minot typo fix and up minor version)
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
 
 haDes:NewspaperIssuePage   a   rdfs:Class ;
