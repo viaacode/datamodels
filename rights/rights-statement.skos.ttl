@@ -62,7 +62,7 @@
         "Auteursrechtelijke bescherming niet bepaald"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
 
-<https://data.hetarchief.be/id/rightsstatements> a skos:ConceptScheme ;
+<https://data.hetarchief.be/id/rights-statement> a skos:ConceptScheme ;
     skos:hasTopConcept <http://rightsstatements.org/vocab/InC-RUU/1.0/>,
         <http://rightsstatements.org/vocab/NoC-CR/1.0/>,
         <https://creativecommons.org/publicdomain/mark/1.0/>,
