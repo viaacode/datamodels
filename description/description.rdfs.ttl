@@ -410,3 +410,14 @@ haDes:licenseDistributor a rdf:Property ;
   skos:definition "De licentiedistributeur van de intellectuele entiteit."@nl ;
   skos:definition "Le distributeur de licences de l'entité intellectuelle."@fr ;
   rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:aspectRatio a rdf:Property ;
+  rdfs:domain [ owl:unionOf (haDes:ImageReel haDes:AudioReel) ] ;
+  rdfs:label "aspect ratio"@en ;
+  rdfs:label "beelverhouding"@nl ;
+  rdfs:label "rapport hauteur/largeur"@fr ;
+  skos:definition "Proportional relationship between an image's width and its height."@en;
+  skos:definition "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl;
+  skos:definition "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr;
+  rdfs:range rdfs:Literal ;
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
