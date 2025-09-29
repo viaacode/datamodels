@@ -200,12 +200,12 @@
   sh:targetClass premis:License, skos:Concept .
 
 <#RightsStatusShape> a sh:NodeShape ;
-  sh:path premis:basis ;
-  sh:name "has basis"@en ;
-  sh:name "a une base"@fr ;
-  sh:name "heeft basis"@nl ;
   sh:targetClass premis:RightsStatus ;
   sh:property [ 
+    sh:path premis:basis ;
+    sh:name "has basis"@en ;
+    sh:name "a une base"@fr ;
+    sh:name "heeft basis"@nl ;
     sh:maxCount 1 ; 
     sh:minCount 1 ; 
     sh:nodeKind sh:IRI ; 
