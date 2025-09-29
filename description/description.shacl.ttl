@@ -1262,10 +1262,40 @@
         sh:message "l'objet de ebucore:hasCaptioning n'est pas du type ebucore:OpenCaptions"@fr ;
         sh:message "het object van ebucore:hasCaptioning is niet van het type ebucore:OpenCaptions"@nl ;
         sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:aspectRatio ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "aspect ratio"@en ;
+        sh:name "beelverhouding"@nl ;
+        sh:name "rapport hauteur/largeur"@fr ;
+        sh:description "Proportional relationship between an image's width and its height."@en;
+        sh:description "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl;
+        sh:description "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr;
+        sh:message "The value for haDes:aspectRatio occurs more than once or is not a string"@en ;
+        sh:severity sh:Violation ;
     ] .
 
 <#AudioReelNodeShape> a sh:NodeShape ;
-  sh:targetClass haDes:AudioReel .
+    sh:targetClass haDes:AudioReel ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haDes:aspectRatio ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "aspect ratio"@en ;
+        sh:name "beelverhouding"@nl ;
+        sh:name "rapport hauteur/largeur"@fr ;
+        sh:description "Proportional relationship between an image's width and its height."@en;
+        sh:description "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl;
+        sh:description "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr;
+        sh:message "The value for haDes:aspectRatio occurs more than once or is not a string"@en ;
+        sh:severity sh:Violation ;
+    ] .
 
 <#OpenCaptionsNodeShape> a sh:NodeShape ;
     sh:targetClass ebucore:OpenCaptions ;
