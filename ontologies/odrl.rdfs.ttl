@@ -84,6 +84,24 @@ odrl:Action a rdfs:Class, owl:Class, skos:Concept ;
 
 # Properties
 
+odrl:action
+  a rdf:Property, owl:ObjectProperty, skos:Concept ;
+  rdfs:domain [
+    a owl:Class ;
+    owl:unionOf (
+     odrl:Rule
+     odrl:Policy
+   )
+  ] ;
+  rdfs:isDefinedBy odrl: ;
+  rdfs:label "Has Action"@en ;
+  rdfs:label "Heeft actie"@nl ;
+  rdfs:label "A une action"@fr ;
+  rdfs:range odrl:Action ;
+  skos:definition "The operation relating to the Asset for which the Rule is being subjected."@en ;
+  skos:definition "L'opération relative à l'actif pour lequel la règle est soumise."@fr ;
+  skos:definition "De bewerking met betrekking tot het actief waarvoor de regel wordt onderworpen."@en .
+
 odrl:hasPolicy a rdf:Property, owl:ObjectProperty, skos:Concept ;
   rdfs:domain odrl:Asset ;
   rdfs:isDefinedBy odrl: ;

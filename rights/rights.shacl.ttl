@@ -130,8 +130,11 @@
   sh:property [ 
     sh:path odrl:target;
     sh:name "target representation"@en;
-    sh:name "doelrepresentatie"@en;
-    sh:name "représentation cible"@en;
+    sh:name "doelrepresentatie"@nl;
+    sh:name "représentation cible"@fr;
+    sh:description "De digitale representatie waarop dit ontsluitingsbeleid van toepassing is."@nl;
+    sh:description "The digital representation to which this access policy applies."@en;
+    sh:description "La représentation numérique à laquelle s'applique cette stratégie d'accès."@fr;
     sh:class haObj:DigitalRepresentation ; 
     sh:minCount 1  
   ], 
@@ -140,6 +143,9 @@
     sh:name "ontsluitingstoestemming"@en;
     sh:name "access permission"@nl;
     sh:name "autorisation d'accès"@fr;
+    sh:description "Een regel die meemoo toestemming verleent tot het ontsluiten van een digitale representatie."@nl;
+    sh:description "A rule that grants meemoo permission to provide access to a digital representation."@en;
+    sh:description "Une règle qui accorde à Meemoo l'autorisation de donner accès à une représentation numérique."@fr;
     sh:class odrl:Permission 
   ], 
   [ 
@@ -147,6 +153,9 @@
     sh:name "ontsluitingsbeperking"@nl;
     sh:name "limitation of access"@en;
     sh:name "limitation de l'accès"@fr;
+    sh:description "Een regel die meemoo beperkt in het ontsluiten van een digitale representatie."@nl;
+    sh:description "A rule that restricts meemoo in providing access to a digital representation."@en;
+    sh:description "Une règle qui restreint meemoo pour donner accès à une représentation numérique."@fr;
     sh:class odrl:Prohibition  
   ] .
 
@@ -157,6 +166,9 @@
     rdfs:label "access policy"@en ;
     rdfs:label "ontsluitingspolicy"@nl ;
     rdfs:label "politique d'accès"@fr ;
+    sh:description "Het ontsluitingsbeleid van deze digitale representatie die bestaat uit permissies en restricties."@nl;
+    sh:description "The access policy of this digital representation that consists of permissions and restrictions."@en;
+    sh:description "La politique d'accès de cette représentation numérique qui se compose d'autorisations et de restrictions."@fr;
     sh:class odrl:Policy ; 
     sh:maxCount 1 ; 
     sh:nodeKind sh:IRI 
@@ -165,7 +177,7 @@
     sh:path dct:license ;
     sh:name "condition for reuse"@en ;
     sh:name "hergebruikvoorwaarde"@nl ;
-    sh:name "condition de réutilisation"@fr ;    
+    sh:name "condition de réutilisation"@fr ;   
     sh:class premis:License ; 
     sh:maxCount 1 ;
     sh:nodeKind sh:IRI
@@ -248,8 +260,11 @@
 <#ActionShape> a sh:PropertyShape;
   sh:path odrl:action;
   sh:name "ontsluitingsactie"@nl;
-  sh:name "access action"@nl;
-  sh:name "action d'accès"@nl;
+  sh:name "access action"@en;
+  sh:name "action d'accès"@fr;
+  sh:description "De actie waarop de permissie of restrictie betrekking heeft."@nl;
+  sh:description "The action to which the permission or restriction relates."@en;
+  sh:description "L'action à laquelle se rapporte l'autorisation ou la restriction."@fr;
   sh:in ( haRig:available-for-consultation haRig:downloadable ) ; 
   sh:class odrl:Action;
   sh:nodeKind sh:IRI ;
