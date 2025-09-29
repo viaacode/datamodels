@@ -91,6 +91,16 @@ haOrg:ProjectPartner  a   rdfs:Class ;
     skos:definition """Een organisatie die samenwerkt met meemoo aan projecten die geformaliseerd zijn in een overeenkomst of besluit, zoals bijvoorbeeld projecten binnen het Vlaamse cultureelerfgoeddecreet, projecten onder financiering van de Europese Unie, of andere innovatie- en onderzoeksprojecten."""@nl;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
 
+haOrg:HeritageDatabasePartner a rdfs:Class ;
+    rdfs:subClassOf org:Organization ;
+    rdfs:label "Heritage database partner"@en ;
+    rdfs:label "Partenaire de base de données du patrimoine"@fr ;
+    rdfs:label "Partner van erfgoeddatabank"@nl ;
+    skos:definition """An organization that has a user agreement with meemoo about the use of the collection management & registration system, de Erfgoeddatabank."""@en ;
+    skos:definition """Une organisation qui a un accord d'utilisateur avec meemoo concernant l'utilisation du système de gestion et d'enregistrement des collections, de Erfgoeddatabank."""@fr ;
+    skos:definition """Een organisatie die een gebruikersovereenkomst heeft met meemoo over het gebruik van het collectiebeheer- en registratiesysteem, de Erfgoeddatabank."""@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
 #####################################
 #             PROPERTIES            #
 #####################################
