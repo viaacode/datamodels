@@ -16,6 +16,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix pav: <http://purl.org/pav/> .
+@prefix haPrmId: <https://data.hetarchief.be/id/production-method/>  .
+@prefix haEdTId: <https://data.hetarchief.be/id/edition-type/>  .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/>.
+@prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
+@prefix haCt: <https://data.hetarchief.be/id/color-type/> .
 
 @base <https://data.hetarchief.be/ns/description> .
 
@@ -38,7 +43,7 @@
     dct:title     "Modèle de données Description"@fr ;
     dct:title     "Datamodel Descriptie"@nl ;
     dct:created   "2022-01-07" ;
-    dct:modified  "2025-02-13" ;
+    dct:modified  "2025-09-22" ;
     dct:description """Data model to describe the content of objects."""@en ;
     dct:description """Modèle de données pour décrire le contenu des objets."""@fr ;
     dct:description """Datamodel voor de beschrijving van de inhoud van objecten."""@nl ;
@@ -873,9 +878,703 @@
 <#CarrierRepresentationNodeShape> a sh:NodeShape ; 
     sh:targetClass haObj:CarrierRepresentation .
 
+<#DVDNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:DVD ;
+    sh:property <#BroadcasterShape>, <#AVhasCarrierCopyShape>,
+    [
+        a sh:PropertyShape ;
+        sh:path rel:hsp ;
+        sh:class haDes:DVDChapter ;
+
+        sh:minCount 0 ;
+
+        sh:name "has part"@en ;
+        sh:name "a une partie"@fr ;
+        sh:name "heeft een onderdeel"@nl ;
+
+        sh:description "Indicates the DVD chapters that make up the DVD as a whole."@en ;
+        sh:description "Indique les chapitres du DVD qui composent le DVD dans son ensemble."@fr ;
+        sh:description "Aanduiding van de dvd-hoofdstukken die deel uitmaken van de dvd als geheel."@nl ;
+
+        sh:message "the object of schema:hasPart is no DVDChapter"@en ;
+
+        sh:severity sh:Violation
+    ] .
+
+<#DVDChapterNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:DVDChapter ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path rel:isi ;
+        sh:class haDes:DVD ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "is part of"@en ;
+        sh:name "fait partie de"@fr ;
+        sh:name "is onderdeel van"@nl ;
+
+        sh:description "Indicates the DVD that the chapter is part of."@en ;
+        sh:description "Indique le DVD dont le chapitre fait partie."@fr ;
+        sh:description "Aanduiding van de dvd waarvan het hoofdstuk deel uitmaakt."@nl ;
+
+        sh:message "the object of schema:isPartOf is no DVD, is absent or occurs more than once"@en ;
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:chapterNumber ;
+        sh:datatype xsd:nonNegativeInteger ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "chapter number"@en ;
+        sh:name "Numéro de chapitre"@fr ;
+        sh:name "hoofdstuknummer"@nl ;
+
+        sh:description "Indicates the sequence number of the DVD chapter."@en ;
+        sh:description "Indique le numéro de séquence du chapitre DVD."@fr ;
+        sh:description "Aanduiding van het volgnummer van het dvd-hoofdstuk."@nl ;
+
+        sh:message "the object of haDes:chapterNumber is not an integer, is absent or occurs more than once"@en ;
+
+        sh:severity sh:Violation
+    ] .
+
+<#AudioNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Audio;
+    sh:property <#BroadcasterShape>,<#AVhasCarrierCopyShape> .
+
+<#VideoNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Video;
+    sh:property <#BroadcasterShape>, <#AVhasCarrierCopyShape> .
+
+<#ImageNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Image .
+
+<#AVPhysicalCarrierNodeShape> a sh:NodeShape ; 
+    sh:targetClass haDes:AudiovisualCarrier ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haDes:iec60094Type ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:class skos:Concept ;
+        sh:in (<https://data.hetarchief.be/id/iec60094-type/I>
+        <https://data.hetarchief.be/id/iec60094-type/II>
+        <https://data.hetarchief.be/id/iec60094-type/III>
+        <https://data.hetarchief.be/id/iec60094-type/IV>);
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "iec-60094 type"@en ;
+        sh:name "iec-60094 type"@nl ;
+        sh:name "iec-60094 type"@fr ;
+        sh:description "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl ;
+        sh:description "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@nl ;
+        sh:description "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@nl ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:iec60094Type is not \"I\", \"II\", \"III\", or \"IV\"."@en 
+    ] , 
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:audioRecordingSpeed ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "audio recording speed"@en ;
+        sh:name "audio-opnamesnelheid"@nl ;
+        sh:name "vitesse d'enregistrement audio"@fr ;
+        sh:description "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl ;
+        sh:description "The speed with which open reel audio or a gramophone record is recorded."@en ;
+        sh:description "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement gramophone est enregistré."@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:audioRecordingSpeed is not a skos:Concept, or occurs more than once."@en 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path  haDes:audioNoiseReduction;
+        sh:in ("DBX" "Dolby A" "Dolby B" "Dolby C" "Dolby D");
+        sh:datatype xsd:string;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "audio noise reduction"@en ;
+        sh:name "audio ruisonderdrukking"@nl ;
+        sh:name "réduction du bruit audio"@fr ;
+        skos:definition "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl;
+        skos:definition "La technologie utilisée pour la réduction du bruit de l'audio."@fr;
+        skos:definition "The technology used for noise reduction in audio."@en;  
+        sh:message "haDes:audioNoiseReduction is not DBX, Dolby A, Dolby B, Dolby C, Dolby D; or occurs more than once."@en 
+    ].
+
+<#AVCarrierRepresentatioNodeShape> a sh:NodeShape ; 
+    sh:targetClass haDes:AudiovisualCarrierRepresentation ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path  haDes:numberOfAudioTracks;
+        sh:datatype xsd:nonNegativeInteger;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of audio tracks"@en ;
+        sh:name "aantal audiotracks"@nl ;
+        sh:name "nombre de pistes audio"@fr ;  
+        sh:message "haDes:numberOfAudioTracks occurs more than once, or its object is not a xsd:nonNegativeInteger. "  
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path  haDes:numberOfAudioChannels;
+        sh:datatype xsd:nonNegativeInteger;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of audio channels"@en ;
+        sh:name "aantal audiokanalen"@nl ;
+        sh:name "nombre de canaux audio"@fr ;
+        sh:message "haDes:numberOfAudioChannels occurs more than once, or its object is not of type xsd:nonNegativeInteger." 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path premis:storedAt ;
+        sh:class haDes:AudiovisualCarrier;
+        sh:minCount 1 ;
+
+        sh:name "stored at"@en ;
+        sh:name "opgeslagen op"@nl ;
+        sh:name "stocké à"@fr ;
+
+        sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
+        sh:description "The reel where the representation is stored."@en ;
+        sh:description "Le porteur physique où la représentation est stocké."@fr ;
+
+        sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
+        sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+        sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+        sh:severity sh:Violation ;
+    ].
+
+<#NewspaperIssueNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:NewspaperIssue ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haDes:numberOfPages ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of pages"@en ;
+        sh:name "nombre de pages"@fr ;
+        sh:name "aantal pagina's"@nl ;
+        sh:description "Indicates how many pages a certain bibliographic object contains."@en ;
+        sh:description "Indique le nombre de pages qu'un certain objet bibliographique contient."@fr ;
+        sh:description "Geeft aan uit hoeveel pagina's een bepaald bibliografisch object bestaat."@nl ;
+        sh:message "the object of haDes:numberOfPages is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:isPartOf ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "is part of"@en ;
+        sh:name "fait partie de"@fr ;
+        sh:name "maakt deel uit van"@nl ;
+        sh:description "Indicates the newspaper series that a specific newspaper edition is part of."@en ;
+        sh:description "Indique la série de journaux dont fait partie une édition spécifique."@fr ;
+        sh:description "Geeft de krantenserie aan waar een specifieke kranteneditie deel van uitmaakt."@nl ;
+        sh:message "the object of schema:isPartOf is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path schema:issueNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "issue number"@en ;
+        sh:name "numéro de l'édition"@fr ;
+        sh:name "editienummer"@nl ;
+        sh:description "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."@en ;
+        sh:description "Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie."@fr ;
+        sh:description "Geeft het volgnummer aan van een kranteneditie binnen de grotere krantenserie waarvan het deel uitmaakt."@nl ;
+        sh:message "the object of schema:issueNumber is not of type xsd:string, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path bf:issuance ;
+        sh:class skos:Concept ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "frequency of issuance"@en ;
+        sh:name "fréquence d'émission"@fr ;
+        sh:name "uitgavefrequentie"@nl ;
+        sh:description "Indicates how frequent a newspaper is issued, e.g. twice a day, daily, weekly etc."@en ;
+        sh:description "Indique la fréquence de parution d'un journal, par ex. deux fois par jour, quotidiennement, hebdomadairement, etc."@fr ;
+        sh:description "Geeft aan hoe vaak een krant verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc."@nl ;
+        sh:message "the object of bf:issuance is not of type skos:Concept, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path bf:edition ;
+        sh:class skos:Concept ;
+        sh:in (haEdTId:morning-edition haEdTId:afternoon-edition haEdTId:evening-edition haEdTId:weekend-edition);
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "publication type"@en ;
+        sh:name "type de publication"@fr ;
+        sh:name "uitgavetype"@nl ;
+        sh:description "Indicates the specific publication type of a newspaper edition (e.g. morning, evening, weekend newspaper edition, etc.)."@en ;
+        sh:description "Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.)."@fr ;
+        sh:description "Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.)."@nl ;
+        sh:message "the object of bf:edition is not of type skos:Concept, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],
+    [
+    a sh:PropertyShape ;
+    sh:path haObj:hasCarrierCopy;
+    sh:class haDes:WrittenWorkCarrierRepresentation ;
+
+    sh:maxCount 1 ;
+
+    sh:name "has carrier copy"@en ;
+    sh:name "heeft dragerkopie"@nl ;
+    sh:name  "est copie sur porteur"@fr ;
+    sh:description "The representation stored on a physical carrier."@en ;
+    sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+    sh:description "La représentation stockée sur un porteur physique."@fr ;
+
+    sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haDes:WrittenWorkCarrierRepresentation"@en ;
+    sh:severity sh:Violation ;
+  ].
+
+<#NewspaperIssuePageNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:NewspaperIssuePage ;
+    sh:property 
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:pageNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "page number"@en ;
+        sh:name "numéro de page"@fr ;
+        sh:name "paginanummer"@nl ;
+        sh:description "Indicates the serial number of a page within the greater object it is part of."@en ;
+        sh:description "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr ;
+        sh:description "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
+        sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path rel:isp ;
+        sh:class haDes:NewspaperIssue ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "is part of"@en ;
+        sh:name "fait partie de"@fr ;
+        sh:name "maakt deel uit van"@nl ;
+        sh:description "Indicates the newspaper issue that a specific page is part of."@en ;
+        sh:description "Indique l'édition de journal dont fait partie une page spécifique."@fr ;
+        sh:description "Geeft de kranteneditie aan waar een specifieke pagina deel van uitmaakt."@nl ;
+        sh:message "the object of rel:isp is not of type haDes:NewspaperIssue, is missing or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] .
+
+<#WrittenWorkCarrierRepresentationNodeShape> a sh:NodeShape ; 
+    sh:targetClass haDes:WrittenWorkCarrierRepresentation;
+    sh:property     [
+        a sh:PropertyShape ;
+        sh:path bf:productionMethod ;
+        sh:class skos:Concept ;
+        sh:in (haPrmId:handwritten haPrmId:typed haPrmId:printed);
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "production method"@en ;
+        sh:name "méthode de production"@fr ;
+        sh:name "productie methode"@nl ;
+        sh:description "The process used to produce the carrier representation of the written work (e.g. handwritten, typed, printed)."@en ;
+        sh:description "Le processus utilisé pour produire la eprésentation de porteur de l'œuvre écrite (par exemple manuscrit, dactylographié, imprimé)."@fr ;
+        sh:description "Het proces dat werd gebruikt om de dragerrepresentatie van het geschreven werk te produceren (bijv. handgeschreven, getypt, gedrukt)."@nl ;
+        sh:message "the object of bf:productionMethod is not of type skos:Concept, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ] .
+
+<#FilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Film ;
+    sh:property <#BroadcasterShape>,[
+        a sh:PropertyShape ;
+        sh:path haObj:hasCarrierCopy ;
+        sh:class haDes:FilmCarrierRepresentation ;
+
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+
+        sh:name "has carrier copy"@en ;
+        sh:name "heeft dragerkopie"@nl ;
+        sh:name  "est porteur du copie"@fr ;
+        sh:description "The representation stored on a physical carrier."@en ;
+        sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+        sh:description "La représentation stockée sur un porteur physique."@fr ;
+
+        sh:message "haObj:hasCarrierCopy is missing, has more than one value or is not a haDes:FilmCarrierRepresentation"@en ;
+        sh:severity sh:Violation ;
+    ].
+
+<#SoundFilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:SoundFilm .
+
+<#SilentFilmNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:SilentFilm .
+
+<#ImageReelNodeShape> a sh:NodeShape ;
+  sh:targetClass haDes:ImageReel ;
+  sh:property [
+        a sh:PropertyShape ;
+        sh:path haDes:coloringType ;
+        sh:class skos:Concept ;
+        sh:in (haCt:BandW haCt:Color haCt:Colorized haCt:Composite haCt:Tinted haCt:Toned haCt:UnknownColorType) ;
+        sh:name "coloring type"@en ;
+        sh:name "type de coloration"@fr ;
+        sh:name "type kleuring"@nl ;
+        sh:description "Indication of the coloring of the image reel."@en ;
+        sh:description "Indication de la coloration de la bobine d'image."@fr ;
+        sh:description "Indicatie van de kleuring van de beeldrol/-spoel."@nl ;
+        sh:message "the object of haDes:coloringType is not of type skos:Concept"@en ;
+        sh:message "l'objet de haDes:coloringType n'est pas du type skos:Concept"@fr ;
+        sh:message "het object van haDes:coloringType is niet van het type skos:Concept"@nl ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path ebucore:hasCaptioning ;
+        sh:class ebucore:OpenCaptions ;
+        sh:minCount 0 ;
+        sh:name "has (embedded) captioning"@en ;
+        sh:name "a des sous-titres (intégrés)"@fr ;
+        sh:name "heeft (ingebedde) ondertiteling"@nl ;
+        sh:description "Indicates the (embedded) captioning of an image reel ."@en ;
+        sh:description "Indique les sous-titres (intégrés) d'une bobine d'image."@fr ;
+        sh:description "Geeft de (ingebedde) ondertiteling aan van een beeldrol/-spoel."@nl ;
+        sh:message "the object of ebucore:hasCaptioning is not of type ebucore:OpenCaptions"@en ;
+        sh:message "l'objet de ebucore:hasCaptioning n'est pas du type ebucore:OpenCaptions"@fr ;
+        sh:message "het object van ebucore:hasCaptioning is niet van het type ebucore:OpenCaptions"@nl ;
+        sh:severity sh:Violation
+    ] .
+
+<#AudioReelNodeShape> a sh:NodeShape ;
+  sh:targetClass haDes:AudioReel .
+
+<#OpenCaptionsNodeShape> a sh:NodeShape ;
+    sh:targetClass ebucore:OpenCaptions ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path schema:inLanguage ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 0 ;
+        sh:name "in language"@en ;
+        sh:name "en langue"@fr ;
+        sh:name "in taal"@nl ;
+        sh:description "Indicates the language of the embedded captioning."@en ;
+        sh:description "Indique la langue des sous-titres intégrés."@fr ;
+        sh:description "Duidt de taal aan van de ingebedde ondertiteling."@nl ;
+        sh:message "the object of schema:inLanguage is not of type xsd:string"@en ;
+        sh:message "l'objet de schema:inLanguage n'est pas du type xsd:string"@fr ;
+        sh:message "het object van schema:inLanguage is niet van het type xsd:string"@nl ;
+        sh:severity sh:Violation
+    ] .
+
+<#FilmCarrierRepresentationNodeShape> a sh:Nodeshape ;
+    sh:targetClass haDes:FilmCarrierRepresentation ;
+    sh:property [
+        a sh:PropertyShape ;
+        sh:path haDes:numberOfMissingAudioReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of lost audio reels"@en ;
+        sh:name "nombre de bobines audio perdues"@fr ;
+        sh:name "aantal verloren audiorollen/-spoelen"@nl ;
+        sh:description "Indicates if and how many audio reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si et combien de bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of en hoeveel geluidsrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haDes:numberOfMissingAudioReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberOfMissingAudioReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberOfMissingAudioReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:numberOfMissingImageReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of lost image reels"@en ;
+        sh:name "nombre de bobines d'image perdues"@fr ;
+        sh:name "aantal verloren beeldrollen/-spoelen"@nl ;
+        sh:description "Indicates if and how many image reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si et combien de bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of en hoeveel beeldrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haDes:numberOfMissingImageReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberOfMissingImageReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberOfMissingImageReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:hasMissingAudioReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "lost audio reels"@en ;
+        sh:name "bobines audio perdues"@fr ;
+        sh:name "verloren audiorollen/-spoelen"@nl ;
+        sh:description "Indicates if audio reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si des bobines audio ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haDes:hasMissingAudioReels is not of type xsd:boolean, or occurs more than once"@en ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:hasMissingImageReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:boolean ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "lost image reels"@en ;
+        sh:name "bobines d'image perdues"@fr ;
+        sh:name "verloren beeldrollen/-spoelen"@nl ;
+        sh:description "Indicates if image reels were lost (prior to any digitization processes)."@en ;
+        sh:description "Indique si des bobines d'image ont été perdues (avant tout processus de numérisation)."@fr ;
+        sh:description "Geeft aan of er beeldrollen/-spoelen verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
+        sh:message "the object of haDes:hasMissingImageReels is not of type xsd:boolean, or occurs more than once"@en ;
+        sh:severity sh:Violation 
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path haDes:numberOfReels ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "number of reels"@en ;
+        sh:name "nombre de bobines"@fr ;
+        sh:name "aantal (film)rollen/-spoelen"@nl ;
+        sh:description "Indicates the number of reels (regardless of type) that the film consists of."@en ;
+        sh:description "Indique le nombre de bobines (quel que soit le type) qui composent le film."@fr ;
+        sh:description "Geeft aan uit hoeveel rollen/spoelen (ongeacht het type) waaruit de film bestaat."@nl ;
+        sh:message "the object of haDes:numberOfReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
+        sh:message "l'objet de haDes:numberOfReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr ;
+        sh:message "het object van haDes:numberOfReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
+        sh:severity sh:Violation
+    ] ,
+    [
+        a sh:PropertyShape ;
+        sh:path premis:storedAt ;
+        sh:or (
+            [ sh:class haDes:ImageReel ] 
+            [ sh:class haDes:AudioReel ] 
+        ) ;
+        sh:minCount 1 ;
+
+        sh:name "stored at"@en ;
+        sh:name "opgeslagen op"@nl ;
+        sh:name "stocké à"@fr ;
+
+        sh:description "De spoel waarop de representatie is opgeslagen."@nl ;
+        sh:description "The reel where the representation is stored."@en ;
+        sh:description "Le porteur physique où la représentation est stocké."@fr ;
+
+        sh:message "premis:storedAt has more than one value, no values or not a haObj:PhysicalCarrier"@en ;
+        sh:message "premis:storedAt heeft meer dan één of geen waarde of is geen haObj:PhysicalCarrier"@nl ;
+        sh:message "premis:storedAt a plus d'une valeur, pas de valeur ou n'est pas une haObj:PhysicalCarrier"@fr ;
+        sh:severity sh:Violation ;
+  ] .
+
+
+
 ####################
 #      SCHEMA      #
 ####################
+
+<#NewspaperNodeShape> a sh:NodeShape ;
+    sh:targetClass schema:Newspaper ;
+    sh:property 
+    [
+        a sh:PropertyShape ;
+        sh:path schema:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:name "abraham identifier"@en ;
+        sh:name "abraham identifier"@nl ;
+        sh:name "abraham identifier"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:identifier is missing or not of type string "@en ;
+        sh:message "schema:identifier ontbreekt of is niet van het type string"@nl ;
+        sh:message "schema:identifier est manquant ou n'est pas de type string"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:name ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true;
+        sh:name "name"@en ;
+        sh:name "naam"@nl ;
+        sh:name "nom"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:name is missing or not of type string "@en ;
+        sh:message "schema:name ontbreekt of is niet van het type string"@nl ;
+        sh:message "schema:name est manquant ou n'est pas de type string"@fr 
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:alternateName ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype rdf:langString ;
+        sh:name "alternate name"@en ;
+        sh:name "alternatieve naam"@nl ;
+        sh:name "nom alternatif"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "schema:alternateName is not of type string"@en ;
+        sh:message "schema:alternateName is niet van het type string"@nl ;
+        sh:message "schema:alternateName n'est pas de type string"@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:startDate ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "start date"@en ;
+        sh:name "date de début"@fr ;
+        sh:name "begindatum"@nl ;
+        sh:severity sh:Violation ;
+        sh:message "schema:startDate is not of type xsd:dateTime."@en ;
+        sh:message "schema:startDate is niet van het type xsd:dateTime."@nl ;
+        sh:message "schema:startDate n'est pas de type xsd:dateTime."@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:endDate ;
+        sh:nodeKind sh:Literal ;
+        sh:datatype xsd:dateTime ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "end date"@en ;
+        sh:name "date de fin"@fr ;
+        sh:name "einddatum"@nl ;
+        sh:severity sh:Violation ;
+        sh:message "schema:endDate is not of type xsd:dateTime."@en ;
+        sh:message "schema:endDate is niet van het type xsd:dateTime."@nl ;
+        sh:message "schema:endDate n'est pas de type xsd:dateTime."@fr ;
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:locationCreated ;
+        sh:class schema:Place ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "location created"@en ;
+        sh:name "lieu de création"@fr ;
+        sh:name "plaats van creatie"@nl ;
+        sh:description "The location where the Newspaper was created."@en ;
+        sh:description "L'emplacement où le journal a été créé."@fr ;
+        sh:description "De locatie waar de krant is gemaakt."@nl ;
+        sh:message "the object of schema:locationCreated is not of type schema:locationCreated,or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],  
+    [
+        a sh:PropertyShape ;
+        sh:path bf:supplement ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "supplement"@en ;
+        sh:name "supplément"@fr ;
+        sh:name "supplement"@nl ;
+        sh:description "Newspaper that updates or otherwise complements the predominant newspaper."@en ;
+        sh:description "Journal qui met à jour ou complète autrement le journal prédominant."@fr ;
+        sh:description "Krant die de overheersende krant bijwerkt of anderszins aanvult."@nl ;
+        sh:message "the object of bf:supplement is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path bf:supplementTo ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "supplement to"@en ;
+        sh:name "compléter"@fr ;
+        sh:name "supplement aan"@nl ;
+	    sh:description "Newspaper that is updated or otherwise complemented by the augmenting newspaper."@en ;
+	    sh:description "Journal qui est mis à jour ou autrement complété par le journal augmentant."@fr ;
+	    sh:description "Krant die wordt bijgewerkt of anderszins wordt aangevuld met de aanvullende krant."@nl ;
+        sh:message "the object of bf:supplementTo is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path bf:succeededBy ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "succeeded by"@en ;
+        sh:name "succédé par"@fr ;
+        sh:name "opgevolgd door"@nl ;
+	    skos:definition "Newspaper that succeeds the newspaper being described, e.g., later in time or after in a narrative."@en;
+	    skos:definition "Journal qui succède à la journal décrite, par exemple, plus tard dans le temps ou après dans un récit."@fr;
+	    skos:definition "Krant die de krant die wordt beschreven opvolgt, bijvoorbeeld later in de tijd of daarna in een verhaal."@nl; 
+        sh:message "the object of bf:succeededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ], 
+    [
+        a sh:PropertyShape ;
+        sh:path bf:precededBy ;
+        sh:nodeKind sh:IRI ;
+        sh:class schema:Newspaper ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "preceded by"@en ;
+        sh:name "précédé par"@fr ;
+        sh:name "voorafgegaan door"@nl ;
+	    sh:description "Newspaper that precedes the newspaper being described, e.g., is earlier in time or before in narrative."@en; 
+	    sh:description "Le journal qui précède le journal décrit, par exemple, est plus tôt dans le temps ou avant dans le récit."@fr; 
+	    sh:description "Krant die voorafgaat aan de beschreven krant, bijvoorbeeld, is eerder in de tijd of eerder in het verhaal."@nl;
+        sh:message "the object of bf:precededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+        sh:severity sh:Violation
+    ],
+    [
+        a sh:PropertyShape ;
+        sh:path schema:publisher ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class schema:Role ;
+        sh:name "publisher"@en ;
+        sh:name "uitgever"@nl ;
+        sh:name "éditeur"@fr ;
+        sh:description "Publisher of the newspaper."@en;
+        sh:description "Éditeur du journal."@nl;
+        sh:description "Uitgever van de krant."@fr;
+        sh:severity sh:Violation ;
+        sh:message "schema:publisher is not of class schema:Role, or occurs more than once"@en 
+    ].
+
 <#CreativeWorkSeriesShape> a sh:NodeShape ; 
     sh:targetClass schema:CreativeWorkSeries ;
     sh:property <#NameShape>, <#DescriptionShape>,
@@ -1631,3 +2330,30 @@
     sh:message "schema:duration is not of type xsd:duration"@en ;
     sh:message "schema:duration is niet van het type xsd:duration"@nl ;
     sh:message "schema:duration n'est pas de type xsd:duration"@fr .
+
+<#BroadcasterShape> a sh:PropertyShape;
+        sh:path  haDes:broadcastingOrganization;
+        sh:datatype org:Organization;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:name "broadcasting organization"@en ;
+        sh:name "omroeporganisatie"@nl ;
+        sh:name "organisation de diffusion"@fr ; 
+        sh:message "haDes:broadcastingOrganization occurs more than once, or its object is not an  org:Organization."@en .  
+    
+<#AVhasCarrierCopyShape>
+    a sh:PropertyShape ;
+    sh:path haObj:hasCarrierCopy;
+    sh:class haDes:AudiovisualCarrierRepresentation ;
+
+    sh:maxCount 1 ;
+
+    sh:name "has carrier copy"@en ;
+    sh:name "heeft dragerkopie"@nl ;
+    sh:name  "est copie sur porteur"@fr ;
+    sh:description "The representation stored on a physical carrier."@en ;
+    sh:description "De representatie opgeslagen op een fysieke drager."@nl ;
+    sh:description "La représentation stockée sur un porteur physique."@fr ;
+
+    sh:message "haObj:hasCarrierCopy has more than 1 value or is not a haDes:AudiovisualCarrierRepresentation"@en ;
+    sh:severity sh:Violation .
