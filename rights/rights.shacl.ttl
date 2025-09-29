@@ -20,6 +20,8 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix haRig: <https://data.hetarchief.be/ns/rights/> .
+@prefix haMot: <https://data.hetarchief.be/id/motivation/> .
+@prefix haPer: <https://data.hetarchief.be/id/permission/> .
 
 @base <https://data.hetarchief.be/ns/rights> .
 
