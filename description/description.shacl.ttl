@@ -21,6 +21,7 @@
 @prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/>.
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix haCt: <https://data.hetarchief.be/id/color-type/> .
+@prefix haRot: <https://data.hetarchief.be/id/rotational-speed/> .
 
 @base <https://data.hetarchief.be/ns/description> .
 
@@ -978,7 +979,20 @@
     [
         a sh:PropertyShape ;
         sh:path haDes:audioRecordingSpeed ;
-        sh:class skos:Concept ;
+        sh:class schema:QuantitativeValue ;
+        sh:in (
+            haRot:variable
+            haRot:16-rpm
+            haRot:19-cm-s
+            haRot:2.375-cm-s
+            haRot:33-1-3-rpm
+            haRot:38-cm-s
+            haRot:4.75-cm-s
+            haRot:72-cm-s
+            haRot:78-rpm
+            haRot:90-rpm
+            haRot:9.5-cm-s
+        );
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "audio recording speed"@en ;
