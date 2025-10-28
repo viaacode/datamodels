@@ -954,6 +954,15 @@
 <#ImageNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Image .
 
+<#MaterialArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:MaterialArtwork .
+
+<#3DArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:3DArtwork .
+
+<#2DArtworkNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:2DArtwork .
+
 <#AVPhysicalCarrierNodeShape> a sh:NodeShape ; 
     sh:targetClass haDes:AudiovisualCarrier ;
     sh:property [
