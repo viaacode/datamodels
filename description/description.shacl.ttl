@@ -222,7 +222,6 @@
         sh:path schema:genre ;
         sh:nodeKind sh:Literal ;
         sh:datatype rdf:langString ;
-        sh:uniqueLang true ;
         sh:name "genre"@en ;
         sh:name "genre"@nl ;
         sh:name "genre"@fr ;
