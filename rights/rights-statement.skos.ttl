@@ -1,7 +1,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-<http://rightsstatements.org/vocab/InC-RUU/1.0/> a dct:RightsStatement,
+<https://rightsstatements.org/vocab/InC-RUU/1.0/> a dct:RightsStatement,
         skos:Concept ;
     skos:definition "This Item is protected by copyright and/or related rights. However, for this Item, either (a) no rights-holder(s) have been identified or (b) one or more rights-holder(s) have been identified but none have been located. You are free to use this Item in any way that is permitted by the copyright and related rights legislation that applies to your use."@en,
         "Dit Item wordt beschermd door het auteursrecht en/of aanverwante rechten. Voor dit Item is echter ofwel (a) geen rechthebbende(n) geïdentificeerd of (b) een of meer rechthebbende(n) geïdentificeerd, maar zijn er geen gelokaliseerd. Je bent vrij om dit Item te gebruiken op elke manier die is toegestaan door de wetgeving betreffende het auteursrecht en de aanverwante rechten die van toepassing is op je gebruik."@nl ;
@@ -10,7 +10,7 @@
         "Rechthebbende(n) niet lokaliseerbaar of niet-identificeerbaar"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
 
-<http://rightsstatements.org/vocab/NoC-CR/1.0/> a dct:RightsStatement,
+<https://rightsstatements.org/vocab/NoC-CR/1.0/> a dct:RightsStatement,
         skos:Concept ;
     skos:definition "Use of this Item is not restricted by copyright and/or related rights. As part of the acquisition or digitization of this Work, the organization that has made the Item available is contractually required to limit the use of this Item. Limitations may include, but are not limited to, privacy issues, cultural protections, digitization agreements or donor agreements. Please refer to the organization that has made the Item available for more information."@en,
         "Het gebruik van dit Item is niet beperkt door het auteursrecht en/of aanverwante rechten. Als onderdeel van de verwerving of digitalisering van dit Werk, is de organisatie die het Item beschikbaar heeft gesteld contractueel verplicht om het gebruik van dit Item te beperken. Beperkingen kunnen omvatten, maar zijn niet beperkt tot, privacykwesties, culturele bescherming, digitaliseringsovereenkomsten of donorovereenkomsten. Voor meer informatie, neem alsjeblieft contact op met de organisatie die het Item beschikbaar heeft gesteld."@nl ;
@@ -63,8 +63,8 @@
     skos:topConceptOf <https://data.hetarchief.be/id/rightsstatements> .
 
 <https://data.hetarchief.be/id/rights-statement> a skos:ConceptScheme ;
-    skos:hasTopConcept <http://rightsstatements.org/vocab/InC-RUU/1.0/>,
-        <http://rightsstatements.org/vocab/NoC-CR/1.0/>,
+    skos:hasTopConcept <https://rightsstatements.org/vocab/InC-RUU/1.0/>,
+        <https://rightsstatements.org/vocab/NoC-CR/1.0/>,
         <https://creativecommons.org/publicdomain/mark/1.0/>,
         <https://rightsstatements.org/vocab/CNE/1.0/>,
         <https://rightsstatements.org/vocab/InC-OW-EU/1.0/>,
