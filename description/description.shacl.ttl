@@ -342,6 +342,20 @@
     ],
     [
         a sh:PropertyShape ;
+        sh:path haDes:owner ;
+        sh:or (
+           [sh:class schema:Person ]
+           [sh:class org:Organization ]
+           [sh:class schema:Thing ]
+        ) ;
+        sh:name "owner"@en ;
+        sh:name "eigenaar"@nl ;
+        sh:name "propriétaire"@fr ;
+        sh:severity sh:Violation ;
+        sh:message "haDes:owner is not of class schema:Person, schema:Thing, or org:Organization"@en ;
+    ],
+    [
+        a sh:PropertyShape ;
         sh:path schema:copyrightNotice ;
         sh:nodeKind sh:Literal ;
         sh:datatype xsd:string ;
