@@ -1,5 +1,6 @@
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix schema: <https://schema.org/> .
 
 <https://creativecommons.org/licenses/by-nc-nd/4.0/> a premis:License,
         skos:Concept ;
@@ -153,3 +154,12 @@ Je mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoer
         <https://data.hetarchief.be/id/license/non-public-license> ;
     skos:prefLabel "Thesaurus hergebruikvoorwaarden"@nl .
 
+# Ordering of Creative Commons licenses
+<https://data.hetarchief.be/id/license/non-public-license> schema:position 8.
+<https://creativecommons.org/licenses/by-nc-nd/4.0/> schema:position 7. 
+<https://creativecommons.org/licenses/by-nd/4.0/> schema:position 6. 
+<https://creativecommons.org/licenses/by-nc-sa/4.0/> schema:position 5. 
+<https://creativecommons.org/licenses/by-nc/4.0/> schema:position 4. 
+<https://creativecommons.org/licenses/by-sa/4.0/> schema:position 3. 
+<https://creativecommons.org/licenses/by/4.0/> schema:position 2. 
+<https://creativecommons.org/publicdomain/zero/1.0/> schema:position 1.
