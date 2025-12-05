@@ -136,11 +136,12 @@ Je mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoer
         "CC0 1.0"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
 
-<https://data.hetarchief.be/id/license/non-public-license> a premis:License,
+<https://data.hetarchief.be/id/reuse-license/non-public-license> a premis:License,
         skos:Concept ;
     skos:definition "A non-public license is a contractual juridical agreement between parties, where the licensor and the licensee agree on specific conditions for the use of certain copyright-protected material (payment, durations,...)"@en,
         "Een niet-publieke licentie is een contractuele juridische verbintenis tussen partijen, waarbij de licentiegever en licentienemer specifieke voorwaarden voor het gebruik van bepaalde beschermde werken overeenkomen (vergoeding, termijn,...)"@nl ;
     skos:inScheme <https://data.hetarchief.be/id/reuse-license> ;
+    skos:notation "NPL" ;
     skos:prefLabel "Non-public License"@en,
         "Niet-publieke Licentie"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/reuse-license> .
@@ -151,11 +152,11 @@ Je mag het werk zonder toestemming kopiëren, veranderen, verspreiden en uitvoer
         <https://creativecommons.org/licenses/by-sa/4.0/>,
         <https://creativecommons.org/licenses/by/4.0/>,
         <https://creativecommons.org/publicdomain/zero/1.0/>,
-        <https://data.hetarchief.be/id/license/non-public-license> ;
+        <https://data.hetarchief.be/id/reuse-license/non-public-license> ;
     skos:prefLabel "Thesaurus hergebruikvoorwaarden"@nl .
 
 # Ordering of Creative Commons licenses
-<https://data.hetarchief.be/id/license/non-public-license> schema:position 8.
+<https://data.hetarchief.be/id/reuse-license/non-public-license> schema:position 8.
 <https://creativecommons.org/licenses/by-nc-nd/4.0/> schema:position 7. 
 <https://creativecommons.org/licenses/by-nd/4.0/> schema:position 6. 
 <https://creativecommons.org/licenses/by-nc-sa/4.0/> schema:position 5. 
