@@ -3,7 +3,8 @@
 @base <https://data.hetarchief.be/id/organization-preferences/> .
 
 <preference>  a skos:Concept ;
-    skos:narrower <visitor-space-publication>, <iiif-dissemination>, <logo-embedding> ;
+    skos:narrower <visitor-space-publication>, <iiif-publication>, <logo-embedding> ,
+                  <the-archive-publication>, <the-archive-for-education-permission> ;
     skos:prefLabel  "Preference"@en, 
                     "Préférence"@fr, 
                     "Voorkeur"@nl ;
@@ -12,21 +13,41 @@
                     "Voorkeur van een organisatie rond het al dan niet uitvoeren van een bepaalde dienst in samenwerking met/door meemoo."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/organization-preferences> .
 
-<visitor-space-publication>  a skos:Concept ;
+<the-archive-visitor-space-publication>  a skos:Concept ;
     skos:broader <preference> ;
-    skos:prefLabel  "Publication on the digital visitor space"@en, 
-                    "Publication sur l'espace des visiteurs digitale"@fr, 
-                    "Publicatie op de digitale bezoekersruimte"@nl ;
-    skos:definition "Indication of whether the organization wants its own digital objects to be published on the meemoo Visitor Space."@en, 
-                    "Indication si l'organisation souhaite que ses propres objets numériques soient publiés sur l'espace des visiteurs de meemoo."@fr,
-                    "Aanduiding of de organisatie wenst dat de eigen digitale objecten gepubliceerd worden op de Bezoekertool van meemoo."@nl ;
+    skos:prefLabel  "Publication on the digital visitor space on thearchive.be"@en, 
+                    "Publication sur l'espace des visiteurs digitale de hetarchief.be"@fr,
+                    "Publicatie op de digitale bezoekersruimte van hetarchief.be"@nl ;
+    skos:definition "Indication of whether the organization wants its own digital objects to be published on the meemoo Visitor Space on thearchive.be."@en, 
+                    "Indication si l'organisation souhaite que ses propres objets numériques soient publiés sur l'espace des visiteurs de meemoo sur hetarchief.be."@fr,
+                    "Aanduiding of de organisatie wenst dat de eigen digitale objecten gepubliceerd worden op de Bezoekertool van meemoo op hetarchief.be."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/organization-preferences> .
 
-<iiif-dissemination>  a skos:Concept ;
+<the-archive-publication> a skos:Concept ;
     skos:broader <preference> ;
-    skos:prefLabel  "Dissemination via IIIF"@en,
-                    "Dissemination via IIIF"@fr,
-                    "Ontsluiting via IIIF"@nl ;
+    skos:prefLabel  "Publication on thearchive.be"@en, 
+                    "Publication sur hetarchief.be"@fr, 
+                    "Publicatie op hetarchief.be"@nl ;
+    skos:definition "Indication of whether the organization wants its own digital objects to be published on The Archive."@en, 
+                    "Indication si l'organisation souhaite que ses propres objets numériques soient publiés sur Het Archief."@fr,
+                    "Aanduiding of de organisatie wenst dat de eigen digitale objecten gepubliceerd worden op Het Archief."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-preferences> .
+
+<the-archive-for-education-publication> a skos:Concept ;
+    skos:broader <preference> ;
+    skos:prefLabel  "Publication on onderwijs.hetarchief.be"@en, 
+                    "Publication sur onderwijs.hetarchief.be"@fr, 
+                    "Publicatie op onderwijs.hetarchief.be"@nl ;
+    skos:definition "Indication of whether the organization wants to give permission to use its own digital objects for educational purposes on onderwijs.hetarchief.be."@en,
+                    "Indication si l'organisation souhaite donner l'autorisation d'utiliser ses propres objets numériques à des fins éducatives sur onderwijs.hetarchief.be."@fr,
+                    "Aanduiding of de organisatie toestemming wenst te geven om de eigen digitale objecten te gebruiken voor educatieve doeleinden op onderwijs.hetarchief.be."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/organization-preferences> .
+
+<iiif-publication>  a skos:Concept ;
+    skos:broader <preference> ;
+    skos:prefLabel  "Publication via IIIF"@en,
+                    "Publication via IIIF"@fr,
+                    "Publicatie via IIIF"@nl ;
     skos:definition "Indication of whether or not the organization wants its own digital objects to be made available via meemoo's IIIF service."@en,
                     "Indication si l'organisation souhaite ou non que ses propres objets numériques soient accessibles via le service IIIF de meemoo."@fr,
                     "Aanduiding of de organisatie al dan niet wenst dat de eigen digitale objecten ontsloten kunnen worden via meemoo's IIIF service."@nl ;
