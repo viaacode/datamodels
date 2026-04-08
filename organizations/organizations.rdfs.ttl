@@ -162,3 +162,14 @@ haOrg:hasPreference a rdf:Property ;
     skos:definition "Expresses the wish of an organization regarding whether or not to perform a certain service in collaboration with/by meemoo."@en ;
     skos:definition "Exprime le souhait d'une organisation quant à la réalisation ou non d'un certain service en collaboration avec/par meemoo."@fr ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
+
+schema:vatID a rdf:Property ;
+    rdfs:domain org:Organization ;
+    rdfs:range rdfs:Literal ;
+    rdfs:label "btw-nummer"@nl ;
+    rdfs:label "VAT number"@en ;
+    rdfs:label "numéro de TVA"@fr ;
+    skos:definition "Verwijst naar het btw-nummer van de organisatie."@nl ;
+    skos:definition "Indicates the VAT number of the organization."@en ;
+    skos:definition "Indique le numéro de TVA de l'organisation."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> .
