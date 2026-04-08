@@ -309,7 +309,26 @@
     sh:description "Verwijst naar de unieke identificator van de organisatie."@nl ;
 
     sh:message "occurs more than once or its object is no xsd:string"@en ;
-  ] .
+  ],
+  [
+    a sh:PropertyShape ;
+    sh:path schema:vatID ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:nodeKind sh:Literal ;
+    sh:datatype xsd:string ;
+
+    sh:name "btw-nummer"@nl ;
+    sh:name "VAT number"@en ;
+    sh:name "numéro de TVA"@fr ;
+    
+    sh:description "Indicates the VAT number of the organisation."@en ;
+    sh:description "Indique le numéro de TVA de l'organisation."@fr ;
+    sh:description "Verwijst naar het btw-nummer van de organisatie."@nl ;
+
+    sh:message "occurs more than once or its object is no xsd:string"@en ;
+  ]
+  .
 
 <#LogoShape> a sh:NodeShape ;
   sh:targetClass haOrg:Logo .
