@@ -1,0 +1,524 @@
+#!/usr/bin/env python3
+"""Convert the local description RDFS and SHACL Turtle files to LinkML YAML.
+
+This is a small, dependency-free converter for the Turtle style used in this
+repository. It is not a general RDF parser. It extracts:
+
+* RDFS classes and haDes properties from description.rdfs.ttl
+* SHACL node shapes, property shapes, cardinalities, ranges, and sh:in values
+  from description.shacl.ttl
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+from collections import OrderedDict, defaultdict
+from pathlib import Path
+
+
+PREFIXES = OrderedDict(
+    [
+        ("linkml", "https://w3id.org/linkml/"),
+        ("haDes", "https://data.hetarchief.be/ns/description/"),
+        ("haObj", "https://data.hetarchief.be/ns/object/"),
+        ("haOrg", "https://data.hetarchief.be/ns/organization/"),
+        ("bf", "http://id.loc.gov/ontologies/bibframe/"),
+        ("dct", "http://purl.org/dc/terms/"),
+        ("dbo", "http://dbpedia.org/ontology/"),
+        ("ebucore", "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"),
+        ("edtf", "http://id.loc.gov/datatypes/edtf/"),
+        ("foaf", "http://xmlns.com/foaf/0.1/"),
+        ("org", "http://www.w3.org/ns/org#"),
+        ("owl", "http://www.w3.org/2002/07/owl#"),
+        ("premis", "http://www.loc.gov/premis/rdf/v3/"),
+        ("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#"),
+        ("rdfs", "http://www.w3.org/2000/01/rdf-schema#"),
+        ("rel", "http://id.loc.gov/vocabulary/preservation/relationshipSubType/"),
+        ("schema", "https://schema.org/"),
+        ("sh", "http://www.w3.org/ns/shacl#"),
+        ("skos", "http://www.w3.org/2004/02/skos/core#"),
+        ("xsd", "http://www.w3.org/2001/XMLSchema#"),
+        ("haCt", "https://data.hetarchief.be/id/color-type/"),
+        ("haEdTId", "https://data.hetarchief.be/id/edition-type/"),
+        ("haPrmId", "https://data.hetarchief.be/id/production-method/"),
+        ("haRot", "https://data.hetarchief.be/id/rotational-speed/"),
+    ]
+)
+
+XSD_TO_LINKML = {
+    "xsd:string": "string",
+    "rdf:langString": "string",
+    "rdfs:Literal": "string",
+    "rdf:Literal": "string",
+    "xsd:integer": "integer",
+    "xsd:nonNegativeInteger": "integer",
+    "xsd:boolean": "boolean",
+    "xsd:float": "float",
+    "xsd:decimal": "decimal",
+    "xsd:dateTime": "datetime",
+    "xsd:date": "date",
+    "xsd:time": "time",
+    "xsd:duration": "string",
+    "edtf:EDTF-level0": "string",
+    "edtf:EDTF-level1": "string",
+    "edtf:EDTF-level2": "string",
+}
+
+
+def strip_comments(text: str) -> str:
+    """Strip Turtle comments while preserving IRIs and quoted strings."""
+    output = []
+    for line in text.splitlines():
+        in_string = False
+        in_triple_string = False
+        in_angle_iri = False
+        escaped = False
+        cleaned = ""
+        i = 0
+        while i < len(line):
+            if line[i : i + 3] == '"""' and not escaped and not in_angle_iri:
+                in_triple_string = not in_triple_string
+                cleaned += line[i : i + 3]
+                i += 3
+                continue
+
+            char = line[i]
+            if not in_string and not in_triple_string:
+                if char == "<":
+                    in_angle_iri = True
+                elif char == ">":
+                    in_angle_iri = False
+
+            if char == '"' and not escaped and not in_triple_string and not in_angle_iri:
+                in_string = not in_string
+
+            if char == "#" and not in_string and not in_triple_string and not in_angle_iri:
+                break
+
+            cleaned += char
+            escaped = char == "\\" and not escaped
+            if char != "\\":
+                escaped = False
+            i += 1
+        output.append(cleaned)
+    return "\n".join(output)
+
+
+def qname_to_name(value: str) -> str:
+    value = value.strip().rstrip(";,")
+    if value.startswith("<") and value.endswith(">"):
+        iri = value[1:-1]
+        local = iri.split("/")[-1].split("#")[-1]
+        return re.sub(r"[^A-Za-z0-9_]", "_", local).strip("_") or "IRI"
+    if ":" in value:
+        _, local = value.split(":", 1)
+        return re.sub(r"[^A-Za-z0-9_]", "_", local).strip("_")
+    return re.sub(r"[^A-Za-z0-9_]", "_", value).strip("_")
+
+
+def linkml_range(value: str) -> str:
+    return XSD_TO_LINKML.get(value, qname_to_name(value))
+
+
+def quote_yaml(value: object) -> str:
+    text = str(value)
+    text = text.replace("\\", "\\\\").replace('"', '\\"').replace("\n", "\\n")
+    return f'"{text}"'
+
+
+def english_literal(block: str, predicate: str) -> str | None:
+    patterns = [
+        re.escape(predicate) + r'\s+"""(.*?)"""@en',
+        re.escape(predicate) + r'\s+"((?:[^"\\]|\\.)*)"@en',
+        re.escape(predicate) + r'\s+"""(.*?)"""',
+        re.escape(predicate) + r'\s+"((?:[^"\\]|\\.)*)"',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, block, re.S)
+        if match:
+            return match.group(1).replace('\\"', '"').strip()
+    return None
+
+
+def extract_rdfs(rdfs_text: str) -> tuple[OrderedDict[str, dict], OrderedDict[str, dict]]:
+    classes: OrderedDict[str, dict] = OrderedDict()
+    slots: OrderedDict[str, dict] = OrderedDict()
+
+    class_pattern = r"(?m)^(haDes:[^\s]+)\s+a\s+rdfs:Class\s*;(.*?)(?=\n\s*\n|\Z)"
+    for match in re.finditer(class_pattern, rdfs_text, re.S):
+        subject, block = match.group(1), match.group(2)
+        name = qname_to_name(subject)
+        classes[name] = {"class_uri": subject}
+        label = english_literal(block, "rdfs:label")
+        description = english_literal(block, "skos:definition")
+        if label:
+            classes[name]["title"] = label
+        if description:
+            classes[name]["description"] = description
+        superclasses = re.findall(r"rdfs:subClassOf\s+([^;,.\s\]]+)", block)
+        if superclasses:
+            classes[name]["is_a"] = qname_to_name(superclasses[0])
+
+    property_pattern = r"(?m)^(haDes:[^\s]+)\s+a\s+rdf:Property\s*;(.*?)(?=\n\s*\n|\Z)"
+    for match in re.finditer(property_pattern, rdfs_text, re.S):
+        subject, block = match.group(1), match.group(2)
+        name = qname_to_name(subject)
+        slots[name] = {"slot_uri": subject}
+        label = english_literal(block, "rdfs:label")
+        description = english_literal(block, "skos:definition")
+        if label:
+            slots[name]["title"] = label
+        if description:
+            slots[name]["description"] = description
+        range_match = re.search(r"rdfs:range\s+([^;,.\n]+)", block)
+        if range_match:
+            slots[name]["range_hint"] = range_match.group(1).strip()
+
+    return classes, slots
+
+
+def split_top_level_shapes(shacl_text: str) -> tuple[dict[str, str], list[tuple[str, str]]]:
+    starts = [
+        match.start()
+        for match in re.finditer(
+            r"(?m)^<#([^>]+)>\s+a\s+sh:(?:NodeShape|Nodeshape|PropertyShape)\b",
+            shacl_text,
+        )
+    ]
+    starts.append(len(shacl_text))
+
+    named_property_shapes: dict[str, str] = {}
+    node_shapes: list[tuple[str, str]] = []
+    for index in range(len(starts) - 1):
+        block = shacl_text[starts[index] : starts[index + 1]]
+        header = re.match(r"<#([^>]+)>\s+a\s+sh:([^\s;]+)", block.strip())
+        if not header:
+            continue
+        identifier, kind = header.group(1), header.group(2).lower()
+        if kind == "propertyshape":
+            named_property_shapes[identifier] = block
+        elif kind == "nodeshape":
+            node_shapes.append((identifier, block))
+    return named_property_shapes, node_shapes
+
+
+def extract_inline_property_shapes(block: str) -> list[str]:
+    shapes = []
+    index = 0
+    while True:
+        start = block.find("[", index)
+        if start < 0:
+            break
+
+        depth = 0
+        in_string = False
+        in_triple_string = False
+        escaped = False
+        cursor = start
+
+        while cursor < len(block):
+            if block[cursor : cursor + 3] == '"""' and not escaped:
+                in_triple_string = not in_triple_string
+                cursor += 3
+                continue
+
+            char = block[cursor]
+            if not in_triple_string and char == '"' and not escaped:
+                in_string = not in_string
+
+            if not in_string and not in_triple_string:
+                if char == "[":
+                    depth += 1
+                elif char == "]":
+                    depth -= 1
+                    if depth == 0:
+                        fragment = block[start : cursor + 1]
+                        if "sh:PropertyShape" in fragment:
+                            shapes.append(fragment)
+                        index = cursor + 1
+                        break
+
+            escaped = char == "\\" and not escaped
+            if char != "\\":
+                escaped = False
+            cursor += 1
+        else:
+            break
+
+    return shapes
+
+
+def parse_shacl_in_values(block: str) -> list[str]:
+    match = re.search(r"sh:in\s*\((.*?)\)\s*;", block, re.S)
+    if not match:
+        return []
+
+    inner = match.group(1)
+    values = re.findall(r'"((?:[^"\\]|\\.)*)"(?:\^\^\S+)?', inner)
+    without_strings = re.sub(r'"(?:[^"\\]|\\.)*"(?:\^\^\S+)?', " ", inner)
+    values.extend(
+        token.rstrip(";,")
+        for token in re.findall(r"<[^>]+>|[A-Za-z][A-Za-z0-9_-]*:[^\s()]+", without_strings)
+    )
+    return values
+
+
+def parse_shacl_or_ranges(block: str) -> list[str]:
+    match = re.search(r"sh:or\s*\((.*?)\)\s*;", block, re.S)
+    if not match:
+        return []
+    return re.findall(r"sh:(?:class|datatype)\s+([^\s;\]]+)", match.group(1))
+
+
+def parse_property_shape(block: str) -> tuple[str, dict] | None:
+    path_match = re.search(r"sh:path\s+([^\s;]+)\s*;", block)
+    if not path_match:
+        return None
+
+    path = path_match.group(1)
+    slot_name = qname_to_name(path)
+    slot = {"slot_uri": path}
+
+    label = english_literal(block, "sh:name")
+    description = english_literal(block, "sh:description") or english_literal(block, "skos:definition")
+    if label:
+        slot["title"] = label
+    if description:
+        slot["description"] = description
+
+    min_count = re.search(r"sh:minCount\s+(\d+)\s*;", block)
+    max_count = re.search(r"sh:maxCount\s+(\d+)\s*;", block)
+    if min_count and int(min_count.group(1)) > 0:
+        slot["required"] = True
+    slot["multivalued"] = False if max_count and int(max_count.group(1)) == 1 else True
+
+    datatype = re.search(r"sh:datatype\s+([^\s;\]]+)\s*;", block)
+    class_ = re.search(r"sh:class\s+([^\s;\]]+)\s*;", block)
+    or_ranges = parse_shacl_or_ranges(block)
+    if datatype:
+        slot["range"] = linkml_range(datatype.group(1))
+    elif class_:
+        slot["range"] = linkml_range(class_.group(1))
+    elif or_ranges:
+        slot["range"] = "Any"
+        slot["any_of"] = [linkml_range(item) for item in or_ranges]
+    else:
+        node_kind = re.search(r"sh:nodeKind\s+sh:([^\s;]+)\s*;", block)
+        slot["range"] = "uriorcurie" if node_kind and "IRI" in node_kind.group(1) else "string"
+
+    enum_values = parse_shacl_in_values(block)
+    if enum_values:
+        slot["range"] = f"{slot_name}_enum"
+        slot["enum_values"] = enum_values
+
+    if "sh:uniqueLang true" in block:
+        slot["annotations"] = {"unique_lang": True}
+
+    return slot_name, slot
+
+
+def apply_shacl(
+    shacl_text: str,
+    classes: OrderedDict[str, dict],
+    slots: OrderedDict[str, dict],
+) -> tuple[OrderedDict[str, dict], OrderedDict[str, dict], OrderedDict[str, OrderedDict[str, str]]]:
+    named_property_shapes, node_shapes = split_top_level_shapes(shacl_text)
+    enums: OrderedDict[str, OrderedDict[str, str]] = OrderedDict()
+    class_slot_usage: defaultdict[str, OrderedDict[str, dict]] = defaultdict(OrderedDict)
+
+    for identifier, block in node_shapes:
+        target_match = re.search(r"sh:targetClass\s+([^\s;]+)", block)
+        if not target_match:
+            continue
+
+        class_name = qname_to_name(target_match.group(1))
+        classes.setdefault(class_name, {"class_uri": target_match.group(1)})
+
+        property_blocks = []
+        for ref in re.findall(r"<#([^>]+)>", block):
+            if ref != identifier and ref in named_property_shapes:
+                property_blocks.append(named_property_shapes[ref])
+        property_blocks.extend(extract_inline_property_shapes(block))
+
+        for property_block in property_blocks:
+            parsed = parse_property_shape(property_block)
+            if not parsed:
+                continue
+
+            slot_name, slot_data = parsed
+            enum_values = slot_data.pop("enum_values", None)
+            slots[slot_name] = {**slots.get(slot_name, {}), **slot_data}
+
+            if enum_values:
+                enum_name = slots[slot_name]["range"]
+                enums.setdefault(enum_name, OrderedDict())
+                for value in enum_values:
+                    enums[enum_name][qname_to_name(value)] = value
+
+            class_slot_usage[class_name][slot_name] = {
+                key: slot_data[key]
+                for key in ("required", "multivalued", "range", "any_of")
+                if key in slot_data
+            }
+
+    for class_name, usage in class_slot_usage.items():
+        classes.setdefault(class_name, {"class_uri": class_name})
+        classes[class_name]["slots"] = list(usage.keys())
+        classes[class_name]["slot_usage"] = usage
+
+    add_external_range_stubs(classes, slots)
+    return classes, slots, enums
+
+
+def add_external_range_stubs(classes: OrderedDict[str, dict], slots: OrderedDict[str, dict]) -> None:
+    scalar_ranges = {
+        "string",
+        "integer",
+        "boolean",
+        "float",
+        "decimal",
+        "datetime",
+        "date",
+        "time",
+        "uriorcurie",
+        "Any",
+    }
+    for slot in slots.values():
+        ranges = []
+        if "range" in slot:
+            ranges.append(slot["range"])
+        ranges.extend(slot.get("any_of", []))
+        for range_name in ranges:
+            if range_name not in scalar_ranges and not range_name.endswith("_enum"):
+                classes.setdefault(range_name, {"class_uri": range_name})
+
+
+def emit_linkml(
+    classes: OrderedDict[str, dict],
+    slots: OrderedDict[str, dict],
+    enums: OrderedDict[str, OrderedDict[str, str]],
+) -> str:
+    lines = [
+        "id: https://data.hetarchief.be/ns/description",
+        "name: description",
+        "title: Data model Description",
+        "description: Data model to describe the content of objects.",
+        "version: 1.1.0",
+        "license: https://creativecommons.org/publicdomain/zero/1.0/",
+        "default_prefix: haDes",
+        "default_range: string",
+        "imports:",
+        "  - linkml:types",
+        "prefixes:",
+    ]
+    for prefix, uri in PREFIXES.items():
+        lines.append(f"  {prefix}: {quote_yaml(uri)}")
+
+    lines.extend(
+        [
+            "",
+            "types:",
+            "  Any:",
+            "    typeof: string",
+            "    description: Unconstrained value from SHACL union or node-kind constraints.",
+            "",
+            "classes:",
+        ]
+    )
+
+    for class_name, class_data in classes.items():
+        lines.append(f"  {class_name}:")
+        if "class_uri" in class_data:
+            lines.append(f"    class_uri: {class_data['class_uri']}")
+        if "title" in class_data:
+            lines.append(f"    title: {quote_yaml(class_data['title'])}")
+        if "description" in class_data:
+            lines.append(f"    description: {quote_yaml(class_data['description'])}")
+        if "is_a" in class_data:
+            lines.append(f"    is_a: {class_data['is_a']}")
+        if class_data.get("slots"):
+            lines.append("    slots:")
+            for slot_name in class_data["slots"]:
+                lines.append(f"      - {slot_name}")
+            lines.append("    slot_usage:")
+            for slot_name, usage in class_data["slot_usage"].items():
+                if not usage:
+                    continue
+                lines.append(f"      {slot_name}:")
+                emit_mapping(lines, usage, indent="        ")
+
+    lines.extend(["", "slots:"])
+    for slot_name, slot_data in slots.items():
+        lines.append(f"  {slot_name}:")
+        if "slot_uri" in slot_data:
+            lines.append(f"    slot_uri: {slot_data['slot_uri']}")
+        if "title" in slot_data:
+            lines.append(f"    title: {quote_yaml(slot_data['title'])}")
+        if "description" in slot_data:
+            lines.append(f"    description: {quote_yaml(slot_data['description'])}")
+        if "range" in slot_data:
+            lines.append(f"    range: {slot_data['range']}")
+        elif "range_hint" in slot_data:
+            lines.append(f"    range: {linkml_range(slot_data['range_hint'])}")
+        for key in ("required", "multivalued"):
+            if key in slot_data:
+                lines.append(f"    {key}: {str(slot_data[key]).lower()}")
+        if "any_of" in slot_data:
+            lines.append("    any_of:")
+            for range_name in slot_data["any_of"]:
+                lines.append(f"      - range: {range_name}")
+        if "annotations" in slot_data:
+            lines.append("    annotations:")
+            emit_mapping(lines, slot_data["annotations"], indent="      ")
+
+    if enums:
+        lines.extend(["", "enums:"])
+        for enum_name, values in enums.items():
+            lines.append(f"  {enum_name}:")
+            lines.append("    permissible_values:")
+            for key, value in values.items():
+                lines.append(f"      {key}:")
+                lines.append(f"        meaning: {value}")
+
+    return "\n".join(lines) + "\n"
+
+
+def emit_mapping(lines: list[str], mapping: dict, indent: str) -> None:
+    for key, value in mapping.items():
+        if key == "any_of":
+            lines.append(f"{indent}any_of:")
+            for range_name in value:
+                lines.append(f"{indent}  - range: {range_name}")
+        elif isinstance(value, bool):
+            lines.append(f"{indent}{key}: {str(value).lower()}")
+        else:
+            lines.append(f"{indent}{key}: {value}")
+
+
+def convert(rdfs_path: Path, shacl_path: Path, output_path: Path) -> None:
+    rdfs_text = strip_comments(rdfs_path.read_text())
+    shacl_text = strip_comments(shacl_path.read_text())
+    classes, slots = extract_rdfs(rdfs_text)
+    classes, slots, enums = apply_shacl(shacl_text, classes, slots)
+    output_path.write_text(emit_linkml(classes, slots, enums))
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Convert description.rdfs.ttl and description.shacl.ttl to description.linkml.yml."
+    )
+    base_dir = Path(__file__).resolve().parent
+    parser.add_argument("--rdfs", type=Path, default=base_dir / "description.rdfs.ttl")
+    parser.add_argument("--shacl", type=Path, default=base_dir / "description.shacl.ttl")
+    parser.add_argument("--output", type=Path, default=base_dir / "description.linkml.yml")
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+    convert(args.rdfs, args.shacl, args.output)
+
+
+if __name__ == "__main__":
+    main()

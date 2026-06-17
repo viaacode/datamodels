@@ -1,0 +1,1807 @@
+id: https://data.hetarchief.be/ns/description
+name: description
+title: Data model Description
+description: Data model to describe the content of objects.
+version: 1.1.0
+license: https://creativecommons.org/publicdomain/zero/1.0/
+default_prefix: haDes
+default_range: string
+imports:
+  - linkml:types
+prefixes:
+  linkml: "https://w3id.org/linkml/"
+  haDes: "https://data.hetarchief.be/ns/description/"
+  haObj: "https://data.hetarchief.be/ns/object/"
+  haOrg: "https://data.hetarchief.be/ns/organization/"
+  bf: "http://id.loc.gov/ontologies/bibframe/"
+  dct: "http://purl.org/dc/terms/"
+  dbo: "http://dbpedia.org/ontology/"
+  ebucore: "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#"
+  edtf: "http://id.loc.gov/datatypes/edtf/"
+  foaf: "http://xmlns.com/foaf/0.1/"
+  org: "http://www.w3.org/ns/org#"
+  owl: "http://www.w3.org/2002/07/owl#"
+  premis: "http://www.loc.gov/premis/rdf/v3/"
+  rdf: "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  rdfs: "http://www.w3.org/2000/01/rdf-schema#"
+  rel: "http://id.loc.gov/vocabulary/preservation/relationshipSubType/"
+  schema: "https://schema.org/"
+  sh: "http://www.w3.org/ns/shacl#"
+  skos: "http://www.w3.org/2004/02/skos/core#"
+  xsd: "http://www.w3.org/2001/XMLSchema#"
+  haCt: "https://data.hetarchief.be/id/color-type/"
+  haEdTId: "https://data.hetarchief.be/id/edition-type/"
+  haPrmId: "https://data.hetarchief.be/id/production-method/"
+  haRot: "https://data.hetarchief.be/id/rotational-speed/"
+
+types:
+  Any:
+    typeof: string
+    description: Unconstrained value from SHACL union or node-kind constraints.
+
+classes:
+  NewspaperIssue:
+    class_uri: haDes:NewspaperIssue
+    title: "Newspaper issue"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."
+    is_a: IntellectualEntity
+    slots:
+      - numberOfPages
+      - isPartOf
+      - issueNumber
+      - issuance
+      - edition
+      - hasCarrierCopy
+    slot_usage:
+      numberOfPages:
+        multivalued: false
+        range: integer
+      isPartOf:
+        multivalued: false
+        range: Newspaper
+      issueNumber:
+        multivalued: false
+        range: string
+      issuance:
+        multivalued: false
+        range: Concept
+      edition:
+        multivalued: false
+        range: edition_enum
+      hasCarrierCopy:
+        multivalued: false
+        range: WrittenWorkCarrierRepresentation
+  NewspaperIssuePage:
+    class_uri: haDes:NewspaperIssuePage
+    title: "Newspaper issue page"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."
+    is_a: IntellectualEntity
+    slots:
+      - pageNumber
+      - isp
+    slot_usage:
+      pageNumber:
+        multivalued: false
+        range: integer
+      isp:
+        required: true
+        multivalued: false
+        range: NewspaperIssue
+  DVD:
+    class_uri: haDes:DVD
+    title: "DVD"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+      - hsp
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        multivalued: false
+        range: AudiovisualCarrierRepresentation
+      hsp:
+        multivalued: true
+        range: DVDChapter
+  DVDChapter:
+    class_uri: haDes:DVDChapter
+    title: "DVD chapter"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."
+    is_a: IntellectualEntity
+    slots:
+      - isi
+      - chapterNumber
+    slot_usage:
+      isi:
+        required: true
+        multivalued: false
+        range: DVD
+      chapterNumber:
+        required: true
+        multivalued: false
+        range: integer
+  Film:
+    class_uri: haDes:Film
+    title: "Film"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        required: true
+        multivalued: false
+        range: FilmCarrierRepresentation
+  SilentFilm:
+    class_uri: haDes:SilentFilm
+    title: "Silent film"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."
+    is_a: Film
+  SoundFilm:
+    class_uri: haDes:SoundFilm
+    title: "Sound film"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."
+    is_a: Film
+  ImageReel:
+    class_uri: haDes:ImageReel
+    title: "Image reel"
+    description: "A reel of an analog film carrier that contains video."
+    is_a: PhysicalCarrier
+    slots:
+      - coloringType
+      - hasCaptioning
+      - aspectRatio
+    slot_usage:
+      coloringType:
+        multivalued: true
+        range: coloringType_enum
+      hasCaptioning:
+        multivalued: true
+        range: OpenCaptions
+      aspectRatio:
+        multivalued: false
+        range: string
+  AudioReel:
+    class_uri: haDes:AudioReel
+    title: "Audio reel"
+    description: "A reel of an analog film carrier that contains audio."
+    is_a: PhysicalCarrier
+    slots:
+      - aspectRatio
+    slot_usage:
+      aspectRatio:
+        multivalued: false
+        range: string
+  Audio:
+    class_uri: haDes:Audio
+    title: "Audio"
+    description: "This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        multivalued: false
+        range: AudiovisualCarrierRepresentation
+  Video:
+    class_uri: haDes:Video
+    title: "Video"
+    description: "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        multivalued: false
+        range: AudiovisualCarrierRepresentation
+  Image:
+    class_uri: haDes:Image
+    title: "Image"
+    description: "This class applies to media in meemoo's archive that is originally derived from a digital born image or an analog carrier of type image."
+    is_a: IntellectualEntity
+  MaterialArtwork:
+    class_uri: haDes:MaterialArtwork
+    title: "Material artwork"
+    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that entirely exists in physical reality, in space and time."
+    is_a: IntellectualEntity
+  2DArtwork:
+    class_uri: haDes:2DArtwork
+    title: "Two-dimensional artwork"
+    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in two dimensions. Two-dimensional artforms can include drawings, paintings, prints, and photographs. It does not include three-dimensional artworks such as sculptures, installations, and three-dimensional paintings."
+    is_a: MaterialArtwork
+  3DArtwork:
+    class_uri: haDes:3DArtwork
+    title: "Three-dimensional artwork"
+    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in three dimensions. Two-dimensional artforms can include sculptures, installations, and three-dimensional paintings. It does not include two-dimensional artworks such as drawings, paintings, prints, and photographs."
+    is_a: MaterialArtwork
+  RoleName:
+    class_uri: haDes:RoleName
+    title: "Role name"
+    description: "The role played, performed or filled by a thing, person or organization."
+    is_a: Concept
+  AudiovisualCarrier:
+    class_uri: haDes:AudiovisualCarrier
+    title: "Audiovisual carrier"
+    description: "A physical carrier that stores audio or audiovisual content."
+    is_a: PhysicalCarrier
+    slots:
+      - iec60094Type
+      - audioRecordingSpeed
+      - audioNoiseReduction
+    slot_usage:
+      iec60094Type:
+        multivalued: false
+        range: iec60094Type_enum
+      audioRecordingSpeed:
+        multivalued: false
+        range: audioRecordingSpeed_enum
+      audioNoiseReduction:
+        multivalued: false
+        range: audioNoiseReduction_enum
+  AudiovisualCarrierRepresentation:
+    class_uri: haDes:AudiovisualCarrierRepresentation
+    title: "Audiovisual carrier representation"
+    description: "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."
+    is_a: CarrierRepresentation
+    slots:
+      - numberOfAudioTracks
+      - numberOfAudioChannels
+      - storedAt
+    slot_usage:
+      numberOfAudioTracks:
+        multivalued: false
+        range: integer
+      numberOfAudioChannels:
+        multivalued: false
+        range: integer
+      storedAt:
+        required: true
+        multivalued: true
+        range: AudiovisualCarrier
+  WrittenWorkCarrierRepresentation:
+    class_uri: haDes:WrittenWorkCarrierRepresentation
+    title: "Written work carrier representation"
+    description: "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."
+    is_a: CarrierRepresentation
+    slots:
+      - productionMethod
+    slot_usage:
+      productionMethod:
+        multivalued: false
+        range: productionMethod_enum
+  FilmCarrierRepresentation:
+    class_uri: haDes:FilmCarrierRepresentation
+    title: "Film carrier representation"
+    description: "A representation of an archived film that is stored on a analog film carrier such as a film stock."
+    is_a: CarrierRepresentation
+    slots:
+      - numberOfMissingAudioReels
+      - numberOfMissingImageReels
+      - hasMissingAudioReels
+      - hasMissingImageReels
+      - numberOfReels
+      - storedAt
+    slot_usage:
+      numberOfMissingAudioReels:
+        multivalued: false
+        range: integer
+      numberOfMissingImageReels:
+        multivalued: false
+        range: integer
+      hasMissingAudioReels:
+        multivalued: false
+        range: boolean
+      hasMissingImageReels:
+        multivalued: false
+        range: boolean
+      numberOfReels:
+        multivalued: false
+        range: integer
+      storedAt:
+        required: true
+        multivalued: true
+        range: Any
+        any_of:
+          - range: ImageReel
+          - range: AudioReel
+  IntellectualEntity:
+    class_uri: premis:IntellectualEntity
+    slots:
+      - identifier
+      - name
+      - description
+      - duration
+      - maintainer
+      - alternateName
+      - isPartOf
+      - dateCreated
+      - datePublished
+      - creator
+      - publisher
+      - producer
+      - executor
+      - contributor
+      - actor
+      - abstract
+      - genre
+      - spatial
+      - temporal
+      - keywords
+      - inLanguage
+      - license
+      - available
+      - copyrightHolder
+      - licenseDistributor
+      - owner
+      - copyrightNotice
+      - copyrightYear
+      - rights
+      - creditText
+      - about
+      - mentions
+      - artform
+      - artMedium
+      - format
+      - height
+      - depth
+      - width
+      - hasObjectType
+      - hasCastMember
+      - synopsis
+    slot_usage:
+      identifier:
+        required: true
+        multivalued: false
+        range: string
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      duration:
+        multivalued: false
+        range: string
+      maintainer:
+        required: true
+        multivalued: false
+        range: ContentPartner
+      alternateName:
+        multivalued: true
+        range: string
+      isPartOf:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: CreativeWork
+          - range: BroadcastEvent
+      dateCreated:
+        required: true
+        multivalued: false
+        range: Any
+        any_of:
+          - range: string
+          - range: string
+          - range: string
+      datePublished:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: string
+          - range: string
+          - range: string
+      creator:
+        multivalued: true
+        range: Role
+      publisher:
+        multivalued: true
+        range: Role
+      producer:
+        multivalued: true
+        range: Role
+      executor:
+        multivalued: true
+        range: Role
+      contributor:
+        multivalued: true
+        range: Role
+      actor:
+        multivalued: true
+        range: PerformanceRole
+      abstract:
+        multivalued: true
+        range: string
+      genre:
+        multivalued: true
+        range: string
+      spatial:
+        multivalued: true
+        range: Place
+      temporal:
+        multivalued: true
+        range: string
+      keywords:
+        multivalued: true
+        range: string
+      inLanguage:
+        multivalued: true
+        range: string
+      license:
+        multivalued: true
+        range: Concept
+      available:
+        multivalued: false
+        range: datetime
+      copyrightHolder:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      licenseDistributor:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      owner:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      copyrightNotice:
+        multivalued: true
+        range: string
+      copyrightYear:
+        multivalued: true
+        range: integer
+      rights:
+        multivalued: true
+        range: string
+      creditText:
+        multivalued: true
+        range: string
+      about:
+        multivalued: true
+        range: uriorcurie
+      mentions:
+        multivalued: true
+        range: Thing
+      artform:
+        multivalued: true
+        range: string
+      artMedium:
+        multivalued: true
+        range: string
+      format:
+        required: true
+        multivalued: false
+        range: format_enum
+      height:
+        multivalued: false
+        range: QuantitativeValue
+      depth:
+        multivalued: false
+        range: QuantitativeValue
+      width:
+        multivalued: false
+        range: QuantitativeValue
+      hasObjectType:
+        multivalued: false
+        range: string
+      hasCastMember:
+        multivalued: false
+        range: string
+      synopsis:
+        multivalued: false
+        range: string
+  PhysicalCarrier:
+    class_uri: haObj:PhysicalCarrier
+    slots:
+      - identifier
+      - name
+      - description
+      - brand
+      - materialExtent
+      - preservationProblem
+      - height
+      - depth
+      - width
+      - material
+    slot_usage:
+      identifier:
+        required: true
+        multivalued: false
+        range: string
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      brand:
+        multivalued: false
+        range: Brand
+      materialExtent:
+        multivalued: false
+        range: string
+      preservationProblem:
+        multivalued: true
+        range: Concept
+      height:
+        multivalued: false
+        range: QuantitativeValue
+      depth:
+        multivalued: false
+        range: QuantitativeValue
+      width:
+        multivalued: false
+        range: QuantitativeValue
+      material:
+        multivalued: false
+        range: string
+  File:
+    class_uri: premis:File
+    slots:
+      - name
+      - description
+      - duration
+      - identifier
+      - hasCaptioning
+      - hasMediaFragment
+      - dateCreated
+      - thumbnailUrl
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      duration:
+        multivalued: false
+        range: string
+      identifier:
+        multivalued: false
+        range: string
+      hasCaptioning:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: File
+          - range: ClosedCaptions
+      hasMediaFragment:
+        multivalued: true
+        range: MediaFragment
+      dateCreated:
+        required: true
+        multivalued: false
+        range: Any
+        any_of:
+          - range: string
+          - range: string
+          - range: string
+      thumbnailUrl:
+        multivalued: false
+        range: uriorcurie
+  Representation:
+    class_uri: premis:Representation
+    slots:
+      - name
+      - description
+      - identifier
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      identifier:
+        multivalued: false
+        range: string
+  DigitalRepresentation:
+    class_uri: haObj:DigitalRepresentation
+    slots:
+      - transcript
+      - inLanguage
+      - caption
+      - creator
+      - dateCreated
+      - datePublished
+    slot_usage:
+      transcript:
+        multivalued: false
+        range: string
+      inLanguage:
+        multivalued: true
+        range: string
+      caption:
+        multivalued: false
+        range: string
+      creator:
+        multivalued: true
+        range: Role
+      dateCreated:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: string
+          - range: string
+          - range: string
+      datePublished:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: string
+          - range: string
+          - range: string
+  CarrierRepresentation:
+    class_uri: haObj:CarrierRepresentation
+  OpenCaptions:
+    class_uri: ebucore:OpenCaptions
+    slots:
+      - inLanguage
+    slot_usage:
+      inLanguage:
+        multivalued: true
+        range: string
+  Newspaper:
+    class_uri: schema:Newspaper
+    slots:
+      - identifier
+      - name
+      - alternateName
+      - startDate
+      - endDate
+      - locationCreated
+      - supplement
+      - supplementTo
+      - succeededBy
+      - precededBy
+      - publisher
+    slot_usage:
+      identifier:
+        required: true
+        multivalued: false
+        range: string
+      name:
+        required: true
+        multivalued: true
+        range: string
+      alternateName:
+        multivalued: true
+        range: string
+      startDate:
+        multivalued: false
+        range: datetime
+      endDate:
+        multivalued: false
+        range: datetime
+      locationCreated:
+        multivalued: false
+        range: Place
+      supplement:
+        multivalued: false
+        range: Newspaper
+      supplementTo:
+        multivalued: false
+        range: Newspaper
+      succeededBy:
+        multivalued: false
+        range: Newspaper
+      precededBy:
+        multivalued: false
+        range: Newspaper
+      publisher:
+        multivalued: false
+        range: Role
+  CreativeWorkSeries:
+    class_uri: schema:CreativeWorkSeries
+    slots:
+      - name
+      - description
+      - identifier
+      - position
+      - hasPart
+      - isPartOf
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      identifier:
+        multivalued: false
+        range: string
+      position:
+        multivalued: true
+        range: integer
+      hasPart:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: IntellectualEntity
+          - range: CreativeWork
+      isPartOf:
+        multivalued: true
+        range: CreativeWorkSeries
+  CreativeWorkSeason:
+    class_uri: schema:CreativeWorkSeason
+    slots:
+      - name
+      - description
+      - identifier
+      - seasonNumber
+      - hasPart
+      - isPartOf
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      identifier:
+        multivalued: false
+        range: string
+      seasonNumber:
+        multivalued: true
+        range: integer
+      hasPart:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: IntellectualEntity
+          - range: CreativeWork
+      isPartOf:
+        multivalued: true
+        range: CreativeWorkSeries
+  Episode:
+    class_uri: schema:Episode
+    slots:
+      - name
+      - description
+      - hasPart
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      hasPart:
+        multivalued: true
+        range: IntellectualEntity
+  Place:
+    class_uri: schema:Place
+    slots:
+      - name
+      - description
+      - containedInPlace
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      containedInPlace:
+        multivalued: true
+        range: Place
+  Thing:
+    class_uri: schema:Thing
+    slots:
+      - name
+      - description
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+  ArchiveComponent:
+    class_uri: schema:ArchiveComponent
+    slots:
+      - name
+      - description
+      - hasPart
+      - isPartOf
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      hasPart:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: IntellectualEntity
+          - range: ArchiveComponent
+      isPartOf:
+        multivalued: true
+        range: ArchiveComponent
+  Role:
+    class_uri: schema:Role
+    slots:
+      - creator
+      - contributor
+      - publisher
+      - actor
+      - producer
+      - executor
+      - roleName
+    slot_usage:
+      creator:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      contributor:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      publisher:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      actor:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      producer:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      executor:
+        multivalued: false
+        range: Any
+        any_of:
+          - range: Person
+          - range: Organization
+          - range: Thing
+      roleName:
+        required: true
+        multivalued: false
+        range: string
+  PerformanceRole:
+    class_uri: schema:PerformanceRole
+    slots:
+      - characterName
+    slot_usage:
+      characterName:
+        multivalued: false
+        range: string
+  QuantitativeValue:
+    class_uri: schema:QuantitativeValue
+    slots:
+      - unitCode
+      - unitText
+      - value
+    slot_usage:
+      unitCode:
+        required: true
+        multivalued: false
+        range: string
+      unitText:
+        multivalued: false
+        range: string
+      value:
+        required: true
+        multivalued: false
+        range: float
+  Collection:
+    class_uri: schema:Collection
+    slots:
+      - name
+      - description
+      - identifier
+      - collectionSize
+      - hasPart
+    slot_usage:
+      name:
+        required: true
+        multivalued: true
+        range: string
+      description:
+        multivalued: true
+        range: string
+      identifier:
+        multivalued: false
+        range: string
+      collectionSize:
+        multivalued: true
+        range: integer
+      hasPart:
+        multivalued: true
+        range: Any
+        any_of:
+          - range: IntellectualEntity
+          - range: PhysicalCarrier
+  MediaFragment:
+    class_uri: ebucore:MediaFragment
+    slots:
+      - startTime
+      - endTime
+      - regionDelimX
+      - regionDelimY
+      - width
+      - height
+      - isMediaFragmentOf
+    slot_usage:
+      startTime:
+        multivalued: false
+        range: time
+      endTime:
+        multivalued: false
+        range: time
+      regionDelimX:
+        multivalued: false
+        range: integer
+      regionDelimY:
+        multivalued: false
+        range: integer
+      width:
+        multivalued: false
+        range: integer
+      height:
+        multivalued: false
+        range: integer
+      isMediaFragmentOf:
+        multivalued: true
+        range: File
+  Annotation:
+    class_uri: ebucore:Annotation
+    slots:
+      - isAnnotatedMediaResource
+      - annotationConfidence
+      - annotationType
+      - hasAnnotationTarget
+      - hasAnnotationRelatedArtefact
+      - hasAnnotationRelatedAgent
+    slot_usage:
+      isAnnotatedMediaResource:
+        required: true
+        multivalued: true
+        range: MediaFragment
+      annotationConfidence:
+        required: true
+        multivalued: false
+        range: decimal
+      annotationType:
+        multivalued: false
+        range: Concept
+      hasAnnotationTarget:
+        required: true
+        multivalued: false
+        range: File
+      hasAnnotationRelatedArtefact:
+        required: true
+        multivalued: false
+        range: uriorcurie
+      hasAnnotationRelatedAgent:
+        multivalued: false
+        range: uriorcurie
+  TextAnnotation:
+    class_uri: ebucore:TextAnnotation
+  Person:
+    class_uri: Person
+  Organization:
+    class_uri: Organization
+  ContentPartner:
+    class_uri: ContentPartner
+  CreativeWork:
+    class_uri: CreativeWork
+  BroadcastEvent:
+    class_uri: BroadcastEvent
+  Concept:
+    class_uri: Concept
+  Brand:
+    class_uri: Brand
+  ClosedCaptions:
+    class_uri: ClosedCaptions
+
+slots:
+  numberOfPages:
+    slot_uri: haDes:numberOfPages
+    title: "number of pages"
+    description: "Indicates how many pages a certain bibliographic object contains."
+    range: integer
+    multivalued: false
+  pageNumber:
+    slot_uri: haDes:pageNumber
+    title: "page number"
+    description: "Indicates the serial number of a page within the greater object it is part of."
+    range: integer
+    multivalued: false
+  chapterNumber:
+    slot_uri: haDes:chapterNumber
+    title: "chapter number"
+    description: "Indicates the sequence number of the DVD chapter."
+    range: integer
+    required: true
+    multivalued: false
+  hasMissingAudioReels:
+    slot_uri: haDes:hasMissingAudioReels
+    title: "lost audio reels"
+    description: "Indicates if audio reels were lost (prior to any digitization processes)."
+    range: boolean
+    multivalued: false
+  hasMissingImageReels:
+    slot_uri: haDes:hasMissingImageReels
+    title: "lost image reels"
+    description: "Indicates if image reels were lost (prior to any digitization processes)."
+    range: boolean
+    multivalued: false
+  numberOfMissingAudioReels:
+    slot_uri: haDes:numberOfMissingAudioReels
+    title: "number of lost audio reels"
+    description: "Indicates if and how many audio reels were lost (prior to any digitization processes)."
+    range: integer
+    multivalued: false
+  numberOfMissingImageReels:
+    slot_uri: haDes:numberOfMissingImageReels
+    title: "number of lost image reels"
+    description: "Indicates if and how many image reels were lost (prior to any digitization processes)."
+    range: integer
+    multivalued: false
+  coloringType:
+    slot_uri: haDes:coloringType
+    title: "coloring type"
+    description: "Indication of the coloring of the image reel."
+    range: coloringType_enum
+    multivalued: true
+  numberOfReels:
+    slot_uri: haDes:numberOfReels
+    title: "number of reels"
+    description: "Indicates the number of reels (regardless of type) that the film consists of."
+    range: integer
+    multivalued: false
+  iec60094Type:
+    slot_uri: haDes:iec60094Type
+    title: "iec-60094 type"
+    description: "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."
+    range: iec60094Type_enum
+    multivalued: false
+  audioRecordingSpeed:
+    slot_uri: haDes:audioRecordingSpeed
+    title: "audio recording speed"
+    description: "The speed with which open reel audio or a gramophone record is recorded."
+    range: audioRecordingSpeed_enum
+    multivalued: false
+  audioNoiseReduction:
+    slot_uri: haDes:audioNoiseReduction
+    title: "audio noise reduction"
+    description: "The technology used for noise reduction in audio."
+    range: audioNoiseReduction_enum
+    multivalued: false
+  numberOfAudioTracks:
+    slot_uri: haDes:numberOfAudioTracks
+    title: "number of audio tracks"
+    description: "The number of audio tracks that the representation contains."
+    range: integer
+    multivalued: false
+  numberOfAudioChannels:
+    slot_uri: haDes:numberOfAudioChannels
+    title: "number of audio channels"
+    description: "The number of parallel audio channels that the audio track contains."
+    range: integer
+    multivalued: false
+  executor:
+    slot_uri: haDes:executor
+    title: "executor"
+    description: "The executor of the CreativeWork."
+    range: Any
+    multivalued: false
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  broadcastingOrganization:
+    slot_uri: haDes:broadcastingOrganization
+    title: "broadcasting organization"
+    description: "The entity primarily responsible for distributing and making accessible an audiovisual item to third parties through broadcasting, sale, rental, etc."
+    range: Organization
+    multivalued: false
+  licenseDistributor:
+    slot_uri: haDes:licenseDistributor
+    title: "license distributor"
+    description: "The license distributor of the intellectual entity."
+    range: Any
+    multivalued: true
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  aspectRatio:
+    slot_uri: haDes:aspectRatio
+    title: "aspect ratio"
+    description: "Proportional relationship between an image's width and its height."
+    range: string
+    multivalued: false
+  identifier:
+    slot_uri: schema:identifier
+    title: "identifier"
+    range: string
+    required: true
+    multivalued: false
+  name:
+    slot_uri: schema:name
+    title: "name"
+    range: string
+    required: true
+    multivalued: true
+    annotations:
+      unique_lang: true
+  description:
+    slot_uri: schema:description
+    title: "description"
+    range: string
+    multivalued: true
+    annotations:
+      unique_lang: true
+  duration:
+    slot_uri: schema:duration
+    title: "duration"
+    range: string
+    multivalued: false
+  maintainer:
+    slot_uri: schema:maintainer
+    title: "maintainer"
+    range: ContentPartner
+    required: true
+    multivalued: false
+  alternateName:
+    slot_uri: schema:alternateName
+    title: "alternate name"
+    range: string
+    multivalued: true
+  isPartOf:
+    slot_uri: schema:isPartOf
+    title: "is part of"
+    description: "Indicates the newspaper series that a specific newspaper edition is part of."
+    range: ArchiveComponent
+    multivalued: true
+    any_of:
+      - range: CreativeWork
+      - range: BroadcastEvent
+  dateCreated:
+    slot_uri: schema:dateCreated
+    title: "date created"
+    range: Any
+    required: true
+    multivalued: false
+    any_of:
+      - range: string
+      - range: string
+      - range: string
+  datePublished:
+    slot_uri: schema:datePublished
+    title: "date published"
+    range: Any
+    multivalued: false
+    any_of:
+      - range: string
+      - range: string
+      - range: string
+  creator:
+    slot_uri: schema:creator
+    title: "creator"
+    range: Any
+    multivalued: false
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  publisher:
+    slot_uri: schema:publisher
+    title: "publisher"
+    description: "Publisher of the newspaper."
+    range: Any
+    multivalued: false
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  producer:
+    slot_uri: schema:producer
+    title: "producer"
+    range: Any
+    multivalued: false
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  contributor:
+    slot_uri: schema:contributor
+    title: "contributor"
+    range: Any
+    multivalued: false
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  actor:
+    slot_uri: schema:actor
+    title: "actor"
+    range: Any
+    multivalued: false
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  abstract:
+    slot_uri: schema:abstract
+    title: "abstract"
+    range: string
+    multivalued: true
+    annotations:
+      unique_lang: true
+  genre:
+    slot_uri: schema:genre
+    title: "genre"
+    range: string
+    multivalued: true
+  spatial:
+    slot_uri: schema:spatial
+    title: "spatial"
+    range: Place
+    multivalued: true
+  temporal:
+    slot_uri: schema:temporal
+    title: "temporal"
+    range: string
+    multivalued: true
+  keywords:
+    slot_uri: schema:keywords
+    title: "keywords"
+    range: string
+    multivalued: true
+  inLanguage:
+    slot_uri: schema:inLanguage
+    title: "in language"
+    description: "Indicates the language of the embedded captioning."
+    range: string
+    multivalued: true
+  license:
+    slot_uri: schema:license
+    title: "license"
+    range: Concept
+    multivalued: true
+  available:
+    slot_uri: dct:available
+    title: "date available"
+    range: datetime
+    multivalued: false
+  copyrightHolder:
+    slot_uri: schema:copyrightHolder
+    title: "copyright holder"
+    range: Any
+    multivalued: true
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  owner:
+    slot_uri: haDes:owner
+    title: "owner"
+    range: Any
+    multivalued: true
+    any_of:
+      - range: Person
+      - range: Organization
+      - range: Thing
+  copyrightNotice:
+    slot_uri: schema:copyrightNotice
+    title: "copyright notice"
+    range: string
+    multivalued: true
+  copyrightYear:
+    slot_uri: schema:copyrightYear
+    title: "copyright year"
+    range: integer
+    multivalued: true
+  rights:
+    slot_uri: dct:rights
+    title: "rights information"
+    range: string
+    multivalued: true
+  creditText:
+    slot_uri: schema:creditText
+    title: "credit text"
+    description: "Text to credit person(s) and/or organization(s) associated with the intellectual entity."
+    range: string
+    multivalued: true
+  about:
+    slot_uri: schema:about
+    title: "about"
+    range: uriorcurie
+    multivalued: true
+  mentions:
+    slot_uri: schema:mentions
+    title: "mentions"
+    range: Thing
+    multivalued: true
+  artform:
+    slot_uri: schema:artform
+    title: "artform"
+    range: string
+    multivalued: true
+  artMedium:
+    slot_uri: schema:artMedium
+    title: "art medium"
+    range: string
+    multivalued: true
+  format:
+    slot_uri: dct:format
+    title: "format"
+    range: format_enum
+    required: true
+    multivalued: false
+  height:
+    slot_uri: ebucore:height
+    title: "height"
+    description: "The height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."
+    range: integer
+    multivalued: false
+  depth:
+    slot_uri: schema:depth
+    title: "depth"
+    range: QuantitativeValue
+    multivalued: false
+  width:
+    slot_uri: ebucore:width
+    title: "width"
+    description: "The width of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."
+    range: integer
+    multivalued: false
+  hasObjectType:
+    slot_uri: ebucore:hasObjectType
+    title: "object type"
+    range: string
+    multivalued: false
+  hasCastMember:
+    slot_uri: ebucore:hasCastMember
+    title: "castmembers"
+    description: "The cast members of a TV or theatre production."
+    range: string
+    multivalued: false
+  synopsis:
+    slot_uri: ebucore:synopsis
+    title: "synopsis"
+    description: "The plot summary of the TV or theatre production."
+    range: string
+    multivalued: false
+  brand:
+    slot_uri: schema:brand
+    title: "brand"
+    description: "Brand of the physical carrier."
+    range: Brand
+    multivalued: false
+  materialExtent:
+    slot_uri: schema:materialExtent
+    title: "material extent"
+    description: "Indicates the physical extent of an object (e.g. A4, A5 etc.)."
+    range: string
+    multivalued: false
+  preservationProblem:
+    slot_uri: haObj:preservationProblem
+    title: "preservation problem"
+    description: "Phenomenon-usually under the influence of physical or chemical factors-that may jeopardize the integrity and consultability of the data on the carrier."
+    range: Concept
+    multivalued: true
+  material:
+    slot_uri: schema:material
+    title: "material"
+    description: "The base material that makes up the physical carrier."
+    range: string
+    multivalued: false
+  hasCaptioning:
+    slot_uri: ebucore:hasCaptioning
+    title: "has (embedded) captioning"
+    description: "Indicates the (embedded) captioning of an image reel ."
+    range: OpenCaptions
+    multivalued: true
+    any_of:
+      - range: File
+      - range: ClosedCaptions
+  hasMediaFragment:
+    slot_uri: ebucore:hasMediaFragment
+    title: "has media fragment"
+    description: "A fragment from this file."
+    range: MediaFragment
+    multivalued: true
+  thumbnailUrl:
+    slot_uri: schema:thumbnailUrl
+    title: "thumbnail"
+    description: "A thumbnail image relevant to the Digital Representation."
+    range: uriorcurie
+    multivalued: false
+  transcript:
+    slot_uri: schema:transcript
+    title: "transcription"
+    range: string
+    multivalued: false
+  caption:
+    slot_uri: schema:caption
+    title: "caption"
+    range: string
+    multivalued: false
+  hasCarrierCopy:
+    slot_uri: haObj:hasCarrierCopy
+    title: "has carrier copy"
+    description: "The representation stored on a physical carrier."
+    range: FilmCarrierRepresentation
+    required: true
+    multivalued: false
+  hsp:
+    slot_uri: rel:hsp
+    title: "has part"
+    description: "Indicates the DVD chapters that make up the DVD as a whole."
+    range: DVDChapter
+    multivalued: true
+  isi:
+    slot_uri: rel:isi
+    title: "is part of"
+    description: "Indicates the DVD that the chapter is part of."
+    range: DVD
+    required: true
+    multivalued: false
+  storedAt:
+    slot_uri: premis:storedAt
+    title: "stored at"
+    description: "The reel where the representation is stored."
+    range: Any
+    required: true
+    multivalued: true
+    any_of:
+      - range: ImageReel
+      - range: AudioReel
+  issueNumber:
+    slot_uri: schema:issueNumber
+    title: "issue number"
+    description: "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."
+    range: string
+    multivalued: false
+  issuance:
+    slot_uri: bf:issuance
+    title: "frequency of issuance"
+    description: "Indicates how frequent a newspaper is issued, e.g. twice a day, daily, weekly etc."
+    range: Concept
+    multivalued: false
+  edition:
+    slot_uri: bf:edition
+    title: "publication type"
+    description: "Indicates the specific publication type of a newspaper edition (e.g. morning, evening, weekend newspaper edition, etc.)."
+    range: edition_enum
+    multivalued: false
+  isp:
+    slot_uri: rel:isp
+    title: "is part of"
+    description: "Indicates the newspaper issue that a specific page is part of."
+    range: NewspaperIssue
+    required: true
+    multivalued: false
+  productionMethod:
+    slot_uri: bf:productionMethod
+    title: "production method"
+    description: "The process used to produce the carrier representation of the written work (e.g. handwritten, typed, printed)."
+    range: productionMethod_enum
+    multivalued: false
+  startDate:
+    slot_uri: schema:startDate
+    title: "start date"
+    range: datetime
+    multivalued: false
+  endDate:
+    slot_uri: schema:endDate
+    title: "end date"
+    range: datetime
+    multivalued: false
+  locationCreated:
+    slot_uri: schema:locationCreated
+    title: "location created"
+    description: "The location where the Newspaper was created."
+    range: Place
+    multivalued: false
+  supplement:
+    slot_uri: bf:supplement
+    title: "supplement"
+    description: "Newspaper that updates or otherwise complements the predominant newspaper."
+    range: Newspaper
+    multivalued: false
+  supplementTo:
+    slot_uri: bf:supplementTo
+    title: "supplement to"
+    description: "Newspaper that is updated or otherwise complemented by the augmenting newspaper."
+    range: Newspaper
+    multivalued: false
+  succeededBy:
+    slot_uri: bf:succeededBy
+    title: "succeeded by"
+    description: "Newspaper that succeeds the newspaper being described, e.g., later in time or after in a narrative."
+    range: Newspaper
+    multivalued: false
+  precededBy:
+    slot_uri: bf:precededBy
+    title: "preceded by"
+    description: "Newspaper that precedes the newspaper being described, e.g., is earlier in time or before in narrative."
+    range: Newspaper
+    multivalued: false
+  position:
+    slot_uri: schema:position
+    title: "position"
+    range: integer
+    multivalued: true
+  hasPart:
+    slot_uri: schema:hasPart
+    title: "has part"
+    description: "Indicates an IntellectualEntity or PhysicalCarrier that is part of this collection."
+    range: Any
+    multivalued: true
+    any_of:
+      - range: IntellectualEntity
+      - range: PhysicalCarrier
+  seasonNumber:
+    slot_uri: schema:seasonNumber
+    title: "season number"
+    range: integer
+    multivalued: true
+  containedInPlace:
+    slot_uri: schema:containedInPlace
+    title: "is contained in place"
+    range: Place
+    multivalued: true
+  roleName:
+    slot_uri: schema:roleName
+    title: "role name"
+    range: string
+    required: true
+    multivalued: false
+  characterName:
+    slot_uri: schema:characterName
+    title: "character name"
+    range: string
+    multivalued: false
+  unitCode:
+    slot_uri: schema:unitCode
+    title: "unit code"
+    range: string
+    required: true
+    multivalued: false
+  unitText:
+    slot_uri: schema:unitText
+    title: "unit text"
+    range: string
+    multivalued: false
+  value:
+    slot_uri: schema:value
+    title: "value"
+    range: float
+    required: true
+    multivalued: false
+  collectionSize:
+    slot_uri: schema:collectionSize
+    title: "collection size"
+    description: "The number of items in the Collection."
+    range: integer
+    multivalued: true
+  startTime:
+    slot_uri: schema:startTime
+    title: "start time"
+    description: "The time at which the fragment starts."
+    range: time
+    multivalued: false
+  endTime:
+    slot_uri: schema:endTime
+    title: "end time"
+    description: "The time at which the fragment stops."
+    range: time
+    multivalued: false
+  regionDelimX:
+    slot_uri: ebucore:regionDelimX
+    title: "region delimiter (x-axis)"
+    description: "To define the top left corner of a zone on the x-axis."
+    range: integer
+    multivalued: false
+  regionDelimY:
+    slot_uri: ebucore:regionDelimY
+    title: "region delimiter (y-axis)"
+    description: "To define the top left corner of a zone on the y-axis."
+    range: integer
+    multivalued: false
+  isMediaFragmentOf:
+    slot_uri: ebucore:isMediaFragmentOf
+    title: "is Media Fragment Of"
+    description: "The file of which this is a fragment."
+    range: File
+    multivalued: true
+  isAnnotatedMediaResource:
+    slot_uri: ebucore:isAnnotatedMediaResource
+    title: "annotates"
+    description: "The media fragment that is linked to this Annotation."
+    range: MediaFragment
+    required: true
+    multivalued: true
+  annotationConfidence:
+    slot_uri: ebucore:annotationConfidence
+    title: "annotation confidence"
+    description: "Number to estimate the confidence in the Annotation."
+    range: decimal
+    required: true
+    multivalued: false
+  annotationType:
+    slot_uri: ebucore:annotationType
+    title: "annotation type"
+    description: "To define a type of Annotation, such as a recognized face or Named Entity."
+    range: Concept
+    multivalued: false
+  hasAnnotationTarget:
+    slot_uri: ebucore:hasAnnotationTarget
+    title: "annotation target"
+    description: "To define the target file to which the Annotation applies."
+    range: File
+    required: true
+    multivalued: false
+  hasAnnotationRelatedArtefact:
+    slot_uri: ebucore:hasAnnotationRelatedArtefact
+    title: "annotation subject"
+    description: "The subject of the Annotation."
+    range: uriorcurie
+    required: true
+    multivalued: false
+  hasAnnotationRelatedAgent:
+    slot_uri: ebucore:hasAnnotationRelatedAgent
+    title: "annotation  person subject"
+    description: "The subject (person) of the Annotation."
+    range: uriorcurie
+    multivalued: false
+
+enums:
+  format_enum:
+    permissible_values:
+      audio:
+        meaning: audio
+      video:
+        meaning: video
+      film:
+        meaning: film
+      paper:
+        meaning: paper
+      newspaper:
+        meaning: newspaper
+      newspaperpage:
+        meaning: newspaperpage
+      videofragment:
+        meaning: videofragment
+      audiofragment:
+        meaning: audiofragment
+      image:
+        meaning: image
+  iec60094Type_enum:
+    permissible_values:
+      I:
+        meaning: <https://data.hetarchief.be/id/iec60094-type/I>
+      II:
+        meaning: <https://data.hetarchief.be/id/iec60094-type/II>
+      III:
+        meaning: <https://data.hetarchief.be/id/iec60094-type/III>
+      IV:
+        meaning: <https://data.hetarchief.be/id/iec60094-type/IV>
+  audioRecordingSpeed_enum:
+    permissible_values:
+      variable:
+        meaning: haRot:variable
+      16_rpm:
+        meaning: haRot:16-rpm
+      19_cm_s:
+        meaning: haRot:19-cm-s
+      2_375_cm_s:
+        meaning: haRot:2.375-cm-s
+      33_1_3_rpm:
+        meaning: haRot:33-1-3-rpm
+      38_cm_s:
+        meaning: haRot:38-cm-s
+      4_75_cm_s:
+        meaning: haRot:4.75-cm-s
+      72_cm_s:
+        meaning: haRot:72-cm-s
+      78_rpm:
+        meaning: haRot:78-rpm
+      90_rpm:
+        meaning: haRot:90-rpm
+      9_5_cm_s:
+        meaning: haRot:9.5-cm-s
+  audioNoiseReduction_enum:
+    permissible_values:
+      DBX:
+        meaning: DBX
+      Dolby_A:
+        meaning: Dolby A
+      Dolby_B:
+        meaning: Dolby B
+      Dolby_C:
+        meaning: Dolby C
+      Dolby_D:
+        meaning: Dolby D
+  edition_enum:
+    permissible_values:
+      morning_edition:
+        meaning: haEdTId:morning-edition
+      afternoon_edition:
+        meaning: haEdTId:afternoon-edition
+      evening_edition:
+        meaning: haEdTId:evening-edition
+      weekend_edition:
+        meaning: haEdTId:weekend-edition
+  productionMethod_enum:
+    permissible_values:
+      handwritten:
+        meaning: haPrmId:handwritten
+      typed:
+        meaning: haPrmId:typed
+      printed:
+        meaning: haPrmId:printed
+  coloringType_enum:
+    permissible_values:
+      BandW:
+        meaning: haCt:BandW
+      Color:
+        meaning: haCt:Color
+      Colorized:
+        meaning: haCt:Colorized
+      Composite:
+        meaning: haCt:Composite
+      Tinted:
+        meaning: haCt:Tinted
+      Toned:
+        meaning: haCt:Toned
+      UnknownColorType:
+        meaning: haCt:UnknownColorType
