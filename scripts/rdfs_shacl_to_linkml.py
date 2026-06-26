@@ -127,6 +127,20 @@ def quote_yaml(value: object) -> str:
     return f'"{text}"'
 
 
+def enum_meaning(value: str) -> str | None:
+    if value.startswith("<") and value.endswith(">"):
+        return value[1:-1]
+    if re.match(r"^[A-Za-z][A-Za-z0-9_-]*:", value):
+        return value
+    return None
+
+
+def yaml_key(value: str) -> str:
+    if re.match(r"^[A-Za-z0-9_. -]+$", value):
+        return value
+    return quote_yaml(value)
+
+
 def english_literal(block: str, predicate: str) -> str | None:
     patterns = [
         re.escape(predicate) + r'\s+"""(.*?)"""@en',
@@ -478,8 +492,10 @@ def emit_linkml(
             lines.append(f"  {enum_name}:")
             lines.append("    permissible_values:")
             for key, value in values.items():
-                lines.append(f"      {key}:")
-                lines.append(f"        meaning: {value}")
+                meaning = enum_meaning(value)
+                lines.append(f"      {yaml_key(value if meaning is None else key)}:")
+                if meaning is not None:
+                    lines.append(f"        meaning: {meaning}")
 
     return "\n".join(lines) + "\n"
 
@@ -509,8 +525,8 @@ def parse_args() -> argparse.Namespace:
         description="Convert description.rdfs.ttl and description.shacl.ttl to description.linkml.yml."
     )
     base_dir = Path(__file__).resolve().parent
-    parser.add_argument("--rdfs", type=Path, default=base_dir / "description.rdfs.ttl")
-    parser.add_argument("--shacl", type=Path, default=base_dir / "description.shacl.ttl")
+    parser.add_argument("--rdfs", type=Path, default=base_dir.parent / "description" / "description.rdfs.ttl")
+    parser.add_argument("--shacl", type=Path, default=base_dir.parent / "description" / "description.shacl.ttl")
     parser.add_argument("--output", type=Path, default=base_dir / "description.linkml.yml")
     return parser.parse_args()
 

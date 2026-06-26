@@ -1708,33 +1708,24 @@ enums:
   format_enum:
     permissible_values:
       audio:
-        meaning: audio
       video:
-        meaning: video
       film:
-        meaning: film
       paper:
-        meaning: paper
       newspaper:
-        meaning: newspaper
       newspaperpage:
-        meaning: newspaperpage
       videofragment:
-        meaning: videofragment
       audiofragment:
-        meaning: audiofragment
       image:
-        meaning: image
   iec60094Type_enum:
     permissible_values:
       I:
-        meaning: <https://data.hetarchief.be/id/iec60094-type/I>
+        meaning: https://data.hetarchief.be/id/iec60094-type/I
       II:
-        meaning: <https://data.hetarchief.be/id/iec60094-type/II>
+        meaning: https://data.hetarchief.be/id/iec60094-type/II
       III:
-        meaning: <https://data.hetarchief.be/id/iec60094-type/III>
+        meaning: https://data.hetarchief.be/id/iec60094-type/III
       IV:
-        meaning: <https://data.hetarchief.be/id/iec60094-type/IV>
+        meaning: https://data.hetarchief.be/id/iec60094-type/IV
   audioRecordingSpeed_enum:
     permissible_values:
       variable:
@@ -1762,15 +1753,10 @@ enums:
   audioNoiseReduction_enum:
     permissible_values:
       DBX:
-        meaning: DBX
-      Dolby_A:
-        meaning: Dolby A
-      Dolby_B:
-        meaning: Dolby B
-      Dolby_C:
-        meaning: Dolby C
-      Dolby_D:
-        meaning: Dolby D
+      Dolby A:
+      Dolby B:
+      Dolby C:
+      Dolby D:
   edition_enum:
     permissible_values:
       morning_edition:
