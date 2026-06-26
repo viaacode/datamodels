@@ -512,9 +512,13 @@ def emit_mapping(lines: list[str], mapping: dict, indent: str) -> None:
             lines.append(f"{indent}{key}: {value}")
 
 
-def convert(rdfs_path: Path, shacl_path: Path, output_path: Path) -> None:
-    rdfs_text = strip_comments(rdfs_path.read_text())
-    shacl_text = strip_comments(shacl_path.read_text())
+def read_all(paths: list[Path]) -> str:
+    return "\n\n".join(path.read_text() for path in paths)
+
+
+def convert(rdfs_paths: list[Path], shacl_paths: list[Path], output_path: Path) -> None:
+    rdfs_text = strip_comments(read_all(rdfs_paths))
+    shacl_text = strip_comments(read_all(shacl_paths))
     classes, slots = extract_rdfs(rdfs_text)
     classes, slots, enums = apply_shacl(shacl_text, classes, slots)
     output_path.write_text(emit_linkml(classes, slots, enums))
@@ -525,8 +529,20 @@ def parse_args() -> argparse.Namespace:
         description="Convert description.rdfs.ttl and description.shacl.ttl to description.linkml.yml."
     )
     base_dir = Path(__file__).resolve().parent
-    parser.add_argument("--rdfs", type=Path, default=base_dir.parent / "description" / "description.rdfs.ttl")
-    parser.add_argument("--shacl", type=Path, default=base_dir.parent / "description" / "description.shacl.ttl")
+    parser.add_argument(
+        "--rdfs",
+        type=Path,
+        nargs="+",
+        default=[base_dir.parent / "description" / "description.rdfs.ttl"],
+        help="RDFS Turtle file(s), concatenated in the order supplied.",
+    )
+    parser.add_argument(
+        "--shacl",
+        type=Path,
+        nargs="+",
+        default=[base_dir.parent / "description" / "description.shacl.ttl"],
+        help="SHACL Turtle file(s), concatenated in the order supplied.",
+    )
     parser.add_argument("--output", type=Path, default=base_dir / "description.linkml.yml")
     return parser.parse_args()
 
