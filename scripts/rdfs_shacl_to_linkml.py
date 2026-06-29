@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import sys
 from collections import OrderedDict, defaultdict
 from pathlib import Path
 
@@ -60,9 +61,6 @@ XSD_TO_LINKML = {
     "xsd:date": "date",
     "xsd:time": "time",
     "xsd:duration": "string",
-    "edtf:EDTF-level0": "string",
-    "edtf:EDTF-level1": "string",
-    "edtf:EDTF-level2": "string",
 }
 
 
@@ -117,8 +115,30 @@ def qname_to_name(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9_]", "_", value).strip("_")
 
 
-def linkml_range(value: str) -> str:
+def linkml_range(value: str, custom_type_names: dict[str, str] | None = None) -> str:
+    if custom_type_names and value in custom_type_names:
+        return custom_type_names[value]
     return XSD_TO_LINKML.get(value, qname_to_name(value))
+
+
+def custom_datatypes(shacl_text: str) -> OrderedDict[str, str]:
+    custom_type_names: OrderedDict[str, str] = OrderedDict()
+    class_names = {
+        qname_to_name(value)
+        for value in re.findall(r"sh:(?:class|targetClass)\s+([^\s;\]]+)", shacl_text)
+    }
+    for datatype in re.findall(r"sh:datatype\s+([^\s;\]]+)", shacl_text):
+        if datatype not in XSD_TO_LINKML:
+            type_name = qname_to_name(datatype)
+            if type_name in class_names:
+                print(
+                    f"warning: {datatype} is used as both sh:datatype and sh:class; "
+                    f"emitting datatype as {type_name}_datatype",
+                    file=sys.stderr,
+                )
+                type_name = f"{type_name}_datatype"
+            custom_type_names[datatype] = type_name
+    return custom_type_names
 
 
 def quote_yaml(value: object) -> str:
@@ -278,14 +298,14 @@ def parse_shacl_in_values(block: str) -> list[str]:
     return values
 
 
-def parse_shacl_or_ranges(block: str) -> list[str]:
+def parse_shacl_or_ranges(block: str) -> list[tuple[str, str]]:
     match = re.search(r"sh:or\s*\((.*?)\)\s*;", block, re.S)
     if not match:
         return []
-    return re.findall(r"sh:(?:class|datatype)\s+([^\s;\]]+)", match.group(1))
+    return re.findall(r"sh:(class|datatype)\s+([^\s;\]]+)", match.group(1))
 
 
-def parse_property_shape(block: str) -> tuple[str, dict] | None:
+def parse_property_shape(block: str, custom_type_names: dict[str, str]) -> tuple[str, dict] | None:
     path_match = re.search(r"sh:path\s+([^\s;]+)\s*;", block)
     if not path_match:
         return None
@@ -311,12 +331,15 @@ def parse_property_shape(block: str) -> tuple[str, dict] | None:
     class_ = re.search(r"sh:class\s+([^\s;\]]+)\s*;", block)
     or_ranges = parse_shacl_or_ranges(block)
     if datatype:
-        slot["range"] = linkml_range(datatype.group(1))
+        slot["range"] = linkml_range(datatype.group(1), custom_type_names)
     elif class_:
         slot["range"] = linkml_range(class_.group(1))
     elif or_ranges:
         slot["range"] = "Any"
-        slot["any_of"] = [linkml_range(item) for item in or_ranges]
+        slot["any_of"] = [
+            linkml_range(value, custom_type_names if kind == "datatype" else None)
+            for kind, value in or_ranges
+        ]
     else:
         node_kind = re.search(r"sh:nodeKind\s+sh:([^\s;]+)\s*;", block)
         slot["range"] = "uriorcurie" if node_kind and "IRI" in node_kind.group(1) else "string"
@@ -336,9 +359,15 @@ def apply_shacl(
     shacl_text: str,
     classes: OrderedDict[str, dict],
     slots: OrderedDict[str, dict],
-) -> tuple[OrderedDict[str, dict], OrderedDict[str, dict], OrderedDict[str, OrderedDict[str, str]]]:
+) -> tuple[
+    OrderedDict[str, dict],
+    OrderedDict[str, dict],
+    OrderedDict[str, OrderedDict[str, str]],
+    OrderedDict[str, str],
+]:
     named_property_shapes, node_shapes = split_top_level_shapes(shacl_text)
     enums: OrderedDict[str, OrderedDict[str, str]] = OrderedDict()
+    custom_type_names = custom_datatypes(shacl_text)
     class_slot_usage: defaultdict[str, OrderedDict[str, dict]] = defaultdict(OrderedDict)
 
     for identifier, block in node_shapes:
@@ -356,7 +385,7 @@ def apply_shacl(
         property_blocks.extend(extract_inline_property_shapes(block))
 
         for property_block in property_blocks:
-            parsed = parse_property_shape(property_block)
+            parsed = parse_property_shape(property_block, custom_type_names)
             if not parsed:
                 continue
 
@@ -381,11 +410,15 @@ def apply_shacl(
         classes[class_name]["slots"] = list(usage.keys())
         classes[class_name]["slot_usage"] = usage
 
-    add_external_range_stubs(classes, slots)
-    return classes, slots, enums
+    add_external_range_stubs(classes, slots, custom_type_names)
+    return classes, slots, enums, custom_type_names
 
 
-def add_external_range_stubs(classes: OrderedDict[str, dict], slots: OrderedDict[str, dict]) -> None:
+def add_external_range_stubs(
+    classes: OrderedDict[str, dict],
+    slots: OrderedDict[str, dict],
+    custom_type_names: OrderedDict[str, str],
+) -> None:
     scalar_ranges = {
         "string",
         "integer",
@@ -397,6 +430,7 @@ def add_external_range_stubs(classes: OrderedDict[str, dict], slots: OrderedDict
         "time",
         "uriorcurie",
         "Any",
+        *custom_type_names.values(),
     }
     for slot in slots.values():
         ranges = []
@@ -412,6 +446,7 @@ def emit_linkml(
     classes: OrderedDict[str, dict],
     slots: OrderedDict[str, dict],
     enums: OrderedDict[str, OrderedDict[str, str]],
+    custom_type_names: OrderedDict[str, str],
 ) -> str:
     lines = [
         "id: https://data.hetarchief.be/ns/description",
@@ -436,10 +471,12 @@ def emit_linkml(
             "  Any:",
             "    typeof: string",
             "    description: Unconstrained value from SHACL union or node-kind constraints.",
-            "",
-            "classes:",
         ]
     )
+    for type_uri, type_name in custom_type_names.items():
+        lines.extend([f"  {type_name}:", "    typeof: string", f"    uri: {type_uri}"])
+
+    lines.extend(["", "classes:"])
 
     for class_name, class_data in classes.items():
         lines.append(f"  {class_name}:")
@@ -520,8 +557,8 @@ def convert(rdfs_paths: list[Path], shacl_paths: list[Path], output_path: Path) 
     rdfs_text = strip_comments(read_all(rdfs_paths))
     shacl_text = strip_comments(read_all(shacl_paths))
     classes, slots = extract_rdfs(rdfs_text)
-    classes, slots, enums = apply_shacl(shacl_text, classes, slots)
-    output_path.write_text(emit_linkml(classes, slots, enums))
+    classes, slots, enums, custom_type_names = apply_shacl(shacl_text, classes, slots)
+    output_path.write_text(emit_linkml(classes, slots, enums, custom_type_names))
 
 
 def parse_args() -> argparse.Namespace:

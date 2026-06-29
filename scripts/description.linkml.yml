@@ -38,6 +38,15 @@ types:
   Any:
     typeof: string
     description: Unconstrained value from SHACL union or node-kind constraints.
+  EDTF_level0:
+    typeof: string
+    uri: edtf:EDTF-level0
+  EDTF_level1:
+    typeof: string
+    uri: edtf:EDTF-level1
+  EDTF_level2:
+    typeof: string
+    uri: edtf:EDTF-level2
 
 classes:
   NewspaperIssue:
@@ -396,16 +405,16 @@ classes:
         multivalued: false
         range: Any
         any_of:
-          - range: string
-          - range: string
-          - range: string
+          - range: EDTF_level0
+          - range: EDTF_level1
+          - range: EDTF_level2
       datePublished:
         multivalued: false
         range: Any
         any_of:
-          - range: string
-          - range: string
-          - range: string
+          - range: EDTF_level0
+          - range: EDTF_level1
+          - range: EDTF_level2
       creator:
         multivalued: true
         range: Role
@@ -600,9 +609,9 @@ classes:
         multivalued: false
         range: Any
         any_of:
-          - range: string
-          - range: string
-          - range: string
+          - range: EDTF_level0
+          - range: EDTF_level1
+          - range: EDTF_level2
       thumbnailUrl:
         multivalued: false
         range: uriorcurie
@@ -649,16 +658,16 @@ classes:
         multivalued: false
         range: Any
         any_of:
-          - range: string
-          - range: string
-          - range: string
+          - range: EDTF_level0
+          - range: EDTF_level1
+          - range: EDTF_level2
       datePublished:
         multivalued: false
         range: Any
         any_of:
-          - range: string
-          - range: string
-          - range: string
+          - range: EDTF_level0
+          - range: EDTF_level1
+          - range: EDTF_level2
   CarrierRepresentation:
     class_uri: haObj:CarrierRepresentation
   OpenCaptions:
@@ -1219,18 +1228,18 @@ slots:
     required: true
     multivalued: false
     any_of:
-      - range: string
-      - range: string
-      - range: string
+      - range: EDTF_level0
+      - range: EDTF_level1
+      - range: EDTF_level2
   datePublished:
     slot_uri: schema:datePublished
     title: "date published"
     range: Any
     multivalued: false
     any_of:
-      - range: string
-      - range: string
-      - range: string
+      - range: EDTF_level0
+      - range: EDTF_level1
+      - range: EDTF_level2
   creator:
     slot_uri: schema:creator
     title: "creator"
