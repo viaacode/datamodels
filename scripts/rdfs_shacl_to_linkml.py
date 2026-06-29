@@ -115,6 +115,13 @@ def qname_to_name(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9_]", "_", value).strip("_")
 
 
+def clean_uri(value: str) -> str:
+    value = value.strip().rstrip(";,")
+    if value.startswith("<") and value.endswith(">"):
+        return value[1:-1]
+    return value
+
+
 def linkml_range(value: str, custom_type_names: dict[str, str] | None = None) -> str:
     if custom_type_names and value in custom_type_names:
         return custom_type_names[value]
@@ -179,20 +186,22 @@ def extract_rdfs(rdfs_text: str) -> tuple[OrderedDict[str, dict], OrderedDict[st
     classes: OrderedDict[str, dict] = OrderedDict()
     slots: OrderedDict[str, dict] = OrderedDict()
 
-    class_pattern = r"(?m)^(haDes:[^\s]+)\s+a\s+rdfs:Class\s*;(.*?)(?=\n\s*\n|\Z)"
+    class_pattern = r"(?m)^((?:[A-Za-z][A-Za-z0-9_-]*:[^\s]+)|(?:<[^>]+>))\s+a\s+rdfs:Class\s*;(.*?)(?=\n\s*\n|\Z)"
     for match in re.finditer(class_pattern, rdfs_text, re.S):
         subject, block = match.group(1), match.group(2)
         name = qname_to_name(subject)
-        classes[name] = {"class_uri": subject}
+        classes[name] = {"class_uri": clean_uri(subject)}
         label = english_literal(block, "rdfs:label")
-        description = english_literal(block, "skos:definition")
+        description = english_literal(block, "skos:definition") or english_literal(block, "rdfs:comment")
         if label:
             classes[name]["title"] = label
         if description:
             classes[name]["description"] = description
         superclasses = re.findall(r"rdfs:subClassOf\s+([^;,.\s\]]+)", block)
         if superclasses:
-            classes[name]["is_a"] = qname_to_name(superclasses[0])
+            parent_name = qname_to_name(superclasses[0])
+            classes[name]["is_a"] = parent_name
+            classes.setdefault(parent_name, {"class_uri": clean_uri(superclasses[0])})
 
     property_pattern = r"(?m)^(haDes:[^\s]+)\s+a\s+rdf:Property\s*;(.*?)(?=\n\s*\n|\Z)"
     for match in re.finditer(property_pattern, rdfs_text, re.S):
@@ -368,6 +377,10 @@ def apply_shacl(
     named_property_shapes, node_shapes = split_top_level_shapes(shacl_text)
     enums: OrderedDict[str, OrderedDict[str, str]] = OrderedDict()
     custom_type_names = custom_datatypes(shacl_text)
+    class_uris = {
+        qname_to_name(value): clean_uri(value)
+        for value in re.findall(r"sh:(?:class|targetClass)\s+([^\s;\]]+)", shacl_text)
+    }
     class_slot_usage: defaultdict[str, OrderedDict[str, dict]] = defaultdict(OrderedDict)
 
     for identifier, block in node_shapes:
@@ -376,7 +389,7 @@ def apply_shacl(
             continue
 
         class_name = qname_to_name(target_match.group(1))
-        classes.setdefault(class_name, {"class_uri": target_match.group(1)})
+        classes.setdefault(class_name, {"class_uri": clean_uri(target_match.group(1))})
 
         property_blocks = []
         for ref in re.findall(r"<#([^>]+)>", block):
@@ -406,11 +419,11 @@ def apply_shacl(
             }
 
     for class_name, usage in class_slot_usage.items():
-        classes.setdefault(class_name, {"class_uri": class_name})
+        classes.setdefault(class_name, {"class_uri": class_uris.get(class_name, class_name)})
         classes[class_name]["slots"] = list(usage.keys())
         classes[class_name]["slot_usage"] = usage
 
-    add_external_range_stubs(classes, slots, custom_type_names)
+    add_external_range_stubs(classes, slots, custom_type_names, class_uris)
     return classes, slots, enums, custom_type_names
 
 
@@ -418,6 +431,7 @@ def add_external_range_stubs(
     classes: OrderedDict[str, dict],
     slots: OrderedDict[str, dict],
     custom_type_names: OrderedDict[str, str],
+    class_uris: dict[str, str],
 ) -> None:
     scalar_ranges = {
         "string",
@@ -439,7 +453,7 @@ def add_external_range_stubs(
         ranges.extend(slot.get("any_of", []))
         for range_name in ranges:
             if range_name not in scalar_ranges and not range_name.endswith("_enum"):
-                classes.setdefault(range_name, {"class_uri": range_name})
+                classes.setdefault(range_name, {"class_uri": class_uris.get(range_name, range_name)})
 
 
 def emit_linkml(

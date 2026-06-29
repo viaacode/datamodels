@@ -80,254 +80,6 @@ classes:
       hasCarrierCopy:
         multivalued: false
         range: WrittenWorkCarrierRepresentation
-  NewspaperIssuePage:
-    class_uri: haDes:NewspaperIssuePage
-    title: "Newspaper issue page"
-    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."
-    is_a: IntellectualEntity
-    slots:
-      - pageNumber
-      - isp
-    slot_usage:
-      pageNumber:
-        multivalued: false
-        range: integer
-      isp:
-        required: true
-        multivalued: false
-        range: NewspaperIssue
-  DVD:
-    class_uri: haDes:DVD
-    title: "DVD"
-    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."
-    is_a: IntellectualEntity
-    slots:
-      - broadcastingOrganization
-      - hasCarrierCopy
-      - hsp
-    slot_usage:
-      broadcastingOrganization:
-        multivalued: false
-        range: Organization
-      hasCarrierCopy:
-        multivalued: false
-        range: AudiovisualCarrierRepresentation
-      hsp:
-        multivalued: true
-        range: DVDChapter
-  DVDChapter:
-    class_uri: haDes:DVDChapter
-    title: "DVD chapter"
-    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."
-    is_a: IntellectualEntity
-    slots:
-      - isi
-      - chapterNumber
-    slot_usage:
-      isi:
-        required: true
-        multivalued: false
-        range: DVD
-      chapterNumber:
-        required: true
-        multivalued: false
-        range: integer
-  Film:
-    class_uri: haDes:Film
-    title: "Film"
-    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."
-    is_a: IntellectualEntity
-    slots:
-      - broadcastingOrganization
-      - hasCarrierCopy
-    slot_usage:
-      broadcastingOrganization:
-        multivalued: false
-        range: Organization
-      hasCarrierCopy:
-        required: true
-        multivalued: false
-        range: FilmCarrierRepresentation
-  SilentFilm:
-    class_uri: haDes:SilentFilm
-    title: "Silent film"
-    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."
-    is_a: Film
-  SoundFilm:
-    class_uri: haDes:SoundFilm
-    title: "Sound film"
-    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."
-    is_a: Film
-  ImageReel:
-    class_uri: haDes:ImageReel
-    title: "Image reel"
-    description: "A reel of an analog film carrier that contains video."
-    is_a: PhysicalCarrier
-    slots:
-      - coloringType
-      - hasCaptioning
-      - aspectRatio
-    slot_usage:
-      coloringType:
-        multivalued: true
-        range: coloringType_enum
-      hasCaptioning:
-        multivalued: true
-        range: OpenCaptions
-      aspectRatio:
-        multivalued: false
-        range: string
-  AudioReel:
-    class_uri: haDes:AudioReel
-    title: "Audio reel"
-    description: "A reel of an analog film carrier that contains audio."
-    is_a: PhysicalCarrier
-    slots:
-      - aspectRatio
-    slot_usage:
-      aspectRatio:
-        multivalued: false
-        range: string
-  Audio:
-    class_uri: haDes:Audio
-    title: "Audio"
-    description: "This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."
-    is_a: IntellectualEntity
-    slots:
-      - broadcastingOrganization
-      - hasCarrierCopy
-    slot_usage:
-      broadcastingOrganization:
-        multivalued: false
-        range: Organization
-      hasCarrierCopy:
-        multivalued: false
-        range: AudiovisualCarrierRepresentation
-  Video:
-    class_uri: haDes:Video
-    title: "Video"
-    description: "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."
-    is_a: IntellectualEntity
-    slots:
-      - broadcastingOrganization
-      - hasCarrierCopy
-    slot_usage:
-      broadcastingOrganization:
-        multivalued: false
-        range: Organization
-      hasCarrierCopy:
-        multivalued: false
-        range: AudiovisualCarrierRepresentation
-  Image:
-    class_uri: haDes:Image
-    title: "Image"
-    description: "This class applies to media in meemoo's archive that is originally derived from a digital born image or an analog carrier of type image."
-    is_a: IntellectualEntity
-  MaterialArtwork:
-    class_uri: haDes:MaterialArtwork
-    title: "Material artwork"
-    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that entirely exists in physical reality, in space and time."
-    is_a: IntellectualEntity
-  2DArtwork:
-    class_uri: haDes:2DArtwork
-    title: "Two-dimensional artwork"
-    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in two dimensions. Two-dimensional artforms can include drawings, paintings, prints, and photographs. It does not include three-dimensional artworks such as sculptures, installations, and three-dimensional paintings."
-    is_a: MaterialArtwork
-  3DArtwork:
-    class_uri: haDes:3DArtwork
-    title: "Three-dimensional artwork"
-    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in three dimensions. Two-dimensional artforms can include sculptures, installations, and three-dimensional paintings. It does not include two-dimensional artworks such as drawings, paintings, prints, and photographs."
-    is_a: MaterialArtwork
-  RoleName:
-    class_uri: haDes:RoleName
-    title: "Role name"
-    description: "The role played, performed or filled by a thing, person or organization."
-    is_a: Concept
-  AudiovisualCarrier:
-    class_uri: haDes:AudiovisualCarrier
-    title: "Audiovisual carrier"
-    description: "A physical carrier that stores audio or audiovisual content."
-    is_a: PhysicalCarrier
-    slots:
-      - iec60094Type
-      - audioRecordingSpeed
-      - audioNoiseReduction
-    slot_usage:
-      iec60094Type:
-        multivalued: false
-        range: iec60094Type_enum
-      audioRecordingSpeed:
-        multivalued: false
-        range: audioRecordingSpeed_enum
-      audioNoiseReduction:
-        multivalued: false
-        range: audioNoiseReduction_enum
-  AudiovisualCarrierRepresentation:
-    class_uri: haDes:AudiovisualCarrierRepresentation
-    title: "Audiovisual carrier representation"
-    description: "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."
-    is_a: CarrierRepresentation
-    slots:
-      - numberOfAudioTracks
-      - numberOfAudioChannels
-      - storedAt
-    slot_usage:
-      numberOfAudioTracks:
-        multivalued: false
-        range: integer
-      numberOfAudioChannels:
-        multivalued: false
-        range: integer
-      storedAt:
-        required: true
-        multivalued: true
-        range: AudiovisualCarrier
-  WrittenWorkCarrierRepresentation:
-    class_uri: haDes:WrittenWorkCarrierRepresentation
-    title: "Written work carrier representation"
-    description: "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."
-    is_a: CarrierRepresentation
-    slots:
-      - productionMethod
-    slot_usage:
-      productionMethod:
-        multivalued: false
-        range: productionMethod_enum
-  FilmCarrierRepresentation:
-    class_uri: haDes:FilmCarrierRepresentation
-    title: "Film carrier representation"
-    description: "A representation of an archived film that is stored on a analog film carrier such as a film stock."
-    is_a: CarrierRepresentation
-    slots:
-      - numberOfMissingAudioReels
-      - numberOfMissingImageReels
-      - hasMissingAudioReels
-      - hasMissingImageReels
-      - numberOfReels
-      - storedAt
-    slot_usage:
-      numberOfMissingAudioReels:
-        multivalued: false
-        range: integer
-      numberOfMissingImageReels:
-        multivalued: false
-        range: integer
-      hasMissingAudioReels:
-        multivalued: false
-        range: boolean
-      hasMissingImageReels:
-        multivalued: false
-        range: boolean
-      numberOfReels:
-        multivalued: false
-        range: integer
-      storedAt:
-        required: true
-        multivalued: true
-        range: Any
-        any_of:
-          - range: ImageReel
-          - range: AudioReel
   IntellectualEntity:
     class_uri: premis:IntellectualEntity
     slots:
@@ -524,6 +276,103 @@ classes:
       synopsis:
         multivalued: false
         range: string
+  NewspaperIssuePage:
+    class_uri: haDes:NewspaperIssuePage
+    title: "Newspaper issue page"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."
+    is_a: IntellectualEntity
+    slots:
+      - pageNumber
+      - isp
+    slot_usage:
+      pageNumber:
+        multivalued: false
+        range: integer
+      isp:
+        required: true
+        multivalued: false
+        range: NewspaperIssue
+  DVD:
+    class_uri: haDes:DVD
+    title: "DVD"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+      - hsp
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        multivalued: false
+        range: AudiovisualCarrierRepresentation
+      hsp:
+        multivalued: true
+        range: DVDChapter
+  DVDChapter:
+    class_uri: haDes:DVDChapter
+    title: "DVD chapter"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."
+    is_a: IntellectualEntity
+    slots:
+      - isi
+      - chapterNumber
+    slot_usage:
+      isi:
+        required: true
+        multivalued: false
+        range: DVD
+      chapterNumber:
+        required: true
+        multivalued: false
+        range: integer
+  Film:
+    class_uri: haDes:Film
+    title: "Film"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        required: true
+        multivalued: false
+        range: FilmCarrierRepresentation
+  SilentFilm:
+    class_uri: haDes:SilentFilm
+    title: "Silent film"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."
+    is_a: Film
+  SoundFilm:
+    class_uri: haDes:SoundFilm
+    title: "Sound film"
+    description: "This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."
+    is_a: Film
+  ImageReel:
+    class_uri: haDes:ImageReel
+    title: "Image reel"
+    description: "A reel of an analog film carrier that contains video."
+    is_a: PhysicalCarrier
+    slots:
+      - coloringType
+      - hasCaptioning
+      - aspectRatio
+    slot_usage:
+      coloringType:
+        multivalued: true
+        range: coloringType_enum
+      hasCaptioning:
+        multivalued: true
+        range: OpenCaptions
+      aspectRatio:
+        multivalued: false
+        range: string
   PhysicalCarrier:
     class_uri: haObj:PhysicalCarrier
     slots:
@@ -570,6 +419,161 @@ classes:
       material:
         multivalued: false
         range: string
+  AudioReel:
+    class_uri: haDes:AudioReel
+    title: "Audio reel"
+    description: "A reel of an analog film carrier that contains audio."
+    is_a: PhysicalCarrier
+    slots:
+      - aspectRatio
+    slot_usage:
+      aspectRatio:
+        multivalued: false
+        range: string
+  Audio:
+    class_uri: haDes:Audio
+    title: "Audio"
+    description: "This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        multivalued: false
+        range: AudiovisualCarrierRepresentation
+  Video:
+    class_uri: haDes:Video
+    title: "Video"
+    description: "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."
+    is_a: IntellectualEntity
+    slots:
+      - broadcastingOrganization
+      - hasCarrierCopy
+    slot_usage:
+      broadcastingOrganization:
+        multivalued: false
+        range: Organization
+      hasCarrierCopy:
+        multivalued: false
+        range: AudiovisualCarrierRepresentation
+  Image:
+    class_uri: haDes:Image
+    title: "Image"
+    description: "This class applies to media in meemoo's archive that is originally derived from a digital born image or an analog carrier of type image."
+    is_a: IntellectualEntity
+  MaterialArtwork:
+    class_uri: haDes:MaterialArtwork
+    title: "Material artwork"
+    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that entirely exists in physical reality, in space and time."
+    is_a: IntellectualEntity
+  2DArtwork:
+    class_uri: haDes:2DArtwork
+    title: "Two-dimensional artwork"
+    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in two dimensions. Two-dimensional artforms can include drawings, paintings, prints, and photographs. It does not include three-dimensional artworks such as sculptures, installations, and three-dimensional paintings."
+    is_a: MaterialArtwork
+  3DArtwork:
+    class_uri: haDes:3DArtwork
+    title: "Three-dimensional artwork"
+    description: "This class applies to media in meemoo's archive that is originally derived from any form of visual art that exists in three dimensions. Two-dimensional artforms can include sculptures, installations, and three-dimensional paintings. It does not include two-dimensional artworks such as drawings, paintings, prints, and photographs."
+    is_a: MaterialArtwork
+  RoleName:
+    class_uri: haDes:RoleName
+    title: "Role name"
+    description: "The role played, performed or filled by a thing, person or organization."
+    is_a: Concept
+  Concept:
+    class_uri: skos:Concept
+  AudiovisualCarrier:
+    class_uri: haDes:AudiovisualCarrier
+    title: "Audiovisual carrier"
+    description: "A physical carrier that stores audio or audiovisual content."
+    is_a: PhysicalCarrier
+    slots:
+      - iec60094Type
+      - audioRecordingSpeed
+      - audioNoiseReduction
+    slot_usage:
+      iec60094Type:
+        multivalued: false
+        range: iec60094Type_enum
+      audioRecordingSpeed:
+        multivalued: false
+        range: audioRecordingSpeed_enum
+      audioNoiseReduction:
+        multivalued: false
+        range: audioNoiseReduction_enum
+  AudiovisualCarrierRepresentation:
+    class_uri: haDes:AudiovisualCarrierRepresentation
+    title: "Audiovisual carrier representation"
+    description: "A physical or digital representation of an archived audio or video entity that is stored on an audiovisual physical carrier such as a video tape."
+    is_a: CarrierRepresentation
+    slots:
+      - numberOfAudioTracks
+      - numberOfAudioChannels
+      - storedAt
+    slot_usage:
+      numberOfAudioTracks:
+        multivalued: false
+        range: integer
+      numberOfAudioChannels:
+        multivalued: false
+        range: integer
+      storedAt:
+        required: true
+        multivalued: true
+        range: AudiovisualCarrier
+  CarrierRepresentation:
+    class_uri: haObj:CarrierRepresentation
+  WrittenWorkCarrierRepresentation:
+    class_uri: haDes:WrittenWorkCarrierRepresentation
+    title: "Written work carrier representation"
+    description: "A physical or digital representation of an archived written work that is stored on a physical carrier such as a printed newspaper or book."
+    is_a: CarrierRepresentation
+    slots:
+      - productionMethod
+    slot_usage:
+      productionMethod:
+        multivalued: false
+        range: productionMethod_enum
+  FilmCarrierRepresentation:
+    class_uri: haDes:FilmCarrierRepresentation
+    title: "Film carrier representation"
+    description: "A representation of an archived film that is stored on a analog film carrier such as a film stock."
+    is_a: CarrierRepresentation
+    slots:
+      - numberOfMissingAudioReels
+      - numberOfMissingImageReels
+      - hasMissingAudioReels
+      - hasMissingImageReels
+      - numberOfReels
+      - storedAt
+    slot_usage:
+      numberOfMissingAudioReels:
+        multivalued: false
+        range: integer
+      numberOfMissingImageReels:
+        multivalued: false
+        range: integer
+      hasMissingAudioReels:
+        multivalued: false
+        range: boolean
+      hasMissingImageReels:
+        multivalued: false
+        range: boolean
+      numberOfReels:
+        multivalued: false
+        range: integer
+      storedAt:
+        required: true
+        multivalued: true
+        range: Any
+        any_of:
+          - range: ImageReel
+          - range: AudioReel
   File:
     class_uri: premis:File
     slots:
@@ -668,8 +672,6 @@ classes:
           - range: EDTF_level0
           - range: EDTF_level1
           - range: EDTF_level2
-  CarrierRepresentation:
-    class_uri: haObj:CarrierRepresentation
   OpenCaptions:
     class_uri: ebucore:OpenCaptions
     slots:
@@ -1041,21 +1043,19 @@ classes:
   TextAnnotation:
     class_uri: ebucore:TextAnnotation
   Person:
-    class_uri: Person
+    class_uri: schema:Person
   Organization:
-    class_uri: Organization
+    class_uri: org:Organization
   ContentPartner:
-    class_uri: ContentPartner
+    class_uri: haOrg:ContentPartner
   CreativeWork:
-    class_uri: CreativeWork
+    class_uri: schema:CreativeWork
   BroadcastEvent:
-    class_uri: BroadcastEvent
-  Concept:
-    class_uri: Concept
+    class_uri: schema:BroadcastEvent
   Brand:
-    class_uri: Brand
+    class_uri: schema:Brand
   ClosedCaptions:
-    class_uri: ClosedCaptions
+    class_uri: ebucore:ClosedCaptions
 
 slots:
   numberOfPages:
