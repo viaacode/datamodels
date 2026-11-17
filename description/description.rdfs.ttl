@@ -420,4 +420,26 @@ haDes:aspectRatio a rdf:Property ;
   skos:definition "Proportionele verhouding tussen de breedte en de hoogte van een afbeelding."@nl;
   skos:definition "Rapport proportionnel entre la largeur et la hauteur d'une image."@fr;
   rdfs:range rdfs:Literal ;
-  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> . 
+  rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+# Individuals
+haDes:none a skos:Concept, owl:NamedIndividual ;
+    skos:prefLabel "none"@en, "geen"@nl, "aucun"@fr ;
+    skos:definition "Indicates that no value applies."@en,
+        "Geeft aan dat er geen waarde van toepassing is."@nl,
+        "Indique qu'aucune valeur ne s'applique."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:unknown a skos:Concept, owl:NamedIndividual ;
+    skos:prefLabel "unknown"@en, "onbekend"@nl, "inconnu"@fr ;
+    skos:definition "Indicates that the value is unknown."@en,
+        "Geeft aan dat de waarde onbekend is."@nl,
+        "Indique que la valeur est inconnue."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .
+
+haDes:anonymous a skos:Concept, owl:NamedIndividual ;
+    skos:prefLabel "anonymous"@en, "anoniem"@nl, "anonyme"@fr ;
+    skos:definition "Indicates that the identity is intentionally withheld."@en,
+        "Geeft aan dat de identiteit bewust niet wordt vermeld."@nl,
+        "Indique que l'identité est volontairement masquée."@fr ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> .

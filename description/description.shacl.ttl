@@ -2399,7 +2399,7 @@
 
 <#BroadcasterShape> a sh:PropertyShape;
         sh:path  haDes:broadcastingOrganization;
-        sh:datatype org:Organization;
+        sh:class org:Organization;
         sh:minCount 0 ;
         sh:maxCount 1 ;
         sh:name "broadcasting organization"@en ;
