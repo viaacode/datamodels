@@ -1,0 +1,1457 @@
+{
+  "annotation_namespaces": [
+    "http://purl.org/dc/elements/1.1/",
+    "http://purl.org/dc/terms/",
+    "http://purl.org/pav/"
+  ],
+  "consolidate_collisions": true,
+  "core": [
+    "description/description.rdfs.ttl",
+    "description/description.shacl.ttl",
+    "events/events.shacl.ttl",
+    "objects/mediahaven.rdfs.ttl",
+    "objects/objects.rdfs.ttl",
+    "objects/objects.shacl.ttl",
+    "organizations/organizations.rdfs.ttl",
+    "organizations/organizations.shacl.ttl",
+    "rights/rights.rdfs.ttl",
+    "rights/rights.shacl.ttl",
+    "terms/meemoo_terms.rdfs.ttl",
+    "terms/terms.shacl.ttl"
+  ],
+  "documentary_namespaces": [
+    "https://schema.org/docs/",
+    "http://dublincore.org/usage/terms/history/"
+  ],
+  "documentary_predicates": [
+    "http://purl.org/dc/terms/hasVersion",
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy",
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+    "http://www.w3.org/2002/07/owl#imports",
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status",
+    "http://www.w3.org/2004/02/skos/core#broadMatch",
+    "http://www.w3.org/2004/02/skos/core#closeMatch",
+    "http://www.w3.org/2004/02/skos/core#exactMatch",
+    "http://www.w3.org/2004/02/skos/core#exactmatch",
+    "http://www.w3.org/2004/02/skos/core#narrowMatch",
+    "http://www.w3.org/2004/02/skos/core#relatedMatch",
+    "http://xmlns.com/foaf/0.1/homepage",
+    "http://xmlns.com/foaf/0.1/page",
+    "https://schema.org/source"
+  ],
+  "drafts": [],
+  "external": [
+    "ontologies/*.ttl"
+  ],
+  "header_values": {
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": "ha",
+    "http://purl.org/vocab/vann/preferredNamespaceUri": "https://data.hetarchief.be/ns/"
+  },
+  "local_concepts": [
+    "description/*.skos.ttl",
+    "events/*.skos.ttl",
+    "objects/*.skos.ttl",
+    "organizations/*.skos.ttl",
+    "rights/*.skos.ttl",
+    "terms/*.skos.ttl"
+  ],
+  "merges": [],
+  "missing_definitions": {
+    "http://id.loc.gov/ontologies/bibframe/Classification": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/Instance": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/Issuance": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/ProductionMethod": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/edition": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/issuance": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/ontologies/bibframe/relatedTo": [
+      "external_ontologies_complete/bibframe.owl.ttl"
+    ],
+    "http://id.loc.gov/vocabulary/preservation/eventOutcome/fai": [
+      "external_ontologies_complete/evtoutcome.ttl"
+    ],
+    "http://id.loc.gov/vocabulary/preservation/eventOutcome/suc": [
+      "external_ontologies_complete/evtoutcome.ttl"
+    ],
+    "http://id.loc.gov/vocabulary/preservation/eventOutcome/war": [
+      "external_ontologies_complete/evtoutcome.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/Agent": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/contributor": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/coverage": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/creator": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/date": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/description": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/format": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/identifier": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/publisher": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/relation": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/rights": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/subject": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/elements/1.1/title": [
+      "external_ontologies_complete/dublin_core_elements.ttl"
+    ],
+    "http://purl.org/dc/terms/Agent": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/AgentClass": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/Jurisdiction": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/Location": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/LocationPeriodOrJurisdiction": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/MediaType": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/MediaTypeOrExtent": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/Period": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/PeriodOfTime": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/SizeOrDuration": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/abstract": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/accessRights": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/alternative": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/coverage": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/created": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/creator": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/date": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/dateCopyrighted": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/extent": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/hasVersion": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/issued": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/publisher": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/relation": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/rightsHolder": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/spatial": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/subject": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/temporal": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/dc/terms/title": [
+      "external_ontologies_complete/dublin_core_terms.ttl"
+    ],
+    "http://purl.org/pav/version": [
+      "external_ontologies_complete/pav.ttl"
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      "external_ontologies_complete/vann.ttl"
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      "external_ontologies_complete/vann.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Agent": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation_Type": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#BusinessObject": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Format": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MimeType": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ObjectType": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Track": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Type": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Bitstream": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Copyright": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Identifier": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/InstitutionalPolicy": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Organization": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Person": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Rule": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.loc.gov/premis/rdf/v3/Statute": [
+      "external_ontologies_complete/premis3.owl.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#MediaFragment": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#MediaResource": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#Rating": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#TargetAudience": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#description": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#hasFragment": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/ma-ont#isFragmentOf": [
+      "external_ontologies_complete/ma-ont.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/Asset": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/Duty": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/LeftOperand": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/LogicalConstraint": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/Operator": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/recipient": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/odrl/2/relation": [
+      "external_ontologies_complete/odrl.ttl"
+    ],
+    "http://www.w3.org/ns/org#ChangeEvent": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#FormalOrganization": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#changedBy": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#hasSubOrganization": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#originalOrganization": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#resultedFrom": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#resultingOrganization": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#siteOf": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#subOrganizationOf": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/org#transitiveSubOrganizationOf": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/prov#ActivityInfluence": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#AgentInfluence": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Association": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Delegation": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Derivation": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#End": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#EntityInfluence": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Generation": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Influence": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#InstantaneousEvent": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Organization": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Person": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#SoftwareAgent": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Start": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#Usage": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#actedOnBehalfOf": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#activity": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#agent": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#atTime": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#category": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#component": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#constraints": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#definition": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#dm": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#editorialNote": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#editorsDefinition": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#endedAtTime": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#entity": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#hadActivity": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#influenced": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#influencer": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#inverse": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#n": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedAssociation": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedDelegation": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedEnd": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedForm": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedGeneration": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedInfluence": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedStart": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#qualifiedUsage": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#sharesDefinitionWith": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#unqualifiedForm": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#wasDerivedFrom": [
+      "external_ontologies_complete/organizations.owl.ttl"
+    ],
+    "http://www.w3.org/ns/prov#wasEndedBy": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://www.w3.org/ns/prov#wasInfluencedBy": [
+      "external_ontologies_complete/pav.ttl"
+    ],
+    "http://www.w3.org/ns/prov#wasStartedBy": [
+      "external_ontologies_complete/prov-o-20130430.rdf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/Agent": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/Document": [
+      "external_ontologies_complete/foaf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/Organization": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/Person": [
+      "external_ontologies_complete/ebucore.rdf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/Project": [
+      "external_ontologies_complete/foaf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/made": [
+      "external_ontologies_complete/foaf.ttl"
+    ],
+    "http://xmlns.com/foaf/0.1/maker": [
+      "external_ontologies_complete/foaf.ttl"
+    ],
+    "https://schema.org/Action": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/AdministrativeArea": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Book": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Brand": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/DataFeedItem": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/DataType": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Date": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/DateTime": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/DatedMoneySpecification": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/GeoCoordinates": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/GeoShape": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/ImageObject": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Intangible": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Integer": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/MediaObject": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/MonetaryAmount": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Number": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Product": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/PublicationIssue": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Rating": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Service": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/StructuredValue": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/Text": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/URL": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/author": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/birthPlace": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/deathPlace": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/hasPart": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/image": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/issueNumber": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/locationCreated": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/logo": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/material": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/numberOfPages": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ],
+    "https://schema.org/producer": [
+      "external_ontologies_complete/schema.rdfs.ttl"
+    ]
+  },
+  "namespace": "https://data.hetarchief.be/ns/",
+  "naming": {
+    "acronyms": [
+      "DVD",
+      "IIIF",
+      "IEC",
+      "ID",
+      "URL",
+      "URI",
+      "ISBN",
+      "ISSN",
+      "VAT",
+      "XML",
+      "JSON",
+      "SKOS",
+      "XL",
+      "AV"
+    ],
+    "class_case": "PascalCase",
+    "concept_case": "lowerCamelCase",
+    "inverse_pairs": [
+      {
+        "direct": "http://id.loc.gov/ontologies/bibframe/accompaniedBy",
+        "direct_name": "isAccompaniedBy",
+        "reverse": "http://id.loc.gov/ontologies/bibframe/accompanies",
+        "reverse_name": "accompanies"
+      },
+      {
+        "direct": "http://id.loc.gov/ontologies/bibframe/precededBy",
+        "direct_name": "isPrecededBy",
+        "reverse": "http://id.loc.gov/ontologies/bibframe/succeededBy",
+        "reverse_name": "isSucceededBy"
+      },
+      {
+        "direct": "http://id.loc.gov/ontologies/bibframe/supplement",
+        "direct_name": "hasSupplement",
+        "reverse": "http://id.loc.gov/ontologies/bibframe/supplementTo",
+        "reverse_name": "isSupplementTo"
+      },
+      {
+        "direct": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment",
+        "direct_name": "hasMediaFragment",
+        "reverse": "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf",
+        "reverse_name": "isMediaFragmentOf"
+      },
+      {
+        "direct": "http://www.w3.org/2004/02/skos/core#broadMatch",
+        "direct_name": "hasBroadMatch",
+        "reverse": "http://www.w3.org/2004/02/skos/core#narrowMatch",
+        "reverse_name": "hasNarrowMatch"
+      },
+      {
+        "direct": "http://www.w3.org/2004/02/skos/core#broader",
+        "direct_name": "hasBroader",
+        "reverse": "http://www.w3.org/2004/02/skos/core#narrower",
+        "reverse_name": "hasNarrower"
+      },
+      {
+        "direct": "http://www.w3.org/2004/02/skos/core#broaderTransitive",
+        "direct_name": "hasBroaderTransitive",
+        "reverse": "http://www.w3.org/2004/02/skos/core#narrowerTransitive",
+        "reverse_name": "hasNarrowerTransitive"
+      },
+      {
+        "direct": "http://www.w3.org/2004/02/skos/core#hasTopConcept",
+        "direct_name": "hasTopConcept",
+        "reverse": "http://www.w3.org/2004/02/skos/core#topConceptOf",
+        "reverse_name": "isTopConceptOf"
+      },
+      {
+        "direct": "http://www.w3.org/ns/ma-ont#hasFragment",
+        "direct_name": "hasFragment",
+        "reverse": "http://www.w3.org/ns/ma-ont#isFragmentOf",
+        "reverse_name": "isFragmentOf"
+      },
+      {
+        "direct": "http://www.w3.org/ns/org#changedBy",
+        "direct_name": "isChangedBy",
+        "reverse": "http://www.w3.org/ns/org#originalOrganization",
+        "reverse_name": "hasOriginalOrganization"
+      },
+      {
+        "direct": "http://www.w3.org/ns/org#hasPost",
+        "direct_name": "hasPost",
+        "reverse": "http://www.w3.org/ns/org#postIn",
+        "reverse_name": "isPostIn"
+      },
+      {
+        "direct": "http://www.w3.org/ns/org#hasSubOrganization",
+        "direct_name": "hasSubOrganization",
+        "reverse": "http://www.w3.org/ns/org#subOrganizationOf",
+        "reverse_name": "isSubOrganizationOf"
+      },
+      {
+        "direct": "http://www.w3.org/ns/org#heldBy",
+        "direct_name": "isHeldBy",
+        "reverse": "http://www.w3.org/ns/org#holds",
+        "reverse_name": "holds"
+      },
+      {
+        "direct": "http://www.w3.org/ns/org#resultedFrom",
+        "direct_name": "resultsFrom",
+        "reverse": "http://www.w3.org/ns/org#resultingOrganization",
+        "reverse_name": "hasResultingOrganization"
+      },
+      {
+        "direct": "http://www.w3.org/ns/org#siteOf",
+        "direct_name": "isSiteOf",
+        "reverse": "http://www.w3.org/ns/org#hasSite",
+        "reverse_name": "hasSite"
+      },
+      {
+        "direct": "http://www.w3.org/ns/prov#generated",
+        "direct_name": "generates",
+        "reverse": "http://www.w3.org/ns/prov#wasGeneratedBy",
+        "reverse_name": "isGeneratedBy"
+      },
+      {
+        "direct": "http://www.w3.org/ns/prov#influenced",
+        "direct_name": "influences",
+        "reverse": "http://www.w3.org/ns/prov#wasInfluencedBy",
+        "reverse_name": "isInfluencedBy"
+      },
+      {
+        "direct": "http://xmlns.com/foaf/0.1/made",
+        "direct_name": "makes",
+        "reverse": "http://xmlns.com/foaf/0.1/maker",
+        "reverse_name": "isMadeBy"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasAccessCopy",
+        "direct_name": "hasAccessCopy",
+        "reverse": "https://data.hetarchief.be/ns/object/isAccessCopyOf",
+        "reverse_name": "isAccessCopyOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasCarrierCopy",
+        "direct_name": "hasCarrierCopy",
+        "reverse": "https://data.hetarchief.be/ns/object/isCarrierCopyOf",
+        "reverse_name": "isCarrierCopyOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasFragmentRepresentation",
+        "direct_name": "hasFragmentRepresentation",
+        "reverse": "https://data.hetarchief.be/ns/object/isFragmentRepresentationOf",
+        "reverse_name": "isFragmentRepresentationOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasIIIFCopy",
+        "direct_name": "hasIIIFCopy",
+        "reverse": "https://data.hetarchief.be/ns/object/isIIIFCopyOf",
+        "reverse_name": "isIIIFCopyOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasMasterCopy",
+        "direct_name": "hasMasterCopy",
+        "reverse": "https://data.hetarchief.be/ns/object/isMasterCopyOf",
+        "reverse_name": "isMasterCopyOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasMezzanineCopy",
+        "direct_name": "hasMezzanineCopy",
+        "reverse": "https://data.hetarchief.be/ns/object/isMezzanineCopyOf",
+        "reverse_name": "isMezzanineCopyOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/object/hasTranscriptionCopy",
+        "direct_name": "hasTranscriptionCopy",
+        "reverse": "https://data.hetarchief.be/ns/object/isTranscriptionCopyOf",
+        "reverse_name": "isTranscriptionCopyOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/organization/hasAccountManager",
+        "direct_name": "hasAccountManager",
+        "reverse": "https://data.hetarchief.be/ns/organization/isAccountManagerOf",
+        "reverse_name": "isAccountManagerOf"
+      },
+      {
+        "direct": "https://data.hetarchief.be/ns/terms/higherPriority",
+        "direct_name": "hasHigherPriorityThan",
+        "reverse": "https://data.hetarchief.be/ns/terms/lowerPriority",
+        "reverse_name": "hasLowerPriorityThan"
+      }
+    ],
+    "ontology_case": "lowerCamelCase",
+    "overrides": {
+      "http://id.loc.gov/ontologies/bibframe/ProductionMethod": {
+        "name": "BibframeProductionMethod"
+      },
+      "http://id.loc.gov/vocabulary/preservation/agentType/har": {
+        "label": "hardware agent type",
+        "name": "hardwareAgentType"
+      },
+      "http://purl.org/dc/elements/1.1/modified": {
+        "name": "hasLegacyModificationDate"
+      },
+      "http://purl.org/dc/terms/medium": {
+        "name": "hasDublinCoreMedium"
+      },
+      "http://purl.org/dc/terms/modified": {
+        "name": "hasDublinCoreModificationDate"
+      },
+      "http://schema.org/unitCode": {
+        "name": "hasLegacyUnitCode"
+      },
+      "http://schema.org/unitText": {
+        "name": "hasLegacyUnitText"
+      },
+      "http://schema.org/value": {
+        "name": "hasLegacyValue"
+      },
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset": {
+        "name": "EbuCoreAsset"
+      },
+      "http://www.loc.gov/premis/rdf/v3/Agent": {
+        "name": "PremisAgent"
+      },
+      "http://www.loc.gov/premis/rdf/v3/Event": {
+        "name": "PremisEvent"
+      },
+      "http://www.loc.gov/premis/rdf/v3/Organization": {
+        "name": "Premis3Organization"
+      },
+      "http://www.loc.gov/premis/rdf/v3/Person": {
+        "name": "Premis3Person"
+      },
+      "http://www.loc.gov/premis/rdf/v3/Rule": {
+        "name": "Premis3Rule"
+      },
+      "http://www.loc.gov/premis/rdf/v3/SoftwareAgent": {
+        "name": "PremisSoftwareAgent"
+      },
+      "http://www.loc.gov/premis/rdf/v3/endDate": {
+        "name": "hasPremisEndDate"
+      },
+      "http://www.loc.gov/premis/rdf/v3/identifier": {
+        "name": "hasPremisIdentifier"
+      },
+      "http://www.loc.gov/premis/rdf/v3/medium": {
+        "name": "hasPremisMedium"
+      },
+      "http://www.loc.gov/premis/rdf/v3/note": {
+        "name": "hasPremisNote"
+      },
+      "http://www.loc.gov/premis/rdf/v3/startDate": {
+        "name": "hasPremisStartDate"
+      },
+      "http://www.w3.org/ns/odrl/2/Action": {
+        "name": "OdrlAction"
+      },
+      "http://www.w3.org/ns/odrl/2/Asset": {
+        "name": "OdrlAsset"
+      },
+      "http://www.w3.org/ns/odrl/2/Rule": {
+        "name": "OdrlRule"
+      },
+      "http://www.w3.org/ns/odrl/2/dateTime": {
+        "name": "OdrlDateTime"
+      },
+      "http://www.w3.org/ns/odrl/2/relation": {
+        "name": "hasOdrlRelation"
+      },
+      "http://www.w3.org/ns/prov#Agent": {
+        "name": "ProvAgent"
+      },
+      "http://www.w3.org/ns/prov#Organization": {
+        "name": "ProvO20130430Organization"
+      },
+      "http://www.w3.org/ns/prov#Person": {
+        "name": "ProvO20130430Person"
+      },
+      "http://www.w3.org/ns/prov#SoftwareAgent": {
+        "name": "ProvO20130430SoftwareAgent"
+      },
+      "http://www.w3.org/ns/prov#definition": {
+        "name": "hasProvO20130430Definition"
+      },
+      "http://www.w3.org/ns/prov#editorialNote": {
+        "name": "hasProvO20130430EditorialNote"
+      },
+      "https://data.hetarchief.be/ns/description": {
+        "name": "descriptionModel"
+      },
+      "https://data.hetarchief.be/ns/description#2DArtworkNodeShape": {
+        "name": "TwoDimensionalArtworkShape"
+      },
+      "https://data.hetarchief.be/ns/description#3DArtworkNodeShape": {
+        "name": "ThreeDimensionalArtworkShape"
+      },
+      "https://data.hetarchief.be/ns/description#AVCarrierRepresentatioNodeShape": {
+        "name": "AudiovisualCarrierRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/description#AVPhysicalCarrierNodeShape": {
+        "name": "AudiovisualCarrierShape"
+      },
+      "https://data.hetarchief.be/ns/description#AVhasCarrierCopyShape": {
+        "name": "AudiovisualHasCarrierCopyShape"
+      },
+      "https://data.hetarchief.be/ns/description#CarrierRepresentationNodeShape": {
+        "name": "DescriptionCarrierRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/description#CollectionShape": {
+        "name": "DescriptionCollectionShape"
+      },
+      "https://data.hetarchief.be/ns/description#DigitalRepresentationNodeShape": {
+        "name": "DescriptionDigitalRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/description#FileNodeShape": {
+        "name": "DescriptionFileShape"
+      },
+      "https://data.hetarchief.be/ns/description#IntellectualEntityNodeShape": {
+        "name": "DescriptionIntellectualEntityShape"
+      },
+      "https://data.hetarchief.be/ns/description#NameShape": {
+        "name": "DescriptionNameShape"
+      },
+      "https://data.hetarchief.be/ns/description#PhysicalCarrierNodeShape": {
+        "name": "DescriptionPhysicalCarrierShape"
+      },
+      "https://data.hetarchief.be/ns/description#RepresentationNodeShape": {
+        "name": "DescriptionRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/description#RoleNodeShape": {
+        "name": "DescriptionRoleShape"
+      },
+      "https://data.hetarchief.be/ns/description/2DArtwork": {
+        "name": "TwoDimensionalArtwork"
+      },
+      "https://data.hetarchief.be/ns/description/3DArtwork": {
+        "name": "ThreeDimensionalArtwork"
+      },
+      "https://data.hetarchief.be/ns/event": {
+        "name": "eventModel"
+      },
+      "https://data.hetarchief.be/ns/event#BrandShape": {
+        "name": "EventBrandShape"
+      },
+      "https://data.hetarchief.be/ns/event#NameShape": {
+        "name": "EventNameShape"
+      },
+      "https://data.hetarchief.be/ns/event#ObjectShape": {
+        "name": "EventObjectShape"
+      },
+      "https://data.hetarchief.be/ns/event#brandShape": {
+        "name": "HardwareAgentHasBrandShape"
+      },
+      "https://data.hetarchief.be/ns/object": {
+        "name": "objectModel"
+      },
+      "https://data.hetarchief.be/ns/object#CarrierRepresentationShape": {
+        "name": "ObjectCarrierRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/object#DigitalRepresentationShape": {
+        "name": "ObjectDigitalRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/object#FileShape": {
+        "name": "ObjectFileShape"
+      },
+      "https://data.hetarchief.be/ns/object#IntellectualEntityShape": {
+        "name": "ObjectIntellectualEntityShape"
+      },
+      "https://data.hetarchief.be/ns/object#ObjectShape": {
+        "name": "ObjectObjectShape"
+      },
+      "https://data.hetarchief.be/ns/object#PhysicalCarrierShape": {
+        "name": "ObjectPhysicalCarrierShape"
+      },
+      "https://data.hetarchief.be/ns/object#RepresentationShape": {
+        "name": "ObjectRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/organization": {
+        "name": "organizationModel"
+      },
+      "https://data.hetarchief.be/ns/organization#RoleShape": {
+        "name": "OrganizationRoleShape"
+      },
+      "https://data.hetarchief.be/ns/rights": {
+        "name": "rightsModel"
+      },
+      "https://data.hetarchief.be/ns/rights#ConstraintNodeShape": {
+        "name": "ConstraintShape"
+      },
+      "https://data.hetarchief.be/ns/rights#ConstraintShape": {
+        "name": "PolicyHasConstraintShape"
+      },
+      "https://data.hetarchief.be/ns/rights#DigitalRepresentationNodeShape": {
+        "name": "RightsDigitalRepresentationShape"
+      },
+      "https://data.hetarchief.be/ns/rights#IntellectualEntityNodeShape": {
+        "name": "RightsIntellectualEntityShape"
+      },
+      "https://data.hetarchief.be/ns/rights#NoteShape": {
+        "name": "RightsNoteShape"
+      },
+      "https://data.hetarchief.be/ns/rights/ContentRange": {
+        "name": "ContentRange"
+      },
+      "https://data.hetarchief.be/ns/rights/MetadataRange": {
+        "name": "MetadataRange"
+      },
+      "https://data.hetarchief.be/ns/rights/UserGroup": {
+        "name": "UserGroup"
+      },
+      "https://data.hetarchief.be/ns/rights/contentRange": {
+        "name": "contentRangeOperand"
+      },
+      "https://data.hetarchief.be/ns/rights/metadataRange": {
+        "name": "metadataRangeOperand"
+      },
+      "https://data.hetarchief.be/ns/terms": {
+        "name": "termsModel"
+      },
+      "https://data.hetarchief.be/ns/terms#CollectionShape": {
+        "name": "TermsCollectionShape"
+      },
+      "https://data.hetarchief.be/ns/terms#NoteShape": {
+        "name": "TermsNoteShape"
+      },
+      "https://schema.org/Action": {
+        "name": "SchemaAction"
+      },
+      "https://schema.org/DateTime": {
+        "name": "SchemaDateTime"
+      },
+      "https://schema.org/Event": {
+        "name": "SchemaEvent"
+      },
+      "https://schema.org/endDate": {
+        "name": "hasSchemaEndDate"
+      },
+      "https://schema.org/startDate": {
+        "name": "hasSchemaStartDate"
+      },
+      "https://schema.org/unitCode": {
+        "name": "hasSchemaUnitCode"
+      },
+      "https://schema.org/unitText": {
+        "name": "hasSchemaUnitText"
+      },
+      "https://schema.org/value": {
+        "name": "hasSchemaValue"
+      }
+    },
+    "property_case": "lowerCamelCase",
+    "property_names": {
+      "http://dbpedia.org/ontology/filmColourType": "hasFilmColourType",
+      "http://id.loc.gov/ontologies/bibframe/accompaniedBy": "isAccompaniedBy",
+      "http://id.loc.gov/ontologies/bibframe/accompanies": "accompanies",
+      "http://id.loc.gov/ontologies/bibframe/edition": "hasEdition",
+      "http://id.loc.gov/ontologies/bibframe/issuance": "hasIssuance",
+      "http://id.loc.gov/ontologies/bibframe/precededBy": "isPrecededBy",
+      "http://id.loc.gov/ontologies/bibframe/productionMethod": "hasProductionMethod",
+      "http://id.loc.gov/ontologies/bibframe/relatedTo": "isRelatedTo",
+      "http://id.loc.gov/ontologies/bibframe/succeededBy": "isSucceededBy",
+      "http://id.loc.gov/ontologies/bibframe/supplement": "hasSupplement",
+      "http://id.loc.gov/ontologies/bibframe/supplementTo": "isSupplementTo",
+      "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe": "executes",
+      "http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp": "implements",
+      "http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out": "hasOutput",
+      "http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou": "hasSource",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/doc": "documents",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp": "hasPreservationPart",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsr": "hasPreservationRoot",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss": "hasPreservationSource",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc": "includes",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi": "isIncludedIn",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp": "isPreservationPartOf",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr": "isRepresentedBy",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep": "represents",
+      "http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup": "supersedes",
+      "http://purl.org/dc/elements/1.1/contributor": "hasContributor",
+      "http://purl.org/dc/elements/1.1/coverage": "hasCoverage",
+      "http://purl.org/dc/elements/1.1/creator": "hasCreator",
+      "http://purl.org/dc/elements/1.1/date": "hasDate",
+      "http://purl.org/dc/elements/1.1/description": "hasDescription",
+      "http://purl.org/dc/elements/1.1/format": "hasFormat",
+      "http://purl.org/dc/elements/1.1/identifier": "hasIdentifier",
+      "http://purl.org/dc/elements/1.1/modified": "hasLegacyModificationDate",
+      "http://purl.org/dc/elements/1.1/publisher": "hasPublisher",
+      "http://purl.org/dc/elements/1.1/relation": "hasRelation",
+      "http://purl.org/dc/elements/1.1/rights": "hasRights",
+      "http://purl.org/dc/elements/1.1/subject": "hasSubject",
+      "http://purl.org/dc/elements/1.1/title": "hasTitle",
+      "http://purl.org/dc/terms/abstract": "hasAbstract",
+      "http://purl.org/dc/terms/accessRights": "hasAccessRights",
+      "http://purl.org/dc/terms/alternative": "hasAlternative",
+      "http://purl.org/dc/terms/author": "hasAuthor",
+      "http://purl.org/dc/terms/available": "hasAvailabilityDate",
+      "http://purl.org/dc/terms/contributor": "hasContributor",
+      "http://purl.org/dc/terms/coverage": "hasCoverage",
+      "http://purl.org/dc/terms/created": "hasDublinCoreCreationDate",
+      "http://purl.org/dc/terms/creator": "hasCreator",
+      "http://purl.org/dc/terms/date": "hasDate",
+      "http://purl.org/dc/terms/dateCopyrighted": "hasCopyrightDate",
+      "http://purl.org/dc/terms/extent": "hasExtent",
+      "http://purl.org/dc/terms/format": "hasFormat",
+      "http://purl.org/dc/terms/hasVersion": "hasVersion",
+      "http://purl.org/dc/terms/identifier": "hasIdentifier",
+      "http://purl.org/dc/terms/issued": "hasIssueDate",
+      "http://purl.org/dc/terms/license": "hasLicense",
+      "http://purl.org/dc/terms/medium": "hasMedium",
+      "http://purl.org/dc/terms/modified": "hasDublinCoreModificationDate",
+      "http://purl.org/dc/terms/publisher": "hasPublisher",
+      "http://purl.org/dc/terms/relation": "hasRelation",
+      "http://purl.org/dc/terms/rights": "hasRights",
+      "http://purl.org/dc/terms/rightsHolder": "hasRightsHolder",
+      "http://purl.org/dc/terms/spatial": "hasSpatial",
+      "http://purl.org/dc/terms/subject": "hasSubject",
+      "http://purl.org/dc/terms/temporal": "hasTemporal",
+      "http://purl.org/dc/terms/title": "hasTitle",
+      "http://purl.org/ontology/bibo/issue": "hasIssue",
+      "http://purl.org/pav/version": "hasVersion",
+      "http://schema.org/unitCode": "hasUnitCode",
+      "http://schema.org/unitText": "hasUnitText",
+      "http://schema.org/value": "hasValue",
+      "http://swan.mindinformatics.org/ontologies/1.2/pav/versionNumber": "hasVersionNumber",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence": "hasAnnotationConfidence",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationType": "hasAnnotationType",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description": "hasDescription",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose": "hasAnnotationPurpose",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedAgent": "hasAnnotationRelatedAgent",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact": "hasAnnotationRelatedArtefact",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget": "hasAnnotationTarget",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning": "hasCaptioning",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember": "hasCastMember",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat": "hasFormat",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment": "hasMediaFragment",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType": "hasMimeType",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasObjectType": "hasObjectType",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#height": "hasHeight",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotatedMediaResource": "isAnnotatedMediaResource",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf": "isMediaFragmentOf",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimX": "hasRegionDelimX",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#regionDelimY": "hasRegionDelimY",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#synopsis": "hasSynopsis",
+      "http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#width": "hasWidth",
+      "http://www.europeana.eu/schemas/edm/isNextInSequence": "isNextInSequence",
+      "http://www.loc.gov/mads/rdf/v1#authoritativeLabel": "hasAuthoritativeLabel",
+      "http://www.loc.gov/premis/rdf/v3/basis": "hasBasis",
+      "http://www.loc.gov/premis/rdf/v3/endDate": "hasEndDate",
+      "http://www.loc.gov/premis/rdf/v3/fixity": "hasFixity",
+      "http://www.loc.gov/premis/rdf/v3/identifier": "hasIdentifier",
+      "http://www.loc.gov/premis/rdf/v3/medium": "hasMedium",
+      "http://www.loc.gov/premis/rdf/v3/note": "hasNote",
+      "http://www.loc.gov/premis/rdf/v3/originalName": "hasOriginalName",
+      "http://www.loc.gov/premis/rdf/v3/outcome": "hasOutcome",
+      "http://www.loc.gov/premis/rdf/v3/outcomeNote": "hasOutcomeNote",
+      "http://www.loc.gov/premis/rdf/v3/relationship": "hasRelationship",
+      "http://www.loc.gov/premis/rdf/v3/rightsStatus": "hasRightsStatus",
+      "http://www.loc.gov/premis/rdf/v3/size": "hasSize",
+      "http://www.loc.gov/premis/rdf/v3/startDate": "hasStartDate",
+      "http://www.loc.gov/premis/rdf/v3/storedAt": "isStoredAt",
+      "http://www.w3.org/ns/ma-ont#description": "hasDescription",
+      "http://www.w3.org/ns/ma-ont#hasFragment": "hasFragment",
+      "http://www.w3.org/ns/ma-ont#isFragmentOf": "isFragmentOf",
+      "http://www.w3.org/ns/odrl/2/action": "hasAction",
+      "http://www.w3.org/ns/odrl/2/constraint": "hasConstraint",
+      "http://www.w3.org/ns/odrl/2/hasPolicy": "hasPolicy",
+      "http://www.w3.org/ns/odrl/2/leftOperand": "hasLeftOperand",
+      "http://www.w3.org/ns/odrl/2/operator": "hasOperator",
+      "http://www.w3.org/ns/odrl/2/permission": "hasPermission",
+      "http://www.w3.org/ns/odrl/2/prohibition": "hasProhibition",
+      "http://www.w3.org/ns/odrl/2/relation": "hasRelation",
+      "http://www.w3.org/ns/odrl/2/rightOperand": "hasRightOperand",
+      "http://www.w3.org/ns/odrl/2/target": "hasTarget",
+      "http://www.w3.org/ns/org#changedBy": "isChangedBy",
+      "http://www.w3.org/ns/org#classification": "hasClassification",
+      "http://www.w3.org/ns/org#hasPost": "hasPost",
+      "http://www.w3.org/ns/org#hasPrimarySite": "hasPrimarySite",
+      "http://www.w3.org/ns/org#hasSite": "hasSite",
+      "http://www.w3.org/ns/org#hasSubOrganization": "hasSubOrganization",
+      "http://www.w3.org/ns/org#hasUnit": "hasUnit",
+      "http://www.w3.org/ns/org#heldBy": "isHeldBy",
+      "http://www.w3.org/ns/org#holds": "holds",
+      "http://www.w3.org/ns/org#identifier": "hasIdentifier",
+      "http://www.w3.org/ns/org#originalOrganization": "hasOriginalOrganization",
+      "http://www.w3.org/ns/org#postIn": "isPostIn",
+      "http://www.w3.org/ns/org#resultedFrom": "resultsFrom",
+      "http://www.w3.org/ns/org#resultingOrganization": "hasResultingOrganization",
+      "http://www.w3.org/ns/org#role": "hasRole",
+      "http://www.w3.org/ns/org#siteAddress": "hasSiteAddress",
+      "http://www.w3.org/ns/org#siteOf": "isSiteOf",
+      "http://www.w3.org/ns/org#subOrganizationOf": "isSubOrganizationOf",
+      "http://www.w3.org/ns/org#transitiveSubOrganizationOf": "isTransitiveSubOrganizationOf",
+      "http://www.w3.org/ns/org#unitOf": "isUnitOf",
+      "http://www.w3.org/ns/prov#actedOnBehalfOf": "actsOnBehalfOf",
+      "http://www.w3.org/ns/prov#activity": "hasActivity",
+      "http://www.w3.org/ns/prov#agent": "hasAgent",
+      "http://www.w3.org/ns/prov#atTime": "hasTime",
+      "http://www.w3.org/ns/prov#category": "hasCategory",
+      "http://www.w3.org/ns/prov#component": "hasComponent",
+      "http://www.w3.org/ns/prov#constraints": "hasConstraints",
+      "http://www.w3.org/ns/prov#definition": "hasDefinition",
+      "http://www.w3.org/ns/prov#dm": "hasDm",
+      "http://www.w3.org/ns/prov#editorialNote": "hasEditorialNote",
+      "http://www.w3.org/ns/prov#editorsDefinition": "hasEditorsDefinition",
+      "http://www.w3.org/ns/prov#endedAtTime": "hasActivityEndTime",
+      "http://www.w3.org/ns/prov#entity": "hasEntity",
+      "http://www.w3.org/ns/prov#generated": "generates",
+      "http://www.w3.org/ns/prov#generatedAtTime": "hasGenerationTime",
+      "http://www.w3.org/ns/prov#hadActivity": "hasPreviousActivity",
+      "http://www.w3.org/ns/prov#influenced": "influences",
+      "http://www.w3.org/ns/prov#influencer": "hasInfluencer",
+      "http://www.w3.org/ns/prov#invalidatedAtTime": "hasInvalidationTime",
+      "http://www.w3.org/ns/prov#inverse": "hasInverse",
+      "http://www.w3.org/ns/prov#n": "hasN",
+      "http://www.w3.org/ns/prov#qualifiedAssociation": "hasQualifiedAssociation",
+      "http://www.w3.org/ns/prov#qualifiedDelegation": "hasQualifiedDelegation",
+      "http://www.w3.org/ns/prov#qualifiedEnd": "hasQualifiedEnd",
+      "http://www.w3.org/ns/prov#qualifiedForm": "hasQualifiedForm",
+      "http://www.w3.org/ns/prov#qualifiedGeneration": "hasQualifiedGeneration",
+      "http://www.w3.org/ns/prov#qualifiedInfluence": "hasQualifiedInfluence",
+      "http://www.w3.org/ns/prov#qualifiedStart": "hasQualifiedStart",
+      "http://www.w3.org/ns/prov#qualifiedUsage": "hasQualifiedUsage",
+      "http://www.w3.org/ns/prov#sharesDefinitionWith": "sharesDefinitionWith",
+      "http://www.w3.org/ns/prov#startedAtTime": "hasActivityStartTime",
+      "http://www.w3.org/ns/prov#unqualifiedForm": "hasUnqualifiedForm",
+      "http://www.w3.org/ns/prov#used": "uses",
+      "http://www.w3.org/ns/prov#wasAssociatedWith": "isAssociatedWith",
+      "http://www.w3.org/ns/prov#wasEndedBy": "isEndedBy",
+      "http://www.w3.org/ns/prov#wasGeneratedBy": "isGeneratedBy",
+      "http://www.w3.org/ns/prov#wasInfluencedBy": "isInfluencedBy",
+      "http://www.w3.org/ns/prov#wasStartedBy": "isStartedBy",
+      "http://xmlns.com/foaf/0.1/homepage": "hasHomepage",
+      "http://xmlns.com/foaf/0.1/made": "makes",
+      "http://xmlns.com/foaf/0.1/maker": "isMadeBy",
+      "https://data.hetarchief.be/ns/description/aspectRatio": "hasAspectRatio",
+      "https://data.hetarchief.be/ns/description/audioNoiseReduction": "hasAudioNoiseReduction",
+      "https://data.hetarchief.be/ns/description/audioRecordingSpeed": "hasAudioRecordingSpeed",
+      "https://data.hetarchief.be/ns/description/broadcastingOrganization": "hasBroadcastingOrganization",
+      "https://data.hetarchief.be/ns/description/chapterNumber": "hasChapterNumber",
+      "https://data.hetarchief.be/ns/description/coloringType": "hasColoringType",
+      "https://data.hetarchief.be/ns/description/executor": "hasExecutor",
+      "https://data.hetarchief.be/ns/description/hasMissingAudioReels": "hasMissingAudioReels",
+      "https://data.hetarchief.be/ns/description/hasMissingImageReels": "hasMissingImageReels",
+      "https://data.hetarchief.be/ns/description/iec60094Type": "hasIEC60094Type",
+      "https://data.hetarchief.be/ns/description/licenseDistributor": "hasLicenseDistributor",
+      "https://data.hetarchief.be/ns/description/numberOfAudioChannels": "hasNumberOfAudioChannels",
+      "https://data.hetarchief.be/ns/description/numberOfAudioTracks": "hasNumberOfAudioTracks",
+      "https://data.hetarchief.be/ns/description/numberOfMissingAudioReels": "hasNumberOfMissingAudioReels",
+      "https://data.hetarchief.be/ns/description/numberOfMissingImageReels": "hasNumberOfMissingImageReels",
+      "https://data.hetarchief.be/ns/description/numberOfPages": "hasNumberOfPages",
+      "https://data.hetarchief.be/ns/description/numberOfReels": "hasNumberOfReels",
+      "https://data.hetarchief.be/ns/description/owner": "hasOwner",
+      "https://data.hetarchief.be/ns/description/pageNumber": "hasPageNumber",
+      "https://data.hetarchief.be/ns/mediahaven/record": "hasRecord",
+      "https://data.hetarchief.be/ns/mediahaven/tenantName": "hasTenantName",
+      "https://data.hetarchief.be/ns/object/hasAccessCopy": "hasAccessCopy",
+      "https://data.hetarchief.be/ns/object/hasCarrierCopy": "hasCarrierCopy",
+      "https://data.hetarchief.be/ns/object/hasFragmentRepresentation": "hasFragmentRepresentation",
+      "https://data.hetarchief.be/ns/object/hasIIIFCopy": "hasIIIFCopy",
+      "https://data.hetarchief.be/ns/object/hasMasterCopy": "hasMasterCopy",
+      "https://data.hetarchief.be/ns/object/hasMezzanineCopy": "hasMezzanineCopy",
+      "https://data.hetarchief.be/ns/object/hasTranscriptionCopy": "hasTranscriptionCopy",
+      "https://data.hetarchief.be/ns/object/isAccessCopyOf": "isAccessCopyOf",
+      "https://data.hetarchief.be/ns/object/isCarrierCopyOf": "isCarrierCopyOf",
+      "https://data.hetarchief.be/ns/object/isFragmentRepresentationOf": "isFragmentRepresentationOf",
+      "https://data.hetarchief.be/ns/object/isIIIFCopyOf": "isIIIFCopyOf",
+      "https://data.hetarchief.be/ns/object/isMasterCopyOf": "isMasterCopyOf",
+      "https://data.hetarchief.be/ns/object/isMezzanineCopyOf": "isMezzanineCopyOf",
+      "https://data.hetarchief.be/ns/object/isTranscriptionCopyOf": "isTranscriptionCopyOf",
+      "https://data.hetarchief.be/ns/object/preservationProblem": "hasPreservationProblem",
+      "https://data.hetarchief.be/ns/object/primaryIdentifier": "hasPrimaryIdentifier",
+      "https://data.hetarchief.be/ns/organization/hasAccountManager": "hasAccountManager",
+      "https://data.hetarchief.be/ns/organization/hasLogo": "hasLogo",
+      "https://data.hetarchief.be/ns/organization/hasPreference": "hasPreference",
+      "https://data.hetarchief.be/ns/organization/isAccountManagerOf": "isAccountManagerOf",
+      "https://data.hetarchief.be/ns/organization/requestForm": "hasRequestForm",
+      "https://data.hetarchief.be/ns/organization/sector": "hasSector",
+      "https://data.hetarchief.be/ns/rights/isMotivatedBy": "isMotivatedBy",
+      "https://data.hetarchief.be/ns/terms/higherPriority": "hasHigherPriorityThan",
+      "https://data.hetarchief.be/ns/terms/lowerPriority": "hasLowerPriorityThan",
+      "https://schema.org/about": "isAbout",
+      "https://schema.org/abstract": "hasAbstract",
+      "https://schema.org/actor": "hasActor",
+      "https://schema.org/addressCountry": "hasAddressCountry",
+      "https://schema.org/addressLocality": "hasAddressLocality",
+      "https://schema.org/addressRegion": "hasAddressRegion",
+      "https://schema.org/alternateName": "hasAlternateName",
+      "https://schema.org/artMedium": "hasArtMedium",
+      "https://schema.org/artform": "hasArtform",
+      "https://schema.org/author": "hasAuthor",
+      "https://schema.org/birthDate": "hasBirthDate",
+      "https://schema.org/birthPlace": "hasBirthPlace",
+      "https://schema.org/brand": "hasBrand",
+      "https://schema.org/caption": "hasCaption",
+      "https://schema.org/characterName": "hasCharacterName",
+      "https://schema.org/collectionSize": "hasCollectionSize",
+      "https://schema.org/contactPoint": "hasContactPoint",
+      "https://schema.org/contactType": "hasContactType",
+      "https://schema.org/containedInPlace": "isContainedInPlace",
+      "https://schema.org/contributor": "hasContributor",
+      "https://schema.org/copyrightHolder": "hasCopyrightHolder",
+      "https://schema.org/copyrightNotice": "hasCopyrightNotice",
+      "https://schema.org/copyrightYear": "hasCopyrightYear",
+      "https://schema.org/creator": "hasCreator",
+      "https://schema.org/creditText": "hasCreditText",
+      "https://schema.org/dateCreated": "hasCreationDate",
+      "https://schema.org/dateDeleted": "hasDeletionDate",
+      "https://schema.org/dateModified": "hasModificationDate",
+      "https://schema.org/datePublished": "hasPublicationDate",
+      "https://schema.org/deathDate": "hasDeathDate",
+      "https://schema.org/deathPlace": "hasDeathPlace",
+      "https://schema.org/depth": "hasDepth",
+      "https://schema.org/description": "hasDescription",
+      "https://schema.org/duration": "hasDuration",
+      "https://schema.org/email": "hasEmail",
+      "https://schema.org/endDate": "hasEndDate",
+      "https://schema.org/endTime": "hasEndTime",
+      "https://schema.org/familyName": "hasFamilyName",
+      "https://schema.org/genre": "hasGenre",
+      "https://schema.org/givenName": "hasGivenName",
+      "https://schema.org/hasPart": "hasPart",
+      "https://schema.org/height": "hasHeight",
+      "https://schema.org/identifier": "hasIdentifier",
+      "https://schema.org/image": "hasImage",
+      "https://schema.org/inLanguage": "hasLanguage",
+      "https://schema.org/instrument": "hasInstrument",
+      "https://schema.org/isPartOf": "isPartOf",
+      "https://schema.org/issueNumber": "hasIssueNumber",
+      "https://schema.org/keywords": "hasKeywords",
+      "https://schema.org/license": "hasLicense",
+      "https://schema.org/locationCreated": "hasCreationLocation",
+      "https://schema.org/logo": "hasLogo",
+      "https://schema.org/maintainer": "hasMaintainer",
+      "https://schema.org/material": "hasMaterial",
+      "https://schema.org/materialExtent": "hasMaterialExtent",
+      "https://schema.org/mentions": "mentions",
+      "https://schema.org/model": "hasModel",
+      "https://schema.org/name": "hasName",
+      "https://schema.org/numberOfPages": "hasNumberOfPages",
+      "https://schema.org/position": "hasPosition",
+      "https://schema.org/postOfficeBoxNumber": "hasPostOfficeBoxNumber",
+      "https://schema.org/postalCode": "hasPostalCode",
+      "https://schema.org/producer": "hasProducer",
+      "https://schema.org/publisher": "hasPublisher",
+      "https://schema.org/roleName": "hasRoleName",
+      "https://schema.org/seasonNumber": "hasSeasonNumber",
+      "https://schema.org/serialNumber": "hasSerialNumber",
+      "https://schema.org/spatial": "hasSpatial",
+      "https://schema.org/startDate": "hasStartDate",
+      "https://schema.org/startTime": "hasStartTime",
+      "https://schema.org/streetAddress": "hasStreetAddress",
+      "https://schema.org/telephone": "hasTelephone",
+      "https://schema.org/temporal": "hasTemporal",
+      "https://schema.org/thumbnailUrl": "hasThumbnailURL",
+      "https://schema.org/transcript": "hasTranscript",
+      "https://schema.org/unitCode": "hasUnitCode",
+      "https://schema.org/unitText": "hasUnitText",
+      "https://schema.org/value": "hasValue",
+      "https://schema.org/vatID": "hasVATID",
+      "https://schema.org/version": "hasVersion",
+      "https://schema.org/width": "hasWidth"
+    },
+    "scheme_case": "lowerCamelCase",
+    "shape_case": "PascalCase"
+  },
+  "outputs": {
+    "map": "model/model-map.json",
+    "rdfs": "model/model.rdfs.ttl",
+    "shacl": "model/model.shacl.ttl"
+  },
+  "prefixes": {
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "dct": "http://purl.org/dc/terms/",
+    "ha": "https://data.hetarchief.be/ns/",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "pav": "http://purl.org/pav/",
+    "premis": "http://www.loc.gov/premis/rdf/v3/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "vann": "http://purl.org/vocab/vann/",
+    "vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "preserve_namespaces": [
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "http://www.w3.org/2000/01/rdf-schema#",
+    "http://www.w3.org/2002/07/owl#",
+    "http://www.w3.org/ns/shacl#",
+    "http://www.w3.org/2001/XMLSchema#",
+    "https://data.hetarchief.be/id/",
+    "http://www.w3.org/2004/02/skos/core#",
+    "http://www.w3.org/2008/05/skos-xl#",
+    "http://purl.org/vocab/vann/",
+    "http://purl.org/dc/dcam/",
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#"
+  ],
+  "preserve_uris": [
+    "http://id.loc.gov/datatypes/edtf/EDTF-level0",
+    "http://id.loc.gov/datatypes/edtf/EDTF-level1",
+    "http://id.loc.gov/datatypes/edtf/EDTF-level2",
+    "https://schema.org/domainIncludes",
+    "https://schema.org/rangeIncludes",
+    "https://schema.org/inverseOf",
+    "https://schema.org/supersededBy"
+  ],
+  "prune_unused_superclasses": true,
+  "retain_namespaces": [
+    "http://www.loc.gov/premis/rdf/v3/",
+    "http://www.w3.org/ns/odrl/2/",
+    "http://www.w3.org/ns/prov#"
+  ],
+  "root": "../..",
+  "supplemental": [
+    "model/supplemental.rdfs.ttl"
+  ]
+}
