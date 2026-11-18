@@ -1,0 +1,430 @@
+PREFIX ha: <https://data.hetarchief.be/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+prov:Activity a rdfs:Class, owl:Class ;
+    rdfs:label "Activity"@en, "Activité"@fr, "Activiteit"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en, "Une activité est quelque chose qui se passe pendant un certain temps et qui agit sur/avec des entités. Cela peut inclure la consommation, le traitement, la transformation, la modification, le déplacement, l'utilisation ou la génération d'entités."@fr, "Een activiteit is iets dat zich gedurende een bepaalde periode voordoet en op/met entiteiten handelt. Het kan onder meer volgende zaken inhouden: consumeren, verwerken, transformeren, wijzigen, verplaatsen, gebruiken of genereren van entiteiten."@nl ;
+     .
+
+prov:Agent a rdfs:Class, owl:Class ;
+    rdfs:label "Agent"@en, "Agent"@fr, "Agent"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    skos:definition "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. "@en, "Un agent est quelque chose qui porte une forme de responsabilité pour une activité qui se passe, pour l'existence d'une entité ou pour l'activité d'un autre agent. "@fr, "Een agent is iets dat een bepaalde vorm van verantwoordelijkheid voor een activiteit neemt, voor het bestaan van een entiteit of voor de activiteit van een andere agent. "@nl ;
+     .
+
+prov:Entity a rdfs:Class, owl:Class ;
+    rdfs:label "Entity"@en, "Entité"@fr, "Entiteit"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en, "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr, "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl ;
+     .
+
+prov:category a owl:AnnotationProperty ;
+    rdfs:comment "Classify prov-o terms into three categories, including 'starting-point', 'qualifed', and 'extended'. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. "@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+     .
+
+prov:component a owl:AnnotationProperty ;
+    rdfs:comment "Classify prov-o terms into six components according to prov-dm, including 'agents-responsibility', 'alternate', 'annotations', 'collections', 'derivations', and 'entities-activities'. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+     .
+
+prov:constraints a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+     .
+
+prov:dm a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-DM document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+     .
+
+prov:editorialNote a owl:AnnotationProperty ;
+    rdfs:comment "A note by the OWL development team about how this term expresses the PROV-DM concept, or how it should be used in context of semantic web or linked data."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+     .
+
+prov:editorsDefinition a owl:AnnotationProperty ;
+    rdfs:comment "When the prov-o term does not have a definition drawn from prov-dm, and the prov-o editor provides one."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf prov:definition ;
+     .
+
+prov:generated a owl:ObjectProperty ;
+    rdfs:label "generated"@en, "a généré"@fr, "genereerde"@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:influenced ;
+    owl:inverseOf prov:wasGeneratedBy ;
+     .
+
+prov:inverse a owl:AnnotationProperty ;
+    rdfs:comment "PROV-O does not define all property inverses. The directionalities defined in PROV-O should be given preference over those not defined. However, if users wish to name the inverse of a PROV-O property, the local name given by prov:inverse should be used."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+     .
+
+prov:n a owl:AnnotationProperty ;
+    rdfs:comment "A reference to the principal section of the PROV-DM document that describes this concept."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+     .
+
+prov:qualifiedForm a owl:AnnotationProperty ;
+    rdfs:comment """This annotation property links a subproperty of prov:wasInfluencedBy with the subclass of prov:Influence and the qualifying property that are used to qualify it. 
+
+Example annotation:
+
+    prov:wasGeneratedBy prov:qualifiedForm prov:qualifiedGeneration, prov:Generation .
+
+Then this unqualified assertion:
+
+    :entity1 prov:wasGeneratedBy :activity1 .
+
+can be qualified by adding:
+
+   :entity1 prov:qualifiedGeneration :entity1Gen .
+   :entity1Gen 
+       a prov:Generation, prov:Influence;
+       prov:activity :activity1;
+       :customValue 1337 .
+
+Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1) is mirrored as the value of the prov:activity (or prov:entity, or prov:agent) property on the influence class."""@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+     .
+
+prov:sharesDefinitionWith a owl:AnnotationProperty ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+     .
+
+prov:unqualifiedForm a owl:AnnotationProperty ;
+    rdfs:comment "Classes and properties used to qualify relationships are annotated with prov:unqualifiedForm to indicate the property used to assert an unqualified provenance relation."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:subPropertyOf rdfs:seeAlso ;
+     .
+
+prov:wasDerivedFrom owl:propertyChainAxiom (
+    ha:resultsFrom
+    ha:hasOriginalOrganization
+) ;
+     .
+
+prov:InstantaneousEvent a owl:Class ;
+    rdfs:label "InstantaneousEvent" ;
+    rdfs:comment "An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:constraints "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#dfn-event"^^xsd:anyURI ;
+    prov:definition "The PROV data model is implicitly based on a notion of instantaneous events (or just events), that mark transitions in the world. Events include generation, usage, or invalidation of entities, as well as starting or ending of activities. This notion of event is not first-class in the data model, but it is useful for explaining its other concepts and its semantics."@en ;
+     .
+
+prov:activity a owl:ObjectProperty ;
+    rdfs:label "activity" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Activity ;
+    rdfs:subPropertyOf prov:influencer ;
+    prov:category "qualified" ;
+    prov:editorialNote "This property behaves in spirit like rdf:object; it references the object of a prov:wasInfluencedBy triple."@en ;
+    prov:editorsDefinition "The prov:activity property references an prov:Activity which influenced a resource. This property applies to an prov:ActivityInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent." ;
+    prov:inverse "activityOfInfluence" ;
+     .
+
+prov:agent a owl:ObjectProperty ;
+    rdfs:label "agent" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Agent ;
+    rdfs:subPropertyOf prov:influencer ;
+    prov:category "qualified" ;
+    prov:editorialNote "This property behaves in spirit like rdf:object; it references the object of a prov:wasInfluencedBy triple."@en ;
+    prov:editorsDefinition "The prov:agent property references an prov:Agent which influenced a resource. This property applies to an prov:AgentInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent."@en ;
+    prov:inverse "agentOfInfluence" ;
+     .
+
+prov:atTime a owl:DatatypeProperty ;
+    rdfs:label "atTime" ;
+    rdfs:comment "The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range xsd:dateTime ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:sharesDefinitionWith prov:InstantaneousEvent ;
+    prov:unqualifiedForm prov:endedAtTime, prov:generatedAtTime, prov:invalidatedAtTime, prov:startedAtTime ;
+     .
+
+prov:definition a owl:AnnotationProperty ;
+    rdfs:comment "A definition quoted from PROV-DM or PROV-CONSTRAINTS that describes the concept expressed with this OWL term."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+     .
+
+prov:endedAtTime a owl:DatatypeProperty ;
+    rdfs:label "endedAtTime" ;
+    rdfs:comment "The time at which an activity ended. See also prov:startedAtTime."@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range xsd:dateTime ;
+    prov:category "starting-point" ;
+    prov:component "entities-activities" ;
+    prov:editorialNote "It is the intent that the property chain holds: (prov:qualifiedEnd o prov:atTime) rdfs:subPropertyOf prov:endedAtTime."@en ;
+    prov:qualifiedForm prov:End, prov:atTime ;
+     .
+
+prov:generatedAtTime a owl:DatatypeProperty ;
+    rdfs:label "generated at time"@en, "a généré au moment"@fr, "genereerde op tijdstip"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range xsd:dateTime ;
+     .
+
+prov:influenced a owl:ObjectProperty ;
+    rdfs:label "influenced" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    owl:inverseOf prov:wasInfluencedBy ;
+    prov:category "expanded" ;
+    prov:component "agents-responsibility" ;
+    prov:inverse "wasInfluencedBy" ;
+    prov:sharesDefinitionWith prov:Influence ;
+     .
+
+prov:invalidatedAtTime a owl:DatatypeProperty ;
+    rdfs:label "invalidated at time"@en, "invalidé au moment"@fr, "ongeldig gemaakt op tijdstip"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The time at which an entity was invalidated (i.e., no longer usable)."@en, "Le moment où une entité a été invalidée (c'est-à-dire n'est plus utilisable)."@fr, "Het tijdstip waarop een entiteit ongeldig werd gemaakt (d.w.z. niet langer bruikbaar)."@nl ;
+     .
+
+prov:qualifiedAssociation a owl:ObjectProperty ;
+    rdfs:label "qualifiedAssociation" ;
+    rdfs:comment "If this Activity prov:wasAssociatedWith Agent :ag, then it can qualify the Association using prov:qualifiedAssociation [ a prov:Association;  prov:agent :ag; :foo :bar ]."@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Association ;
+    rdfs:subPropertyOf prov:qualifiedInfluence ;
+    prov:category "qualified" ;
+    prov:component "agents-responsibility" ;
+    prov:inverse "qualifiedAssociationOf" ;
+    prov:sharesDefinitionWith prov:Association ;
+    prov:unqualifiedForm prov:wasAssociatedWith ;
+     .
+
+prov:qualifiedGeneration a owl:ObjectProperty ;
+    rdfs:label "qualifiedGeneration" ;
+    rdfs:comment "If this Activity prov:generated Entity :e, then it can qualify how it performed the Generation using prov:qualifiedGeneration [ a prov:Generation;  prov:entity :e; :foo :bar ]."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Generation ;
+    rdfs:subPropertyOf prov:qualifiedInfluence ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:inverse "qualifiedGenerationOf" ;
+    prov:sharesDefinitionWith prov:Generation ;
+    prov:unqualifiedForm prov:wasGeneratedBy ;
+     .
+
+prov:qualifiedUsage a owl:ObjectProperty ;
+    rdfs:label "qualifiedUsage" ;
+    rdfs:comment "If this Activity prov:used Entity :e, then it can qualify how it used it using prov:qualifiedUsage [ a prov:Usage; prov:entity :e; :foo :bar ]."@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Usage ;
+    rdfs:subPropertyOf prov:qualifiedInfluence ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:inverse "qualifiedUsingActivity" ;
+    prov:sharesDefinitionWith prov:Usage ;
+    prov:unqualifiedForm prov:used ;
+     .
+
+prov:startedAtTime a owl:DatatypeProperty ;
+    rdfs:label "started at time"@en, "démarré à l'heure"@fr, "gestart op tijdstip"@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The time at which an activity started. See also `prov:endedAtTime`."@en, "Le moment où une activité a commencé. Voir aussi `prov:endedAtTime`."@fr, "Het tijdstip waarop een activiteit begon. Zie ook `prov:endedAtTime`."@nl ;
+     .
+
+prov:Association a owl:Class ;
+    rdfs:label "Association" ;
+    rdfs:comment "An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that had some responsiblity for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualifiedAssociation [ a prov:Association; prov:agent :baker; :foo :bar ]."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "qualified" ;
+    prov:component "agents-responsibility" ;
+    prov:definition "An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity."@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Association"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Association"^^xsd:anyURI ;
+    prov:unqualifiedForm prov:wasAssociatedWith ;
+     .
+
+prov:Generation a owl:Class ;
+    rdfs:label "Generation" ;
+    rdfs:comment "An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:activity :baking; :foo :bar ]."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:constraints "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+    prov:definition "Generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation."@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Generation"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Generation"^^xsd:anyURI ;
+    prov:unqualifiedForm prov:wasGeneratedBy ;
+     .
+
+prov:Usage a owl:Class ;
+    rdfs:label "Usage" ;
+    rdfs:comment "An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualifiedUsage [ a prov:Usage; prov:entity :podium; :foo :bar ]."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:constraints "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+    prov:definition "Usage is the beginning of utilizing an entity by an activity. Before usage, the activity had not begun to utilize this entity and could not have been affected by the entity."@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Usage"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Usage"^^xsd:anyURI ;
+    prov:unqualifiedForm prov:used ;
+     .
+
+prov:entity a owl:ObjectProperty ;
+    rdfs:label "entity" ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:influencer ;
+    prov:category "qualified" ;
+    prov:editorialNote "This property behaves in spirit like rdf:object; it references the object of a prov:wasInfluencedBy triple."@en ;
+    prov:editorsDefinition "The prov:entity property references an prov:Entity which influenced a resource. This property applies to an prov:EntityInfluence, which is given by a subproperty of prov:qualifiedInfluence from the influenced prov:Entity, prov:Activity or prov:Agent." ;
+    prov:inverse "entityOfInfluence" ;
+     .
+
+prov:qualifiedEnd a owl:ObjectProperty ;
+    rdfs:label "qualifiedEnd" ;
+    rdfs:comment "If this Activity prov:wasEndedBy Entity :e1, then it can qualify how it was ended using prov:qualifiedEnd [ a prov:End;  prov:entity :e1; :foo :bar ]."@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:End ;
+    rdfs:subPropertyOf prov:qualifiedInfluence ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:inverse "qualifiedEndOf" ;
+    prov:sharesDefinitionWith prov:End ;
+    prov:unqualifiedForm prov:wasEndedBy ;
+     .
+
+prov:used a owl:ObjectProperty ;
+    rdfs:label "used"@en, "a utilisé"@fr, "gebruikte"@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (
+        prov:qualifiedUsage
+        prov:entity
+    ) ;
+    skos:definition "A `prov:Entity` that was used by this `prov:Activity`. For example, `:baking prov:used :spoon, :egg, :oven .`"@en, "Une `prov:Entity` qui a été utilisée par cette `prov:Activity`. Par exemple , `:baking prov:used :cuillère , :œuf , :four.`"@fr, "Een `prov:Entity` die door deze `prov:Activity` werd gebruikt. Bijvoorbeeld: `:bakken prov:used :lepel ,:ei, :oven.`"@nl ;
+     .
+
+prov:wasAssociatedWith a owl:ObjectProperty ;
+    rdfs:label "was associated with"@en, "a été associé à"@fr, "is geassocieerd met"@nl ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Agent ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (
+        prov:qualifiedAssociation
+        prov:agent
+    ) ;
+    skos:definition "An `prov:Agent` that had some (unspecified) responsibility for the occurrence of this `prov:Activity`."@en, "Un `prov:Agent` qui avait une responsabilité (non spécifiée) avant la survenue de cette `prov:Activity`."@fr, "Een `prov:Agent` die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze `prov:Activity`."@nl ;
+     .
+
+prov:wasEndedBy a owl:ObjectProperty ;
+    rdfs:label "wasEndedBy" ;
+    rdfs:comment "End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity."@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (
+        prov:qualifiedEnd
+        prov:entity
+    ) ;
+    prov:category "expanded" ;
+    prov:component "entities-activities" ;
+    prov:inverse "ended" ;
+    prov:qualifiedForm prov:End, prov:qualifiedEnd ;
+     .
+
+prov:Influence a owl:Class ;
+    rdfs:label "Influence" ;
+    rdfs:comment "An instance of prov:Influence provides additional descriptions about the binary prov:wasInfluencedBy relation from some influenced Activity, Entity, or Agent to the influencing Activity, Entity, or Agent. For example, :stomach_ache prov:wasInfluencedBy :spoon; prov:qualifiedInfluence [ a prov:Influence; prov:entity :spoon; :foo :bar ] . Because prov:Influence is a broad relation, the more specific relations (Communication, Delegation, End, etc.) should be used when applicable."@en, "Because prov:Influence is a broad relation, its most specific subclasses (e.g. prov:Communication, prov:Delegation, prov:End, prov:Revision, etc.) should be used when applicable."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "qualified" ;
+    prov:component "derivations" ;
+    prov:definition "Influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation."@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-influence"^^xsd:anyURI ;
+    prov:unqualifiedForm prov:wasInfluencedBy ;
+     .
+
+prov:influencer a owl:ObjectProperty ;
+    rdfs:label "influencer" ;
+    rdfs:comment "Subproperties of prov:influencer are used to cite the object of an unqualified PROV-O triple whose predicate is a subproperty of prov:wasInfluencedBy (e.g. prov:used, prov:wasGeneratedBy). prov:influencer is used much like rdf:object is used."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range owl:Thing ;
+    prov:category "qualified" ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-influence"^^xsd:anyURI ;
+    prov:editorialNote "This property and its subproperties are used in the same way as the rdf:object property, i.e. to reference the object of an unqualified prov:wasInfluencedBy or prov:influenced triple."@en ;
+    prov:editorsDefinition "This property is used as part of the qualified influence pattern. Subclasses of prov:Influence use these subproperties to reference the resource (Entity, Agent, or Activity) whose influence is being qualified."@en ;
+    prov:inverse "hadInfluence" ;
+     .
+
+prov:wasGeneratedBy a owl:ObjectProperty ;
+    rdfs:label "was generated by"@en, "a été généré par"@fr, "is gegenereerd door"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Activity ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    owl:propertyChainAxiom (
+        prov:qualifiedGeneration
+        prov:activity
+    ) ;
+     .
+
+prov:End a owl:Class ;
+    rdfs:label "End" ;
+    rdfs:comment "An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualifiedEnd [ a prov:End; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ]."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    prov:category "qualified" ;
+    prov:component "entities-activities" ;
+    prov:constraints "http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig"^^xsd:anyURI ;
+    prov:definition "End is when an activity is deemed to have been ended by an entity, known as trigger. The activity no longer exists after its end. Any usage, generation, or invalidation involving an activity precedes the activity's end. An end may refer to a trigger entity that terminated the activity, or to an activity, known as ender that generated the trigger."@en ;
+    prov:dm "http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-End"^^xsd:anyURI ;
+    prov:n "http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-End"^^xsd:anyURI ;
+    prov:unqualifiedForm prov:wasEndedBy ;
+     .
+
+prov:qualifiedInfluence a owl:ObjectProperty ;
+    rdfs:label "qualifiedInfluence" ;
+    rdfs:comment "Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable."@en ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            prov:Activity
+            prov:Agent
+            prov:Entity
+        ) ;
+    ] ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+    rdfs:range prov:Influence ;
+    prov:category "qualified" ;
+    prov:component "derivations" ;
+    prov:inverse "qualifiedInfluenceOf" ;
+    prov:sharesDefinitionWith prov:Influence ;
+    prov:unqualifiedForm prov:wasInfluencedBy ;
+     .
+
+prov:wasInfluencedBy a owl:ObjectProperty ;
+    rdfs:label "prov:wasInfluencedBy"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
+     .

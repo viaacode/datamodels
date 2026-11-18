@@ -1,0 +1,320 @@
+PREFIX ha: <https://data.hetarchief.be/ns/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+premis:Agent a rdfs:Class, owl:Class ;
+    rdfs:label "Agent"@en, "Acteur"@fr, "Agent"@nl ;
+    rdfs:isDefinedBy premis: ;
+    skos:definition "Actor (human, machine, or software) associated with one or more Event and/or Rights statement associated with a digital object."@en, "Acteur (humain, machine ou logiciel) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."@fr, "Agens (mens, machine of software) geassocieerd met één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."@nl ;
+     .
+
+premis:Event a rdfs:Class, owl:Class ;
+    rdfs:label "Event"@en, "Événement"@fr, "Gebeurtenis"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventType> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "Action performed within or outside the repository that affects its capability to preserve Objects over the long term."@en, "Action réalisée à l'intérieur ou à l'extérieur du dépôt qui affecte sa capacité à préserver des objets sur le long terme."@fr, "Handeling uitgevoerd binnen of buiten het archief die het vermogen beïnvloedt om objecten op lange termijn te bewaren."@nl ;
+     .
+
+premis:File a rdfs:Class, owl:Class ;
+    rdfs:label "File"@en, "Fichier"@fr, "Bestand"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:Bitstream, premis:IntellectualEntity, premis:Representation ;
+    skos:definition "Named and ordered sequence of bytes that is known to an operating system."@en, "Séquence nommée et ordonnée d'octets/bytes connue par un système d'exploitation."@fr, "Genoemde en geordende sequentie van bytes gekend door een besturingssysteem."@nl ;
+     .
+
+premis:Fixity a rdfs:Class, owl:Class ;
+    rdfs:label "Fixity"@en, "Fixité"@fr, "Fixity"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> ;
+    skos:definition "Information used to verify whether an object has been altered in an undocumented or unauthorized way."@en, "Informations utilisées pour vérifier si un objet a été modifié de manière non documentée ou non autorisée."@fr, "Informatie die wordt gebruikt om na te gaan of een object op een ongedocumenteerde of ongeoorloofde manier werd gewijzigd."@nl ;
+     .
+
+premis:HardwareAgent a rdfs:Class, owl:Class ;
+    rdfs:label "Hardware agent"@en, "Matériel acteur"@fr, "Hardware agent"@nl ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:Organization, premis:Person, premis:SoftwareAgent ;
+    owl:sameAs ha:hardwareAgentType ;
+    skos:definition "Hardware agent (e.g., a computer) that is associated with one or more Events and/or Rights statement associated with a digital object."@en, "Agent matériel (par ex. un ordinateur) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."@fr, "Hardwareagent (bv. een computer) die gekoppeld is aan één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."@nl ;
+     .
+
+premis:IntellectualEntity a rdfs:Class, owl:Class ;
+    rdfs:label "Intellectual entity"@en, "Entité intellectuelle"@fr, "Intellectuele entiteit"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentFunctionType> ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:Bitstream, premis:File, premis:Representation ;
+    skos:definition "A set of content that is considered a single intellectual unit for purposes of management and description: for example, a particular book, map, photograph, database, or piece of hardware or software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can include a web page; a web page can include an image. An Intellectual Entity may have one or more digital representations. An Intellectual Entity may also describe an environment, defined as technology supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of software, hardware, or a combination of both."@en, "Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description."@fr, "Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."@nl ;
+     .
+
+premis:License a rdfs:Class, owl:Class ;
+    rdfs:label "License"@en, "Licence"@fr, "Licentie"@nl ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:Copyright, premis:InstitutionalPolicy, premis:Statute ;
+    skos:definition "A license agreement or other legal document that grants rights."@en, "Un accord de licence ou un autre document juridique qui accorde les droits."@fr, "Een licentieovereenkomst of ander juridisch document dat rechten verleent."@nl ;
+     .
+
+premis:Object a rdfs:Class, owl:Class ;
+    rdfs:label "Object"@en, "Objet"@fr, "Object"@nl ;
+    rdfs:isDefinedBy premis: ;
+    skos:definition "Discrete unit of information subject to digital preservation. Subclasses of Object are Intellectual Entity, Representation, File and Bitstream."@en, "Unité discrète d'information soumise à la préservation numérique. Les sous-classes d'objet sont le Intellectual Entity (entité intellectuelle), la Representation (représentation), le File (fichier) et le Bitstream (flux binaire)."@fr, "Discrete eenheid van informatie die digitaal moet worden bewaard. Subklassen van Object zijn Intellectual Entity (intellectuele entiteit), Representation (voorstelling/weergave), File (bestand) en Bitstream (bitstream)."@nl ;
+     .
+
+premis:OutcomeStatus a rdfs:Class, owl:Class ;
+    rdfs:label "Outcome status"@en, "Statut de résultat"@fr, "Uitkomststatus"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
+    skos:definition "Overall result of the Event in terms of success, partial success, or failure."@en, "Résultat global de l'événement en termes de succès, de succès partiel ou d'échec."@fr, "Algemeen resultaat van het Event in termen van succes, gedeeltelijk succes of falen."@nl ;
+     .
+
+premis:Representation a rdfs:Class, owl:Class ;
+    rdfs:label "Representation"@en, "Représentation"@fr, "Representatie"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:Bitstream, premis:File, premis:IntellectualEntity ;
+    skos:definition "Digital or physical Object instantiating or embodying an Intellectual Entity. A digital representation is the set of stored digital files and structural metadata needed to provide a complete and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a manuscript, video cassette, or printed document."@en, "Objet numérique ou physique instanciant ou incarnant une Entité Intellectuelle (Intellectual Entity). Une représentation numérique (Digital Representation) est l'ensemble des fichiers numériques stockés et des métadonnées structurelles nécessaires pour fournir une interprétation complète et raisonnable de l'entité intellectuelle (Intellectual Entity). Une représentation physique (Physical Representation) est un élément tel qu'un manuscrit, une cassette vidéo ou un document imprimé."@fr, "Digitaal of fysiek object dat een intellectuele entiteit (Intellectual Entity) vormgeeft of belichaamt. Een digitale weergave (Digital Representation) is de set van opgeslagen digitale bestanden en structurele metadata die nodig zijn om een volledige en redelijke weergave van de Intellectuele Entiteit (Intellectual Entity) te bieden. Een fysieke representatie (Physical Representation) is een item zoals een manuscript, videocassette of gedrukt document."@nl ;
+     .
+
+premis:RightsBasis a rdfs:Class, owl:Class ;
+    rdfs:label "Rights basis"@en, "Base des droits"@fr, "Rechtenbasis"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/rightsBasis> ;
+    skos:definition "Designation of the basis for the right or permission governing the Object."@en, "Désignation de la base du droit ou de l'autorisation régissant l'objet."@fr, "Aanwijzing van de basis voor het recht of toestemming voor het object."@nl ;
+     .
+
+premis:RightsStatus a rdfs:Class, owl:Class ;
+    rdfs:label "Rights status"@en, "Statut de droits"@fr, "Rechtenstatus"@nl ;
+    rdfs:isDefinedBy premis: ;
+    skos:definition "Information about how a RightsBasis applies to a particular object."@en, "Informations sur la façon dont une base de droits s'applique à un objet particulier."@fr, "Informatie over hoe een rechtenbasis van toepassing is op een bepaald object."@nl ;
+     .
+
+premis:SoftwareAgent a rdfs:Class, owl:Class ;
+    rdfs:label "Software agent"@en, "Logiciel acteur"@fr, "Software agent"@nl ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:HardwareAgent, premis:Organization, premis:Person ;
+    skos:definition "Software agent (e.g., a computer program) that is associated with one or more Event and/or Rights statement associated with a digital object."@en, "Agent logiciel (par ex. un programme informatique) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."@fr, "Softwareagent (bv. een computerprogramma) die gekoppeld is aan één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."@nl ;
+     .
+
+premis:StorageLocation a rdfs:Class, owl:Class ;
+    rdfs:label "Storage location"@en, "Emplacement de stockage"@fr, "Opslagplaats"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/contentLocationType> ;
+    skos:definition "Information needed to retrieve a physical item from its physical storage location or a file from the storage system, or to access a bitstream within a file."@en, "Informations nécessaires pour extraire un élément physique de son emplacement de stockage physique ou un fichier du système de stockage, ou pour accéder à un flux binaire (bitstream) dans un fichier (file)."@fr, "Informatie die nodig is om een fysiek voorwerp van zijn fysieke opslagplaats of een bestand uit het opslagsysteem op te halen, of om toegang te krijgen tot een bitstream binnen een bestand (file)."@nl ;
+     .
+
+premis:StorageMedium a rdfs:Class, owl:Class ;
+    rdfs:label "Storage medium"@en, "Support de stockage"@fr, "Opslagmedium"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> ;
+    skos:definition "The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM, DVD)."@en, "Le support physique sur lequel l'Objet (Object) est stocké (par exemple, bande magnétique, le disque dur, le CD-ROM, le DVD)."@fr, "Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."@nl ;
+     .
+
+premis:basis a owl:ObjectProperty ;
+    rdfs:label "has basis"@en, "a une base"@fr, "heeft basis"@nl ;
+    rdfs:domain premis:RightsStatus ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:RightsBasis ;
+    skos:definition "Links from a RightsStatus to the RightsBasis instance that supports or documents it."@en, "Liens d'un RightsStatus à l'instance Droite-Basis qui le prend en charge ou le documente."@fr, "Links van een rechtenstatus naar de instantie van het rechtenbasis die dit ondersteunt of documenteert."@nl ;
+     .
+
+premis:endDate a owl:DatatypeProperty ;
+    rdfs:label "end date"@en, "date de fin"@fr, "einddatum"@nl ;
+    rdfs:domain [
+        a rdfs:Class, owl:Class ;
+        owl:unionOf (
+            premis:RightsStatus
+            premis:Rule
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subPropertyOf ha:hasDate ;
+     .
+
+premis:fixity a owl:ObjectProperty ;
+    rdfs:label "has fixity"@en, "a fixity"@fr, "heeft fixity"@nl ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            premis:Bitstream
+            premis:File
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Fixity ;
+     .
+
+premis:identifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en, "a identifiant"@fr, "heeft identificatiecode"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Identifier ;
+     .
+
+premis:medium a owl:ObjectProperty ;
+    rdfs:label "has medium"@en, "a un support"@fr, "heeft als medium"@nl ;
+    rdfs:domain premis:StorageLocation ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:StorageMedium ;
+     .
+
+premis:originalName a owl:DatatypeProperty ;
+    rdfs:label "has original name"@en, "porte le nom d'origine"@fr, "heeft originele naam"@nl ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            premis:File
+            premis:IntellectualEntity
+            premis:Representation
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range rdfs:Literal ;
+     .
+
+premis:outcome a owl:ObjectProperty ;
+    rdfs:label "has outcome"@en, "a résultat"@fr, "heeft resultaat"@nl ;
+    rdfs:domain premis:Event ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:OutcomeStatus ;
+     .
+
+premis:outcomeNote a owl:DatatypeProperty ;
+    rdfs:label "has outcome note"@en, "a note de résultat"@fr, "heeft resultaatnota"@nl ;
+    rdfs:domain premis:Event ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf premis:note ;
+     .
+
+premis:relationship a owl:ObjectProperty ;
+    rdfs:label "has relationship"@en, "a une relation"@fr, "heeft een relatie"@nl ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            premis:Agent
+            premis:Object
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Object ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+     .
+
+premis:rightsStatus a owl:ObjectProperty ;
+    rdfs:label "has rights status"@en, "a le statut de droits"@fr, "heeft rechtenstatus"@nl ;
+    rdfs:domain premis:Object ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:RightsStatus ;
+    rdfs:subPropertyOf ha:hasRights ;
+     .
+
+premis:size a owl:DatatypeProperty ;
+    rdfs:label "has size"@en, "a une taille (du fichier)"@fr, "heeft (bestands)grootte"@nl ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            premis:Bitstream
+            premis:File
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:narrowMatch <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize> ;
+     .
+
+premis:startDate a owl:DatatypeProperty ;
+    rdfs:label "start date"@en, "date de début"@fr, "startdatum"@nl ;
+    rdfs:domain [
+        a rdfs:Class, owl:Class ;
+        owl:unionOf (
+            premis:RightsStatus
+            premis:Rule
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subPropertyOf ha:hasDate ;
+     .
+
+premis:storedAt a owl:ObjectProperty ;
+    rdfs:label "stored at"@en, "stocké à"@fr, "opgeslagen te"@nl ;
+    rdfs:domain [
+        a owl:Class ;
+        owl:unionOf (
+            premis:Bitstream
+            premis:File
+            premis:Representation
+        ) ;
+    ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:StorageLocation ;
+     .
+
+premis:Identifier a owl:Class ;
+    rdfs:label "Identifier"@en ;
+    rdfs:comment """An unambiguous reference to the PREMIS entity within the preservation
+      repository."""@en ;
+    rdfs:isDefinedBy premis: ;
+     .
+
+premis:note a owl:DatatypeProperty ;
+    rdfs:label "has note"@en, "a note"@fr, "heeft nota"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf ha:description ;
+     .
+
+premis:Rule a owl:Class ;
+    rdfs:label "Rule"@en ;
+    rdfs:comment """Statement about the Actions an Agent is permitted to undertake or prohibited from
+      undertaking with respect to an Object."""@en ;
+    rdfs:isDefinedBy premis: ;
+     .
+
+premis:Copyright a owl:Class ;
+    rdfs:label "Copyright"@en ;
+    rdfs:comment "Copyright law."@en ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/copyrightStatus> ;
+    owl:disjointWith premis:InstitutionalPolicy, premis:License, premis:Statute ;
+     .
+
+premis:InstitutionalPolicy a owl:Class ;
+    rdfs:label "Institutional policy"@en ;
+    rdfs:comment "A policy decision made by an organization."@en ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:Copyright, premis:License, premis:Statute ;
+     .
+
+premis:Organization a owl:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:HardwareAgent, premis:Person, premis:SoftwareAgent ;
+     .
+
+premis:Person a owl:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:HardwareAgent, premis:Organization, premis:SoftwareAgent ;
+     .
+
+premis:Statute a owl:Class ;
+    rdfs:label "Statute"@en ;
+    rdfs:comment """A law that grants or revokes rights, such as laws governing privacy or orphan
+      works."""@en ;
+    rdfs:isDefinedBy premis: ;
+    owl:disjointWith premis:Copyright, premis:InstitutionalPolicy, premis:License ;
+     .
+
+premis:Bitstream a owl:Class ;
+    rdfs:label "Bitstream"@en ;
+    rdfs:comment """Contiguous or non-contiguous data within a file that has meaningful properties for
+      preservation purposes."""@en ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:File, premis:IntellectualEntity, premis:Representation ;
+     .
