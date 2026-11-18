@@ -1,17 +1,13 @@
-PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ha: <https://data.hetarchief.be/ns/>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX pav: <http://purl.org/pav/>
 PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX schema: <https://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
-PREFIX vann: <http://purl.org/vocab/vann/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 ha:ActivityShape a sh:NodeShape ;
@@ -3284,136 +3280,6 @@ ha:WrittenWorkCarrierRepresentationShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ] ;
     sh:targetClass ha:WrittenWorkCarrierRepresentation ;
-     .
-
-ha:descriptionModel a owl:Ontology ;
-    rdfs:label "description model"@en ;
-    dct:author [
-        schema:email "lennert.vandevelde@meemoo.be" ;
-        schema:name "Lennert Van de Velde"@nl ;
-    ], [
-        schema:email "miel.vandersande@meemoo.be" ;
-        schema:name "Miel Vander Sande"@nl ;
-    ], [
-        schema:email "milan.valadou@meemoo.be" ;
-        schema:name "Milan Valadou"@nl ;
-    ] ;
-    dct:created "2022-01-07" ;
-    dct:description "Data model to describe the content of objects."@en, "Modèle de données pour décrire le contenu des objets."@fr, "Datamodel voor de beschrijving van de inhoud van objecten."@nl ;
-    dct:modified "2025-09-22" ;
-    dct:title "Data model Description"@en, "Modèle de données Description"@fr, "Datamodel Descriptie"@nl ;
-    pav:version "1.1.0" ;
-    vann:preferredNamespacePrefix "ha" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/" ;
-     .
-
-ha:eventModel a owl:Ontology ;
-    rdfs:label "event model"@en ;
-    dct:author [
-        schema:email "lennert.vandevelde@meemoo.be" ;
-        schema:name "Lennert Van de Velde"@nl ;
-    ], [
-        schema:email "miel.vandersande@meemoo.be" ;
-        schema:name "Miel Vander Sande"@nl ;
-    ], [
-        schema:email "milan.valadou@meemoo.be" ;
-        schema:name "Milan Valadou"@nl ;
-    ] ;
-    dct:created "2022-06-08" ;
-    dct:description "Data model to describe events."@en, "Modèle de données pour décrire des événements."@fr, "Datamodel voor het beschrijven van gebeurtenissen."@nl ;
-    dct:modified "2025-02-13" ;
-    dct:title "Data model Events"@en, "Modèle de données Events"@fr, "Datamodel Events"@nl ;
-    pav:version "1.0.0" ;
-    vann:preferredNamespacePrefix "ha" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/" ;
-    owl:imports premis: ;
-     .
-
-ha:objectModel a owl:Ontology ;
-    rdfs:label "object model"@en ;
-    dct:author [
-        schema:email "lennert.vandevelde@meemoo.be" ;
-        schema:name "Lennert Van de Velde"@nl ;
-    ], [
-        schema:email "miel.vandersande@meemoo.be" ;
-        schema:name "Miel Vander Sande"@nl ;
-    ], [
-        schema:email "milan.valadou@meemoo.be" ;
-        schema:name "Milan Valadou"@nl ;
-    ] ;
-    dct:created "2022-05-16" ;
-    dct:description "Data model to describe objects."@en, "Modèle de données pour décrire des objets."@fr, "Datamodel voor het beschrijven van objecten."@nl ;
-    dct:modified "2025-02-13" ;
-    dct:title "Data model Objects"@en, "Modèle de données Objets"@fr, "Datamodel Objecten"@nl ;
-    pav:version "1.0.0" ;
-    vann:preferredNamespacePrefix "ha" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/" ;
-    owl:imports premis:, prov: ;
-     .
-
-ha:organizationModel a owl:Ontology ;
-    rdfs:label "organization model"@en ;
-    dct:created "2022-03-14" ;
-    dct:description "Data model to describe organizations."@en, "Modèle de données pour décrire des organisations."@fr, "Datamodel voor het beschrijven van organisaties."@nl ;
-    dct:modified "2025-02-13" ;
-    dct:title "Data model Organizations"@en, "Modèle de données Organisations"@fr, "Datamodel Organisaties"@nl ;
-    pav:version "1.0.0" ;
-    vann:preferredNamespacePrefix "ha" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/" ;
-    schema:author [
-        a schema:Person ;
-        schema:email "lennert.vandevelde@meemoo.be" ;
-        schema:name "Lennert Van de Velde"@nl ;
-    ], [
-        a schema:Person ;
-        schema:email "miel.vandersande@meemoo.be" ;
-        schema:name "Miel Vander Sande"@nl ;
-    ], [
-        a schema:Person ;
-        schema:email "milan.valadou@meemoo.be" ;
-        schema:name "Milan Valadou"@nl ;
-    ] ;
-     .
-
-ha:rightsModel a owl:Ontology ;
-    rdfs:label "rights model"@en ;
-    dct:created "2025-09-10" ;
-    dct:description "Data model to describe rights and distribution policy."@en, "Modèle de données pour décrire les droits et la politique de distribution."@fr, "Datamodel om rechten en distributiebeleid te beschrijven."@nl ;
-    dct:modified "2025-09-10" ;
-    dct:title "Data model Rights"@en, "Modèle de données Droits"@fr, "Datamodel Rechten"@nl ;
-    pav:version "1.1.0" ;
-    vann:preferredNamespacePrefix "ha" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/" ;
-    schema:author [
-        a schema:Person ;
-        schema:email "miel.vandersande@meemoo.be" ;
-        schema:name "Miel Vander Sande"@nl ;
-    ] ;
-     .
-
-ha:termsModel a owl:Ontology ;
-    rdfs:label "terms model"@en ;
-    dct:author [
-        schema:email "lennert.vandevelde@meemoo.be" ;
-        schema:name "Lennert Van de Velde"@nl ;
-    ], [
-        schema:email "miel.vandersande@meemoo.be" ;
-        schema:name "Miel Vander Sande"@nl ;
-    ], [
-        schema:email "milan.valadou@meemoo.be" ;
-        schema:name "Milan Valadou"@nl ;
-    ] ;
-    dct:created "2022-07-06" ;
-    dct:description "Data model to describe structured lists of terms such as thesauri."@en, "Modèle de données pour décrire des listes structurées de termes tels que le thésaure."@fr, "Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."@nl ;
-    dct:modified "2025-02-13" ;
-    dct:title "Data model List of terms"@en, "Modèle de données Listes de termes"@fr, "Datamodel Termenlijst"@nl ;
-    pav:version "1.0.0" ;
-    vann:preferredNamespacePrefix "ha" ;
-    vann:preferredNamespaceUri "https://data.hetarchief.be/ns/" ;
-     .
-
-<model.shacl.ttl> a owl:Ontology ;
-    owl:imports <model.rdfs.ttl> ;
      .
 
 ha:DefinitionShape a sh:PropertyShape ;
