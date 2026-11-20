@@ -5,6 +5,7 @@ PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
@@ -740,7 +741,7 @@ ha:DescriptionDigitalRepresentationShape a sh:NodeShape ;
         sh:message "schema:caption is not of type string "@en, "schema:caption n'est pas de type string"@fr, "schema:caption is niet van het type string"@nl ;
         sh:name "caption"@en, "légende"@fr, "onderschrift"@nl ;
         sh:nodeKind sh:Literal ;
-        sh:path ha:hasCaption ;
+        sh:path ha:hasCaptionText ;
         sh:severity sh:Violation ;
     ], _:cb5c17fc754ae0c026196a90219aea37cde57bde5539ccbcb598dfce2f0b40cedbc, _:cb5fdf1e422ad7ed29239687ded3df55e6fd0b1626985e9619a5c2994e72f9c346a, [
         a sh:PropertyShape ;
@@ -2717,7 +2718,7 @@ ha:PersonShape a sh:NodeShape ;
     rdfs:label "person shape"@en ;
     sh:property [
         a sh:PropertyShape ;
-        sh:datatype xsd:string ;
+        sh:class schema:Place ;
         sh:maxCount 1 ;
         sh:message "occurs more than once or its object is not of type xsd:string"@en ;
         sh:name "birth place"@en, "Lieu de naissance"@fr, "geboorteplaats"@nl ;
