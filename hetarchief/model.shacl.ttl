@@ -438,18 +438,18 @@ ha:ConstraintShape a sh:NodeShape ;
                 sh:class ha:UserGroup ;
             ]
             [
-                sh:class ha:MetadataRange ;
+                sh:class ha:MetadataRScope ;
             ]
             [
-                sh:class ha:ContentRange ;
+                sh:class ha:ContentScope ;
             ]
         ) ;
         sh:path odrl:rightOperand ;
     ], [
         sh:in (
             odrl:recipient
-            ha:metadataRangeOperand
-            ha:contentRangeOperand
+            ha:metadataScopeOperand
+            ha:contentScopeOperand
             odrl:dateTime
             odrl:absoluteTemporalPosition
         ) ;
@@ -1392,7 +1392,7 @@ ha:EventShape a sh:NodeShape ;
         sh:description "The object that was used as a source for the event."@en, "L'object utilisé comme source pour l'événement (Event)"@fr, "Het object dat als bron gebruikt is voor de gebeurtenis (Event)."@nl ;
         sh:message "evtObjRole:sou occurs more than once or its value is no instance of class premis:Object"@en, "evtObjRole:sou apparaît plus d'une seule fois ou sa valeur n'est pas une instance de la classe premis:Object"@fr, "evtObjRole:sou komt meer dan eens voor of de waarde is geen instantie van de klasse premis:Object"@nl ;
         sh:name "has source"@en, "a une source"@fr, "heeft bron"@nl ;
-        sh:path ha:hasSource ;
+        sh:path ha:hasEventInput ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
@@ -1464,7 +1464,7 @@ ha:EventShape a sh:NodeShape ;
         sh:message "evtAgRole:exe occurs more than once or its value is no instance of classes premis:SoftwareAgent"@en, "evtAgRole:exe apparaît plus d'une seule fois ou sa valeur n'est pas une instance de classes premis:SoftwareAgent"@fr, "evtAgRole:exe komt meer dan eens voor of de waarde is geen instantie van de klassen premis:SoftwareAgent"@nl ;
         sh:minCount 0 ;
         sh:name "executed by"@en, "exécuté par"@fr, "uitgevoerd door"@nl ;
-        sh:path ha:executes ;
+        sh:path ha:hasExecutingSoftware ;
         sh:severity sh:Violation ;
     ] ;
     sh:targetClass premis:Event ;
@@ -1641,7 +1641,7 @@ ha:FragmentRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:FragmentRepresentation ;
      .
 
-ha:FragmentShape a sh:NodeShape ;
+ha:MediahavenFragmentShape a sh:NodeShape ;
     rdfs:label "fragment shape"@en ;
     sh:property [
         a sh:PropertyShape ;
@@ -1667,7 +1667,7 @@ ha:FragmentShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class ha:Record ;
+        sh:class ha:MediahavenRecord ;
         sh:description "The Mediahaven Record to which this fragment belongs."@en, "Le dossier MediaHaven auquel appartient ce fragment."@fr, "Het Mediahaven record waartoe dit fragment behoort."@nl ;
         sh:maxCount 1 ;
         sh:message "the object of mh:record is no mh:Record, is missing or occurs more than once"@en ;
@@ -1698,7 +1698,7 @@ ha:FragmentShape a sh:NodeShape ;
         sh:path ha:hasModificationDate ;
         sh:severity sh:Violation ;
     ] ;
-    sh:targetClass ha:Fragment ;
+    sh:targetClass ha:MediahavenFragment ;
      .
 
 ha:HardwareAgentShape a sh:NodeShape ;
@@ -2168,7 +2168,7 @@ ha:ObjectFileShape a sh:NodeShape ;
     rdfs:label "object file shape"@en ;
     sh:property [
         a sh:PropertyShape ;
-        sh:class ha:Fragment ;
+        sh:class ha:MediahavenFragment ;
         sh:description "The Mediahaven record from which this file was derived."@en, "L'enregistrement Mediahaven à partir duquel ce fichier est dérivé."@fr, "Het Mediahaven record waarvan dit bestand afgeleid werd."@nl ;
         sh:maxCount 1 ;
         sh:message "the object of prov:wasDerivedFrom is no mh:Fragment, is absent or occurs more than once"@en ;
@@ -2382,7 +2382,7 @@ ha:ObjectIntellectualEntityShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class ha:Fragment ;
+        sh:class ha:MediahavenFragment ;
         sh:description "The Mediahaven record from which this intellectual entity was derived."@en, "L'enregistrement Mediahaven à partir duquel cette entité intellectuelle est dérivée."@fr, "Het Mediahaven record waarvan deze intellectuele entiteit afgeleid werd."@nl ;
         sh:maxCount 1 ;
         sh:message "the object of prov:wasDerivedFrom is no mh:Fragment, is absent or occurs more than once"@en ;
@@ -2462,7 +2462,7 @@ ha:ObjectRepresentationShape a sh:NodeShape ;
     rdfs:label "object representation shape"@en ;
     sh:property [
         a sh:PropertyShape ;
-        sh:class ha:Fragment ;
+        sh:class ha:MediahavenFragment ;
         sh:description "The Mediahaven fragment from which this digital representation was derived."@en, "Le fragment Mediahaven à partir duquel cette représentation digitale est dérivée."@fr, "Het Mediahaven fragment waarvan deze digitale representatie afgeleid werd."@nl ;
         sh:maxCount 1 ;
         sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
@@ -2888,14 +2888,7 @@ ha:PostalAddressShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:message "its object is neither schema:Country nor xsd:string"@en ;
         sh:name "country"@en, "pays"@fr, "land"@nl ;
-        sh:or (
-            [
-                sh:datatype xsd:string ;
-            ]
-            [
-                sh:class ha:Country ;
-            ]
-        ) ;
+        sh:class ha:Country ;
         sh:path ha:hasAddressCountry ;
     ], [
         a sh:PropertyShape ;
@@ -2989,13 +2982,13 @@ ha:QuantitativeValueShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:name "value"@en, "valeur"@fr, "waarde"@nl ;
         sh:nodeKind sh:Literal ;
-        sh:path ha:hasSchemaValue ;
+        sh:path ha:hasMeasurementValue ;
         sh:severity sh:Violation ;
     ] ;
     sh:targetClass ha:QuantitativeValue ;
      .
 
-ha:RecordShape a sh:NodeShape ;
+ha:MediahavenRecordShape a sh:NodeShape ;
     rdfs:label "record shape"@en ;
     sh:property [
         a sh:PropertyShape ;
@@ -3009,7 +3002,7 @@ ha:RecordShape a sh:NodeShape ;
         sh:path ha:hasIdentifier ;
         sh:severity sh:Violation ;
     ] ;
-    sh:targetClass ha:Record ;
+    sh:targetClass ha:MediahavenRecord ;
      .
 
 ha:RightsDigitalRepresentationShape a sh:NodeShape ;
@@ -3068,7 +3061,7 @@ ha:RightsIntellectualEntityShape a sh:NodeShape ;
                 sh:class premis:RightsStatus ;
             ]
             [
-                sh:class ha:Pub ;
+                sh:class ha:PublicDomainStatus ;
             ]
         ) ;
         sh:path premis:rightsStatus ;
