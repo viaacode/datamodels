@@ -149,7 +149,7 @@ ha:CastMemberEntry a rdfs:Class ;
     rdfs:label "cast member entry"@en, "castvermelding"@nl, "entrée de distribution artistique"@fr ;
     skos:definition "An entry identifying a performer, its position in the cast listing and, where applicable, the character portrayed in an archived work."@en, "Een vermelding van een uitvoerder, diens plaats in de vermelding en, indien van toepassing, het personage dat die in een gearchiveerd werk vertolkt."@nl, "Une entrée identifiant un interprète, sa position dans la liste de distribution et, le cas échéant, le personnage qu’il incarne dans une œuvre archivée."@fr ;
     rdfs:seeAlso ebucore:Cast ;
-    # ! rdfs:subClassOf ha:Role ?
+    rdfs:subClassOf ha:Role ;
      .
 ha:ClosedCaptions a rdfs:Class ;
     rdfs:label "closed captions"@en, "inschakelbare ondertiteling"@nl, "sous-titres activables"@fr ;
@@ -230,12 +230,6 @@ ha:DVDChapter a rdfs:Class ;
     skos:definition "An intellectual entity representing one chapter within the content of a DVD."@en, "Een intellectuele entiteit die één hoofdstuk binnen de inhoud van een dvd voorstelt."@nl, "Une entité intellectuelle représentant un chapitre du contenu d’un DVD."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:subClassOf premis:IntellectualEntity ;
-     .
-
-ha:DataFeedItem a rdfs:Class ;
-    rdfs:label "data feed item"@en, "gegevensfeeditem"@nl, "élément de flux de données"@fr ;
-    skos:definition "An entry representing one resource in a data feed used to exchange archival metadata."@en, "Een vermelding die één bron voorstelt in een gegevensfeed voor de uitwisseling van archiefmetadata."@nl, "Une entrée représentant une ressource dans un flux destiné à l’échange de métadonnées archivistiques."@fr ;
-    rdfs:seeAlso schema:DataFeedItem ;
      .
 
 ha:DataType a rdfs:Class ;
@@ -886,13 +880,12 @@ ha:hasAudioRecordingSpeed a rdf:Property ;
     rdfs:range ha:QuantitativeValue ;
      .
 
-# Suggested rdfs:range xsd:dateTime (not asserted).
 ha:hasAvailabilityDate a rdf:Property ;
     rdfs:label "has availability date"@en, "heeft beschikbaarheidsdatum"@nl, "a pour date de disponibilité"@fr ;
     skos:definition "Records when an archival resource became or is expected to become available."@en, "Legt vast wanneer een archiefbron beschikbaar werd of naar verwachting beschikbaar wordt."@nl, "Consigne la date à laquelle une ressource archivistique est devenue ou devrait devenir disponible."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso dct:available ;
-    rdfs:range xsd:dateTime
+    rdfs:range edtf:EDTF-level1
      .
 
 ha:hasBirthDate a rdf:Property ;
@@ -959,12 +952,10 @@ ha:hasSubtitling a rdf:Property, owl:ObjectProperty ;
     rdfs:seeAlso <http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitling> ;
      .
 
-# Range review: text credits and ha:Cast resources are alternatives; express the choice in SHACL rather than as multiple rdfs:range values.
-# Review ranges: multiple rdfs:range values are cumulative, not alternatives; use a class union for resource alternatives or SHACL for mixed literal/resource choices.
 ha:hasCastMember a rdf:Property ;
     rdfs:label "has cast member"@en, "heeft castlid"@nl, "a pour membre de distribution"@fr ;
     skos:definition "Records a performer in the cast of an archived work, as a textual credit or a structured cast entry."@en, "Vermeldt een uitvoerder in de cast van een gearchiveerd werk, als tekstuele vermelding of gestructureerde castvermelding."@nl, "Mentionne un interprète dans la distribution d’une œuvre archivée, sous forme de crédit textuel ou d’entrée structurée."@fr ;
-    rdfs:range xsd:string, ha:CastMemberEntry ;
+    rdfs:range ha:CastMemberEntry ;
     rdfs:seeAlso ebucore:hasCastMember ;
      .
 
@@ -995,53 +986,47 @@ ha:hasClassification a rdf:Property, owl:ObjectProperty ;
     rdfs:seeAlso <http://www.w3.org/ns/org#classification> ;
      .
 
-# Suggested rdfs:domain ha:Collection; rdfs:range xsd:nonNegativeInteger (not asserted).
 ha:hasCollectionSize a rdf:Property ;
+    rdfs:domain ha:Collection; 
+    rdfs:range xsd:nonNegativeInteger ;
     rdfs:label "has collection size"@en, "heeft collectieomvang"@nl, "a pour taille de collection"@fr ;
     skos:definition "Records the number of resources in a collection."@en, "Legt het aantal bronnen in een collectie vast."@nl, "Consigne le nombre de ressources dans une collection."@fr ;
     rdfs:seeAlso schema:collectionSize ;
      .
 
-# URI review: consider ha:hasFilmColourType as the preferred term; keep one spelling convention across local terms.
-ha:hasColoringType a rdf:Property ;
-    rdfs:label "has film colour type"@en, "heeft filmkleurtype"@nl, "a pour type de couleur du film"@fr ;
-    skos:definition "Specifies the colour characteristics of an image reel, such as colour, black and white or tinting."@en, "Geeft de kleurkenmerken van een beeldspoel aan, zoals kleur, zwart-wit of tinting."@nl, "Indique les caractéristiques chromatiques d’une bobine image, telles que la couleur, le noir et blanc ou le teintage."@fr ;
+ha:hasFilmColorType a rdf:Property ;
     rdfs:domain ha:ImageReel ;
     rdfs:isDefinedBy ha: ;
     rdfs:range skos:Concept ;
-    rdfs:subPropertyOf ha:hasFilmColourType ;
+    rdfs:label "has film colour type"@en, "heeft filmkleurtype"@nl, "a pour type de couleur du film"@fr ;
+    skos:definition "Specifies the colour characteristics of a film image reel, such as colour, black and white or tinting."@en, "Geeft de kleurkenmerken van een filmdrager aan, zoals kleur, zwart-wit of tinting."@nl, "Indique les caractéristiques chromatiques d’un support film, telles que la couleur, le noir et blanc ou le teintage."@fr ;
+    rdfs:seeAlso <http://dbpedia.org/ontology/filmColourType> ;
      .
 
-# Suggested rdfs:range ha:ContactPoint (not asserted).
 ha:hasContactPoint a rdf:Property ;
     rdfs:label "has contact point"@en, "heeft contactpunt"@nl, "a pour point de contact"@fr ;
     skos:definition "Identifies contact information for reaching a person or organization."@en, "Identificeert contactgegevens om een persoon of organisatie te bereiken."@nl, "Identifie les coordonnées permettant de joindre une personne ou une organisation."@fr ;
     rdfs:isDefinedBy ha: ;
+    rdfs:range ha:ContactPoint ;
     rdfs:seeAlso schema:contactPoint ;
      .
 
-# Suggested rdfs:domain ha:ContactPoint; rdfs:range xsd:string (not asserted).
 ha:hasContactType a rdf:Property ;
+    rdfs:domain ha:ContactPoint; 
+    rdfs:range xsd:string ;
     rdfs:label "has contact type"@en, "heeft contacttype"@nl, "a pour type de contact"@fr ;
     skos:definition "Describes the purpose of a contact point, such as general enquiries or technical support."@en, "Beschrijft het doel van een contactpunt, zoals algemene vragen of technische ondersteuning."@nl, "Décrit la fonction d’un point de contact, telle que les renseignements généraux ou l’assistance technique."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:contactType ;
      .
 
-ha:hasCopyrightHolder a rdf:Property ;
-    rdfs:label "has copyright holder"@en, "heeft auteursrechthebbende"@nl, "a pour titulaire du droit d’auteur"@fr ;
-    skos:definition "Identifies the person or organization holding copyright in an archival work."@en, "Identificeert de persoon of organisatie die het auteursrecht op een archiefwerk bezit."@nl, "Identifie la personne ou l’organisation titulaire du droit d’auteur sur une œuvre archivée."@fr ;
+ha:hasRightsHolder a rdf:Property ;
     rdfs:domain ha:CreativeWork ;
+    rdfs:label "has rights holder"@en, "heeft rechthebbende"@nl, "a pour titulaire de droits"@fr ;
+    skos:definition "Identifies a person or organization owning or managing rights in an archival resource."@en, "Identificeert een persoon of organisatie die rechten op een archiefbron bezit of beheert."@nl, "Identifie une personne ou une organisation détenant ou gérant des droits sur une ressource archivistique."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range [
-        owl:unionOf (
-            ha:Person
-            ha:Organization
-            ha:Role
-        ) ;
-    ] ;
-    rdfs:seeAlso schema:copyrightHolder ;
-    owl:equivalentProperty ha:hasRightsHolder ;
+    rdfs:seeAlso dct:rightsHolder, schema:copyrightHolder ;
+    rdfs:range ha:Agent ;
      .
 
 ha:hasCopyrightNotice a rdf:Property ;
@@ -1054,32 +1039,22 @@ ha:hasCopyrightNotice a rdf:Property ;
     owl:equivalentProperty ha:hasRights ;
      .
 
-# Suggested rdfs:range xsd:gYear (not asserted).
-# Range review: xsd:gYear expresses a year directly; local SHACL currently uses xsd:integer.
-ha:hasCopyrightYear a rdf:Property ;
-    rdfs:label "has copyright year"@en, "heeft auteursrechtjaar"@nl, "a pour année de droit d’auteur"@fr ;
-    skos:definition "Records the year in which copyright was first claimed for a work."@en, "Legt het jaar vast waarin voor het eerst auteursrecht op een werk werd geclaimd."@nl, "Consigne l’année de la première revendication de droit d’auteur sur une œuvre."@fr ;
-    rdfs:domain ha:CreativeWork ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso schema:copyrightYear ;
-    owl:equivalentProperty ha:hasCopyrightDate ;
-     .
-
-# Suggested rdfs:range rdfs:Literal (not asserted).
-# Range review: rdfs:Literal permits date-only, timestamp and qualified date values; choose narrower datatypes in the relevant SHACL shapes.
 ha:hasCreationDate a rdf:Property ;
     rdfs:label "has creation date"@en, "heeft creatiedatum"@nl, "a pour date de création"@fr ;
     skos:definition "Records when an archival resource, representation or metadata record was created."@en, "Legt vast wanneer een archiefbron, representatie of metadatarecord is gemaakt."@nl, "Consigne la date de création d’une ressource archivistique, d’une représentation ou d’une notice de métadonnées."@fr ;
     rdfs:domain ha:CreativeWork ;
+    rdfs:range xsd:dateTime ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso schema:dateCreated ;
-    owl:equivalentProperty ha:hasDublinCoreCreationDate ;
+    rdfs:seeAlso schema:dateCreated, dct:created ;
+    rdfs:subPropertyOf ha:hasDate ;
      .
 
-# Suggested rdfs:domain ha:CreativeWork; rdfs:range ha:Place (not asserted).
 ha:hasCreationLocation a rdf:Property ;
+    rdfs:domain ha:CreativeWork; 
+    rdfs:range ha:Place;
     rdfs:label "has creation location"@en, "heeft creatieplaats"@nl, "a pour lieu de création"@fr ;
     skos:definition "Identifies the place where a work was created, which may differ from the place depicted."@en, "Identificeert de plaats waar een werk is gemaakt, die kan verschillen van de afgebeelde plaats."@nl, "Identifie le lieu de création d’une œuvre, qui peut différer du lieu représenté."@fr ;
+    rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:locationCreated ;
      .
 
@@ -1092,29 +1067,27 @@ ha:hasCreditText a rdf:Property ;
     rdfs:seeAlso schema:creditText ;
      .
 
-# Range review: local SHACL uses EDTF-level1, which also allows uncertain or incomplete dates; reconcile with the asserted xsd:date range.
 ha:hasDeathDate a rdf:Property ;
     rdfs:label "has death date"@en, "heeft overlijdensdatum"@nl, "a pour date de décès"@fr ;
     skos:definition "Records the date on which a person died."@en, "Legt de datum vast waarop een persoon is overleden."@nl, "Consigne la date de décès d’une personne."@fr ;
     rdfs:domain ha:Person ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:date ;
+    rdfs:range edtf:EDTF-level1 ;
     rdfs:seeAlso schema:deathDate ;
      .
 
-# Suggested rdfs:domain ha:Person (not asserted).
-# Range review: source hints use ha:Place but local SHACL uses text; choose one representation or explicitly support both.
 ha:hasDeathPlace a rdf:Property ;
+    rdfs:domain ha:Person ;
     rdfs:label "has place of death"@en, "heeft overlijdensplaats"@nl, "a pour lieu de décès"@fr ;
     skos:definition "Specifies the place where a person died."@en, "Geeft de plaats aan waar een persoon is overleden."@nl, "Indique le lieu de décès d’une personne."@fr ;
     rdfs:seeAlso schema:deathPlace ;
+    rdfs:range ha:Place
      .
 
-# Domain review: local SHACL also uses this on ha:MediahavenFragment; confirm whether these records should be inferred to be ha:DataFeedItem.
 ha:hasDeletionDate a rdf:Property ;
     rdfs:label "has deletion date"@en, "heeft verwijderingsdatum"@nl, "a pour date de suppression"@fr ;
     skos:definition "Records when an item or metadata record was removed from a feed or asset management system."@en, "Legt vast wanneer een item of metadatarecord uit een feed of assetbeheersysteem is verwijderd."@nl, "Consigne la date de suppression d’un élément ou d’une notice de métadonnées dans un flux ou un système de gestion de ressources."@fr ;
-    rdfs:domain ha:DataFeedItem ;
+    rdfs:domain ha:MediahavenFragment ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:dateTime ;
     rdfs:seeAlso schema:dateDeleted ;
@@ -1395,12 +1368,10 @@ ha:hasModel a rdf:Property ;
     rdfs:seeAlso schema:model ;
      .
 
-# Domain review: ha:CreativeWork and ha:DataFeedItem appear to be alternatives; local SHACL also uses ha:MediahavenFragment.
-# Review domains: multiple rdfs:domain values are cumulative, not alternatives; use a class union for resource alternatives or SHACL for mixed literal/resource choices.
 ha:hasModificationDate a rdf:Property ;
     rdfs:label "has modification date"@en, "heeft wijzigingsdatum"@nl, "a pour date de modification"@fr ;
     skos:definition "Records when an archival resource or metadata record was last modified."@en, "Legt vast wanneer een archiefbron of metadatarecord voor het laatst is gewijzigd."@nl, "Consigne la date de dernière modification d’une ressource archivistique ou d’une notice de métadonnées."@fr ;
-    rdfs:domain ha:CreativeWork, ha:DataFeedItem ;
+    rdfs:domain [ owl:unionOf ( ha:CreativeWork ha:MediahavenFragment )];
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:dateTime ;
     rdfs:seeAlso schema:dateModified ;
@@ -2057,35 +2028,26 @@ ha:hasAccountManager a rdf:Property ;
      .
 
 
-
-# Suggested rdfs:domain premis:IntellectualEntity; rdfs:range ha:CarrierRepresentation (not asserted).
-# URI/label review: consider ha:hasCarrierRepresentation; the value is a representation with a role, rather than a single file copy.
-ha:hasCarrierCopy a rdf:Property ;
+ha:hasCarrierRepresentation a rdf:Property ; #! was ha:hasCarrierCopy
+    rdfs:domain premis:IntellectualEntity; 
+    rdfs:range ha:CarrierRepresentation ;
     rdfs:label "has carrier representation"@en, "heeft dragerrepresentatie"@nl, "a pour représentation sur support physique"@fr ;
     skos:definition "Relates an intellectual entity to a representation embodied on a physical carrier."@en, "Verbindt een intellectuele entiteit met een representatie op een fysieke drager."@nl, "Relie une entité intellectuelle à une représentation matérialisée sur un support physique."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:subPropertyOf ha:isRepresentedBy ;
-    owl:inverseOf ha:isCarrierCopyOf ;
+    owl:inverseOf ha:isCarrierRepresentationOf ;
      .
 
 ha:hasCopyrightDate a rdf:Property ;
+    rdfs:domain ha:CreativeWork ;
     rdfs:label "has copyright date"@en, "heeft auteursrechtdatum"@nl, "a pour date de droit d’auteur"@fr ;
     skos:definition "Records a date associated with a copyright claim for an archival resource."@en, "Legt een datum vast die hoort bij een auteursrechtaanspraak op een archiefbron."@nl, "Consigne une date associée à une revendication de droit d’auteur sur une ressource archivistique."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range rdfs:Literal ;
-    rdfs:seeAlso dct:dateCopyrighted ;
+    rdfs:range xsd:dateTime ;
+    rdfs:seeAlso dct:dateCopyrighted,schema:copyrightYear ;
     rdfs:subPropertyOf ha:hasDate ;
      .
 
-# URI review: prefer ha:hasCreationDate after reconciling value constraints; avoid a source-vocabulary name in a local property.
-ha:hasDublinCoreCreationDate a rdf:Property ;
-    rdfs:label "has creation date"@en, "heeft creatiedatum"@nl, "a pour date de création"@fr ;
-    skos:definition "Records when an archival resource, representation or metadata record was created."@en, "Legt vast wanneer een archiefbron, representatie of metadatarecord is gemaakt."@nl, "Consigne la date de création d’une ressource archivistique, d’une représentation ou d’une notice de métadonnées."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:range rdfs:Literal ;
-    rdfs:seeAlso dct:created ;
-    rdfs:subPropertyOf ha:hasDate ;
-     .
 
 # Modeling review: review equivalence with ha:hasDuration before assigning size-only values.
 ha:hasExtent a rdf:Property ;
@@ -2094,13 +2056,6 @@ ha:hasExtent a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso dct:extent ;
     rdfs:subPropertyOf ha:hasFormat ;
-     .
-
-# Suggested rdfs:domain ha:PhysicalCarrier; rdfs:range skos:Concept (not asserted).
-ha:hasFilmColourType a rdf:Property ;
-    rdfs:label "has film colour type"@en, "heeft filmkleurtype"@nl, "a pour type de couleur du film"@fr ;
-    skos:definition "Specifies the colour characteristics of a film carrier, such as colour, black and white or tinting."@en, "Geeft de kleurkenmerken van een filmdrager aan, zoals kleur, zwart-wit of tinting."@nl, "Indique les caractéristiques chromatiques d’un support film, telles que la couleur, le noir et blanc ou le teintage."@fr ;
-    rdfs:seeAlso <http://dbpedia.org/ontology/filmColourType> ;
      .
 
 # Suggested rdfs:domain ha:MediaResource (not asserted).
@@ -2217,14 +2172,6 @@ ha:hasRelation a rdf:Property ;
     rdfs:seeAlso dc:relation ;
      .
 
-ha:hasRightsHolder a rdf:Property ;
-    rdfs:label "has rights holder"@en, "heeft rechthebbende"@nl, "a pour titulaire de droits"@fr ;
-    skos:definition "Identifies a person or organization owning or managing rights in an archival resource."@en, "Identificeert een persoon of organisatie die rechten op een archiefbron bezit of beheert."@nl, "Identifie une personne ou une organisation détenant ou gérant des droits sur une ressource archivistique."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso dct:rightsHolder ;
-    rdfs:range ha:Agent ;
-     .
-
 # Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
 ha:hasSpatial a rdf:Property ;
     rdfs:label "has spatial coverage"@en, "heeft ruimtelijke dekking"@nl, "a pour couverture spatiale"@fr ;
@@ -2296,14 +2243,14 @@ ha:isAccountManagerOf a rdf:Property ;
     owl:inverseOf ha:hasAccountManager ;
      .
 
-# Suggested rdfs:domain ha:CarrierRepresentation; rdfs:range premis:IntellectualEntity (not asserted).
-# URI/label review: consider ha:isCarrierRepresentationOf, keeping its name paired with the forward property.
-ha:isCarrierCopyOf a rdf:Property ;
+ha:isCarrierRepresentationOf a rdf:Property ; #! was ha:isCarrierCopyOf
+    rdfs:domain ha:CarrierRepresentation; 
+    rdfs:range premis:IntellectualEntity;
     rdfs:label "is carrier representation of"@en, "is dragerrepresentatie van"@nl, "est une représentation sur support physique de"@fr ;
     skos:definition "Relates a representation on a physical carrier to the intellectual entity it represents."@en, "Verbindt een representatie op een fysieke drager met de intellectuele entiteit die ze representeert."@nl, "Relie une représentation sur support physique à l’entité intellectuelle qu’elle représente."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:subPropertyOf ha:represents ;
-    owl:inverseOf ha:hasCarrierCopy ;
+    owl:inverseOf ha:hasCarrierRepresentation ;
      .
 
 # Suggested rdfs:domain ha:MediaFragment; rdfs:range ha:MediaResource (not asserted).
@@ -2761,7 +2708,6 @@ ha:hasDate a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:range rdfs:Literal ;
     rdfs:seeAlso dc:date, dct:date ;
-    rdfs:subPropertyOf ha:hasDate ;
      .
 
 # Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.

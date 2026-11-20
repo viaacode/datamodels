@@ -1725,7 +1725,7 @@ ha:ImageReelShape a sh:NodeShape ;
         ) ;
         sh:message "the object of haDes:coloringType is not of type skos:Concept"@en, "l'objet de haDes:coloringType n'est pas du type skos:Concept"@fr, "het object van haDes:coloringType is niet van het type skos:Concept"@nl ;
         sh:name "coloring type"@en, "type de coloration"@fr, "type kleuring"@nl ;
-        sh:path ha:hasColoringType ;
+        sh:path ha:hasFilmColourType ;
         sh:severity sh:Violation ;
     ], _:cb6dfd49844fa0d974bc61143cd85cf2f7ca89309deda6861258c3cfac63a9ae8e0, [
         a sh:PropertyShape ;
