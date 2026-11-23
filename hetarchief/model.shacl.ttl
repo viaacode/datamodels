@@ -520,7 +520,7 @@ ha:ContentPartnerShape a sh:NodeShape ;
         sh:message "object is no xsd:string"@en ;
         sh:name "request form"@en, "formulaire de demande"@fr, "aanvraagformulier"@nl ;
         sh:nodeKind sh:Literal ;
-        sh:path ha:hasRequestForm ;
+        sh:path ha:hasContentRequestForm ;
     ], [
         a sh:PropertyShape ;
         sh:class skos:Concept ;
@@ -1411,16 +1411,16 @@ ha:EventShape a sh:NodeShape ;
         sh:message "evtAgRole:imp is absent, occurs more than once or its value is no instance of class org:Organization"@en, "evtAgRole:imp est absent, apparaît plus d'une seule fois ou sa valeur n'est pas une instance de la classe org:Organization"@fr, "evtAgRole:imp ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klasse org:Organization"@nl ;
         sh:minCount 1 ;
         sh:name "implemented by"@en, "implementé par"@fr, "geimplementeerd door"@nl ;
-        sh:path ha:implements ;
+        sh:path ha:isImplementedBy ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
         sh:class premis:OutcomeStatus ;
         sh:description "The outcome status of the event."@en, "Statut du résultat de l'événement (Event)."@fr, "De uitkomststatus van de gebeurtenis (Event)."@nl ;
         sh:in (
-            ha:fai
-            ha:suc
-            ha:war
+            ha:failed
+            ha:succeeded
+            ha:warnings
         ) ;
         sh:maxCount 1 ;
         sh:message "premis:outcome is absent, occurs more than once or its value is not in the list (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@en, "premis:outcome est absent, apparaît plus d'une fois ou sa valeur n'est pas dans la liste (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@fr, "premis:outcome ontbreekt, komt meer dan eens voor of de waarde maakt geen deel uit van de lijst (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@nl ;
