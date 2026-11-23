@@ -313,11 +313,13 @@ ha:FormalOrganization a rdfs:Class, owl:Class ;
     rdfs:subClassOf ha:Organization ;
      .
 
-ha:Format a rdfs:Class ;
+
+ha:FileFormat a rdfs:Class ; # ! make a firm choice between format and fileformat: is the former needed? Update the definitions in line with the choice
     rdfs:label "format"@en, "formaat"@nl, "format"@fr ;
     skos:definition "A controlled concept describing a technical format of an archival resource or representation."@en, "Een gecontroleerd begrip dat een technisch formaat van een archiefbron of representatie beschrijft."@nl, "Un concept contrôlé décrivant un format technique d’une ressource archivistique ou d’une représentation."@fr ;
     rdfs:seeAlso ebucore:Format ;
     rdfs:subClassOf skos:Concept ;
+    owl:equivalentClass dct:FileFormat
      .
 
 ha:MediahavenFragment a rdfs:Class ; # ! was mh:Fragment
@@ -1331,8 +1333,7 @@ ha:hasMediaFragment a rdf:Property ;
     skos:definition "Identifies a spatial or temporal segment within a media resource."@en, "Identificeert een ruimtelijk of temporeel segment binnen een mediabron."@nl, "Identifie un segment spatial ou temporel au sein d’une ressource médiatique."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:MediaFragment ;
-    rdfs:seeAlso ebucore:hasMediaFragment ;
-    owl:equivalentProperty ha:hasFragment ;
+    rdfs:seeAlso ebucore:hasMediaFragment, <http://www.w3.org/ns/ma-ont#hasFragment> ;
     owl:inverseOf ha:isMediaFragmentOf ;
      .
 
@@ -1386,8 +1387,7 @@ ha:hasName a rdf:Property ;
     rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
-    rdfs:seeAlso schema:name ;
-    owl:equivalentProperty ha:hasTitle ;
+    rdfs:seeAlso schema:name, dc:title, dct:title ;
      .
 
 ha:hasNumberOfAudioChannels a rdf:Property ;
@@ -2055,16 +2055,6 @@ ha:hasExtent a rdf:Property ;
     rdfs:range xsd:string ;
      .
 
-
-ha:hasFragment a rdf:Property, owl:ObjectProperty ;
-    rdfs:domain ha:MediaResource ;
-    rdfs:label "has media fragment"@en, "heeft mediafragment"@nl, "a pour fragment de média"@fr ;
-    skos:definition "Identifies a spatial or temporal segment within a media resource."@en, "Identificeert een ruimtelijk of temporeel segment binnen een mediabron."@nl, "Identifie un segment spatial ou temporel au sein d’une ressource médiatique."@fr ;
-    rdfs:range ha:MediaFragment ;
-    rdfs:seeAlso <http://www.w3.org/ns/ma-ont#hasFragment> ;
-    owl:inverseOf ha:isFragmentOf ;
-     .
-
 ha:hasFragmentRepresentation a rdf:Property ;
     rdfs:domain premis:IntellectualEntity; rdfs:range ha:FragmentRepresentation;
     rdfs:label "has fragment representation"@en, "heeft fragmentrepresentatie"@nl, "a pour représentation de fragment"@fr ;
@@ -2238,15 +2228,9 @@ ha:isCarrierRepresentationOf a rdf:Property ; #! was ha:isCarrierCopyOf
     owl:inverseOf ha:hasCarrierRepresentation ;
      .
 
-# Suggested rdfs:domain ha:MediaFragment; rdfs:range ha:MediaResource (not asserted).
-ha:isFragmentOf a rdf:Property, owl:ObjectProperty ;
-    rdfs:label "is media fragment of"@en, "is mediafragment van"@nl, "est un fragment de média de"@fr ;
-    skos:definition "Relates a media fragment to the media resource containing that segment."@en, "Verbindt een mediafragment met de mediabron die dat segment bevat."@nl, "Relie un fragment de média à la ressource médiatique qui contient ce segment."@fr ;
-    rdfs:seeAlso <http://www.w3.org/ns/ma-ont#isFragmentOf> ;
-     .
-
-# Suggested rdfs:domain ha:FragmentRepresentation; rdfs:range premis:IntellectualEntity (not asserted).
 ha:isFragmentRepresentationOf a rdf:Property ;
+    rdfs:domain ha:FragmentRepresentation; 
+    rdfs:range premis:IntellectualEntity ;
     rdfs:label "is fragment representation of"@en, "is fragmentrepresentatie van"@nl, "est une représentation de fragment de"@fr ;
     skos:definition "Relates a partial digital representation to the intellectual entity whose content it represents."@en, "Verbindt een gedeeltelijke digitale representatie met de intellectuele entiteit waarvan ze de inhoud representeert."@nl, "Relie une représentation numérique partielle à l’entité intellectuelle dont elle représente le contenu."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2264,9 +2248,9 @@ ha:isHeldBy a rdf:Property, owl:ObjectProperty ;
     owl:inverseOf ha:holds ;
      .
 
-# Suggested rdfs:domain ha:DigitalRepresentation; rdfs:range premis:IntellectualEntity (not asserted).
-# URI/label review: consider ha:isIIIFRepresentationOf, keeping its name paired with the forward property.
-ha:isIIIFCopyOf a rdf:Property ;
+ha:isIIIFCopyOf a rdf:Property ; # ! was ha:isIIIFRepresentationOf ?
+    rdfs:domain ha:DigitalRepresentation; 
+    rdfs:range premis:IntellectualEntity;
     rdfs:label "is IIIF representation of"@en, "is IIIF-representatie van"@nl, "est une représentation IIIF de"@fr ;
     skos:definition "Relates a digital representation made available through IIIF to the intellectual entity it represents."@en, "Verbindt een digitale representatie die via IIIF beschikbaar is met de intellectuele entiteit die ze representeert."@nl, "Relie une représentation numérique accessible au moyen d’IIIF à l’entité intellectuelle qu’elle représente."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2274,9 +2258,9 @@ ha:isIIIFCopyOf a rdf:Property ;
     owl:inverseOf ha:hasIIIFCopy ;
      .
 
-# Suggested rdfs:domain ha:DigitalRepresentation; rdfs:range premis:IntellectualEntity (not asserted).
-# URI/label review: consider ha:isMasterRepresentationOf, keeping its name paired with the forward property.
-ha:isMasterCopyOf a rdf:Property ;
+ha:isMasterCopyOf a rdf:Property ; # ! ha:isMasterRepresentationOf ?
+    rdfs:domain ha:DigitalRepresentation; 
+    rdfs:range premis:IntellectualEntity ;
     rdfs:label "is preservation master representation of"@en, "is preservatiemasterrepresentatie van"@nl, "est une représentation maître de conservation de"@fr ;
     skos:definition "Relates a digital preservation master representation to the intellectual entity it represents."@en, "Verbindt een digitale preservatiemasterrepresentatie met de intellectuele entiteit die ze representeert."@nl, "Relie une représentation numérique maître de conservation à l’entité intellectuelle qu’elle représente."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2284,19 +2268,19 @@ ha:isMasterCopyOf a rdf:Property ;
     owl:inverseOf ha:hasMasterCopy ;
      .
 
-# Range review: local SHACL uses premis:File; confirm whether files should be declared media resources or allowed as an alternative.
+# ! local SHACL uses premis:File; should files be declared media resources or allowed as an alternative.
 ha:isMediaFragmentOf a rdf:Property ;
     rdfs:label "is media fragment of"@en, "is mediafragment van"@nl, "est un fragment de média de"@fr ;
     skos:definition "Relates a media fragment to the media resource containing that segment."@en, "Verbindt een mediafragment met de mediabron die dat segment bevat."@nl, "Relie un fragment de média à la ressource médiatique qui contient ce segment."@fr ;
     rdfs:domain ha:MediaFragment ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:MediaResource ;
-    rdfs:seeAlso ebucore:isMediaFragmentOf ;
+    rdfs:seeAlso ebucore:isMediaFragmentOf, <http://www.w3.org/ns/ma-ont#isFragmentOf> ;
      .
 
-# Suggested rdfs:domain ha:DigitalRepresentation; rdfs:range premis:IntellectualEntity (not asserted).
-# URI/label review: consider ha:isMezzanineRepresentationOf, keeping its name paired with the forward property.
-ha:isMezzanineCopyOf a rdf:Property ;
+ha:isMezzanineCopyOf a rdf:Property ; #! ha:isMezzanineRepresentationOf
+    rdfs:domain ha:DigitalRepresentation; 
+    rdfs:range premis:IntellectualEntity;
     rdfs:label "is mezzanine representation of"@en, "is mezzaninerepresentatie van"@nl, "est une représentation intermédiaire de"@fr ;
     skos:definition "Relates an intermediate digital representation used to produce delivery versions to the intellectual entity it represents."@en, "Verbindt een digitale tussenrepresentatie voor het maken van distributieversies met de intellectuele entiteit die ze representeert."@nl, "Relie une représentation numérique intermédiaire utilisée pour produire des versions de diffusion à l’entité intellectuelle qu’elle représente."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2323,6 +2307,8 @@ ha:isPostIn a rdf:Property, owl:ObjectProperty ;
      .
 
 ha:isPrecededBy a rdf:Property, owl:ObjectProperty ;
+    rdfs:domain ha:PublicationIssue;
+    rdfs:range ha:PublicationIssue;
     rdfs:label "is preceded by"@en, "wordt voorafgegaan door"@nl, "est précédé de"@fr ;
     skos:definition "Identifies a publication or work that precedes the described resource chronologically or in a narrative sequence."@en, "Identificeert een publicatie of werk dat chronologisch of in een verhalende volgorde aan de beschreven bron voorafgaat."@nl, "Identifie une publication ou une œuvre qui précède la ressource décrite dans l’ordre chronologique ou narratif."@fr ;
     rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/precededBy> ;
@@ -2331,6 +2317,8 @@ ha:isPrecededBy a rdf:Property, owl:ObjectProperty ;
      .
 
 ha:isSucceededBy a rdf:Property, owl:ObjectProperty ;
+    rdfs:domain ha:PublicationIssue;
+    rdfs:range ha:PublicationIssue;
     rdfs:label "is succeeded by"@en, "wordt opgevolgd door"@nl, "est suivi de"@fr ;
     skos:definition "Identifies a publication or work that follows the described resource chronologically or in a narrative sequence."@en, "Identificeert een publicatie of werk dat chronologisch of in een verhalende volgorde op de beschreven bron volgt."@nl, "Identifie une publication ou une œuvre qui suit la ressource décrite dans l’ordre chronologique ou narratif."@fr ;
     rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/succeededBy> ;
@@ -2339,6 +2327,8 @@ ha:isSucceededBy a rdf:Property, owl:ObjectProperty ;
      .
 
 ha:isSupplementTo a rdf:Property, owl:ObjectProperty ;
+    rdfs:domain ha:PublicationIssue;
+    rdfs:range ha:PublicationIssue;
     rdfs:label "is supplement to"@en, "is supplement bij"@nl, "est un supplément de"@fr ;
     skos:definition "Identifies the publication or work that the described resource updates or complements."@en, "Identificeert de publicatie of het werk dat door de beschreven bron wordt bijgewerkt of aangevuld."@nl, "Identifie la publication ou l’œuvre que la ressource décrite met à jour ou complète."@fr ;
     rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/supplementTo> ;
@@ -2346,9 +2336,9 @@ ha:isSupplementTo a rdf:Property, owl:ObjectProperty ;
     owl:inverseOf ha:hasSupplement ;
      .
 
-# Suggested rdfs:domain ha:DigitalRepresentation; rdfs:range premis:IntellectualEntity (not asserted).
-# URI/label review: consider ha:isTranscriptionRepresentationOf, keeping its name paired with the forward property.
-ha:isTranscriptionCopyOf a rdf:Property ;
+ha:isTranscriptionCopyOf a rdf:Property ; #! ha:isTranscriptionRepresentationOf ?
+    rdfs:domain ha:DigitalRepresentation; 
+    rdfs:range premis:IntellectualEntity;
     rdfs:label "is transcription representation of"@en, "is transcriptierepresentatie van"@nl, "est une représentation de transcription de"@fr ;
     skos:definition "Relates a digital transcription representation to the intellectual entity whose spoken content it transcribes."@en, "Verbindt een digitale transcriptierepresentatie met de intellectuele entiteit waarvan ze de gesproken inhoud transcribeert."@nl, "Relie une représentation numérique de transcription à l’entité intellectuelle dont elle transcrit le contenu parlé."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2363,16 +2353,6 @@ ha:isTransitiveSubOrganizationOf a rdf:Property, owl:ObjectProperty, owl:Transit
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
     rdfs:seeAlso <http://www.w3.org/ns/org#transitiveSubOrganizationOf> ;
-     .
-
-# Suggested rdfs:domain ha:Agent (not asserted).
-ha:makes a rdf:Property ;
-    rdfs:label "makes"@en, "maakt"@nl, "crée"@fr ;
-    skos:definition "Relates an agent to a resource that the agent made."@en, "Verbindt een agent met een bron die deze heeft gemaakt."@nl, "Relie un agent à une ressource qu’il a créée."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:range rdfs:Resource ;
-    rdfs:seeAlso <http://xmlns.com/foaf/0.1/made> ;
-    owl:inverseOf ha:isMadeBy ;
      .
 
 # URI review: consider ha:EncodedTimeInterval for consistent class/datatype naming; retain ha:PeriodOfTime for interval resources.
@@ -2414,14 +2394,6 @@ ha:betweenPartners a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
     skos:prefLabel "Between partners"@en, "Tussen partners"@nl ;
     skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> ;
-     .
-
-# URI review: prefer ha:hasDescription for consistency with other property names; the existing equivalence is retained.
-ha:description a rdf:Property ;
-    rdfs:label "description"@en, "beschrijving"@nl, "description"@fr ;
-    skos:definition "Provides a textual account of an archival resource’s content or characteristics."@en, "Geeft een tekstuele beschrijving van de inhoud of kenmerken van een archiefbron."@nl, "Fournit une description textuelle du contenu ou des caractéristiques d’une ressource archivistique."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso dct:description ;
      .
 
 ha:downloadable a owl:NamedIndividual, skos:Concept, odrl:Action ;
@@ -2471,9 +2443,7 @@ ha:hasCreator a rdf:Property ;
             ha:Role
         ) ;
     ] ;
-    rdfs:seeAlso dc:creator, dct:creator, schema:creator ;
-    rdfs:subPropertyOf ha:hasCreator ;
-    owl:equivalentProperty ha:hasCreator, ha:isMadeBy ;
+    rdfs:seeAlso dc:creator, dct:creator, schema:creator, <http://xmlns.com/foaf/0.1/maker> ;
      .
 
 # Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
@@ -2513,13 +2483,11 @@ ha:hasSubOrganization a rdf:Property, owl:ObjectProperty ;
     owl:inverseOf ha:isSubOrganizationOf ;
      .
 
-# Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
 ha:hasSubject a rdf:Property ;
     rdfs:label "has subject"@en, "heeft onderwerp"@nl, "a pour sujet"@fr ;
     skos:definition "Specifies a topic addressed by the content of an archival resource."@en, "Geeft een onderwerp aan dat in de inhoud van een archiefbron aan bod komt."@nl, "Indique un sujet traité dans le contenu d’une ressource archivistique."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso dc:subject, dct:subject ;
-    rdfs:subPropertyOf ha:hasSubject ;
      .
 
 ha:intraMuros a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
@@ -2536,16 +2504,6 @@ ha:isAccompaniedBy a rdf:Property, owl:ObjectProperty ;
     rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/accompaniedBy> ;
     rdfs:subPropertyOf ha:isRelatedTo ;
     owl:inverseOf ha:accompanies ;
-     .
-
-ha:isMadeBy a rdf:Property ;
-    rdfs:label "is made by"@en, "is gemaakt door"@nl, "est créé par"@fr ;
-    skos:definition "Identifies the agent that made the described resource."@en, "Identificeert de agent die de beschreven bron heeft gemaakt."@nl, "Identifie l’agent qui a créé la ressource décrite."@fr ;
-    rdfs:domain rdfs:Resource ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:range ha:Agent ;
-    rdfs:seeAlso <http://xmlns.com/foaf/0.1/maker> ;
-    owl:inverseOf ha:makes ;
      .
 
 ha:isSubOrganizationOf a rdf:Property, owl:ObjectProperty ;
@@ -2606,35 +2564,30 @@ ha:hasContributor a rdf:Property ;
     rdfs:seeAlso dc:contributor, dct:contributor, schema:contributor ;
      .
 
-# Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
 ha:hasCoverage a rdf:Property ;
     rdfs:label "has coverage"@en, "heeft dekkingsgebied"@nl, "a pour couverture"@fr ;
     skos:definition "Describes the spatial or temporal scope, applicability or jurisdiction of an archival resource."@en, "Beschrijft de ruimtelijke of temporele reikwijdte, toepasselijkheid of het rechtsgebied van een archiefbron."@nl, "Décrit la portée spatiale ou temporelle, le champ d’application ou le cadre juridique d’une ressource archivistique."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso dc:coverage, dct:coverage ;
-    rdfs:subPropertyOf ha:hasCoverage ;
+    rdfs:domain ha:CreativeWork;
+    rdfs:range xsd:string;
      .
 
-# Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
 ha:hasDescription a rdf:Property, owl:DatatypeProperty ;
     rdfs:label "has description"@en, "heeft beschrijving"@nl, "a pour description"@fr ;
     skos:definition "Provides a textual account of an archival resource’s content or characteristics."@en, "Geeft een tekstuele beschrijving van de inhoud of kenmerken van een archiefbron."@nl, "Fournit une description textuelle du contenu ou des caractéristiques d’une ressource archivistique."@fr ;
     rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
-    rdfs:seeAlso dc:description, ebucore:description, <http://www.w3.org/ns/ma-ont#description>, schema:description ;
-    owl:equivalentProperty ha:description, ha:hasDescription ;
+    rdfs:range rdf:langString ;
+    rdfs:seeAlso dc:description, dct:description, ebucore:description, <http://www.w3.org/ns/ma-ont#description>, schema:description ;
      .
 
-# Review ranges: multiple rdfs:range values are cumulative, not alternatives; use a class union for resource alternatives or SHACL for mixed literal/resource choices.
-# Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
 ha:hasFormat a rdf:Property ;
     rdfs:label "has format"@en, "heeft formaat"@nl, "a pour format"@fr ;
     skos:definition "Describes the file format, physical medium or dimensions of an archival resource."@en, "Beschrijft het bestandsformaat, het fysieke medium of de afmetingen van een archiefbron."@nl, "Décrit le format de fichier, le support physique ou les dimensions d’une ressource archivistique."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string, ha:Format, ha:MediaTypeOrExtent ;
+    rdfs:range ha:Format ;
     rdfs:seeAlso dc:format, dct:format, ebucore:hasFormat ;
-    rdfs:subPropertyOf ha:hasFormat ;
      .
 
 # ! How will we call local identifiers vs. the main identifier
@@ -2656,15 +2609,6 @@ ha:hasPosition a rdf:Property ;
     rdfs:seeAlso schema:position ;
      .
 
-# Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
-ha:hasTitle a rdf:Property ;
-    rdfs:label "has title"@en, "heeft titel"@nl, "a pour titre"@fr ;
-    skos:definition "Provides a title given to an archival resource."@en, "Geeft een titel die aan een archiefbron is toegekend."@nl, "Fournit un titre attribué à une ressource archivistique."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:range rdfs:Literal ;
-    rdfs:seeAlso dc:title, dct:title ;
-    rdfs:subPropertyOf ha:hasTitle ;
-     .
 
 # Axiom review: the self-referential subproperty/equivalence assertion is redundant and can be removed.
 ha:hasDate a rdf:Property ;
