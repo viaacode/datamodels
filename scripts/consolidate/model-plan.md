@@ -10,16 +10,21 @@ Produce verified, reproducible model artifacts under `model/runs/` without chang
 
 4. **Map and name terms.** Rewrite domain identifiers and structural/executable references into `ha: <https://data.hetarchief.be/ns/>` using configured English names, acronyms, inverse pairs, and per-URI overrides.
 
-   | Term | Naming rule | Example |
+   | Construct |	Naming rule | English label
    |---|---|---|
-   | Class | Singular PascalCase | `DigitalRepresentation` |
-   | Shape | PascalCase | `PersonHasNameShape` |
-   | Property | Active/possession lowerCamelCase | `creates`, `hasPart`, `isPartOf` |
-   | Concept, scheme, ontology | lowerCamelCase | `contentRange`, `descriptionModel` |
+   | Class	Singular PascalCase: `DigitalRepresentation` |	`digital representation` |
+   | Direct property |	Active third-person lowerCamelCase: `knows`, `creates` |	`knows`, `creates` |
+   | Reverse property |	`isKnownBy`, `isCreatedBy` | `is known by`, `is created by` |
+   | Possession / part | `hasName`; `hasPart` / `isPartOf` | `has name`; `has part` / `is part of` |
+   | Shape | PascalCase: `PersonShape`, `PersonHasNameShape`	| `person shape`, `person has name shape` |
+   | Concept, scheme, ontology |	lowerCamelCase: `contentRange`, `descriptionModel` |	`content range`, `description model` |
+   | Boolean property | lowerCamelCase expressing a proposition: `is…` (states), `has…` (presence), or `can…` (capabilities); `isPublic`, `hasMissingAudioReels`, `canBeReused` | `is public` |
 
    Align English `rdfs:label` and `sh:name`; preserve French/Dutch text and contextual shape names. Configure irregular verbs and inverses explicitly; never invent inverse properties. Preserve RDF/RDFS/OWL/SHACL/XSD, SKOS/SKOS-XL, VANN, DCAM, vocabulary-status terms, configured Schema.org modeling predicates, and EDTF identifiers. Keep Dublin Core/PAV annotation predicates and ontology-header vocabulary, including nested author/contact metadata; apply configured `header_values`. Annotation uses must not prevent independent mapping of domain uses.
 
    Retain PREMIS, ODRL, and PROV through `retain_namespaces`, including definitions, dependencies, identifiers, labels, namespace headers, and documentary imports. Record identity mappings; apply naming only to remapped terms. Keep language terms excluded from selection/mapping through `preserve_namespaces`.
+
+   Identify Boolean properties from `rdfs:range xsd:boolean` or SHACL `sh:datatype xsd:boolean`, rather than their names. Name each property so that true affirms the stated condition. Prefer `is…` for states, `has…` for presence, and `can…`for capabilities. Preserve established, semantically accurate names through per-URI overrides. Do not generate inverse properties for Boolean predicates; logical negation is not an RDF inverse. Flag conflicting datatype declarations for review.
 
 5. **Consolidate and export.** Enable `consolidate_collisions` to union non-retained classes or predicates sharing configured names and English labels; rewrite all uses. Keep contextual shapes and other resource kinds separate unless explicitly merged. Reject mixed kinds, mismatched labels, self-disjoint classes, and incompatible constraints. Preserve selected axioms except recorded omissions; deduplicate triples and structurally equivalent anonymous shapes without losing context or list order.
 
