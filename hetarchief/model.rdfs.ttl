@@ -314,15 +314,6 @@ ha:MediahavenFragment a rdfs:Class ; # ! was mh:Fragment
     rdfs:isDefinedBy ha: ;
      .
 
-# ! equivalence with ha:MediaFragment makes all media fragments digital representations; we can probably remodel this to fit reality better. Fragments should probably not be representations
-ha:FragmentRepresentation a rdfs:Class ;
-    rdfs:label "fragment representation"@en, "fragmentrepresentatie"@nl, "représentation de fragment"@fr ;
-    skos:definition "A spatial or temporal segment of a file serving as a partial digital representation of an archived intellectual entity."@en, "Een ruimtelijk of temporeel segment van een bestand dat als gedeeltelijke digitale representatie van een gearchiveerde intellectuele entiteit dient."@nl, "Un segment spatial ou temporel d’un fichier servant de représentation numérique partielle d’une entité intellectuelle archivée."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:subClassOf ha:DigitalRepresentation ;
-    owl:equivalentClass ha:MediaFragment ;
-     .
-
 ha:GeoCoordinates a rdfs:Class ;
     rdfs:label "geographic coordinates"@en, "geografische coördinaten"@nl, "coordonnées géographiques"@fr ;
     skos:definition "Coordinates identifying the geographic position of a place described in the archive."@en, "Coördinaten die de geografische positie van een in het archief beschreven plaats aanduiden."@nl, "Des coordonnées identifiant la position géographique d’un lieu décrit dans les archives."@fr ;
@@ -372,17 +363,31 @@ ha:MaterialArtwork a rdfs:Class ;
     rdfs:subClassOf premis:IntellectualEntity ;
      .
 
-ha:MediaFragment a rdfs:Class, owl:Class ;
-    rdfs:label "media fragment"@en, "mediafragment"@nl, "fragment de média"@fr ;
-    skos:definition "An identifiable spatial or temporal segment of a media resource, used here as a partial digital representation of archival content."@en, "Een identificeerbaar ruimtelijk of temporeel segment van een mediabron, hier gebruikt als gedeeltelijke digitale representatie van archiefinhoud."@nl, "Un segment spatial ou temporel identifiable d’une ressource médiatique, utilisé ici comme représentation numérique partielle d’un contenu archivistique."@fr ;
-    rdfs:seeAlso ebucore:MediaFragment, ma:MediaFragment ;
-    rdfs:subPropertyOf ha:MediaResource ;
+ha:MediaFile a rdfs:Class, owl:Class ;
+    rdfs:label "media file"@en, "mediabestand"@nl, "fichier multimédia"@fr ;
+    skos:definition "An audio, video or image file whose content may be annotated or divided into media fragments."@en, "Een audio-, video- of afbeeldingsbestand waarvan de inhoud kan worden geannoteerd of in mediafragmenten verdeeld."@nl, "Un fichier audio, vidéo ou image dont le contenu peut être annoté ou divisé en fragments de média."@fr ;
+    rdfs:isDefinedBy ha: ;
+    rdfs:seeAlso ebucore:MediaResource ;
+    rdfs:subClassOf premis:File ;
+    owl:equivalentClass [
+        a owl:Class ;
+        owl:intersectionOf ( premis:File [
+            a owl:Restriction ;
+            owl:onProperty ha:hasMimeType ;
+            owl:someValuesFrom [
+                a rdfs:Datatype ;
+                owl:onDatatype xsd:string ;
+                owl:withRestrictions ( [ xsd:pattern "(audio|video|image)/.+" ] ) ;
+            ] ;
+        ] ) ;
+    ] ;
      .
 
-ha:MediaResource a rdfs:Class ;
-    rdfs:label "media resource"@en, "mediabron"@nl, "ressource médiatique"@fr ;
-    skos:definition "An audio or audiovisual resource whose content may be annotated or divided into media fragments."@en, "Een audio- of audiovisuele bron waarvan de inhoud kan worden geannoteerd of in mediafragmenten verdeeld."@nl, "Une ressource audio ou audiovisuelle dont le contenu peut être annoté ou divisé en fragments de média."@fr ;
-    rdfs:seeAlso ebucore:MediaResource ;
+ha:MediaFragment a rdfs:Class, owl:Class ;
+    rdfs:label "media fragment"@en, "mediafragment"@nl, "fragment de média"@fr ;
+    skos:definition "An identifiable spatial or temporal segment of a media file that may represent part of an intellectual entity’s content."@en, "Een identificeerbaar ruimtelijk of temporeel segment van een mediabestand dat een deel van de inhoud van een intellectuele entiteit kan representeren."@nl, "Un segment spatial ou temporel identifiable d’un fichier multimédia qui peut représenter une partie du contenu d’une entité intellectuelle."@fr ;
+    rdfs:isDefinedBy ha: ;
+    rdfs:seeAlso ebucore:MediaFragment, ma:MediaFragment ;
      .
 
 ha:Motivation a rdfs:Class ;
@@ -663,7 +668,7 @@ ha:WrittenWorkCarrierRepresentation a rdfs:Class ;
      .
 
 <https://data.hetarchief.be/id/collection/action> a skos:Collection ;
-    skos:member ha:availableForConsultation, ha:downloadable ;
+    skos:member ha:available-for-consultation, ha:downloadable ;
     skos:prefLabel "Ontsluitingsacties"@nl ;
      .
 
@@ -678,7 +683,7 @@ ha:WrittenWorkCarrierRepresentation a rdfs:Class ;
      .
 
 <https://data.hetarchief.be/id/collection/user-group> a skos:Collection ;
-    skos:member ha:betweenPartners, ha:educationalPublic, ha:intraMuros, ha:public, ha:researchPublic ;
+    skos:member ha:between-partners, ha:educational-public, ha:intra-muros, ha:public, ha:research-public ;
     skos:prefLabel "Gebruikersgroepen"@nl ;
      .
 
@@ -1062,7 +1067,7 @@ ha:hasDepth a rdf:Property ;
 ha:hasDuration a rdf:Property ;
     rdfs:label "has duration"@en, "heeft duur"@nl, "a pour durée"@fr ;
     skos:definition "Records the playback duration of archival media, expressed as a duration rather than a calendar date."@en, "Legt de afspeelduur van archiefmedia vast, uitgedrukt als tijdsduur in plaats van als kalenderdatum."@nl, "Consigne la durée de lecture d’un média archivé, exprimée comme une durée plutôt que comme une date calendaire."@fr ;
-    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity premis:File ) ] ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity premis:File ha:MediaFragment ) ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:duration ;
     # ! we could add rdfs:subPropertyOf ha:hasExtent ;
@@ -1264,7 +1269,7 @@ ha:hasMaterialExtent a rdf:Property ;
      .
 
 ha:hasMediaFragment a rdf:Property ;
-    rdfs:domain premis:File ; # ! Or rdfs:domain ha:MediaResource? What's the relation between file and mediaresource?
+    rdfs:domain ha:MediaFile ;
     rdfs:label "has media fragment"@en, "heeft mediafragment"@nl, "a pour fragment de média"@fr ;
     skos:definition "Identifies a spatial or temporal segment within a media resource."@en, "Identificeert een ruimtelijk of temporeel segment binnen een mediabron."@nl, "Identifie un segment spatial ou temporel au sein d’une ressource médiatique."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -1273,7 +1278,7 @@ ha:hasMediaFragment a rdf:Property ;
     owl:inverseOf ha:isMediaFragmentOf ;
      .
 
-ha:hasMimeType a rdf:Property ;
+ha:hasMimeType a rdf:Property, owl:DatatypeProperty ;
     rdfs:label "has MIME type"@en, "heeft MIME-type"@nl, "a pour type MIME"@fr ;
     skos:definition "Specifies the Internet media type of a digital file, such as audio/wav."@en, "Geeft het internetmediatype van een digitaal bestand aan, zoals audio/wav."@nl, "Indique le type de média Internet d’un fichier numérique, tel que audio/wav."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -1665,7 +1670,7 @@ ha:hasStreetAddress a rdf:Property ;
 ha:hasSynopsis a rdf:Property ;
     rdfs:label "has synopsis"@en, "heeft synopsis"@nl, "a pour synopsis"@fr ;
     skos:definition "Provides a concise account of the narrative or content of an archival work."@en, "Geeft een beknopte beschrijving van het verhaal of de inhoud van een archiefwerk."@nl, "Fournit un aperçu concis du récit ou du contenu d’une œuvre archivée."@fr ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso ebucore:synopsis ;
     rdfs:subPropertyOf ha:hasDescription ;
      .
@@ -1769,7 +1774,7 @@ ha:annotatesMediaResource a rdf:Property ; #! was isAnnotatedMediaResource
     rdfs:label "annotates media resource"@en, "annoteert mediabron"@nl, "annote une ressource médiatique"@fr ;
     skos:definition "Relates an annotation to the media resource or fragment it annotates."@en, "Verbindt een annotatie met de mediabron of het fragment dat ze annoteert."@nl, "Relie une annotation à la ressource médiatique ou au fragment qu’elle annote."@fr ;
     rdfs:domain ha:Annotation ;
-    rdfs:range ha:MediaResource ;
+    rdfs:range [ a owl:Class ; owl:unionOf ( ha:MediaFile ha:MediaFragment ) ] ;
     rdfs:seeAlso ebucore:isAnnotatedMediaResource ;
      .
 
@@ -1972,7 +1977,7 @@ ha:hasExtent a rdf:Property ;
 
 ha:hasFragmentRepresentation a rdf:Property ;
     rdfs:domain premis:IntellectualEntity ;
-    rdfs:range ha:FragmentRepresentation ;
+    rdfs:range ha:MediaFragment ;
     rdfs:label "has fragment representation"@en, "heeft fragmentrepresentatie"@nl, "a pour représentation de fragment"@fr ;
     skos:definition "Relates an intellectual entity to a spatial or temporal segment serving as its partial digital representation."@en, "Verbindt een intellectuele entiteit met een ruimtelijk of temporeel segment dat als haar gedeeltelijke digitale representatie dient."@nl, "Relie une entité intellectuelle à un segment spatial ou temporel servant de représentation numérique partielle de celle-ci."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2148,7 +2153,7 @@ ha:isCarrierRepresentationOf a rdf:Property ; #! was ha:isCarrierCopyOf
      .
 
 ha:isFragmentRepresentationOf a rdf:Property ;
-    rdfs:domain ha:FragmentRepresentation ;
+    rdfs:domain ha:MediaFragment ;
     rdfs:range premis:IntellectualEntity ;
     rdfs:label "is fragment representation of"@en, "is fragmentrepresentatie van"@nl, "est une représentation de fragment de"@fr ;
     skos:definition "Relates a partial digital representation to the intellectual entity whose content it represents."@en, "Verbindt een gedeeltelijke digitale representatie met de intellectuele entiteit waarvan ze de inhoud representeert."@nl, "Relie une représentation numérique partielle à l’entité intellectuelle dont elle représente le contenu."@fr ;
@@ -2187,13 +2192,12 @@ ha:isMasterCopyOf a rdf:Property ; # ! ha:isMasterRepresentationOf ?
     owl:inverseOf ha:hasMasterCopy ;
      .
 
-# ! local SHACL uses premis:File; should files be declared media resources or allowed as an alternative.
 ha:isMediaFragmentOf a rdf:Property ;
     rdfs:label "is media fragment of"@en, "is mediafragment van"@nl, "est un fragment de média de"@fr ;
     skos:definition "Relates a media fragment to the media resource containing that segment."@en, "Verbindt een mediafragment met de mediabron die dat segment bevat."@nl, "Relie un fragment de média à la ressource médiatique qui contient ce segment."@fr ;
     rdfs:domain ha:MediaFragment ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range ha:MediaResource ;
+    rdfs:range ha:MediaFile ;
     rdfs:seeAlso ebucore:isMediaFragmentOf, ma:isFragmentOf ;
      .
 
@@ -2291,8 +2295,7 @@ ha:accompanies a rdf:Property, owl:ObjectProperty ;
     rdfs:range ha:Newspaper ;
     owl:inverseOf ha:isAccompaniedBy ;
      .
-# TODO: switch terms in URIs to dash sepeparated for individuals
-ha:availableForConsultation a owl:NamedIndividual, skos:Concept, odrl:Action ;
+ha:available-for-consultation a owl:NamedIndividual, skos:Concept, odrl:Action ;
     rdfs:label "available for consultation"@en ;
     skos:altLabel "listen"@en, "view"@en, "bekijken"@nl, "beluisteren"@nl ;
     rdfs:comment "To make a digital copy available for consultation by third-parties."@en, "Om een ​​digitale kopie beschikbaar te stellen voor raadpleging door derden."@nl ;
@@ -2302,7 +2305,7 @@ ha:availableForConsultation a owl:NamedIndividual, skos:Concept, odrl:Action ;
     skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> ;
      .
 
-ha:betweenPartners a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
+ha:between-partners a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     rdfs:label "between partners"@en ;
     skos:definition "Anyone who has an collaboration agreement with meemoo that includes key use as permission (meemoo collaboration agreement 6.7.3 or 5.7.3)"@en, "Iedereen die een samenwerkingsovereenkomst met meemoo heeft waarin sleutelgebruik als toestemming is opgenomen (meemoo samenwerkingsovereenkomst 6.7.3 of 5.7.3)"@nl ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
@@ -2320,7 +2323,7 @@ ha:downloadable a owl:NamedIndividual, skos:Concept, odrl:Action ;
     skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> ;
      .
 
-ha:educationalPublic a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
+ha:educational-public a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     rdfs:label "educational public"@en ;
     skos:definition "Anyone subject to the conditions for access to the Archive for Education platform (e.g., lecturers, learners, educational support staff, etc.), see Appendix 2 of the meemoo collaboration agreement."@en, "Iedereen die valt onder de voorwaarden van toegang tot het Archief voor Onderwijsplatform (bv lesgevers, lerenden, onderwijsondersteunend personeel...), zie bijlage 2 van de meemoo samenwerkingsovereenkomst."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
@@ -2400,7 +2403,7 @@ ha:hasSubject a rdf:Property ;
     rdfs:seeAlso dc:subject, dct:subject ;
      .
 
-ha:intraMuros a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
+ha:intra-muros a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     rdfs:label "intra muros"@en ;
     skos:definition "Anyone who is within the institution's buildings for the purpose of digital consultation."@en, "Iedereen die zich binnen de gebouwen van de instelling bevindt met het oog op digitale raadpleging."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
@@ -2451,7 +2454,7 @@ ha:public a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> ;
      .
 
-ha:researchPublic a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
+ha:research-public a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     rdfs:label "research public"@en ;
     rdfs:comment "Anyone who falls under the Scientific Research user group as described in Appendix 2 of the meemoo collaboration agreement."@en, "Iedereen die valt onder de gebruikersgroep Wetenschappelijk Onderzoek zoals beschreven in bijlage 2 van de meemoo samenwerkingsovereenkomst."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
@@ -2557,7 +2560,7 @@ ha:isRepresentedBy a rdf:Property, owl:ObjectProperty ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
     rdfs:subPropertyOf premis:relationship ;
     rdfs:domain premis:IntellectualEntity ;
-    rdfs:range premis:Representation ;
+    rdfs:range _:representationOrFragment ;
     owl:equivalentProperty <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
     owl:inverseOf ha:represents .
 
@@ -2567,12 +2570,15 @@ ha:represents a rdf:Property, owl:ObjectProperty ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
     rdfs:subPropertyOf premis:relationship ;
-    rdfs:domain premis:Representation ;
+    rdfs:domain _:representationOrFragment ;
     rdfs:range premis:IntellectualEntity ;
     owl:equivalentProperty <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
     owl:inverseOf ha:isRepresentedBy .
 
+_:representationOrFragment a owl:Class ;
+    owl:unionOf ( premis:Representation ha:MediaFragment ) .
+
 <https://data.hetarchief.be/id/constraint-operand> a skos:ConceptScheme ;
-    skos:hasTopConcept ha:availableForConsultation, ha:betweenPartners, ha:downloadable, ha:educationalPublic, ha:extended, ha:full, ha:intraMuros, ha:limited, ha:partial, ha:public, ha:researchPublic ;
+    skos:hasTopConcept ha:available-for-consultation, ha:between-partners, ha:downloadable, ha:educational-public, ha:extended, ha:full, ha:intra-muros, ha:limited, ha:partial, ha:public, ha:research-public ;
     skos:prefLabel "Thesaurus rechteroperanden"@nl, "Thesaurus rightoperands"@nl ;
      .

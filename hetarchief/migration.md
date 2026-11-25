@@ -103,7 +103,7 @@ These rows cover both shape targets and classes allowed as property values. Repl
 | --- | --- | --- | --- | --- |
 | `haObj:CarrierRepresentation` | `ha:CarrierRepresentation` | **MAP** | D, O | — |
 | `haObj:DigitalRepresentation` | `ha:DigitalRepresentation` | **MAP** | D, O, R | — |
-| `haObj:FragmentRepresentation` | `ha:FragmentRepresentation` | **REVIEW** | O | Target equates this with ha:MediaFragment; M04. |
+| `haObj:FragmentRepresentation` | `ha:MediaFragment` | **MAP** | O | Preserve links to the intellectual entity and source file; M04. |
 | `haObj:LocalIdentifier` | `ha:LocalIdentifier` | **MAP** | O | — |
 | `haObj:PhysicalCarrier` | `ha:PhysicalCarrier` | **MAP** | D, O | — |
 | `mh:Fragment` | `ha:MediahavenFragment` | **MAP** | O | — |
@@ -135,7 +135,7 @@ These rows cover both shape targets and classes allowed as property values. Repl
 | `dct:RightsStatement` | `ha:RightsStatement` | **MAP** | R | — |
 | `ebucore:Annotation` | `ha:Annotation` | **MAP** | D | — |
 | `ebucore:ClosedCaptions` | `ha:ClosedSubtitling` | **MAP** | D | Accessibility captions and general subtitles must be distinguished; M08. |
-| `ebucore:MediaFragment` | `ha:MediaFragment` | **REVIEW** | D | Candidate is clear; target hierarchy and equivalence need a decision; M04. |
+| `ebucore:MediaFragment` | `ha:MediaFragment` | **MAP** | D | Covers spatial and temporal fragments; M04. |
 | `ebucore:OpenCaptions` | `ha:OpenSubtitling` | **MAP** | D | Accessibility captions and general subtitles must be distinguished; M08. |
 | `ebucore:TextAnnotation` | `ha:TextAnnotation` | **MAP** | D | — |
 | `org:Organization` | `ha:Organization` | **MAP** | D, E, G | — |
@@ -173,7 +173,7 @@ These rows cover both shape targets and classes allowed as property values. Repl
 | `odrl:Policy` | `odrl:Policy` | **KEEP** | R | Retained in the imported external ontology. |
 | `odrl:Prohibition` | `odrl:Prohibition` | **KEEP** | R | Retained in the imported external ontology. |
 | `premis:Event` | `premis:Event` | **KEEP** | E | Retained in the imported external ontology. |
-| `premis:File` | `premis:File` | **KEEP** | D, O | Retained in the imported external ontology. |
+| `premis:File` | `premis:File` | **KEEP** | D, O | Add `ha:MediaFile` to files with a qualifying MIME type; M04. |
 | `premis:Fixity` | `premis:Fixity` | **KEEP** | O | Retained in the imported external ontology. |
 | `premis:HardwareAgent` | `premis:HardwareAgent` | **KEEP** | E | Retained in the imported external ontology. |
 | `premis:IntellectualEntity` | `premis:IntellectualEntity` | **KEEP** | D, O, R | Retained in the imported external ontology. |
@@ -221,14 +221,14 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | --- | --- | --- | --- | --- |
 | `haObj:hasAccessCopy` | `ha:hasAccessCopy` | **MAP** | O | — |
 | `haObj:hasCarrierCopy` | `ha:hasCarrierRepresentation` | **MAP** | D, O | — |
-| `haObj:hasFragmentRepresentation` | `ha:hasFragmentRepresentation` | **MAP** | O | — |
+| `haObj:hasFragmentRepresentation` | `ha:hasFragmentRepresentation` | **MAP** | O | Links the intellectual entity to its `ha:MediaFragment`; M04. |
 | `haObj:hasIIIFCopy` | `ha:hasIIIFCopy` | **MAP** | O | — |
 | `haObj:hasMasterCopy` | `ha:hasMasterCopy` | **MAP** | O | — |
 | `haObj:hasMezzanineCopy` | `ha:hasMezzanineCopy` | **MAP** | O | — |
 | `haObj:hasTranscriptionCopy` | `ha:hasTranscriptionCopy` | **MAP** | O | — |
 | `haObj:isAccessCopyOf` | `ha:isAccessCopyOf` | **MAP** | O | Preserve representation-to-intellectual-entity direction; current target domain/range agree; M16. |
 | `haObj:isCarrierCopyOf` | `ha:isCarrierRepresentationOf` | **MAP** | O | — |
-| `haObj:isFragmentRepresentationOf` | `ha:isFragmentRepresentationOf` | **MAP** | O | — |
+| `haObj:isFragmentRepresentationOf` | `ha:isFragmentRepresentationOf` | **MAP** | O | Links the `ha:MediaFragment` to the intellectual entity it represents; M04. |
 | `haObj:isIIIFCopyOf` | `ha:isIIIFCopyOf` | **MAP** | O | — |
 | `haObj:isMasterCopyOf` | `ha:isMasterCopyOf` | **MAP** | O | — |
 | `haObj:isMezzanineCopyOf` | `ha:isMezzanineCopyOf` | **MAP** | O | — |
@@ -291,8 +291,8 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `schema:containedInPlace` | `ha:isContainedInPlace` | **MAP** | D | — |
 | `schema:contributor` | `ha:hasContributor` | **CHANGE** | D | On a work, rename; on a role, move the agent link to rdf:value; M02. |
 | `schema:copyrightHolder` | `ha:hasRightsHolder` | **REVIEW** | D | Target ha:Agent excludes unidentified generic things unless classified; M02. |
-| `schema:copyrightNotice` | No exact target (`ha:hasRights` is a broader candidate) | **UNMAPPED** | D | No dedicated notice predicate; broader rights text would lose the distinction; M14. |
-| `schema:copyrightYear` | `ha:hasCopyrightDate` | **REVIEW** | D | Year-only integer cannot become a precise xsd:dateTime without inventing information; M06. |
+| `schema:copyrightNotice` | No exact target (`ha:hasRights` is a broader candidate) | **UNMAPPED** | D | No dedicated notice predicate as no longer relevant. Replaced by broader rights classes. |
+| `schema:copyrightYear` | `ha:hasCopyrightDate` | **UNMAPPED** | D | No longer relevant. |
 | `schema:creator` | `ha:hasCreator` | **REVIEW** | D, O | Rename work-to-role links and use `rdf:value` for role-to-agent links (M02). The fixity domain now fits, but its source string still needs agent resolution (M13). |
 | `schema:creditText` | `ha:hasCreditText` | **MAP** | D | Preserve language tags; target range now agrees; M07. |
 | `schema:dateCreated` | `ha:hasCreationDate` | **REVIEW** | D, O | Normalize to `edtf:EDTF` where lossless. File and Mediahaven fragment subjects still fall outside the stated domain (M06). |
@@ -377,18 +377,18 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `ebucore:hasAnnotationRelatedAgent` | `ha:hasAnnotationSubject` | **CHANGE** | D | Merge subject links while recording their original predicates; M09. |
 | `ebucore:hasAnnotationRelatedArtefact` | `ha:hasAnnotationSubject` | **CHANGE** | D | Merge subject links while recording their original predicates; M09. |
 | `ebucore:hasAnnotationTarget` | `ha:hasAnnotationTarget` | **MAP** | D | — |
-| `ebucore:hasCaptioning` | `ha:hasCaptioning` or `ha:hasSubtitling` by purpose | **REVIEW** | D | File/image-reel domains now fit; classify caption objects by purpose; M08. |
+| `ebucore:hasCaptioning` | `ha:hasSubtitling` | **MAP** | D | File/image-reel domains now fit; classify caption objects by purpose; M08. |
 | `ebucore:hasCastMember` | `ha:hasCastMember` | **REVIEW** | D | Source string becomes a structured cast entry; identity cannot be inferred safely; M02. |
-| `ebucore:hasMediaFragment` | `ha:hasMediaFragment` | **REVIEW** | D, O | Both fragment classes converge under the target equivalence; M04. |
-| `ebucore:hasMimeType` | `ha:hasMimeType` | **MAP** | O | Preserve strings; conflicting ha:hasFormat superproperty has been removed; M03. |
+| `ebucore:hasMediaFragment` | `ha:hasMediaFragment` | **CHANGE** | D, O | Preserve direction and type the source file as `ha:MediaFile` once its MIME type qualifies; M04. |
+| `ebucore:hasMimeType` | `ha:hasMimeType` | **MAP** | O | Preserve strings and use them to identify eligible media files; M03/M04. |
 | `ebucore:hasObjectType` | `ha:hasObjectType` | **MAP** | D | — |
-| `ebucore:height` | `ha:hasHeight` | **REVIEW** | D | Integer literal becomes a measurement node; unit must be known; M05. |
-| `ebucore:isAnnotatedMediaResource` | `ha:annotatesMediaResource` | **REVIEW** | D | Keep direction; target expects ha:MediaResource, with a broken fragment hierarchy; M04/M09. |
-| `ebucore:isMediaFragmentOf` | `ha:isMediaFragmentOf` | **REVIEW** | D, O | Source object is premis:File; target expects ha:MediaResource; M04. |
+| `ebucore:height` | `ha:hasHeight` | **MAP** | D | Integer literal becomes a measurement node; unit depends on class context; M05. |
+| `ebucore:isAnnotatedMediaResource` | `ha:annotatesMediaResource` | **MAP** | D | Preserve the annotation-to-fragment direction; the target also accepts `ha:MediaFile`; M04/M09. |
+| `ebucore:isMediaFragmentOf` | `ha:isMediaFragmentOf` | **CHANGE** | D, O | Preserve direction and type the linked file as `ha:MediaFile` once its MIME type qualifies; M04. |
 | `ebucore:regionDelimX` | `ha:hasRegionX` | **CHANGE** | D | Validate nonnegative pixel coordinates; reject negative or unknown-unit values; M05. |
 | `ebucore:regionDelimY` | `ha:hasRegionY` | **CHANGE** | D | Corrected seeAlso now matches; validate nonnegative pixel coordinates as for X; M05. |
-| `ebucore:synopsis` | `ha:hasSynopsis` | **REVIEW** | D | String range conflicts with its rdf:langString superproperty; M07. |
-| `ebucore:width` | `ha:hasWidth` | **REVIEW** | D | Integer literal becomes a measurement node; unit must be known; M05. |
+| `ebucore:synopsis` | `ha:hasSynopsis` | **MAP** | D | - |
+| `ebucore:width` | `ha:hasWidth` | **MAP** | D | Integer literal becomes a measurement node; unit depends on class context; M05. |
 | `edm:isNextInSequence` | `ha:immediatelyFollows` | **MAP** | O | Keep subject/object order: later resource to immediately preceding resource. |
 | `evtAgRole:exe` | `ha:hasExecutingSoftware` | **MAP** | E | — |
 | `evtAgRole:imp` | `ha:isImplementedBy` | **MAP** | E | Organization remains the implementer, retyped as ha:Organization. |
@@ -532,15 +532,17 @@ Keep the original classification in the migration provenance until its dispositi
 
 Map `ebucore:hasMimeType → ha:hasMimeType` directly and preserve its string values. The target no longer makes this a subproperty of `ha:hasFormat`, so MIME strings no longer inherit the file-format class range.
 
-### M04 — Convert fragment times to offsets and resolve fragment hierarchy
+### M04 — Migrate media files and fragments and convert fragment offsets
 
-The source uses `schema:startTime` and `schema:endTime` as `xsd:time` on both `haObj:FragmentRepresentation` and `ebucore:MediaFragment`. The target `ha:hasStartOffset` and `ha:hasEndOffset` require **integer seconds relative to the start of the source media** (`hetarchief/model.rdfs.ttl:1649` and `hetarchief/model.rdfs.ttl:1088`).
+Map `haObj:FragmentRepresentation` and `ebucore:MediaFragment` to `ha:MediaFragment`, preserving instance IRIs. Apply the same type replacement to any records already migrated as `ha:FragmentRepresentation`. Keep `ha:isFragmentRepresentationOf` and `ha:hasFragmentRepresentation` where present to express which `premis:IntellectualEntity` the fragment represents. A fragment may describe a spatial region, a temporal segment, or both. Base any `ha:DigitalRepresentation` type on independent evidence.
+
+Add an explicit `rdf:type ha:MediaFile` to each `premis:File` with a `ha:hasMimeType` string beginning with `audio/`, `video/` or `image/` and a nonempty subtype. For previously migrated records, replace `ha:MediaResource` with `ha:MediaFile` on qualifying files and with `ha:MediaFragment` on identified fragments. Flag unresolved resource types and files with missing or nonqualifying MIME values when a media file is required, and retain the source statements in migration provenance.
+
+Preserve the direction of both source-file links. `ha:hasMediaFragment` goes from the media file to the fragment, and `ha:isMediaFragmentOf` goes from the fragment to the media file. `ha:annotatesMediaResource` goes from the annotation to a `ha:MediaFile` or `ha:MediaFragment` (M09).
+
+The source uses `schema:startTime` and `schema:endTime` as `xsd:time` on both legacy fragment classes. Map them to `ha:hasStartOffset` and `ha:hasEndOffset` as **integer seconds relative to the start of the source media**. The target shape allows spatial fragments without offsets.
 
 Once the source values are confirmed to be relative offsets, convert `HH:MM:SS` to `3600 × HH + 60 × MM + SS`; for example, `00:01:30` becomes `90`. **REVIEW:** fractional seconds, time zones, wall-clock values and wrapped times cannot be converted safely under that integer model without additional decisions. Do not round silently or manufacture a media-start reference. Keep `schema:duration → ha:hasDuration` as `xsd:duration`.
-
-The target equates `ha:FragmentRepresentation` and `ha:MediaFragment`, making every media fragment a digital representation under OWL equivalence (`hetarchief/model.rdfs.ttl:318`). Also, `ha:MediaFragment` uses `rdfs:subPropertyOf ha:MediaResource` rather than a class hierarchy (`hetarchief/model.rdfs.ttl:375`). **REVIEW:** confirm whether geometric/annotation fragments should all be representations and resolve the hierarchy.
-
-Both `ha:isMediaFragmentOf` and `ha:annotatesMediaResource` expect `ha:MediaResource`. The source former relation points to `premis:File`; the latter points to a media fragment. The target does not establish the required class relationships. Decide whether qualifying files/fragments receive explicit `ha:MediaResource` types or the ranges/hierarchy change. Do not classify every file as audiovisual media. Preserve all relation directions.
 
 ### M05 — Preserve measurement structure and units
 
@@ -603,7 +605,7 @@ Map `schema:transcript` directly to `ha:hasTranscript`. Its domain is now `ha:Di
 
 Map both `ebucore:hasAnnotationRelatedArtefact` and `ebucore:hasAnnotationRelatedAgent` to `ha:hasAnnotationSubject`, keeping the referenced resource IRIs. The source permits one artefact and an additional agent; retain both when they differ. When both old predicates have the same object, RDF deduplication will leave one target triple. Record the original predicates in migration provenance if their distinction is needed.
 
-Retype only concepts actually used as `ebucore:annotationType` values to `ha:AnnotationType`; do not retype every SKOS concept. Preserve `ebucore:annotationConfidence → ha:hasAnnotationConfidence` as a decimal. Keep the target file link (`ha:hasAnnotationTarget`) distinct from the annotated fragment/resource link (`ha:annotatesMediaResource`); they express different relationships. Resolve the resource hierarchy described in M04.
+Retype only concepts actually used as `ebucore:annotationType` values to `ha:AnnotationType`. Preserve `ebucore:annotationConfidence → ha:hasAnnotationConfidence` as a decimal. Map `ebucore:isAnnotatedMediaResource` to `ha:annotatesMediaResource`, keeping the annotation as the subject and the annotated fragment or qualifying media file as the object (M04). Preserve the separate target file link as `ha:hasAnnotationTarget`.
 
 ### M10 — Keep grouping, structural membership and publication sequencing distinct
 
@@ -683,13 +685,13 @@ These values occur directly in the source shapes' active `sh:in` lists. They are
 | `haRig:limited` | `ha:limited` | MAP; target now types it as `ha:MetadataScope`; M17. |
 | `haRig:full` | `ha:full` | MAP. |
 | `haRig:partial` | `ha:partial` | MAP. |
-| `haRig:available-for-consultation` | `ha:availableForConsultation` | MAP; action; review source right-operand usage separately. |
+| `haRig:available-for-consultation` | `ha:available-for-consultation` | MAP; action; review source right-operand usage separately. |
 | `haRig:downloadable` | `ha:downloadable` | MAP; action; review source right-operand usage separately. |
-| `haRig:between-partners` | `ha:betweenPartners` | MAP. |
-| `haRig:educational-public` | `ha:educationalPublic` | MAP. |
-| `haRig:intra-muros` | `ha:intraMuros` | MAP. |
+| `haRig:between-partners` | `ha:between-partners` | MAP. |
+| `haRig:educational-public` | `ha:educational-public` | MAP. |
+| `haRig:intra-muros` | `ha:intra-muros` | MAP. |
 | `haRig:public` | `ha:public` | MAP. |
-| `haRig:research-public` | `ha:researchPublic` | MAP. |
+| `haRig:research-public` | `ha:research-public` | MAP. |
 | `odrl:eq` | `odrl:eq` | KEEP; imported operator. |
 | `odrl:lt` | `odrl:lt` | KEEP; imported operator. |
 | `odrl:recipient` | `odrl:recipient` | KEEP; imported left operand. |
@@ -719,9 +721,9 @@ Other instance/concept IRIs remain stable unless explicitly listed above. For ex
 
 ### 1. Record the model decisions before enabling affected rules
 
-Assign the open role, format-classification, fragment and date-domain decisions to the model owner. Rights-value decisions also need the rights-model owner, and URI-template and URL decisions need application-owner input. Use actual data examples to resolve the remaining REVIEW and UNMAPPED contexts. Record the accepted destination, condition, conversion, retained provenance and validation expectation for each open context.
+Assign the open role, format-classification, fragment-offset conversion and date-domain decisions to the model owner. Rights-value decisions also need the rights-model owner, and URI-template and URL decisions need application-owner input. Use actual data examples to resolve the remaining REVIEW and UNMAPPED contexts. Record the accepted destination, condition, conversion, retained provenance and validation expectation for each open context.
 
-Identifier mappings, descriptive role names, series positions, season numbers, transcripts, coverage and both hardware and software model strings can proceed under their stated rules. Prioritize post and agent typing (M02/M13), intellectual-entity format classification (M03), fragment offsets and hierarchy (M04), date domains and datatype alignment (M06), and the remaining text and caption exceptions (M07/M08).
+Identifier mappings, descriptive role names, series positions, season numbers, transcripts, coverage and both hardware and software model strings can proceed under their stated rules. Prioritize post and agent typing (M02/M13), intellectual-entity format classification (M03), unresolved fragment-offset conversions and media-file typing exceptions (M04), date domains and datatype alignment (M06), and the remaining text and caption exceptions (M07/M08).
 
 ### 2. Profile the source dataset and preserve a reproducible baseline
 
@@ -733,7 +735,7 @@ Do not assume every source-shaped resource conforms: note existing violations se
 
 Use an explicit IRI map, with subject-type/context guards where specified. Preserve resource identities, blank-node structure where possible, inverse directions and relation subtypes. Apply KEEP rules as well as MAP rules so externally named data is not dropped. Apply controlled-value rewrites throughout relevant data and supporting vocabulary descriptions.
 
-Do not load a broad equivalence closure as a substitute for explicit conversion: the target's fragment equivalence and remaining datatype declarations need the decisions above. The one-way measurement subproperty is compatible with context-specific value conversion. Deduplicate identical output triples while recording many-to-one merges. Leave source graphs unchanged and keep unresolved statements in an identifiable legacy/provenance graph.
+Apply the fragment class mappings and media-file typing in M04 explicitly so they are available to SHACL Core. Use the approved conversion rules for datatypes and context-specific measurement values. Deduplicate identical output triples while recording many-to-one merges. Leave source graphs unchanged and keep unresolved statements in an identifiable legacy/provenance graph.
 
 ### 4. Run the approved structural and literal conversions
 
@@ -752,6 +754,7 @@ Write migration-specific acceptance checks from the agreed mapping decisions and
 | Value preservation | All multilingual texts, date precision, identifier lexical forms, checksum values, measurement units and status notes survive or have an explicit loss/exception decision. |
 | Context rules | Validate work and role chains, fixity attribution, and model strings on both agent types. Verify that generic generated resources and Mediahaven provenance retain their original scope. |
 | Relations | Structural versus generic membership and inclusion remain distinct; inverse-copy edges remain consistent; sequence edges retain their direction. |
+| Media | Source-file links connect `ha:MediaFile` and `ha:MediaFragment` in the original direction. Media files have a qualifying MIME type. Fragments preserve intellectual-entity and annotation links, and any converted offsets are integer seconds. |
 | Rights | Policy targets, actions, permissions/prohibitions, constraints and motivations retain their behavior; operand IRIs/types and public-domain status patterns are correct. |
 | Counts | Reconcile changes using per-rule counts. Track newly created measurement nodes, any materialized PREMIS identifier links, and merged annotation-subject triples. |
 | Repeatability | Rerunning against the same frozen input produces the same graph, no duplicate generated nodes and the same exception ledger. |

@@ -152,9 +152,9 @@ ha:AnnotationShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class ha:MediaResource ;
+        sh:or ( [ sh:class ha:MediaFile ] [ sh:class ha:MediaFragment ] ) ;
         sh:description "The media fragment or resource that is linked to this Annotation."@en, "Le fragment multimédia lié à cette annotation."@fr, "Het media fragment of resource dat gelinkt is aan deze annotatie."@nl ;
-        sh:message "ebucore:annotatesMediaResource is missing or its object is not a ebucore:MediaFragment"@en ;
+        sh:message "ha:annotatesMediaResource must point to a media file or media fragment."@en ;
         sh:minCount 1 ;
         sh:name "annotates"@en, "annote"@fr, "annoteert"@nl ;
         sh:path ha:annotatesMediaResource ;
@@ -481,13 +481,13 @@ ha:ConstraintShape a sh:NodeShape ;
             ha:limited
             ha:full
             ha:partial
-            ha:availableForConsultation
+            ha:available-for-consultation
             ha:downloadable
-            ha:betweenPartners
-            ha:educationalPublic
-            ha:intraMuros
+            ha:between-partners
+            ha:educational-public
+            ha:intra-muros
             ha:public
-            ha:researchPublic
+            ha:research-public
         ) ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
@@ -1713,70 +1713,6 @@ ha:FixityShape a sh:NodeShape ;
     sh:targetClass premis:Fixity ;
      .
 
-# REVIEW FIX: hasStartTime/hasEndTime were replaced by ha:hasStartOffset/
-# ha:hasEndOffset with xsd:integer ranges. Apply the same migration in
-# MediaFragmentShape, specify the offset unit, and migrate values rather than
-# renaming xsd:time literals. Time-of-day values cannot represent offsets >=24h.
-# REVIEW ALIGN: RDFS equates FragmentRepresentation and MediaFragment, but SHACL
-# Core does not infer that equivalence. ObjectFileShape requires FragmentRepresentation
-# where DescriptionFileShape accepts MediaFragment. Align the fragment classes and
-# file constraints so a spatial-only MediaFragment does not unexpectedly need
-# mandatory temporal offsets and all DigitalRepresentation/Representation fields.
-ha:FragmentRepresentationShape a sh:NodeShape ;
-    rdfs:label "fragment representation shape"@en ;
-    sh:property [
-        sh:class premis:IntellectualEntity ;
-        sh:description "The intellectual entity of which this fragment is a representation."@en, "L'entité intellectuelle dont ce fragment est une représentation."@fr, "De intellectuele entiteit waarvan dit fragment een representatie is."@nl ;
-        sh:maxCount 1 ;
-        sh:message "haObj:isCarrierCopyOf has more than one value or not a premis:IntellectualEntity"@en ;
-        sh:name "is fragment of"@en, "est un fragment de"@fr, "is een fragment van"@nl ;
-        sh:path ha:isFragmentRepresentationOf ;
-        sh:severity sh:Violation ;
-    ], [
-        a sh:PropertyShape ;
-        sh:datatype xsd:duration ;
-        sh:maxCount 1 ;
-        sh:message "schema:duration is not of type xsd:duration"@en, "schema:duration n'est pas de type xsd:duration"@fr, "schema:duration is niet van het type xsd:duration"@nl ;
-        sh:name "duration"@en, "durée"@fr, "duur"@nl ;
-        sh:nodeKind sh:Literal ;
-        sh:path ha:hasDuration ;
-        sh:severity sh:Violation ;
-    ], [
-        a sh:PropertyShape ;
-        sh:datatype xsd:time ;
-        sh:description "The time at which the fragment stops."@en, "Le moment où le fragment s'arrête."@fr, "Het tijdstip waarop het fragment stopt."@nl ;
-        sh:maxCount 1 ;
-        sh:message "schema:endTime is not of type xsd:time"@en, "schema:endTime n'est pas de type xsd:time"@fr, "schema:endTime is niet van het type xsd:time"@nl ;
-        sh:minCount 1 ;
-        sh:name "endTime"@en, "heure de fin"@fr, "eindtijd"@nl ;
-        sh:nodeKind sh:Literal ;
-        sh:path ha:hasEndTime ;
-        sh:severity sh:Violation ;
-    ], [
-        a sh:PropertyShape ;
-        sh:datatype xsd:time ;
-        sh:description "The time at which the fragment starts."@en, "Le moment où le fragment commence."@fr, "Het tijdstip waarop het fragment start."@nl ;
-        sh:maxCount 1 ;
-        sh:message "schema:startTime is not of type xsd:time"@en, "schema:startTime n'est pas de type xsd:time"@fr, "schema:startTime is niet van het type xsd:time"@nl ;
-        sh:minCount 1 ;
-        sh:name "startTime"@en, "heure de départ"@fr, "starttijd"@nl ;
-        sh:nodeKind sh:Literal ;
-        sh:path ha:hasStartTime ;
-        sh:severity sh:Violation ;
-    ], [
-        a sh:PropertyShape ;
-        sh:class premis:File ;
-        sh:description "The file of which this is a fragment."@en, "Le fichier dont il s'agit d'un fragment."@fr, "Het bestand waarvan dit een fragment is."@nl ;
-        sh:maxCount 1 ;
-        sh:message "ebucore:isMediaFragmentOf or not a premis:File"@en, "ebucore:isMediaFragmentOf n'est pas un premis:File"@fr, "ebucore:isMediaFragmentOf is geen premis:File"@nl ;
-        sh:minCount 1 ;
-        sh:name "is Media Fragment Of"@en, "est fragment des médias de"@fr, "is media fragment van"@nl ;
-        sh:path ha:isMediaFragmentOf ;
-        sh:severity sh:Violation ;
-    ] ;
-    sh:targetClass ha:FragmentRepresentation ;
-     .
-
 ha:MediahavenFragmentShape a sh:NodeShape ;
     rdfs:label "fragment shape"@en ;
     sh:property [
@@ -1919,13 +1855,35 @@ ha:MaterialArtworkShape a sh:NodeShape ;
 # or define distinct pixel-dimension properties; a QuantitativeValue currently fails.
 # REVIEW FIX: hasRegionDelimX/Y are now ha:hasRegionX/Y with non-negative-integer
 # ranges. Update both paths and datatypes so negative coordinates are rejected.
-# REVIEW ALIGN: isMediaFragmentOf requires premis:File here and in
-# FragmentRepresentationShape, but RDFS uses ha:MediaResource. No subclass link
-# connects File to MediaResource in the reference; agree whether files are media
-# resources or whether the ontology/shape needs an explicit alternative.
+ha:MediaFileShape a sh:NodeShape ;
+    sh:property [
+        sh:path ha:hasMimeType ;
+        sh:qualifiedValueShape [ sh:datatype xsd:string ; sh:pattern "^(audio|video|image)/.+$" ] ;
+        sh:qualifiedMinCount 1 ;
+        sh:message "A media file must have an audio, video or image MIME type."@en ;
+    ] ;
+    sh:targetClass ha:MediaFile ;
+     .
+
 ha:MediaFragmentShape a sh:NodeShape ;
     rdfs:label "media fragment shape"@en ;
     sh:property [
+        sh:class premis:IntellectualEntity ;
+        sh:description "The intellectual entity of which this fragment is a representation."@en, "L'entité intellectuelle dont ce fragment est une représentation."@fr, "De intellectuele entiteit waarvan dit fragment een representatie is."@nl ;
+        sh:maxCount 1 ;
+        sh:name "is fragment representation of"@en, "est une représentation de fragment de"@fr, "is fragmentrepresentatie van"@nl ;
+        sh:path ha:isFragmentRepresentationOf ;
+        sh:severity sh:Violation ;
+    ], [
+        a sh:PropertyShape ;
+        sh:datatype xsd:duration ;
+        sh:maxCount 1 ;
+        sh:message "schema:duration is not of type xsd:duration"@en, "schema:duration n'est pas de type xsd:duration"@fr, "schema:duration is niet van het type xsd:duration"@nl ;
+        sh:name "duration"@en, "durée"@fr, "duur"@nl ;
+        sh:nodeKind sh:Literal ;
+        sh:path ha:hasDuration ;
+        sh:severity sh:Violation ;
+    ], [
         a sh:PropertyShape ;
         sh:datatype xsd:integer ;
         sh:description "The height of e.g. a video frame typically expressed as a number of pixels, or picture/image in millimeters."@en, "La hauteur d'un cadre vidéo, par exemple, est généralement exprimée en nombre de pixels, ou d'une image en millimètres."@fr, "De hoogte van bijvoorbeeld een videoframe wordt doorgaans uitgedrukt in aantal pixels, of van een afbeelding in millimeters."@nl ;
@@ -1947,13 +1905,12 @@ ha:MediaFragmentShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:datatype xsd:time ;
-        sh:description "The time at which the fragment stops."@en, "Le moment où le fragment s'arrête."@fr, "Het tijdstip waarop het fragment stopt."@nl ;
+        sh:datatype xsd:integer ;
+        sh:description "The end offset in seconds from the start of the media file."@en, "La position de fin en secondes depuis le début du fichier multimédia."@fr, "De eindpositie in seconden vanaf het begin van het mediabestand."@nl ;
         sh:maxCount 1 ;
-        sh:message "schema:endTime is not of type xsd:time"@en, "schema:endTime n'est pas de type xsd:time"@fr, "schema:endTime is niet van het type xsd:time"@nl ;
-        sh:name "end time"@en, "heure de fin"@fr, "eindtijd"@nl ;
+        sh:name "end offset"@en, "position de fin"@fr, "eindpositie"@nl ;
         sh:nodeKind sh:Literal ;
-        sh:path ha:hasEndTime ;
+        sh:path ha:hasEndOffset ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
@@ -1967,9 +1924,9 @@ ha:MediaFragmentShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class premis:File ;
+        sh:class ha:MediaFile ;
         sh:description "The file of which this is a fragment."@en, "Le fichier dont il s'agit d'un fragment."@fr, "Het bestand waarvan dit een fragment is."@nl ;
-        sh:message "The object of ebucore:isMediaFragmentOf is not a premis:File"@en, "L'objet de ebucore:isMediaFragmentOf n'est pas un premis:File"@fr, "Het object van ebucore:isMediaFragmentOf is geen premis:File"@nl ;
+        sh:message "ha:isMediaFragmentOf must point to a media file."@en ;
         sh:name "is Media Fragment Of"@en, "est fragment des médias de"@fr, "is media fragment van"@nl ;
         sh:path ha:isMediaFragmentOf ;
         sh:severity sh:Violation ;
@@ -1985,13 +1942,12 @@ ha:MediaFragmentShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:datatype xsd:time ;
-        sh:description "The time at which the fragment starts."@en, "Le moment où le fragment commence."@fr, "Het tijdstip waarop het fragment start."@nl ;
+        sh:datatype xsd:integer ;
+        sh:description "The start offset in seconds from the start of the media file."@en, "La position de début en secondes depuis le début du fichier multimédia."@fr, "De beginpositie in seconden vanaf het begin van het mediabestand."@nl ;
         sh:maxCount 1 ;
-        sh:message "schema:startTime is not of type xsd:time"@en, "schema:startTime n'est pas de type xsd:time"@fr, "schema:startTime is niet van het type xsd:time"@nl ;
-        sh:name "start time"@en, "heure de départ"@fr, "starttijd"@nl ;
+        sh:name "start offset"@en, "position de début"@fr, "beginpositie"@nl ;
         sh:nodeKind sh:Literal ;
-        sh:path ha:hasStartTime ;
+        sh:path ha:hasStartOffset ;
         sh:severity sh:Violation ;
     ] ;
     sh:targetClass ha:MediaFragment ;
@@ -2360,9 +2316,9 @@ ha:ObjectFileShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class ha:FragmentRepresentation ;
+        sh:class ha:MediaFragment ;
         sh:description "A fragment from this file."@en, "Un fragment de ce fichier."@fr, "Een fragment uit dit bestand."@nl ;
-        sh:message "ebucore:hasMediaFragment is not a haObj:FragmentRepresentation"@en, "ebucore:hasMediaFragment n'est pas un haObj:FragmentRepresentation"@fr, "ebucore:hasMediaFragment is geen haObj:FragmentRepresentation"@nl ;
+        sh:message "ha:hasMediaFragment must point to a media fragment."@en ;
         sh:name "has media fragment"@en, "a le fragment des médias"@fr, "heeft media fragment"@nl ;
         sh:path ha:hasMediaFragment ;
         sh:severity sh:Violation ;
@@ -2508,9 +2464,9 @@ ha:ObjectIntellectualEntityShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class ha:FragmentRepresentation ;
+        sh:class ha:MediaFragment ;
         sh:description "A representation which incorporates a file fragment."@en, "Une représentation qui inclut une partie d'un fichier."@fr, "Een representatie dat een bestandsfragment bevat."@nl ;
-        sh:message "haObj:hasFragmentCopy is not a haObj:FragementRepresentation"@en ;
+        sh:message "ha:hasFragmentRepresentation must point to a media fragment."@en ;
         sh:name "has fragment"@en, "a fragment"@fr, "heeft fragment"@nl ;
         sh:path ha:hasFragmentRepresentation ;
         sh:severity sh:Violation ;
@@ -2593,9 +2549,9 @@ ha:ObjectIntellectualEntityShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class premis:Representation ;
+        sh:or ( [ sh:class premis:Representation ] [ sh:class ha:MediaFragment ] ) ;
         sh:description "A representation of the intellectual entity."@en, "Une représentation de l'entité intellectuelle."@fr, "Een representatie van de intellectuele entiteit."@nl ;
-        sh:message "rel:isr is missing or not a premis:Representation"@en ;
+        sh:message "ha:isRepresentedBy must point to a representation or media fragment."@en ;
         sh:minCount 1 ;
         sh:name "is Represented By"@en, "est représenté par"@fr, "wordt gerepresenteerd door"@nl ;
         sh:path ha:isRepresentedBy ;
@@ -3538,7 +3494,7 @@ ha:ActionShape a sh:PropertyShape ;
     sh:class odrl:Action ;
     sh:description "The action to which the permission or restriction relates."@en, "L'action à laquelle se rapporte l'autorisation ou la restriction."@fr, "De actie waarop de permissie of restrictie betrekking heeft."@nl ;
     sh:in (
-        ha:availableForConsultation
+        ha:available-for-consultation
         ha:downloadable
     ) ;
     sh:minCount 1 ;
