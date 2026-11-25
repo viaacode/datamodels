@@ -24,6 +24,26 @@ The crosswalk uses the RDFS model to determine target mappings. The draft `hetar
 
 An explicit `owl:equivalentClass` or `owl:equivalentProperty` is stronger evidence than `rdfs:seeAlso`. The latter helps identify a candidate but does not assert equivalence. Local renames were checked against definitions and comments. RDFS domain/range statements imply types; they are not validation constraints. Conflicting declarations below therefore identify both semantic risks and decisions needed before a migration validation profile can be written.
 
+## Rules for Naming and labels
+
+| Source construct | Target convention | Example |
+| --- | --- | --- |
+| Class | Singular `PascalCase` | `ha:DigitalRepresentation` |
+| Direct property | Active third-person `lowerCamelCase` | `ha:creates` |
+| Existing reverse property | Configured reverse name in `lowerCamelCase` | `ha:isCreatedBy` |
+| Possession or part relation | Use `has…` or the configured reverse expression | `ha:hasName`, `ha:hasPart`, `ha:isPartOf` |
+| Named shape | `PascalCase` | `ha:PersonShape`, `ha:PersonHasNameShape` |
+| Scheme, or ontology | `lowerCamelCase` | `ha:contentRange`, `ha:descriptionModel` |
+| Concept | `kebab-case` | `ha:available-for-consultation` |
+| Boolean property | Express what `true` affirms. Use `is…` for a state, `has…` for presence, or `can…` for a capability. | `ha:isPublic`, `ha:hasMissingAudioReels`, `ha:canBeReused` |
+
+- Apply configured acronyms, irregular verbs, per-URI overrides, and names for existing inverse pairs. 
+- Keep the source inverse axioms and create no new inverse properties. 
+- Align English `rdfs:label` and `sh:name` with the configured label for remapped terms. 
+- Preserve Dutch and French text, contextual names and constraints on anonymous shapes, literal lexical forms, and list order. 
+- Resolve relative IRIs against the source base and keep blank-node identities scoped to each source file.
+- Identify Boolean properties from `rdfs:range xsd:boolean` or `sh:datatype xsd:boolean` and flag conflicting datatype declarations. The current exporter takes property names from its naming configuration. For example, it maps `https://data.hetarchief.be/ns/description/hasMissingAudioReels` to `https://data.hetarchief.be/ns/hasMissingAudioReels` through a configured name.
+
 ## Status legend
 
 | Status | Meaning and migration action |
