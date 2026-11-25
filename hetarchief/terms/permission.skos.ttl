@@ -1,0 +1,332 @@
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix haRig: <https://data.hetarchief.be/ns/rights/> .
+
+<https://data.hetarchief.be/id/permission/intramuros-materiaal-volledig-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "The full content may be viewed/listened to within the community."@en,
+        "Het volledige materiaal mag intra muros bekeken/beluisterd worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "intra muros - content - full - consult"@en,
+        "intramuros - materiaal - volledig - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+     #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: intra muros
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:intra-muros
+    ];
+    #  welk materiaal?: volledig
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:full
+    ].
+
+<https://data.hetarchief.be/id/permission/intramuros-metadata-uitgebreid-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "An extensive set of metadata may be viewed/listened to within the community."@en,
+        "Een uitgebreide set aan metadata mag intra muros bekeken/beluisterd worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "intra muros - metadata - extended - consult"@en,
+        "intramuros - metadata - uitgebreid - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+     #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: intra muros
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:intra-muros
+    ];
+    #  welk metadata?: uitgebreid
+    odrl:constraint [
+        odrl:leftOperand haRig:metadataRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:extended
+    ].
+
+<https://data.hetarchief.be/id/permission/onderwijs-materiaal-deels-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "Some of the content may be viewed/listened to by educational audiences."@en,
+        "Een deel van het materiaal mag bekeken/beluisterd worden door onderwijspubliek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "education - content - partial - consult"@en,
+        "onderwijs - materiaal - deels - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: onderwijs
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:education
+    ];
+    #  welk materiaal?: deels
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:partial
+    ].
+
+
+<https://data.hetarchief.be/id/permission/onderwijs-materiaal-volledig-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "The content may be accessed in its entirety by educational audiences via meemoo platforms or third-party technical platforms, provided that the agreements stated in the meemoo collaboration agreement are met, there is no commercial advantage attached, and it is clear that this is part of the hetarchief.be platform."@en,
+        "Het materiaal mag volledig geraadpleegd worden door onderwijs publiek via meemoo-platformen of via technische platformen van derden op voorwaarde dat aan de afspraken die in de meemoo samenwerkingsovereenkomst vermeld staan voldaan wordt, er geen commercieel voordeel aan verbonden is en dat duidelijk is dat dit deel uitmaakt van hetarchief.be platform."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "education - content - full - consult"@en,
+        "onderwijs - materiaal - volledig - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: onderwijs
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:educational-public
+    ];
+    #  welke materiaal?: volledig
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:full
+    ].
+
+<https://data.hetarchief.be/id/permission/onderwijs-metadata-beperkt-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "A limited set of metadata may be viewed by educational audiences."@en,
+        "Een beperkte set aan metadata mag bekeken worden door onderwijs publiek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "education - metadata - limited - consult"@en,
+        "onderwijs - metadata - beperkt - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: tonen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: onderwijs
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:educational-public
+    ];
+    #  welke metadata?: beperkt
+    odrl:constraint [
+        odrl:leftOperand haRig:metadataRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:limited
+    ].
+
+
+<https://data.hetarchief.be/id/permission/onderzoek-materiaal-volledig-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "The full content may be viewed/listened to by research audiences."@en,
+        "Het volledige materiaal mag bekeken worden door onderzoekspubliek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "research - content - full - consult"@en,
+        "onderzoek - materiaal - volledig - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: onderwijs
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:research-public
+    ];
+    #  welk materiaal?: volledig
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:full
+    ].
+
+
+<https://data.hetarchief.be/id/permission/onderzoek-metadata-uitgebreid-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "An extensive set of metadata may be viewed/listened to by research audiences."@en,
+        "Een uitgebreide set aan metadata mag bekeken/beluisteren worden door onderzoekspubliek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "research - metadata - extended - consult"@en,
+        "onderzoek - metadata - uitgebreid - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: onderwijs
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:research-public
+    ];
+    #  welke metadata?: uitgebreid
+    odrl:constraint [
+        odrl:leftOperand haRig:metadataRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:extended
+    ].
+
+<https://data.hetarchief.be/id/permission/publiek-materiaal-deels-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "Some of the content may be viewed/listened to publicly."@en,
+        "Een deel van het materiaal mag publiek bekeken/beluisterd worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "public - content - partial - consult"@en,
+        "publiek - materiaal - deels - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:public
+    ];
+    #  welk materiaal?: deels
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:partial
+    ].
+
+<https://data.hetarchief.be/id/permission/publiek-materiaal-volledig-downloaden> a skos:Concept, odrl:Permission ;
+    skos:definition "The content may be downloaded by the public."@en,
+        "Het materiaal mag door het publiek gedownload worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "public - content - full - download"@en,
+        "publiek - materiaal - volledig - downloaden"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: downloaden
+    odrl:action haRig:downloadable;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:public
+    ];
+    #  welk materiaal?: volledig
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:full
+    ].
+
+<https://data.hetarchief.be/id/permission/publiek-materiaal-volledig-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "The entire content may be viewed/listened to publicly."@en,
+        "Het volledige materiaal mag publiek bekeken/beluisterd worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "public - content - full - consult"@en,
+        "publiek - materiaal - volledig - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:public
+    ];
+    #  welk materiaal?: volledig
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:full
+    ].
+
+<https://data.hetarchief.be/id/permission/publiek-metadata-beperkt-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "A limited set of metadata may be viewed publicly."@en,
+        "Een beperkte set aan metadata mag publiek bekeken worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "public - metadata - limited - consult"@en,
+        "publiek - metadata - beperkt - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:public
+    ];
+    #  welke metadata?: beperkt
+    odrl:constraint [
+        odrl:leftOperand haRig:metadataRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:limited
+    ].
+
+<https://data.hetarchief.be/id/permission/publiek-metadata-uitgebreid-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "An extensive set of metadata may be viewed publicly."@en,
+        "Een uitgebreide set aan metadata mag publiek bekeken worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "public - metadata - extended - consult"@en,
+        "publiek - metadata - uitgebreid - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:public
+    ];
+    #  welke metadata?: uitgebreid
+    odrl:constraint [
+        odrl:leftOperand haRig:metadataRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:extended
+    ].
+
+<https://data.hetarchief.be/id/permission/tussenpartners-materiaal-volledig-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "The full content may be viewed/listened to by educational audiences between content partners."@en,
+        "Het volledige materiaal mag tussen contentpartners bekeken/beluisterd worden door onderwijs publiek."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "between partners - content - full - consult"@en,
+        "tussenpartners - materiaal - volledig - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:between-partners
+    ];
+    #  welk materiaal?: volledig
+    odrl:constraint [
+        odrl:leftOperand haRig:contentRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:full
+    ].
+
+<https://data.hetarchief.be/id/permission/tussenpartners-metadata-uitgebreid-raadplegen> a skos:Concept, odrl:Permission ;
+    skos:definition "An extensive set of metadata may be viewed/listened to between content partners. This applies to content partners."@en,
+        "Een uitgebreide set aan metadata mag tussen contentpartners bekeken/beluisterd worden. Het is van toepassing voor contentpartners."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/permission> ;
+    skos:prefLabel "between partners - metadata - extended - consult"@en,
+        "tussenpartners - metadata - uitgebreid - raadplegen"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/permission> ;
+    #  welke actie: raadplegen
+    odrl:action haRig:available-for-consultation;
+    #  aan wie?: publiek
+    odrl:constraint [
+        odrl:leftOperand odrl:recipient;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:between-partners
+    ];
+    #  welke metadata?: uitgebreid
+    odrl:constraint [
+        odrl:leftOperand haRig:metadataRange;
+        odrl:operator odrl:eq;
+        odrl:rightOperand haRig:extended
+    ].
+
+<https://data.hetarchief.be/id/permission> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/permission/intramuros-materiaal-volledig-raadplegen>,
+        <https://data.hetarchief.be/id/permission/intramuros-metadata-uitgebreid-raadplegen>,
+        <https://data.hetarchief.be/id/permission/onderwijs-materiaal-deels-raadplegen>,
+        <https://data.hetarchief.be/id/permission/onderwijs-materiaal-volledig-raadplegen>,
+        <https://data.hetarchief.be/id/permission/onderwijs-metadata-beperkt-raadplegen>,
+        <https://data.hetarchief.be/id/permission/onderzoek-materiaal-volledig-raadplegen>,
+        <https://data.hetarchief.be/id/permission/onderzoek-metadata-uitgebreid-raadplegen>,
+        <https://data.hetarchief.be/id/permission/publiek-materiaal-deels-raadplegen>,
+        <https://data.hetarchief.be/id/permission/publiek-materiaal-volledig-downloaden>,
+        <https://data.hetarchief.be/id/permission/publiek-materiaal-volledig-raadplegen>,
+        <https://data.hetarchief.be/id/permission/publiek-metadata-beperkt-raadplegen>,
+        <https://data.hetarchief.be/id/permission/publiek-metadata-uitgebreid-raadplegen>,
+        <https://data.hetarchief.be/id/permission/tussenpartners-materiaal-volledig-raadplegen>,
+        <https://data.hetarchief.be/id/permission/tussenpartners-metadata-uitgebreid-raadplegen> ;
+    skos:prefLabel "Thesaurus ontsluitingstoestemmingen"@nl .
+

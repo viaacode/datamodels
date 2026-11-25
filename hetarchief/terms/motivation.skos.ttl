@@ -1,0 +1,75 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/motivation/contractual-agreements> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because of contractual agreements."@en,
+        "Ontsluitingsbeperking omwille van contractuele afspraken, bijvoorbeeld een embargoperiode bij een (archief)bewaargevingsovereenkomst, en commerciële belangen geschaad kunnen worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "Contractual agreements"@en,
+        "Contractuele afspraken"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation/ethics> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because of ethical reasons."@en,
+        "Er is een wettelijke grond om te ontsluiten (bv. auteursrecht is verlopen) maar ontsluiting zou de belangen van betrokken individuen kunnen schaden vanuit ethisch oogpunt, gedrags- en beroepscodes. Bv. collaboratiedossiers, medische film. Ook wanneer het materiaal ongeschikt is voor het doelpubliek, bv. 18+ inhoud voor kinderen."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "Ethics"@en,
+        "Ethiek"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation/gdpr-privacy> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because of GDPR or Privacy Law."@en,
+        "Ontsluitingsbeperking omwille van de regelgeving inzake bescherming van persoonsgegevens (GDPR) of de bescherming van de persoonlijke levenssfeer (openbaarheid van bestuur) en belangen van betrokken personen riskeren geschaad te worden wanneer ze wel worden ontsloten."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "GDPR/Privacy"@en,
+        "GDPR/Privacy"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation/internal-policy> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because of internal policy within the organisation."@en,
+        "Ontsluitingsbeperking omwille van intern beleid. bv. wanneer de artistieke leiding van een podiumhuis wisselt, en bepaald materiaal niet meer publiek gemaakt mag worden omdat het niet in de lijn van het huidige artistieke plan past."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "Internal policy"@en,
+        "Intern beleid"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation/legally-defined> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because it is legally defined, because displaying the material would constitute a public security threat, a crime, or, impede an ongoing criminal investigation."@en,
+        "Het ontsluiten van archiefitems en bijbehorende metadata is niet mogelijk omdat het de veiligheid van de staat of een politie-onderzoek in het gedrang zou kunnen brengen (openbaarheid), of omdat het een strafbaar feit zou zijn (vb. kinderporno)"@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "Legally defined"@en,
+        "Wettelijk bepaald"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation/portrait-law> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because of portrait law."@en,
+        "Ontsluitingsbeperking door gebrek aan wettelijke grond om foto’s waarop personen herkenbaar afgebeeld zijn te ontsluiten (bv. toestemming) en de rechten van een geportretteerd persoon riskeren geschaad te worden wanneer ze wel worden ontsloten."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "Portrait law"@en,
+        "Portretrecht"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation/workproduct> a skos:Concept,
+        <https://data.hetarchief.be/ns/rights/Motivation> ;
+    skos:definition "Restriction on consultation because the item is a (depiction of) workproduct, not a finished product."@en,
+        "Materiaal dat omwille van zijn status als werkproduct (bijvoorbeeld rushes, repetities of restauratiefoto’s) voor bepaalde doelgroepen niet ontsloten mag worden."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/motivation> ;
+    skos:prefLabel "Workproduct"@en,
+        "Werkproduct"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/motivation> .
+
+<https://data.hetarchief.be/id/motivation> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/motivation/contractual-agreements>,
+        <https://data.hetarchief.be/id/motivation/ethics>,
+        <https://data.hetarchief.be/id/motivation/gdpr-privacy>,
+        <https://data.hetarchief.be/id/motivation/internal-policy>,
+        <https://data.hetarchief.be/id/motivation/legally-defined>,
+        <https://data.hetarchief.be/id/motivation/portrait-law>,
+        <https://data.hetarchief.be/id/motivation/workproduct> ;
+    skos:prefLabel "Thesaurus motivaties ontsluitingsbeperking"@nl .
+

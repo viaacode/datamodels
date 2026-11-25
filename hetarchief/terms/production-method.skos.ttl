@@ -1,0 +1,34 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<http://id.loc.gov/vocabulary/mproduction/print> skos:exactMatch <https://data.hetarchief.be/id/production-method/printed> .
+
+<https://data.hetarchief.be/id/production-method/handwritten> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/production-method> ;
+    skos:prefLabel "Handwritten"@en,
+        "Handgescreven"@nl ;
+    skos:definition "Productiemethode waar tekst met de hand, dus zonder machine of computer, wordt geschreven."@nl, "Production method where text is written by hand, so without a machine or computer."@en;
+    skos:topConceptOf <https://data.hetarchief.be/id/production-method> .
+
+<https://data.hetarchief.be/id/production-method/typed> a skos:Concept ;
+    skos:inScheme <https://data.hetarchief.be/id/production-method> ;
+    skos:prefLabel "Typed"@en,
+        "Getypt"@nl ;
+    skos:definition "Productiemethode waar tekst wordt getypt door middel van een typmachine."@nl, "Production method where text is typed by means of a typewriter."@en;
+    skos:topConceptOf <https://data.hetarchief.be/id/production-method> .
+
+<https://data.hetarchief.be/id/production-method/printed> a skos:Concept ;
+    skos:exactMatch <http://id.loc.gov/vocabulary/mproduction/print> ;
+    skos:inScheme <https://data.hetarchief.be/id/production-method> ;
+    skos:prefLabel "Printed"@en,
+        "Gedrukt"@nl ;
+    skos:definition "Productiemethode waar tekst wordt geprint of gedrukt door middel van een printer of drukpers."@nl, "Production method where text is printed means of a printer or printing press."@en;
+    skos:topConceptOf <https://data.hetarchief.be/id/production-method> .
+
+<https://data.hetarchief.be/id/production-method> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/production-method/handwritten>,
+        <https://data.hetarchief.be/id/production-method/printed>,
+        <https://data.hetarchief.be/id/production-method/typed> ;
+    skos:member <https://data.hetarchief.be/id/production-method/handwritten>,
+        <https://data.hetarchief.be/id/production-method/printed>,
+        <https://data.hetarchief.be/id/production-method/typed> ;
+    skos:prefLabel "Thesaurus meemoo productiemethoden"@nl .

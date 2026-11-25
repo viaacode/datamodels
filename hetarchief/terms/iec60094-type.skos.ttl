@@ -1,0 +1,46 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://data.hetarchief.be/id/iec60094-type/I> a skos:Concept ;
+    skos:altLabel "Normal"@en,
+        "Normaal"@nl ;
+    skos:definition "Het meest voorkomende formaat compactcassette. Deze cassette stond bekend als “Normaal”. IEC-type I cassettes hebben twee inkepingen en lipjes die verwijderd kunnen worden om per abuis wissen te voorkomen."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/iec60094-type> ;
+    skos:prefLabel "IEC-type I"@en,
+        "IEC-type I"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/iec60094-type> .
+
+<https://data.hetarchief.be/id/iec60094-type/II> a skos:Concept ;
+    skos:altLabel "Chrome"@en,
+        "Chroom"@nl ;
+    skos:definition "Het tweede meest voorkomende formaat compactcassette Deze cas-settes waren bekend als “Chroom”. IEC-type II cassettes hebben een aanvullend paar inkepingen t.o.v. de type I cassettes."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/iec60094-type> ;
+    skos:prefLabel "IEC-type I"@en,
+        "IEC-type I"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/iec60094-type> .
+
+<https://data.hetarchief.be/id/iec60094-type/III> a skos:Concept ;
+    skos:altLabel "Ferrochrome"@en,
+        "Ferrochroom"@nl ;
+    skos:definition "Deze cassettes waren bekend als “Ferrochroom”. Dit type komt vrijwel niet voor."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/iec60094-type> ;
+    skos:prefLabel "IEC-type I"@en,
+        "IEC-type I"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/iec60094-type> .
+
+<https://data.hetarchief.be/id/iec60094-type/IV> a skos:Concept ;
+    skos:altLabel "Metal"@en,
+        "Metaal"@nl ;
+    skos:definition "Deze cassettes waren bekend als “Metaal”. IEC-type IV cassettes hebben nog een derde paar inkepingen."@nl ;
+    skos:inScheme <https://data.hetarchief.be/id/iec60094-type> ;
+    skos:prefLabel "IEC-type I"@en,
+        "IEC-type I"@nl ;
+    skos:topConceptOf <https://data.hetarchief.be/id/iec60094-type> .
+
+<https://data.hetarchief.be/id/iec60094-type> a skos:ConceptScheme ;
+    skos:hasTopConcept <https://data.hetarchief.be/id/iec60094-type/I>,
+        <https://data.hetarchief.be/id/iec60094-type/II>,
+        <https://data.hetarchief.be/id/iec60094-type/III>,
+        <https://data.hetarchief.be/id/iec60094-type/IV> ;
+    skos:prefLabel "Thesaurus iec-60094 types"@en,
+        "Thesaurus iec-60094 types"@nl .
+
