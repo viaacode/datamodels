@@ -1,10 +1,13 @@
+PREFIX bibframe: <http://id.loc.gov/ontologies/bibframe/>
 PREFIX dc: <http://purl.org/dc/elements/1.1/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#>
 PREFIX ebucoreplus: <http://www.ebu.ch/metadata/ontologies/ebucoreplus#>
 PREFIX edtf: <http://id.loc.gov/datatypes/edtf/>
 PREFIX ha: <https://data.hetarchief.be/ns/>
+PREFIX ma: <http://www.w3.org/ns/ma-ont#>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX org: <http://www.w3.org/ns/org#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX pav: <http://purl.org/pav/>
 PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
@@ -124,21 +127,21 @@ ha:Captioning a rdfs:Class ;
 ha:Subtitling a rdfs:Class ;
     rdfs:label "subtitling"@en, "ondertiteling"@nl, "sous-titrage"@fr ;
     skos:definition "Text synchronized with the speech of archived audiovisual content, transcribing or translating dialogue."@en, "Tekst die is gesynchroniseerd met de spraak van gearchiveerde audiovisuele inhoud en dialogen weergeeft of vertaalt."@nl, "Un texte synchronisé avec les paroles d’un contenu audiovisuel archivé, qui transcrit ou traduit les dialogues."@fr ;
-    rdfs:seeAlso <http://www.ebu.ch/metadata/ontologies/ebucoreplus#Subtitling> ;
+    rdfs:seeAlso ebucoreplus:Subtitling ;
      .
 # ! ClosedSubtitling is always a file?
 ha:ClosedSubtitling a rdfs:Class ;
     rdfs:label "closed subtitling"@en, "inschakelbare ondertiteling"@nl, "sous-titrage activable"@fr ;
     skos:definition "Subtitles for archived audiovisual content stored separately from the image and selectable during playback."@en, "Ondertiteling van gearchiveerde audiovisuele inhoud die afzonderlijk van het beeld wordt opgeslagen en tijdens het afspelen kan worden ingeschakeld."@nl, "Un sous-titrage de contenu audiovisuel archivé, stocké séparément de l’image et pouvant être activé pendant la lecture."@fr ;
     rdfs:subClassOf ha:Subtitling, premis:File ;
-    rdfs:seeAlso <http://www.ebu.ch/metadata/ontologies/ebucoreplus#ClosedSubtitling> ;
+    rdfs:seeAlso ebucoreplus:ClosedSubtitling ;
      .
 
 ha:OpenSubtitling a rdfs:Class ;
     rdfs:label "open subtitling"@en, "ingebrande ondertiteling"@nl, "sous-titrage incrusté"@fr ;
     skos:definition "Subtitles burned into the image of archived audiovisual content and continuously visible during playback."@en, "Ondertiteling die in het beeld van gearchiveerde audiovisuele inhoud is ingebrand en tijdens het afspelen voortdurend zichtbaar is."@nl, "Un sous-titrage incrusté dans l’image d’un contenu audiovisuel archivé et visible en permanence pendant la lecture."@fr ;
     rdfs:subClassOf ha:Subtitling ;
-    rdfs:seeAlso <http://www.ebu.ch/metadata/ontologies/ebucoreplus#OpenSubtitling> ;
+    rdfs:seeAlso ebucoreplus:OpenSubtitling ;
      .
 
 ha:CarrierRepresentation a rdfs:Class ;
@@ -294,7 +297,7 @@ ha:FormalOrganization a rdfs:Class, owl:Class ;
     rdfs:label "formal organization"@en, "formele organisatie"@nl, "organisation formelle"@fr ;
     skos:definition "An organization recognized as having rights and responsibilities within a legal jurisdiction."@en, "Een organisatie die binnen een rechtsgebied als drager van rechten en verantwoordelijkheden wordt erkend."@nl, "Une organisation reconnue comme titulaire de droits et de responsabilités dans un cadre juridique."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#FormalOrganization> ;
+    rdfs:seeAlso org:FormalOrganization ;
     rdfs:subClassOf ha:Organization ;
      .
 
@@ -372,7 +375,7 @@ ha:MaterialArtwork a rdfs:Class ;
 ha:MediaFragment a rdfs:Class, owl:Class ;
     rdfs:label "media fragment"@en, "mediafragment"@nl, "fragment de média"@fr ;
     skos:definition "An identifiable spatial or temporal segment of a media resource, used here as a partial digital representation of archival content."@en, "Een identificeerbaar ruimtelijk of temporeel segment van een mediabron, hier gebruikt als gedeeltelijke digitale representatie van archiefinhoud."@nl, "Un segment spatial ou temporel identifiable d’une ressource médiatique, utilisé ici comme représentation numérique partielle d’un contenu archivistique."@fr ;
-    rdfs:seeAlso ebucore:MediaFragment, <http://www.w3.org/ns/ma-ont#MediaFragment> ;
+    rdfs:seeAlso ebucore:MediaFragment, ma:MediaFragment ;
     rdfs:subPropertyOf ha:MediaResource ;
      .
 
@@ -421,6 +424,7 @@ ha:OpenCaptions a rdfs:Class ;
     rdfs:label "open captions"@en, "ingebrande ondertiteling"@nl, "sous-titres incrustés"@fr ;
     skos:definition "Accessibility captions embedded in the image and continuously visible during playback."@en, "Toegankelijkheidsondertiteling die in het beeld is ingebrand en tijdens het afspelen voortdurend zichtbaar is."@nl, "Des sous-titres d’accessibilité intégrés à l’image et visibles en permanence pendant la lecture."@fr ;
     rdfs:subClassOf ha:Captioning ;
+    
     rdfs:seeAlso ebucore:OpenCaptions ;
      .
 
@@ -428,7 +432,7 @@ ha:Organization a rdfs:Class, owl:Class ;
     rdfs:label "organization"@en, "organisatie"@nl, "organisation"@fr ;
     skos:definition "A group of people with a shared purpose and an organized structure that can act in relation to archival resources or services."@en, "Een groep personen met een gemeenschappelijk doel en een georganiseerde structuur die kan handelen met betrekking tot archiefbronnen of diensten."@nl, "Un groupe de personnes ayant un objectif commun et une structure organisée, pouvant intervenir dans les ressources ou services archivistiques."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#Organization>, schema:Organization ;
+    rdfs:seeAlso org:Organization, schema:Organization ;
     rdfs:subClassOf ha:Agent ;
     owl:disjointWith ha:Person ;
      .
@@ -444,7 +448,7 @@ ha:OrganizationalUnit a rdfs:Class, owl:Class ;
     rdfs:label "organizational unit"@en, "organisatie-eenheid"@nl, "unité organisationnelle"@fr ;
     skos:definition "A department or other unit recognized within a larger organization and without a separate legal identity."@en, "Een afdeling of andere eenheid die binnen een grotere organisatie wordt erkend en geen afzonderlijke rechtspersoonlijkheid heeft."@nl, "Un département ou une autre unité reconnue au sein d’une organisation plus vaste et dépourvue de personnalité juridique distincte."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#OrganizationalUnit> ;
+    rdfs:seeAlso org:OrganizationalUnit ;
     rdfs:subClassOf ha:Organization ;
      .
 
@@ -462,7 +466,7 @@ ha:Person a rdfs:Class ;
     skos:definition "A real or fictional human individual described in relation to archival content, organizations or services."@en, "Een werkelijk of fictief menselijk individu dat wordt beschreven in relatie tot archiefinhoud, organisaties of diensten."@nl, "Un individu humain réel ou fictif décrit en lien avec des contenus archivistiques, des organisations ou des services."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:Person ;
-    rdfs:subClassOf ha:Thing, ha:Agent ;
+    rdfs:subClassOf ha:Agent ;
      .
 
 ha:PhysicalCarrier a rdfs:Class ;
@@ -477,7 +481,7 @@ ha:Post a rdfs:Class, owl:Class ;
     skos:definition "A position within an organization that exists independently of the person or persons holding it."@en, "Een functie binnen een organisatie die onafhankelijk van de persoon of personen die haar bekleden bestaat."@nl, "Un poste au sein d’une organisation qui existe indépendamment de la ou des personnes qui l’occupent."@fr ;
     rdfs:isDefinedBy ha: ;
     rdf:subClassOf ha:Role ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#Post> ;
+    rdfs:seeAlso org:Post ;
      .
 
 ha:PostalAddress a rdfs:Class ;
@@ -552,14 +556,11 @@ ha:Role a rdfs:Class, owl:Class ;
     skos:definition "A function or contextualized participation of a person or organization in an organization or in the creation, performance or publication of a work."@en, "Een functie of gecontextualiseerde deelname van een persoon of organisatie binnen een organisatie of bij de creatie, uitvoering of publicatie van een werk."@nl, "Une fonction ou une participation contextualisée d’une personne ou d’une organisation au sein d’une organisation ou dans la création, l’interprétation ou la publication d’une œuvre."@fr ;
     skos:scopeNote "Use rdf:value to identify the person or organization fulfilling the role."@en, "Gebruik rdf:value om de persoon of organisatie aan te duiden die de rol vervult."@nl, "Utiliser rdf:value pour identifier la personne ou l’organisation qui remplit le rôle."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#Role>, schema:Role ;
+    rdfs:seeAlso org:Role, schema:Role ;
     rdfs:subClassOf ha:Thing, [
         a owl:Restriction ;
         owl:onProperty rdf:value ;
-        owl:someValuesFrom [
-            a owl:Class ;
-            owl:unionOf ( ha:Person ha:Organization ) ;
-        ] ;
+        owl:someValuesFrom ha:Agent ;
     ] ;
      .
 
@@ -601,7 +602,7 @@ ha:Site a rdfs:Class, owl:Class ;
     rdfs:label "organizational site"@en, "vestiging"@nl, "établissement"@fr ;
     skos:definition "A physical or virtual site at which an organization has a presence or can be contacted."@en, "Een fysieke of virtuele vestiging waar een organisatie aanwezig of bereikbaar is."@nl, "Un lieu d’implantation physique ou virtuel où une organisation est présente ou peut être contactée."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#Site> ;
+    rdfs:seeAlso org:Site ;
      .
 
 ha:SoundFilm a rdfs:Class ;
@@ -727,7 +728,7 @@ ha:hasActor a rdf:Property ;
     skos:definition "Identifies an actor participating in a work, directly or through a performance role describing the participation."@en, "Identificeert een acteur die aan een werk deelneemt, rechtstreeks of via een vertolkingsrol die de deelname beschrijft."@nl, "Identifie un acteur participant à une œuvre, directement ou au moyen d’un rôle d’interprétation décrivant sa participation."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range ha:Person ;
+    rdfs:range ha:PerformanceRole ;
     rdfs:seeAlso schema:actor ;
      .
 
@@ -763,7 +764,7 @@ ha:hasAlternateName a rdf:Property ;
     skos:definition "Provides an alternative name or title by which an archival resource is known."@en, "Geeft een alternatieve naam of titel waaronder een archiefbron bekend is."@nl, "Fournit un nom ou un titre alternatif sous lequel une ressource archivistique est connue."@fr ;
     rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:alternateName, dct:alternative ;
     owl:equivalentProperty ha:hasAlternative ;
      .
@@ -805,7 +806,7 @@ ha:hasArtMedium a rdf:Property ;
     skos:definition "Describes the material or medium used to create an artwork, such as oil paint, ink or marble."@en, "Beschrijft het materiaal of medium waarmee een kunstwerk is gemaakt, zoals olieverf, inkt of marmer."@nl, "Décrit le matériau ou le médium utilisé pour créer une œuvre d’art, tel que la peinture à l’huile, l’encre ou le marbre."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:artMedium, dct:medium .
 
 ha:hasArtform a rdf:Property ;
@@ -813,7 +814,7 @@ ha:hasArtform a rdf:Property ;
     skos:definition "Specifies the artistic form of a work, such as painting, sculpture or photography."@en, "Geeft de kunstvorm van een werk aan, zoals schilderkunst, beeldhouwkunst of fotografie."@nl, "Indique la forme artistique d’une œuvre, telle que la peinture, la sculpture ou la photographie."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:artform ;
      .
 
@@ -851,14 +852,14 @@ ha:hasAvailabilityDate a rdf:Property ;
     skos:definition "Records when an archival resource became or is expected to become available."@en, "Legt vast wanneer een archiefbron beschikbaar werd of naar verwachting beschikbaar wordt."@nl, "Consigne la date à laquelle une ressource archivistique est devenue ou devrait devenir disponible."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso dct:available ;
-    rdfs:range edtf:EDTF-level1 .
+    rdfs:range edtf:EDTF .
 
 ha:hasBirthDate a rdf:Property ;
     rdfs:label "has birth date"@en, "heeft geboortedatum"@nl, "a pour date de naissance"@fr ;
     skos:definition "Records the date on which a person was born."@en, "Legt de datum vast waarop een persoon is geboren."@nl, "Consigne la date de naissance d’une personne."@fr ;
     rdfs:domain ha:Person ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range edtf:EDTF-level1 ;
+    rdfs:range edtf:EDTF ;
     rdfs:seeAlso schema:birthDate ;
     rdfs:subPropertyOf ha:hasDate .
 
@@ -867,7 +868,7 @@ ha:hasBirthPlace a rdf:Property ;
     rdfs:label "has birthplace"@en, "heeft geboorteplaats"@nl, "a pour lieu de naissance"@fr ;
     skos:definition "Specifies the place where a person was born."@en, "Geeft de plaats aan waar een persoon is geboren."@nl, "Indique le lieu de naissance d’une personne."@fr ;
     rdfs:seeAlso schema:birthPlace ;
-    rdfs:range schema:Place .
+    rdfs:range ha:Place .
 
 ha:hasBrand a rdf:Property ;
     rdfs:label "has brand"@en, "heeft merk"@nl, "a pour marque"@fr ;
@@ -894,7 +895,7 @@ ha:hasBroadcastingOrganization a rdf:Property ;
 ha:hasCaptionText a rdf:Property ;
     rdfs:label "has caption text"@en, "heeft bijschrifttekst"@nl, "a pour texte de légende"@fr ;
     skos:definition "Provides a textual caption for an archival resource or representation."@en, "Geeft een tekstueel bijschrift bij een archiefbron of representatie."@nl, "Fournit une légende textuelle pour une ressource archivistique ou une représentation."@fr ;
-    rdfs:domain ha:File ; # ! was DigitalRepresentation
+    rdfs:domain premis:File ; # ! was DigitalRepresentation
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
     rdfs:seeAlso schema:caption ;
@@ -904,7 +905,7 @@ ha:hasCaptioning a rdf:Property ;
     rdfs:label "has accessibility captioning"@en, "heeft toegankelijkheidsondertiteling"@nl, "a pour sous-titrage d’accessibilité"@fr ;
     skos:definition "Identifies accessibility captions associated with a media resource or carrier."@en, "Identificeert toegankelijkheidsondertiteling die bij een mediabron of drager hoort."@nl, "Identifie le sous-titrage d’accessibilité associé à une ressource médiatique ou à un support."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:domain premis:File ;
+    rdfs:domain [ owl:unionOf ( premis:File ha:ImageReel ) ] ;
     rdfs:range ha:Captioning ;
     rdfs:seeAlso ebucore:hasCaptioning ;
      .
@@ -913,9 +914,9 @@ ha:hasSubtitling a rdf:Property, owl:ObjectProperty ;
     rdfs:label "has subtitling"@en, "heeft ondertiteling"@nl, "a pour sous-titrage"@fr ;
     skos:definition "Identifies subtitles associated with an archived audiovisual resource or carrier."@en, "Identificeert ondertiteling die bij een gearchiveerde audiovisuele bron of drager hoort."@nl, "Identifie le sous-titrage associé à une ressource audiovisuelle archivée ou à un support."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:domain premis:File ;
+    rdfs:domain [ owl:unionOf ( premis:File ha:ImageReel ) ] ;
     rdfs:range ha:Subtitling ;
-    rdfs:seeAlso <http://www.ebu.ch/metadata/ontologies/ebucoreplus#hasSubtitling> ;
+    rdfs:seeAlso ebucoreplus:hasSubtitling ;
      .
 
 ha:hasCastMember a rdf:Property ;
@@ -949,7 +950,7 @@ ha:hasClassification a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#classification> ;
+    rdfs:seeAlso org:classification ;
      .
 
 ha:hasCollectionSize a rdf:Property ;
@@ -999,7 +1000,7 @@ ha:hasCreationDate a rdf:Property ;
     rdfs:label "has creation date"@en, "heeft creatiedatum"@nl, "a pour date de création"@fr ;
     skos:definition "Records when an archival resource, representation or metadata record was created."@en, "Legt vast wanneer een archiefbron, representatie of metadatarecord is gemaakt."@nl, "Consigne la date de création d’une ressource archivistique, d’une représentation ou d’une notice de métadonnées."@fr ;
     rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:DigitalRepresentation ) ] ;
-    rdfs:range xsd:dateTime ;
+    rdfs:range edtf:EDTF ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:dateCreated, dct:created ;
     rdfs:subPropertyOf ha:hasDate ;
@@ -1019,7 +1020,7 @@ ha:hasCreditText a rdf:Property ;
     skos:definition "Provides text acknowledging people or organizations associated with an archival work."@en, "Geeft tekst die personen of organisaties vermeldt die bij een archiefwerk betrokken zijn."@nl, "Fournit un texte mentionnant les personnes ou organisations associées à une œuvre archivée."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:creditText ;
      .
 
@@ -1028,7 +1029,7 @@ ha:hasDeathDate a rdf:Property ;
     skos:definition "Records the date on which a person died."@en, "Legt de datum vast waarop een persoon is overleden."@nl, "Consigne la date de décès d’une personne."@fr ;
     rdfs:domain ha:Person ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range edtf:EDTF-level1 ;
+    rdfs:range edtf:EDTF ;
     rdfs:seeAlso schema:deathDate ;
     rdfs:subPropertyOf ha:hasDate ;
      .
@@ -1067,12 +1068,12 @@ ha:hasDuration a rdf:Property ;
     # ! we could add rdfs:subPropertyOf ha:hasExtent ;
     rdfs:range xsd:duration .
 
-ha:hasEdition a rdf:Property, owl:DatatypeProperty ;
+ha:hasEdition a rdf:Property ;
     rdfs:label "has edition designation"@en, "heeft editieaanduiding"@nl, "a pour mention d’édition"@fr ;
     skos:definition "Specifies the edition designation of a publication or classification scheme."@en, "Geeft de editieaanduiding van een publicatie of classificatieschema aan."@nl, "Indique la mention d’édition d’une publication ou d’un schéma de classification."@fr ;
     rdfs:domain ha:PublicationIssue ;
     rdfs:range skos:Concept ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/edition> ;
+    rdfs:seeAlso bibframe:edition ;
      .
 
 ha:hasEmail a rdf:Property ;
@@ -1120,7 +1121,7 @@ ha:hasGenre a rdf:Property ;
     skos:definition "Specifies the genre of an archived creative work."@en, "Geeft het genre van een gearchiveerd creatief werk aan."@nl, "Indique le genre d’une œuvre de création archivée."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:genre ;
      .
 
@@ -1135,7 +1136,7 @@ ha:hasGivenName a rdf:Property ;
 ha:hasHeight a rdf:Property ;
     rdfs:label "has height"@en, "heeft hoogte"@nl, "a pour hauteur"@fr ;
     skos:definition "Records the height of a resource, carrier, image or spatial fragment, with a unit where needed."@en, "Legt de hoogte vast van een bron, drager, beeld of ruimtelijk fragment, waar nodig met een eenheid."@nl, "Consigne la hauteur d’une ressource, d’un support, d’une image ou d’un fragment spatial, avec une unité si nécessaire."@fr ;
-    rdfs:domain [ owl:unionOF ( premis:IntellectualEntity ha:MediaFragment ha:PhysicalCarrier ) ] ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:MediaFragment ha:PhysicalCarrier premis:File ) ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:QuantitativeValue ;
     rdfs:seeAlso ebucore:height, schema:height ;
@@ -1167,12 +1168,13 @@ ha:hasInstrument a rdf:Property ;
     rdfs:seeAlso schema:instrument ;
      .
 
+# TODO: fix definition to frequency
 ha:hasIssuance a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:PublicationIssue ;
     rdfs:label "has mode of issuance"@en, "heeft publicatiewijze"@nl, "a pour mode de parution"@fr ;
     skos:definition "Classifies how a resource is issued, updated and intended to continue or terminate."@en, "Classificeert hoe een bron verschijnt, wordt bijgewerkt en bedoeld is voort te duren of te eindigen."@nl, "Classe le mode de parution et de mise à jour d’une ressource ainsi que sa continuité ou sa fin prévue."@fr ;
     rdfs:range ha:Issuance ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/issuance> ;
+    rdfs:seeAlso bibframe:issuance ;
      .
 
 ha:hasIssueNumber a rdf:Property ;
@@ -1188,7 +1190,7 @@ ha:hasKeywords a rdf:Property ;
     skos:definition "Provides a keyword or tag describing the content of an archival work."@en, "Geeft een trefwoord of tag die de inhoud van een archiefwerk beschrijft."@nl, "Fournit un mot-clé ou une étiquette décrivant le contenu d’une œuvre archivée."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:keywords ;
     owl:equivalentProperty ha:hasSubject ;
      .
@@ -1223,12 +1225,7 @@ ha:hasLicenseDistributor a rdf:Property ;
     skos:definition "Identifies the person or organization granting a licence for an archived intellectual entity."@en, "Identificeert de persoon of organisatie die een licentie verleent voor een gearchiveerde intellectuele entiteit."@nl, "Identifie la personne ou l’organisation qui accorde une licence pour une entité intellectuelle archivée."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range [
-        owl:unionOf (
-            ha:Person
-            ha:Organization
-        ) ;
-    ] ;
+    rdfs:range ha:Agent ;
      .
 
 ha:hasLogo a rdf:Property ;
@@ -1272,7 +1269,7 @@ ha:hasMediaFragment a rdf:Property ;
     skos:definition "Identifies a spatial or temporal segment within a media resource."@en, "Identificeert een ruimtelijk of temporeel segment binnen een mediabron."@nl, "Identifie un segment spatial ou temporel au sein d’une ressource médiatique."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:MediaFragment ;
-    rdfs:seeAlso ebucore:hasMediaFragment, <http://www.w3.org/ns/ma-ont#hasFragment> ;
+    rdfs:seeAlso ebucore:hasMediaFragment, ma:hasFragment ;
     owl:inverseOf ha:isMediaFragmentOf ;
      .
 
@@ -1282,33 +1279,31 @@ ha:hasMimeType a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
     rdfs:seeAlso ebucore:hasMimeType ;
-    rdfs:subPropertyOf ha:hasFormat ;
      .
 
-# Suggested rdfs:range xsd:boolean (not asserted).
 ha:hasMissingSoundReels a rdf:Property ;
     rdfs:label "has missing sound reels"@en, "heeft ontbrekende geluidsspoelen"@nl, "a des bobines sonores manquantes"@fr ;
     skos:definition "Indicates whether sound reels were missing from a film’s carrier representation before digitization."@en, "Geeft aan of er vóór digitalisering geluidsspoelen in de dragerrepresentatie van een film ontbraken."@nl, "Indique si des bobines sonores manquaient dans la représentation sur support d’un film avant sa numérisation."@fr ;
     rdfs:domain ha:CarrierRepresentation ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range rdfs:Literal ;
+    rdfs:range xsd:boolean ;
      .
 
-# Suggested rdfs:range xsd:boolean (not asserted).
 ha:hasMissingImageReels a rdf:Property ;
     rdfs:label "has missing image reels"@en, "heeft ontbrekende beeldspoelen"@nl, "a des bobines image manquantes"@fr ;
     skos:definition "Indicates whether image reels were missing from a film’s carrier representation before digitization."@en, "Geeft aan of er vóór digitalisering beeldspoelen in de dragerrepresentatie van een film ontbraken."@nl, "Indique si des bobines image manquaient dans la représentation sur support d’un film avant sa numérisation."@fr ;
     rdfs:domain ha:CarrierRepresentation ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range rdfs:Literal ;
+    rdfs:range xsd:boolean ;
      .
 
-# Suggested rdfs:range rdfs:Literal (not asserted).
 ha:hasModel a rdf:Property ;
     rdfs:label "has model"@en, "heeft model"@nl, "a pour modèle"@fr ;
     skos:definition "Specifies the model designation of equipment or software used in the preservation environment."@en, "Geeft de modelaanduiding van apparatuur of software in de bewaringsomgeving aan."@nl, "Indique la désignation du modèle d’un équipement ou d’un logiciel utilisé dans l’environnement de conservation."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:model ;
+    rdfs:range xsd:string ;
+    rdfs:domain [ owl:unionOf ( premis:HardwareAgent premis:SoftwareAgent) ];
      .
 
 ha:hasModificationDate a rdf:Property ;
@@ -1325,7 +1320,7 @@ ha:hasName a rdf:Property ;
     skos:definition "Provides the name of an entity described in the archive."@en, "Geeft de naam van een in het archief beschreven entiteit."@nl, "Fournit le nom d’une entité décrite dans les archives."@fr ;
     rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso schema:name, dc:title, dct:title ;
      .
 
@@ -1386,11 +1381,11 @@ ha:hasOutput a rdf:Property, owl:ObjectProperty ;
     rdfs:subPropertyOf prov:generated ;
      .
 
-# Suggested rdfs:range ha:Agent (not asserted).
 ha:hasOwner a rdf:Property ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:label "has owner"@en, "heeft eigenaar"@nl, "a pour propriétaire"@fr ;
     skos:definition "Identifies the person or organization owning an archival resource, independently of copyright ownership."@en, "Identificeert de persoon of organisatie die eigenaar is van een archiefbron, onafhankelijk van het auteursrecht."@nl, "Identifie la personne ou l’organisation propriétaire d’une ressource archivistique, indépendamment de la titularité du droit d’auteur."@fr ;
+    rdfs:range ha:Agent ;
      .
 
 ha:hasPageNumber a rdf:Property ;
@@ -1488,7 +1483,7 @@ ha:hasPrimarySite a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Site ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#hasPrimarySite> ;
+    rdfs:seeAlso org:hasPrimarySite ;
     rdfs:subPropertyOf ha:hasSite ;
      .
 
@@ -1505,7 +1500,7 @@ ha:hasProductionMethod a rdf:Property, owl:ObjectProperty ;
     rdfs:label "has production method"@en, "heeft productiemethode"@nl, "a pour méthode de production"@fr ;
     skos:definition "Identifies the process used to produce a resource or its physical representation."@en, "Identificeert het proces waarmee een bron of haar fysieke representatie is vervaardigd."@nl, "Identifie le procédé utilisé pour produire une ressource ou sa représentation physique."@fr ;
     rdfs:range ha:BibframeProductionMethod ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/productionMethod> ;
+    rdfs:seeAlso bibframe:productionMethod ;
      .
 
 ha:hasPublicationDate a rdf:Property ;
@@ -1514,7 +1509,7 @@ ha:hasPublicationDate a rdf:Property ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:datePublished, dct:issued ;
-    rdfs:range edtf:EDTF-level1 ;
+    rdfs:range edtf:EDTF ;
     rdfs:subPropertyOf ha:hasDate ;
      .
 
@@ -1539,7 +1534,7 @@ ha:hasRegionY a rdf:Property ;
     skos:definition "Records the vertical coordinate of the top-left corner of a spatial media fragment in pixels from the top edge of the source media, not in relative units such as percentages."@en, "Legt de verticale coördinaat van de linkerbovenhoek van een ruimtelijk mediafragment vast in pixels vanaf de bovenrand van de bronmedia, niet in relatieve eenheden zoals percentages."@nl, "Consigne la coordonnée verticale du coin supérieur gauche d’un fragment spatial de média en pixels depuis le bord supérieur du média source, et non en unités relatives telles que des pourcentages."@fr ;
     rdfs:domain ha:MediaFragment ;
     rdfs:range xsd:nonNegativeInteger ;
-    rdfs:seeAlso ebucore:regionY ;
+    rdfs:seeAlso ebucore:regionDelimY ;
      .
 
 ha:hasContentRequestFormTemplate a rdf:Property ; # ! was hasRequestForm
@@ -1553,23 +1548,17 @@ ha:hasContentRequestFormTemplate a rdf:Property ; # ! was hasRequestForm
 ha:hasRoleType a rdf:Property ; # ! was ha:hasRoleName
     rdfs:label "has role type"@en, "heeft roltype"@nl, "a pour type de rôle"@fr ;
     skos:definition "Classifies a role by the function performed by its person or organization."@en, "Classificeert een rol volgens de functie die de betrokken persoon of organisatie vervult."@nl, "Classe un rôle selon la fonction exercée par la personne ou l’organisation concernée."@fr ;
-    # ! replaced below my making post subclass of role
-    # rdfs:domain [
-    #     owl:unionOf (
-    #         ha:Post
-    #         ha:Role
-    #     ) ;
-    # ] ;
     rdfs:domain ha:Role ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range ha:RoleType ;
-    rdfs:seeAlso schema:roleName, <http://www.w3.org/ns/org#role> ;
+    rdfs:range [ owl:unionOf ( ha:RoleType xsd:string) ] ;
+    rdfs:seeAlso schema:roleName, org:role ;
      .
 
 ha:hasEndDate a rdf:Property ;
     rdfs:label "has end date"@en, "heeft einddatum"@nl, "a pour date de fin"@fr ;
     skos:definition "Records the calendar date, optionally with a time, at which a described period, role or series ends."@en, "Legt de kalenderdatum vast, eventueel met tijdstip, waarop een beschreven periode, rol of reeks eindigt."@nl, "Consigne la date de fin d’une période, d’un rôle ou d’une série, éventuellement accompagnée d’une heure."@fr ;
     rdfs:isDefinedBy ha: ;
+    rdfs:domain ha:Newspaper ;
     rdfs:range xsd:dateTime ;
     rdfs:seeAlso schema:endDate ;
     rdfs:subPropertyOf ha:hasDate .
@@ -1578,6 +1567,7 @@ ha:hasStartDate a rdf:Property ;
     rdfs:label "has start date"@en, "heeft begindatum"@nl, "a pour date de début"@fr ;
     skos:definition "Records the calendar date, optionally with a time, at which a described period, role or series begins."@en, "Legt de kalenderdatum vast, eventueel met tijdstip, waarop een beschreven periode, rol of reeks begint."@nl, "Consigne la date de début d’une période, d’un rôle ou d’une série, éventuellement accompagnée d’une heure."@fr ;
     rdfs:isDefinedBy ha: ;
+    rdfs:domain ha:Newspaper ;
     rdfs:range xsd:dateTime ;
     rdfs:seeAlso schema:startDate ;
     rdfs:subPropertyOf ha:hasDate .
@@ -1643,7 +1633,7 @@ ha:hasSiteAddress a rdf:Property, owl:ObjectProperty ;
     skos:definition "Identifies the address through which an organizational site can be located or contacted."@en, "Identificeert het adres waarmee een vestiging kan worden gevonden of gecontacteerd."@nl, "Identifie l’adresse permettant de localiser ou de contacter un établissement."@fr ;
     rdfs:domain ha:Site ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#siteAddress> ;
+    rdfs:seeAlso org:siteAddress ;
     rdfs:range ha:PostalAddress .
 
 ha:hasEventInput a rdf:Property, owl:ObjectProperty ;
@@ -1707,7 +1697,7 @@ ha:hasThumbnailURL a rdf:Property ; # was thumbnailUrl
 ha:hasTranscript a rdf:Property ;
     rdfs:label "has transcript"@en, "heeft transcriptie"@nl, "a pour transcription"@fr ;
     skos:definition "Provides a written rendering of spoken content in an audio or audiovisual resource."@en, "Geeft een schriftelijke weergave van gesproken inhoud in een audio- of audiovisuele bron."@nl, "Fournit une restitution écrite du contenu parlé d’une ressource audio ou audiovisuelle."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain ha:DigitalRepresentation ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
     rdfs:seeAlso schema:transcript ;
@@ -1719,7 +1709,7 @@ ha:hasUnit a rdf:Property, owl:ObjectProperty ;
     skos:definition "Identifies a department or other organizational unit forming part of an organization."@en, "Identificeert een afdeling of andere organisatie-eenheid die deel uitmaakt van een organisatie."@nl, "Identifie un département ou une autre unité organisationnelle faisant partie d’une organisation."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:OrganizationalUnit ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#hasUnit> ;
+    rdfs:seeAlso org:hasUnit ;
     rdfs:subPropertyOf ha:hasSubOrganization ;
      .
 
@@ -1742,7 +1732,7 @@ ha:hasVersion a rdf:Property ;
 ha:hasWidth a rdf:Property ;
     rdfs:label "has width"@en, "heeft breedte"@nl, "a pour largeur"@fr ;
     skos:definition "Records the width of a resource, carrier, image or spatial fragment, with a unit where needed."@en, "Legt de breedte vast van een bron, drager, beeld of ruimtelijk fragment, waar nodig met een eenheid."@nl, "Consigne la largeur d’une ressource, d’un support, d’une image ou d’un fragment spatial, avec une unité si nécessaire."@fr ;
-    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:MediaFragment ha:PhysicalCarrier ) ] ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:MediaFragment ha:PhysicalCarrier premis:File ) ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:QuantitativeValue ;
     rdfs:seeAlso ebucore:width, schema:width ;
@@ -1836,7 +1826,7 @@ ha:isSiteOf a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Site ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#siteOf> ;
+    rdfs:seeAlso org:siteOf ;
     owl:inverseOf ha:hasSite ;
      .
 
@@ -1846,7 +1836,7 @@ ha:isUnitOf a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:OrganizationalUnit ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#unitOf> ;
+    rdfs:seeAlso org:unitOf ;
     rdfs:subPropertyOf ha:isSubOrganizationOf ;
      .
 
@@ -1906,13 +1896,13 @@ ha:unknown a owl:NamedIndividual, skos:Concept ;
 ha:ProductionMethod a rdfs:Class, owl:Class ;
     rdfs:label "production method"@en, "productiemethode"@nl, "méthode de production"@fr ;
     skos:definition "A process used to produce an archival resource, such as printing or photocopying."@en, "Een proces waarmee een archiefbron wordt vervaardigd, zoals drukken of fotokopiëren."@nl, "Un procédé utilisé pour produire une ressource archivistique, tel que l’impression ou la photocopie."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/ProductionMethod> ;
+    rdfs:seeAlso bibframe:ProductionMethod ;
     rdfs:subClassOf skos:Concept .
 
 ha:Issuance a rdfs:Class, owl:Class ;
     rdfs:label "mode of issuance"@en, "publicatiewijze"@nl, "mode de parution"@fr ;
     skos:definition "A category describing whether a resource is issued in one or more parts, how it is updated and whether its publication is intended to end."@en, "Een categorie die beschrijft of een bron in één of meer delen verschijnt, hoe ze wordt bijgewerkt en of de publicatie een voorzien einde heeft."@nl, "Une catégorie décrivant si une ressource paraît en une ou plusieurs parties, son mode de mise à jour et si sa publication a une fin prévue."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/Issuance> ;
+    rdfs:seeAlso bibframe:Issuance ;
     rdfs:subClassOf skos:Concept .
 
 ha:hasAbstract a rdf:Property ;
@@ -1920,7 +1910,7 @@ ha:hasAbstract a rdf:Property ;
     skos:definition "Provides a concise summary of an archival resource’s content."@en, "Geeft een beknopte samenvatting van de inhoud van een archiefbron."@nl, "Fournit un résumé concis du contenu d’une ressource archivistique."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso dct:abstract, schema:abstract ;
     rdfs:subPropertyOf ha:description, ha:hasDescription ;
      .
@@ -2066,7 +2056,7 @@ ha:hasPost a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Post ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#hasPost> ;
+    rdfs:seeAlso org:hasPost ;
     owl:inverseOf ha:isPostIn ;
      .
 
@@ -2075,7 +2065,7 @@ ha:isRelatedTo a rdf:Property, owl:SymmetricProperty ; #!
     skos:definition "Relates two archival resources without specifying the kind of relationship; the relationship is symmetric."@en, "Verbindt twee archiefbronnen zonder het soort relatie te specificeren; de relatie is symmetrisch."@nl, "Relie deux ressources archivistiques sans préciser la nature de la relation ; cette relation est symétrique."@fr ;
     rdfs:domain rdfs:Resource ;
     rdfs:range rdfs:Resource ;
-    rdfs:seeAlso dc:relation, <http://id.loc.gov/ontologies/bibframe/relatedTo> ;
+    rdfs:seeAlso dc:relation, bibframe:relatedTo ;
      .
 
 ha:hasSpatial a rdf:Property ;
@@ -2091,7 +2081,7 @@ ha:hasSpatial a rdf:Property ;
 ha:hasSupplement a rdf:Property, owl:ObjectProperty ;
     rdfs:label "has supplement"@en, "heeft supplement"@nl, "a pour supplément"@fr ;
     skos:definition "Identifies a resource that updates or complements the described publication or work."@en, "Identificeert een bron die de beschreven publicatie of het werk bijwerkt of aanvult."@nl, "Identifie une ressource qui met à jour ou complète la publication ou l’œuvre décrite."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/supplement> ;
+    rdfs:seeAlso bibframe:supplement ;
     rdfs:subPropertyOf ha:isAccompaniedBy ;
     owl:inverseOf ha:isSupplementTo ;
     rdfs:domain ha:Newspaper ;
@@ -2103,7 +2093,7 @@ ha:hasTemporal a rdf:Property ;
     skos:definition "Describes the period addressed by the content of an archival work."@en, "Beschrijft de periode waarop de inhoud van een archiefwerk betrekking heeft."@nl, "Décrit la période sur laquelle porte le contenu d’une œuvre archivée."@fr ;
     rdfs:domain premis:IntellectualEntity ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range xsd:string ;
+    rdfs:range rdf:langString ;
     rdfs:seeAlso dct:temporal, schema:temporal ;
     rdfs:subPropertyOf ha:hasCoverage ;
      .
@@ -2124,13 +2114,13 @@ ha:holds a rdf:Property, owl:ObjectProperty ;
     skos:definition "Relates an agent to a position it holds within an organization."@en, "Verbindt een agent met een functie die deze binnen een organisatie bekleedt."@nl, "Relie un agent à un poste qu’il occupe au sein d’une organisation."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Post ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#holds> ;
+    rdfs:seeAlso org:holds ;
     owl:inverseOf ha:isHeldBy ;
      .
 
 ha:isAccessCopyOf a rdf:Property ; # ha:isAccessRepresentationOf ?
-    rdfs:domain premis:IntellectualEntity ;
-    rdfs:range ha:DigitalRepresentation ;
+    rdfs:domain ha:DigitalRepresentation ;
+    rdfs:range premis:IntellectualEntity ;
     rdfs:label "is access representation of"@en, "is toegangsrepresentatie van"@nl, "est une représentation d’accès de"@fr ;
     skos:definition "Relates a digital representation prepared for user consultation to the intellectual entity it represents."@en, "Verbindt een digitale representatie voor raadpleging door gebruikers met de intellectuele entiteit die ze representeert."@nl, "Relie une représentation numérique destinée à la consultation à l’entité intellectuelle qu’elle représente."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2173,7 +2163,7 @@ ha:isHeldBy a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Post ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Agent ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#heldBy> ;
+    rdfs:seeAlso org:heldBy ;
     owl:inverseOf ha:holds ;
      .
 
@@ -2204,7 +2194,7 @@ ha:isMediaFragmentOf a rdf:Property ;
     rdfs:domain ha:MediaFragment ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:MediaResource ;
-    rdfs:seeAlso ebucore:isMediaFragmentOf, <http://www.w3.org/ns/ma-ont#isFragmentOf> ;
+    rdfs:seeAlso ebucore:isMediaFragmentOf, ma:isFragmentOf ;
      .
 
 ha:isMezzanineCopyOf a rdf:Property ; #! ha:isMezzanineRepresentationOf
@@ -2232,7 +2222,7 @@ ha:isPostIn a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Post ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#postIn> ;
+    rdfs:seeAlso org:postIn ;
     owl:inverseOf ha:hasPost ;
      .
 
@@ -2241,7 +2231,7 @@ ha:isPrecededBy a rdf:Property, owl:ObjectProperty ;
     rdfs:range ha:PublicationIssue ;
     rdfs:label "is preceded by"@en, "wordt voorafgegaan door"@nl, "est précédé de"@fr ;
     skos:definition "Identifies a publication or work that precedes the described resource chronologically or in a narrative sequence."@en, "Identificeert een publicatie of werk dat chronologisch of in een verhalende volgorde aan de beschreven bron voorafgaat."@nl, "Identifie une publication ou une œuvre qui précède la ressource décrite dans l’ordre chronologique ou narratif."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/precededBy> ;
+    rdfs:seeAlso bibframe:precededBy ;
     rdfs:subPropertyOf ha:isRelatedTo ;
     owl:inverseOf ha:isSucceededBy ;
      .
@@ -2251,7 +2241,7 @@ ha:isSucceededBy a rdf:Property, owl:ObjectProperty ;
     rdfs:range ha:Newspaper ;
     rdfs:label "is succeeded by"@en, "wordt opgevolgd door"@nl, "est suivi de"@fr ;
     skos:definition "Identifies a publication or work that follows the described resource chronologically or in a narrative sequence."@en, "Identificeert een publicatie of werk dat chronologisch of in een verhalende volgorde op de beschreven bron volgt."@nl, "Identifie une publication ou une œuvre qui suit la ressource décrite dans l’ordre chronologique ou narratif."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/succeededBy> ;
+    rdfs:seeAlso bibframe:succeededBy ;
     rdfs:subPropertyOf ha:isRelatedTo ;
     owl:inverseOf ha:isPrecededBy ;
      .
@@ -2261,7 +2251,7 @@ ha:isSupplementTo a rdf:Property, owl:ObjectProperty ;
     rdfs:range ha:Newspaper ;
     rdfs:label "is supplement to"@en, "is supplement bij"@nl, "est un supplément de"@fr ;
     skos:definition "Identifies the publication or work that the described resource updates or complements."@en, "Identificeert de publicatie of het werk dat door de beschreven bron wordt bijgewerkt of aangevuld."@nl, "Identifie la publication ou l’œuvre que la ressource décrite met à jour ou complète."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/supplementTo> ;
+    rdfs:seeAlso bibframe:supplementTo ;
     rdfs:subPropertyOf ha:accompanies ;
     owl:inverseOf ha:hasSupplement ;
      .
@@ -2282,7 +2272,7 @@ ha:isTransitiveSubOrganizationOf a rdf:Property, owl:ObjectProperty, owl:Transit
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#transitiveSubOrganizationOf> ;
+    rdfs:seeAlso org:transitiveSubOrganizationOf ;
      .
 
 ha:MetadataScope a rdfs:Class ;
@@ -2295,7 +2285,7 @@ ha:MetadataScope a rdfs:Class ;
 ha:accompanies a rdf:Property, owl:ObjectProperty ;
     rdfs:label "accompanies"@en, "begeleidt"@nl, "accompagne"@fr ;
     skos:definition "Relates a supplementary or accompanying resource to the resource with which it is issued or used."@en, "Verbindt een aanvullende of begeleidende bron met de bron waarmee ze wordt uitgegeven of gebruikt."@nl, "Relie une ressource complémentaire ou d’accompagnement à la ressource avec laquelle elle est publiée ou utilisée."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/accompanies> ;
+    rdfs:seeAlso bibframe:accompanies ;
     rdfs:subPropertyOf ha:isRelatedTo ;
     rdfs:domain ha:Newspaper ;
     rdfs:range ha:Newspaper ;
@@ -2338,7 +2328,7 @@ ha:educationalPublic a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
     skos:topConceptOf <https://data.hetarchief.be/id/constraint-operand> ;
      .
 
-ha:extended a owl:NamedIndividual, skos:Concept, ha:MetadataRange ;
+ha:extended a owl:NamedIndividual, skos:Concept, ha:MetadataScope ;
     rdfs:label "extended"@en ;
     skos:definition "The metadata will be displayed in the form of limited set, according to the agreements."@en, "Een uitgebreide set metadata, bepaald volgens afspraken en documentatie, wordt ontsloten."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
@@ -2357,7 +2347,7 @@ ha:full a owl:NamedIndividual, skos:Concept, ha:ContentScope ;
 ha:hasCreator a rdf:Property ;
     rdfs:label "has creator"@en, "heeft maker"@nl, "a pour créateur"@fr ;
     skos:definition "Identifies the person or organization primarily responsible for creating an archival resource, directly or through a role."@en, "Identificeert de persoon of organisatie die hoofdzakelijk verantwoordelijk is voor de creatie van een archiefbron, rechtstreeks of via een rol."@nl, "Identifie la personne ou l’organisation principalement responsable de la création d’une ressource archivistique, directement ou au moyen d’un rôle."@fr ;
-    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:DigitalRepresentation ) ] ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:DigitalRepresentation premis:Fixity ) ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range [
         owl:unionOf (
@@ -2390,7 +2380,7 @@ ha:hasSite a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Site ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#hasSite> ;
+    rdfs:seeAlso org:hasSite ;
      .
 
 ha:hasSubOrganization a rdf:Property, owl:ObjectProperty ;
@@ -2399,7 +2389,7 @@ ha:hasSubOrganization a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#hasSubOrganization> ;
+    rdfs:seeAlso org:hasSubOrganization ;
     owl:inverseOf ha:isSubOrganizationOf ;
      .
 
@@ -2421,7 +2411,7 @@ ha:intraMuros a owl:NamedIndividual, skos:Concept, ha:UserGroup ;
 ha:isAccompaniedBy a rdf:Property, owl:ObjectProperty ;
     rdfs:label "is accompanied by"@en, "wordt begeleid door"@nl, "est accompagné de"@fr ;
     skos:definition "Identifies a resource that accompanies the described resource when issued or used."@en, "Identificeert een bron die de beschreven bron bij uitgifte of gebruik begeleidt."@nl, "Identifie une ressource accompagnant la ressource décrite lors de sa publication ou de son utilisation."@fr ;
-    rdfs:seeAlso <http://id.loc.gov/ontologies/bibframe/accompaniedBy> ;
+    rdfs:seeAlso bibframe:accompaniedBy ;
     rdfs:subPropertyOf ha:isRelatedTo ;
     owl:inverseOf ha:accompanies ;
      .
@@ -2432,12 +2422,12 @@ ha:isSubOrganizationOf a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:Organization ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:Organization ;
-    rdfs:seeAlso <http://www.w3.org/ns/org#subOrganizationOf> ;
+    rdfs:seeAlso org:subOrganizationOf ;
     rdfs:subPropertyOf ha:isTransitiveSubOrganizationOf ;
     owl:inverseOf ha:hasSubOrganization ;
      .
 
-ha:limited a owl:NamedIndividual, skos:Concept, ha:MetadataRange ;
+ha:limited a owl:NamedIndividual, skos:Concept, ha:MetadataScope ;
     rdfs:label "limited"@en ;
     rdfs:comment "The metadata will be displayed in the form of a limited set, according to the agreements."@en, "Een beperkte set metadata, bepaald volgens afspraken en documentatie, wordt ontsloten."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/constraint-operand> ;
@@ -2490,7 +2480,7 @@ ha:hasCoverage a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso dc:coverage, dct:coverage ;
     rdfs:domain premis:IntellectualEntity ;
-    rdfs:range xsd:string ;
+    rdfs:range [ owl:unionOf ( rdf:langString ha:Thing ) ] ;
      .
 
 ha:hasDescription a rdf:Property, owl:DatatypeProperty ;
@@ -2499,31 +2489,39 @@ ha:hasDescription a rdf:Property, owl:DatatypeProperty ;
     rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
     rdfs:range rdf:langString ;
-    rdfs:seeAlso dc:description, dct:description, ebucore:description, <http://www.w3.org/ns/ma-ont#description>, schema:description ;
+    rdfs:seeAlso dc:description, dct:description, ebucore:description, ma:description, schema:description ;
      .
 
 ha:hasFormat a rdf:Property ;
     rdfs:label "has format"@en, "heeft formaat"@nl, "a pour format"@fr ;
     skos:definition "Describes the file format, physical medium or dimensions of an archival resource."@en, "Beschrijft het bestandsformaat, het fysieke medium of de afmetingen van een archiefbron."@nl, "Décrit le format de fichier, le support physique ou les dimensions d’une ressource archivistique."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range ha:Format ;
+    rdfs:range ha:FileFormat ;
     rdfs:seeAlso dc:format, dct:format, ebucore:hasFormat ;
      .
 
-# ! How will we call local identifiers vs. the main identifier
 ha:hasIdentifier a rdf:Property, owl:DatatypeProperty ;
     rdfs:label "has identifier"@en, "heeft identificatie"@nl, "a pour identifiant"@fr ;
-    skos:definition "Provides a reference that identifies a resource unambiguously within a specified system or context."@en, "Geeft een referentie die een bron ondubbelzinnig identificeert binnen een bepaald systeem of een bepaalde context."@nl, "Fournit une référence identifiant une ressource sans ambiguïté dans un système ou un contexte donné."@fr ;
+    skos:definition "Provides a string that unambiguously identifies a resource within an implicit context."@en, "Geeft een tekenreeks die een bron ondubbelzinnig identificeert binnen een impliciete context."@nl, "Fournit une chaîne de caractères qui identifie une ressource sans ambiguïté dans un contexte implicite."@fr ;
     rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso dc:identifier, dct:identifier, org:identifier, schema:identifier ;
+     .
+
+ha:hasLocalIdentifier a rdf:Property, owl:ObjectProperty ;
+    rdfs:label "has local identifier"@en, "heeft lokale identificatie"@nl, "a pour identifiant local"@fr ;
+    skos:definition "Links an archival resource to a local identifier assigned or recognized within a specified system or context."@en, "Verbindt een archiefbron met een lokale identificatie die binnen een expliciet omschreven systeem of context wordt toegekend of erkend."@nl, "Relie une ressource archivistique à un identifiant local attribué ou reconnu dans un système ou un contexte explicitement défini."@fr ;
+    rdfs:domain premis:Object ;
+    rdfs:isDefinedBy ha: ;
     rdfs:range ha:LocalIdentifier ;
-    rdfs:seeAlso dc:identifier, dct:identifier, <http://www.w3.org/ns/org#identifier>, schema:identifier ;
+    rdfs:subPropertyOf premis:identifier ;
      .
 
 ha:hasPosition a rdf:Property ;
     rdfs:label "has position"@en, "heeft positie"@nl, "a pour position"@fr ;
     skos:definition "Records an item’s ordinal position within an ordered series or sequence."@en, "Legt de rangpositie van een item binnen een geordende reeks of volgorde vast."@nl, "Consigne la position ordinale d’un élément dans une série ou une séquence ordonnée."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:Collection ha:CastMemberEntry ) ];
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:integer ;
     rdfs:seeAlso schema:position ;

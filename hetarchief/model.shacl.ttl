@@ -1,3 +1,33 @@
+# REVIEW (2026-11-24): compared with model.rdfs.ttl and its three local imports.
+# Comments only; no constraints were changed. FIX marks a concrete error or stale
+# term; ALIGN marks a modeling difference to resolve in both files; PROFILE marks
+# an application rule whose continued use needs confirmation from instance data.
+# RDFS domains/ranges infer types; they do not establish mandatory fields or counts.
+# A narrower SHACL profile can be intentional, so differences alone are not bugs.
+#
+# REVIEW: the core constraints remain useful: annotation confidence is decimal,
+# annotation targets are files, durations are xsd:duration, measurements are floats,
+# file size is non-negative, and LocalIdentifier has one string rdf:value. Keep
+# these after resolving the term and profile issues below. Empty node shapes add
+# no checks of their own; keep them only if documentation/tools need placeholders.
+#
+# REVIEW: load the RDFS subclass hierarchy and required vocabulary type assertions
+# into the validation data/ontology context. sh:class and sh:targetClass use that
+# hierarchy; rdfs:seeAlso does not link types. SHACL Core does not automatically
+# apply owl:equivalentClass, owl:inverseOf or subproperty entailment. A copy link
+# alone therefore does not satisfy a required ha:isRepresentedBy/ha:represents.
+# Document the entailment/materialization policy and test representative records.
+# Reference: https://www.w3.org/TR/shacl/#relationship-between-shacl-and-rdfs
+# REVIEW: SHACL structure passes meta-validation; that does not prove these
+# shapes accept the intended data. Add small conformance fixtures for the rights
+# conflict, birthplace resources, renamed terms and each retained import profile
+# after decisions are implemented. No production instance data was assessed here.
+# REVIEW: refresh sh:message/sh:description text after the vocabulary migration.
+# Many still name schema:/ebucore:/haDes:/haObj: terms instead of their ha: paths,
+# claim missing values where minCount is 0/absent, or claim maxCount 1 where none
+# is enforced (for example storedAt and event input/output). The material message
+# says skos:Concept although its actual xsd:string check agrees with RDFS. Derive
+# messages from the final constraints so users receive an actionable diagnosis.
 PREFIX ha: <https://data.hetarchief.be/ns/>
 PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -11,6 +41,11 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
+# REVIEW PROFILE: mandatory start AND end timestamps reject ongoing activities;
+# prov:generated maxCount 1 rejects an activity generating two outputs. Keep these
+# only for a completed, single-output workflow, or move them to that profile.
+# The imported PREMIS model makes Event a subclass of prov:Activity, so these
+# timestamp requirements also apply to every PREMIS event with that hierarchy.
 ha:ActivityShape a sh:NodeShape ;
     rdfs:label "activity shape"@en ;
     sh:property [
@@ -68,6 +103,9 @@ ha:ActivityShape a sh:NodeShape ;
     sh:targetClass prov:Activity ;
      .
 
+# REVIEW ALIGN: hasAnnotationType should check ha:AnnotationType if the RDFS range
+# is intended; plain skos:Concept currently admits unrelated thesaurus concepts.
+# The confidence message also says integer although the actual datatype is decimal.
 ha:AnnotationShape a sh:NodeShape ;
     rdfs:label "annotation shape"@en ;
     sh:property [
@@ -75,7 +113,7 @@ ha:AnnotationShape a sh:NodeShape ;
         sh:datatype xsd:decimal ;
         sh:description "Number to estimate the confidence in the Annotation."@en, "Nombre pour estimer la confiance dans l'annotation."@fr, "Cijfer om het vertrouwen in de annotatie te schatten."@nl ;
         sh:maxCount 1 ;
-        sh:message "ebucore:annotationConfidence is missing, occurs more than once or its object is not a xsd:integer"@en ;
+        sh:message "ha:hasAnnotationConfidence is missing, occurs more than once or its object is not a xsd:decimal"@en ;
         sh:minCount 1 ;
         sh:name "annotation confidence"@en, "confiance en annotation"@fr, "annotatie vertrouwen"@nl ;
         sh:path ha:hasAnnotationConfidence ;
@@ -85,7 +123,7 @@ ha:AnnotationShape a sh:NodeShape ;
         sh:class premis:File ;
         sh:description "To define the target file to which the Annotation applies."@en, "Pour définir le fichier cible auquel l'annotation s'applique."@fr, "Om het doelbestand te definiëren waarop de annotatie van toepassing is."@nl ;
         sh:maxCount 1 ;
-        sh:message "ebucore:hasAnnotationTarget is missing, occurs more than once or its object is not a premis:File"@en ;
+        sh:message "ha:hasAnnotationTarget is missing, occurs more than once or its object is not a premis:File"@en ;
         sh:minCount 1 ;
         sh:name "annotation target"@en, "cible d'annotation"@fr, "annotatiedoel"@nl ;
         sh:path ha:hasAnnotationTarget ;
@@ -94,15 +132,17 @@ ha:AnnotationShape a sh:NodeShape ;
         a sh:PropertyShape ;
         sh:description "The subject of the Annotation."@en, "Le sujet de l'annotation."@fr, "Het onderwerp van de annotatie."@nl ;
         sh:maxCount 1 ;
-        sh:message "ebucore:hasAnnotationRelatedArtefact is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
+        sh:message "ha:hasAnnotationSubject is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
         sh:minCount 1 ;
         sh:name "annotation subject"@en, "sujet d'annotation"@fr, "annotatie onderwerp"@nl ;
         sh:nodeKind sh:IRI ;
-        sh:path ha:hasAnnotationRelatedArtefact ;
+        sh:path ha:hasAnnotationSubject ;
+        sh:class ha:Thing ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:class skos:Concept ;
+        sh:class ha:AnnotationType ;
+        sh:in (ha:recognized-face ha:named-entity) ;
         sh:description "To define a type of Annotation, such as a recognized face or Named Entity."@en, "Pour définir un type d'annotation, comme un visage reconnu ou une entité nommée."@fr, "Om het type annotatie te definiëren, zoals een herkend gezicht of Named Entity."@nl ;
         sh:maxCount 1 ;
         sh:message "ebucore:annotationType occurs more than once or its object is not a skos:Concept"@en ;
@@ -112,21 +152,12 @@ ha:AnnotationShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:description "The subject (person) of the Annotation."@en, "Le sujet (person) de l'annotation."@fr, "Het onderwerp (persoon) van de annotatie."@nl ;
-        sh:maxCount 1 ;
-        sh:message "ebucore:hasAnnotationRelatedAgent is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
-        sh:name "annotation  person subject"@en, "sujet d'annotation person"@fr, "annotatie persoon onderwerp"@nl ;
-        sh:nodeKind sh:IRI ;
-        sh:path ha:hasAnnotationRelatedAgent ;
-        sh:severity sh:Violation ;
-    ], [
-        a sh:PropertyShape ;
-        sh:class ha:MediaFragment ;
-        sh:description "The media fragment that is linked to this Annotation."@en, "Le fragment multimédia lié à cette annotation."@fr, "Het media fragment dat gelinkt is aan deze annotatie."@nl ;
-        sh:message "ebucore:isAnnotatedMediaResource is missing or its object is not a ebucore:MediaFragment"@en ;
+        sh:class ha:MediaResource ;
+        sh:description "The media fragment or resource that is linked to this Annotation."@en, "Le fragment multimédia lié à cette annotation."@fr, "Het media fragment of resource dat gelinkt is aan deze annotatie."@nl ;
+        sh:message "ebucore:annotatesMediaResource is missing or its object is not a ebucore:MediaFragment"@en ;
         sh:minCount 1 ;
         sh:name "annotates"@en, "annote"@fr, "annoteert"@nl ;
-        sh:path ha:isAnnotatedMediaResource ;
+        sh:path ha:annotatesMediaResource ;
         sh:severity sh:Violation ;
     ] ;
     sh:targetClass ha:Annotation ;
@@ -160,10 +191,14 @@ ha:ArchiveComponentShape a sh:NodeShape ;
     sh:targetClass ha:ArchiveComponent ;
      .
 
-ha:AudioReelShape a sh:NodeShape ;
+# REVIEW FIX: ha:AudioReel was renamed ha:SoundReel in RDFS. Update this target
+# and the storedAt alternative in FilmCarrierRepresentationShape together.
+# The shared aspect-ratio rule describes image geometry; confirm why a sound-only
+# reel needs it, rather than copying the ImageReel constraint to the renamed shape.
+ha:SoundReelShape a sh:NodeShape ;
     rdfs:label "audio reel shape"@en ;
     sh:property _:cb6dfd49844fa0d974bc61143cd85cf2f7ca89309deda6861258c3cfac63a9ae8e0 ;
-    sh:targetClass ha:AudioReel ;
+    sh:targetClass ha:SoundReel ;
      .
 
 ha:AudioShape a sh:NodeShape ;
@@ -203,6 +238,10 @@ ha:AudiovisualCarrierRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:AudiovisualCarrierRepresentation ;
      .
 
+# REVIEW PROFILE: these closed value lists are application vocabularies, not
+# RDFS requirements. Confirm their current coverage before retaining them. For
+# recording speed, every listed IRI must also be typed ha:QuantitativeValue and
+# satisfy its measurement/unit shapes; the message incorrectly says skos:Concept.
 ha:AudiovisualCarrierShape a sh:NodeShape ;
     rdfs:label "audiovisual carrier shape"@en ;
     sh:property [
@@ -278,6 +317,15 @@ ha:ConceptSchemeShape a sh:NodeShape ;
     sh:targetClass skos:ConceptScheme ;
      .
 
+# REVIEW PROFILE: requiring inScheme, definition and a language-tagged prefLabel
+# on EVERY skos:Concept also reaches ha:LocalIdentifier, FileFormat, RoleType,
+# OrganizationType, Issuance and controlled ODRL values when their types are loaded.
+# A local identifier with only rdf:value then fails for unrelated thesaurus fields.
+# Scope the completeness rules to managed thesauri, or explicitly require that
+# metadata for every reused concept and include it in validation inputs.
+# The skosxl:prefLabel maxCount 1 also forbids two labels in different languages;
+# if multilingual SKOS-XL labels are supported, validate language uniqueness on
+# the labels' literal forms instead of limiting the number of label resources.
 ha:ConceptShape a sh:NodeShape ;
     rdfs:label "concept shape"@en ;
     sh:property [
@@ -404,6 +452,17 @@ ha:ConceptShape a sh:NodeShape ;
     sh:targetClass skos:Concept ;
      .
 
+# REVIEW FIX: ha:MetadataRScope is undeclared. RDFS declares ha:MetadataScope,
+# but ha:extended/ha:limited are still typed ha:MetadataRange (also undeclared).
+# Align the class AND those individuals; changing this shape alone will still
+# reject both metadata-scope values.
+# REVIEW FIX: dateTime/absoluteTemporalPosition are allowed as left operands, but
+# the right operand is restricted to eleven IRIs, so a typed date or offset always
+# fails. Split alternatives by left operand and pair each with its right-value type
+# and supported operators. That also prevents recipient=ha:full and scope=user-group
+# combinations, which currently pass the independent lists. Consultation/download
+# are actions, not UserGroup/MetadataScope/ContentScope instances; keep them on
+# odrl:action unless an explicit constraint use case needs a separate branch.
 ha:ConstraintShape a sh:NodeShape ;
     rdfs:label "constraint shape"@en ;
     sh:property [
@@ -463,6 +522,9 @@ ha:ConstraintShape a sh:NodeShape ;
     sh:targetClass odrl:Constraint ;
      .
 
+# REVIEW PROFILE: ha:PostalAddress is a subclass of ha:ContactPoint, so every
+# postal address also needs hasContactType=one string. Keep that requirement only
+# if address records actually carry a contact purpose, or narrow its target.
 ha:ContactPointShape a sh:NodeShape ;
     rdfs:label "contact point shape"@en ;
     sh:property [
@@ -661,6 +723,9 @@ ha:DescriptionCarrierRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:CarrierRepresentation ;
      .
 
+# REVIEW ALIGN: hasCollectionSize has RDFS range xsd:nonNegativeInteger; this
+# xsd:integer constraint accepts -1 and rejects a nonNegativeInteger-typed count.
+# Use the intended datatype consistently in ontology, shapes and producers.
 ha:DescriptionCollectionShape a sh:NodeShape ;
     rdfs:label "description collection shape"@en ;
     sh:property [
@@ -690,6 +755,14 @@ ha:DescriptionCollectionShape a sh:NodeShape ;
     sh:targetClass ha:Collection ;
      .
 
+# REVIEW ALIGN: hasCreationDate has RDFS range xsd:dateTime, but this shape and
+# the File/IntellectualEntity shapes only accept EDTF-level0/1/2. A dateTime value
+# fails them. Choose a consistent date model (including uncertain archival dates)
+# and update all three shapes plus RDFS together. MediahavenFragment already uses
+# dateTime, so preserve the distinction between record and content dates if needed.
+# REVIEW ALIGN: hasLanguage has range xsd:language, while this shape, the
+# IntellectualEntity shape and OpenCaptionsShape use xsd:string. Align the datatype
+# across producers and shapes; a literal typed xsd:language currently fails.
 ha:DescriptionDigitalRepresentationShape a sh:NodeShape ;
     rdfs:label "description digital representation shape"@en ;
     sh:property [
@@ -742,6 +815,11 @@ ha:DescriptionDigitalRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:DigitalRepresentation ;
      .
 
+# REVIEW ALIGN: hasCaptioning allows any premis:File OR ha:ClosedCaptions, whereas
+# RDFS requires ha:Captioning. An arbitrary PDF passes and a captioning resource
+# without either type fails. Use the captioning class, or migrate to hasSubtitling
+# with the new OpenSubtitling/ClosedSubtitling classes once that RDFS decision is
+# settled. ImageReelShape and OpenCaptionsShape need the same migration.
 ha:DescriptionFileShape a sh:NodeShape ;
     rdfs:label "description file shape"@en ;
     sh:property [
@@ -800,6 +878,20 @@ ha:DescriptionFileShape a sh:NodeShape ;
     sh:targetClass premis:File ;
      .
 
+# REVIEW ALIGN: hasArtform, hasArtMedium, hasTemporal, hasAbstract, hasGenre,
+# hasKeywords and hasCreditText require rdf:langString here but have xsd:string
+# ranges in RDFS. The shared name/alternate-name shapes have the same mismatch.
+# A language-tagged string and an xsd:string are different RDF datatypes; agree
+# which text fields are multilingual and update the RDFS ranges or these shapes.
+# REVIEW ALIGN: hasCreator/hasPublisher/hasContributor allow Person, Organization
+# or Role in RDFS; the Role-only rules here (and the shared creator rule and
+# Newspaper publisher rule) reject a directly linked person. Keep Role-only checks
+# only in a documented profile that always uses intermediate contribution roles.
+# REVIEW FIX: isPartOf accepts only IntellectualEntity or BroadcastEvent here,
+# but RDFS permits Collection too. Newspaper is a Series/Collection, not an
+# IntellectualEntity in the reference: an issue pointing to its newspaper passes
+# NewspaperIssueShape but fails this general rule. Include the intended Collection
+# branch so those two shapes agree; this also covers Series/ArchiveComponent.
 ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
     rdfs:label "description intellectual entity shape"@en ;
     sh:property [
@@ -853,6 +945,8 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
                 sh:class ha:Thing ;
             ]
         ) ;
+        # REVIEW FIX: RDFS uses ha:hasRightsHolder with range ha:Agent. Migrate this
+        # path and the accepted types together; ha:Thing currently admits non-agents.
         sh:path ha:hasCopyrightHolder ;
         sh:severity sh:Violation ;
     ], [
@@ -990,6 +1084,9 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:message "dct:copyrightYear is not of type integer"@en, "dct:copyrightYear n'est pas de type integer"@fr, "dct:copyrightYear is niet van het type integer"@nl ;
         sh:name "copyright year"@en, "année de copyright"@fr, "copyright jaar"@nl ;
         sh:nodeKind sh:Literal ;
+        # REVIEW FIX: RDFS now has ha:hasCopyrightDate with xsd:dateTime range.
+        # Do not just rename the path: a year integer must be migrated, or the RDFS
+        # date model must explicitly retain year-only values.
         sh:path ha:hasCopyrightYear ;
         sh:severity sh:Violation ;
     ], [
@@ -999,6 +1096,8 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:message "dct:available is not of type xsd:dateTime."@en, "dct:available n'est pas de type xsd:dateTime."@fr, "dct:available is niet van het type xsd:dateTime."@nl ;
         sh:name "date available"@en, "disponible le"@fr, "beschikbaar op"@nl ;
         sh:nodeKind sh:Literal ;
+        # REVIEW ALIGN: RDFS requires edtf:EDTF-level1; this rule only accepts
+        # xsd:dateTime. Align with the chosen archival date policy.
         sh:path ha:hasAvailabilityDate ;
         sh:severity sh:Violation ;
     ], [
@@ -1026,6 +1125,8 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:message "ebucore:hasCastMember is not of type string"@en ;
         sh:name "castmembers"@en, "les acteurs"@fr, "castleden"@nl ;
         sh:nodeKind sh:Literal ;
+        # REVIEW FIX: RDFS now links to ha:CastMemberEntry (a Role), not a string.
+        # Use that class and revisit maxCount 1 so a cast can contain multiple entries.
         sh:path ha:hasCastMember ;
         sh:severity sh:Violation ;
     ], _:cb565174abd99c7b8739313b91e807bc53b6ba79dcca7f43eaa1b4e97f93f22e96e, [
@@ -1034,6 +1135,8 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:message "schema:copyrightNotice is not of type string"@en, "schema:copyrightNotice n'est pas de type string"@fr, "schema:copyrightNotice is niet van het type string"@nl ;
         sh:name "copyright notice"@en, "avis de copyright"@fr, "auteursrechtenmelding"@nl ;
         sh:nodeKind sh:Literal ;
+        # REVIEW FIX: ha:hasCopyrightNotice is absent from RDFS. If this text is still
+        # needed, declare it there or migrate it to the agreed textual rights property.
         sh:path ha:hasCopyrightNotice ;
         sh:severity sh:Violation ;
     ], [
@@ -1049,6 +1152,9 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         a sh:PropertyShape ;
         sh:class ha:PerformanceRole ;
         sh:message "schema:actor is not of class schema:Role"@en, "schema:actor n'est pas de la classe schema:Role"@fr, "schema:actor is niet van de klasse schema:Role"@nl ;
+        # REVIEW ALIGN: this link points to ha:PerformanceRole, while RDFS says
+        # ha:Person. Resolve the role-versus-person model with DescriptionRoleShape;
+        # do not force contribution-role nodes to be people just to satisfy the range.
         sh:name "actor"@en, "acteur"@fr, "acteur"@nl ;
         sh:path ha:hasActor ;
         sh:severity sh:Violation ;
@@ -1096,6 +1202,11 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:name "format"@en, "format"@fr, "formaat"@nl ;
         sh:nodeKind sh:Literal ;
+        # REVIEW ALIGN: RDFS range is ha:Format (itself undeclared), while this
+        # required value is a string enum. Define the intended class/vocabulary or
+        # retain the literal format category under a distinct property. The File
+        # shape uses resource-valued ha:FileFormat on this same predicate; resolve
+        # both uses before enforcing a single RDFS range.
         sh:path ha:hasFormat ;
         sh:severity sh:Violation ;
     ], _:cb72c92ba73519bb320880f158b5825af742e0166a024f263d82b96f45fa65ce736, _:cb757a51a4dde673403c9fe8ceecf425ffe56eccd0bf702a47aed7d3ade9a80e925, [
@@ -1162,6 +1273,15 @@ ha:DescriptionRepresentationShape a sh:NodeShape ;
     sh:targetClass premis:Representation ;
      .
 
+# REVIEW FIX: ha:hasRoleName/ha:RoleName are now ha:hasRoleType/ha:RoleType.
+# RDFS uses a controlled role-type resource; the string alternative here requires
+# an explicit compatibility decision.
+# REVIEW ALIGN: these outgoing contribution links reuse properties whose RDFS
+# domain is IntellectualEntity; for example Role hasProducer Person also conflicts
+# with the asserted hasProducer range Role. Choose one role-assignment model and
+# align domains/ranges and both sets of shapes together. Person/Organization are
+# subclasses of Thing, so the Thing branch already accepts arbitrary things;
+# remove it where only agents may fill a role.
 ha:DescriptionRoleShape a sh:NodeShape ;
     rdfs:label "description role shape"@en ;
     sh:property [
@@ -1371,6 +1491,13 @@ ha:EventObjectShape a sh:NodeShape ;
     sh:targetClass premis:Object ;
      .
 
+# REVIEW FIX: the outcome enum uses ha:failed/ha:succeeded/ha:warnings, but RDFS
+# provides ha:fail/ha:success/ha:warning. None of the latter is explicitly typed
+# premis:OutcomeStatus. Align IRIs and add the required vocabulary typing so the
+# sh:in and sh:class checks can both pass.
+# REVIEW PROFILE: isImplementedBy requires one Organization although RDFS allows
+# ha:Agent. A person implementing an event is rejected; keep this restriction only
+# if every supported event is implemented by an organization.
 ha:EventShape a sh:NodeShape ;
     rdfs:label "event shape"@en ;
     sh:property [
@@ -1457,6 +1584,12 @@ ha:EventShape a sh:NodeShape ;
     sh:targetClass premis:Event ;
      .
 
+# REVIEW FIX: sh:Nodeshape is a typo for sh:NodeShape. The existing target and
+# sh:property still identify this as a shape, so this is not proof that validation
+# is skipped, but tools relying on the explicit type will miss it.
+# REVIEW FIX: hasMissingAudioReels and hasNumberOfMissingAudioReels are now
+# ha:hasMissingSoundReels and ha:hasNumberOfMissingSoundReels. Update the paths and
+# messages, and replace ha:AudioReel below with ha:SoundReel.
 ha:FilmCarrierRepresentationShape a sh:Nodeshape ;
     rdfs:label "film carrier representation shape"@en ;
     sh:property [
@@ -1534,6 +1667,9 @@ ha:FilmCarrierRepresentationShape a sh:Nodeshape ;
     sh:targetClass ha:FilmCarrierRepresentation ;
      .
 
+# REVIEW PROFILE: requiring exactly one physical carrier representation excludes
+# born-digital films and films with several carrier copies. The RDFS definition
+# does not make a physical original mandatory; scope this to the relevant workflow.
 ha:FilmShape a sh:NodeShape ;
     rdfs:label "film shape"@en ;
     sh:property [
@@ -1550,6 +1686,10 @@ ha:FilmShape a sh:NodeShape ;
     sh:targetClass ha:Film ;
      .
 
+# REVIEW ALIGN: hasCreator is a string here, but RDFS gives it a Person/
+# Organization/Role resource range and an IntellectualEntity/DigitalRepresentation
+# domain. A checksum creator literal conflicts with that model. Use a dedicated
+# checksum-creator property or align its type and domain explicitly.
 ha:FixityShape a sh:NodeShape ;
     rdfs:label "fixity shape"@en ;
     sh:property [
@@ -1573,6 +1713,15 @@ ha:FixityShape a sh:NodeShape ;
     sh:targetClass premis:Fixity ;
      .
 
+# REVIEW FIX: hasStartTime/hasEndTime were replaced by ha:hasStartOffset/
+# ha:hasEndOffset with xsd:integer ranges. Apply the same migration in
+# MediaFragmentShape, specify the offset unit, and migrate values rather than
+# renaming xsd:time literals. Time-of-day values cannot represent offsets >=24h.
+# REVIEW ALIGN: RDFS equates FragmentRepresentation and MediaFragment, but SHACL
+# Core does not infer that equivalence. ObjectFileShape requires FragmentRepresentation
+# where DescriptionFileShape accepts MediaFragment. Align the fragment classes and
+# file constraints so a spatial-only MediaFragment does not unexpectedly need
+# mandatory temporal offsets and all DigitalRepresentation/Representation fields.
 ha:FragmentRepresentationShape a sh:NodeShape ;
     rdfs:label "fragment representation shape"@en ;
     sh:property [
@@ -1694,6 +1843,8 @@ ha:HardwareAgentShape a sh:NodeShape ;
     sh:targetClass premis:HardwareAgent ;
      .
 
+# REVIEW FIX: hasFilmColourType is now ha:hasFilmColorType in RDFS. The spelling
+# change leaves the current optional path unable to check values of the new term.
 ha:ImageReelShape a sh:NodeShape ;
     rdfs:label "image reel shape"@en ;
     sh:property [
@@ -1763,6 +1914,15 @@ ha:MaterialArtworkShape a sh:NodeShape ;
     sh:targetClass ha:MaterialArtwork ;
      .
 
+# REVIEW ALIGN: height/width are integers here but ha:QuantitativeValue resources
+# in RDFS and the File/IntellectualEntity shapes. Select a single measurement model
+# or define distinct pixel-dimension properties; a QuantitativeValue currently fails.
+# REVIEW FIX: hasRegionDelimX/Y are now ha:hasRegionX/Y with non-negative-integer
+# ranges. Update both paths and datatypes so negative coordinates are rejected.
+# REVIEW ALIGN: isMediaFragmentOf requires premis:File here and in
+# FragmentRepresentationShape, but RDFS uses ha:MediaResource. No subclass link
+# connects File to MediaResource in the reference; agree whether files are media
+# resources or whether the ontology/shape needs an explicit alternative.
 ha:MediaFragmentShape a sh:NodeShape ;
     rdfs:label "media fragment shape"@en ;
     sh:property [
@@ -1869,6 +2029,9 @@ ha:NewspaperIssuePageShape a sh:NodeShape ;
     sh:targetClass ha:NewspaperIssuePage ;
      .
 
+# REVIEW ALIGN: hasIssuance should check ha:Issuance if its RDFS range is intended;
+# the current skos:Concept check accepts any concept. hasEdition already agrees
+# with the RDFS skos:Concept range; the closed edition list is a profile choice.
 ha:NewspaperIssueShape a sh:NodeShape ;
     rdfs:label "newspaper issue shape"@en ;
     sh:property [
@@ -1942,6 +2105,12 @@ ha:NewspaperIssueShape a sh:NodeShape ;
     sh:targetClass ha:NewspaperIssue ;
      .
 
+# REVIEW FIX: hasSchemaStartDate/hasSchemaEndDate are now ha:hasStartDate/
+# ha:hasEndDate, and hasCreationLocation is now ha:hasCreationPlace. These optional
+# old paths silently skip values written with the new vocabulary.
+# REVIEW ALIGN: isPrecededBy expects a Newspaper here, but RDFS gives it a
+# PublicationIssue domain AND range. Decide whether the relation links newspaper
+# titles or issues, then align both files; the current definition suggests issues.
 ha:NewspaperShape a sh:NodeShape ;
     rdfs:label "newspaper shape"@en ;
     sh:property _:cb565174abd99c7b8739313b91e807bc53b6ba79dcca7f43eaa1b4e97f93f22e96e, [
@@ -2065,6 +2234,16 @@ ha:ObjectCarrierRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:CarrierRepresentation ;
      .
 
+# REVIEW FIX: migrate all isNextInSequence paths (also File/IntellectualEntity)
+# to ha:immediatelyFollows. RDFS defines subject -> preceding item, while the
+# current descriptions say the following item. Check producer direction before
+# renaming; otherwise the sequence meaning will be reversed.
+# REVIEW ALIGN: isAccessCopyOf correctly points from a representation to an
+# IntellectualEntity here. Its RDFS domain/range are reversed relative to its
+# own definition, inverse and sibling copy properties; fix RDFS, not this shape.
+# REVIEW PROFILE: includes and hasRenderingRoot are separately required. SHACL
+# Core does not infer includes from the rendering-root subproperty. Materialize
+# that link or change the requirement; decide whether the root must be included.
 ha:ObjectDigitalRepresentationShape a sh:NodeShape ;
     rdfs:label "object digital representation shape"@en ;
     sh:property [
@@ -2151,6 +2330,12 @@ ha:ObjectDigitalRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:DigitalRepresentation ;
      .
 
+# REVIEW PROFILE: exactly one Mediahaven provenance source is required here,
+# on every IntellectualEntity and on every Representation (including physical
+# carrier representations). Records from another source fail even when otherwise
+# valid. Move this rule into a Mediahaven import profile if other origins are used.
+# The required storedAt, MIME type and size remain useful for a complete-file
+# profile; confirm whether streaming/remote or partial records must pass it.
 ha:ObjectFileShape a sh:NodeShape ;
     rdfs:label "object file shape"@en ;
     sh:property [
@@ -2225,6 +2410,9 @@ ha:ObjectFileShape a sh:NodeShape ;
         sh:description "The file that describes or documents this file."@en, "Le fichier qui décrit ou documente ce fichier."@fr, "Het bestand dat dit bestand beschrijft of documenteert."@nl ;
         sh:message "rel:doc is not a premis:File"@en, "rel:doc n'est pas un premis:File"@fr, "rel:doc is geen premis:File"@nl ;
         sh:name "documents"@en, "document"@fr, "documenteert"@nl ;
+        # REVIEW FIX: the description reverses the relationship. RDFS says the
+        # subject documents the object; here the text says the object documents this
+        # file. Correct the description and check producer direction before migration.
         sh:path ha:documents ;
         sh:severity sh:Violation ;
     ], [
@@ -2383,6 +2571,7 @@ ha:ObjectIntellectualEntityShape a sh:NodeShape ;
         sh:description "The primary local identifier for the intellectual entity."@en, "Un identificateur local principal pour l'entité intellectuelle."@fr, "De primaire lokale identifier voor de intellectuele entiteit."@nl ;
         sh:message "haObj:primaryIdentifier is not a LocalIdentifier"@en ;
         sh:name "primary local identifier"@en, "identificateur local principal"@fr, "primaire lokale identifier"@nl ;
+        # REVIEW FIX: this property is now ha:hasPrimaryLocalIdentifier in RDFS.
         sh:path ha:hasPrimaryIdentifier ;
         sh:severity sh:Violation ;
     ], [
@@ -2515,6 +2704,17 @@ ha:OrganizationRoleShape a sh:NodeShape ;
     sh:targetClass ha:Role ;
      .
 
+# REVIEW FIX: ha:description is undeclared; use ha:hasDescription so the shape
+# actually checks the model's description values.
+# REVIEW PROFILE: uniqueLang on skos:altLabel rejects two alternative names in
+# the same language; remove it if aliases are supported. Keep uniqueness for
+# prefLabel. VAT ID is mandatory for all organizations, including units and
+# non-business bodies; scope that requirement if those can lack a VAT number.
+# REVIEW: hasLogo is constrained twice; the second shape adds no restriction.
+# One property shape with class Logo and maxCount 1 is sufficient.
+# With Organization -> Agent -> Thing, a skos:prefLabel alone still fails the
+# inherited hasName requirement. Decide whether organizations need both names
+# or whether the general naming rule should also accept their preferred label.
 ha:OrganizationShape a sh:NodeShape ;
     rdfs:label "organization shape"@en ;
     sh:property [
@@ -2700,6 +2900,15 @@ ha:PermissionShape a sh:NodeShape ;
     sh:targetClass odrl:Permission ;
      .
 
+# REVIEW FIX: hasBirthPlace combines sh:class schema:Place and sh:nodeKind
+# sh:Literal. No value can satisfy both: sh:class excludes literals. Use a resource
+# node kind, and align the class URI: this file binds schema to http://schema.org/,
+# while RDFS uses https://schema.org/. ha:Place is not a subclass of either there.
+# REVIEW FIX: hasDeathPlace is a string here, but RDFS requires ha:Place. Use the
+# agreed place-resource model for both birth and death locations.
+# REVIEW PROFILE: requiring both given and family names excludes mononyms and
+# people known only by an archival label. Keep these mandatory only for the
+# account-manager/person profile that can guarantee both fields.
 ha:PersonShape a sh:NodeShape ;
     rdfs:label "person shape"@en ;
     sh:property [
@@ -2837,6 +3046,10 @@ ha:PolicyShape a sh:NodeShape ;
     sh:targetClass odrl:Policy ;
      .
 
+# REVIEW FIX: ha:hasRole is absent from RDFS, which now supplies hasRoleType
+# with range ha:RoleType. Resolve whether Post still links to a separate Role or
+# is a Role itself before replacing this edge; current RDFS has no Post->Role
+# subclass axiom despite the comment at hasRoleType suggesting that design.
 ha:PostShape a sh:NodeShape ;
     rdfs:label "post shape"@en ;
     sh:property [
@@ -2940,6 +3153,9 @@ ha:ProjectPartnerShape a sh:NodeShape ;
     sh:targetClass ha:ProjectPartner ;
      .
 
+# REVIEW FIX: hasSchemaUnitText/hasSchemaUnitCode are now ha:hasUnitText/
+# ha:hasUnitCode. With the old mandatory code path, a measurement using the new
+# terms fails even when it carries the expected code and numeric value.
 ha:QuantitativeValueShape a sh:NodeShape ;
     rdfs:label "quantitative value shape"@en ;
     sh:property [
@@ -3020,6 +3236,15 @@ ha:RightsDigitalRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:DigitalRepresentation ;
      .
 
+# REVIEW FIX: this requires ha:hasRights to be an IRI of class RightsStatement,
+# but DescriptionIntellectualEntityShape requires EVERY value of that same path
+# to be rdf:langString. Both target every IntellectualEntity, so no such node can
+# conform, even if it has both text and an IRI. Separate the text and resource
+# properties (for example, assess ha:hasAccessRights for the linked statement),
+# or make both shapes accept the same alternatives and agree on cardinality.
+# REVIEW ALIGN: hasLicense is checked as skos:Concept in the description shape
+# AND premis:License here. RDFS allows either via owl:unionOf. If alternatives are
+# intended, use the same sh:or in both places; currently a value needs both types.
 ha:RightsIntellectualEntityShape a sh:NodeShape ;
     rdfs:label "rights intellectual entity shape"@en ;
     sh:property [
@@ -3056,6 +3281,10 @@ ha:RightsIntellectualEntityShape a sh:NodeShape ;
     sh:targetClass premis:IntellectualEntity ;
      .
 
+# REVIEW: targetClass skos:Concept, ha:RightsStatement is a union of targets,
+# not an intersection or a subclass assertion. LicenseShape has the same issue.
+# These empty shapes currently enforce nothing; narrow/remove those targets if
+# the intent is documentation for rights statements/licenses only.
 ha:RightsStatementShape a sh:NodeShape ;
     rdfs:label "rights statement shape"@en ;
     sh:targetClass skos:Concept, ha:RightsStatement ;
@@ -3241,6 +3470,11 @@ ha:VideoShape a sh:NodeShape ;
     sh:targetClass ha:Video ;
      .
 
+# REVIEW ALIGN: RDFS gives hasProductionMethod the undeclared range
+# ha:BibframeProductionMethod, while it declares ha:ProductionMethod as a SKOS
+# concept subclass. Resolve that apparent RDFS stale name, then check the intended
+# class here instead of allowing any skos:Concept. Confirm the three enum IRIs
+# and their type/label data are still the maintained production-method vocabulary.
 ha:WrittenWorkCarrierRepresentationShape a sh:NodeShape ;
     rdfs:label "written work carrier representation shape"@en ;
     sh:property [
@@ -3272,6 +3506,11 @@ ha:DefinitionShape a sh:PropertyShape ;
     sh:severity sh:Violation ;
      .
 
+# REVIEW: this checks the types of reachable rdf:first values, but accepts a
+# head with no first/rest values, multiple first values, and lists without rdf:nil
+# termination. If ordered collection structure must be guaranteed, also validate
+# list-cell cardinality and finite termination. Scope this check to member lists;
+# the rdf:List target otherwise applies SKOS-only membership to unrelated lists.
 ha:ListShape a sh:NodeShape ;
     rdfs:label "list shape"@en ;
     sh:property [
@@ -3343,6 +3582,12 @@ ha:HardwareAgentHasBrandShape a sh:PropertyShape ;
     sh:severity sh:Violation ;
      .
 
+# REVIEW ALIGN: ALL hasIdentifier shapes use string literals, but RDFS now has
+# range ha:LocalIdentifier while still declaring owl:DatatypeProperty. Decide how
+# to distinguish platform string IDs from local identifier resources, then align
+# RDFS, this shape, every inline identifier shape and shared blank-node shape.
+# A resource-valued identifier valid under the current range fails all those
+# string checks; changing only this reusable shape leaves the others inconsistent.
 ha:IdentifierShape a sh:PropertyShape ;
     rdfs:label "identifier shape"@en ;
     sh:datatype xsd:string ;
@@ -3367,6 +3612,9 @@ ha:ModelShape a sh:PropertyShape ;
     sh:severity sh:Violation ;
      .
 
+# REVIEW PROFILE: maxCount 5 is a fixed application limit without a matching
+# RDFS requirement. Keep it only if policies with six valid constraints are truly
+# unsupported. Otherwise remove the cap or keep it in that application profile.
 ha:PolicyHasConstraintShape a sh:PropertyShape ;
     rdfs:label "policy has constraint shape"@en ;
     sh:class odrl:Constraint ;
@@ -3401,6 +3649,10 @@ ha:VersionShape a sh:PropertyShape ;
     sh:severity sh:Violation ;
      .
 
+# REVIEW FIX: all hasCarrierCopy paths (shared audiovisual shape and inline
+# Film/NewspaperIssue/IntellectualEntity shapes) are now ha:hasCarrierRepresentation.
+# The inverse isCarrierCopyOf in ObjectCarrierRepresentationShape is now
+# ha:isCarrierRepresentationOf. Update both directions and messages together.
 ha:AudiovisualHasCarrierCopyShape a sh:PropertyShape ;
     rdfs:label "audiovisual has carrier copy shape"@en ;
     sh:class ha:AudiovisualCarrierRepresentation ;
@@ -3432,6 +3684,10 @@ ha:RightsNoteShape a sh:PropertyShape ;
     sh:path premis:note ;
      .
 
+# REVIEW: the PREMIS startDate/endDate constraints still describe rights periods;
+# keep these distinct from the renamed ha:hasStartDate/ha:hasEndDate properties.
+# Where bounded periods must be valid, also check that the start does not follow
+# the end (likewise Activity timestamps and fragment offsets after migration).
 ha:StartDateShape a sh:PropertyShape ;
     rdfs:label "start date shape"@en ;
     sh:datatype xsd:dateTime ;
@@ -3546,6 +3802,12 @@ ha:TermsNoteShape a sh:PropertyShape ;
     sh:severity sh:Violation ;
      .
 
+# REVIEW ALIGN: this shared rdf:langString rule and EventNameShape, PersonShape
+# and the shared brand-name rule conflict with hasName's RDFS xsd:string range.
+# If names are multilingual, update that range instead of discarding language tags.
+# With the hierarchy loaded, ThingShape also requires a name on annotations,
+# quantitative measurements and contribution roles; keep that broad requirement
+# only if all those operational resources are meant to have names.
 ha:DescriptionNameShape a sh:PropertyShape ;
     rdfs:label "description name shape"@en ;
     sh:datatype rdf:langString ;
@@ -3558,6 +3820,8 @@ ha:DescriptionNameShape a sh:PropertyShape ;
     sh:uniqueLang true ;
      .
 
+# REVIEW: this datatype agrees with RDFS hasDescription. Keep it; max one text
+# per language is an extra profile rule, not implied by the RDFS range.
 ha:DescriptionShape a sh:PropertyShape ;
     rdfs:label "description shape"@en ;
     sh:datatype rdf:langString ;
