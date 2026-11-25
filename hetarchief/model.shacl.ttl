@@ -1119,14 +1119,10 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
-        sh:datatype xsd:string ;
+        sh:class ha:CastMemberEntry ;
         sh:description "The cast members of a TV or theatre production."@en, "Les acteurs d'une production télévisée ou théâtrale."@fr, "De castleden van een tv- of theaterproductie."@nl ;
-        sh:maxCount 1 ;
-        sh:message "ebucore:hasCastMember is not of type string"@en ;
+        sh:message "Each cast member must be a CastMemberEntry."@en ;
         sh:name "castmembers"@en, "les acteurs"@fr, "castleden"@nl ;
-        sh:nodeKind sh:Literal ;
-        # REVIEW FIX: RDFS now links to ha:CastMemberEntry (a Role), not a string.
-        # Use that class and revisit maxCount 1 so a cast can contain multiple entries.
         sh:path ha:hasCastMember ;
         sh:severity sh:Violation ;
     ], _:cb565174abd99c7b8739313b91e807bc53b6ba79dcca7f43eaa1b4e97f93f22e96e, [
@@ -1149,16 +1145,6 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:path ha:hasObjectType ;
         sh:severity sh:Violation ;
     ], _:cb5c17fc754ae0c026196a90219aea37cde57bde5539ccbcb598dfce2f0b40cedbc, [
-        a sh:PropertyShape ;
-        sh:class ha:PerformanceRole ;
-        sh:message "schema:actor is not of class schema:Role"@en, "schema:actor n'est pas de la classe schema:Role"@fr, "schema:actor is niet van de klasse schema:Role"@nl ;
-        # REVIEW ALIGN: this link points to ha:PerformanceRole, while RDFS says
-        # ha:Person. Resolve the role-versus-person model with DescriptionRoleShape;
-        # do not force contribution-role nodes to be people just to satisfy the range.
-        sh:name "actor"@en, "acteur"@fr, "acteur"@nl ;
-        sh:path ha:hasActor ;
-        sh:severity sh:Violation ;
-    ], [
         a sh:PropertyShape ;
         sh:class ha:Place ;
         sh:message "schema:spatialCoverage is not of class schema:Place"@en, "schema:spatialCoverage n'est pas de la classe schema:Place"@fr, "schema:spatialCoverage is niet van de klasse schema:Place"@nl ;
@@ -1373,24 +1359,6 @@ ha:DescriptionRoleShape a sh:NodeShape ;
             ]
         ) ;
         sh:path ha:hasExecutor ;
-        sh:severity sh:Violation ;
-    ], [
-        a sh:PropertyShape ;
-        sh:maxCount 1 ;
-        sh:message "schema:actor is not of class schema:Person"@en, "schema:actor n'est pas de la classe schema:Person"@fr, "schema:actor is niet van de klasse schema:Person"@nl ;
-        sh:name "actor"@en, "acteur"@fr, "acteur"@nl ;
-        sh:or (
-            [
-                sh:class ha:Person ;
-            ]
-            [
-                sh:class ha:Organization ;
-            ]
-            [
-                sh:class ha:Thing ;
-            ]
-        ) ;
-        sh:path ha:hasActor ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
@@ -2834,20 +2802,26 @@ ha:OrganizationalUnitShape a sh:NodeShape ;
     sh:targetClass ha:OrganizationalUnit ;
      .
 
-ha:PerformanceRoleShape a sh:NodeShape ;
-    rdfs:label "performance role shape"@en ;
+ha:CastMemberEntryShape a sh:NodeShape ;
+    rdfs:label "cast member entry shape"@en ;
     sh:property [
+        a sh:PropertyShape ;
+        sh:class ha:Agent ;
+        sh:maxCount 1 ;
+        sh:path rdf:value ;
+    ], [
+        a sh:PropertyShape ;
+        sh:datatype xsd:integer ;
+        sh:path ha:hasPosition ;
+    ], [
         a sh:PropertyShape ;
         sh:datatype xsd:string ;
         sh:maxCount 1 ;
-        sh:message "schema:characterName is missing or not of type string or of class skos:Concept"@en, "schema:charactername est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr, "schema:characterName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
-        sh:minCount 0 ;
-        sh:name "character name"@en, "nom de rôle"@fr, "karaternaam"@nl ;
-        sh:nodeKind sh:Literal ;
+        sh:name "character name"@en, "nom de personnage"@fr, "personagenaam"@nl ;
         sh:path ha:hasCharacterName ;
         sh:severity sh:Violation ;
     ] ;
-    sh:targetClass ha:PerformanceRole ;
+    sh:targetClass ha:CastMemberEntry ;
      .
 
 ha:PermissionShape a sh:NodeShape ;

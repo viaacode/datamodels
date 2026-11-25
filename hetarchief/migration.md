@@ -154,7 +154,7 @@ These rows cover both shape targets and classes allowed as property values. Repl
 | `schema:CreativeWorkSeries` | `ha:Series` | **MAP** | D | — |
 | `schema:Episode` | `ha:Episode` | **MAP** | D | — |
 | `schema:Newspaper` | `ha:Newspaper` | **MAP** | D | — |
-| `schema:PerformanceRole` | `ha:PerformanceRole` | **MAP** | D | - |
+| `schema:PerformanceRole` | `ha:CastMemberEntry` | **MAP** | D | Preserve the cast entry and its performer link (M02). |
 | `schema:Person` | `ha:Person` | **MAP** | D, E, G | — |
 | `schema:Place` | `ha:Place` | **MAP** | D | — |
 | `schema:PostalAddress` | `ha:PostalAddress` | **MAP** | G | — |
@@ -273,7 +273,7 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | --- | --- | --- | --- | --- |
 | `schema:about` | `ha:isAbout` | **MAP** | D | — |
 | `schema:abstract` | `ha:hasAbstract` | **MAP** | D | Preserve language tags; target range now agrees. Undefined extra superproperty still needs cleanup; M07. |
-| `schema:actor` | `ha:hasActor` | **CHANGE** | D | Work-to-performance-role now fits; move the role-to-agent link to rdf:value; M02. |
+| `schema:actor` | `ha:hasCastMember` | **CHANGE** | D | Link the work to the cast entry and move the performer link to `rdf:value` (M02). |
 | `schema:addressCountry` | `ha:hasAddressCountry` | **REVIEW** | G | Preserve country nodes; resolve literal countries to entities; M12. |
 | `schema:addressLocality` | `ha:hasAddressLocality` | **MAP** | G | — |
 | `schema:addressRegion` | `ha:hasAddressRegion` | **MAP** | G | — |
@@ -449,7 +449,7 @@ The following model changes resolve migration findings. The REVIEW and UNMAPPED 
 | Resolved finding | Effect on the plan |
 | --- | --- |
 | The model distinguishes `ha:hasIdentifier`, `ha:hasLocalIdentifier` and `ha:hasPrimaryLocalIdentifier`. | Keep identifier strings and reuse existing local identifier nodes and primary selections (M01). |
-| `ha:hasActor` now ranges over `ha:PerformanceRole`. | Apply the work → performance role → agent transformation in M02; keep cast-string and generic-agent questions separate. |
+| `ha:hasCastMember` ranges over `ha:CastMemberEntry`. | Apply the work → cast entry → performer transformation in M02. |
 | `ha:hasRoleType` accepts `ha:RoleType` resources and `xsd:string`. | Preserve both forms of legacy role names. Organizational posts still need a domain decision (M02). |
 | `ha:hasFormat` now ranges over `ha:FileFormat`, and MIME type no longer inherits that range. | File-format links and MIME strings can migrate directly; intellectual-entity format classifications remain contextual (M03). |
 | Width/height domains now include `premis:File`, and height uses `owl:unionOf`. | Existing measurement-node links can migrate directly; literal dimensions still require known units (M05). |
@@ -482,8 +482,8 @@ The source repeats contribution predicates on two levels: `work → role → age
 
 For a contextual contribution:
 
-1. Preserve the existing role node's identity and map its class to `ha:Role` or, where justified, `ha:PerformanceRole`.
-2. Rename the incoming work predicate to `ha:hasCreator`, `ha:hasContributor`, `ha:hasPublisher`, `ha:hasProducer`, `ha:hasActor` or `ha:hasExecutor`, as appropriate.
+1. Preserve the existing role node's identity and map its class to `ha:Role`, using `ha:CastMemberEntry` for cast credits.
+2. Rename the incoming work predicate to `ha:hasCreator`, `ha:hasContributor`, `ha:hasPublisher`, `ha:hasProducer`, `ha:hasCastMember` or `ha:hasExecutor`, as appropriate.
 3. Replace the role's outgoing `schema:creator`, `schema:contributor`, `schema:publisher`, `schema:producer`, `schema:actor` or `haDes:executor` agent link with `rdf:value`. The `ha:Role` restriction now calls for an `rdf:value` pointing to an `ha:Agent` (`hetarchief/model.rdfs.ttl:560`).
 4. Preserve `schema:characterName` as `ha:hasCharacterName`. Map `schema:roleName` to `ha:hasRoleType` and preserve both `xsd:string` literals and concept IRIs. Retype `haDes:RoleName` concepts as `ha:RoleType` (`hetarchief/model.rdfs.ttl:1548`).
 
@@ -506,7 +506,7 @@ For example, subject to the role decisions below, this preserves a creator assig
 
 **REVIEW:** the source permits generic `schema:Thing` resources for role agents, owners and license distributors. The role restriction and the target ranges for `ha:hasOwner` and `ha:hasLicenseDistributor` use `ha:Agent`. `ha:Person` and `ha:Organization` qualify through the class hierarchy. Generic things still need an agreed agent-typing policy. Preserve the source links for unresolved agents.
 
-The `schema:actor` work-to-role link now fits `ha:hasActor`, whose range is `ha:PerformanceRole` (`hetarchief/model.rdfs.ttl:729`). Map the role class accordingly, move its outgoing actor-agent link to `rdf:value`, and preserve character and role context. This resolves the actor-range blocker without flattening the role. **REVIEW:** source `ebucore:hasCastMember` remains a string, while the target range is `ha:CastMemberEntry`; preserve the textual credit until a reliable structured entry can be produced.
+Map the `schema:actor` work-to-role link to `ha:hasCastMember` and type the role as `ha:CastMemberEntry`. Preserve cast order as `ha:hasPosition`, the character name as `ha:hasCharacterName`, and the performer link as `rdf:value`. **REVIEW:** preserve source `ebucore:hasCastMember` text until a reliable structured entry can be produced.
 
 For organizational functions, `org:Role` means an abstract SKOS concept (`ontologies/org.rdfs.ttl:45`). Preserve concept IRIs and `skos:prefLabel` when mapping them to `ha:RoleType`. **REVIEW:** `org:role` links a post to that concept, while `ha:hasRoleType` has domain `ha:Role`. The post hierarchy uses `rdf:subClassOf` (`hetarchief/model.rdfs.ttl:483`). Confirm how the property should apply to posts, including vacant posts, given the `ha:Role` agent restriction.
 

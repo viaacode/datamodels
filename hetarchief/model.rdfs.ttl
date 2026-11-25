@@ -154,7 +154,8 @@ ha:CarrierRepresentation a rdfs:Class ;
 ha:CastMemberEntry a rdfs:Class ;
     rdfs:label "cast member entry"@en, "castvermelding"@nl, "entrée de distribution artistique"@fr ;
     skos:definition "An entry identifying a performer, its position in the cast listing and, where applicable, the character portrayed in an archived work."@en, "Een vermelding van een uitvoerder, diens plaats in de vermelding en, indien van toepassing, het personage dat die in een gearchiveerd werk vertolkt."@nl, "Une entrée identifiant un interprète, sa position dans la liste de distribution et, le cas échéant, le personnage qu’il incarne dans une œuvre archivée."@fr ;
-    rdfs:seeAlso ebucore:Cast ;
+    rdfs:isDefinedBy ha: ;
+    rdfs:seeAlso ebucore:Cast, schema:PerformanceRole ;
     rdfs:subClassOf ha:Role ;
      .
 
@@ -457,15 +458,6 @@ ha:OrganizationalUnit a rdfs:Class, owl:Class ;
     rdfs:subClassOf ha:Organization ;
      .
 
-# ! Keep this or reduce to Role? 
-ha:PerformanceRole a rdfs:Class ;
-    rdfs:label "performance role"@en, "vertolkingsrol"@nl, "rôle d’interprétation"@fr ;
-    skos:definition "A role describing a performer’s participation in a work, including the character portrayed where applicable."@en, "Een rol die de deelname van een uitvoerder aan een werk beschrijft, met indien van toepassing het vertolkte personage."@nl, "Un rôle décrivant la participation d’un interprète à une œuvre, y compris le personnage incarné le cas échéant."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso schema:PerformanceRole ;
-    rdfs:subClassOf ha:Role ;
-     .
-
 ha:Person a rdfs:Class ;
     rdfs:label "person"@en, "persoon"@nl, "personne"@fr ;
     skos:definition "A real or fictional human individual described in relation to archival content, organizations or services."@en, "Een werkelijk of fictief menselijk individu dat wordt beschreven in relatie tot archiefinhoud, organisaties of diensten."@nl, "Un individu humain réel ou fictif décrit en lien avec des contenus archivistiques, des organisations ou des services."@fr ;
@@ -727,16 +719,6 @@ ha:fail a owl:NamedIndividual, skos:Concept ;
     skos:prefLabel "fail" ;
      .
 
-# ! Can we replace this by Cast? local SHACL uses ha:PerformanceRole
-ha:hasActor a rdf:Property ;
-    rdfs:label "has actor"@en, "heeft acteur"@nl, "a pour acteur"@fr ;
-    skos:definition "Identifies an actor participating in a work, directly or through a performance role describing the participation."@en, "Identificeert een acteur die aan een werk deelneemt, rechtstreeks of via een vertolkingsrol die de deelname beschrijft."@nl, "Identifie un acteur participant à une œuvre, directement ou au moyen d’un rôle d’interprétation décrivant sa participation."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:range ha:PerformanceRole ;
-    rdfs:seeAlso schema:actor ;
-     .
-
 ha:hasAddressCountry a rdf:Property ;
     rdfs:domain ha:PostalAddress ;
     rdfs:range ha:Country ;
@@ -926,9 +908,11 @@ ha:hasSubtitling a rdf:Property, owl:ObjectProperty ;
 
 ha:hasCastMember a rdf:Property ;
     rdfs:label "has cast member"@en, "heeft castlid"@nl, "a pour membre de distribution"@fr ;
-    skos:definition "Records a performer in the cast of an archived work, as a textual credit or a structured cast entry."@en, "Vermeldt een uitvoerder in de cast van een gearchiveerd werk, als tekstuele vermelding of gestructureerde castvermelding."@nl, "Mentionne un interprète dans la distribution d’une œuvre archivée, sous forme de crédit textuel ou d’entrée structurée."@fr ;
+    skos:definition "Links an archived work to a cast member entry."@en, "Verbindt een gearchiveerd werk met een castvermelding."@nl, "Relie une œuvre archivée à une entrée de distribution artistique."@fr ;
+    rdfs:isDefinedBy ha: ;
     rdfs:range ha:CastMemberEntry ;
-    rdfs:seeAlso ebucore:hasCastMember ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:seeAlso ebucore:hasCastMember, schema:actor ;
      .
 
 ha:hasChapterNumber a rdf:Property ;
@@ -942,8 +926,8 @@ ha:hasChapterNumber a rdf:Property ;
 
 ha:hasCharacterName a rdf:Property ;
     rdfs:label "has character name"@en, "heeft personagenaam"@nl, "a pour nom de personnage"@fr ;
-    skos:definition "Provides the name of the character portrayed in a performance role."@en, "Geeft de naam van het personage dat in een vertolkingsrol wordt gespeeld."@nl, "Fournit le nom du personnage incarné dans un rôle d’interprétation."@fr ;
-    rdfs:domain ha:PerformanceRole ;
+    skos:definition "Provides the name of the character portrayed by the performer identified in a cast member entry."@en, "Geeft de naam van het personage dat wordt vertolkt door de uitvoerder in een castvermelding."@nl, "Fournit le nom du personnage incarné par l’interprète indiqué dans une entrée de distribution artistique."@fr ;
+    rdfs:domain ha:CastMemberEntry ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
     rdfs:seeAlso schema:characterName ;
