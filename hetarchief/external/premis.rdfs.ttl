@@ -210,7 +210,6 @@ premis:rightsStatus a owl:ObjectProperty ;
     rdfs:domain premis:Object ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:RightsStatus ;
-    rdfs:subPropertyOf ha:hasRights ;
      .
 
 premis:size a owl:DatatypeProperty ;

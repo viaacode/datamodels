@@ -1,6 +1,6 @@
 # Migration legacy ontologies to the new hetarchief model
 
-Prepared from the workspace sources on 24 November 2026 and revised against the current RDFS model on 25 November 2026.
+Prepared from the workspace sources on 24 November 2026 and revised against the current RDFS, SHACL and SKOS files on 26 November 2026.
 
 Most used terms have a clear destination in the consolidated `ha:` namespace, while PREMIS, PROV and ODRL terms largely retain their external IRIs. A complete migration cannot be implemented as a namespace replacement: several properties change their value structure or meaning, and some target declarations conflict with the source shapes. The tables below distinguish direct mappings, required transformations and unresolved decisions.
 
@@ -20,7 +20,7 @@ The five source files contain **90 distinct classes and 211 distinct properties*
 
 Destinations were checked against `hetarchief/model.rdfs.ttl` and its three imported extracts: `hetarchief/external/premis.rdfs.ttl`, `hetarchief/external/prov.rdfs.ttl` and `hetarchief/external/odrl.rdfs.ttl`. Legacy RDFS definitions in the five source directories and `ontologies/` clarify meaning where necessary; selected local SKOS files clarify enumerated values. Terms defined only in legacy RDFS, but never used by the source shapes, are outside this crosswalk. In particular, no `haEvt:` classes or properties occur in the event shapes.
 
-The crosswalk uses the RDFS model to determine target mappings. The draft `hetarchief/model.shacl.ttl` needs alignment before migration acceptance. Production data profiling is part of the execution plan.
+The crosswalk uses the RDFS model and the target vocabularies in `hetarchief/terms/` to determine target mappings. The draft `hetarchief/model.shacl.ttl` needs alignment before migration acceptance. Regenerate `hetarchief/model.linkml.yaml` after that alignment. The current export still gives `hasProductionMethod` the older `BibframeProductionMethod` range. Production data profiling is part of the execution plan.
 
 An explicit `owl:equivalentClass` or `owl:equivalentProperty` is stronger evidence than `rdfs:seeAlso`. The latter helps identify a candidate but does not assert equivalence. Local renames were checked against definitions and comments. RDFS domain/range statements imply types; they are not validation constraints. Conflicting declarations below therefore identify both semantic risks and decisions needed before a migration validation profile can be written.
 
@@ -32,9 +32,8 @@ An explicit `owl:equivalentClass` or `owl:equivalentProperty` is stronger eviden
 | Direct property | Active third-person `lowerCamelCase` | `ha:creates` |
 | Existing reverse property | Configured reverse name in `lowerCamelCase` | `ha:isCreatedBy` |
 | Possession or part relation | Use `has…` or the configured reverse expression | `ha:hasName`, `ha:hasPart`, `ha:isPartOf` |
-| Named shape | `PascalCase` | `ha:PersonShape`, `ha:PersonHasNameShape` |
-| Scheme, or ontology | `lowerCamelCase` | `ha:contentRange`, `ha:descriptionModel` |
-| Concept | `kebab-case` | `ha:available-for-consultation` |
+| Named shape or ontology | `PascalCase` | `ha:PersonShape`, `ha:PersonHasNameShape` |
+| Scheme or Concept | `kebab-case` for new model terms. Preserve existing SKOS concept IRIs. | `ha:available-for-consultation` |
 | Boolean property | Express what `true` affirms. Use `is…` for a state, `has…` for presence, or `can…` for a capability. | `ha:isPublic`, `ha:hasMissingAudioReels`, `ha:canBeReused` |
 
 - Apply configured acronyms, irregular verbs, per-URI overrides, and names for existing inverse pairs. 
@@ -67,6 +66,7 @@ Prefixes identify exact IRIs; spelling, case, `http`/`https` and trailing separa
 | `haObj` | `https://data.hetarchief.be/ns/object/` |
 | `haOrg` | `https://data.hetarchief.be/ns/organization/` |
 | `haRig` | `https://data.hetarchief.be/ns/rights/` |
+| `haTer` | `https://data.hetarchief.be/ns/terms/` |
 | `mh` | `https://data.hetarchief.be/ns/mediahaven/` |
 | `schema` | `https://schema.org/` |
 | `premis` | `http://www.loc.gov/premis/rdf/v3/` |
@@ -217,7 +217,7 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | --- | --- | --- | --- | --- |
 | `haDes:aspectRatio` | `ha:hasAspectRatio` | **MAP** | D | — |
 | `haDes:audioNoiseReduction` | `ha:hasAudioNoiseReduction` | **MAP** | D | — |
-| `haDes:audioRecordingSpeed` | `ha:hasAudioRecordingSpeed` | **REVIEW** | D | Preserve numeric measurement links after normalization. The variable-speed concept still needs a representation (M05). |
+| `haDes:audioRecordingSpeed` | `ha:hasAudioRecordingSpeed` | **REVIEW** | D | Numeric links map directly with the updated speed vocabulary. The variable-speed link still needs a representation (M05). |
 | `haDes:broadcastingOrganization` | `ha:hasBroadcastingOrganization` | **MAP** | D | — |
 | `haDes:chapterNumber` | `ha:hasChapterNumber` | **MAP** | D | — |
 | `haDes:coloringType` | `ha:hasFilmColorType` | **MAP** | D | — |
@@ -292,7 +292,7 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | Source term | Target term / action | Status | Used in | Notes |
 | --- | --- | --- | --- | --- |
 | `schema:about` | `ha:isAbout` | **MAP** | D | — |
-| `schema:abstract` | `ha:hasAbstract` | **MAP** | D | Preserve language tags; target range now agrees. Undefined extra superproperty still needs cleanup; M07. |
+| `schema:abstract` | `ha:hasAbstract` | **MAP** | D | Preserve language tags. The target uses `ha:hasDescription` as its superproperty (M07). |
 | `schema:actor` | `ha:hasCastMember` | **CHANGE** | D | Link the work to the cast entry and move the performer link to `rdf:value` (M02). |
 | `schema:addressCountry` | `ha:hasAddressCountry` | **REVIEW** | G | Preserve country nodes; resolve literal countries to entities; M12. |
 | `schema:addressLocality` | `ha:hasAddressLocality` | **MAP** | G | — |
@@ -311,7 +311,7 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `schema:containedInPlace` | `ha:isContainedInPlace` | **MAP** | D | — |
 | `schema:contributor` | `ha:hasContributor` | **CHANGE** | D | On a work, rename; on a role, move the agent link to rdf:value; M02. |
 | `schema:copyrightHolder` | `ha:hasRightsHolder` | **REVIEW** | D | Target ha:Agent excludes unidentified generic things unless classified; M02. |
-| `schema:copyrightNotice` | No exact target (`ha:hasRights` is a broader candidate) | **UNMAPPED** | D | No dedicated notice predicate as no longer relevant. Replaced by broader rights classes. |
+| `schema:copyrightNotice` | No exact target | **UNMAPPED** | D | No dedicated notice predicate as no longer relevant. Replaced by broader rights classes. |
 | `schema:copyrightYear` | `ha:hasCopyrightDate` | **UNMAPPED** | D | No longer relevant. |
 | `schema:creator` | `ha:hasCreator` | **REVIEW** | D, O | Rename work-to-role links and use `rdf:value` for role-to-agent links (M02). The fixity domain now fits, but its source string still needs agent resolution (M13). |
 | `schema:creditText` | `ha:hasCreditText` | **MAP** | D | Preserve language tags; target range now agrees; M07. |
@@ -338,15 +338,15 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `schema:isPartOf` | `ha:isPartOf` | **REVIEW** | D | Most individual-to-collection links fit; source also uses collection subjects; M10. |
 | `schema:issueNumber` | `ha:hasIssueNumber` | **REVIEW** | D | Source permits strings; target superproperty ha:hasPosition has an integer range; M10. |
 | `schema:keywords` | `ha:hasKeywords` | **MAP** | D | Preserve language tags; target range now agrees; M07. |
-| `schema:license` | `ha:hasLicense` | **MAP** | D | — |
-| `schema:locationCreated` | `ha:hasCreationPlace` | **REVIEW** | D | Source uses a newspaper series; target domain is an intellectual entity; M10/M12. |
+| `schema:license` | `ha:hasReuseCondition` | **MAP** | D | — |
+| `schema:locationCreated` | `ha:hasCreationPlace` | **MAP** | D | The collection domain covers newspapers. Preserve the place IRI and apply the `ha:Place` class mapping (M12). |
 | `schema:logo` | `ha:hasLogo` | **MAP** | G | — |
 | `schema:maintainer` | `ha:hasMaintainer` | **MAP** | D | — |
 | `schema:material` | `ha:hasMaterial` | **MAP** | D | — |
 | `schema:materialExtent` | `ha:hasMaterialExtent` | **MAP** | D | — |
 | `schema:mentions` | `ha:mentions` | **MAP** | D | — |
 | `schema:model` | `ha:hasModel` | **MAP** | E | Preserve `xsd:string` values on hardware and software agents (M13). |
-| `schema:name` | `ha:hasName` | **REVIEW** | D, E, G | Language-tagged names map directly; plain-string country names still need a language policy; M07. |
+| `schema:name` | `ha:hasName` | **CHANGE** | D, E, G | Preserve language-tagged names. Tag plain-string country names with `nl` (M07). |
 | `schema:position` | `ha:hasPosition` | **MAP** | D | Preserve `xsd:integer`. The collection domain covers the mapped series (M10). |
 | `schema:postOfficeBoxNumber` | `ha:hasPostOfficeBoxNumber` | **MAP** | G | — |
 | `schema:postalCode` | `ha:hasPostalCode` | **MAP** | G | — |
@@ -377,15 +377,15 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `bf:edition` | `ha:hasEdition` | **MAP** | D | Preserve the concept IRI. Check publication-issue typing (M10/M11). |
 | `bf:issuance` | `ha:hasIssuance` | **REVIEW** | D | Source means frequency; target means mode of issuance; M11. |
 | `bf:precededBy` | `ha:isPrecededBy` | **REVIEW** | D | Source links newspaper series; target links publication issues; M10. |
-| `bf:productionMethod` | `ha:hasProductionMethod` | **REVIEW** | D | Target range ha:BibframeProductionMethod is undefined; M11. |
+| `bf:productionMethod` | `ha:hasProductionMethod` | **MAP** | D | Preserve the concept IRI. The vocabulary supplies the required `ha:ProductionMethod` type (M11). |
 | `bf:succeededBy` | `ha:isSucceededBy` | **MAP** | D | — |
 | `bf:supplement` | `ha:hasSupplement` | **MAP** | D | — |
 | `bf:supplementTo` | `ha:isSupplementTo` | **MAP** | D | — |
 | `dct:available` | `ha:hasAvailabilityDate` | **CHANGE** | D | Convert `xsd:dateTime` to `edtf:EDTF` where time and offset can be preserved (M06). |
 | `dct:description` | `ha:hasDescription` | **MAP** | G | — |
 | `dct:format` | `ha:hasFormat` on files; class derivation on intellectual entities | **REVIEW** | D, O | File-format links now map directly; intellectual-entity strings still need classification; M03. |
-| `dct:license` | `ha:hasLicense` | **REVIEW** | R | Digital-representation usage conflicts with target domain; M17. |
-| `dct:rights` | `ha:hasRights` | **CHANGE** | D, R | Preserve both text and statement IRIs; do not conflate them; M14/M17. |
+| `dct:license` | `ha:hasReuseCondition` | **REVIEW** | R | Digital-representation usage conflicts with target domain; M17. |
+| `dct:rights` | `ha:hasRightsStatement` (statement IRIs) | **MAP** | D, R | Preserve both values when present. See M14/M17. |
 | `foaf:homepage` | `ha:hasHomepage` | **CHANGE** | G | Source IRI becomes an xsd:anyURI literal if following the declared range; M07. |
 
 ### EBUCore, ordering and preservation relationship properties
@@ -445,7 +445,7 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `premis:medium` | `premis:medium` | **KEEP** | O | Preserve the external predicate. |
 | `premis:note` | `premis:note` | **KEEP** | E, R | Preserve the external predicate. |
 | `premis:originalName` | `premis:originalName` | **KEEP** | O | Preserve the external predicate. |
-| `premis:outcome` | `premis:outcome` | **KEEP** | E | Preserve the external predicate. |
+| `premis:outcome` | `premis:outcome` | **KEEP** | E | Preserve the predicate and map its three outcome values. |
 | `premis:outcomeNote` | `premis:outcomeNote` | **KEEP** | E | Preserve the external predicate. |
 | `premis:relationship` | `premis:relationship` | **KEEP** | O | Generic relationship remains generic; do not invent a specific relation subtype. |
 | `premis:rightsStatus` | `premis:rightsStatus` | **KEEP** | R | Preserve status nodes; public-domain class/value distinction needs review; M17. |
@@ -476,15 +476,17 @@ The following model changes resolve migration findings. The REVIEW and UNMAPPED 
 | `ha:hasRegionY` now references `ebucore:regionDelimY`. | Apply the same nonnegative-pixel conversion as for X (M05). |
 | `ha:hasMeasurementValue` is a one-way subproperty of `rdf:value`. | No reverse measurement inference is declared; retain context-specific conversions (M05). |
 | Creation, publication, availability, birth and death dates now range over `edtf:EDTF`. | Preserve date precision and uncertainty during datatype normalization. Creation and publication still have domain gaps (M06). |
-| The nine text properties in M07 range over `rdf:langString`, and `ha:hasCoverage` has a union range for language-tagged text and resources. | Preserve language tags on temporal coverage and place IRIs on spatial coverage. Untagged names, synopsis and undefined `ha:description` still need attention (M07/M12). |
+| The nine text properties in M07 range over `rdf:langString`. `ha:hasAbstract` uses `ha:hasDescription` as its superproperty, and `ha:hasCoverage` accepts language-tagged text and resources. | Preserve language tags on descriptive text and temporal coverage, and keep spatial coverage IRIs. Tag plain-string country names with `nl`. Synopsis typing and the imported PREMIS note still need attention (M07/M12). |
 | Captioning and subtitling domains now include files and image reels. | The subject-domain blocker is resolved; caption purpose and object classification remain open (M08). |
 | `ha:hasCaptionText` now uses the declared class `premis:File`. | The undefined class reference is resolved. Caption text on digital representations still needs a domain decision (M08). |
 | `ha:hasTranscript` now has domain `ha:DigitalRepresentation`. | Keep transcript text on the representation that carries it (M08). |
 | `ha:hasPosition` now includes collections in its domain, and `ha:hasEdition` accepts concept objects. | Preserve series positions and edition concept IRIs. The newspaper-issue hierarchy still needs a decision for validation (M10/M11). |
-| `ha:hasBirthPlace` now ranges over `ha:Place`. | Use the same local class as for death places. Source strings still need place resolution (M12). |
+| `ha:hasProductionMethod` ranges over `ha:ProductionMethod`, and the three vocabulary entries have that type. | Keep production-method concept IRIs on their carrier representations (M11). |
+| `ha:hasBirthPlace` ranges over `ha:Place`, and `ha:hasCreationPlace` covers collections and intellectual entities. | Preserve the creation-place links on newspapers. Birth and death place strings still need resolution (M12). |
 | `ha:hasModel` has a domain covering hardware and software, and `ha:hasCreator` includes `premis:Fixity`. | Preserve model strings on both agent types. Fixity creator strings still require agent resolution (M13). |
 | The inverse access-copy domain/range agree with source direction. | Preserve representation → intellectual entity edges (M16). |
-| `ha:extended` and `ha:limited` now have type `ha:MetadataScope`. | Map these controlled values directly; other ODRL typing questions remain open (M17). |
+| `ha:metadataScope` and `ha:contentScope` are declared left operands and appear in the target allowed list. `ha:extended` and `ha:limited` have type `ha:MetadataScope`. | Rewrite operands in instance data and reusable permissions. Correct the target right-operand class check before validation (M17). |
+| `ha:fail`, `ha:success` and `ha:warning` have type `premis:OutcomeStatus`. | Map the event outcome IRIs directly and align the draft SHACL allowed list. |
 
 ### M01 — Separate literal identifiers, local identifier nodes and primary identifiers
 
@@ -574,7 +576,7 @@ The target width/height domain unions now include `premis:File`, and `ha:hasHeig
 
 For region coordinates, validate that values are nonnegative and measured in pixels before emitting `ha:hasRegionX` / `ha:hasRegionY`. The Y property's corrected `seeAlso` now points to the actual source `ebucore:regionDelimY`; both coordinates use the same conversion checks.
 
-For audio speed, preserve existing `/id/rotational-speed/` IRIs. The supporting SKOS file uses `http://schema.org/QualitativeValue`, whereas the shape requires `https://schema.org/QuantitativeValue`. Numeric entries carry usable value/unit facts and can be normalized deliberately. **REVIEW:** the `variable` concept has no numeric measurement, so do not invent a float or treat it as an ordinary quantitative value.
+For audio speed, preserve existing `/id/rotational-speed/` IRIs. The target vocabulary types the ten numeric concepts as `ha:QuantitativeValue` and carries their existing float values and units under `ha:hasMeasurementValue`, `ha:hasUnitCode` and `ha:hasUnitText`. Map links to those entries directly using the target vocabulary. **REVIEW:** the `variable` concept remains a `skos:Concept` without a numeric measurement. The draft shape includes it in `sh:in` but also requires `ha:QuantitativeValue`. Preserve links to `variable` in the legacy graph pending a decision on its representation and shape.
 
 Finally, `ha:hasMeasurementValue` is declared `rdfs:subPropertyOf rdf:value`, without a global equivalence (`hetarchief/model.rdfs.ttl:1600`). This permits measurement values to entail generic RDF values without turning unrelated RDF values into measurements. Keep `rdf:value` on identifiers, checksums, storage locations and role-agent links; map only quantitative-value contexts to `ha:hasMeasurementValue`.
 
@@ -601,11 +603,11 @@ Most source `schema:name` values, organization `skos:prefLabel` / `skos:altLabel
 
 For organization labels, map `skos:prefLabel` to `ha:hasName` and `skos:altLabel` to `ha:hasAlternateName` in that context, preserving every language-tagged value. This follows their naming function and compatible target ranges; the target does not assert a global equivalence with the SKOS predicates. Keep SKOS labels on concepts, especially `ha:RoleType`, rather than renaming all occurrences globally.
 
-**REVIEW:** source country names are `xsd:string` (`organizations/organizations.shacl.ttl:975`), so those `schema:name` values do not directly fit the new `ha:hasName` range. Add a language tag only when supported by evidence, or agree another representation; never guess the language from the country's identity. Other observed untagged names need the same check.
+Preserve the lexical form of each plain-string country name and add the default language tag `nl` when mapping it to `ha:hasName`. Preserve any existing language tag. Align `ha:CountryShape` with `rdf:langString` before validating the converted names. Review other untagged names separately.
 
 Map temporal coverage directly and preserve its language tags. `ha:hasCoverage` now has a range of `rdf:langString` or `ha:Thing`, which also accommodates spatial coverage resources (M12).
 
-**REVIEW** remains for `ha:hasSynopsis`, which ranges over `xsd:string` while its superproperty `ha:hasDescription` ranges over `rdf:langString`. The abstract and description ranges now agree. `ha:hasAbstract` and imported PREMIS notes still reference the undefined `ha:description`, which needs a definition or removal from the model.
+**REVIEW** remains for `ha:hasSynopsis`, which ranges over `xsd:string` while its superproperty `ha:hasDescription` ranges over `rdf:langString`. `ha:hasAbstract` now uses only `ha:hasDescription` as its superproperty. The imported `premis:note` still references the undefined `ha:description`.
 
 `schema:inLanguage` strings become `ha:hasLanguage` with `xsd:language`; validate the lexical form and normalize only with evidence. The target domain is an intellectual entity, while source usage also covers digital representations and open captions. Resolve that domain mismatch.
 
@@ -643,7 +645,7 @@ For `edm:isNextInSequence → ha:immediatelyFollows`, preserve direction: **the 
 
 ### M11 — Resolve production method, edition and issuance semantics
 
-The `bf:productionMethod → ha:hasProductionMethod` candidate is clear, but its target range is undefined `ha:BibframeProductionMethod`. The declared concept class is `ha:ProductionMethod` (`hetarchief/model.rdfs.ttl:1502` and `hetarchief/model.rdfs.ttl:1896`). **REVIEW:** settle the range, then retain the existing production-method concept IRIs and add the agreed target type.
+Map `bf:productionMethod` to `ha:hasProductionMethod` on carrier representations. Keep the existing `handwritten`, `typed` and `printed` concept IRIs. `hetarchief/terms/production-method.skos.ttl` declares all three as `ha:ProductionMethod`, matching the RDFS range. The draft shape allows these same IRIs and checks `skos:Concept`. Use `ha:ProductionMethod` for the acceptance class check.
 
 Map `bf:edition` to `ha:hasEdition` and preserve the edition-type concept IRIs. The target retains `skos:Concept` as the range and has removed the datatype-property declaration. Apply the publication-issue typing check in M10.
 
@@ -653,7 +655,7 @@ Source `bf:issuance` describes publication frequency, such as daily or weekly (`
 
 Source birth/death places are strings, whereas target properties expect place resources. Address country can be a string or a `schema:Country` resource. Keep existing resource identities and apply the class mappings; resolve strings through an approved place/country authority or a documented local-node policy, preserving their original text. Do not merge ambiguous place names merely because they match lexically.
 
-Birth, death and creation places now share the `ha:Place` range. Map `schema:spatial` links directly and preserve each place IRI, since `ha:Place` is a subclass of `ha:Thing` and the `ha:hasCoverage` union range includes `ha:Thing`. **REVIEW** remains for resolving source birth/death place strings and for the creation-place domain on newspaper series (M10).
+Birth, death and creation places now share the `ha:Place` range. Map `schema:spatial` links directly and preserve each place IRI, since `ha:Place` is a subclass of `ha:Thing` and the `ha:hasCoverage` union range includes `ha:Thing`. Map `schema:locationCreated` directly on newspapers because `ha:Newspaper` is a subclass of `ha:Series`, which is a subclass of `ha:Collection`. Update the draft newspaper shape from `ha:hasCreationLocation` to `ha:hasCreationPlace`. **REVIEW** remains for resolving source birth and death place strings.
 
 ### M13 — Preserve generic provenance and hardware/software agent distinctions
 
@@ -667,9 +669,9 @@ Map `schema:model` directly to `ha:hasModel` for both hardware and software agen
 
 ### M14 — Preserve copyright notices separately from general rights text
 
-No dedicated target equivalent of `schema:copyrightNotice` was identified. `ha:hasRights` is a possible broader container, but combining notices with general source `dct:rights` text loses the distinction. **UNMAPPED:** preserve notices under their original predicate pending a decision to keep an external notice term, add a dedicated target term, or explicitly accept a broader mapping with provenance.
+No dedicated target equivalent of `schema:copyrightNotice` was identified. Combining notices with general source `dct:rights` text loses the distinction. **UNMAPPED:** preserve notices under their original predicate pending a decision to keep an external notice term, add a dedicated target term, or explicitly accept a broader mapping with provenance.
 
-`dct:rights → ha:hasRights` itself is supported. In D it carries text; in R it points to a rights-statement resource. Preserve the RDF node kind and both values when both exist. Do not stringify statement IRIs or replace free text with an arbitrary controlled statement.
+Keep language-tagged text under `dct:rights` in D and map rights-statement IRIs to `ha:hasRightsStatement` in R. Preserve both values when both exist.
 
 ### M15 — Review request-form links versus templates
 
@@ -681,26 +683,26 @@ Map `haObj:isAccessCopyOf` directly to `ha:isAccessCopyOf`: digital representati
 
 ### M17 — Migrate rights values as well as predicates
 
-Keep the ODRL graph structure: policy → permission/prohibition → action/constraint, constraint → left operand/operator/right operand, and policy → target. Keeping ODRL predicates does not mean keeping all operand IRIs. Apply the exact value crosswalk in the next section, including occurrences in reusable permission vocabularies.
+Keep the ODRL graph structure: policy → permission/prohibition → action/constraint, constraint → left operand/operator/right operand, and policy → target. Apply the value crosswalk below, including occurrences in reusable permissions. If data was migrated against the previous draft, replace `ha:metadataScopeOperand` and `ha:contentScopeOperand` with `ha:metadataScope` and `ha:contentScope` in those left-operand positions.
 
-`ha:extended` and `ha:limited` now have the declared type `ha:MetadataScope`, resolving their target typing blocker. Map both controlled-value IRIs directly. Source `sh:in` still permits action concepts as right operands while its `sh:class` alternatives only cover user groups and metadata/content scopes. **REVIEW:** settle those allowed-value/type combinations and the target ODRL extract's datatype-property declaration for IRI-valued `odrl:rightOperand`; do not carry over inconsistent constraints blindly.
+`ha:extended` and `ha:limited` now have the declared type `ha:MetadataScope`. Map both controlled-value IRIs directly and correct `ha:MetadataRScope` to `ha:MetadataScope` in the draft `ha:ConstraintShape`. The right-operand list still includes action concepts while the class alternatives cover user groups and metadata and content scopes. **REVIEW:** settle those allowed-value and type combinations and the target ODRL extract's datatype-property declaration for IRI-valued `odrl:rightOperand`.
 
 The source uses `copyrightStatus:pub` in `sh:class`; the target explicitly equates it with class `ha:PublicDomainStatus`. That supports a class mapping, but does not make a target class IRI a rights-status instance. **REVIEW:** distinguish existing status nodes typed with the source class from direct vocabulary-value objects. A direct public-domain value may require a status node typed `ha:PublicDomainStatus`; do not emit `premis:rightsStatus ha:PublicDomainStatus` as a shortcut.
 
-Retype `dct:RightsStatement` resources to `ha:RightsStatement`, preserving their IRIs and SKOS data. Keep `premis:License`, `premis:RightsStatus`, `premis:basis`, `premis:note`, `premis:startDate` and `premis:endDate`. The target `premis:basis` ranges over `premis:RightsBasis`, but the supplied definitions do not connect `ha:RightsStatement` or `premis:License` to that superclass; establish an agreed hierarchy or typing policy. The target `ha:hasLicense` has an intellectual-entity domain, although source `dct:license` also occurs on digital representations. Do not move a representation's license to its intellectual entity automatically.
+Retype `dct:RightsStatement` resources to `ha:RightsStatement`, preserving their IRIs and SKOS data. Keep `premis:License`, `premis:RightsStatus`, `premis:basis`, `premis:note`, `premis:startDate` and `premis:endDate`. The target `premis:basis` ranges over `premis:RightsBasis`, but the supplied definitions do not connect `ha:RightsStatement` or `premis:License` to that superclass; establish an agreed hierarchy or typing policy. The target `ha:hasReuseCondition` has an intellectual-entity domain, although source `dct:license` also occurs on digital representations. Do not move a representation's license to its intellectual entity automatically.
 
-The target makes `ha:hasLicense` equivalent to `ha:hasAccessRights`; do not use that declaration as a reason to collapse license information, access policies and rights-status records during data conversion.
+The target makes `ha:hasReuseCondition` equivalent to `ha:hasAccessRights`; do not use that declaration as a reason to collapse license information, access policies and rights-status records during data conversion.
 
 ## Controlled-value crosswalk
 
-These values occur directly in the source shapes' active `sh:in` lists. They are data resources, not new class/property counts. Apply their mappings in object positions and wherever those same vocabulary resources are described or referenced; do not perform a blanket namespace replacement on unrelated instance IRIs.
+The first two tables cover values from the source shapes' active `sh:in` lists. Apply their mappings in object positions and wherever the vocabulary resources are described or referenced. The supporting vocabulary table covers additional changes found in `hetarchief/terms/`.
 
 ### Rights operands, actions and event outcomes
 
 | Source value | Target value | Status / note |
 | --- | --- | --- |
-| `haRig:metadataRange` | `ha:metadataScopeOperand` | MAP; left operand, distinct from the scope class. |
-| `haRig:contentRange` | `ha:contentScopeOperand` | MAP; left operand, distinct from the scope class. |
+| `haRig:metadataRange` | `ha:metadataScope` | MAP; `odrl:LeftOperand`. |
+| `haRig:contentRange` | `ha:contentScope` | MAP; `odrl:LeftOperand`. |
 | `haRig:extended` | `ha:extended` | MAP; target now types it as `ha:MetadataScope`; M17. |
 | `haRig:limited` | `ha:limited` | MAP; target now types it as `ha:MetadataScope`; M17. |
 | `haRig:full` | `ha:full` | MAP. |
@@ -717,25 +719,39 @@ These values occur directly in the source shapes' active `sh:in` lists. They are
 | `odrl:recipient` | `odrl:recipient` | KEEP; imported left operand. |
 | `odrl:dateTime` | `odrl:dateTime` | KEEP; imported left operand. |
 | `odrl:absoluteTemporalPosition` | `odrl:absoluteTemporalPosition` | KEEP; imported left operand. |
-| `evtOutcome:fai` | `ha:fail` | CHANGE; target does not explicitly type it as `premis:OutcomeStatus`; add agreed type or resolve vocabulary typing. |
-| `evtOutcome:suc` | `ha:success` | CHANGE; same outcome-status typing issue. |
-| `evtOutcome:war` | `ha:warning` | CHANGE; same outcome-status typing issue. |
+| `evtOutcome:fai` | `ha:fail` | MAP; typed as `premis:OutcomeStatus`. |
+| `evtOutcome:suc` | `ha:success` | MAP; typed as `premis:OutcomeStatus`. |
+| `evtOutcome:war` | `ha:warning` | MAP; typed as `premis:OutcomeStatus`. |
 
-The three event outcome candidates have matching target `seeAlso` references and definitions. Preserve their intended `premis:OutcomeStatus` role, rather than changing `premis:outcome` to a literal success flag.
+The draft event shape still accepts `ha:failed`, `ha:succeeded` and `ha:warnings`. Change its `premis:outcome` allowed list and messages to use `ha:fail`, `ha:success` and `ha:warning` before validating migrated events.
 
 ### Other enumerations and stable concept identities
 
 | Source values | Migration action | Status / note |
 | --- | --- | --- |
 | `https://data.hetarchief.be/id/iec60094-type/` with local names `I`, `II`, `III`, `IV` | Keep all four IRIs under `ha:hasIEC60094Type`. | KEEP; retain SKOS labels and scheme. |
-| `https://data.hetarchief.be/id/rotational-speed/` with local names `variable`, `16-rpm`, `19-cm-s`, `2.375-cm-s`, `33-1-3-rpm`, `38-cm-s`, `4.75-cm-s`, `72-cm-s`, `78-rpm`, `90-rpm`, `9.5-cm-s` | Keep all eleven concept IRIs. Map numeric speed links to `ha:hasAudioRecordingSpeed` after normalizing their measurements. Preserve links to `variable` in the legacy graph pending a representation decision. | REVIEW (M05). |
+| `https://data.hetarchief.be/id/rotational-speed/` with local names `variable`, `16-rpm`, `19-cm-s`, `2.375-cm-s`, `33-1-3-rpm`, `38-cm-s`, `4.75-cm-s`, `72-cm-s`, `78-rpm`, `90-rpm`, `9.5-cm-s` | Keep all eleven concept IRIs. Map numeric links to `ha:hasAudioRecordingSpeed` with the supplied vocabulary types and measurements. | MAP for numeric links. REVIEW for links to `variable` (M05). |
 | `"DBX"`, `"Dolby A"`, `"Dolby B"`, `"Dolby C"`, `"Dolby D"` | Keep the five string values under `ha:hasAudioNoiseReduction`. | KEEP. |
 | `https://data.hetarchief.be/id/edition-type/` with local names `morning-edition`, `afternoon-edition`, `evening-edition`, `weekend-edition` | Keep all four concept IRIs under `ha:hasEdition`. | MAP (M10/M11). |
-| `https://data.hetarchief.be/id/production-method/` with local names `handwritten`, `typed`, `printed` | Keep all three concept IRIs; add the agreed production-method type. | REVIEW; undefined target range; M11. |
+| `https://data.hetarchief.be/id/production-method/` with local names `handwritten`, `typed`, `printed` | Keep all three IRIs under `ha:hasProductionMethod` and load their `ha:ProductionMethod` types from the target vocabulary. | MAP (M11). |
 | `https://data.hetarchief.be/id/color-type/` with local names `BandW`, `Color`, `Colorized`, `Composite`, `Tinted`, `Toned`, `UnknownColorType` | Keep all seven IRIs under `ha:hasFilmColorType`. | KEEP. |
 | The nine `dct:format` strings | Use the context-specific treatment in M03. | REVIEW; do not turn them into file-format IRIs. |
 
-Other instance/concept IRIs remain stable unless explicitly listed above. For example, retain `/id/motivation/`, `/id/permission/`, license, rights-statement, organization-preference, carrier and file-format concept identities. Apply the class/property mappings to their descriptions where relevant, including `haRig:Motivation → ha:Motivation` on motivation concepts and renamed operands inside permission definitions. Preserve SKOS labels, definitions, scheme memberships and links on these resources. This preserves supporting vocabulary data without expanding the shape-derived class/property inventory into a full vocabulary migration audit.
+### Supporting vocabularies in `hetarchief/terms/`
+
+Load the target SKOS files for migration and validation. They preserve concept and scheme IRIs, labels, definitions and scheme memberships. Apply the following changes to any copies of the legacy vocabulary descriptions in the migrated graph.
+
+| Target file | Changes to legacy vocabulary descriptions |
+| --- | --- |
+| `description-roles.skos.ttl`, `organization-roles.skos.ttl` | Replace `haDes:RoleName` and `org:Role` types with `ha:RoleType` (M02). |
+| `formats.skos.ttl` | Replace `dct:FileFormat` with `ha:FileFormat` and `https://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType` with `ha:hasMimeType`. Map `haTer:higherPriority` to `ha:hasLowerPriorityThan` and `haTer:lowerPriority` to `ha:hasHigherPriorityThan`. Keep the subject and object in place. The legacy definitions describe the object's priority, and the target names describe the subject's priority (M03). |
+| `motivation.skos.ttl`, `rights-statement.skos.ttl` | Replace `haRig:Motivation` and `dct:RightsStatement` types with `ha:Motivation` and `ha:RightsStatement`, respectively (M17). |
+| `organization-logos.skos.ttl` | Replace the superclass `haOrg:Logo` with `ha:Logo` on `rdfs:subClassOf` statements. |
+| `organization-types.skos.ttl` | Add `ha:OrganizationType` alongside `skos:Concept`. |
+| `permission.skos.ttl` | Apply the rights operand and action mappings above. Also map the legacy `haRig:education` recipient to `ha:educational-public`. Preserve permission IRIs and the ODRL constraint structure. |
+| `production-method.skos.ttl` | Add `ha:ProductionMethod` alongside `skos:Concept` (M11). |
+| `reuse-licenses.skos.ttl` | Replace `schema:position` with `ha:hasPosition`, preserving the integer ordering. Review the target domain before reasoning over these ranks, since it covers intellectual entities, collections and cast entries. |
+| `rotational-speed.skos.ttl` | Replace `http://schema.org/QualitativeValue` with `ha:QuantitativeValue` on numeric concepts. Replace `http://schema.org/value`, `http://schema.org/unitCode` and `http://schema.org/unitText` with `ha:hasMeasurementValue`, `ha:hasUnitCode` and `ha:hasUnitText`, respectively (M05). |
 
 ## Execution plan
 
@@ -743,7 +759,7 @@ Other instance/concept IRIs remain stable unless explicitly listed above. For ex
 
 Assign the open role, format-classification, fragment-offset conversion and date-domain decisions to the model owner. Rights-value decisions also need the rights-model owner, and URI-template and URL decisions need application-owner input. Use actual data examples to resolve the remaining REVIEW and UNMAPPED contexts. Record the accepted destination, condition, conversion, retained provenance and validation expectation for each open context.
 
-Identifier mappings, descriptive role names, series positions, season numbers, transcripts, coverage and both hardware and software model strings can proceed under their stated rules. Prioritize post and agent typing (M02/M13), intellectual-entity format classification (M03), unresolved fragment-offset conversions and media-file typing exceptions (M04), date domains and datatype alignment (M06), and the remaining text and caption exceptions (M07/M08).
+Identifier mappings, descriptive role names, series positions, season numbers, transcripts, coverage and both hardware and software model strings can proceed under their stated rules. Prioritize post and agent typing (M02/M13), intellectual-entity format classification (M03), unresolved fragment-offset conversions and media-file typing exceptions (M04), variable recording speed (M05), date domains and datatype alignment (M06), and the remaining text and caption exceptions (M07/M08).
 
 ### 2. Profile the source dataset and preserve a reproducible baseline
 
@@ -753,24 +769,25 @@ Do not assume every source-shaped resource conforms: note existing violations se
 
 ### 3. Apply deterministic class and predicate rules into a new graph
 
-Use an explicit IRI map, with subject-type/context guards where specified. Preserve resource identities, blank-node structure where possible, inverse directions and relation subtypes. Apply KEEP rules as well as MAP rules so externally named data is not dropped. Apply controlled-value rewrites throughout relevant data and supporting vocabulary descriptions.
+Use an explicit IRI map, with subject-type/context guards where specified. Preserve resource identities, blank-node structure where possible, inverse directions and relation subtypes. Apply KEEP rules as well as MAP rules so externally named data is not dropped. Apply controlled-value rewrites throughout relevant data and load the target SKOS graphs with their existing concept and scheme IRIs.
 
 Apply the fragment class mappings and media-file typing in M04 explicitly so they are available to SHACL Core. Use the approved conversion rules for datatypes and context-specific measurement values. Deduplicate identical output triples while recording many-to-one merges. Leave source graphs unchanged and keep unresolved statements in an identifiable legacy/provenance graph.
 
 ### 4. Run the approved structural and literal conversions
 
-Handle roles, measurements, media offsets, dates, place and country resolution, and caption models using the applicable M-rules. Reuse the existing local identifier nodes. Use deterministic identifiers for new nodes so reruns preserve their identities. Record original lexical values, language tags, predicates and conversion reasons where representation changes.
+Handle roles, measurements, media offsets, dates, place and country resolution, country-name language tags, and caption models using the applicable M-rules. Reuse the existing local identifier nodes. Use deterministic identifiers for new nodes so reruns preserve their identities. Record original lexical values, language tags, predicates and conversion reasons where representation changes.
 
 A rule that cannot establish its preconditions must produce an exception record containing the source subject, predicate, object, source graph, issue ID and reason. It must not discard the statement, fabricate precision, or silently substitute a generic value.
 
 ### 5. Validate coverage, semantics and application behavior
 
-Write migration-specific acceptance checks from the agreed mapping decisions and source requirements. Align the draft target SHACL checks before using them for acceptance, including the local identifier paths in M01, both forms of role names in M02 and the date datatypes in M06.
+Write migration-specific acceptance checks from the agreed mapping decisions and source requirements. Align the draft target SHACL checks before using them for acceptance. Check the local identifier paths (M01), both forms of role names (M02), variable recording speed (M05), date datatypes (M06), country-name datatype (M07), production-method class (M11), creation-place path (M12), metadata scope class (M17), and the allowed event outcome IRIs.
 
 | Check | Acceptance criterion |
 | --- | --- |
 | Inventory coverage | Every observed source class/property/value is mapped, explicitly kept, or reported as unresolved; no unclassified drops. |
-| Target existence | Every emitted target class/property is declared in the model, one of its supplied imports, or an explicitly approved foundational/extension vocabulary. Flag undefined ontology references such as `ha:BibframeProductionMethod` and `ha:description` during validation. |
+| Target existence | Every emitted target class/property is declared in the model, one of its supplied imports, or an explicitly approved foundational/extension vocabulary. Flag undefined references such as `ha:description` in the PREMIS extract and `ha:MetadataRScope` in the draft shape. |
+| Controlled vocabularies | Load the target SKOS graphs and verify concept and scheme IRIs, labels and memberships. Check vocabulary types, format-priority directions, license ranks, numeric speed values and units, and the three event outcome types and IRIs. |
 | Value preservation | All multilingual texts, date precision, identifier lexical forms, checksum values, measurement units and status notes survive or have an explicit loss/exception decision. |
 | Context rules | Validate work and role chains, fixity attribution, and model strings on both agent types. Verify that generic generated resources and Mediahaven provenance retain their original scope. |
 | Relations | Structural versus generic membership and inclusion remain distinct; inverse-copy edges remain consistent; sequence edges retain their direction. |
@@ -790,4 +807,4 @@ Keep a mapping-version identifier, baseline counts, conversion/exception totals 
 
 All five source shape files, the target RDFS model and its three supplied external extracts were parsed as Turtle. The crosswalk contains one entry for each of the **90 classes and 211 properties** found through active shape statements. The controlled-value crosswalk and M03 account for all **64 distinct values** from active source `sh:in` lists. Direct MAP/CHANGE/KEEP destinations were checked for declaration in the inspected target definitions, with the explicitly retained foundational RDF/SKOS terms allowed.
 
-The 25 November revision updates the crosswalk and execution plan against the current RDFS declarations. The marked REVIEW and UNMAPPED cases identify exceptions to automatic migration. Production profiling and validation belong to the execution phase.
+For the 26 November revision, the target SHACL graph and all 18 target SKOS graphs were parsed as Turtle. The documented vocabulary rewrites reproduce the target SKOS graphs from their legacy counterparts, including the original concept and scheme IRIs. The marked REVIEW and UNMAPPED cases identify exceptions to automatic migration. Production profiling and validation belong to the execution phase.

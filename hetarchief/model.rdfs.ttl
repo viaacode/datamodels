@@ -686,8 +686,8 @@ ha:anonymous a owl:NamedIndividual, skos:Concept ;
     skos:prefLabel "anonymous"@en, "anonyme"@fr, "anoniem"@nl ;
      .
 
-ha:contentScopeOperand a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ; # ! was ha:contentRangeOperand
-    rdfs:label "content scope operand"@en, "Plage de contenu"@fr, "Inhoudsbereik"@nl ;
+ha:contentScope a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ; # ! was ha:contentRange
+    rdfs:label "content scope"@en, "Plage de contenu"@fr, "Inhoudsbereik"@nl ;
     rdfs:isDefinedBy ha: ;
     rdfs:comment "The intended reach of the object's media content. For example, whether it is about the full content or only a part."@en, "La portée prévue du contenu multimédia de l'objet du.Par exemple, qu'il s'agisse du contenu complet ou seulement une pièce."@fr, "Het beoogde bereik van de mediainhoud van het object. Bijvoorbeeld, of het over de volledige inhoud gaat of slechts een deel."@nl ;
     skos:prefLabel "Content scope"@en, "Plage de contenu"@fr, "Inhoudsbereik"@nl ;
@@ -712,7 +712,7 @@ ha:hasExecutingSoftware a rdf:Property ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe> ;
      .
 
-ha:fail a owl:NamedIndividual, skos:Concept ;
+ha:fail a owl:NamedIndividual, skos:Concept, premis:OutcomeStatus ;
     skos:definition "The event did not succeed in producing the intended result."@en ;
     rdfs:label "fail"@en ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome/fai> ;
@@ -996,7 +996,7 @@ ha:hasCreationDate a rdf:Property ;
      .
 
 ha:hasCreationPlace a rdf:Property ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain [ owl:unionOf (premis:IntellectualEntity ha:Collection)] ;
     rdfs:range ha:Place ;
     rdfs:label "has creation place"@en, "heeft creatieplaats"@nl, "a pour lieu de création"@fr ;
     skos:definition "Identifies the place where a work was created, which may differ from the place depicted."@en, "Identificeert de plaats waar een werk is gemaakt, die kan verschillen van de afgebeelde plaats."@nl, "Identifie le lieu de création d’une œuvre, qui peut différer du lieu représenté."@fr ;
@@ -1193,20 +1193,18 @@ ha:hasLanguage a rdf:Property ;
     rdfs:seeAlso schema:inLanguage ;
      .
 
-ha:hasLicense a rdf:Property ;
-    rdfs:label "has licence"@en, "heeft licentie"@nl, "a pour licence"@fr ;
-    skos:definition "Identifies a licence or licensing document stating permissions for use of an archival resource."@en, "Identificeert een licentie of licentiedocument met toestemmingen voor het gebruik van een archiefbron."@nl, "Identifie une licence ou un document de licence précisant les autorisations d’utilisation d’une ressource archivistique."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:range [
+ha:hasReuseCondition a rdf:Property ; # ! was ha:hasLicense
+    rdfs:label "has reuse condition"@en, "heeft hergebruikvoorwaarde"@nl, "a pour condition de réutilisation"@fr ;
+    skos:definition "Identifies a licence or other legal document that specifies the conditions under which an archival resource may be reused."@en, "Identificeert een licentie of ander juridisch document dat bepaalt onder welke voorwaarden een archiefbron mag worden hergebruikt."@nl, "Identifie une licence ou un autre document juridique qui précise les conditions dans lesquelles une ressource archivistique peut être réutilisée."@fr ;
+    rdfs:domain [
         owl:unionOf (
-            ha:Thing
-            skos:Concept
+            premis:IntellectualEntity
+            ha:DigitalRepresentation
         ) ;
     ] ;
-    rdfs:seeAlso dct:license, schema:license ;
-    rdfs:subPropertyOf ha:hasRights ;
-    owl:equivalentProperty ha:hasAccessRights ;
+    rdfs:isDefinedBy ha: ;
+    rdfs:range premis:License ;
+    rdfs:seeAlso dct:license, schema:license, dct:accessRights ;
      .
 
 ha:hasLicenseDistributor a rdf:Property ;
@@ -1488,7 +1486,7 @@ ha:hasProductionMethod a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:CarrierRepresentation ;
     rdfs:label "has production method"@en, "heeft productiemethode"@nl, "a pour méthode de production"@fr ;
     skos:definition "Identifies the process used to produce a resource or its physical representation."@en, "Identificeert het proces waarmee een bron of haar fysieke representatie is vervaardigd."@nl, "Identifie le procédé utilisé pour produire une ressource ou sa représentation physique."@fr ;
-    rdfs:range ha:BibframeProductionMethod ;
+    rdfs:range ha:ProductionMethod ;
     rdfs:seeAlso bibframe:productionMethod ;
      .
 
@@ -1654,6 +1652,7 @@ ha:hasStreetAddress a rdf:Property ;
 ha:hasSynopsis a rdf:Property ;
     rdfs:label "has synopsis"@en, "heeft synopsis"@nl, "a pour synopsis"@fr ;
     skos:definition "Provides a concise account of the narrative or content of an archival work."@en, "Geeft een beknopte beschrijving van het verhaal of de inhoud van een archiefwerk."@nl, "Fournit un aperçu concis du récit ou du contenu d’une œuvre archivée."@fr ;
+    rdfs:domain premis:IntellectualEntity ;
     rdfs:range rdf:langString ;
     rdfs:seeAlso ebucore:synopsis ;
     rdfs:subPropertyOf ha:hasDescription ;
@@ -1838,11 +1837,11 @@ ha:mentions a rdf:Property ;
     rdfs:seeAlso schema:mentions ;
      .
 
-ha:metadataScopeOperand a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ; # ! was metadataRangeOperand
-    rdfs:label "metadata scope operand"@en, "Gamme de métadonnées"@fr, "Metadatabereik"@nl ;
+ha:metadataScope a owl:NamedIndividual, skos:Concept, odrl:LeftOperand ; # ! was metadataRange
+    rdfs:label "metadata scope"@en, "Gamme de métadonnées"@fr, "Metadatabereik"@nl ;
     rdfs:isDefinedBy ha: ;
     skos:definition "The intended reach of the object's metadata. For example, whether it is about the full set of metadata or only a part."@en, "La portée prévue des métadonnées de l'objet.Par exemple, qu'il s'agisse de l'ensemble complet de métadonnées ou seulement une pièce."@fr, "Het beoogde bereik van de metadata van het object. Bijvoorbeeld, of het over de volledige set aan metadata gaat of slechts een deel."@nl ;
-    skos:prefLabel "Metadata range"@en, "Gamme de métadonnées"@fr, "Metadatabereik"@nl ;
+    skos:prefLabel "Metadata scope"@en, "Gamme de métadonnées"@fr, "Metadatabereik"@nl ;
      .
 
 ha:none a owl:NamedIndividual, skos:Concept ;
@@ -1852,13 +1851,13 @@ ha:none a owl:NamedIndividual, skos:Concept ;
     skos:prefLabel "none"@en, "aucun"@fr, "geen"@nl ;
      .
 
-ha:success a owl:NamedIndividual, skos:Concept ;
+ha:success a owl:NamedIndividual, skos:Concept, premis:OutcomeStatus ;
     rdfs:label "success"@en ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome/suc> ;
     skos:prefLabel "success" ;
      .
 
-ha:warning a owl:NamedIndividual, skos:Concept ;
+ha:warning a owl:NamedIndividual, skos:Concept, premis:OutcomeStatus ;
     rdfs:label "warning"@en ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome/war> ;
     ha:hasAuthoritativeLabel "warning" ;
@@ -1901,7 +1900,7 @@ ha:hasAbstract a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:range rdf:langString ;
     rdfs:seeAlso dct:abstract, schema:abstract ;
-    rdfs:subPropertyOf ha:description, ha:hasDescription ;
+    rdfs:subPropertyOf ha:hasDescription ;
      .
 
 ha:hasAccessCopy a rdf:Property ; # ! Change to hasAccessRepresentation?
@@ -1912,14 +1911,6 @@ ha:hasAccessCopy a rdf:Property ; # ! Change to hasAccessRepresentation?
     rdfs:isDefinedBy ha: ;
     rdfs:subPropertyOf ha:isRepresentedBy ;
     owl:inverseOf ha:isAccessCopyOf ;
-     .
-
-ha:hasAccessRights a rdf:Property ;
-    rdfs:label "has access conditions"@en, "heeft toegangsvoorwaarden"@nl, "a pour conditions d’accès"@fr ;
-    skos:definition "States who may access an archival resource and under which conditions."@en, "Geeft aan wie toegang tot een archiefbron mag krijgen en onder welke voorwaarden."@nl, "Indique qui peut accéder à une ressource archivistique et à quelles conditions."@fr ;
-    rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso dct:accessRights ;
-    rdfs:subPropertyOf ha:hasRights ;
      .
 
 ha:hasAccountManager a rdf:Property ;
@@ -2473,8 +2464,8 @@ ha:hasCoverage a rdf:Property ;
 ha:hasDescription a rdf:Property, owl:DatatypeProperty ;
     rdfs:label "has description"@en, "heeft beschrijving"@nl, "a pour description"@fr ;
     skos:definition "Provides a textual account of an archival resource’s content or characteristics."@en, "Geeft een tekstuele beschrijving van de inhoud of kenmerken van een archiefbron."@nl, "Fournit une description textuelle du contenu ou des caractéristiques d’une ressource archivistique."@fr ;
-    rdfs:domain ha:Thing ;
     rdfs:isDefinedBy ha: ;
+    rdfs:domain premis:IntellectualEntity ;
     rdfs:range rdf:langString ;
     rdfs:seeAlso dc:description, dct:description, ebucore:description, ma:description, schema:description ;
      .
@@ -2522,10 +2513,12 @@ ha:hasDate a rdf:Property ;
     rdfs:seeAlso dc:date, dct:date ;
      .
 
-ha:hasRights a rdf:Property ;
-    rdfs:label "has rights information"@en, "heeft rechteninformatie"@nl, "a pour informations sur les droits"@fr ;
-    skos:definition "Provides or identifies information about rights and use conditions applicable to an archival resource."@en, "Geeft of identificeert informatie over rechten en gebruiksvoorwaarden die op een archiefbron van toepassing zijn."@nl, "Fournit ou identifie des informations sur les droits et les conditions d’utilisation applicables à une ressource archivistique."@fr ;
+ha:hasRightsStatement a rdf:Property ;
+    rdfs:label "has rights statement"@en, "heeft rechtenverklaring"@nl, "a pour déclaration de droits"@fr ;
+    skos:definition "Links an intellectual entity to a statement describing its intellectual property rights, permissions or access conditions."@en, "Verbindt een intellectuele entiteit met een verklaring die de intellectuele-eigendomsrechten, toestemmingen of toegangsvoorwaarden voor die entiteit beschrijft."@nl, "Relie une entité intellectuelle à une déclaration décrivant les droits de propriété intellectuelle, les autorisations ou les conditions d’accès applicables à cette entité."@fr ;
     rdfs:isDefinedBy ha: ;
+    rdfs:domain premis:IntellectualEntity ;
+    rdfs:range ha:RightsStatement ;
     rdfs:seeAlso dc:rights, dct:rights ;
      .
 

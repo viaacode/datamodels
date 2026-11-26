@@ -508,8 +508,8 @@ ha:ConstraintShape a sh:NodeShape ;
     ], [
         sh:in (
             odrl:recipient
-            ha:metadataScopeOperand
-            ha:contentScopeOperand
+            ha:metadataScope
+            ha:contentScope
             odrl:dateTime
             odrl:absoluteTemporalPosition
         ) ;
@@ -1069,14 +1069,14 @@ ha:DescriptionIntellectualEntityShape a sh:NodeShape ;
         sh:message "dct:rights is not of type string"@en, "dct:rights n'est pas de type string"@fr, "dct:rights is niet van het type string"@nl ;
         sh:name "rights information"@en, "informations sur les droits"@fr, "rechteninformatie"@nl ;
         sh:nodeKind sh:Literal ;
-        sh:path ha:hasRights ;
+        sh:path dct:rights ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
         sh:class skos:Concept ;
-        sh:message "schema:license is not of class skos:Concept"@en, "schema:license n'est pas de la classe skos:Concept"@fr, "schema:license is niet van de klasse skos:Concept"@nl ;
-        sh:name "license"@en, "licence"@fr, "licentie"@nl ;
-        sh:path ha:hasLicense ;
+        sh:message "ha:hasReuseCondition is not of class skos:Concept"@en, "ha:hasReuseCondition n'est pas de la classe skos:Concept"@fr, "ha:hasReuseCondition is niet van de klasse skos:Concept"@nl ;
+        sh:name "condition for reuse"@en, "condition de réutilisation"@fr, "hergebruikvoorwaarde"@nl ;
+        sh:path ha:hasReuseCondition ;
         sh:severity sh:Violation ;
     ], [
         a sh:PropertyShape ;
@@ -3146,7 +3146,7 @@ ha:RightsDigitalRepresentationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:name "condition for reuse"@en, "condition de réutilisation"@fr, "hergebruikvoorwaarde"@nl ;
         sh:nodeKind sh:IRI ;
-        sh:path ha:hasLicense ;
+        sh:path ha:hasReuseCondition ;
     ], [
         sh:class odrl:Policy ;
         sh:description "The access policy of this digital representation that consists of permissions and restrictions."@en, "La politique d'accès de cette représentation numérique qui se compose d'autorisations et de restrictions."@fr, "Het ontsluitingsbeleid van deze digitale representatie die bestaat uit permissies en restricties."@nl ;
@@ -3166,13 +3166,7 @@ ha:RightsDigitalRepresentationShape a sh:NodeShape ;
     sh:targetClass ha:DigitalRepresentation ;
      .
 
-# REVIEW FIX: this requires ha:hasRights to be an IRI of class RightsStatement,
-# but DescriptionIntellectualEntityShape requires EVERY value of that same path
-# to be rdf:langString. Both target every IntellectualEntity, so no such node can
-# conform, even if it has both text and an IRI. Separate the text and resource
-# properties (for example, assess ha:hasAccessRights for the linked statement),
-# or make both shapes accept the same alternatives and agree on cardinality.
-# REVIEW ALIGN: hasLicense is checked as skos:Concept in the description shape
+# REVIEW ALIGN: hasReuseCondition is checked as skos:Concept in the description shape
 # AND premis:License here. RDFS allows either via owl:unionOf. If alternatives are
 # intended, use the same sh:or in both places; currently a value needs both types.
 ha:RightsIntellectualEntityShape a sh:NodeShape ;
@@ -3184,14 +3178,14 @@ ha:RightsIntellectualEntityShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:name "rights statement"@en, "déclaration des droits"@fr, "rechtenverklaring"@nl ;
         sh:nodeKind sh:IRI ;
-        sh:path ha:hasRights ;
+        sh:path ha:hasRightsStatement ;
     ], [
         sh:class premis:License ;
         sh:description "The condition(s) for reusing this intellectual entity."@en, "La(les) condition(s) de réutilisation de cette entité intellectuelle."@fr, "De voorwaarde(n) om deze intellectuele entiteit te hergebruiken."@nl ;
         sh:maxCount 1 ;
         sh:name "condition for reuse"@en, "condition de réutilisation"@fr, "hergebruikvoorwaarde"@nl ;
         sh:nodeKind sh:IRI ;
-        sh:path ha:hasLicense ;
+        sh:path ha:hasReuseCondition ;
     ], [
         sh:description "The rights status of this intellectual entity."@en, "Le statut des droits de cette entité intellectuelle."@fr, "De rechtenstatus van deze intellectuele entiteit."@nl ;
         sh:maxCount 3 ;
