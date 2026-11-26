@@ -171,6 +171,7 @@ ha:Collection a rdfs:Class ;
     skos:definition "A group of archival resources brought together and described as a whole."@en, "Een groep archiefbronnen die wordt samengebracht en als geheel wordt beschreven."@nl, "Un ensemble de ressources archivistiques réunies et décrites comme un tout."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:Collection ;
+    rdfs:subClassOf ha:Thing ;
      .
 
 ha:ContactPoint a rdfs:Class ;
@@ -199,6 +200,7 @@ ha:Country a rdfs:Class ;
     skos:definition "A country associated with an address or geographic description in the archive."@en, "Een land dat bij een adres of geografische beschrijving in het archief hoort."@nl, "Un pays associé à une adresse ou à une description géographique dans les archives."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:Country ;
+    rdfs:subClassOf ha:Place ;
      .
 
 ha:Season a rdfs:Class ; #! was CreativeWorkSeason
@@ -988,7 +990,7 @@ ha:hasRightsHolder a rdf:Property ;
 ha:hasCreationDate a rdf:Property ;
     rdfs:label "has creation date"@en, "heeft creatiedatum"@nl, "a pour date de création"@fr ;
     skos:definition "Records when an archival resource, representation or metadata record was created."@en, "Legt vast wanneer een archiefbron, representatie of metadatarecord is gemaakt."@nl, "Consigne la date de création d’une ressource archivistique, d’une représentation ou d’une notice de métadonnées."@fr ;
-    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:DigitalRepresentation ) ] ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:DigitalRepresentation ha:MediahavenFragment premis:File ) ] ;
     rdfs:range edtf:EDTF ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:dateCreated, dct:created ;
@@ -1080,7 +1082,7 @@ ha:hasEndOffset a rdf:Property ; # ! was schema:endTime
     skos:definition "Records the temporal end position of a media fragment in seconds relative to the start of its source media."@en, "Legt de temporele eindpositie van een mediafragment vast in seconden ten opzichte van het begin van de bronmedia."@nl, "Consigne la position temporelle de fin d’un fragment de média en secondes par rapport au début du média source."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:endOffset ;
-    rdfs:range xsd:integer .
+    rdfs:range xsd:decimal .
 
 ha:hasExecutor a rdf:Property ;
     rdfs:label "has performer"@en, "heeft uitvoerder"@nl, "a pour interprète"@fr ;
@@ -1157,21 +1159,21 @@ ha:hasInstrument a rdf:Property ;
     rdfs:seeAlso schema:instrument ;
      .
 
-# TODO: fix definition to frequency
 ha:hasIssuance a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:PublicationIssue ;
-    rdfs:label "has mode of issuance"@en, "heeft publicatiewijze"@nl, "a pour mode de parution"@fr ;
-    skos:definition "Classifies how a resource is issued, updated and intended to continue or terminate."@en, "Classificeert hoe een bron verschijnt, wordt bijgewerkt en bedoeld is voort te duren of te eindigen."@nl, "Classe le mode de parution et de mise à jour d’une ressource ainsi que sa continuité ou sa fin prévue."@fr ;
+    rdfs:label "has frequency of issuance"@en ,"a fréquence d'émission"@fr ,"heeft uitgavefrequentie"@nl ;
+    skos:definition "Indicates how frequent an issue is issued, e.g. twice a day, daily, weekly etc."@en , "Indique la fréquence de parution d'un journal, par ex. deux fois par jour, quotidiennement, hebdomadairement, etc."@fr , "Geeft aan hoe vaak een uitgave verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc."@nl ;
     rdfs:range ha:Issuance ;
     rdfs:seeAlso bibframe:issuance ;
      .
 
 ha:hasIssueNumber a rdf:Property ;
     rdfs:domain ha:PublicationIssue ;
+    rdfs:range xsd:string ;
     rdfs:label "has issue number"@en, "heeft afleveringsnummer"@nl, "a pour numéro de parution"@fr ;
     skos:definition "Provides the designation identifying an issue within a serial publication, which may be numeric or textual."@en, "Geeft de numerieke of tekstuele aanduiding waarmee een aflevering binnen een seriële publicatie wordt geïdentificeerd."@nl, "Fournit la désignation numérique ou textuelle identifiant un numéro au sein d’une publication en série."@fr ;
     rdfs:seeAlso schema:issueNumber, <http://purl.org/ontology/bibo/issue> ;
-    rdfs:subPropertyOf ha:hasPosition ;
+    rdfs:subPropertyOf ha:hasIdentifier ;
      .
 
 ha:hasKeywords a rdf:Property ;
@@ -1476,7 +1478,12 @@ ha:hasPrimarySite a rdf:Property, owl:ObjectProperty ;
 
 ha:hasProducer a rdf:Property ;
     rdfs:domain premis:IntellectualEntity ;
-    rdfs:range ha:Role ;
+    rdfs:range [
+        owl:unionOf (
+            ha:Agent
+            ha:Role
+        ) ;
+    ] ;
     rdfs:label "has producer"@en, "heeft producent"@nl, "a pour producteur"@fr ;
     skos:definition "Identifies the person or organization producing a work, directly or through a role describing the production responsibility."@en, "Identificeert de persoon of organisatie die een werk produceert, rechtstreeks of via een rol die de productieverantwoordelijkheid beschrijft."@nl, "Identifie la personne ou l’organisation qui produit une œuvre, directement ou au moyen d’un rôle décrivant la responsabilité de production."@fr ;
     rdfs:seeAlso schema:producer ;
@@ -1493,7 +1500,7 @@ ha:hasProductionMethod a rdf:Property, owl:ObjectProperty ;
 ha:hasPublicationDate a rdf:Property ;
     rdfs:label "has first publication date"@en, "heeft eerste publicatiedatum"@nl, "a pour date de première publication"@fr ;
     skos:definition "Records when an archived work was first published or broadcasted."@en, "Legt vast wanneer een gearchiveerd werk voor het eerst is gepubliceerd of uitgezonden."@nl, "Consigne la date de première publication ou diffusion d’une œuvre archivée."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:DigitalRepresentation) ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:datePublished, dct:issued ;
     rdfs:range edtf:EDTF ;
@@ -1639,7 +1646,7 @@ ha:hasStartOffset a rdf:Property ; # ! was schema:startTime
     skos:definition "Records the temporal start position of a media fragment in seconds relative to the start of its source media."@en, "Legt de temporele beginpositie van een mediafragment vast in seconden ten opzichte van het begin van de bronmedia."@nl, "Consigne la position temporelle de début d’un fragment de média en secondes par rapport au début du média source."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:startOffset ;
-    rdfs:range xsd:integer .
+    rdfs:range xsd:decimal .
 
 ha:hasStreetAddress a rdf:Property ;
     rdfs:domain ha:PostalAddress ;
@@ -2206,8 +2213,8 @@ ha:isPostIn a rdf:Property, owl:ObjectProperty ;
      .
 
 ha:isPrecededBy a rdf:Property, owl:ObjectProperty ;
-    rdfs:domain ha:PublicationIssue ;
-    rdfs:range ha:PublicationIssue ;
+    rdfs:domain ha:Newspaper ;
+    rdfs:range ha:Newspaper ;
     rdfs:label "is preceded by"@en, "wordt voorafgegaan door"@nl, "est précédé de"@fr ;
     skos:definition "Identifies a publication or work that precedes the described resource chronologically or in a narrative sequence."@en, "Identificeert een publicatie of werk dat chronologisch of in een verhalende volgorde aan de beschreven bron voorafgaat."@nl, "Identifie une publication ou une œuvre qui précède la ressource décrite dans l’ordre chronologique ou narratif."@fr ;
     rdfs:seeAlso bibframe:precededBy ;
@@ -2329,8 +2336,7 @@ ha:hasCreator a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:range [
         owl:unionOf (
-            ha:Person
-            ha:Organization
+            ha:Agent
             ha:Role
         ) ;
     ] ;
@@ -2344,8 +2350,7 @@ ha:hasPublisher a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:range [
         owl:unionOf (
-            ha:Person
-            ha:Organization
+            ha:Agent
             ha:Role
         ) ;
     ] ;
@@ -2444,8 +2449,7 @@ ha:hasContributor a rdf:Property ;
     rdfs:isDefinedBy ha: ;
     rdfs:range [
         owl:unionOf (
-            ha:Person
-            ha:Organization
+            ha:Agent
             ha:Role
         ) ;
     ] ;
@@ -2481,7 +2485,7 @@ ha:hasFormat a rdf:Property ;
 ha:hasIdentifier a rdf:Property, owl:DatatypeProperty ;
     rdfs:label "has identifier"@en, "heeft identificatie"@nl, "a pour identifiant"@fr ;
     skos:definition "Provides a string that unambiguously identifies a resource within an implicit context."@en, "Geeft een tekenreeks die een bron ondubbelzinnig identificeert binnen een impliciete context."@nl, "Fournit une chaîne de caractères qui identifie une ressource sans ambiguïté dans un contexte implicite."@fr ;
-    rdfs:domain ha:Thing ;
+    rdfs:domain [ owl:unionOf (premis:Object ha:Thing ha:Collection)] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
     rdfs:seeAlso dc:identifier, dct:identifier, org:identifier, schema:identifier ;
@@ -2490,7 +2494,7 @@ ha:hasIdentifier a rdf:Property, owl:DatatypeProperty ;
 ha:hasLocalIdentifier a rdf:Property, owl:ObjectProperty ;
     rdfs:label "has local identifier"@en, "heeft lokale identificatie"@nl, "a pour identifiant local"@fr ;
     skos:definition "Links an archival resource to a local identifier assigned or recognized within a specified system or context."@en, "Verbindt een archiefbron met een lokale identificatie die binnen een expliciet omschreven systeem of context wordt toegekend of erkend."@nl, "Relie une ressource archivistique à un identifiant local attribué ou reconnu dans un système ou un contexte explicitement défini."@fr ;
-    rdfs:domain premis:Object ;
+    rdfs:domain [ owl:unionOf (premis:Object ha:Thing)] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range ha:LocalIdentifier ;
     rdfs:subPropertyOf premis:identifier ;

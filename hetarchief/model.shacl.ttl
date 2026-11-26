@@ -1,3 +1,17 @@
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX ha: <https://data.hetarchief.be/ns/>
+PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
 # REVIEW (2026-11-24): compared with model.rdfs.ttl and its three local imports.
 # Comments only; no constraints were changed. FIX marks a concrete error or stale
 # term; ALIGN marks a modeling difference to resolve in both files; PROFILE marks
@@ -40,7 +54,6 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-
 # REVIEW PROFILE: mandatory start AND end timestamps reject ongoing activities;
 # prov:generated maxCount 1 rejects an activity generating two outputs. Keep these
 # only for a completed, single-output workflow, or move them to that profile.

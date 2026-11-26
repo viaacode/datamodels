@@ -2,7 +2,9 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://data.hetarchief.be/id/rotational-speed/variable> a skos:Concept ;
+<https://data.hetarchief.be/id/rotational-speed/variable> a ha:QuantitativeValue, skos:Concept ;
+    ha:hasUnitCode "RPM" ;
+    ha:hasUnitText "r/min" ;
     skos:definition "A variable rotational speed."@en, "Een variabele draaisnelheid."@nl ;
     skos:inScheme <https://data.hetarchief.be/id/rotational-speed> ;
     skos:prefLabel "Variable"@en, "Variabel"@nl ;
