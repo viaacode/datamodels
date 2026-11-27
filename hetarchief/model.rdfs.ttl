@@ -2125,7 +2125,7 @@ ha:hasTranscriptionCopy a rdf:Property ; # ! ha:hasTranscriptionRepresentation ?
      .
 
 ha:holds a rdf:Property, owl:ObjectProperty ;
-    rdfs:domain ha:Agent ; # ! maybe just person?
+    rdfs:domain ha:Person;
     rdfs:label "holds organizational post"@en, "bekleedt organisatiefunctie"@nl, "occupe un poste organisationnel"@fr ;
     skos:definition "Relates an agent to a position it holds within an organization."@en, "Verbindt een agent met een functie die deze binnen een organisatie bekleedt."@nl, "Relie un agent à un poste qu’il occupe au sein d’une organisation."@fr ;
     rdfs:isDefinedBy ha: ;
@@ -2178,9 +2178,10 @@ ha:isHeldBy a rdf:Property, owl:ObjectProperty ;
     skos:definition "Identifies an agent holding a position within an organization."@en, "Identificeert een agent die een functie binnen een organisatie bekleedt."@nl, "Identifie un agent occupant un poste au sein d’une organisation."@fr ;
     rdfs:domain ha:Post ;
     rdfs:isDefinedBy ha: ;
-    rdfs:range ha:Agent ;
+    rdfs:range ha:Person ;
     rdfs:seeAlso org:heldBy ;
     owl:inverseOf ha:holds ;
+    rdfs:subPropertyOf rdf:value ;
      .
 
 ha:isIIIFCopyOf a rdf:Property ; # ! was ha:isIIIFRepresentationOf ?

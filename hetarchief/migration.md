@@ -160,7 +160,7 @@ These rows cover both shape targets and classes allowed as property values. Repl
 | `ebucore:TextAnnotation` | `ha:TextAnnotation` | **MAP** | D | — |
 | `org:Organization` | `ha:Organization` | **MAP** | D, E, G | — |
 | `org:OrganizationalUnit` | `ha:OrganizationalUnit` | **MAP** | G | — |
-| `org:Post` | `ha:Post` | **MAP** | G | Each post must have at least one holder (M02). |
+| `org:Post` | `ha:Post` | **MAP** | G | Each post must have at least one holder typed as `ha:Person` (M02). |
 | `org:Role` | `ha:RoleType` | **MAP** | G | - |
 | `org:Site` | `ha:Site` | **MAP** | G | — |
 | `schema:ArchiveComponent` | `ha:ArchiveComponent` | **MAP** | D | — |
@@ -279,7 +279,7 @@ Apply mappings by subject type and graph context. In particular, the same contri
 | `org:hasPrimarySite` | `ha:hasPrimarySite` | **MAP** | G | — |
 | `org:hasSite` | `ha:hasSite` | **MAP** | G | — |
 | `org:hasUnit` | `ha:hasUnit` | **MAP** | G | — |
-| `org:holds` | `ha:holds` | **MAP** | G | Preserve the agent-to-post link and use the same holder for the post's `rdf:value` (M02). |
+| `org:holds` | `ha:holds` | **MAP** | G | Preserve the person-to-post link. Its inverse entails the post's `rdf:value` to that person (M02). |
 | `org:identifier` | `ha:hasIdentifier` | **MAP** | G | Preserve the source string (M01). |
 | `org:postIn` | `ha:isPostIn` | **MAP** | G | — |
 | `org:role` | `ha:hasRoleType` | **MAP** | G | Preserve the optional role-type concept. The holder is required independently (M02). |
@@ -471,7 +471,7 @@ The following model changes resolve migration findings. The REVIEW and UNMAPPED 
 | `ha:hasIdentifier` covers Mediahaven fragments and records. The model distinguishes string identifiers from local identifier nodes and primary selections. | Keep identifier strings, including both Mediahaven contexts, and reuse existing local identifier nodes and primary selections (M01). |
 | `ha:hasCastMember` ranges over `ha:CastMemberEntry`. | Apply the work → cast entry → performer transformation in M02. |
 | `ha:hasCreator`, `ha:hasContributor`, `ha:hasPublisher` and `ha:hasProducer` accept `ha:Agent` or `ha:Role`. The publisher domain includes `ha:Newspaper`. | Preserve contextual roles and use `ha:Agent` for existing agents whose specific type is unknown. Keep newspaper-series publishers on the series (M02). |
-| `ha:Post` inherits the `ha:Role` restriction requiring an `rdf:value` that is a `ha:Agent`. | Every post has at least one holder. Keep role types optional and align draft SHACL with the holder requirement (M02). |
+| `ha:Post` inherits the `ha:Role` restriction requiring an `rdf:value` that is a `ha:Agent`. `ha:isHeldBy` links a post to a `ha:Person` and entails that `rdf:value`. | Preserve at least one person as the holder of each post. Keep role types optional and align draft SHACL with the holder requirement (M02). |
 | `ha:hasFormat` ranges over `ha:FileFormat`. | Map file-format links on files only. Preserve MIME strings under `ha:hasMimeType` (M03). |
 | `ha:hasStartOffset` and `ha:hasEndOffset` range over `xsd:decimal`. | Preserve fractional seconds when converting media-relative offsets and align SHACL with the decimal range (M04). |
 | Width/height domains now include `premis:File`, and height uses `owl:unionOf`. | Existing measurement-node links can migrate directly; literal dimensions still require known units (M05). |
@@ -549,9 +549,11 @@ Use the draft cast check on `rdf:value` as the pattern for role assignments. Upd
 
 For organizational functions, `org:Role` means an abstract SKOS concept (`ontologies/org.rdfs.ttl:45`). Preserve concept IRIs and `skos:prefLabel` when mapping them to `ha:RoleType`. The corrected `rdfs:subClassOf` declaration makes `ha:Post` a subclass of `ha:Role`, so map `org:role` to `ha:hasRoleType` when present. Preserve existing `ha:holds` and `ha:isHeldBy` directions.
 
-**Maintainer decision.** Every post has at least one holder. The post keeps its identity when the holder changes. The inherited OWL restriction requires an `rdf:value` that is a `ha:Agent`. For each holder identified through `org:holds` or an existing inverse holder link, preserve the organizational relationship and write the post's `rdf:value` to the same agent. Preserve all identified holders. Record an exception for any source post whose holder cannot be established.
+**Maintainer decision.** Every post has at least one holder. The post keeps its identity when the holder changes. Map `org:holds` from person to post as `ha:holds`, and map any existing `org:heldBy` link from post to person as `ha:isHeldBy`. The target properties are inverses. `ha:isHeldBy` is a subproperty of `rdf:value`, so either holder link entails a post-to-person `rdf:value`. Since `ha:Person` is a subclass of `ha:Agent`, that value meets the inherited `ha:Role` restriction. Materialize the post-to-person `rdf:value` in the migration output for validation without inference.
 
-The draft `ha:PostShape` still requires `ha:hasRole` pointing to `ha:Role` and has no required holder check. Add an acceptance check for at least one explicit `rdf:value` pointing to a `ha:Agent`. With the class hierarchy loaded, posts also fall under the draft shapes targeting `ha:Role`, which require the old `ha:hasRoleName` path and a SKOS preferred label on the assignment itself. Align the draft post and role checks with optional `ha:hasRoleType` and scope the preferred-label check to the role-type concepts.
+Preserve all identified person holders. Record a migration exception when a holder is missing or the source evidence does not establish that the holder is a person.
+
+The draft `ha:PostShape` still requires `ha:hasRole` pointing to `ha:Role` and has no required holder check. Add an acceptance check for at least one explicit `rdf:value` pointing to a `ha:Person` identified as the holder. With the class hierarchy loaded, posts also fall under the draft shapes targeting `ha:Role`, which require the old `ha:hasRoleName` path and a SKOS preferred label on the assignment itself. Align the draft post and role checks with optional `ha:hasRoleType` and scope the preferred-label check to the role-type concepts.
 
 ### M03 — Split the two uses of dct:format
 
@@ -821,7 +823,7 @@ Apply the mappings for Mediahaven identifiers and fragment provenance, newspaper
 
 Freeze the source ontology/vocabulary versions and take a restorable copy or immutable source graph. Count explicit class assertions, predicates and controlled-value IRIs from this inventory. Also list observed terms outside it, because SHACL describes supported usage rather than proving which triples actually exist. Profile literal datatypes/languages, node kinds, role-wrapper patterns, identifier-system boundaries, dates, offset precision, measurement units, and cross-links to vocabulary resources.
 
-Record pre-existing source violations separately from problems introduced by migration. Specifically check checksum creator literals, agents represented by generic things, variable recording speed and series-level predecessors. Profile source posts for missing holder links before applying M02. Count both legacy public-domain patterns for reconciliation under M17.
+Record pre-existing source violations separately from problems introduced by migration. Specifically check checksum creator literals, agents represented by generic things, variable recording speed and series-level predecessors. Profile source posts for missing holder links and holder types before applying M02. Count both legacy public-domain patterns for reconciliation under M17.
 
 ### 3. Apply deterministic class and predicate rules into a new graph
 
@@ -845,7 +847,7 @@ Write migration-specific acceptance checks from the agreed mapping decisions and
 | Target existence | Every emitted target class/property is declared in the model, one of its supplied imports, or an explicitly approved foundational/extension vocabulary. Flag undefined references such as `ha:hasRole` in the draft post shape. |
 | Controlled vocabularies | Load the target SKOS graphs and verify concept and scheme IRIs, labels and memberships. Check vocabulary types, format-priority directions, license ranks, numeric speed values and units, and the three event outcome types and IRIs. |
 | Value preservation | All multilingual texts, date precision, identifier lexical forms, checksum values, measurement units and status notes survive or have an explicit loss/exception decision. |
-| Context rules | Validate work and role chains with and without `ha:hasRoleType`. Each post has at least one explicit `rdf:value` pointing to a `ha:Agent` identified as its holder. Check publisher links on newspaper series. Each fixity creator string yields a direct `ha:hasCreator` link to a `prov:Agent`. Confirm the M02 `ha:Agent` fallback and verify that model strings and generic generated resources retain their original scope. |
+| Context rules | Validate work and role chains with and without `ha:hasRoleType`. Each post has at least one explicit `rdf:value` pointing to a `ha:Person` identified as its holder. Check publisher links on newspaper series. Each fixity creator string yields a direct `ha:hasCreator` link to a `prov:Agent`. Confirm the M02 `ha:Agent` fallback and verify that model strings and generic generated resources retain their original scope. |
 | File formats | File-format links retain their concept IRIs. Migration emits zero `ha:hasFormat` triples for intellectual entities. Their source format strings remain in provenance. |
 | Relations | Structural membership, generic membership and inclusion retain their distinct predicates. Check that unclassified parents are explicitly typed `ha:Collection` and their links are preserved. Test episodes as parents and members, and physical carriers as members in both directions. Check membership and derivation inverses for unsupported type inferences. Each Mediahaven derivation retains its source fragment, with the fragment-to-record link preserved separately. Check inverse-copy and sequence directions and keep newspaper predecessors at series level. |
 | Media | Source-file links connect `ha:MediaFile` and `ha:MediaFragment` in the original direction. Media files have a qualifying MIME type. Fragments preserve intellectual-entity and annotation links, and converted offsets use `xsd:decimal` seconds with source precision. |

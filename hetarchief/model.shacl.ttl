@@ -42,18 +42,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # is enforced (for example storedAt and event input/output). The material message
 # says skos:Concept although its actual xsd:string check agrees with RDFS. Derive
 # messages from the final constraints so users receive an actionable diagnosis.
-PREFIX ha: <https://data.hetarchief.be/ns/>
-PREFIX odrl: <http://www.w3.org/ns/odrl/2/>
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX schema: <http://schema.org/>
-PREFIX sh: <http://www.w3.org/ns/shacl#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
-PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # REVIEW PROFILE: mandatory start AND end timestamps reject ongoing activities;
 # prov:generated maxCount 1 rejects an activity generating two outputs. Keep these
 # only for a completed, single-output workflow, or move them to that profile.
