@@ -273,6 +273,7 @@ ha:Episode a rdfs:Class ;
     skos:definition "An individual installment of a media work that may belong to a series or season."@en, "Een afzonderlijke aflevering van een mediawerk die tot een reeks of seizoen kan behoren."@nl, "Un volet individuel d’une œuvre médiatique pouvant appartenir à une série ou à une saison."@fr ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:Episode ;
+    rdfs:subClassOf ha:Thing
      .
 
 ha:FileFormat a rdfs:Class ;
@@ -412,7 +413,7 @@ ha:NewspaperIssue a rdfs:Class ;
     rdfs:label "newspaper issue"@en, "kranteneditie"@nl, "numéro de journal"@fr ;
     skos:definition "An intellectual entity representing one complete issue of a newspaper."@en, "Een intellectuele entiteit die één volledige editie van een krant voorstelt."@nl, "Une entité intellectuelle représentant un numéro complet d’un journal."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:subClassOf premis:IntellectualEntity ;
+    rdfs:subClassOf ha:PublicationIssue ;
      .
 
 ha:NewspaperIssuePage a rdfs:Class ;
@@ -479,7 +480,7 @@ ha:Post a rdfs:Class, owl:Class ;
     rdfs:label "organizational post"@en, "organisatiefunctie"@nl, "poste organisationnel"@fr ;
     skos:definition "A position within an organization that exists independently of the person or persons holding it."@en, "Een functie binnen een organisatie die onafhankelijk van de persoon of personen die haar bekleden bestaat."@nl, "Un poste au sein d’une organisation qui existe indépendamment de la ou des personnes qui l’occupent."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdf:subClassOf ha:Role ;
+    rdfs:subClassOf ha:Role ;
     rdfs:seeAlso org:Post ;
      .
 
@@ -1163,7 +1164,7 @@ ha:hasIssuance a rdf:Property, owl:ObjectProperty ;
     rdfs:domain ha:PublicationIssue ;
     rdfs:label "has frequency of issuance"@en ,"a fréquence d'émission"@fr ,"heeft uitgavefrequentie"@nl ;
     skos:definition "Indicates how frequent an issue is issued, e.g. twice a day, daily, weekly etc."@en , "Indique la fréquence de parution d'un journal, par ex. deux fois par jour, quotidiennement, hebdomadairement, etc."@fr , "Geeft aan hoe vaak een uitgave verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc."@nl ;
-    rdfs:range ha:Issuance ;
+    rdfs:range skos:Concept ;
     rdfs:seeAlso bibframe:issuance ;
      .
 
@@ -1189,7 +1190,14 @@ ha:hasKeywords a rdf:Property ;
 ha:hasLanguage a rdf:Property ;
     rdfs:label "has language"@en, "heeft taal"@nl, "a pour langue"@fr ;
     skos:definition "Specifies a language used in the content, performance, transcript or captions of an archival resource using a BCP 47 language tag."@en, "Geeft met een BCP 47-taaltag een taal aan die in de inhoud, uitvoering, transcriptie of ondertiteling van een archiefbron wordt gebruikt."@nl, "Indique, au moyen d’une étiquette de langue BCP 47, une langue utilisée dans le contenu, l’interprétation, la transcription ou le sous-titrage d’une ressource archivistique."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain [
+        owl:unionOf (
+            premis:IntellectualEntity
+            ha:DigitalRepresentation
+            ha:Captioning
+            ha:Subtitling
+        ) ;
+    ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:language ;
     rdfs:seeAlso schema:inLanguage ;
@@ -1390,6 +1398,9 @@ ha:hasPart a rdf:Property ;
     rdfs:label "has part"@en, "heeft onderdeel"@nl, "a pour partie"@fr ;
     skos:definition "Identifies a resource forming part of the described work, collection or archival unit."@en, "Identificeert een bron die deel uitmaakt van het beschreven werk, de collectie of de archiefeenheid."@nl, "Identifie une ressource faisant partie de l’œuvre, de la collection ou de l’unité archivistique décrite."@fr ;
     rdfs:seeAlso schema:hasPart ;
+    rdfs:domain [ owl:unionOf ( ha:Collection ha:Episode ) ] ; ;
+    rdfs:range [ owl:unionOf ( ha:Thing premis:IntellectualEntity ha:PhysicalCarrier ) ] ;
+    owl:inverseOf ha:isPartOf
      .
 
 ha:hasPostOfficeBoxNumber a rdf:Property ;
@@ -1446,16 +1457,34 @@ ha:hasRenderingRoot a rdf:Property, owl:ObjectProperty ;
     rdfs:subPropertyOf premis:relationship ;
      .
 
-# ! Do we need a generic 'derivation' property that you can use for anything? (alternative for prov:wasDerivedFrom). We can make this more generic or add a superproperty
+ha:fromMediahavenFragment a rdf:Property, owl:ObjectProperty ;
+    rdfs:domain premis:Object ;
+    rdfs:range ha:MediahavenFragment ;
+    rdfs:label "was derived from Mediahaven fragment"@en, "is afgeleid van een Mediahavenfragment"@nl, "est dérivé d’un fragment Mediahaven"@fr ;
+    skos:definition "Links a preservation object to the Mediahaven fragment from which it was derived."@en, "Verbindt een bewaringsobject met het Mediahavenfragment waarvan het is afgeleid."@nl, "Relie un objet de conservation au fragment Mediahaven dont il est dérivé."@fr ;
+    rdfs:isDefinedBy ha: ;
+    rdfs:seeAlso prov:wasDerivedFrom ;
+     .
+
 ha:hasDerivationSource a rdf:Property, owl:ObjectProperty ;
     rdfs:domain premis:Object ;
     rdfs:range premis:Object ;
     rdfs:label "has derivation source"@en, "heeft afleidingsbron"@nl, "a pour source de dérivation"@fr ;
     skos:definition "Relates a preservation object to the source object from which it was derived by a transformation."@en, "Verbindt een bewaringsobject met het bronobject waarvan het door een transformatie is afgeleid."@nl, "Relie un objet de conservation à l’objet source dont il est issu par transformation."@fr ;
     rdfs:isDefinedBy ha: ;
-    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss> ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss>;
     rdfs:subPropertyOf premis:relationship ;
-     .
+    owl:inverseOf ha:isDerivationSourceOf .
+
+ha:isDerivationSourceOf a rdf:Property, owl:ObjectProperty ;
+    rdfs:domain premis:Object ;
+    rdfs:range premis:Object ;
+    rdfs:label "is derivation source of"@en, "is afleidingsbron van"@nl, "est la source de dérivation de"@fr ;
+    skos:definition "Relates a source object to a preservation object derived from it by a transformation."@en, "Verbindt een bronobject met een bewaringsobject dat er door een transformatie van is afgeleid."@nl, "Relie un objet source à un objet de conservation qui en est issu par transformation."@fr ;
+    rdfs:isDefinedBy ha: ;
+    rdfs:subPropertyOf premis:relationship ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType/iso> ;
+    owl:inverseOf ha:hasDerivationSource .
 
 ha:hasPrimaryLocalIdentifier a rdf:Property ;
     rdfs:domain premis:Object ;
@@ -2196,10 +2225,11 @@ ha:isMezzanineCopyOf a rdf:Property ; #! ha:isMezzanineRepresentationOf
 ha:isPartOf a rdf:Property ;
     rdfs:label "is part of"@en, "is onderdeel van"@nl, "fait partie de"@fr ;
     skos:definition "Identifies the work, collection or archival unit containing the described resource."@en, "Identificeert het werk, de collectie of de archiefeenheid waarvan de beschreven bron deel uitmaakt."@nl, "Identifie l’œuvre, la collection ou l’unité archivistique contenant la ressource décrite."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
-    rdfs:range [ owl:unionOf ( premis:IntellectualEntity ha:Collection ) ] ;
+    rdfs:domain [ owl:unionOf ( ha:Thing premis:IntellectualEntity ha:PhysicalCarrier ) ] ;
+    rdfs:range [ owl:unionOf ( ha:Collection ha:Episode ) ] ; ;
     rdfs:isDefinedBy ha: ;
     rdfs:seeAlso schema:isPartOf ;
+    owl:inverseOf ha:hasPart
      .
 
 ha:isPostIn a rdf:Property, owl:ObjectProperty ;
@@ -2346,7 +2376,7 @@ ha:hasCreator a rdf:Property ;
 ha:hasPublisher a rdf:Property ;
     rdfs:label "has publisher"@en, "heeft uitgever"@nl, "a pour éditeur"@fr ;
     skos:definition "Identifies the person or organization responsible for publishing an archival resource, directly or through a role."@en, "Identificeert de persoon of organisatie die verantwoordelijk is voor het publiceren van een archiefbron, rechtstreeks of via een rol."@nl, "Identifie la personne ou l’organisation responsable de la publication d’une ressource archivistique, directement ou au moyen d’un rôle."@fr ;
-    rdfs:domain premis:IntellectualEntity ;
+    rdfs:domain [ owl:unionOf ( premis:IntellectualEntity ha:Newspaper ) ] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range [
         owl:unionOf (
@@ -2485,7 +2515,7 @@ ha:hasFormat a rdf:Property ;
 ha:hasIdentifier a rdf:Property, owl:DatatypeProperty ;
     rdfs:label "has identifier"@en, "heeft identificatie"@nl, "a pour identifiant"@fr ;
     skos:definition "Provides a string that unambiguously identifies a resource within an implicit context."@en, "Geeft een tekenreeks die een bron ondubbelzinnig identificeert binnen een impliciete context."@nl, "Fournit une chaîne de caractères qui identifie une ressource sans ambiguïté dans un contexte implicite."@fr ;
-    rdfs:domain [ owl:unionOf (premis:Object ha:Thing ha:Collection)] ;
+    rdfs:domain [ owl:unionOf (premis:Object ha:Thing ha:Collection ha:MediahavenFragment ha:MediahavenRecord)] ;
     rdfs:isDefinedBy ha: ;
     rdfs:range xsd:string ;
     rdfs:seeAlso dc:identifier, dct:identifier, org:identifier, schema:identifier ;

@@ -465,17 +465,6 @@ ha:ConceptShape a sh:NodeShape ;
     sh:targetClass skos:Concept ;
      .
 
-# REVIEW FIX: ha:MetadataRScope is undeclared. RDFS declares ha:MetadataScope,
-# but ha:extended/ha:limited are still typed ha:MetadataRange (also undeclared).
-# Align the class AND those individuals; changing this shape alone will still
-# reject both metadata-scope values.
-# REVIEW FIX: dateTime/absoluteTemporalPosition are allowed as left operands, but
-# the right operand is restricted to eleven IRIs, so a typed date or offset always
-# fails. Split alternatives by left operand and pair each with its right-value type
-# and supported operators. That also prevents recipient=ha:full and scope=user-group
-# combinations, which currently pass the independent lists. Consultation/download
-# are actions, not UserGroup/MetadataScope/ContentScope instances; keep them on
-# odrl:action unless an explicit constraint use case needs a separate branch.
 ha:ConstraintShape a sh:NodeShape ;
     rdfs:label "constraint shape"@en ;
     sh:property [
@@ -489,50 +478,51 @@ ha:ConstraintShape a sh:NodeShape ;
         sh:nodeKind sh:IRI ;
         sh:path odrl:operator ;
     ], [
-        sh:in (
-            ha:extended
-            ha:limited
-            ha:full
-            ha:partial
-            ha:available-for-consultation
-            ha:downloadable
-            ha:between-partners
-            ha:educational-public
-            ha:intra-muros
-            ha:public
-            ha:research-public
-        ) ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
         sh:name "constraint value"@en, "valeur de contrainte"@fr, "beperkingswaarde"@nl ;
-        sh:nodeKind sh:IRI ;
-        sh:or (
-            [
-                sh:class ha:UserGroup ;
-            ]
-            [
-                sh:class ha:MetadataRScope ;
-            ]
-            [
-                sh:class ha:ContentScope ;
-            ]
-        ) ;
         sh:path odrl:rightOperand ;
     ], [
-        sh:in (
-            odrl:recipient
-            ha:metadataScope
-            ha:contentScope
-            odrl:dateTime
-            odrl:absoluteTemporalPosition
-        ) ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
         sh:name "constraint name"@en, "nom de la contrainte"@fr, "beperkingsnaam"@nl ;
         sh:nodeKind sh:IRI ;
         sh:path odrl:leftOperand ;
     ] ;
+    sh:or (
+        [
+            sh:property [ sh:path odrl:leftOperand ; sh:hasValue odrl:recipient ],
+                [ sh:path odrl:operator ; sh:hasValue odrl:eq ],
+                [
+                    sh:path odrl:rightOperand ;
+                    sh:class ha:UserGroup ;
+                    sh:in ( ha:between-partners ha:educational-public ha:intra-muros ha:public ha:research-public ) ;
+                ] ;
+        ]
+        [
+            sh:property [ sh:path odrl:leftOperand ; sh:hasValue ha:metadataScope ],
+                [ sh:path odrl:operator ; sh:hasValue odrl:eq ],
+                [ sh:path odrl:rightOperand ; sh:class ha:MetadataScope ; sh:in ( ha:extended ha:limited ) ] ;
+        ]
+        [
+            sh:property [ sh:path odrl:leftOperand ; sh:hasValue ha:contentScope ],
+                [ sh:path odrl:operator ; sh:hasValue odrl:eq ],
+                [ sh:path odrl:rightOperand ; sh:class ha:ContentScope ; sh:in ( ha:full ha:partial ) ] ;
+        ]
+        [
+            sh:property [ sh:path odrl:leftOperand ; sh:hasValue odrl:dateTime ],
+                [ sh:path odrl:rightOperand ; sh:datatype xsd:dateTime ] ;
+        ]
+        [
+            sh:property [ sh:path odrl:leftOperand ; sh:hasValue odrl:absoluteTemporalPosition ],
+                [
+                    sh:path odrl:rightOperand ;
+                    sh:datatype xsd:decimal ;
+                ] ;
+        ]
+    ) ;
     sh:targetClass odrl:Constraint ;
+    sh:targetObjectsOf odrl:constraint ;
      .
 
 # REVIEW PROFILE: ha:PostalAddress is a subclass of ha:ContactPoint, so every
@@ -1512,9 +1502,9 @@ ha:EventShape a sh:NodeShape ;
         sh:class premis:OutcomeStatus ;
         sh:description "The outcome status of the event."@en, "Statut du résultat de l'événement (Event)."@fr, "De uitkomststatus van de gebeurtenis (Event)."@nl ;
         sh:in (
-            ha:failed
-            ha:succeeded
-            ha:warnings
+            ha:fail
+            ha:success
+            ha:warning
         ) ;
         sh:maxCount 1 ;
         sh:message "premis:outcome is absent, occurs more than once or its value is not in the list (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@en, "premis:outcome est absent, apparaît plus d'une fois ou sa valeur n'est pas dans la liste (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@fr, "premis:outcome ontbreekt, komt meer dan eens voor of de waarde maakt geen deel uit van de lijst (evtOutcome:fai evtOutcome:suc evtOutcome:war)"@nl ;

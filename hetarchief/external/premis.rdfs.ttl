@@ -1,8 +1,7 @@
-PREFIX ha: <https://data.hetarchief.be/ns/>
+PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX premis: <http://www.loc.gov/premis/rdf/v3/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -40,7 +39,6 @@ premis:HardwareAgent a rdfs:Class, owl:Class ;
     rdfs:label "Hardware agent"@en, "Matériel acteur"@fr, "Hardware agent"@nl ;
     rdfs:isDefinedBy premis: ;
     owl:disjointWith premis:Organization, premis:Person, premis:SoftwareAgent ;
-    owl:sameAs ha:hardwareAgentType ;
     skos:definition "Hardware agent (e.g., a computer) that is associated with one or more Events and/or Rights statement associated with a digital object."@en, "Agent matériel (par ex. un ordinateur) associé à un ou plusieurs événements (Events) et/ou déclaration(s) de droits associé(s) à un objet numérique."@fr, "Hardwareagent (bv. een computer) die gekoppeld is aan één of meer gebeurtenissen (Events) en/of rechtenuitdrukking(en) geassocieerd met een digitaal object."@nl ;
      .
 
@@ -133,7 +131,7 @@ premis:endDate a owl:DatatypeProperty ;
         ) ;
     ] ;
     rdfs:isDefinedBy premis: ;
-    rdfs:subPropertyOf ha:hasDate ;
+    rdfs:subPropertyOf dct:date ;
      .
 
 premis:fixity a owl:ObjectProperty ;
@@ -236,7 +234,7 @@ premis:startDate a owl:DatatypeProperty ;
         ) ;
     ] ;
     rdfs:isDefinedBy premis: ;
-    rdfs:subPropertyOf ha:hasDate ;
+    rdfs:subPropertyOf dct:date ;
      .
 
 premis:storedAt a owl:ObjectProperty ;
@@ -264,7 +262,7 @@ premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en, "a note"@fr, "heeft nota"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf ha:description ;
+    rdfs:subPropertyOf dct:description ;
      .
 
 premis:Rule a owl:Class ;
